@@ -1,0 +1,6 @@
+h1. My dotfiles
+
+h2. TODO
+
+# Install http://github.com/robbyrussell/oh-my-zsh
+# Get interesting and useful config from other dotfiles like http://github.com/ryanb/dotfiles or http://github.com/jferris/config_files
