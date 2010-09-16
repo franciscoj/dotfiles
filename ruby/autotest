@@ -1,0 +1,9 @@
+%w{redgreen/autotest autotest/growl autotest/fsevent autotest/restart}.each do |gem|
+  require gem
+end
+
+Autotest.add_hook :initialize do |autotest|
+  %w[.git .svn .hg .DS_Store ._* vendor tmp log doc].each do |exception|
+    autotest.add_exception(exception)
+  end
+end

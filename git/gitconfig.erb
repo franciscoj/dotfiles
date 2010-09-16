@@ -1,0 +1,18 @@
+[user]
+	name = Francisco J.
+	email = nflamel@otrobloggeek.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	excludesfile = <%= ENV['HOME'] %>/.gitignore %>
+	editor = mate -w
+	autocrlf = input
+[apply]
+	whitespace = fix
+[format]
+	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+[github]
+	user = franciscoj
+	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>

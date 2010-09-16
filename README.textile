@@ -1,6 +1,26 @@
-h1. My dotfiles
+h1. My dot-files (coz' there's no place like 127.0.0.1)
+
+h2. Introduction
+
+These are my dotfiles. They're more an exercise to learn to use rake and other tools than a real and useful project. I took many ideas for them (and copied a lot of code) from: 
+
+* "Ryan Bates":http://github.com/ryanb/dotfiles
+* "Bodaniel Jeanes":http://github.com/bjeanes/dot-files
+* "Joe Ferris":http://github.com/jferris/config_files
+* "Nando Vieira":http://github.com/fnando/dotfiles
+* "Mislav Marohnić":http://github.com/mislav/dotfiles
+* and some others that I will include when I remember :)
+
+h2. What it does?
+
+Those files are made just to configure my development system in a way which I'm confortable with. It also includes some interesting and useful tools that doesn't come by default with Mac OS X Snow Leopard.
+
+h2. Can I use them?
+
+Yes of course... but do it at your own risk. Ask me if you need some help or just fix what you think is wrong, but I cant garantee that it will work. 
+
+These files are MIT licensed so you can just change them as you want. However if you do some interesting thing with them I'd be pleased if you let me know... Just some little curiosity, you know ;)
 
 h2. TODO
 
 # Install http://github.com/robbyrussell/oh-my-zsh
-# Get interesting and useful config from other dotfiles like http://github.com/ryanb/dotfiles or http://github.com/jferris/config_files
