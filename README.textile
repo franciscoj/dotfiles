@@ -23,4 +23,4 @@ These files are MIT licensed so you can just change them as you want. However if
 
 h2. TODO
 
-# Install http://github.com/robbyrussell/oh-my-zsh
+# Find a better way to install http://github.com/robbyrussell/oh-my-zsh and its customizations
