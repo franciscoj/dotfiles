@@ -1,7 +1,7 @@
 # Path oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
-export ZSH_THEME="afowler"
+export ZSH_THEME="eastwood"
 
 plugins=(git ruby rails osx textmate)
 
