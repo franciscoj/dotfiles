@@ -15,3 +15,6 @@ export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r6
 # Load RVM
 unsetopt auto_name_dirs
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Alias to run Cucumber features with autospec
+alias autospec="AUTOFEATURE=true autospec"

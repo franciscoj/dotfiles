@@ -1,6 +1,9 @@
-%w{redgreen/autotest autotest/growl autotest/fsevent autotest/restart}.each do |gem|
+%w{autotest/growl autotest/fsevent autotest/restart}.each do |gem|
   require gem
 end
+
+# rspec crashes when loading redgreen test using autospec
+require 'redgreen/autotest' unless ENV['RSPEC']
 
 Autotest.add_hook :initialize do |autotest|
   %w[.git .svn .hg .DS_Store ._* vendor tmp log doc].each do |exception|
