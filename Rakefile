@@ -27,6 +27,17 @@ namespace :install do
     replace_file("oh-my-zsh/custom/completion.zsh", true)
   end
 
+  desc "Install VIM related dotfiles"
+  task :vim => "gvimrc" do
+    system %Q{rm "$HOME/.vim"}
+    system %Q{ln -s "$PWD/vim" "$HOME/.vim"}
+  end
+
+  task :gvimrc do
+    install("gvimrc")
+  end
+
+
   desc "Install all the dotfiles"
   task :all => [:ruby, :git, :shell]
 end

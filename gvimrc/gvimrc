@@ -1,0 +1,4 @@
+set lines=55 columns=150
+set nu
+colorscheme railscasts
+map <F2> :NERDTreeToggle<cr>

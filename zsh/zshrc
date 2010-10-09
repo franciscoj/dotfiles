@@ -18,3 +18,4 @@ unsetopt auto_name_dirs
 
 # Alias to run Cucumber features with autospec
 alias autospec="AUTOFEATURE=true autospec"
+alias vim="mvim"
