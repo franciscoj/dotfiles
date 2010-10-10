@@ -1,11 +1,19 @@
 set lines=55 columns=150
 " show line numbers
-set nu 
+set nu
+" use railscasts colorscheme by Ryan Bates
 colorscheme railscasts
 " Map toggle the nerdtree with F2
 map <F2> :NERDTreeToggle<cr> 
-
+" filetype highlighting and indetation activation
 syntax on
 filetype on
 filetype plugin on
 filetype indent on
+" show available commands for autocomplete in normal mode
+set wildmenu
+" set the indenting configuration
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
