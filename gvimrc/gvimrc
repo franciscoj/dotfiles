@@ -1,4 +1,11 @@
 set lines=55 columns=150
-set nu
+" show line numbers
+set nu 
 colorscheme railscasts
-map <F2> :NERDTreeToggle<cr>
+" Map toggle the nerdtree with F2
+map <F2> :NERDTreeToggle<cr> 
+
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
