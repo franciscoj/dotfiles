@@ -17,3 +17,10 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+
+set novisualbell  " No blinking .
+set noerrorbells  " No noise.
+set laststatus=2  " Always show status line.
+set guifont=Monaco:h12
+
+nnoremap <leader>a :Ack

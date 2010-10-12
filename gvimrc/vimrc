@@ -1,3 +1,4 @@
 " Map the leader character to "," instead of \ (much more easy to use)
 let mapleader = ","
-
+"Put yanks into clipboard
+set clipboard+=unnamed
