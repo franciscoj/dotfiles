@@ -20,8 +20,8 @@ h2. What's included?
 
 * "oh-my-zsh":http://github.com/robbyrussell/oh-my-zsh installtion
 * some oh-my-zsh customizations
-* dotfiles for Rubygems, RDoc, IRB, Ruby on Rails IRB and GIT
-* dotfiles for vim including "NERD_tree plugin":http://github.com/scrooloose/nerdtree, "snipMate":http://github.com/msanders/snipmate.vim, some "snippets":http://github.com/scrooloose/snipmate-snippets for it and "textile.vim":http://github.com/timcharper/textile.vim plugin
+* dotfiles for Rubygems, RDoc, IRB, Capistrano, Ruby on Rails IRB and GIT
+* dotfiles for vim including "NERD_tree plugin":http://github.com/scrooloose/nerdtree, "snipMate":http://github.com/msanders/snipmate.vim, some "snippets":http://github.com/scrooloose/snipmate-snippets for it, "http://github.com/mileszs/ack.vim":ack.vim and "textile.vim":http://github.com/timcharper/textile.vim plugin
 
 h2. Can I use them?
 
