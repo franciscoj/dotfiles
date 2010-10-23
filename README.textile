@@ -23,6 +23,13 @@ h2. What's included?
 * dotfiles for Rubygems, RDoc, IRB, Capistrano, Ruby on Rails IRB and GIT
 * dotfiles for vim including "NERD_tree plugin":http://github.com/scrooloose/nerdtree, "snipMate":http://github.com/msanders/snipmate.vim, some "snippets":http://github.com/scrooloose/snipmate-snippets for it, "ack.vim":http://github.com/mileszs/ack.vim and "textile.vim":http://github.com/timcharper/textile.vim plugin
 
+h2. How to install?
+
+First take a look at the included rake tasks with @rake -T command@.
+
+To install all the vim plugins and snippets you need to run
+bc. git submodule init && gitsubmodule update
+
 h2. Can I use them?
 
 Yes of course... but do it at your own risk. Ask me if you need some help or just fix what you think is wrong, but I cant garantee that it will work. 
