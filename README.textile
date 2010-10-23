@@ -28,7 +28,7 @@ h2. How to install?
 First take a look at the included rake tasks with @rake -T command@.
 
 To install all the vim plugins and snippets you need to run
-bc. git submodule init && gitsubmodule update
+@git submodule init && git submodule update@
 
 h2. Can I use them?
 
