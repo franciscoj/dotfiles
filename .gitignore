@@ -4,6 +4,3 @@ git/gitconfig
 vim/.netrwhist
 vim/.DS_Store
 vim/.VimballRecord
-vim/ruby/command-t/Makefile
-vim/ruby/command-t/*.o
-vim/ruby/command-t/mkmf.log

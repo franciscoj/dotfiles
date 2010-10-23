@@ -1,16 +1,21 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+  ignore = all
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
+  ignore = all
 [submodule "vim/bundle/textile"]
 	path = vim/bundle/textile
 	url = http://github.com/timcharper/textile.vim.git
+  ignore = all
 [submodule "vim/bundle/snipmate"]
 	path = vim/bundle/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
+  ignore = all
 [submodule "vim/snippets"]
 	path = vim/snippets
 	url = git://github.com/scrooloose/snipmate-snippets.git 
+  ignore = all
 
