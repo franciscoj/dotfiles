@@ -18,4 +18,7 @@
 	path = vim/snippets
 	url = git://github.com/scrooloose/snipmate-snippets.git 
   ignore = all
-
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = git://git.wincent.com/command-t.git
+  ignore = all
