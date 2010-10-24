@@ -1,3 +1,5 @@
+" No need to make it compatible with VI
+set nocompatible
 " Activate pathogen plugin
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -6,6 +8,8 @@ call pathogen#helptags()
 let mapleader = ","
 " show line numbers
 set nu
+" Highlight the line with the cursor on it
+set cursorline
 " Use railscasts colorscheme by Ryan Bates
 colorscheme railscasts
 " Map toggle the nerdtree with F2

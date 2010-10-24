@@ -1,4 +1,4 @@
 " set the vim windows size
-set lines=55 columns=150
+set lines=55 columns=170
 " Set the macvim font
 set guifont=Monaco:h12
