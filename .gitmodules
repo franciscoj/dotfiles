@@ -30,3 +30,7 @@
 	path = vim/bundle/autoclose
 	url = git://github.com/Townk/vim-autoclose.git
   ignore = all
+[submodule "vim/bundle/matchit"]
+	path = vim/bundle/matchit
+	url = git://github.com/edsono/vim-matchit.git
+  ignore = all
