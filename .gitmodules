@@ -34,3 +34,11 @@
 	path = vim/bundle/matchit
 	url = git://github.com/edsono/vim-matchit.git
   ignore = all
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = git://github.com/tpope/vim-surround.git
+  ignore = all
+[submodule "vim/bundle/ragtag"]
+	path = vim/bundle/ragtag
+	url = git://github.com/tpope/vim-ragtag.git
+  ignore = all
