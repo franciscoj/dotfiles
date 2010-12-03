@@ -3,7 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 export ZSH_THEME="eastwood"
 
-plugins=(git ruby rails osx)
+plugins=(vi-mode brew github git gem rails osx)
 
 source $ZSH/oh-my-zsh.sh
 
