@@ -21,6 +21,7 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
+au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 " show available commands for autocomplete in normal mode
 set wildmenu
 " set the indenting configuration
@@ -28,10 +29,12 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-
+" remove bells and properly ocnfig the status line
 set novisualbell  " No blinking .
 set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
-
 " Put yanks into clipboard
 set clipboard+=unnamed
+" Moved the .swp files out of the current dir
+set backupdir=~/.vim/tmp/backup,. 
+set directory=~/.vim/tmp/swap,.

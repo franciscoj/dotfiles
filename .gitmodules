@@ -42,3 +42,9 @@
 	path = vim/bundle/delimitMate
 	url = git://github.com/Raimondi/delimitMate.git
   ignore = all
+[submodule "vim/bundle/gist"]
+	path = vim/bundle/gist
+	url = git://github.com/mattn/gist-vim.git
+[submodule "vim/bundle/cucumber"]
+	path = vim/bundle/cucumber
+	url = git://github.com/tpope/vim-cucumber.git
