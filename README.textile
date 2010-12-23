@@ -23,8 +23,8 @@ h2. What's included?
 * dotfiles for Rubygems, RDoc, IRB, Capistrano, Ruby on Rails IRB and GIT
 * dotfiles for vim using "Vundle":https://github.com/gmarik/vundle to install its plugins
 * Some alias I like
-bc.. alias vim="mvim" # since 99.9% of time I use vim from the GUI
-alias migrate="rake db:migrate db:test:clone"
+@alias vim="mvim" # since 99.9% of time I use vim from the GUI@
+@alias migrate="rake db:migrate db:test:clone"@
 
 h2. How to install?
 
