@@ -21,20 +21,34 @@ h2. What's included?
 * "oh-my-zsh":http://github.com/robbyrussell/oh-my-zsh installtion
 * some oh-my-zsh customizations
 * dotfiles for Rubygems, RDoc, IRB, Capistrano, Ruby on Rails IRB and GIT
-* dotfiles for vim including "Command-T plugin":http://github.com/wincent/Command-T ,"NERD_tree plugin":http://github.com/scrooloose/nerdtree, "snipMate":http://github.com/msanders/snipmate.vim, some "snippets":http://github.com/scrooloose/snipmate-snippets for it, "ack.vim":http://github.com/mileszs/ack.vim , "textile.vim":http://github.com/timcharper/textile.vim plugin, "autoclose.vim":http://://github.com/Townk/vim-autoclose.git , "matchit.vim":http://github.com/edsono/vim-matchit , "surround.vim":http://github.com/tpope/vim-surround and "ragtag.vim":http://github.com/tpope/vim-ragtag 
+* dotfiles for vim using "Vundle":https://github.com/gmarik/vundle to install its plugins
 * Some alias I like
-@alias vim="mvim" # since 99.9% of time I use vim from the GUI@
-@alias migrate="rake db:migrate db:test:clone"@
+bc.. alias vim="mvim" # since 99.9% of time I use vim from the GUI
+alias migrate="rake db:migrate db:test:clone"
 
 h2. How to install?
 
 First take a look at the included rake tasks with @rake -T@ command.
 
-To install all the vim plugins and snippets you need to run
-@git submodule init && git submodule update@
+To install all the vim plugins and snippets you need to open vim and run
+@:BundleInstall@
+This will install the following plugins 
+
+* http://github.com/scrooloose/nerdtree.git
+* http://github.com/mileszs/ack.vim.git
+* http://github.com/timcharper/textile.vim.git
+* http://github.com/msanders/snipmate.vim.git
+* http://github.com/scrooloose/snipmate-snippets.git
+* https://wincent.com/products/command-t
+* http://github.com/scrooloose/nerdcommenter.git
+* http://github.com/edsono/vim-matchit.git
+* http://github.com/tpope/vim-surround.git
+* http://github.com/tpope/vim-ragtag.git
+* http://github.com/Raimondi/delimitMate.git
+* http://github.com/tpope/vim-cucumber.git
 
 Once this is done, you need to install the C extension for Command-T with
-@cd vim/bundle/command-t && rake make@
+bc.. cd vim/bundle/command-t && rake make
 
 h2. Can I use them?
 
