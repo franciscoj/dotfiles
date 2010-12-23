@@ -1,8 +1,22 @@
+" Setup vundler
+set rtp+=~/.vim/vundle.git/ 
+call vundle#rc()
+" Bundles
+Bundle "git://github.com/scrooloose/nerdtree.git"
+Bundle "git://github.com/mileszs/ack.vim.git"
+Bundle "git://github.com/timcharper/textile.vim.git"
+Bundle "git://github.com/msanders/snipmate.vim.git"
+Bundle "git://github.com/scrooloose/snipmate-snippets.git"
+Bundle "git://git.wincent.com/command-t.git"
+Bundle "git://github.com/scrooloose/nerdcommenter.git"
+Bundle "git://github.com/edsono/vim-matchit.git"
+Bundle "git://github.com/tpope/vim-surround.git"
+Bundle "git://github.com/tpope/vim-ragtag.git"
+Bundle "git://github.com/Raimondi/delimitMate.git"
+Bundle "git://github.com/tpope/vim-cucumber.git"
+
 " No need to make it compatible with VI
 set nocompatible
-" Activate pathogen plugin
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 " Map the leader character to "," instead of \ (much more easy to use in a
 " Spanish keyboard)
 let mapleader = ","
@@ -38,3 +52,6 @@ set clipboard+=unnamed
 " Moved the .swp files out of the current dir
 set backupdir=~/.vim/tmp/backup,. 
 set directory=~/.vim/tmp/swap,.
+" Added English spellcheck
+set spell
+set spelllang=en_us
