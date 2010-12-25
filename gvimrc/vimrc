@@ -14,44 +14,77 @@ Bundle "git://github.com/tpope/vim-surround.git"
 Bundle "git://github.com/tpope/vim-ragtag.git"
 Bundle "git://github.com/Raimondi/delimitMate.git"
 Bundle "git://github.com/tpope/vim-cucumber.git"
+Bundle "git://github.com/pangloss/vim-javascript.git"
+Bundle "git://github.com/ervandew/supertab.git"
+Bundle "git://github.com/tpope/vim-git.git"
+Bundle "git://github.com/tpope/vim-fugitive.git"
+"Bundle "git://github.com/tsaleh/vim-align.git"
+Bundle "ZoomWin"
 
 " No need to make it compatible with VI
 set nocompatible
+
 " Map the leader character to "," instead of \ (much more easy to use in a
 " Spanish keyboard)
 let mapleader = ","
+
 " show line numbers
 set nu
+set ruler
+
 " Highlight the line with the cursor on it
 set cursorline
+
 " Use railscasts colorscheme by Ryan Bates
 colorscheme railscasts
+
 " Map toggle the nerdtree with F2
 map <F2> :NERDTreeToggle<cr> 
+" Command-T configuration
+let g:CommandTMaxHeight=20
 " Map for ack.vim
 nnoremap <leader>a :Ack
+" Show/Hide invisibles
+nmap <leader>l :set list!<cr>
+" Map for ZoomWin
+map <Leader>z :ZoomWin<CR>
+
+"Set invisivles to the same as in TextMate
+set listchars=tab:▸\ ,eol:¬,trail:.
+
 " Filetype highlighting and indentation activation
 syntax on
 filetype on
 filetype plugin on
 filetype indent on
-au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
-" show available commands for autocomplete in normal mode
-set wildmenu
+
+" Adding files not finishing on .rb to the ruby file type highlighting
+au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+
+" Tab completion
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc
+
 " set the indenting configuration
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+
 " remove bells and properly ocnfig the status line
 set novisualbell  " No blinking .
 set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
+
 " Put yanks into clipboard
 set clipboard+=unnamed
-" Moved the .swp files out of the current dir
-set backupdir=~/.vim/tmp/backup,. 
-set directory=~/.vim/tmp/swap,.
+
 " Added English spellcheck
 set spell
 set spelllang=en_us
+
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase

@@ -10,6 +10,7 @@ These are my dotfiles. They're more a way to learn to use tools like rake, VIM, 
 * "Nando Vieira":http://github.com/fnando/dotfiles
 * "Mislav Marohnić":http://github.com/mislav/dotfiles
 * "Martin Grenfell vimfiles":http://github.com/scrooloose/vimfiles
+* "carlhuda's janus":https://github.com/carlhuda/janus (Check it out... the only way to describe it is AWESOME!!)
 * and some others that I will include when I remember :)
 
 h2. What it does?
@@ -23,15 +24,18 @@ h2. What's included?
 * dotfiles for Rubygems, RDoc, IRB, Capistrano, Ruby on Rails IRB and GIT
 * dotfiles for vim using "Vundle":https://github.com/gmarik/vundle to install its plugins
 * Some alias I like
-@alias vim="mvim" # since 99.9% of time I use vim from the GUI@
-@alias migrate="rake db:migrate db:test:clone"@
+
+bc. alias vim="mvim" # since 99.9% of time I use vim from the GUI
+alias migrate="rake db:migrate db:test:clone"
 
 h2. How to install?
 
 First take a look at the included rake tasks with @rake -T@ command.
 
 To install all the vim plugins and snippets you need to open vim and run
-@:BundleInstall@
+
+bc. :BundleInstall
+
 This will install the following plugins 
 
 * http://github.com/scrooloose/nerdtree.git
@@ -48,7 +52,7 @@ This will install the following plugins
 * http://github.com/tpope/vim-cucumber.git
 
 Once this is done, you need to install the C extension for Command-T with
-bc.. cd vim/bundle/command-t && rake make
+bc. cd vim/bundle/command-t && rake make
 
 h2. Can I use them?
 

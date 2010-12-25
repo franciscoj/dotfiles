@@ -2,3 +2,12 @@
 set lines=55 columns=170
 " Set the macvim font
 set guifont=Monaco:h12
+if has("gui_macvim")
+  " Command-T for CommandT
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> :CommandT<CR>
+
+  " Command-Shift-F for Ack
+  macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
+  map <D-F> :Ack<space>
+endif

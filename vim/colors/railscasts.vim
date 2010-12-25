@@ -35,6 +35,8 @@ hi LineNr                    guibg=#333435 guifg=#777777 gui=NONE
 hi StatusLine                guibg=#414243 gui=NONE
 hi StatusLineNC              guibg=#414243 gui=NONE
 hi VertSplit                 guibg=#414243 gui=NONE
+hi NonText                   guifg=#4a4a59
+hi SpecialKey                guifg=#4a4a59
 
 " Folds
 " -----
