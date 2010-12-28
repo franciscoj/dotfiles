@@ -19,6 +19,7 @@ Bundle "git://github.com/ervandew/supertab.git"
 Bundle "git://github.com/tpope/vim-git.git"
 Bundle "git://github.com/tpope/vim-fugitive.git"
 "Bundle "git://github.com/tsaleh/vim-align.git"
+Bundle "rubycomplete.vim"
 Bundle "ZoomWin"
 
 " No need to make it compatible with VI
