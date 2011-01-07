@@ -38,27 +38,31 @@ bc. :BundleInstall
 
 This will install the following plugins 
 
-* http://github.com/scrooloose/nerdtree.git
-* http://github.com/mileszs/ack.vim.git
-* http://github.com/timcharper/textile.vim.git
-* http://github.com/msanders/snipmate.vim.git
-* http://github.com/scrooloose/snipmate-snippets.git
-* https://wincent.com/products/command-t
-* http://github.com/scrooloose/nerdcommenter.git
-* http://github.com/edsono/vim-matchit.git
-* http://github.com/tpope/vim-surround.git
-* http://github.com/tpope/vim-ragtag.git
-* http://github.com/Raimondi/delimitMate.git
-* http://github.com/tpope/vim-cucumber.git
+* "LustyExplorer and LustyJuggler":http://github.com/sjbach/lusty
+* http://github.com/mileszs/ack.vim
+* http://github.com/timcharper/textile.vim
+* http://github.com/msanders/snipmate.vim
+* http://github.com/scrooloose/snipmate-snippets
+* http://github.com/scrooloose/nerdcommenter
+* http://github.com/edsono/vim-matchit
+* http://github.com/tpope/vim-surround
+* http://github.com/tpope/vim-ragtag
+* http://github.com/Raimondi/delimitMate
+* http://github.com/tpope/vim-cucumber
+* http://github.com/ecomba/vim-ruby-refactoring
 
 Once this is done, you need to install the C extension for Command-T with
 bc. cd vim/bundle/command-t && rake make
 
 h2. Can I use them?
 
-Yes of course... but do it at your own risk. Ask me if you need some help or just fix what you think is wrong, but I cant garantee that it will work. 
+Yes of course... but do it at your own risk. Ask me if you need some help or just fix what you think is wrong, but I cant guarantee that it will work. 
 
 These files are MIT licensed so you can just change them as you want. However if you do some interesting thing with them I'd be pleased if you let me know... Just some little curiosity, you know ;)
+
+h2. Should I use them?
+
+No, you probably shouldn't. There ire good VIM bundles and dot-files out there which you may use and are for sure better build than mines. Take a look at "Janus":https://github.com/carlhuda/janus
 
 h2. TODO
 

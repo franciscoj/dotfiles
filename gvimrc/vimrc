@@ -2,12 +2,11 @@
 set rtp+=~/.vim/vundle.git/ 
 call vundle#rc()
 " Bundles
-Bundle "git://github.com/scrooloose/nerdtree.git"
+Bundle "git://github.com/wycats/nerdtree.git"
 Bundle "git://github.com/mileszs/ack.vim.git"
 Bundle "git://github.com/timcharper/textile.vim.git"
 Bundle "git://github.com/msanders/snipmate.vim.git"
 Bundle "git://github.com/scrooloose/snipmate-snippets.git"
-Bundle "git://git.wincent.com/command-t.git"
 Bundle "git://github.com/scrooloose/nerdcommenter.git"
 Bundle "git://github.com/edsono/vim-matchit.git"
 Bundle "git://github.com/tpope/vim-surround.git"
@@ -19,9 +18,14 @@ Bundle "git://github.com/ervandew/supertab.git"
 Bundle "git://github.com/tpope/vim-git.git"
 Bundle "git://github.com/tpope/vim-fugitive.git"
 "Bundle "git://github.com/tsaleh/vim-align.git"
+Bundle "git://github.com/ecomba/vim-ruby-refactoring.git"
 Bundle "rubycomplete.vim"
 Bundle "ZoomWin"
+Bundle "LustyExplorer"
+Bundle "LustyJuggler"
 
+" Config asked by LustyExplorer
+set hidden
 " No need to make it compatible with VI
 set nocompatible
 
@@ -41,8 +45,6 @@ colorscheme railscasts
 
 " Map toggle the nerdtree with F2
 map <F2> :NERDTreeToggle<cr> 
-" Command-T configuration
-let g:CommandTMaxHeight=20
 " Map for ack.vim
 nnoremap <leader>a :Ack
 " Show/Hide invisibles
@@ -60,7 +62,7 @@ filetype plugin on
 filetype indent on
 
 " Adding files not finishing on .rb to the ruby file type highlighting
-au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 
 " Tab completion
 set wildmode=list:longest,list:full
@@ -89,3 +91,6 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+" Options for vimdiff
+set diffopt+=vertical,iwhite
