@@ -39,20 +39,20 @@ bc. :BundleInstall
 This will install the following plugins 
 
 * "LustyExplorer and LustyJuggler":http://github.com/sjbach/lusty
-* http://github.com/mileszs/ack.vim
-* http://github.com/timcharper/textile.vim
-* http://github.com/msanders/snipmate.vim
-* http://github.com/scrooloose/snipmate-snippets
-* http://github.com/scrooloose/nerdcommenter
-* http://github.com/edsono/vim-matchit
-* http://github.com/tpope/vim-surround
-* http://github.com/tpope/vim-ragtag
-* http://github.com/Raimondi/delimitMate
-* http://github.com/tpope/vim-cucumber
-* http://github.com/ecomba/vim-ruby-refactoring
-
-Once this is done, you need to install the C extension for Command-T with
-bc. cd vim/bundle/command-t && rake make
+* "Ack.vim":http://github.com/mileszs/ack.vim to use ack for global finding
+* "Textile syntax highlight":http://github.com/timcharper/textile.vim Used to edit this README and "my blog":http://dev.otrobloggeek.com
+* "Snipmate":http://github.com/msanders/snipmate.vim and "scrooloose's snippets":http://github.com/scrooloose/snipmate-snippets
+* "Nerdcommenter":http://github.com/scrooloose/nerdcommenter
+* "matchit.vim":http://github.com/edsono/vim-matchit which extends the @%@ Command
+* "Surround.vim":http://github.com/tpope/vim-surround ... the best is that you "read about it":http://www.vim.org/scripts/script.php?script_id=1697, I was amazed first time I used it.
+* "Ragtag.vim":http://github.com/tpope/vim-ragtag to open/close tags the easy way. You can find more info "here":http://www.vim.org/scripts/script.php?script_id=1896.
+* "delimitMate":http://github.com/Raimondi/delimitMate
+* "Cucumber syntax highlighting":http://github.com/tpope/vim-cucumber
+* "Ruby refactoring plugin":http://github.com/ecomba/vim-ruby-refactoring, which supports some common ruby refactoring like extract a method or move post conditional.
+* "Javascript syntax highlight":http://github.com/pangloss/vim-javascript
+* "Supertab":http://github.com/ervandew/supertab which together with rubycomplete.vim works amazing with ruby autocompletion
+* ZoomWin to be able to set a window fullscreen with @<leader>z@
+* "Fugitive.vim":https://github.com/tpope/vim-fugitive An really good vim plugin to handle GIT. Give it a try if you haven't done yet.
 
 h2. Can I use them?
 
@@ -62,7 +62,7 @@ These files are MIT licensed so you can just change them as you want. However if
 
 h2. Should I use them?
 
-No, you probably shouldn't. There ire good VIM bundles and dot-files out there which you may use and are for sure better build than mines. Take a look at "Janus":https://github.com/carlhuda/janus
+No, you probably shouldn't. There are good and well maintained VIM bundles and dot-files out there which you may use and are for sure better build than those. Take a look at "Janus":https://github.com/carlhuda/janus
 
 h2. TODO
 
