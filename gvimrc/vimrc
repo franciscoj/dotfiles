@@ -17,12 +17,12 @@ Bundle "git://github.com/pangloss/vim-javascript.git"
 Bundle "git://github.com/ervandew/supertab.git"
 Bundle "git://github.com/tpope/vim-git.git"
 Bundle "git://github.com/tpope/vim-fugitive.git"
-"Bundle "git://github.com/tsaleh/vim-align.git"
 Bundle "git://github.com/ecomba/vim-ruby-refactoring.git"
 Bundle "rubycomplete.vim"
 Bundle "ZoomWin"
 Bundle "LustyExplorer"
 Bundle "LustyJuggler"
+Bundle "unimpaired.vim"
 
 " Config asked by LustyExplorer
 set hidden
@@ -80,7 +80,7 @@ set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
 
 " Put yanks into clipboard
-set clipboard+=unnamed
+"set clipboard+=unnamed
 
 " Added English spellcheck
 set spell
