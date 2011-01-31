@@ -14,6 +14,11 @@ namespace :install do
     install("git")
   end
 
+  desc "Install bash related dotfiles"
+  task :bash do
+    install("bash")
+  end
+
   desc "Install shell related dotfiles"
   task :shell do
     install("zsh")
