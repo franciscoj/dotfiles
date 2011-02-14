@@ -1,5 +1,5 @@
 " Setup vundler
-set rtp+=~/.vim/vundle.git/ 
+set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 " Bundles
 Bundle "git://github.com/wycats/nerdtree.git"
@@ -23,6 +23,9 @@ Bundle "ZoomWin"
 Bundle "LustyExplorer"
 Bundle "LustyJuggler"
 Bundle "unimpaired.vim"
+Bundle "git://github.com/godlygeek/tabular.git"
+Bundle "haml.zip"
+Bundle "Indent-Guides"
 
 " Config asked by LustyExplorer
 set hidden
@@ -44,7 +47,7 @@ set cursorline
 colorscheme railscasts
 
 " Map toggle the nerdtree with F2
-map <F2> :NERDTreeToggle<cr> 
+map <F2> :NERDTreeToggle<cr>
 " Map for ack.vim
 nnoremap <leader>a :Ack
 " Show/Hide invisibles
@@ -73,12 +76,20 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+ 
+function TrimWhiteSpace()
+  %s/\s*$//
+  ''
+:endfunction
+map <F3> :call TrimWhiteSpace()<CR>
+map! <F3> :call TrimWhiteSpace()<CR>
 
-" remove bells and properly ocnfig the status line
+" remove bells and properly config the status line
 set novisualbell  " No blinking .
 set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
-
+" show git status on vim's status line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " Put yanks into clipboard
 "set clipboard+=unnamed
 
