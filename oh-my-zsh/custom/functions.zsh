@@ -2,6 +2,11 @@ function c(){
 	cd /projects/$1;
 }
 
+function v(){
+	cd /projects/$1;
+  mvim;
+}
+
 function h(){
 	cd ~/$1;
 }
