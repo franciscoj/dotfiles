@@ -20,5 +20,7 @@ unsetopt auto_name_dirs
 
 # Alias to run Cucumber features with autospec
 alias autospec="AUTOFEATURE=true autospec"
+alias autotest="autotest -p"
 alias vim="mvim"
 alias migrate="rake db:migrate db:test:clone"
+alias rst="touch tmp/restart.txt"
