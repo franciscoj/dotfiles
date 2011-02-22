@@ -1,31 +1,38 @@
 " Setup vundler
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
-" Bundles
-Bundle "git://github.com/wycats/nerdtree.git"
-Bundle "git://github.com/mileszs/ack.vim.git"
+" VIM plugins
+"
+" File types
 Bundle "git://github.com/timcharper/textile.vim.git"
-Bundle "git://github.com/msanders/snipmate.vim.git"
-Bundle "git://github.com/scrooloose/snipmate-snippets.git"
-Bundle "git://github.com/scrooloose/nerdcommenter.git"
-Bundle "git://github.com/edsono/vim-matchit.git"
-Bundle "git://github.com/tpope/vim-surround.git"
-Bundle "git://github.com/tpope/vim-ragtag.git"
-Bundle "git://github.com/Raimondi/delimitMate.git"
 Bundle "git://github.com/tpope/vim-cucumber.git"
 Bundle "git://github.com/pangloss/vim-javascript.git"
-Bundle "git://github.com/ervandew/supertab.git"
-Bundle "git://github.com/tpope/vim-git.git"
-Bundle "git://github.com/tpope/vim-fugitive.git"
+Bundle "haml.zip"
 Bundle "git://github.com/ecomba/vim-ruby-refactoring.git"
 Bundle "rubycomplete.vim"
+" External tools
+Bundle "git://github.com/mileszs/ack.vim.git"
+Bundle "git://github.com/tpope/vim-git.git"
+Bundle "git://github.com/tpope/vim-fugitive.git"
+" Edition tools
+Bundle "git://github.com/tpope/vim-surround.git"
+Bundle "git://github.com/tpope/vim-ragtag.git"
+Bundle "git://github.com/scrooloose/nerdcommenter.git"
+Bundle "git://github.com/ervandew/supertab.git"
+Bundle "git://github.com/edsono/vim-matchit.git"
+Bundle "git://github.com/Raimondi/delimitMate.git"
+Bundle "unimpaired.vim"
+Bundle "git://github.com/godlygeek/tabular.git"
+" Exploring and buffers
+Bundle "git://github.com/wycats/nerdtree.git"
+Bundle "git://github.com/msanders/snipmate.vim.git"
+Bundle "git://github.com/scrooloose/snipmate-snippets.git"
 Bundle "ZoomWin"
 Bundle "LustyExplorer"
 Bundle "LustyJuggler"
-Bundle "unimpaired.vim"
-Bundle "git://github.com/godlygeek/tabular.git"
-Bundle "haml.zip"
 Bundle "Indent-Guides"
+" Testing
+Bundle "git://github.com/vim-scripts/taglist.vim.git"
 
 " Config asked by LustyExplorer
 set hidden
@@ -87,11 +94,11 @@ map! <F3> :call TrimWhiteSpace()<CR>
 " remove bells and properly config the status line
 set novisualbell  " No blinking .
 set noerrorbells  " No noise.
-set laststatus=2  " Always show status line.
+
+" Always show status line.
+set laststatus=2  
 " show git status on vim's status line
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-" Put yanks into clipboard
-"set clipboard+=unnamed
 
 " Added English spellcheck
 set spell
@@ -105,3 +112,6 @@ set smartcase
 
 " Options for vimdiff
 set diffopt+=vertical,iwhite
+
+" Store swap files in a common directory
+set directory=~/.vim/swap,.
