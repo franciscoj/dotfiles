@@ -32,6 +32,7 @@ Bundle "git://github.com/msanders/snipmate.vim.git"
 Bundle "git://github.com/scrooloose/snipmate-snippets.git"
 Bundle "ZoomWin"
 Bundle "Indent-Guides"
+Bundle "Command-T"
 " Testing
 
 " No need to make it compatible with VI
@@ -51,7 +52,7 @@ set cursorline
 colorscheme railscasts
 
 " Map for ack.vim
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack<space>
 " Show/Hide invisibles
 nmap <leader>l :set list!<cr>
 " Map for ZoomWin
