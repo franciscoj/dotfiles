@@ -1,8 +1,8 @@
 " Setup vundler
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
+
 " VIM plugins
-"
 " File types
 Bundle "git://github.com/timcharper/textile.vim.git"
 Bundle "git://github.com/tpope/vim-cucumber.git"
@@ -10,6 +10,8 @@ Bundle "git://github.com/pangloss/vim-javascript.git"
 Bundle "haml.zip"
 Bundle "git://github.com/ecomba/vim-ruby-refactoring.git"
 Bundle "rubycomplete.vim"
+Bundle "rails.vim"
+Bundle "https://github.com/bronson/vim-ruby-block-conv.git"
 " External tools
 Bundle "git://github.com/mileszs/ack.vim.git"
 Bundle "git://github.com/tpope/vim-git.git"
@@ -23,25 +25,20 @@ Bundle "git://github.com/edsono/vim-matchit.git"
 Bundle "git://github.com/Raimondi/delimitMate.git"
 Bundle "unimpaired.vim"
 Bundle "git://github.com/godlygeek/tabular.git"
+Bundle "https://github.com/bronson/vim-trailing-whitespace.git"
 " Exploring and buffers
 Bundle "git://github.com/wycats/nerdtree.git"
 Bundle "git://github.com/msanders/snipmate.vim.git"
 Bundle "git://github.com/scrooloose/snipmate-snippets.git"
 Bundle "ZoomWin"
-Bundle "LustyExplorer"
-Bundle "LustyJuggler"
 Bundle "Indent-Guides"
 " Testing
-Bundle "git://github.com/vim-scripts/taglist.vim.git"
 
-" Config asked by LustyExplorer
-set hidden
 " No need to make it compatible with VI
 set nocompatible
 
-" Map the leader character to "," instead of \ (much more easy to use in a
-" Spanish keyboard)
-let mapleader = ","
+" Map the leader character to "," instead of \ (much more easy to use in a Spanish keyboard)
+let mapleader=","
 
 " show line numbers
 set nu
@@ -53,16 +50,22 @@ set cursorline
 " Use railscasts colorscheme by Ryan Bates
 colorscheme railscasts
 
-" Map toggle the nerdtree with F2
-map <F2> :NERDTreeToggle<cr>
 " Map for ack.vim
 nnoremap <leader>a :Ack
 " Show/Hide invisibles
 nmap <leader>l :set list!<cr>
 " Map for ZoomWin
 map <Leader>z :ZoomWin<CR>
+" Map toggle the nerdtree with F2
+map <F2> :NERDTreeToggle<cr>
+" Use F3 to clear unwanted whitespace
+map <F4> :FixWhitespace<CR>
+" Unhighlight search
+map <F5> :noh<CR>
+" Open fugitive's git status
+map <F3> :Gstatus<CR>
 
-"Set invisivles to the same as in TextMate
+" Set invisibles to the same as in TextMate
 set listchars=tab:▸\ ,eol:¬,trail:.
 
 " Filetype highlighting and indentation activation
@@ -83,21 +86,14 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
- 
-function TrimWhiteSpace()
-  %s/\s*$//
-  ''
-:endfunction
-map <F3> :call TrimWhiteSpace()<CR>
-map! <F3> :call TrimWhiteSpace()<CR>
 
 " remove bells and properly config the status line
 set novisualbell  " No blinking .
 set noerrorbells  " No noise.
 
 " Always show status line.
-set laststatus=2  
-" show git status on vim's status line
+set laststatus=2
+" show git status on vim's status line (using fugitive)
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Added English spellcheck
