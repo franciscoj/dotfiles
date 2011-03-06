@@ -32,7 +32,6 @@ Bundle "git://github.com/msanders/snipmate.vim.git"
 Bundle "git://github.com/scrooloose/snipmate-snippets.git"
 Bundle "ZoomWin"
 Bundle "Indent-Guides"
-Bundle "Command-T"
 " Testing
 
 " No need to make it compatible with VI
