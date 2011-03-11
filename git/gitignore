@@ -2,3 +2,5 @@
 .svn
 *~
 .*.swp
+*_test
+*_test2
