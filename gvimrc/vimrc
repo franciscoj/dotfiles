@@ -33,6 +33,7 @@ Bundle "git://github.com/scrooloose/snipmate-snippets.git"
 Bundle "ZoomWin"
 Bundle "Indent-Guides"
 " Testing
+Bundle 'bufexplorer.zip'
 
 " No need to make it compatible with VI
 set nocompatible
@@ -75,7 +76,7 @@ filetype plugin on
 filetype indent on
 
 " Adding files not finishing on .rb to the ruby file type highlighting
-au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,config.ru,.caprc,.irbrc,irb_tempfile*,*.thor} set ft=ruby
+au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,config.ru,.caprc,.irbrc,.railsrc,irb_tempfile*,*.thor} set ft=ruby
 
 " Tab completion
 set wildmode=list:longest,list:full
