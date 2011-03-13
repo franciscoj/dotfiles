@@ -59,12 +59,12 @@ nmap <leader>l :set list!<cr>
 map <Leader>z :ZoomWin<CR>
 " Map toggle the nerdtree with F2
 map <F2> :NERDTreeToggle<cr>
-" Use F3 to clear unwanted whitespace
+" Open fugitive's git status
+map <F3> :Gstatus<CR>
+" Use F4 to clear unwanted whitespace
 map <F4> :FixWhitespace<CR>
 " Unhighlight search
 map <F5> :noh<CR>
-" Open fugitive's git status
-map <F3> :Gstatus<CR>
 
 " Set invisibles to the same as in TextMate
 set listchars=tab:▸\ ,eol:¬,trail:.
@@ -76,7 +76,7 @@ filetype plugin on
 filetype indent on
 
 " Adding files not finishing on .rb to the ruby file type highlighting
-au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,config.ru,.caprc,.irbrc,.railsrc,irb_tempfile*,*.thor} set ft=ruby
+au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,config.ru,.caprc,*.thor} set ft=ruby
 
 " Tab completion
 set wildmode=list:longest,list:full
