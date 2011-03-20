@@ -13,7 +13,7 @@ export PATH="~/bin:/usr/local/Cellar/bin:/usr/local/bin:/usr/local/sbin:/usr/loc
 # Load android-sdk installed from homebrew
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r6
 # Set macvim as the default editor
-export EDITOR='mvim -f'
+export EDITOR='/usr/local/bin/mvim -f'
 
 # Load RVM
 unsetopt auto_name_dirs
