@@ -1,3 +1,5 @@
+set shell=/bin/bash
+
 " Setup vundler
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
@@ -8,7 +10,6 @@ Bundle "git://github.com/timcharper/textile.vim.git"
 Bundle "git://github.com/tpope/vim-cucumber.git"
 Bundle "git://github.com/pangloss/vim-javascript.git"
 Bundle "haml.zip"
-Bundle "git://github.com/ecomba/vim-ruby-refactoring.git"
 Bundle "rubycomplete.vim"
 Bundle "rails.vim"
 Bundle "https://github.com/bronson/vim-ruby-block-conv.git"
@@ -65,6 +66,9 @@ map <F3> :Gstatus<CR>
 map <F4> :FixWhitespace<CR>
 " Unhighlight search
 map <F5> :noh<CR>
+" Format code
+map   <silent> <F6> mmgg=G`m^
+imap  <silent> <F6> <Esc> mmgg=G`m^
 
 " Set invisibles to the same as in TextMate
 set listchars=tab:▸\ ,eol:¬,trail:.

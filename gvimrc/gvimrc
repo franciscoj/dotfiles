@@ -1,7 +1,8 @@
+set shell=/bin/bash
 " set the vim windows size
 set lines=55 columns=170
 " Set the macvim font
-set guifont=Monaco:h14
+set guifont=Monaco:h13
 
 if has("gui_macvim")
   " Command-Shift-F for Ack
