@@ -10,7 +10,6 @@ Bundle "git://github.com/timcharper/textile.vim.git"
 Bundle "git://github.com/tpope/vim-cucumber.git"
 Bundle "git://github.com/pangloss/vim-javascript.git"
 Bundle "haml.zip"
-Bundle "rubycomplete.vim"
 Bundle "rails.vim"
 Bundle "https://github.com/bronson/vim-ruby-block-conv.git"
 " External tools
