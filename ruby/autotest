@@ -3,7 +3,7 @@
 end
 
 # rspec crashes when loading redgreen test using autospec
-require 'redgreen/autotest' unless ENV['RSPEC']
+#require 'redgreen/autotest' unless ENV['RSPEC']
 
 Autotest.add_hook :initialize do |autotest|
   %w[.git .svn .hg .DS_Store ._* vendor tmp log doc].each do |exception|
