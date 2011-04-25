@@ -6,23 +6,23 @@ call vundle#rc()
 
 " VIM plugins
 " File types
-Bundle "git://github.com/timcharper/textile.vim.git"
-Bundle "git://github.com/tpope/vim-cucumber.git"
+Bundle 'Textile-for-VIM'
+Bundle 'cucumber.zip'
 Bundle "git://github.com/pangloss/vim-javascript.git"
 Bundle "haml.zip"
 Bundle "rails.vim"
 Bundle "https://github.com/bronson/vim-ruby-block-conv.git"
 " External tools
-Bundle "git://github.com/mileszs/ack.vim.git"
-Bundle "git://github.com/tpope/vim-git.git"
-Bundle "git://github.com/tpope/vim-fugitive.git"
+Bundle 'ack.vim'
+Bundle 'git.zip'
+Bundle 'fugitive.vim'
 " Edition tools
-Bundle "git://github.com/tpope/vim-surround.git"
-Bundle "git://github.com/tpope/vim-ragtag.git"
-Bundle "git://github.com/scrooloose/nerdcommenter.git"
-Bundle "git://github.com/ervandew/supertab.git"
-Bundle "git://github.com/edsono/vim-matchit.git"
-Bundle "git://github.com/Raimondi/delimitMate.git"
+Bundle 'surround.vim'
+Bundle 'ragtag.vim'
+Bundle 'The-NERD-Commenter'
+Bundle 'SuperTab'
+Bundle "matchit.zip"
+Bundle 'delimitMate.vim'
 Bundle "unimpaired.vim"
 Bundle "git://github.com/godlygeek/tabular.git"
 Bundle "https://github.com/bronson/vim-trailing-whitespace.git"
