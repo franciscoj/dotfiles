@@ -19,6 +19,8 @@ export EDITOR='/usr/local/bin/mvim -f'
 unsetopt auto_name_dirs
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+export AUTOFEATURE=true
+
 alias pautotest="autotest -p"
 alias vim="mvim"
 alias migrate="rake db:migrate db:test:clone"
