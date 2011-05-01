@@ -12,6 +12,7 @@ Bundle "git://github.com/pangloss/vim-javascript.git"
 Bundle "haml.zip"
 Bundle "rails.vim"
 Bundle "https://github.com/bronson/vim-ruby-block-conv.git"
+Bundle 'rubycomplete.vim'
 " External tools
 Bundle 'ack.vim'
 Bundle 'git.zip'
@@ -20,7 +21,7 @@ Bundle 'fugitive.vim'
 Bundle 'surround.vim'
 Bundle 'ragtag.vim'
 Bundle 'The-NERD-Commenter'
-Bundle 'SuperTab'
+Bundle 'SuperTab-continued.'
 Bundle "matchit.zip"
 Bundle 'delimitMate.vim'
 Bundle "unimpaired.vim"
@@ -80,9 +81,16 @@ filetype indent on
 
 " Adding files not finishing on .rb to the ruby file type highlighting
 au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,config.ru,.caprc,*.thor} set ft=ruby
+"ruby autocomplete
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
 
 " Tab completion
-set wildmode=list:longest,list:full
+"set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc
 
 " set the indenting configuration
