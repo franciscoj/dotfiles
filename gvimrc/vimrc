@@ -27,6 +27,8 @@ Bundle 'delimitMate.vim'
 Bundle "unimpaired.vim"
 Bundle "git://github.com/godlygeek/tabular.git"
 Bundle "https://github.com/bronson/vim-trailing-whitespace.git"
+Bundle 'textobj-user'
+Bundle 'git://github.com/nelstrom/vim-textobj-rubyblock.git'
 " Exploring and buffers
 Bundle "git://github.com/wycats/nerdtree.git"
 Bundle "git://github.com/msanders/snipmate.vim.git"
@@ -41,6 +43,9 @@ set nocompatible
 
 " Map the leader character to "," instead of \ (much more easy to use in a Spanish keyboard)
 let mapleader=","
+
+" Needed for the ruby block object plugin
+runtime macros/matchit.vim
 
 " show line numbers
 set nu
