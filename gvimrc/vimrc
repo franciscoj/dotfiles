@@ -5,6 +5,8 @@ set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
 " VIM plugins
+Bundle 'git://github.com/altercation/vim-colors-solarized.git'
+Bundle 'Wombat'
 " File types
 Bundle 'Textile-for-VIM'
 Bundle 'cucumber.zip'
@@ -35,8 +37,11 @@ Bundle "git://github.com/msanders/snipmate.vim.git"
 Bundle "git://github.com/scrooloose/snipmate-snippets.git"
 Bundle "ZoomWin"
 Bundle "Indent-Guides"
-" Testing
 Bundle 'bufexplorer.zip'
+" Tags
+Bundle 'taglist.vim'
+Bundle 'AutoTag'
+
 
 " No need to make it compatible with VI
 set nocompatible
@@ -56,6 +61,11 @@ set cursorline
 
 " Use railscasts colorscheme by Ryan Bates
 colorscheme railscasts
+" Use solarized colorscheme
+"set background=light " With light background
+"set background=dark " With dark background
+"colorscheme solarized
+"colorscheme Wombat
 
 " Map for ack.vim
 nnoremap <leader>a :Ack<space>
@@ -74,6 +84,8 @@ map <F5> :noh<CR>
 " Format code
 map   <silent> <F6> mmgg=G`m^
 imap  <silent> <F6> <Esc> mmgg=G`m^
+
+map <Leader>rt :!ctags --extra=+f -R * `bundle show rails`/../* <CR><CR>
 
 " Set invisibles to the same as in TextMate
 set listchars=tab:▸\ ,eol:¬,trail:.
