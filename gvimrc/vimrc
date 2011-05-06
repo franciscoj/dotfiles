@@ -61,11 +61,6 @@ set cursorline
 
 " Use railscasts colorscheme by Ryan Bates
 colorscheme railscasts
-" Use solarized colorscheme
-"set background=light " With light background
-"set background=dark " With dark background
-"colorscheme solarized
-"colorscheme Wombat
 
 " Map for ack.vim
 nnoremap <leader>a :Ack<space>
