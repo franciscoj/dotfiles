@@ -117,13 +117,14 @@ nmap <silent> ,gs :Gstatus<CR>
 nmap <silent> ,gd :Gdiff<CR>
 imap ,f <Esc> mmgg=G`m^
 map ,f mmgg=G`m^
-map <Leader>z :ZoomWin<CR>
+map ,z :ZoomWin<CR>
 map ,t :NERDTreeToggle<cr>
 map <F2> :FixWhitespace<CR>
 map ,n :noh<CR>
 map ,rt :!ctags --extra=+f -R * `bundle show rails`/../* <CR><CR>
 
 noremap ,a :Ack<space>
+noremap ,g :Git<space>
 noremap <silent> ,h :wincmd h<CR>
 noremap <silent> ,j :wincmd j<CR>
 noremap <silent> ,k :wincmd k<CR>
