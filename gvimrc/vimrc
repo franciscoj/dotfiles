@@ -1,12 +1,14 @@
+" Don't really know what this does, but Vim is a bit more stable with
+" RVM using this
 set shell=/bin/bash
+" No need to make it compatible with VI
+set nocompatible
 
-" Setup vundler
+" ******************************************************************************
+" Setup vundler and plugins
+" ******************************************************************************
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
-
-" VIM plugins
-Bundle 'git://github.com/altercation/vim-colors-solarized.git'
-Bundle 'Wombat'
 " File types
 Bundle 'Textile-for-VIM'
 Bundle 'cucumber.zip'
@@ -44,58 +46,60 @@ Bundle 'AutoTag'
 " Testing
 Bundle 'Syntastic'
 
-
-" No need to make it compatible with VI
-set nocompatible
-
-" Map the leader character to "," instead of \ (much more easy to use in a Spanish keyboard)
-let mapleader=","
-
-" Needed for the ruby block object plugin
-runtime macros/matchit.vim
-
-" show line numbers
-set nu
-set ruler
-
-" Highlight the line with the cursor on it
-set cursorline
-
-" Use railscasts colorscheme by Ryan Bates
+" ******************************************************************************
+" Make it pretty
+" ******************************************************************************
+set guioptions=ac
 colorscheme railscasts
-
-" Map for ack.vim
-nnoremap <leader>a :Ack<space>
-" Show/Hide invisibles
-nmap <leader>l :set list!<cr>
-" Map for ZoomWin
-map <Leader>z :ZoomWin<CR>
-" Map toggle the nerdtree with F2
-map <F2> :NERDTreeToggle<cr>
-" Open fugitive's git status
-map <F3> :Gstatus<CR>
-" Use F4 to clear unwanted whitespace
-map <F4> :FixWhitespace<CR>
-" Unhighlight search
-map <F5> :noh<CR>
-" Format code
-map   <silent> <F6> mmgg=G`m^
-imap  <silent> <F6> <Esc> mmgg=G`m^
-
-map <Leader>rt :!ctags --extra=+f -R * `bundle show rails`/../* <CR><CR>
-
-" Set invisibles to the same as in TextMate
-set listchars=tab:▸\ ,eol:¬,trail:.
-
+set diffopt+=iwhite
+set number
+set ruler " Show position in the file
+set cursorline
+set cpoptions+=$ " Mark with a $ at the end of a 'change' command
+set listchars=tab:▸\ ,eol:¬,trail:. " Same invisibles as in TextMate
+" Indent using 2 spaces
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set laststatus=2 " Always show status line.
 " Filetype highlighting and indentation activation
 syntax on
 filetype on
 filetype plugin on
 filetype indent on
+" Show fugitive.vim's GIT status
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+" Warn about syntactic errors using Syntastic.vim
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_enable_signs=1
 
-" Adding files not finishing on .rb to the ruby file type highlighting
+" ******************************************************************************
+" Some defaults I like/need
+" ******************************************************************************
+set scrolloff=8
+let mapleader=","
+runtime macros/matchit.vim " Needed for the ruby block object plugin
+set spell
+set spelllang=en_us
+set directory=~/.vim/swap,. " Store swap files in a common directory
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+" Don't forget to set ft for Ruby files
 au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,config.ru,.caprc,*.thor} set ft=ruby
-"ruby autocomplete
+
+" ******************************************************************************
+" Auto completion
+" ******************************************************************************
+set wildmenu
+set wildmode=longest,list
+set wildignore+=*.o,*.obj,.git,*.rbc
+" Auto complete for ruby
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
@@ -103,48 +107,31 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 
-" Tab completion
-"set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc
+" ******************************************************************************
+" Some custom key mapping
+" ******************************************************************************
+nmap <silent> ,ev :e $MYVIMRC
+nmap <silent> ,sv :so $MYVIMRC
+nmap <silent> ,l :set list!<cr>
+nmap <silent> ,gs :Gstatus<CR>
+nmap <silent> ,gd :Gdiff<CR>
+imap ,f <Esc> mmgg=G`m^
+map ,f mmgg=G`m^
+map <Leader>z :ZoomWin<CR>
+map ,t :NERDTreeToggle<cr>
+map <F2> :FixWhitespace<CR>
+map ,n :noh<CR>
+map ,rt :!ctags --extra=+f -R * `bundle show rails`/../* <CR><CR>
 
-" set the indenting configuration
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
+noremap ,a :Ack<space>
+noremap <silent> ,h :wincmd h<CR>
+noremap <silent> ,j :wincmd j<CR>
+noremap <silent> ,k :wincmd k<CR>
+noremap <silent> ,l :wincmd l<CR>
+noremap <silent> ,cc :close<CR>
 
-" remove bells and properly config the status line
-set novisualbell  " No blinking .
-set noerrorbells  " No noise.
-
-" Always show status line.
-set laststatus=2
-" show git status on vim's status line (using fugitive)
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_enable_signs=1
-
-" Added English spellcheck
-set spell
-set spelllang=en_us
-
-" Searching
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-
-" Options for vimdiff
-set diffopt+=vertical,iwhite
-
-" Store swap files in a common directory
-set directory=~/.vim/swap,.
-
-" Align | characters on features
+" Align Cucumber tables with Tabular plugin
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
   if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
@@ -155,3 +142,10 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
+
+if has("gui_macvim")
+  " set the vim windows size
+  set lines=55 columns=90
+  " Set the macvim font
+  set guifont=Monaco:h13
+endif

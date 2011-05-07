@@ -11,6 +11,7 @@ These are my dotfiles. They're more a way to learn to use tools like rake, VIM, 
 * [Mislav Marohnić](http://github.com/mislav/dotfile)
 * [Martin Grenfell vimfiles](http://github.com/scrooloose/vimfile)
 * [carlhuda's janus](https://github.com/carlhuda/janus) (Check it out... the only way to describe it is AWESOME!!)
+* [Derek Wyatt](http://www.derekwyatt.org) Have a look at its VIM screencasts, it rocks.
 * and some others that I will include when I remember :)
 
 ## What it does?
@@ -23,10 +24,7 @@ Those files are made just to configure my development system in a way which I'm 
 * some oh-my-zsh customizations
 * dotfiles for Rubygems, RDoc, IRB, Capistrano, Ruby on Rails IRB and GIT
 * dotfiles for Vim using [Vundle](https://github.com/gmarik/vundle) to install its plugins
-* Some alias I like
-
-    alias vim="mvim" # since 99.9% of time I use vim from the GUI
-    alias migrate="rake db:migrate db:test:clone"
+* Some alias I like.
 
 ## How to install?
 
@@ -36,7 +34,6 @@ To install all the Vim plugins and snippets you need to open Vim and run `:Bundl
 
 This will install the following plugins
 
-* [LustyExplorer and LustyJuggler](http://github.com/sjbach/lusty)
 * [Ack.vim](http://github.com/mileszs/ack.vim) to use ack for global finding
 * [Textile syntax highlight](http://github.com/timcharper/textile.vim) 
 * [Snipmate](http://github.com/msanders/snipmate.vim) and [scrooloose's snippets](http://github.com/scrooloose/snipmate-snippets)
