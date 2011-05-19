@@ -3,6 +3,7 @@
 set shell=/bin/bash
 " No need to make it compatible with VI
 set nocompatible
+filetype off " Asked by Vundle
 
 " ******************************************************************************
 " Setup vundler and plugins
@@ -36,7 +37,6 @@ Bundle 'git://github.com/nelstrom/vim-textobj-rubyblock.git'
 " Exploring and buffers
 Bundle "git://github.com/wycats/nerdtree.git"
 Bundle "git://github.com/msanders/snipmate.vim.git"
-Bundle "git://github.com/scrooloose/snipmate-snippets.git"
 Bundle "ZoomWin"
 Bundle "Indent-Guides"
 Bundle 'bufexplorer.zip'
@@ -49,6 +49,12 @@ Bundle 'Syntastic'
 " ******************************************************************************
 " Make it pretty
 " ******************************************************************************
+" Filetype highlighting and indentation activation
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+
 set guioptions=ac
 colorscheme railscasts
 set diffopt+=iwhite
@@ -63,11 +69,6 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set laststatus=2 " Always show status line.
-" Filetype highlighting and indentation activation
-syntax on
-filetype on
-filetype plugin on
-filetype indent on
 " Show fugitive.vim's GIT status
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " Warn about syntactic errors using Syntastic.vim
@@ -76,10 +77,12 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_enable_signs=1
 
+set colorcolumn=80
+
 " ******************************************************************************
 " Some defaults I like/need
 " ******************************************************************************
-set scrolloff=8
+set scrolloff=8 " Leave 8 lines before start scrolling
 let mapleader=","
 runtime macros/matchit.vim " Needed for the ruby block object plugin
 set spell
@@ -91,7 +94,7 @@ set incsearch
 set ignorecase
 set smartcase
 " Don't forget to set ft for Ruby files
-au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,config.ru,.caprc,*.thor} set ft=ruby
+au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,Guardfile,config.ru,.caprc,*.thor} set ft=ruby
 
 " ******************************************************************************
 " Auto completion
@@ -129,7 +132,6 @@ noremap <silent> ,h :wincmd h<CR>
 noremap <silent> ,j :wincmd j<CR>
 noremap <silent> ,k :wincmd k<CR>
 noremap <silent> ,l :wincmd l<CR>
-noremap <silent> ,cc :close<CR>
 
 " Align Cucumber tables with Tabular plugin
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
@@ -146,7 +148,7 @@ endfunction
 
 if has("gui_macvim")
   " set the vim windows size
-  set lines=55 columns=90
+  set lines=55 columns=150
   " Set the macvim font
   set guifont=Monaco:h13
 endif
