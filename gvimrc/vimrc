@@ -13,10 +13,10 @@ call vundle#rc()
 " File types
 Bundle 'Textile-for-VIM'
 Bundle 'cucumber.zip'
-Bundle "git://github.com/pangloss/vim-javascript.git"
+Bundle "pangloss/vim-javascript"
 Bundle "haml.zip"
 Bundle "rails.vim"
-Bundle "https://github.com/bronson/vim-ruby-block-conv.git"
+Bundle "bronson/vim-ruby-block-conv"
 Bundle 'rubycomplete.vim'
 " External tools
 Bundle 'ack.vim'
@@ -30,17 +30,18 @@ Bundle 'SuperTab-continued.'
 Bundle "matchit.zip"
 Bundle 'delimitMate.vim'
 Bundle "unimpaired.vim"
-Bundle "git://github.com/godlygeek/tabular.git"
-Bundle "https://github.com/bronson/vim-trailing-whitespace.git"
+Bundle "godlygeek/tabular"
+Bundle "bronson/vim-trailing-whitespace"
 Bundle 'textobj-user'
-Bundle 'git://github.com/nelstrom/vim-textobj-rubyblock.git'
+Bundle 'nelstrom/vim-textobj-rubyblock'
 " Exploring and buffers
-Bundle "git://github.com/wycats/nerdtree.git"
-Bundle "git://github.com/msanders/snipmate.vim.git"
+Bundle "scrooloose/nerdtree"
+Bundle "msanders/snipmate.vim"
 Bundle "ZoomWin"
 Bundle "Indent-Guides"
 Bundle 'bufexplorer.zip'
 " Tags
+Bundle 'xolox/vim-easytags'
 Bundle 'taglist.vim'
 " Testing
 Bundle 'Syntastic'
