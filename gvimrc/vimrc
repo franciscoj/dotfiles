@@ -42,7 +42,6 @@ Bundle "Indent-Guides"
 Bundle 'bufexplorer.zip'
 " Tags
 Bundle 'taglist.vim'
-Bundle 'AutoTag'
 " Testing
 Bundle 'Syntastic'
 
