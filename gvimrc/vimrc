@@ -146,6 +146,9 @@ function! s:align()
   endif
 endfunction
 
+" Source snippets support functions
+source ~/.vim/bundle/snipmate.vim/snippets/support_functions.vim
+
 if has("gui_macvim")
   " set the vim windows size
   set lines=55 columns=150
