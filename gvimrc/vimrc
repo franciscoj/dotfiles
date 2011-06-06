@@ -22,6 +22,7 @@ Bundle 'rubycomplete.vim'
 Bundle 'ack.vim'
 Bundle 'git.zip'
 Bundle 'fugitive.vim'
+Bundle 'extradite.vim'
 " Edition tools
 Bundle 'surround.vim'
 Bundle 'ragtag.vim'
@@ -119,6 +120,7 @@ nmap <silent> ,sv :so $MYVIMRC
 nmap <silent> ,l :set list!<cr>
 nmap <silent> ,gs :Gstatus<CR>
 nmap <silent> ,gd :Gdiff<CR>
+nmap <silent> ,gl :Extradite<CR>
 imap ,f <Esc> mmgg=G`m^
 map ,f mmgg=G`m^
 map ,z :ZoomWin<CR>
