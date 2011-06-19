@@ -12,6 +12,7 @@ These are my dotfiles. They're more a way to learn to use tools like rake, VIM, 
 * [Martin Grenfell vimfiles](http://github.com/scrooloose/vimfile)
 * [carlhuda's janus](https://github.com/carlhuda/janus) (Check it out... the only way to describe it is AWESOME!!)
 * [Derek Wyatt](http://www.derekwyatt.org) Have a look at its VIM screencasts, it rocks.
+* [Steve Francia](https://github.com/spf13/spf13-vim/blob/master/.vimrc)
 * and some others that I will include when I remember :)
 
 ## What it does?
@@ -47,7 +48,7 @@ This will install the following plugins
 * [Javascript syntax highlight](http://github.com/pangloss/vim-javascript)
 * [Supertab](http://github.com/ervandew/supertab) which together with rubycomplete.vim works amazing with ruby auto completion
 * ZoomWin to be able to set a window full screen with `<leader>z`
-* [Fugitive.vim](https://github.com/tpope/vim-fugitive) An really good vim plugin to handle GIT. Give it a try if you haven't done yet.
+* [Fugitive.vim](https://github.com/tpope/vim-fugitive) A really good vim plugin to handle GIT. Give it a try if you haven't done yet.
 
 ## Can I use them?
 

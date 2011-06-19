@@ -10,7 +10,7 @@ filetype off " Asked by Vundle
 " ******************************************************************************
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
-" File types
+" File types"{{{
 Bundle 'Textile-for-VIM'
 Bundle 'cucumber.zip'
 Bundle "pangloss/vim-javascript"
@@ -18,12 +18,14 @@ Bundle "haml.zip"
 Bundle "rails.vim"
 Bundle "bronson/vim-ruby-block-conv"
 Bundle 'rubycomplete.vim'
-" External tools
+"}}}
+" External tools"{{{
 Bundle 'ack.vim'
 Bundle 'git.zip'
 Bundle 'fugitive.vim'
 Bundle 'extradite.vim'
-" Edition tools
+"}}}
+" Edition tools"{{{
 Bundle 'surround.vim'
 Bundle 'ragtag.vim'
 Bundle 'tComment'
@@ -31,12 +33,13 @@ Bundle 'SuperTab-continued.'
 Bundle "matchit.zip"
 Bundle 'delimitMate.vim'
 Bundle "unimpaired.vim"
-Bundle "godlygeek/tabular"
+Bundle 'Tabular'
 Bundle "bronson/vim-trailing-whitespace"
 Bundle 'textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'Syntastic'
-" Exploring and buffers
+"}}}
+" Exploring and buffers"{{{
 Bundle "scrooloose/nerdtree"
 Bundle "msanders/snipmate.vim"
 Bundle "ZoomWin"
@@ -48,100 +51,141 @@ Bundle 'taglist.vim'
 " I'm just TESTING this
 Bundle 'repeat.vim'
 Bundle 'xolox/vim-notes'
+"}}}
 
 " ******************************************************************************
 " Make it pretty
 " ******************************************************************************
-" Filetype highlighting and indentation activation
+colorscheme railscasts
+set guioptions=ac
+set number
+set cursorline
+set colorcolumn=80 " Mark 80th column with a red line
+set listchars=tab:▸\ ,eol:¬,trail:. " Same invisibles as in TextMate
+set diffopt+=iwhite
+set cpoptions+=$ " Mark with a $ at the end of a 'change' command
+set showcmd
+
+" Filetype highlighting and indentation activation"{{{
 syntax on
 filetype on
 filetype plugin on
 filetype indent on
-
-set guioptions=ac
-colorscheme railscasts
-set diffopt+=iwhite
-set number
-set ruler " Show position in the file
-set cursorline
-set cpoptions+=$ " Mark with a $ at the end of a 'change' command
-set listchars=tab:▸\ ,eol:¬,trail:. " Same invisibles as in TextMate
-" Indent using 2 spaces
+"}}}
+" Pretty indexing with 2 spaces"{{{
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+"}}}
+" Statusline config"{{{
 set laststatus=2 " Always show status line.
+" Filename
+set statusline=%<%f\ " Filename
+" Preview, help, modified and readonly flags
+set statusline+=%w%h%m%r
 " Show fugitive.vim's GIT status
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline+=%{fugitive#statusline()} " Git Hotness
+" Filetype
+set statusline+=\%y
+" Current dir
+set statusline+=\ [%{getcwd()}]
 " Warn about syntactic errors using Syntastic.vim
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_enable_signs=1
+" Right aligned file nav info
+set statusline+=%=%-14.(%l,%c%V%)\ %p%%
+"}}}
 
-set colorcolumn=80
+" Sintastic.vim config
+let g:syntastic_enable_signs=1
 
 " ******************************************************************************
 " Some defaults I like/need
 " ******************************************************************************
 set scrolloff=8 " Leave 8 lines before start scrolling
-let mapleader=","
 runtime macros/matchit.vim " Needed for the ruby block object plugin
 set spell
 set spelllang=en_us
 set directory=~/.vim/swap,. " Store swap files in a common directory
-" Searching
+" Searching"{{{
 set hlsearch
 set incsearch
 set ignorecase
-set smartcase
+set smartcase"}}}
+
 " Don't forget to set ft for Ruby files
 au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,Guardfile,config.ru,.caprc,*.thor} set ft=ruby
 
+" Auto save and load view (state) (folds, cursor, etc)"{{{
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
+"}}}
 " ******************************************************************************
 " Auto completion
 " ******************************************************************************
+" Pretty auto completion"{{{
+highlight Pmenu ctermbg=238 gui=bold
 set wildmenu
 set wildmode=longest,list
 set wildignore+=*.o,*.obj,.git,*.rbc
-" Auto complete for ruby
+"}}}
+" Auto complete for ruby"{{{
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-"improve autocomplete menu color
-highlight Pmenu ctermbg=238 gui=bold
-
+"}}}
 " ******************************************************************************
 " Some custom key mapping
 " ******************************************************************************
+" Misc mappings"{{{
+let mapleader=","
+map <F2> :FixWhitespace<CR>
+noremap ,a :Ack<space>
+map ,z :ZoomWin<CR>
+map ,t :NERDTreeToggle<CR>
+map ,,t :TlistToggle<CR>
+map ,n :noh<CR>
+"}}}
+" VIMRC mappings"{{{
 nmap <silent> ,ev :e $MYVIMRC
 nmap <silent> ,sv :so $MYVIMRC
-nmap <silent> ,l :set list!<cr>
+"}}}
+" Code indenting"{{{
+imap ,f <Esc> mmgg=G`m^
+map ,f mmgg=G`m^
+"}}}
+" GIT related mappings"{{{
 nmap <silent> ,gs :Gstatus<CR>
 nmap <silent> ,gd :Gdiff<CR>
 nmap <silent> ,gl :Extradite<CR>
-imap ,f <Esc> mmgg=G`m^
-map ,f mmgg=G`m^
-map ,z :ZoomWin<CR>
-map ,t :NERDTreeToggle<cr>
-map ,,t :TlistOpen<cr>
-map <F2> :FixWhitespace<CR>
-map ,n :noh<CR>
-map ,rt :!ctags --extra=+f -R * `bundle show rails`/../* <CR><CR>
-
-noremap ,a :Ack<space>
 noremap ,g :Git<space>
+"}}}
+" Commenting mappings"{{{
+nnoremap // :TComment<CR>
+vnoremap // :TComment<CR>
+"}}}
+" Window mappings"{{{
 noremap <silent> ,h :wincmd h<CR>
 noremap <silent> ,j :wincmd j<CR>
 noremap <silent> ,k :wincmd k<CR>
 noremap <silent> ,l :wincmd l<CR>
+"}}}
+" Tabularize mappings
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a: :Tabularize /:<CR>
+nmap <Leader>a:: :Tabularize /:\zs<CR>
+vmap <Leader>a:: :Tabularize /:\zs<CR>
+nmap <Leader>a, :Tabularize /,<CR>
+vmap <Leader>a, :Tabularize /,<CR>
+nmap <Leader>a| :Tabularize /|<CR>
+vmap <Leader>a| :Tabularize /|<CR>
 
-nnoremap // :TComment<CR>
-vnoremap // :TComment<CR>
-
-" Align Cucumber tables with Tabular plugin
+" Align Cucumber tables with Tabular plugin"{{{
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
@@ -153,8 +197,8 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
-
-" Source snippets support functions
+"}}}
+" Source the snippets support functions"{{{
 source ~/.vim/bundle/snipmate.vim/snippets/support_functions.vim
 
 if has("gui_macvim")
@@ -163,3 +207,37 @@ if has("gui_macvim")
   " Set the macvim font
   set guifont=Monaco:h13
 endif
+"}}}
+
+" ******************************************************************************
+" Misc functions
+" ******************************************************************************
+" Set backup directories"{{{
+function! InitializeDirectories()
+  let separator = "."
+  let parent = $HOME
+  let prefix = '.vim/'
+  let dir_list = {
+        \ 'backup': 'backupdir',
+        \ 'views': 'viewdir',
+        \ 'swap': 'directory' }
+
+  for [dirname, settingname] in items(dir_list)
+    let directory = parent . '/' . prefix . dirname . "/"
+    if exists("*mkdir")
+      if !isdirectory(directory)
+        call mkdir(directory)
+      endif
+    endif
+    if !isdirectory(directory)
+      echo "Warning: Unable to create backup directory: " . directory
+      echo "Try: mkdir -p " . directory
+    else
+      let directory = substitute(directory, " ", "\\\\ ", "")
+      exec "set " . settingname . "=" . directory
+    endif
+  endfor
+endfunction
+call InitializeDirectories()"}}}
+
+" vim: set fdm=marker:
