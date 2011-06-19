@@ -47,6 +47,7 @@ Bundle 'xolox/vim-easytags'
 Bundle 'taglist.vim'
 " I'm just TESTING this
 Bundle 'repeat.vim'
+Bundle 'xolox/vim-notes'
 
 " ******************************************************************************
 " Make it pretty
