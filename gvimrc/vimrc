@@ -21,8 +21,8 @@ Bundle 'rubycomplete.vim'
 "}}}
 " External tools"{{{
 Bundle 'ack.vim'
-Bundle 'git.zip'
 Bundle 'fugitive.vim'
+Bundle 'git.zip'
 Bundle 'extradite.vim'
 "}}}
 " Edition tools"{{{
@@ -45,6 +45,7 @@ Bundle "msanders/snipmate.vim"
 Bundle "ZoomWin"
 Bundle "Indent-Guides"
 Bundle 'bufexplorer.zip'
+Bundle 'YankRing.vim'
 " Tags
 Bundle 'xolox/vim-easytags'
 Bundle 'taglist.vim'
@@ -117,6 +118,7 @@ set smartcase"}}}
 
 " Don't forget to set ft for Ruby files
 au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,Guardfile,config.ru,.caprc,*.thor} set ft=ruby
+au BufRead,BufNewFile *_spec.rb set fdm=indent
 
 " Auto save and load view (state) (folds, cursor, etc)"{{{
 au BufWinLeave * silent! mkview
@@ -142,12 +144,13 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 " ******************************************************************************
 " Misc mappings"{{{
 let mapleader=","
-map <F2> :FixWhitespace<CR>
+map <silent> <F2> :FixWhitespace<CR>
+map <silent> ,n :noh<CR>
+map <silent> ,t :NERDTreeToggle<CR>
+map <silent> ,,t :TlistToggle<CR>
+map <silent> ,yr :YRShow<CR>
+map <silent> ,z :ZoomWin<CR>
 noremap ,a :Ack<space>
-map ,z :ZoomWin<CR>
-map ,t :NERDTreeToggle<CR>
-map ,,t :TlistToggle<CR>
-map ,n :noh<CR>
 "}}}
 " VIMRC mappings"{{{
 nmap <silent> ,ev :e $MYVIMRC
@@ -173,17 +176,18 @@ noremap <silent> ,j :wincmd j<CR>
 noremap <silent> ,k :wincmd k<CR>
 noremap <silent> ,l :wincmd l<CR>
 "}}}
-" Tabularize mappings
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:<CR>
-vmap <Leader>a: :Tabularize /:<CR>
-nmap <Leader>a:: :Tabularize /:\zs<CR>
-vmap <Leader>a:: :Tabularize /:\zs<CR>
-nmap <Leader>a, :Tabularize /,<CR>
-vmap <Leader>a, :Tabularize /,<CR>
-nmap <Leader>a| :Tabularize /|<CR>
-vmap <Leader>a| :Tabularize /|<CR>
+" Tabularize mappings"{{{
+nmap <silent> ,a= :Tabularize /=<CR>
+vmap <silent> ,a= :Tabularize /=<CR>
+nmap <silent> ,a: :Tabularize /:<CR>
+vmap <silent> ,a: :Tabularize /:<CR>
+nmap <silent> ,a:: :Tabularize /:\zs<CR>
+vmap <silent> ,a:: :Tabularize /:\zs<CR>
+nmap <silent> ,a, : Tabularize /,<CR>
+vmap <silent> ,a, : Tabularize /,<CR>
+nmap <silent> ,a| : Tabularize /|<CR>
+vmap <silent> ,a| : Tabularize /|<CR>
+"}}}
 
 " Align Cucumber tables with Tabular plugin"{{{
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
@@ -205,7 +209,7 @@ if has("gui_macvim")
   " set the vim windows size
   set lines=55 columns=150
   " Set the macvim font
-  set guifont=Monaco:h13
+  set guifont=Inconsolata:h16
 endif
 "}}}
 
