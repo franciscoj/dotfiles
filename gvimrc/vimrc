@@ -67,6 +67,10 @@ set diffopt+=iwhite
 set cpoptions+=$ " Mark with a $ at the end of a 'change' command
 set showcmd
 
+" Some NERDTree options {{{
+let NERDTreeDirArrows=1
+"}}}
+
 " Filetype highlighting and indentation activation"{{{
 syntax on
 filetype on
@@ -183,10 +187,10 @@ nmap <silent> ,a: :Tabularize /:<CR>
 vmap <silent> ,a: :Tabularize /:<CR>
 nmap <silent> ,a:: :Tabularize /:\zs<CR>
 vmap <silent> ,a:: :Tabularize /:\zs<CR>
-nmap <silent> ,a, : Tabularize /,<CR>
-vmap <silent> ,a, : Tabularize /,<CR>
-nmap <silent> ,a| : Tabularize /|<CR>
-vmap <silent> ,a| : Tabularize /|<CR>
+nmap <silent> ,a, :Tabularize /,<CR>
+vmap <silent> ,a, :Tabularize /,<CR>
+nmap <silent> ,a<Bar> :Tabularize /<Bar><CR>
+vmap <silent> ,a<Bar> :Tabularize /<Bar><CR>
 "}}}
 
 " Align Cucumber tables with Tabular plugin"{{{
