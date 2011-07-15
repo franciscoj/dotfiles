@@ -12,28 +12,29 @@ set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 " File types"{{{
 Bundle 'Textile-for-VIM'
-Bundle 'cucumber.zip'
+Bundle 'tpope/vim-cucumber'
 Bundle "pangloss/vim-javascript"
-Bundle "haml.zip"
-Bundle "rails.vim"
+Bundle "tpope/vim-haml"
+Bundle "tpope/vim-rails"
 Bundle "bronson/vim-ruby-block-conv"
 Bundle 'rubycomplete.vim'
 "}}}
 " External tools"{{{
 Bundle 'ack.vim'
-Bundle 'fugitive.vim'
-Bundle 'git.zip'
-Bundle 'extradite.vim'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-fugitive'
+Bundle 'int3/vim-extradite'
 "}}}
 " Edition tools"{{{
-Bundle 'surround.vim'
-Bundle 'ragtag.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-ragtag'
 Bundle 'tComment'
 Bundle 'SuperTab-continued.'
-Bundle "matchit.zip"
-Bundle 'delimitMate.vim'
-Bundle "unimpaired.vim"
-Bundle 'Tabular'
+Bundle "edsono/vim-matchit"
+Bundle 'Raimondi/delimitMate'
+Bundle 'tpope/vim-endwise'
+Bundle "tpope/vim-unimpaired"
+Bundle 'godlygeek/tabular'
 Bundle "bronson/vim-trailing-whitespace"
 Bundle 'textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
@@ -43,14 +44,14 @@ Bundle 'Syntastic'
 Bundle "scrooloose/nerdtree"
 Bundle "msanders/snipmate.vim"
 Bundle "ZoomWin"
-Bundle "Indent-Guides"
+Bundle "nathanaelkane/vim-indent-guides"
 Bundle 'bufexplorer.zip'
 Bundle 'YankRing.vim'
 " Tags
 Bundle 'xolox/vim-easytags'
 Bundle 'taglist.vim'
 " I'm just TESTING this
-Bundle 'repeat.vim'
+Bundle 'tpope/vim-repeat'
 Bundle 'xolox/vim-notes'
 "}}}
 
