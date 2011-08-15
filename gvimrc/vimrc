@@ -217,13 +217,6 @@ endfunction
 "}}}
 " Source the snippets support functions"{{{
 source ~/.vim/bundle/snipmate.vim/snippets/support_functions.vim
-
-if has("gui_macvim")
-  " set the vim windows size
-  set lines=55 columns=150
-  " Set the macvim font
-  set guifont=Inconsolata:h16
-endif
 "}}}
 
 " ******************************************************************************
