@@ -18,6 +18,8 @@ Bundle "tpope/vim-haml"
 Bundle "tpope/vim-rails"
 Bundle "bronson/vim-ruby-block-conv"
 Bundle 'rubycomplete.vim'
+Bundle 'hallettj/jslint.vim'
+Bundle 'nginx.vim'
 "}}}
 " External tools"{{{
 Bundle 'ack.vim'
@@ -38,6 +40,7 @@ Bundle 'godlygeek/tabular'
 Bundle "bronson/vim-trailing-whitespace"
 Bundle 'textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'Syntastic'
 "}}}
 " Exploring and buffers"{{{
