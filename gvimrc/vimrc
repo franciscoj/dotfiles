@@ -138,7 +138,6 @@ au BufWinEnter * silent! loadview
 " Auto completion
 " ******************************************************************************
 " Pretty auto completion"{{{
-highlight Pmenu ctermbg=238 gui=bold
 set wildmenu
 set wildignore+=*.o,*.obj,.git,*.rbc
 set wildmode=list:longest,list:full
