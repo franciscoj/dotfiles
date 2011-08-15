@@ -174,14 +174,15 @@ nmap <silent> ,gl :Extradite<CR>
 noremap ,g :Git<space>
 "}}}
 " Commenting mappings"{{{
-nnoremap // :TComment<CR>
-vnoremap // :TComment<CR>
+nnoremap <silent>// :TComment<CR>
+vnoremap <silent>// :TComment<CR>
 "}}}
 " Window mappings"{{{
 noremap <silent> ,h :wincmd h<CR>
 noremap <silent> ,j :wincmd j<CR>
 noremap <silent> ,k :wincmd k<CR>
 noremap <silent> ,l :wincmd l<CR>
+noremap <silent> ,cc :close<CR>
 "}}}
 " Tabularize mappings"{{{
 nmap <silent> ,a= :Tabularize /=<CR>
