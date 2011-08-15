@@ -66,6 +66,7 @@ set guioptions=ac
 set number
 set cursorline
 set colorcolumn=80 " Mark 80th column with a red line
+set list
 set listchars=tab:▸\ ,eol:¬,trail:. " Same invisibles as in TextMate
 set diffopt+=iwhite
 set cpoptions+=$ " Mark with a $ at the end of a 'change' command
