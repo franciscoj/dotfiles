@@ -135,8 +135,9 @@ au BufWinEnter * silent! loadview
 " Pretty auto completion"{{{
 highlight Pmenu ctermbg=238 gui=bold
 set wildmenu
-set wildmode=longest,list
 set wildignore+=*.o,*.obj,.git,*.rbc
+set wildmode=list:longest,list:full
+set complete=.,w,t
 "}}}
 " Auto complete for ruby"{{{
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
