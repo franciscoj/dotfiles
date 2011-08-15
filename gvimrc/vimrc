@@ -150,6 +150,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 " ******************************************************************************
 " Misc mappings"{{{
 let mapleader=","
+imap jj <ESC>
 map <silent> <F2> :FixWhitespace<CR>
 map <silent> ,n :noh<CR>
 map <silent> ,t :NERDTreeToggle<CR>
