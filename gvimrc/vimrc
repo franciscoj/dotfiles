@@ -61,7 +61,7 @@ Bundle 'xolox/vim-notes'
 " ******************************************************************************
 " Make it pretty
 " ******************************************************************************
-colorscheme railscasts
+colorscheme solarized
 set guioptions=ac
 set number
 set cursorline
@@ -123,7 +123,8 @@ set directory=~/.vim/swap,. " Store swap files in a common directory
 set hlsearch
 set incsearch
 set ignorecase
-set smartcase"}}}
+set smartcase
+"}}}
 
 " Don't forget to set ft for Ruby files
 au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,Guardfile,config.ru,.caprc,*.thor} set ft=ruby
