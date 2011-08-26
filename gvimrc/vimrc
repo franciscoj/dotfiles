@@ -18,7 +18,6 @@ Bundle "tpope/vim-haml"
 Bundle "tpope/vim-rails"
 Bundle "bronson/vim-ruby-block-conv"
 Bundle 'rubycomplete.vim'
-Bundle 'hallettj/jslint.vim'
 Bundle 'nginx.vim'
 "}}}
 " External tools"{{{
