@@ -16,6 +16,7 @@ export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r6
 export EDITOR='/usr/local/bin/mvim -f'
 
 # Load RVM
+rvm_project_rvmrc=1
 unsetopt auto_name_dirs
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
