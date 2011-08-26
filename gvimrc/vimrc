@@ -155,6 +155,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 " Misc mappings"{{{
 let mapleader=","
 imap jj <ESC>
+nnoremap <space> za
 map <silent> <F2> :FixWhitespace<CR>
 map <silent> ,n :noh<CR>
 map <silent> ,t :NERDTreeToggle<CR>
@@ -187,6 +188,10 @@ noremap <silent> ,j :wincmd j<CR>
 noremap <silent> ,k :wincmd k<CR>
 noremap <silent> ,l :wincmd l<CR>
 noremap <silent> ,cc :close<CR>
+nmap <C-Left> <C-W><<C-W><
+nmap <C-Right> <C-W>><C-W>>
+nmap <C-Up> <C-W>+<C-W>+
+nmap <C-Down> <C-W>-<C-W>-
 "}}}
 " Tabularize mappings"{{{
 nmap <silent> ,a= :Tabularize /=<CR>
