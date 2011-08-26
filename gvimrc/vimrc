@@ -11,6 +11,7 @@ filetype off " Asked by Vundle
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 " File types"{{{
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'Textile-for-VIM'
 Bundle 'tpope/vim-cucumber'
 Bundle "pangloss/vim-javascript"
