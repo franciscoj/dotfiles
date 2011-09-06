@@ -8,8 +8,9 @@ filetype off " Asked by Vundle
 " ******************************************************************************
 " Setup vundler and plugins
 " ******************************************************************************
-set rtp+=~/.vim/vundle.git/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
 " File types"{{{
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'Textile-for-VIM'
@@ -17,11 +18,13 @@ Bundle 'tpope/vim-cucumber'
 Bundle "pangloss/vim-javascript"
 Bundle "tpope/vim-haml"
 Bundle "tpope/vim-rails"
+" Bundle "tpope/vim-bundle"
 Bundle "bronson/vim-ruby-block-conv"
 Bundle 'rubycomplete.vim'
 Bundle 'nginx.vim'
 "}}}
 " External tools"{{{
+Bundle 'gmarik/vundle'
 Bundle 'ack.vim'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
@@ -45,7 +48,7 @@ Bundle 'Syntastic'
 "}}}
 " Exploring and buffers"{{{
 Bundle "scrooloose/nerdtree"
-Bundle "msanders/snipmate.vim"
+" Bundle "rygwdn/ultisnips"
 Bundle "ZoomWin"
 Bundle "nathanaelkane/vim-indent-guides"
 Bundle 'bufexplorer.zip'
@@ -218,9 +221,6 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
-"}}}
-" Source the snippets support functions"{{{
-source ~/.vim/bundle/snipmate.vim/snippets/support_functions.vim
 "}}}
 
 " ******************************************************************************
