@@ -2,7 +2,7 @@
 Pry.config.editor = "mvim"
 
 # Prompt with ruby version
-Pry.prompt = [lambda { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, lambda { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
+Pry.prompt = [Proc.new { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, Proc.new { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
 
 %w{hirb}.each { |gem| require gem }
 
