@@ -13,3 +13,7 @@ def hide_log
   change_log(nil)
 end
 
+Pry.config.print = lambda do |output, value|
+  Hirb::View.view_or_page_output(value) || Pry::DEFAULT_PRINT.call(output, value)
+end
+Hirb.enable
