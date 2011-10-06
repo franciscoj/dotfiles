@@ -15,13 +15,14 @@ call vundle#rc()
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'Textile-for-VIM'
 Bundle 'tpope/vim-cucumber'
-Bundle "pangloss/vim-javascript"
-Bundle "tpope/vim-haml"
-Bundle "tpope/vim-rails"
-" Bundle "tpope/vim-bundle"
-Bundle "bronson/vim-ruby-block-conv"
+Bundle 'pangloss/vim-javascript'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-rails'
+" Bundle 'tpope/vim-bundle'
+Bundle 'bronson/vim-ruby-block-conv'
 Bundle 'rubycomplete.vim'
 Bundle 'nginx.vim'
+Bundle 'Puppet-Syntax-Highlighting'
 "}}}
 " External tools"{{{
 Bundle 'gmarik/vundle'
@@ -35,31 +36,28 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tComment'
 Bundle 'SuperTab-continued.'
-Bundle "edsono/vim-matchit"
+Bundle 'edsono/vim-matchit'
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-endwise'
-Bundle "tpope/vim-unimpaired"
+Bundle 'tpope/vim-unimpaired'
 Bundle 'godlygeek/tabular'
-Bundle "bronson/vim-trailing-whitespace"
+Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'Syntastic'
 "}}}
 " Exploring and buffers"{{{
-Bundle "scrooloose/nerdtree"
-" Bundle "rygwdn/ultisnips"
-Bundle "ZoomWin"
-Bundle "nathanaelkane/vim-indent-guides"
-Bundle 'bufexplorer.zip'
+Bundle 'scrooloose/nerdtree'
+" Bundle 'rygwdn/ultisnips'
+Bundle 'ZoomWin'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'YankRing.vim'
 " Tags
 Bundle 'xolox/vim-easytags'
-Bundle 'taglist.vim'
-" I'm just TESTING this
 Bundle 'tpope/vim-repeat'
-Bundle 'xolox/vim-notes'
 "}}}
+" Testing stuff
 
 " ******************************************************************************
 " Make it pretty
@@ -162,7 +160,6 @@ nnoremap <space> za
 map <silent> <F2> :FixWhitespace<CR>
 map <silent> ,n :noh<CR>
 map <silent> ,t :NERDTreeToggle<CR>
-map <silent> ,,t :TlistToggle<CR>
 map <silent> ,yr :YRShow<CR>
 map <silent> ,z :ZoomWin<CR>
 noremap ,a :Ack<space>
