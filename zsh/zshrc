@@ -1,7 +1,6 @@
 # Path oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
-#export ZSH_THEME="bira"
 export ZSH_THEME="eastwood"
 
 plugins=(cap thor brew github git gem rails rails3 osx pow rvm)
@@ -12,6 +11,8 @@ export PATH="~/bin:/usr/local/Cellar/bin:/usr/local/bin:/usr/local/sbin:/usr/loc
 
 # Load android-sdk installed from homebrew
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r6
+# Node.js load path
+export NODE_PATH=/usr/local/lib/node_modules
 # Set macvim as the default editor
 export EDITOR='/usr/local/bin/mvim -f'
 
@@ -38,3 +39,7 @@ alias gcrake='rake'
 alias gcgem='gem'
 alias gcirb='irb'
 alias gcrails='rails'
+
+alias rvmnginx='rvmsudo /opt/nginx/sbin/nginx'
+alias nginxconf='_ mvim /opt/nginx/conf/nginx.conf'
+alias redisserv='redis-server /usr/local/etc/redis.conf'
