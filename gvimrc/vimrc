@@ -16,13 +16,13 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'Textile-for-VIM'
 Bundle 'tpope/vim-cucumber'
 Bundle 'pangloss/vim-javascript'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
-" Bundle 'tpope/vim-bundle'
 Bundle 'bronson/vim-ruby-block-conv'
-Bundle 'rubycomplete.vim'
 Bundle 'nginx.vim'
 Bundle 'Puppet-Syntax-Highlighting'
+Bundle 'groenewege/vim-less'
 "}}}
 " External tools"{{{
 Bundle 'gmarik/vundle'
@@ -35,29 +35,29 @@ Bundle 'int3/vim-extradite'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tComment'
-Bundle 'SuperTab-continued.'
+Bundle 'ervandew/supertab'
 Bundle 'edsono/vim-matchit'
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'godlygeek/tabular'
-" Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'Syntastic'
+Bundle 'scrooloose/syntastic'
 "}}}
 " Exploring and buffers"{{{
 Bundle 'scrooloose/nerdtree'
-" Bundle 'rygwdn/ultisnips'
 Bundle 'ZoomWin'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'YankRing.vim'
+Bundle 'tpope/vim-repeat'
 " Tags
 Bundle 'xolox/vim-easytags'
-Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-bundler'
 "}}}
 " Testing stuff
+Bundle 'xolox/vim-notes'
 
 " ******************************************************************************
 " Make it pretty
@@ -112,6 +112,12 @@ set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 " Sintastic.vim config
 let g:syntastic_enable_signs=1
 
+" Notes config
+let g:notes_directory = '~/Documents/Notes'
+
+" That fixes a problem with NERDTree and vim-bundler
+let g:NERDTreeHijackNetrw = 0
+
 " ******************************************************************************
 " Some defaults I like/need
 " ******************************************************************************
@@ -128,7 +134,7 @@ set smartcase
 "}}}
 
 " Don't forget to set ft for Ruby files
-au BufRead,BufNewFile {caprc,autotest,Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,Guardfile,config.ru,.caprc,*.thor} set ft=ruby
+au BufRead,BufNewFile {caprc,autotest,Capfile,Rakefile,Thorfile,Vagrantfile,Guardfile,config.ru,.caprc,*.thor} set ft=ruby
 au BufRead,BufNewFile *_spec.rb set fdm=indent
 
 " Auto save and load view (state) (folds, cursor, etc)"{{{
@@ -141,8 +147,8 @@ au BufWinEnter * silent! loadview
 " Pretty auto completion"{{{
 set wildmenu
 set wildignore+=*.o,*.obj,.git,*.rbc
-set wildmode=list:longest,list:full
-set complete=.,w,t
+set wildmode=longest,list:full
+set complete=.,t,w
 "}}}
 " Auto complete for ruby"{{{
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
