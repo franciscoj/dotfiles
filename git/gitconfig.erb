@@ -7,17 +7,19 @@
 	branch = auto
 [core]
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
-	editor = "/usr/local/bin/mvim -f"
+	editor = "vim -f"
 	autocrlf = input
 [apply]
 	whitespace = fix
 [format]
 	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
-[alias]
-	co = checkout
-	s = status
 [github]
 	user = franciscoj
 	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
 [merge]
-	tool = gvimdiff
+	tool = vimdiff
+[alias]
+	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	co = checkout
+	s = status
+
