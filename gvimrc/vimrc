@@ -72,6 +72,7 @@ set listchars=tab:▸\ ,eol:¬,trail:. " Same invisibles as in TextMate
 set diffopt+=iwhite
 set cpoptions+=$ " Mark with a $ at the end of a 'change' command
 set showcmd
+set notagbsearch " To avoid some problems with unsorted tagfiles
 
 " Some NERDTree options {{{
 let NERDTreeDirArrows=1
