@@ -50,14 +50,16 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ZoomWin'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'YankRing.vim'
+" Bundle 'YankRing.vim'
 Bundle 'tpope/vim-repeat'
+Bundle 'kien/ctrlp.vim'
 " Tags
 Bundle 'xolox/vim-easytags'
 Bundle 'tpope/vim-bundler'
 "}}}
 " Testing stuff
 Bundle 'xolox/vim-notes'
+" Bundle 'astashov/vim-ruby-debugger'
 
 " ******************************************************************************
 " Make it pretty
@@ -72,7 +74,6 @@ set listchars=tab:▸\ ,eol:¬,trail:. " Same invisibles as in TextMate
 set diffopt+=iwhite
 set cpoptions+=$ " Mark with a $ at the end of a 'change' command
 set showcmd
-set notagbsearch " To avoid some problems with unsorted tagfiles
 
 " Some NERDTree options {{{
 let NERDTreeDirArrows=1
@@ -138,10 +139,6 @@ set smartcase
 au BufRead,BufNewFile {caprc,autotest,Capfile,Rakefile,Thorfile,Vagrantfile,Guardfile,config.ru,.caprc,*.thor} set ft=ruby
 au BufRead,BufNewFile *_spec.rb set fdm=indent
 
-" Auto save and load view (state) (folds, cursor, etc)"{{{
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
-"}}}
 " ******************************************************************************
 " Auto completion
 " ******************************************************************************
@@ -167,8 +164,6 @@ nnoremap <space> za
 map <silent> <F2> :FixWhitespace<CR>
 map <silent> ,n :noh<CR>
 map <silent> ,t :NERDTreeToggle<CR>
-map <silent> ,yr :YRShow<CR>
-map <silent> ,z :ZoomWin<CR>
 noremap ,a :Ack<space>
 "}}}
 " VIMRC mappings"{{{
@@ -183,17 +178,16 @@ map ,f mmgg=G`m^
 nmap <silent> ,gs :Gstatus<CR>
 nmap <silent> ,gd :Gdiff<CR>
 nmap <silent> ,gl :Extradite<CR>
-noremap ,g :Git<space>
 "}}}
 " Commenting mappings"{{{
 nnoremap <silent>// :TComment<CR>
 vnoremap <silent>// :TComment<CR>
 "}}}
 " Window mappings"{{{
-noremap <silent> ,h :wincmd h<CR>
-noremap <silent> ,j :wincmd j<CR>
-noremap <silent> ,k :wincmd k<CR>
-noremap <silent> ,l :wincmd l<CR>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 noremap <silent> ,cc :close<CR>
 nmap <C-Left> <C-W><<C-W><
 nmap <C-Right> <C-W>><C-W>>
@@ -268,5 +262,16 @@ endfunction
 
 " Run :FixWhitespace to remove end of line white space.
 command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
+
+function! s:FixDistrinetXml()
+    let l:save_cursor = getpos(".")
+    silent! execute ':%s/\n//'
+    silent! execute ':1,$!xmllint --format --recover - 2>/dev/null'
+    silent! execute "normal 2Gdd"
+    silent! execute ':w'
+    call setpos('.', l:save_cursor)
+endfunction
+command! FixDistrinetXml call <SID>FixDistrinetXml()
+
 
 " vim: set fdm=marker:

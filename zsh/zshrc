@@ -1,7 +1,8 @@
 # Path oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
-export ZSH_THEME="eastwood"
+# export ZSH_THEME="eastwood"
+export ZSH_THEME="gallois"
 
 plugins=(cap thor brew github git gem rails rails3 osx pow rvm)
 
@@ -33,6 +34,7 @@ alias annotate="annotate --exclude tests,fixtures --position after --show-indexe
 alias be="bundle exec"
 alias rst="touch tmp/restart.txt"
 alias git="hub"
+alias cu='cucumber'
 
 alias gcruby='ruby'
 alias gcrake='rake'
@@ -43,3 +45,10 @@ alias gcrails='rails'
 alias rvmnginx='rvmsudo /opt/nginx/sbin/nginx'
 alias nginxconf='_ mvim /opt/nginx/conf/nginx.conf'
 alias redisserv='redis-server /usr/local/etc/redis.conf'
+
+# Tweack REE GC
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_HEAP_FREE_MIN=500000
