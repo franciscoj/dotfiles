@@ -3,5 +3,4 @@ if has("gui_macvim")
   set lines=55 columns=150
   " Set the macvim font
   set guifont=Inconsolata:h16
-  set background=light
 endif

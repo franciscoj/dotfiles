@@ -20,13 +20,14 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
 Bundle 'bronson/vim-ruby-block-conv'
-Bundle 'nginx.vim'
-Bundle 'Puppet-Syntax-Highlighting'
+Bundle 'andersjanmyr/nginx-vim-syntax'
+Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'groenewege/vim-less'
+Bundle 'postmodern/vim-yard'
 "}}}
 " External tools"{{{
 Bundle 'gmarik/vundle'
-Bundle 'ack.vim'
+Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'int3/vim-extradite'
@@ -34,7 +35,7 @@ Bundle 'int3/vim-extradite'
 " Edition tools"{{{
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-ragtag'
-Bundle 'tComment'
+Bundle 'vim-scripts/tComment'
 Bundle 'ervandew/supertab'
 Bundle 'edsono/vim-matchit'
 Bundle 'Raimondi/delimitMate'
@@ -48,22 +49,23 @@ Bundle 'scrooloose/syntastic'
 "}}}
 " Exploring and buffers"{{{
 Bundle 'scrooloose/nerdtree'
-Bundle 'ZoomWin'
 Bundle 'nathanaelkane/vim-indent-guides'
-" Bundle 'YankRing.vim'
+Bundle 'vim-scripts/YankRing.vim'
 Bundle 'tpope/vim-repeat'
-Bundle 'kien/ctrlp.vim'
-" Tags
+"}}}
+" Tags "{{{
 Bundle 'xolox/vim-easytags'
 Bundle 'tpope/vim-bundler'
 "}}}
-" Testing stuff
+
+" Testing stuff "{{{
 Bundle 'xolox/vim-notes'
-" Bundle 'astashov/vim-ruby-debugger'
+"}}}
 
 " ******************************************************************************
 " Make it pretty
 " ******************************************************************************
+set background=light
 colorscheme solarized
 set guioptions=ac
 set number
@@ -75,8 +77,18 @@ set diffopt+=iwhite
 set cpoptions+=$ " Mark with a $ at the end of a 'change' command
 set showcmd
 
-" Some NERDTree options {{{
+" Some plugins options {{{
+
 let NERDTreeDirArrows=1
+" That fixes a problem with NERDTree and vim-bundler
+let g:NERDTreeHijackNetrw = 0
+" Sintastic.vim config
+let g:syntastic_enable_signs=1
+" Notes config
+let g:notes_directory = '~/Documents/Notes'
+" Force easytags.vim to take ctags from homebrew
+let g:easytags_cmd = "/usr/local/bin/ctags"
+
 "}}}
 
 " Filetype highlighting and indentation activation"{{{
@@ -94,11 +106,11 @@ set expandtab
 " Statusline config"{{{
 set laststatus=2 " Always show status line.
 " Filename
-set statusline=%<%f\ " Filename
+set statusline=%<%f\
 " Preview, help, modified and readonly flags
 set statusline+=%w%h%m%r
 " Show fugitive.vim's GIT status
-set statusline+=%{fugitive#statusline()} " Git Hotness
+set statusline+=%{fugitive#statusline()}
 " Filetype
 set statusline+=\%y
 " Current dir
@@ -111,23 +123,14 @@ set statusline+=%*
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 "}}}
 
-" Sintastic.vim config
-let g:syntastic_enable_signs=1
-
-" Notes config
-let g:notes_directory = '~/Documents/Notes'
-
-" That fixes a problem with NERDTree and vim-bundler
-let g:NERDTreeHijackNetrw = 0
-
 " ******************************************************************************
 " Some defaults I like/need
 " ******************************************************************************
-set scrolloff=8 " Leave 8 lines before start scrolling
+set scrolloff=3 " Leave 8 lines before start scrolling
 runtime macros/matchit.vim " Needed for the ruby block object plugin
 set spell
 set spelllang=en_us
-set directory=~/.vim/swap,. " Store swap files in a common directory
+
 " Searching"{{{
 set hlsearch
 set incsearch
@@ -136,8 +139,7 @@ set smartcase
 "}}}
 
 " Don't forget to set ft for Ruby files
-au BufRead,BufNewFile {caprc,autotest,Capfile,Rakefile,Thorfile,Vagrantfile,Guardfile,config.ru,.caprc,*.thor} set ft=ruby
-au BufRead,BufNewFile *_spec.rb set fdm=indent
+au BufRead,BufNewFile {caprc,autotest,.caprc} set ft=ruby
 
 " ******************************************************************************
 " Auto completion
@@ -148,11 +150,19 @@ set wildignore+=*.o,*.obj,.git,*.rbc
 set wildmode=longest,list:full
 set complete=.,t,w
 "}}}
+
 " Auto complete for ruby"{{{
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"}}}
+
+" Some extras to rails.vim "{{{
+autocmd User Rails Rnavcommand steps features/step_definitions -glob=**/*
+autocmd User Rails Rnavcommand routes config -glob=*.* -suffix= -default=routes.rb
+autocmd User Rails Rnavcommand initializer config/initializers -glob=**/*
+autocmd User Rails Rnavcommand factories spec test -glob=**/* -default=factories
 "}}}
 " ******************************************************************************
 " Some custom key mapping
@@ -163,7 +173,7 @@ imap jj <ESC>
 nnoremap <space> za
 map <silent> <F2> :FixWhitespace<CR>
 map <silent> ,n :noh<CR>
-map <silent> ,t :NERDTreeToggle<CR>
+nnoremap <silent> ,<space> :NERDTreeToggle<CR>
 noremap ,a :Ack<space>
 "}}}
 " VIMRC mappings"{{{
@@ -272,6 +282,5 @@ function! s:FixDistrinetXml()
     call setpos('.', l:save_cursor)
 endfunction
 command! FixDistrinetXml call <SID>FixDistrinetXml()
-
 
 " vim: set fdm=marker:
