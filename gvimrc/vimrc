@@ -36,7 +36,6 @@ Bundle 'int3/vim-extradite'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-ragtag'
 Bundle 'vim-scripts/tComment'
-Bundle 'ervandew/supertab'
 Bundle 'edsono/vim-matchit'
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-endwise'
@@ -70,9 +69,9 @@ colorscheme solarized
 set guioptions=ac
 set number
 set cursorline
-set colorcolumn=80 " Mark 80th column with a red line
+set colorcolumn=80
 set list
-set listchars=tab:▸\ ,eol:¬,trail:. " Same invisibles as in TextMate
+set listchars=tab:▸\ ,eol:¬,trail:·
 set diffopt+=iwhite
 set cpoptions+=$ " Mark with a $ at the end of a 'change' command
 set showcmd
@@ -88,6 +87,8 @@ let g:syntastic_enable_signs=1
 let g:notes_directory = '~/Documents/Notes'
 " Force easytags.vim to take ctags from homebrew
 let g:easytags_cmd = "/usr/local/bin/ctags"
+" Use solarized to highlight trailing white spaces
+let g:solarized_hitrail = 1
 
 "}}}
 
@@ -127,6 +128,7 @@ set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 " Some defaults I like/need
 " ******************************************************************************
 set scrolloff=3 " Leave 8 lines before start scrolling
+set backspace=indent,eol,start
 runtime macros/matchit.vim " Needed for the ruby block object plugin
 set spell
 set spelllang=en_us
@@ -138,17 +140,17 @@ set ignorecase
 set smartcase
 "}}}
 
-" Don't forget to set ft for Ruby files
+" Don't forget to set missing ft for Ruby files
 au BufRead,BufNewFile {caprc,autotest,.caprc} set ft=ruby
 
 " ******************************************************************************
 " Auto completion
 " ******************************************************************************
 " Pretty auto completion"{{{
-set wildmenu
-set wildignore+=*.o,*.obj,.git,*.rbc
-set wildmode=longest,list:full
-set complete=.,t,w
+imap <Tab> <C-N>
+set completeopt=longest,menu
+set complete=.,w,b,u,t
+set wildmode=longest,list:longest
 "}}}
 
 " Auto complete for ruby"{{{
@@ -175,6 +177,8 @@ map <silent> <F2> :FixWhitespace<CR>
 map <silent> ,n :noh<CR>
 nnoremap <silent> ,<space> :NERDTreeToggle<CR>
 noremap ,a :Ack<space>
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 "}}}
 " VIMRC mappings"{{{
 nmap <silent> ,ev :e $MYVIMRC
@@ -262,8 +266,6 @@ function! InitializeDirectories()
 endfunction
 call InitializeDirectories()"}}}
 
-" Use solarized to highlight trailing white spaces
-let g:solarized_hitrail = 1
 function! s:FixWhitespace(line1,line2)
     let l:save_cursor = getpos(".")
     silent! execute ':' . a:line1 . ',' . a:line2 . 's/\s\+$//'
