@@ -6,7 +6,7 @@ set nocompatible
 filetype off " Asked by Vundle
 
 " ******************************************************************************
-" Setup vundler and plugins
+" Setup Vundle and plugins
 " ******************************************************************************
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -59,13 +59,23 @@ Bundle 'tpope/vim-bundler'
 
 " Testing stuff "{{{
 Bundle 'xolox/vim-notes'
+Bundle 'jgdavey/tslime.vim'
+Bundle 'jgdavey/vim-turbux'
+Bundle 'tomtom/tlib_vim'
+Bundle 'tomtom/tselectbuffer_vim'
+Bundle 'vim-scripts/TailMinusF'
 "}}}
 
 " ******************************************************************************
 " Make it pretty
 " ******************************************************************************
-set background=light
+if !has('gui_running')
+  set background=light
+  let g:solarized_termtrans = 1
+endif
+
 colorscheme solarized
+
 set guioptions=ac
 set number
 set cursorline
@@ -89,7 +99,8 @@ let g:notes_directory = '~/Documents/Notes'
 let g:easytags_cmd = "/usr/local/bin/ctags"
 " Use solarized to highlight trailing white spaces
 let g:solarized_hitrail = 1
-
+" Don't mess with yankring
+let g:yankring_manual_clipboard_check = 1
 "}}}
 
 " Filetype highlighting and indentation activation"{{{
@@ -140,6 +151,13 @@ set ignorecase
 set smartcase
 "}}}
 
+" Folding "{{{
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
+"}}}
+
 " Don't forget to set missing ft for Ruby files
 au BufRead,BufNewFile {caprc,autotest,.caprc} set ft=ruby
 
@@ -162,9 +180,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 " Some extras to rails.vim "{{{
 autocmd User Rails Rnavcommand steps features/step_definitions -glob=**/*
-autocmd User Rails Rnavcommand routes config -glob=*.* -suffix= -default=routes.rb
-autocmd User Rails Rnavcommand initializer config/initializers -glob=**/*
-autocmd User Rails Rnavcommand factories spec test -glob=**/* -default=factories
+autocmd User Rails Rnavcommand factories spec test -glob=factories/* -default=factories
 "}}}
 " ******************************************************************************
 " Some custom key mapping
@@ -177,12 +193,15 @@ map <silent> <F2> :FixWhitespace<CR>
 map <silent> ,n :noh<CR>
 nnoremap <silent> ,<space> :NERDTreeToggle<CR>
 noremap ,a :Ack<space>
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+map ,te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map ,v <C-w>r
+map ,s <C-w>s
+nmap Q gqq
 "}}}
 " VIMRC mappings"{{{
-nmap <silent> ,ev :e $MYVIMRC
-nmap <silent> ,sv :so $MYVIMRC
+nmap <silent> ,,ev :e $MYVIMRC
+nmap <silent> ,,sv :so $MYVIMRC
 "}}}
 " Code indenting"{{{
 imap ,f <Esc> mmgg=G`m^
@@ -207,6 +226,8 @@ nmap <C-Left> <C-W><<C-W><
 nmap <C-Right> <C-W>><C-W>>
 nmap <C-Up> <C-W>+<C-W>+
 nmap <C-Down> <C-W>-<C-W>-
+noremap ,b :TSelectBuffer<CR>
+inoremap ,b <C-o>:TSelectBuffer<CR>
 "}}}
 " Tabularize mappings"{{{
 nmap <silent> ,a= :Tabularize /=<CR>

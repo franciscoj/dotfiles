@@ -33,7 +33,7 @@ alias annotate="annotate --exclude tests,fixtures --position after --show-indexe
 alias be="bundle exec"
 alias rst="touch tmp/restart.txt"
 alias git="hub"
-alias cu='cucumber'
+alias cu='bundle exec cucumber'
 
 alias rvmnginx='rvmsudo /opt/nginx/sbin/nginx'
 alias nginxconf='_ mvim /opt/nginx/conf/nginx.conf'
@@ -41,3 +41,5 @@ alias redisserv='redis-server /usr/local/etc/redis.conf'
 
 alias less=$PAGER
 alias zless=$PAGER
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
