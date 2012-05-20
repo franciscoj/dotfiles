@@ -24,6 +24,9 @@ rvm_project_rvmrc=1
 unsetopt auto_name_dirs
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+# Load tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
 export AUTOFEATURE=true
 
 alias migrate="rake db:migrate db:test:clone"
@@ -34,10 +37,12 @@ alias be="bundle exec"
 alias rst="touch tmp/restart.txt"
 alias git="hub"
 alias cu='bundle exec cucumber'
+alias cucumber='bundle exec cucumber'
+alias rspec='bundle exec rspec'
 
-alias rvmnginx='rvmsudo /opt/nginx/sbin/nginx'
 alias nginxconf='_ mvim /opt/nginx/conf/nginx.conf'
 alias redisserv='redis-server /usr/local/etc/redis.conf'
+alias nginx='rvmsudo /opt/nginx/sbin/nginx'
 
 alias less=$PAGER
 alias zless=$PAGER

@@ -64,6 +64,8 @@ Bundle 'jgdavey/vim-turbux'
 Bundle 'tomtom/tlib_vim'
 Bundle 'tomtom/tselectbuffer_vim'
 Bundle 'vim-scripts/TailMinusF'
+Bundle 'dbext.vim'
+Bundle 'Lokaltog/vim-powerline'
 "}}}
 
 " ******************************************************************************
@@ -101,6 +103,8 @@ let g:easytags_cmd = "/usr/local/bin/ctags"
 let g:solarized_hitrail = 1
 " Don't mess with yankring
 let g:yankring_manual_clipboard_check = 1
+" Powerline config
+let g:Powerline_symbols = 'unicode'
 "}}}
 
 " Filetype highlighting and indentation activation"{{{
@@ -117,8 +121,10 @@ set expandtab
 "}}}
 " Statusline config"{{{
 set laststatus=2 " Always show status line.
+set statusline=
+
 " Filename
-set statusline=%<%f\
+set statusline+=%<%f\
 " Preview, help, modified and readonly flags
 set statusline+=%w%h%m%r
 " Show fugitive.vim's GIT status
@@ -160,6 +166,7 @@ set foldlevel=1
 
 " Don't forget to set missing ft for Ruby files
 au BufRead,BufNewFile {caprc,autotest,.caprc} set ft=ruby
+au BufRead,BufNewFile /opt/nginx/conf/* set ft=nginx 
 
 " ******************************************************************************
 " Auto completion
@@ -183,6 +190,10 @@ autocmd User Rails Rnavcommand steps features/step_definitions -glob=**/*
 autocmd User Rails Rnavcommand factories spec test -glob=factories/* -default=factories
 "}}}
 " ******************************************************************************
+" Some custom commands
+" ******************************************************************************
+command W w !sudo tee % > /dev/null
+" ******************************************************************************
 " Some custom key mapping
 " ******************************************************************************
 " Misc mappings"{{{
@@ -198,6 +209,9 @@ map ,te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map ,v <C-w>r
 map ,s <C-w>s
 nmap Q gqq
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 "}}}
 " VIMRC mappings"{{{
 nmap <silent> ,,ev :e $MYVIMRC
