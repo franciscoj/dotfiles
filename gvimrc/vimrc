@@ -23,19 +23,17 @@ Bundle 'bronson/vim-ruby-block-conv'
 Bundle 'andersjanmyr/nginx-vim-syntax'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'groenewege/vim-less'
-Bundle 'postmodern/vim-yard'
 "}}}
 " External tools"{{{
 Bundle 'gmarik/vundle'
 Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
-Bundle 'int3/vim-extradite'
 "}}}
 " Edition tools"{{{
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-ragtag'
-Bundle 'vim-scripts/tComment'
+Bundle 'tpope/vim-commentary'
 Bundle 'edsono/vim-matchit'
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-endwise'
@@ -46,12 +44,14 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'scrooloose/syntastic'
 "}}}
+
 " Exploring and buffers"{{{
 Bundle 'scrooloose/nerdtree'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'tpope/vim-repeat'
 "}}}
+
 " Tags "{{{
 Bundle 'xolox/vim-easytags'
 Bundle 'tpope/vim-bundler'
@@ -66,6 +66,8 @@ Bundle 'tomtom/tselectbuffer_vim'
 Bundle 'vim-scripts/TailMinusF'
 Bundle 'dbext.vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'gregsexton/gitv'
+Bundle 'mattn/webapi-vim'
 "}}}
 
 " ******************************************************************************
@@ -209,8 +211,8 @@ map ,te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map ,v <C-w>r
 map ,s <C-w>s
 nmap Q gqq
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
+nnoremap <F3> :set invpaste paste?<CR>
+set pastetoggle=<F3>
 set showmode
 "}}}
 " VIMRC mappings"{{{
@@ -226,10 +228,7 @@ nmap <silent> ,gs :Gstatus<CR>
 nmap <silent> ,gd :Gdiff<CR>
 nmap <silent> ,gl :Extradite<CR>
 "}}}
-" Commenting mappings"{{{
-nnoremap <silent>// :TComment<CR>
-vnoremap <silent>// :TComment<CR>
-"}}}
+
 " Window mappings"{{{
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
