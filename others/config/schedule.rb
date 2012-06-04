@@ -19,6 +19,8 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, at: '15:00' do
+env :PATH, "/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin"
+
+every 2.hours do
   command "logrotate --state=/tmp/logrotate.state /projects/dot-files/others/logrotate.conf"
 end

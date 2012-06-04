@@ -4,6 +4,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 # export ZSH_THEME="eastwood"
 export ZSH_THEME="gallois"
+export DISABLE_AUTO_TITLE=true
 
 plugins=(brew git gem rails3 pow)
 
@@ -15,8 +16,8 @@ export PATH="~/bin:/usr/local/Cellar/bin:/usr/local/bin:/usr/local/sbin:/usr/loc
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r6
 # Node.js load path
 export NODE_PATH=/usr/local/lib/node_modules
-# Set macvim as the default editor
-export EDITOR='/usr/local/bin/mvim -f'
+# Set Vim as the default editor
+export EDITOR='vim'
 export PAGER='/usr/local/bin/vimpager'
 
 # Load RVM
