@@ -194,7 +194,9 @@ autocmd User Rails Rnavcommand factories spec test -glob=factories/* -default=fa
 " ******************************************************************************
 " Some custom commands
 " ******************************************************************************
-command W w !sudo tee % > /dev/null
+if !exists("vimpager")
+  command W w !sudo tee % > /dev/null
+endif
 " ******************************************************************************
 " Some custom key mapping
 " ******************************************************************************
@@ -254,6 +256,9 @@ vmap <silent> ,a, :Tabularize /,<CR>
 nmap <silent> ,a<Bar> :Tabularize /<Bar><CR>
 vmap <silent> ,a<Bar> :Tabularize /<Bar><CR>
 "}}}
+
+" Tslime
+nmap <C-c>r <Plug>SetTmuxVars
 
 " Align Cucumber tables with Tabular plugin"{{{
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a

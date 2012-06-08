@@ -31,7 +31,6 @@ unsetopt auto_name_dirs
 export AUTOFEATURE=true
 
 alias migrate="rake db:migrate db:test:clone"
-alias cw="rake cucumber:wip"
 alias p="powder"
 alias annotate="annotate --exclude tests,fixtures --position after --show-indexes --simple-indexes"
 alias be="bundle exec"
