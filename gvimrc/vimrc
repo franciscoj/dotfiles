@@ -1,6 +1,6 @@
 " Don't really know what this does, but Vim is a bit more stable with
 " RVM using this
-set shell=/bin/bash
+set shell=zsh
 " No need to make it compatible with VI
 set nocompatible
 filetype off " Asked by Vundle
@@ -11,64 +11,45 @@ filetype off " Asked by Vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" File types"{{{
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
 Bundle 'Textile-for-VIM'
 Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-haml'
+Bundle 'groenewege/vim-less'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rails'
 Bundle 'bronson/vim-ruby-block-conv'
 Bundle 'andersjanmyr/nginx-vim-syntax'
 Bundle 'puppetlabs/puppet-syntax-vim'
-Bundle 'groenewege/vim-less'
-"}}}
-" External tools"{{{
+
 Bundle 'gmarik/vundle'
 Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
-"}}}
-" Edition tools"{{{
+
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-repeat'
 Bundle 'edsono/vim-matchit'
-Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'Raimondi/delimitMate'
 Bundle 'godlygeek/tabular'
 Bundle 'textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'scrooloose/syntastic'
-"}}}
-
-" Exploring and buffers"{{{
-Bundle 'scrooloose/nerdtree'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'vim-scripts/YankRing.vim'
-Bundle 'tpope/vim-repeat'
-"}}}
+Bundle 'scrooloose/nerdtree'
 
-" Tags "{{{
 Bundle 'xolox/vim-easytags'
 Bundle 'tpope/vim-bundler'
-"}}}
 
-" Testing stuff "{{{
-Bundle 'xolox/vim-notes'
 Bundle 'jgdavey/tslime.vim'
 Bundle 'jgdavey/vim-turbux'
-Bundle 'tomtom/tlib_vim'
-Bundle 'tomtom/tselectbuffer_vim'
-Bundle 'vim-scripts/TailMinusF'
-Bundle 'dbext.vim'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'gregsexton/gitv'
-Bundle 'mattn/webapi-vim'
-"}}}
 
 " ******************************************************************************
 " Make it pretty
@@ -76,11 +57,11 @@ Bundle 'mattn/webapi-vim'
 if !has('gui_running')
   set background=light
   let g:solarized_termtrans = 1
+  set guioptions=ac
 endif
 
 colorscheme solarized
 
-set guioptions=ac
 set number
 set cursorline
 set colorcolumn=80
@@ -97,8 +78,6 @@ let NERDTreeDirArrows=1
 let g:NERDTreeHijackNetrw = 0
 " Sintastic.vim config
 let g:syntastic_enable_signs=1
-" Notes config
-let g:notes_directory = '~/Documents/Notes'
 " Force easytags.vim to take ctags from homebrew
 let g:easytags_cmd = "/usr/local/bin/ctags"
 " Use solarized to highlight trailing white spaces
@@ -115,12 +94,14 @@ filetype on
 filetype plugin on
 filetype indent on
 "}}}
+
 " Pretty indexing with 2 spaces"{{{
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
 "}}}
+
 " Statusline config"{{{
 set laststatus=2 " Always show status line.
 set statusline=
@@ -146,7 +127,7 @@ set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 " ******************************************************************************
 " Some defaults I like/need
 " ******************************************************************************
-set scrolloff=3 " Leave 8 lines before start scrolling
+set scrolloff=3 " Leave 3 lines before start scrolling
 set backspace=indent,eol,start
 runtime macros/matchit.vim " Needed for the ruby block object plugin
 set spell
@@ -174,7 +155,6 @@ au BufRead,BufNewFile /opt/nginx/conf/* set ft=nginx
 " Auto completion
 " ******************************************************************************
 " Pretty auto completion"{{{
-imap <Tab> <C-N>
 set completeopt=longest,menu
 set complete=.,w,b,u,t
 set wildmode=longest,list:longest
@@ -189,7 +169,6 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 " Some extras to rails.vim "{{{
 autocmd User Rails Rnavcommand steps features/step_definitions -glob=**/*
-autocmd User Rails Rnavcommand factories spec test -glob=factories/* -default=factories
 "}}}
 " ******************************************************************************
 " Some custom commands
@@ -210,8 +189,6 @@ nnoremap <silent> ,<space> :NERDTreeToggle<CR>
 noremap ,a :Ack<space>
 map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
 map ,te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-map ,v <C-w>r
-map ,s <C-w>s
 nmap Q gqq
 nnoremap <F3> :set invpaste paste?<CR>
 set pastetoggle=<F3>
@@ -237,12 +214,6 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 noremap <silent> ,cc :close<CR>
-nmap <C-Left> <C-W><<C-W><
-nmap <C-Right> <C-W>><C-W>>
-nmap <C-Up> <C-W>+<C-W>+
-nmap <C-Down> <C-W>-<C-W>-
-noremap ,b :TSelectBuffer<CR>
-inoremap ,b <C-o>:TSelectBuffer<CR>
 "}}}
 " Tabularize mappings"{{{
 nmap <silent> ,a= :Tabularize /=<CR>
