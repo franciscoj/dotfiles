@@ -1,13 +1,8 @@
-" Don't really know what this does, but Vim is a bit more stable with
-" RVM using this
 set shell=zsh
-" No need to make it compatible with VI
 set nocompatible
+
 filetype off " Asked by Vundle
 
-" ******************************************************************************
-" Setup Vundle and plugins
-" ******************************************************************************
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -16,12 +11,14 @@ Bundle 'tpope/vim-rails'
 Bundle 'Textile-for-VIM'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
 Bundle 'groenewege/vim-less'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'bronson/vim-ruby-block-conv'
 Bundle 'andersjanmyr/nginx-vim-syntax'
 Bundle 'puppetlabs/puppet-syntax-vim'
+Bundle 'tangledhelix/vim-octopress'
 
 Bundle 'gmarik/vundle'
 Bundle 'mileszs/ack.vim'
@@ -43,6 +40,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
 
 Bundle 'xolox/vim-easytags'
 Bundle 'tpope/vim-bundler'
@@ -50,6 +48,7 @@ Bundle 'tpope/vim-bundler'
 Bundle 'jgdavey/tslime.vim'
 Bundle 'jgdavey/vim-turbux'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'tpope/vim-eunuch'
 
 " ******************************************************************************
 " Make it pretty
@@ -70,11 +69,65 @@ set listchars=tab:▸\ ,eol:¬,trail:·
 set diffopt+=iwhite
 set cpoptions+=$ " Mark with a $ at the end of a 'change' command
 set showcmd
+set laststatus=2 " Always show status line.
 
-" Some plugins options {{{
+" Filetype highlighting and indentation activation
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
 
+" Pretty indexing with 2 spaces
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+" Search config
+set hlsearch " Auto highlight search
+set incsearch " Incremental search
+set ignorecase " Ignore case during search
+set smartcase " Be smart when matching case on the search
+
+" Default folding config
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
+
+" Others
+set scrolloff=3 " Leave 3 lines before start scrolling
+set backspace=indent,eol,start " Better when removing lines
+" English spelling by default
+set spell
+set spelllang=en_us
+
+" Auto complete options
+set completeopt=longest,menu
+set complete=.,w,b,u,t
+set wildmode=longest,list:longest
+
+set pastetoggle=<F3>
+set showmode
+
+runtime macros/matchit.vim " Needed for the ruby block object plugin
+
+" Filetype config for some missing files on vim-ruby
+autocmd BufRead,BufNewFile {caprc,autotest,.caprc} set ft=ruby
+" Filetype config for nginx conf files
+autocmd BufRead,BufNewFile /opt/nginx/conf/* set ft=nginx
+" Filetype config for octopress files
+autocmd BufRead,BufNewFile /projects/octopress/source/_posts/*.markdown set ft=octopress
+
+" Set auto completion for ruby files
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
+" Configuration for used plugins
 let NERDTreeDirArrows=1
-" That fixes a problem with NERDTree and vim-bundler
+" Fixes incompatibility with NERDTree and vim-bundler
 let g:NERDTreeHijackNetrw = 0
 " Sintastic.vim config
 let g:syntastic_enable_signs=1
@@ -86,136 +139,41 @@ let g:solarized_hitrail = 1
 let g:yankring_manual_clipboard_check = 1
 " Powerline config
 let g:Powerline_symbols = 'unicode'
-"}}}
-
-" Filetype highlighting and indentation activation"{{{
-syntax on
-filetype on
-filetype plugin on
-filetype indent on
-"}}}
-
-" Pretty indexing with 2 spaces"{{{
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-"}}}
-
-" Statusline config"{{{
-set laststatus=2 " Always show status line.
-set statusline=
-
-" Filename
-set statusline+=%<%f\
-" Preview, help, modified and readonly flags
-set statusline+=%w%h%m%r
-" Show fugitive.vim's GIT status
-set statusline+=%{fugitive#statusline()}
-" Filetype
-set statusline+=\%y
-" Current dir
-set statusline+=\ [%{getcwd()}]
-" Warn about syntactic errors using Syntastic.vim
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-" Right aligned file nav info
-set statusline+=%=%-14.(%l,%c%V%)\ %p%%
-"}}}
-
-" ******************************************************************************
-" Some defaults I like/need
-" ******************************************************************************
-set scrolloff=3 " Leave 3 lines before start scrolling
-set backspace=indent,eol,start
-runtime macros/matchit.vim " Needed for the ruby block object plugin
-set spell
-set spelllang=en_us
-
-" Searching"{{{
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-"}}}
-
-" Folding "{{{
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
-set foldlevel=1
-"}}}
-
-" Don't forget to set missing ft for Ruby files
-au BufRead,BufNewFile {caprc,autotest,.caprc} set ft=ruby
-au BufRead,BufNewFile /opt/nginx/conf/* set ft=nginx 
-
-" ******************************************************************************
-" Auto completion
-" ******************************************************************************
-" Pretty auto completion"{{{
-set completeopt=longest,menu
-set complete=.,w,b,u,t
-set wildmode=longest,list:longest
-"}}}
-
-" Auto complete for ruby"{{{
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-"}}}
-
+" ctrlp mapping
+let g:ctrlp_map = 'ff'
 " Some extras to rails.vim "{{{
 autocmd User Rails Rnavcommand steps features/step_definitions -glob=**/*
-"}}}
-" ******************************************************************************
-" Some custom commands
-" ******************************************************************************
-if !exists("vimpager")
-  command W w !sudo tee % > /dev/null
-endif
-" ******************************************************************************
-" Some custom key mapping
-" ******************************************************************************
-" Misc mappings"{{{
+
 let mapleader=","
+
+" Misc mappings
 imap jj <ESC>
-nnoremap <space> za
+
+map ,f mmgg=G`m^
 map <silent> <F2> :FixWhitespace<CR>
 map <silent> ,n :noh<CR>
-nnoremap <silent> ,<space> :NERDTreeToggle<CR>
-noremap ,a :Ack<space>
 map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
 map ,te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-nmap Q gqq
-nnoremap <F3> :set invpaste paste?<CR>
-set pastetoggle=<F3>
-set showmode
-"}}}
-" VIMRC mappings"{{{
-nmap <silent> ,,ev :e $MYVIMRC
-nmap <silent> ,,sv :so $MYVIMRC
-"}}}
-" Code indenting"{{{
-imap ,f <Esc> mmgg=G`m^
-map ,f mmgg=G`m^
-"}}}
-" GIT related mappings"{{{
-nmap <silent> ,gs :Gstatus<CR>
-nmap <silent> ,gd :Gdiff<CR>
-nmap <silent> ,gl :Extradite<CR>
-"}}}
 
-" Window mappings"{{{
+nnoremap <space> za
+nnoremap <silent> ,<space> :NERDTreeToggle<CR>
+noremap ,a :Ack<space>
+nnoremap <F3> :set invpaste paste?<CR>
+
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-noremap <silent> ,cc :close<CR>
-"}}}
-" Tabularize mappings"{{{
+nnoremap <silent> ,cc :close<CR>
+
+nmap Q gqq
+nmap <silent> ,,ev :e $MYVIMRC
+nmap <silent> ,,sv :so $MYVIMRC
+nmap <silent> ,gs :Gstatus<CR>
+nmap <silent> ,gd :Gdiff<CR>
+" Tslime
+nmap <C-c>r <Plug>SetTmuxVars
+
 nmap <silent> ,a= :Tabularize /=<CR>
 vmap <silent> ,a= :Tabularize /=<CR>
 nmap <silent> ,a: :Tabularize /:<CR>
@@ -226,12 +184,9 @@ nmap <silent> ,a, :Tabularize /,<CR>
 vmap <silent> ,a, :Tabularize /,<CR>
 nmap <silent> ,a<Bar> :Tabularize /<Bar><CR>
 vmap <silent> ,a<Bar> :Tabularize /<Bar><CR>
-"}}}
 
-" Tslime
-nmap <C-c>r <Plug>SetTmuxVars
 
-" Align Cucumber tables with Tabular plugin"{{{
+" Align Cucumber tables with Tabular plugin "{{{
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
@@ -276,16 +231,16 @@ function! InitializeDirectories()
 endfunction
 call InitializeDirectories()"}}}
 
+" Removes all traililing whitespaces from the buffer
 function! s:FixWhitespace(line1,line2)
     let l:save_cursor = getpos(".")
     silent! execute ':' . a:line1 . ',' . a:line2 . 's/\s\+$//'
     call setpos('.', l:save_cursor)
 endfunction
-
 " Run :FixWhitespace to remove end of line white space.
 command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 
-function! s:FixDistrinetXml()
+function! s:PrettifyXml()
     let l:save_cursor = getpos(".")
     silent! execute ':%s/\n//'
     silent! execute ':1,$!xmllint --format --recover - 2>/dev/null'
@@ -293,6 +248,4 @@ function! s:FixDistrinetXml()
     silent! execute ':w'
     call setpos('.', l:save_cursor)
 endfunction
-command! FixDistrinetXml call <SID>FixDistrinetXml()
-
-" vim: set fdm=marker:
+command! PrettifyXml call <SID>PrettifyXml()
