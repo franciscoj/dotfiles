@@ -8,6 +8,7 @@ call vundle#rc()
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
 Bundle 'Textile-for-VIM'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-haml'
@@ -19,6 +20,7 @@ Bundle 'bronson/vim-ruby-block-conv'
 Bundle 'andersjanmyr/nginx-vim-syntax'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'tangledhelix/vim-octopress'
+Bundle 'altercation/vim-colors-solarized'
 
 Bundle 'gmarik/vundle'
 Bundle 'mileszs/ack.vim'
