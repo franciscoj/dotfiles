@@ -33,6 +33,7 @@ class Dotfiles < Thor
 
     remove_file "#{self.home}/.vim"
     system %Q{ln -s "$PWD/vim" "$HOME/.vim"}
+    system %Q{git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle}
     system %Q{vim +BundleInstall +qall}
   end
 
