@@ -31,10 +31,6 @@ namespace :install do
     #install oh-my-zsh
     system %Q{rm -rf "$HOME/.oh-my-zsh"}
     system %Q{/usr/bin/env git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh}
-
-    #Add customization to oh-my-zsh
-    replace_file("oh-my-zsh/custom/functions.zsh", true)
-    replace_file("oh-my-zsh/custom/completion.zsh", true)
   end
 
   desc "Install VIM related dotfiles"

@@ -1,9 +1,4 @@
 *.swp
 git/gitconfig
 *~
-vim/.netrwhist
-vim/.DS_Store
-vim/.VimballRecord
-vim/swap/
 tags
-vim/views
