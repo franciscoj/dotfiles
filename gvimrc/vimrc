@@ -67,7 +67,7 @@ set number
 set cursorline
 set colorcolumn=80
 set list
-set listchars=tab:$\,eol:¬,trail:·
+set listchars=tab:>\ ,eol:¬,trail:·
 set diffopt+=iwhite
 set cpoptions+=$ " Mark with a $ at the end of a 'change' command
 set showcmd
