@@ -32,7 +32,7 @@ class Dotfiles < Thor
     install 'gvimrc'
 
     remove_file "#{self.home}/.vim"
-    link_file 'vim', "#{self.home}/.vim"
+    create_link 'vim', "#{self.home}/.vim"
     system %Q{vim +BundleInstall +qall}
   end
 
