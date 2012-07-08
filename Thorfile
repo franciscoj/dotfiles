@@ -27,7 +27,7 @@ class Dotfiles < Thor
     install 'git'
   end
 
-  desc :git, "Install Vim dotfiles"
+  desc :vim, "Install Vim dotfiles"
   def vim
     install 'gvimrc'
 
@@ -46,9 +46,11 @@ class Dotfiles < Thor
 
   desc :all, "Install all dotfiles"
   def all
-    %w[ruby git bash zsh vim].each do |dotfile|
-      thor dotfile
-    end
+    self.ruby
+    self.git
+    self.bash
+    self.zsh
+    self.vim
   end
 
   protected
