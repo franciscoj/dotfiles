@@ -17,7 +17,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'bronson/vim-ruby-block-conv'
-Bundle 'andersjanmyr/nginx-vim-syntax'
+Bundle 'nginx.vim'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'tangledhelix/vim-octopress'
 Bundle 'altercation/vim-colors-solarized'
@@ -52,6 +52,11 @@ Bundle 'jgdavey/vim-turbux'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-eunuch'
 
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/snipmate-snippets"
+Bundle "garbas/vim-snipmate"
+
 " ******************************************************************************
 " Make it pretty
 " ******************************************************************************
@@ -65,10 +70,10 @@ colorscheme solarized
 
 set number
 set cursorline
-set colorcolumn=80
+set colorcolumn=81
 set list
 set listchars=tab:>\ ,eol:¬,trail:·
-set diffopt+=iwhite
+set diffopt+=iwhite,filler
 set cpoptions+=$ " Mark with a $ at the end of a 'change' command
 set showcmd
 set laststatus=2 " Always show status line.
@@ -112,6 +117,9 @@ set wildmode=longest,list:longest
 set pastetoggle=<F3>
 set showmode
 
+set nobackup
+set noswapfile
+
 runtime macros/matchit.vim " Needed for the ruby block object plugin
 
 " Filetype config for some missing files on vim-ruby
@@ -135,14 +143,13 @@ let g:NERDTreeHijackNetrw = 0
 let g:syntastic_enable_signs=1
 " Force easytags.vim to take ctags from homebrew
 let g:easytags_cmd = "/usr/local/bin/ctags"
-" Use solarized to highlight trailing white spaces
-let g:solarized_hitrail = 1
 " Don't mess with yankring
 let g:yankring_manual_clipboard_check = 1
 " Powerline config
 let g:Powerline_symbols = 'unicode'
 " ctrlp mapping
 let g:ctrlp_map = 'ff'
+
 " Some extras to rails.vim "{{{
 autocmd User Rails Rnavcommand steps features/step_definitions -glob=**/*
 
@@ -187,52 +194,6 @@ vmap <silent> ,a, :Tabularize /,<CR>
 nmap <silent> ,a<Bar> :Tabularize /<Bar><CR>
 vmap <silent> ,a<Bar> :Tabularize /<Bar><CR>
 
-
-" Align Cucumber tables with Tabular plugin "{{{
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
-"}}}
-
-" ******************************************************************************
-" Misc functions
-" ******************************************************************************
-" Set backup directories"{{{
-function! InitializeDirectories()
-  let separator = "."
-  let parent = $HOME
-  let prefix = '.vim/'
-  let dir_list = {
-        \ 'backup': 'backupdir',
-        \ 'views': 'viewdir',
-        \ 'swap': 'directory' }
-
-  for [dirname, settingname] in items(dir_list)
-    let directory = parent . '/' . prefix . dirname . "/"
-    if exists("*mkdir")
-      if !isdirectory(directory)
-        call mkdir(directory)
-      endif
-    endif
-    if !isdirectory(directory)
-      echo "Warning: Unable to create backup directory: " . directory
-      echo "Try: mkdir -p " . directory
-    else
-      let directory = substitute(directory, " ", "\\\\ ", "")
-      exec "set " . settingname . "=" . directory
-    endif
-  endfor
-endfunction
-call InitializeDirectories()"}}}
-
 " Removes all traililing whitespaces from the buffer
 function! s:FixWhitespace(line1,line2)
     let l:save_cursor = getpos(".")
@@ -246,7 +207,7 @@ function! s:PrettifyXml()
     let l:save_cursor = getpos(".")
     silent! execute ':%s/\n//'
     silent! execute ':1,$!xmllint --format --recover - 2>/dev/null'
-    silent! execute "normal 2Gdd"
+    " silent! execute "normal 2Gdd"
     silent! execute ':w'
     call setpos('.', l:save_cursor)
 endfunction
