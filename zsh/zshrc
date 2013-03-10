@@ -13,11 +13,12 @@ source $ZSH/oh-my-zsh.sh
 export PATH="~/bin:/usr/local/Cellar/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin::$PATH"
 
 # Load android-sdk installed from homebrew
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r6
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21.0.1
+export ANDROID_HOME=/usr/local/Cellar/android-sdk/r21.0.1
 # Node.js load path
 export NODE_PATH=/usr/local/lib/node_modules
 # Set Vim as the default editor
-export EDITOR='vim'
+export EDITOR='vi
 export PAGER='/usr/local/bin/vimpager'
 
 # Load RVM
@@ -28,7 +29,11 @@ unsetopt auto_name_dirs
 # Load tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-export AUTOFEATURE=true
+# Load autojump
+if [ -f `brew --prefix`/etc/autojump ]; then
+  . `brew --prefix`/etc/autojump
+fi
+
 
 alias migrate="rake db:migrate db:test:clone"
 alias p="powder"
@@ -48,3 +53,6 @@ alias less=$PAGER
 alias zless=$PAGER
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
