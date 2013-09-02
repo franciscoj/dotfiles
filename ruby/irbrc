@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 
 # require 'rubygems'
+# require 'interactive_editor'
 # require 'pry'
 # 
 # # Use pry for the console if it exists
