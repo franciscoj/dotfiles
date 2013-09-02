@@ -8,7 +8,7 @@ export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_FIXTERM=false
 export ZSH_TMUX_AUTOQUIT=false
 
-plugins=(git gem rails3 tmux bundler rbenv vundle)
+plugins=(git gem rails3 bundler rbenv vundle)
 
 source $ZSH/oh-my-zsh.sh
 
