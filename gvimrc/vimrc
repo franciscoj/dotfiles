@@ -172,10 +172,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 " ctrlp mapping
 let g:ctrlp_map = 'ff'
-" Vim notes plugin
-" let g:notes_directories = ['~/Dropbox/journal']
-" let g:notes_suffix = '.vimnotes.txt'
-" let g:notes_title_sync = 'rename_file'
 
 " Some extras to rails.vim "{{{
 autocmd User Rails Rnavcommand steps features/step_definitions -glob=**/*
