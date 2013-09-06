@@ -169,7 +169,9 @@ let g:easytags_cmd = "/usr/local/bin/ctags"
 let g:yankring_manual_clipboard_check = 1
 " Airline config
 let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
+
 " ctrlp mapping
 let g:ctrlp_map = 'ff'
 
