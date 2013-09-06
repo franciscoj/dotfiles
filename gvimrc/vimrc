@@ -234,3 +234,6 @@ command! PrettifyXml call <SID>PrettifyXml()
 
 " Abbreviations
 " iab <expr> dts strftime("%c")
+hi link yardType rubyConstant
+hi link yardDuckType rubyMethod
+hi link yardLiteral rubyString
