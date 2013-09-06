@@ -1,5 +1,5 @@
 # vim FTW
-Pry.config.editor = "mvim"
+Pry.config.editor = "vim"
 
 # Prompt with ruby version
 Pry.prompt = [Proc.new { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, Proc.new { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]

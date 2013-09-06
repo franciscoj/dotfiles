@@ -53,6 +53,7 @@ class Dotfiles < Thor
     self.bash
     self.zsh
     self.vim
+    self.misc
   end
 
   protected
