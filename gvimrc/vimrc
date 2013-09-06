@@ -143,12 +143,20 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
+" Open netrw when no argument specified
+autocmd VimEnter * if !argc() | Explore | endif
+
 " Set text width to 80 chars on markdown files
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Set spelling to Spanish for notes
 au BufRead,BufNewFile *.vimnotes.txt set spelllang=es_es
 
+" netrw config
+let g:netrw_banner       = 0
+let g:netrw_keepdir      = 0
+let g:netrw_liststyle    = 1 " or 3
+let g:netrw_sort_options = ''"
 " Configuration for used plugins
 let NERDTreeDirArrows=1
 " Fixes incompatibility with NERDTree and vim-bundler
