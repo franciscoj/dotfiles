@@ -32,5 +32,9 @@ alias cu='bundle exec cucumber'
 alias tcu='CUCUMBER_FORMAT=pretty bundle exec cucumber'
 alias cucumber='bundle exec cucumber'
 alias rspec='bundle exec rspec'
+# Ubuntu sucks sometimes...
+if hash ack-grep; then
+  alias ack='ack-grep'
+fi
 
 export HIPCHAT_USER="Francisco J. Casas"
