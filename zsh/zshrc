@@ -33,7 +33,7 @@ alias tcu='CUCUMBER_FORMAT=pretty bundle exec cucumber'
 alias cucumber='bundle exec cucumber'
 alias rspec='bundle exec rspec'
 # Ubuntu sucks sometimes...
-if hash ack-grep; then
+if hash ack-grep 2>/dev/null; then
   alias ack='ack-grep'
 fi
 
