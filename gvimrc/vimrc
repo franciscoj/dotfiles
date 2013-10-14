@@ -214,8 +214,7 @@ map <silent> ,n :noh<CR>
 map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
 map ,te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-nnoremap <space> za
-nnoremap <silent> ,<space> :NERDTreeToggle<CR>
+nnoremap <silent> ,<space> :Sexplore<CR>
 nnoremap <F3> :set invpaste paste?<CR>
 nnoremap ,u :UndotreeToggle<cr>
 
@@ -230,6 +229,7 @@ nmap <silent> ,,ev :e $MYVIMRC
 nmap <silent> ,,sv :so $MYVIMRC
 nmap <silent> ,gs :Gstatus<CR>
 nmap <silent> ,gd :Gdiff<CR>
+nmap <silent> ,gb :Gblame<CR>
 " Tslime
 nmap <C-c>r <Plug>SetTmuxVars
 
