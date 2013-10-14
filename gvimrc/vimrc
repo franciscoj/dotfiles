@@ -165,6 +165,11 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
+" Set comment type for nginx
+autocmd FileType nginx set commentstring=#\ %s
+" Comment type for dnsmasq config files
+autocmd BufRead,BufNewFile /usr/local/etc/dnsmasq.conf set commentstring=#\ %s
+
 " Set text width to 80 chars on markdown files
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
