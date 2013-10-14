@@ -175,6 +175,7 @@ au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Open netrw when no argument specified
 autocmd VimEnter * if !argc() | Explore | endif
+
 " netrw config
 let g:netrw_banner       = 0
 let g:netrw_keepdir      = 0
@@ -185,15 +186,18 @@ let g:netrw_sort_options = ''"
 let NERDTreeDirArrows=1
 " Fixes incompatibility with NERDTree and vim-bundler
 let g:NERDTreeHijackNetrw = 0
-" Sintastic.vim config
 
+" Sintastic.vim config
 let g:syntastic_enable_signs=1
+
 " Force easytags.vim to take ctags from homebrew
 if has("mac")
   let g:easytags_cmd = "/usr/local/bin/ctags"
 elseif has("linux")
   let g:easytags_cmd = "/usr/bin/ctags"
 end
+let g:easytags_auto_highlight = 0
+
 " Airline config
 let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
