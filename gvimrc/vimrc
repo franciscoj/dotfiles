@@ -81,11 +81,7 @@ NeoBundle "garbas/vim-snipmate"
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 let g:unite_prompt = '» '
-if has('mac')
-  let g:unite_source_grep_command = 'ack'
-elseif has('unix')
-  let g:unite_source_grep_command = 'ack-grep'
-end
+let g:unite_source_grep_command = 'ack'
 let g:unite_source_grep_default_opts = '--no-heading --no-color -H'
 let g:unite_source_grep_recursive_opt = ''
 let g:unite_source_history_yank_enable = 1
