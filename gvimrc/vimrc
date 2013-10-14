@@ -107,6 +107,7 @@ set diffopt+=iwhite,filler
 set cpoptions+=$ " Mark with a $ at the end of a 'change' command
 set showcmd
 set laststatus=2 " Always show status line.
+set noautochdir
 
 " Filetype highlighting and indentation activation
 syntax on
