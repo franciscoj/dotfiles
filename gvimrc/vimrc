@@ -79,14 +79,17 @@ NeoBundle "garbas/vim-snipmate"
 " Unite
 " ******************************************************************************
 
-" call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
 let g:unite_prompt = '» '
 let g:unite_source_grep_command = 'ack'
 let g:unite_source_grep_default_opts = '--no-heading --no-color -H'
 let g:unite_source_grep_recursive_opt = ''
 let g:unite_source_history_yank_enable = 1
+let g:unite_source_file_rec_max_cache_files = 0
+call unite#custom#source('file_mru,file_rec,file_rec/async,grepocate',
+        \ 'max_candidates', 0)
 
-nnoremap ff :Unite -start-insert file_rec/async<CR>
+nnoremap ff :Unite -start-insert file_rec/async:!<CR>
 nnoremap fa :Unite grep:.<cr>
 nnoremap fy :<C-u>Unite history/yank<CR>
 nnoremap fb :Unite -quick-match buffer<cr>
@@ -219,7 +222,7 @@ map <silent> ,n :noh<CR>
 map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
 map ,te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-nnoremap <silent> ,<space> :Sexplore<CR>
+nnoremap <silent> ,<space> :NERDTreeToggle<CR>
 nnoremap <F3> :set invpaste paste?<CR>
 nnoremap ,u :UndotreeToggle<cr>
 
