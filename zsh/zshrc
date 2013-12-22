@@ -4,16 +4,17 @@ export DISABLE_AUTO_TITLE=true
 # Set Vim as the default editor
 export EDITOR='vim'
 
-plugins=(git github gem rails bundler rbenv vundle vi-mode)
+plugins=(git github gem rails)
 
 source $ZSH/oh-my-zsh.sh
 
-# if [[ -z $TMUX ]]; then
-  export PATH="$HOME/bin:/usr/local/bin:$PATH"
+if [[ -z $TMUX ]]; then
+  export PATH="$HOME/bin:/usr/local/bin/:$PATH"
+  export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
   ### Added by the Heroku Toolbelt
   export PATH="/usr/local/heroku/bin:$PATH"
-# fi
+fi
 
 export RBENV_ROOT="$HOME/.rbenv"
 
