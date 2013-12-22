@@ -99,9 +99,15 @@ nnoremap fb :Unite -quick-match buffer<cr>
 " ******************************************************************************
 " Make it pretty
 " ******************************************************************************
-set background=dark
-let g:solarized_termcolors = 16
+set term=screen-256color
+if &term =~ '256color'
+  set t_ut=
+  set t_Co=256
+end
+
 colorscheme solarized
+set background=dark
+let g:solarized_termcolors=256
 
 set number
 set relativenumber
