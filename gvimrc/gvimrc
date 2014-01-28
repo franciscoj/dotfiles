@@ -2,5 +2,5 @@ if has("gui_macvim")
   " set the vim windows size
   set lines=55 columns=150
   " Set the macvim font
-  set guifont=Inconsolata:h18
+  set guifont=Inconsolata\ for\ Powerline:h18
 endif

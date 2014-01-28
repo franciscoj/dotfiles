@@ -4,12 +4,12 @@ export DISABLE_AUTO_TITLE=true
 # Set Vim as the default editor
 export EDITOR='vim'
 
-plugins=(git github gem rails3 bundler rbenv vundle vi-mode)
+plugins=(git github gem rails bundler rbenv vundle vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
 # if [[ -z $TMUX ]]; then
-  export PATH="$HOME/bin:/usr/local/bin/:$PATH"
+  export PATH="$HOME/bin:/usr/local/bin:$PATH"
   eval "$(rbenv init -)"
   ### Added by the Heroku Toolbelt
   export PATH="/usr/local/heroku/bin:$PATH"
@@ -36,7 +36,8 @@ alias rspec='bundle exec rspec'
 if hash ack-grep 2>/dev/null; then
   alias ack='ack-grep'
 fi
+alias goto='teamocil --here'
 
-export HIPCHAT_USER="Francisco J. Casas"
+export HIPCHAT_USER="Fran Casas"
 
 bindkey "^R" history-incremental-pattern-search-backward
