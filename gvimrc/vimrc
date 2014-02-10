@@ -83,8 +83,8 @@ NeoBundle "garbas/vim-snipmate"
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 let g:unite_prompt = '» '
-let g:unite_source_grep_command = 'ack'
-let g:unite_source_grep_default_opts = '--no-heading --no-color -H'
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts = '--line-numbers --nocolor --nogroup'
 let g:unite_source_grep_recursive_opt = ''
 let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -200,6 +200,7 @@ let g:NERDTreeHijackNetrw = 0
 
 " Sintastic.vim config
 let g:syntastic_enable_signs=1
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 " Force easytags.vim to take ctags from homebrew
 if has("mac")
@@ -285,3 +286,20 @@ command! PrettifyXml call <SID>PrettifyXml()
 hi link yardType rubyConstant
 hi link yardDuckType rubyMethod
 hi link yardLiteral rubyString
+
+" promote variable to rspec let
+" link: http://coderwall.com/p/th43aw?i=16&p=1&q=&t=code-vim-ruby-rspec-minitest
+" -----------------------------------------------------------------------------
+function! PromoteToLet()
+  :normal! dd
+" :exec '?^\s*it\>'
+  :normal! P
+  :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+  :normal ==
+endfunction
+command! PromoteToLet :call PromoteToLet()
+nmap <silent> <leader>pl :call PromoteToLet()<CR>
+
+" convert ruby 1.8 hash syntax to 1.9
+" -----------------------------------------------------------------------------
+nmap <silent> <leader>rh :%s/:\(\w\+\)\(\s\?\)=> /\1:\2/g<CR>
