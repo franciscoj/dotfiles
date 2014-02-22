@@ -63,3 +63,5 @@ No, you probably shouldn't. There are good and well maintained VIM bundles and d
 ## TODO
 
 1. Find a better way to install http://github.com/robbyrussell/oh-my-zsh and its customizations
+2. Use anvil to install
+3. Install emacs dot-files with prelude support
