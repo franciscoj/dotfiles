@@ -36,7 +36,7 @@ To install all the Vim plugins and snippets you need to open Vim and run `:Bundl
 This will install the following plugins
 
 * [Ack.vim](http://github.com/mileszs/ack.vim) to use ack for global finding
-* [Textile syntax highlight](http://github.com/timcharper/textile.vim) 
+* [Textile syntax highlight](http://github.com/timcharper/textile.vim)
 * [Snipmate](http://github.com/msanders/snipmate.vim) and [scrooloose's snippets](http://github.com/scrooloose/snipmate-snippets)
 * [Nerdcommenter](http://github.com/scrooloose/nerdcommenter)
 * [matchit.vim](http://github.com/edsono/vim-matchit) which extends the `%` Command
