@@ -28,7 +28,8 @@ class InstallTask < Anvil::Task
     symlink_if_exists 'ruby/default-gems',
                       on_home('.rbenv/default-gems'),
                       on_home('.rbenv')
-    touch_unless_exists on_nome('.gemrc_local')
+    touch_unless_exists on_home('.gemrc_local')
+  end
 
   def install_prelude
     Anvil.logger.info 'Installing prelude'
@@ -49,7 +50,7 @@ class InstallTask < Anvil::Task
   protected
 
   def touch_unless_exists path
-    FileUtils.tuoch path unless File.exists? path
+    FileUtils.touch path unless File.exists? path
   end
 
   def project_root
