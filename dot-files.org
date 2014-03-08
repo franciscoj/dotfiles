@@ -1,0 +1,5 @@
+* Tasks
+** TODO Install oh-my-zsh from git
+** TODO Symlink all the dot-files
+** TODO Install prelude from git
+** TODO Install yasnippet and its snippets from git
