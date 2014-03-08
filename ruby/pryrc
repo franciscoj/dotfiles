@@ -1,9 +1,0 @@
-# vim FTW
-Pry.config.editor = "vim"
-
-# Prompt with ruby version
-Pry.prompt = [Proc.new { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, Proc.new { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
-
-%w{hirb}.each { |gem| require gem }
-
-load File.dirname(__FILE__) + '/.railsrc' if defined?(Rails) && Rails.env

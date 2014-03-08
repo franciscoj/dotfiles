@@ -22,5 +22,5 @@
 env :PATH, "/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin"
 
 every 2.hours do
-  command "logrotate --state=/tmp/logrotate.state /projects/dot-files/others/logrotate.conf"
+  command "logrotate --state=/tmp/logrotate.state ~/Documents/src/dot-files/logrotate.conf"
 end
