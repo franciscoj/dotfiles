@@ -7,5 +7,7 @@
    CLOSED: [2014-03-08 Sat 12:53]
 ** DONE Install yasnippet and its snippets from git
    CLOSED: [2014-03-08 Sat 12:53]
-** TODO Manage multiple gemrc files
+** DONE Manage multiple gemrc files
+   CLOSED: [2014-03-08 Sat 19:00]
 ** TODO Don't load PATH multiple times on tmux
+** TODO Symlink git dot-files

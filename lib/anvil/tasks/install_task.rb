@@ -25,6 +25,10 @@ class InstallTask < Anvil::Task
       symlink file
     end
 
+    %w(git/gitconfig git/gitignore).each do |file|
+      symlink file
+    end
+
     symlink_if_exists 'ruby/default-gems',
                       on_home('.rbenv/default-gems'),
                       on_home('.rbenv')
