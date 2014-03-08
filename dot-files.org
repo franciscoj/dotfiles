@@ -10,4 +10,5 @@
 ** DONE Manage multiple gemrc files
    CLOSED: [2014-03-08 Sat 19:00]
 ** TODO Don't load PATH multiple times on tmux
-** TODO Symlink git dot-files
+** DONE Symlink git dot-files
+   CLOSED: [2014-03-08 Sat 19:04]
