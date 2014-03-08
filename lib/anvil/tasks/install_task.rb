@@ -16,6 +16,7 @@ class InstallTask < Anvil::Task
     github_install 'robbyrussell/oh-my-zsh', on_home('.oh-my-zsh')
 
     symlink 'zsh/zshrc'
+    touch_unless_exists on_home('.zshrc_local')
   end
 
   def symlink_dotfiles
@@ -27,7 +28,7 @@ class InstallTask < Anvil::Task
     symlink_if_exists 'ruby/default-gems',
                       on_home('.rbenv/default-gems'),
                       on_home('.rbenv')
-  end
+    touch_unless_exists on_nome('.gemrc_local')
 
   def install_prelude
     Anvil.logger.info 'Installing prelude'
@@ -46,6 +47,10 @@ class InstallTask < Anvil::Task
   end
 
   protected
+
+  def touch_unless_exists path
+    FileUtils.tuoch path unless File.exists? path
+  end
 
   def project_root
     %x{git rev-parse --show-toplevel}.strip
