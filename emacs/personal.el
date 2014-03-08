@@ -24,3 +24,9 @@
          (:password . nil)
          (:network-server . "talk.google.com")
          (:connection-type . ssl))))
+
+(setq projectile-switch-project-action 'projectile-dired)
+
+(setq yas-snippets-dir
+      '("~/.emacs.d/yasnippet-snippets"
+        "~/.emacs.d/personal-snippets"))

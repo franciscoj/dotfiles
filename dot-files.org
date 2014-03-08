@@ -1,5 +1,11 @@
 * Tasks
-** TODO Install oh-my-zsh from git
-** TODO Symlink all the dot-files
-** TODO Install prelude from git
-** TODO Install yasnippet and its snippets from git
+** DONE Install oh-my-zsh from git
+   CLOSED: [2014-03-08 Sat 12:53]
+** DONE Symlink all the dot-files
+   CLOSED: [2014-03-08 Sat 12:53]
+** DONE Install prelude from git
+   CLOSED: [2014-03-08 Sat 12:53]
+** DONE Install yasnippet and its snippets from git
+   CLOSED: [2014-03-08 Sat 12:53]
+** TODO Manage multiple gemrc files
+** TODO Don't load PATH multiple times on tmux
