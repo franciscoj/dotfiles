@@ -1,0 +1,23 @@
+[user]
+  name = Fran Casas
+  email = nflamel@otrobloggeek.com
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  editor = 'emacs -t'
+[core]
+  excludesfile = /Users/franciscoj/.gitignore
+  autocrlf = input
+[apply]
+  whitespace = fix
+[format]
+  pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+[github]
+  user = franciscoj
+[alias]
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)an>%Creset' --abbrev-commit --date=relative
+  co = checkout
+  s = status --short -b
+[push]
+  default = current
