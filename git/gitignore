@@ -5,3 +5,5 @@
 *_test
 *_test2
 .ruby-version
+.bundle/config
+vendor/bundle

@@ -1,3 +1,0 @@
-begin
-  require "capistrano_colors"
-rescue LoadError; end
