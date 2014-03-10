@@ -3,10 +3,10 @@ export ZSH_THEME="sunrise"
 plugins=(git github gem rails rbenv heroku)
 source $ZSH/oh-my-zsh.sh
 
-export PATH="$HOME/bin:/usr/local/bin/:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export HIPCHAT_USER='Fran Casas'
-export EDITOR='emacs -t'
+export EDITOR='emacs -nw'
 export DISABLE_AUTO_TITLE=true
 
 # Aliases
