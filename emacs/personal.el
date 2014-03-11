@@ -57,9 +57,11 @@
 
 (setq projectile-switch-project-action 'projectile-dired)
 
+(prelude-require-package 'yasnippet)
 (setq yas-snippets-dir
       '("~/.emacs.d/yasnippet-snippets"
         "~/.emacs.d/personal-snippets"))
+(yas-global-mode)
 
 (key-chord-define-global "nn" 'next-multiframe-window)
 (key-chord-define-global "NN" 'previous-multiframe-window)
