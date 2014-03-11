@@ -60,3 +60,7 @@
 (setq yas-snippets-dir
       '("~/.emacs.d/yasnippet-snippets"
         "~/.emacs.d/personal-snippets"))
+
+(key-chord-define-global "nn" 'next-multiframe-window)
+(key-chord-define-global "NN" 'previous-multiframe-window)
+(key-chord-define-global "xx" 'smex)
