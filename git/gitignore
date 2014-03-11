@@ -7,3 +7,4 @@
 .ruby-version
 .bundle/config
 vendor/bundle
+*.org
