@@ -11,7 +11,7 @@ export DISABLE_AUTO_TITLE=true
 
 # Aliases
 alias be='bundle exec'
-alias rake='bundle exec rake'
+alias rake='noglob bundle exec rake'
 alias migrate='rake db:migrate db:test:clone'
 alias rspec='bundle exec rspec'
 alias r='rspec'
