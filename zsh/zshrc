@@ -3,7 +3,7 @@ export ZSH_THEME="sunrise"
 plugins=(git github gem rails rbenv heroku)
 source $ZSH/oh-my-zsh.sh
 
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:$PATH:/usr/local/sbin"
 export PATH="/usr/local/heroku/bin:$PATH"
 export HIPCHAT_USER='Fran Casas'
 export EDITOR='emacs -nw'
@@ -22,3 +22,4 @@ alias e='emacs -nw'
 [[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
 [[ -f $HOME/.zshrc ]] && source $HOME/.zshrc_local
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
