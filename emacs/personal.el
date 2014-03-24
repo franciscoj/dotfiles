@@ -63,6 +63,9 @@
         "~/.emacs.d/personal-snippets"))
 (yas-global-mode)
 
-(key-chord-define-global "nn" 'next-multiframe-window)
-(key-chord-define-global "NN" 'previous-multiframe-window)
+(key-chord-define-global "kk" 'next-multiframe-window)
+(key-chord-define-global "KK" 'previous-multiframe-window)
 (key-chord-define-global "xx" 'smex)
+
+(display-time-mode 1)
+(setq display-time-format "%R %d/%m/%Y")
