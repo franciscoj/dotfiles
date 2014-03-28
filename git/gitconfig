@@ -21,3 +21,5 @@
   s = status --short -b
 [push]
   default = current
+[rerere]
+	enabled = true
