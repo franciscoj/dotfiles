@@ -1,0 +1,5 @@
+log/*
+db/migrate/*
+vendor/bundle
+CHANGELOG.txt
+coverage/*
