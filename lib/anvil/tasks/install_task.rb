@@ -21,11 +21,15 @@ class InstallTask < Anvil::Task
 
   def symlink_dotfiles
     Anvil.logger.info 'Symlinking dot-files'
-    %w(ruby/gemrc ruby/irbrc ruby/railsrc ruby/rdebugrc).each do |file|
+    %w(ruby/gemrc ruby/irbrc ruby/railsrc ruby/rdebugrc ruby/pryrc).each do |file|
       symlink file
     end
 
     %w(git/gitconfig git/gitignore).each do |file|
+      symlink file
+    end
+
+    %w(others/agignore others/tmux.conf).each do |file|
       symlink file
     end
 
