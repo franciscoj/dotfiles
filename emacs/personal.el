@@ -69,3 +69,6 @@
 
 (display-time-mode 1)
 (setq display-time-format "%R %d/%m/%Y")
+
+(prelude-require-package 'indent-guide)
+(indent-guide-global-mode)
