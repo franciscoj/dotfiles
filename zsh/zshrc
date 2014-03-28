@@ -16,6 +16,7 @@ alias migrate='rake db:migrate db:test:clone'
 alias rspec='bundle exec rspec'
 alias rp='rake parallel:spec[3]'
 alias r='rspec'
+alias nrr='RSPEC_NO_RETRY=true r'
 alias p='teamocil --here'
 alias e='emacs -nw'
 
