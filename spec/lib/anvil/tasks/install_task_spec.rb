@@ -7,6 +7,7 @@ describe InstallTask do
       expect(subject).to receive(:symlink_dotfiles)
       expect(subject).to receive(:install_prelude)
       expect(subject).to receive(:install_snippets)
+      expect(subject).to receive(:install_binaries)
     end
 
     after { subject.task }

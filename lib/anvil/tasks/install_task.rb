@@ -9,6 +9,7 @@ class InstallTask < Anvil::Task
     symlink_dotfiles
     install_prelude
     install_snippets
+    install_binaries
   end
 
   def install_ohmyzsh
@@ -37,6 +38,10 @@ class InstallTask < Anvil::Task
                       on_home('.rbenv/default-gems'),
                       on_home('.rbenv')
     touch_unless_exists on_home('.gemrc_local')
+  end
+
+  def install_binaries
+    symlink 'bin/ec', on_home('bin')
   end
 
   def install_prelude
