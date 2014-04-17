@@ -48,12 +48,15 @@
       jabber-backlog-days 30
       jabber-history-dir "~/.cache/jabber-history")
 
-(setq jabber-account-list
-      `((,(read-from-minibuffer "Gtalk username: ")
-         (:password . ,(read-passwd "Gtalk password: "))
-         (:network-server . "talk.google.com")
-         (:port . 443)
-         (:connection-type . ssl))))
+(defun jabber-login-all ()
+  (interactive)
+  (setq jabber-account-list
+        `((,(read-from-minibuffer "Gtalk username: ")
+           (:password . ,(read-passwd "Gtalk password: "))
+           (:network-server . "talk.google.com")
+           (:port . 443)
+           (:connection-type . ssl))))
+  (jabber-connect-all))
 
 (setq projectile-switch-project-action 'projectile-dired)
 
