@@ -1,4 +1,5 @@
 log/*
+tmp/*
 db/migrate/*
 vendor/bundle
 CHANGELOG.txt
