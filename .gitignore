@@ -2,3 +2,5 @@
 *~
 tags
 Gemfile.lock
+.bundle
+vendor/

@@ -48,12 +48,15 @@
       jabber-backlog-days 30
       jabber-history-dir "~/.cache/jabber-history")
 
-(setq jabber-account-list
-      `((,(read-from-minibuffer "Gtalk username: ")
-         (:password . ,(read-passwd "Gtalk password: "))
-         (:network-server . "talk.google.com")
-         (:port . 443)
-         (:connection-type . ssl))))
+(defun jabber-login-all ()
+  (interactive)
+  (setq jabber-account-list
+        `((,(read-from-minibuffer "Gtalk username: ")
+           (:password . ,(read-passwd "Gtalk password: "))
+           (:network-server . "talk.google.com")
+           (:port . 443)
+           (:connection-type . ssl))))
+  (jabber-connect-all))
 
 (setq projectile-switch-project-action 'projectile-dired)
 
@@ -73,9 +76,3 @@
 (prelude-require-package 'indent-guide)
 (require 'indent-guide)
 (indent-guide-global-mode)
-
-(prelude-require-package 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)

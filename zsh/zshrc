@@ -3,10 +3,12 @@ export ZSH_THEME="sunrise"
 plugins=(git github gem rails rbenv heroku)
 source $ZSH/oh-my-zsh.sh
 
-export PATH="$HOME/bin:/usr/local/bin:$PATH:/usr/local/sbin"
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$PATH:$HOME/bin:/usr/local/bin:/usr/local/sbin"
+export PATH="$PATH:/usr/local/heroku/bin"
+
 export HIPCHAT_USER='Fran Casas'
-export EDITOR='emacs -nw'
+export ALTERNATE_EDITOR=""
+export EDITOR='ec'
 export DISABLE_AUTO_TITLE=true
 
 # Aliases
@@ -18,9 +20,11 @@ alias rp='rake parallel:spec[3]'
 alias r='rspec'
 alias nrr='RSPEC_NO_RETRY=true r'
 alias p='teamocil --here'
-alias e='emacs -nw'
 
+# Load local config if provided
 [[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
 [[ -f $HOME/.zshrc ]] && source $HOME/.zshrc_local
+
+# Load nvm and rbenv
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
