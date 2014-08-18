@@ -5,6 +5,7 @@
 *_test
 *_test2
 .bundle/config
+vendor
 vendor/bundle
 *.org
 .#*

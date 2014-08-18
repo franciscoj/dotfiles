@@ -1,0 +1,110 @@
+#!/usr/bin/env ruby
+#
+# Git commit-msg hook. If your branch name is in the form "username/vod-45-new-feature"
+# it automatically adds the prefix "[VOD-45]" to commit
+# messages.
+#
+# Example
+# =======
+#
+#    git checkout -b bob/vod-45-some-cool-feature
+#    git commit "new stuff"
+#    git log    => will show up "[VOD-45] new stuff"
+#
+# If you include "#noref" in the commit message, nothing will be added to the
+# commit message, and the "#noref" itself will be stripped.
+#
+# Example
+# =======
+#
+#    git commit "don't prefix this message #noref"
+#    git log    => will show up "don't prefix this message"
+#
+#
+# Testing
+# =======
+#
+# git init a new repo, install the commit hook, and run:
+#
+#   ruby .git/hooks/commit-msg testing
+#
+# --
+# Adapted from https://gist.github.com/2926764.git
+
+# Convert a message to include branch name information.
+class Transmogrifier < Struct.new(:message, :branchname)
+  NOREF_MATCHER  = /#noref/
+  PREFIX_MATCHER =  /\A\w+\/(\w+-\d+)[-_]*/
+  PREFIX_FORMAT = "[%s] %s"
+
+  def prefix
+    (branchname.to_s[PREFIX_MATCHER, 1] || "").strip.upcase
+  end
+
+  def to_s
+    return message unless prefix =~ /\S/
+
+    if message =~ NOREF_MATCHER
+      output = message.gsub(NOREF_MATCHER, "")
+
+    elsif message.include?(prefix)
+      output = message
+
+    else
+      output = PREFIX_FORMAT % [prefix, message]
+    end
+
+    output.squeeze(" ").strip
+  end
+end
+
+# Overwrites the file which holds the commit message with a fancier one.
+def run!
+  branchname   = `git branch --no-color 2> /dev/null`[/^\* (.+)/, 1].to_s
+  message_path = ARGV.first
+  message      = File.read(message_path).strip.chomp
+
+  File.open(message_path, 'w') {|f| f.write Transmogrifier.new(message, branchname) }
+end
+
+if ARGV.first != "testing"
+  run!
+
+else
+  ################################################################################
+  # TESTS
+  ################################################################################
+
+  puts "This will commit stuff to your repo! Do you want to proceed? [yes/n]: "
+  abort unless $stdin.gets.chomp.downcase == "yes"
+
+  require 'shellwords'
+
+  def change_branch(name)
+    `git checkout -B #{name}`
+  end
+
+  def commit(msg)
+    `echo 'testing' >> a; git add a; git commit -m #{msg.shellescape}`
+  end
+
+  def top_message
+    `git log --format="%s" -n1`.chomp
+  end
+
+  def assert_equal(a, b)
+    abort "\nFailure!\n#{a.inspect} != #{b.inspect}\n#{caller.join("\n")}" unless a == b
+  end
+
+  def commit_and_check(msg, expected_message)
+    commit(msg); assert_equal(top_message, expected_message)
+  end
+
+  change_branch "jon/vod-34-some-cool-feature"
+  commit_and_check "new stuff"                 , "[VOD-34] new stuff"
+
+  change_branch "jon/BB-10-some-other-cool-feature"
+  commit_and_check "new stuff"                 , "[BB-10] new stuff"
+
+  puts "\nAll tests passed."
+end

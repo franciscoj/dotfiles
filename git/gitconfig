@@ -7,7 +7,7 @@
   branch = auto
   editor = 'emacs -t'
 [core]
-  excludesfile = /Users/franciscoj/.gitignore
+  excludesfile = ~/.gitignore
   autocrlf = input
 [apply]
   whitespace = fix
@@ -22,4 +22,6 @@
 [push]
   default = current
 [rerere]
-	enabled = true
+  enabled = true
+[init]
+  templatedir = ~/Documents/src/dot-files/git/templates
