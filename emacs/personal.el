@@ -63,8 +63,7 @@
 
 (prelude-require-package 'yasnippet)
 (setq yas-snippets-dir
-      '("~/.emacs.d/yasnippet-snippets"
-        "~/.emacs.d/personal-snippets"))
+      '("~/.emacs.d/personal-snippets"))
 (yas-global-mode)
 
 (key-chord-define-global "kk" 'next-multiframe-window)
@@ -79,3 +78,9 @@
 (indent-guide-global-mode)
 
 (scroll-bar-mode -1)
+
+(add-hook 'ruby-mode-hook
+          '(lambda ()
+             (outline-minor-mode)
+             (setq outline-regexp
+                   " *\\(def \\|class\\|module\\|describe \\|context \\|it \\)")))
