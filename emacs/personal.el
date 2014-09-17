@@ -59,6 +59,10 @@
            (:connection-type . ssl))))
   (jabber-connect-all))
 
+(prelude-require-package 'twittering-mode)
+(setq twittering-icon-mode t)
+(setq twittering-use-master-password t)
+
 (setq projectile-switch-project-action 'projectile-dired)
 
 (prelude-require-package 'yasnippet)
@@ -84,3 +88,8 @@
              (outline-minor-mode)
              (setq outline-regexp
                    " *\\(def \\|class\\|module\\|describe \\|context \\|it \\)")))
+
+;; IDO config
+;; Display completions vertically
+(ido-mode)
+(setq ido-decorations (quote ("\n-> " "" "\n " "\n ..." "[" "]" " [No match]" " [Matched" " [Not readable]" " [Too big]" " [Confirm]")))
