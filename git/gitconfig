@@ -19,6 +19,7 @@
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)an>%Creset' --abbrev-commit --date=relative
   co = checkout
   s = status --short -b
+  amend = commit --amend --no-edit
 [push]
   default = current
 [rerere]
