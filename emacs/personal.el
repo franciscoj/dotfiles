@@ -21,6 +21,7 @@
 
 (prelude-require-package 'rspec-mode)
 (setq rspec-use-rake-when-possible nil)
+(add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
 (prelude-require-package 'jabber)
 
