@@ -86,14 +86,3 @@
 (indent-guide-global-mode)
 
 (scroll-bar-mode -1)
-
-(add-hook 'ruby-mode-hook
-          '(lambda ()
-             (outline-minor-mode)
-             (setq outline-regexp
-                   " *\\(def \\|class\\|module\\|describe \\|context \\|it \\)")))
-
-;; IDO config
-;; Display completions vertically
-(ido-mode)
-(setq ido-decorations (quote ("\n-> " "" "\n " "\n ..." "[" "]" " [No match]" " [Matched" " [Not readable]" " [Too big]" " [Confirm]")))
