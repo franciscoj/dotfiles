@@ -3,6 +3,9 @@
 (prelude-require-package 'rubocop)
 (prelude-require-package 'ruby-tools)
 
+(setq auto-mode-alist
+      (append '((".*\\.rep\\'" . ruby-mode)) auto-mode-alist))
+
 (prelude-require-package 'markdown-mode)
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
