@@ -6,7 +6,6 @@ describe InstallTask do
       expect(subject).to receive(:install_ohmyzsh)
       expect(subject).to receive(:symlink_dotfiles)
       expect(subject).to receive(:install_prelude)
-      expect(subject).to receive(:install_snippets)
       expect(subject).to receive(:install_binaries)
     end
 
@@ -39,14 +38,5 @@ describe InstallTask do
     end
 
     after { subject.install_prelude }
-  end
-
-  describe 'install_snippets' do
-    it 'installs the snippets' do
-      expect(subject).to receive(:github_install)
-      expect(subject).to receive(:symlink)
-    end
-
-    after { subject.install_snippets }
   end
 end

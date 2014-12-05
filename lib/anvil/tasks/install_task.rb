@@ -8,7 +8,6 @@ class InstallTask < Anvil::Task
     install_ohmyzsh
     symlink_dotfiles
     install_prelude
-    install_snippets
     install_binaries
   end
 
@@ -50,14 +49,6 @@ class InstallTask < Anvil::Task
 
     symlink 'emacs/personal.el', on_home('.emacs.d/personal/personal.el')
     symlink 'emacs/prelude-modules.el', on_home('.emacs.d/prelude-modules.el')
-  end
-
-  def install_snippets
-    Anvil.logger.info 'Installing snippets'
-    github_install 'AndreaCrotti/yasnippet-snippets',
-                   on_home('.emacs.d/yasnippet-snippets')
-
-    symlink 'emacs/snippets', on_home('.emacs.d/personal-snippets')
   end
 
   protected
