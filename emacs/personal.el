@@ -75,7 +75,7 @@
    mode-line-buffer-identification
    "   "
    mode-line-position
-   ;; (vc-mode vc-mode)
+   (vc-mode vc-mode)
    "  "
    mode-line-modes
    mode-line-misc-info
