@@ -9,6 +9,8 @@
    CLOSED: [2014-03-08 Sat 12:53]
 ** DONE Manage multiple gemrc files
    CLOSED: [2014-03-08 Sat 19:00]
-** TODO Don't load PATH multiple times on tmux
+** DONE Don't load PATH multiple times on tmux
+   CLOSED: [2014-12-05 vie 17:23]
 ** DONE Symlink git dot-files
    CLOSED: [2014-03-08 Sat 19:04]
+** TODO Add a better config for org-mode

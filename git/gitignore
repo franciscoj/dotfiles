@@ -7,7 +7,6 @@
 .bundle/config
 vendor
 vendor/bundle
-*.org
 .#*
 .ruby-version
 .env.development
