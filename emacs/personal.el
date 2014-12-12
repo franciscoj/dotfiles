@@ -29,6 +29,8 @@
 ;; Add representative templates as ruby files
 (setq auto-mode-alist
       (append '((".*\\.rep\\'" . ruby-mode)) auto-mode-alist))
+;; Activate yard-mode on ruby files
+(add-hook 'ruby-mode-hook 'yard-mode)
 
 ;;; Others:
 
