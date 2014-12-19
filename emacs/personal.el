@@ -65,6 +65,7 @@
 (scroll-bar-mode -1)
 
 ;; Use start-mode-line
+(require 'smart-mode-line)
 (sml/setup)
 (setq-default
  mode-line-format
