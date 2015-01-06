@@ -13,23 +13,22 @@ export DISABLE_AUTO_TITLE=true
 # Aliases
 alias be='bundle exec'
 alias rake='noglob bundle exec rake'
+alias ra='rake'
 alias migrate='rake db:migrate db:test:clone'
 alias rspec='bundle exec rspec'
-alias rp='rake parallel:spec[3]'
 alias r='rspec'
-alias nrr='RSPEC_NO_RETRY=true r'
-alias p='teamocil --here'
-alias ec='emacsclient'
+alias rp='rake parallel:spec[3]'
+alias nrr='RSPEC_NO_RETRY=true rspec'
+alias ec='emacs -c .'
 
 # Load local config if provided
 [[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
 [[ -f $HOME/.zshrc ]] && source $HOME/.zshrc_local
-
-# Load nvm and rbenv
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
+# Load rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# Config for virtualenv
+# Load nvm
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
+# Config for virtualenv & virtualenvwrapper
 export PROJECT_HOME=$HOME/Documents/src
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 [[ -f /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
