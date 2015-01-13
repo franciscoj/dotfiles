@@ -5,7 +5,7 @@
   diff = auto
   status = auto
   branch = auto
-  editor = 'emacs -t'
+  editor = 'emacs -c'
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
