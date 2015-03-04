@@ -18,7 +18,9 @@ alias rspec='bundle exec rspec'
 alias r='rspec'
 alias rp='rake parallel:spec[3]'
 alias nrr='RSPEC_NO_RETRY=true rspec'
-alias ec='emacs -c .'
+alias e='emacs -c'
+alias ec='e .'
+
 
 # Load local configuration provided it exists
 [[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
