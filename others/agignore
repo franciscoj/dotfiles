@@ -1,6 +1,6 @@
 log/*
 tmp/*
 db/migrate/*
-vendor/bundle
+vendor/bundle/*
 CHANGELOG.txt
 coverage/*
