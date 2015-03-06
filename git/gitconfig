@@ -5,10 +5,10 @@
   diff = auto
   status = auto
   branch = auto
-  editor = 'emacs -c'
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
+  editor = "emacs -nw"
 [apply]
   whitespace = fix
 [format]
