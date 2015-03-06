@@ -18,6 +18,7 @@
 (prelude-require-package 'rspec-mode)
 (prelude-require-package 'indent-guide)
 (prelude-require-package 'smart-mode-line)
+(prelude-require-package 'handlebars-mode)
 
 ;;; Ruby:
 
