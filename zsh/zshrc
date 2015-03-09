@@ -19,8 +19,10 @@ alias ec='e .'
 # Platform depending exports and sources
 platform_name=`uname`
 
+NEW_PATH="$PATH:$HOME/bin:/usr/local/bin:/usr/local/sbin"
+
 if [[ "$platform_name" == 'Linux' ]]; then
-    export PATH="$PATH:$HOME/bin:/usr/local/bin:/usr/local/sbin"
+    export PATH=$NEW_PATH
 elif [[ "$platform_name" == 'Darwin' ]]; then
     source ~/Documents/src/dot-files/zsh/mac
 fi

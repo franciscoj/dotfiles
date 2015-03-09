@@ -1,7 +1,6 @@
 if [[ -z $TMUX ]]; then
-    export PATH="$PATH:$HOME/bin:/usr/local/bin:/usr/local/sbin"
+    export PATH=$NEW_PATH
 fi
 
 # Load autojump from homebrew
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
