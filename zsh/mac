@@ -4,3 +4,7 @@ fi
 
 # Load autojump from homebrew
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+# Load nvm
+export NVM_DIR=~/.nvm
+[[ -s $(brew --prefix nvm)/nvm.sh ]] && source $(brew --prefix nvm)/nvm.sh

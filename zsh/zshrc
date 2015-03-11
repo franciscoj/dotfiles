@@ -22,7 +22,7 @@ platform_name=`uname`
 NEW_PATH="$PATH:$HOME/bin:/usr/local/bin:/usr/local/sbin"
 
 if [[ "$platform_name" == 'Linux' ]]; then
-    export PATH=$NEW_PATH
+    source ~/Documents/src/dot-files/zsh/linux
 elif [[ "$platform_name" == 'Darwin' ]]; then
     source ~/Documents/src/dot-files/zsh/mac
 fi
@@ -33,9 +33,6 @@ fi
 
 # Load rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# Load nvm
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
 
 # Config for virtualenv & virtualenvwrapper
 export PROJECT_HOME=$HOME/Documents/src
