@@ -19,6 +19,8 @@
 (prelude-require-package 'indent-guide)
 (prelude-require-package 'smart-mode-line)
 (prelude-require-package 'handlebars-mode)
+(prelude-require-package 'jade-mode)
+(prelude-require-package 'editorconfig)
 
 ;;; Ruby:
 
@@ -33,12 +35,17 @@
 ;; Activate yard-mode on ruby files
 (add-hook 'ruby-mode-hook 'yard-mode)
 
+;;; Javascript
+
+(setq js-indent-level 2)                ; for js-mode
+(setq-default js2-basic-offset 2)       ; for js2-mode
+
 ;;; Others:
 
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-(setq js-indent-level 2)
+
 
 ;;; org-mode:
 
