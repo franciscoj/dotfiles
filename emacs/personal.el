@@ -4,6 +4,11 @@
 
 ;;; Code:
 
+(defconst *is-a-mac* (eq system-type 'darwin))
+
+(when *is-a-mac*
+  (server-start))
+
 (setq user-full-name "Fran Casas"
       user-mail-address "nflamel@gmail.com")
 
@@ -12,8 +17,8 @@
 (prelude-require-package 'bundler)
 (prelude-require-package 'rubocop)
 (prelude-require-package 'ruby-tools)
-(prelude-require-package 'markdown-mode)
 (prelude-require-package 'rbenv)
+(prelude-require-package 'markdown-mode)
 (prelude-require-package 'yard-mode)
 (prelude-require-package 'rspec-mode)
 (prelude-require-package 'indent-guide)
@@ -24,14 +29,12 @@
 
 ;;; Ruby:
 
+;; Activate rbenv globally
 (global-rbenv-mode)
 ;; Don't use rake on rspec-mode
-(setq rspec-use-rake-when-possible nil)
+(setq rspec-use-rake-when-possible -1)
 ;; C-x C-q will allow to debug on rspec-mode
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
-;; Add representative templates as ruby files
-(setq auto-mode-alist
-      (append '((".*\\.rep\\'" . ruby-mode)) auto-mode-alist))
 ;; Activate yard-mode on ruby files
 (add-hook 'ruby-mode-hook 'yard-mode)
 
@@ -46,7 +49,6 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-
 ;;; org-mode:
 
 ;; Which files to add to the orgmode agenda
@@ -57,13 +59,10 @@
 ;; Go to project dir when switching project on projectile
 (setq projectile-switch-project-action 'projectile-dired)
 
+;; Key chords
 (key-chord-define-global "kk" 'next-multiframe-window)     ; C-x o
 (key-chord-define-global "KK" 'previous-multiframe-window) ; C-x O
 (key-chord-define-global "xx" 'smex)                       ; M-x
-
-;; Show time and date
-(display-time-mode 1)
-(setq display-time-format "%R %d/%m/%Y")
 
 ;; Load indent guides
 (require 'indent-guide)
