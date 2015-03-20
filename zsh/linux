@@ -1,5 +1,5 @@
+# -*- mode: shell-script; -*-
 export PATH=$NEW_PATH
 
 # Load nvm
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
-

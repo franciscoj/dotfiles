@@ -1,3 +1,5 @@
+# -*- mode: shell-script; -*-
+
 if [[ -z $TMUX ]]; then
     export PATH=$NEW_PATH
 fi

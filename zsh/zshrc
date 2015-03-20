@@ -1,25 +1,9 @@
-export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME="sunrise"
-plugins=(git github gem rails rbenv autojump common-aliases)
-source $ZSH/oh-my-zsh.sh
-
-export EDITOR='emacs -c'
-export DISABLE_AUTO_TITLE=true
-
-# Aliases
-alias be='bundle exec'
-alias rake='noglob bundle exec rake'
-alias ra='rake'
-alias migrate='rake db:migrate db:test:clone'
-alias rspec='bundle exec rspec'
-alias r='rspec'
-alias e=$EDITOR
-alias ec='e .'
+# -*- mode: shell-script; -*-
 
 # Platform depending exports and sources
 platform_name=`uname`
 
-NEW_PATH="$PATH:$HOME/bin:/usr/local/bin:/usr/local/sbin"
+NEW_PATH="$PATH:$HOME/bin"
 
 if [[ "$platform_name" == 'Linux' ]]; then
     source ~/Documents/src/dot-files/zsh/linux
@@ -27,12 +11,24 @@ elif [[ "$platform_name" == 'Darwin' ]]; then
     source ~/Documents/src/dot-files/zsh/mac
 fi
 
+export ZSH=$HOME/.oh-my-zsh
+export ZSH_THEME="sunrise"
+plugins=(git github gem rails rbenv autojump common-aliases)
+source $ZSH/oh-my-zsh.sh
+
+export DISABLE_AUTO_TITLE=true
+
+# Aliases
+alias be='bundle exec'
+alias rake='noglob bundle exec rake'
+alias ra='rake'
+alias rspec='bundle exec rspec'
+alias r='rspec'
+alias z='zeus rspec'
+
 # Load local configuration provided it exists
 [[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
-
-# Load rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Config for virtualenv & virtualenvwrapper
 export PROJECT_HOME=$HOME/Documents/src
