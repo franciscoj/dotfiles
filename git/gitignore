@@ -5,10 +5,11 @@
 *_test
 *_test2
 .bundle/config
-vendor
+# vendor
 vendor/bundle
 .#*
 .ruby-version
 .env.development
 log/*.log.*
 npm-debug.log
+.projectile

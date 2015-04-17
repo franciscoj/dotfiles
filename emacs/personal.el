@@ -13,11 +13,11 @@
       user-mail-address "nflamel@gmail.com")
 
 ; Require modes
+(prelude-require-package 'rbenv)
 (prelude-require-package 'ag)
 (prelude-require-package 'bundler)
 (prelude-require-package 'rubocop)
 (prelude-require-package 'ruby-tools)
-(prelude-require-package 'rbenv)
 (prelude-require-package 'markdown-mode)
 (prelude-require-package 'yard-mode)
 (prelude-require-package 'rspec-mode)

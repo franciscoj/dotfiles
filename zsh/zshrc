@@ -17,6 +17,7 @@ plugins=(git github gem rails rbenv autojump common-aliases)
 source $ZSH/oh-my-zsh.sh
 
 export DISABLE_AUTO_TITLE=true
+export EDITOR="emacsclient -nw -a ''"
 
 # Aliases
 alias be='bundle exec'
@@ -34,3 +35,6 @@ alias z='zeus rspec'
 export PROJECT_HOME=$HOME/Documents/src
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 [[ -f /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
