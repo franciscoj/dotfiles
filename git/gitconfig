@@ -1,6 +1,6 @@
 [user]
   name = Fran Casas
-  email = nflamel@otrobloggeek.com
+  email = nflamel@gmail.com
 [color]
   diff = auto
   status = auto
@@ -24,5 +24,3 @@
   default = current
 [rerere]
   enabled = true
-[init]
-  templatedir = ~/Documents/src/dot-files/git/templates
