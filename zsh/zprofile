@@ -1,0 +1,25 @@
+# -*- mode: shell-script; -*-
+
+# Basic PATH so that it can be extended later depending on the platform.
+BASIC_PATH="$PATH:$HOME/bin"
+
+export EDITOR="emacsclient -nw -a ''"
+
+# Platform depending exports and sources
+platform_name=`uname`
+if [[ "$platform_name" == 'Linux' ]]; then
+    source ~/Documents/src/dot-files/zsh/linux
+elif [[ "$platform_name" == 'Darwin' ]]; then
+    source ~/Documents/src/dot-files/zsh/mac
+fi
+
+# Load local configuration provided files exist.
+
+# Rubygems allows to split the configuration into different .gemrc equivalent
+# files. This .gemrc_local is meant to keep the private configs, like gem
+# sources which require username/password.
+[[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
+
+# .zshrc_local is meant to keep private configurations, it is out of version
+# management.
+[[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local

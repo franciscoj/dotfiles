@@ -1,5 +1,13 @@
 # -*- mode: shell-script; -*-
-export PATH=$NEW_PATH
 
-# Load nvm
+export PATH=$BASIC_PATH
+
+# Load nvm from its linux-like installation.
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
+
+# Config for virtualenv & virtualenvwrapper
+export PROJECT_HOME=$HOME/Documents/src
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
