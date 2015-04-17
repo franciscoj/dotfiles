@@ -5,7 +5,7 @@ describe InstallTask do
     it 'installs all the dotfiles' do
       expect(subject).to receive(:install_ohmyzsh)
       expect(subject).to receive(:symlink_dotfiles)
-      expect(subject).to receive(:install_prelude)
+      expect(subject).to receive(:install_spacemacs)
     end
 
     after { subject.task }
@@ -14,7 +14,7 @@ describe InstallTask do
   describe '#install_my_zsh' do
     it 'installs oh-my-zsh' do
       expect(subject).to receive(:github_install)
-      expect(subject).to receive(:symlink)
+      expect(subject).to receive(:symlink).twice
     end
 
     after { subject.install_ohmyzsh }
@@ -30,12 +30,12 @@ describe InstallTask do
     after { subject.symlink_dotfiles }
   end
 
-  describe '#install_prelude' do
-    it 'installs prelude' do
+  describe '#install_spacemacs' do
+    it 'installs spacemacs' do
       expect(subject).to receive(:github_install)
       expect(subject).to receive(:symlink).twice
     end
 
-    after { subject.install_prelude }
+    after { subject.install_spacemacs }
   end
 end

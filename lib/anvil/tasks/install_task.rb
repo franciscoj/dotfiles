@@ -7,7 +7,7 @@ class InstallTask < Anvil::Task
   def task
     install_ohmyzsh
     symlink_dotfiles
-    install_prelude
+    install_spacemacs
   end
 
   def install_ohmyzsh
@@ -15,6 +15,7 @@ class InstallTask < Anvil::Task
     github_install 'robbyrussell/oh-my-zsh', on_home('.oh-my-zsh')
 
     symlink 'zsh/zshrc'
+    symlink 'zsh/zprofile'
     touch_unless_exists on_home('.zshrc_local')
   end
 
@@ -38,9 +39,9 @@ class InstallTask < Anvil::Task
     touch_unless_exists on_home('.gemrc_local')
   end
 
-  def install_prelude
+  def install_spacemacs
     Anvil.logger.info 'Installing prelude'
-    github_install 'bbatsov/prelude', on_home('.emacs.d')
+    github_install 'syl20bnr/spacemacs', on_home('.emacs.d')
 
     symlink 'emacs/personal.el', on_home('.emacs.d/personal/personal.el')
     symlink 'emacs/prelude-modules.el', on_home('.emacs.d/prelude-modules.el')
@@ -64,7 +65,7 @@ class InstallTask < Anvil::Task
       File.symlink orig_file, dest_file
     else
       Anvil.logger.info "Not symlinking #{orig_file} to #{dest_file}" \
-                        " since they are identical."
+                        ' since they are identical.'
     end
   end
 
@@ -77,7 +78,10 @@ class InstallTask < Anvil::Task
   end
 
   def github_clone(repo, dest_path)
-    Git.clone "git@github.com:#{repo}.git", '', path: dest_path
+    Git.clone("git@github.com:#{repo}.git",
+              '',
+              recursive: true,
+              path: dest_path)
   end
 
   def github_install(repo, dest_path)
