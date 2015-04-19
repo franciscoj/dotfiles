@@ -11,7 +11,7 @@ class InstallTask < Anvil::Task
   end
 
   def install_ohmyzsh
-    Anvil.logger.info 'Installing oh-my-zsh'
+    Anvil.logger.info 'Installing oh-my-zsh.'
     github_install 'robbyrussell/oh-my-zsh', on_home('.oh-my-zsh')
 
     symlink 'zsh/zshrc'
@@ -20,7 +20,7 @@ class InstallTask < Anvil::Task
   end
 
   def symlink_dotfiles
-    Anvil.logger.info 'Symlinking dot-files'
+    Anvil.logger.info 'Symlinking dot-files.'
     %w(ruby/gemrc ruby/irbrc ruby/railsrc ruby/rdebugrc ruby/pryrc).each do |file|
       symlink file
     end
@@ -40,11 +40,10 @@ class InstallTask < Anvil::Task
   end
 
   def install_spacemacs
-    Anvil.logger.info 'Installing prelude'
+    Anvil.logger.info 'Installing spacemacs.'
     github_install 'syl20bnr/spacemacs', on_home('.emacs.d')
 
-    symlink 'emacs/personal.el', on_home('.emacs.d/personal/personal.el')
-    symlink 'emacs/prelude-modules.el', on_home('.emacs.d/prelude-modules.el')
+    symlink 'emacs/spacemacs', on_home('.spacemacs')
   end
 
   protected
