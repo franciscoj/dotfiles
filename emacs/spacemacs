@@ -143,8 +143,7 @@ before layers configuration."
   ;; User initialization goes here
   (setq-default
     ruby-version-manager 'rbenv
-    ruby-enable-ruby-on-rails-support t)
-  )
+    ruby-enable-ruby-on-rails-support t))
 
 (defun dotspacemacs/config ()
   "Configuration function.
@@ -153,7 +152,7 @@ layers configuration."
   (setq-default js-indent-level 2
                 js2-basic-offset 2)
   (setq powerline-default-separator 'arrow
-        evil-shift-width 2)))
+        evil-shift-width 2))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
