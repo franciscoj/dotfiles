@@ -150,9 +150,11 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
   (setq-default js-indent-level 2
-                js2-basic-offset 2)
-  (setq powerline-default-separator 'arrow
-        evil-shift-width 2))
+                js2-basic-offset 2
+                powerline-default-separator 'arrow
+                enh-ruby-bounce-deep-indent t
+                evil-shift-width 2)
+  (add-hook 'prog-mode-hooi 'fci-mode))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
