@@ -1,7 +1,7 @@
 # -*- mode: shell-script; -*-
 
 # This file is meant to load only things which are needed on an interactive
-# shell, like them customizations, special aliases, etc.
+# shell, like customizations, special aliases, etc.
 
 # oh-my-zsh specific configuration.
 export ZSH=$HOME/.oh-my-zsh

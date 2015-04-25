@@ -1,3 +1,5 @@
+# -*- mode: gitconfig; -*-
+
 [user]
   name = Fran Casas
   email = nflamel@gmail.com

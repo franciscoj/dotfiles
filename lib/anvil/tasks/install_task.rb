@@ -11,7 +11,7 @@ class InstallTask < Anvil::Task
   end
 
   def install_ohmyzsh
-    Anvil.logger.info 'Installing oh-my-zsh.'
+    Anvil.logger.info 'Installing oh-my-zsh and zsh config.'
     github_install 'robbyrussell/oh-my-zsh', on_home('.oh-my-zsh')
 
     symlink 'zsh/zshrc'
@@ -40,40 +40,44 @@ class InstallTask < Anvil::Task
   end
 
   def install_spacemacs
-    Anvil.logger.info 'Installing spacemacs.'
+    Anvil.logger.info 'Installing spacemacs, config and custom layers.'
     github_install 'syl20bnr/spacemacs', on_home('.emacs.d')
 
     symlink 'emacs/spacemacs', on_home('.spacemacs')
+    symlink(
+      'emacs/spacemacs-layers/franciscoj',
+      on_home('.emacs.d/private/franciscoj')
+    )
   end
 
   protected
 
-  def touch_unless_exists path
-    FileUtils.touch path unless File.exists? path
+  def touch_unless_exists(path)
+    FileUtils.touch path unless File.exist? path
   end
 
   def project_root
-    %x{git rev-parse --show-toplevel}.strip
+    `git rev-parse --show-toplevel`.strip
   end
 
   def symlink(orig_file, dest_file = nil)
     dest_file ||= on_home ".#{orig_file.split('/').last}"
     orig_file = "#{project_root}/#{orig_file}"
 
-    if !File.identical? orig_file, dest_file
-      File.symlink orig_file, dest_file
-    else
-      Anvil.logger.info "Not symlinking #{orig_file} to #{dest_file}" \
-                        ' since they are identical.'
+    unless File.identical? orig_file, dest_file
+      return File.symlink orig_file, dest_file
     end
+
+    Anvil.logger.info "Not symlinking #{orig_file} to #{dest_file}" \
+      ' since they are identical.'
   end
 
   def symlink_if_exists(orig, dest, condition)
-    symlink orig, dest if File.exists? condition
+    symlink orig, dest if File.exist? condition
   end
 
   def remove_if_exists(path)
-    FileUtils.rm_rf path if File.exists? path
+    FileUtils.rm_rf path if File.exist? path
   end
 
   def github_clone(repo, dest_path)
