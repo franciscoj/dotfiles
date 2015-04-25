@@ -154,7 +154,11 @@ layers configuration."
                 powerline-default-separator 'arrow
                 enh-ruby-bounce-deep-indent t
                 evil-shift-width 2)
-  (add-hook 'prog-mode-hooi 'fci-mode))
+  (add-hook 'prog-mode-hooi 'fci-mode)
+  (spacemacs/toggle-line-numbers)
+  (spacemacs/toggle-golden-ratio)
+  (linum-relative-toggle)
+  (spacemacs/toggle-fill-column-indicator))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
