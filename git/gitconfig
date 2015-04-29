@@ -1,30 +1,30 @@
 # -*- mode: gitconfig; -*-
 
 [user]
-  name = Fran Casas
-  email = nflamel@gmail.com
+	name = Fran Casas
+	email = nflamel@gmail.com
 [color]
-  diff = auto
-  status = auto
-  branch = auto
+	diff = auto
+	status = auto
+	branch = auto
 [core]
-  excludesfile = ~/.gitignore
-  autocrlf = input
-  editor = "emacsclient -nw -a ''"
+	excludesfile = ~/.gitignore
+	autocrlf = input
+	editor = "emacsclient -nw -a ''"
 [apply]
-  whitespace = fix
+	whitespace = fix
 [format]
-  pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
 [github]
-  user = franciscoj
+	user = franciscoj
 [alias]
-  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)an>%Creset' --abbrev-commit --date=relative
-  co = checkout
-  s = status --short -b
-  amend = commit --amend --no-edit
+	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)an>%Creset' --abbrev-commit --date=relative
+	co = checkout
+	s = status --short -b
+	amend = commit --amend --no-edit
 [push]
-  default = current
+	default = current
 [rerere]
-  enabled = true
+	enabled = true
 [init]
 	templatedir = ~/Documents/src/dot-files/git/templates
