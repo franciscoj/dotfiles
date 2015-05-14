@@ -24,7 +24,9 @@
      org
      extralangs
      (git :variables
+
           git-gutter-use-fringe t)
+     hola
      restclient
      better-defaults
      smex
@@ -158,7 +160,13 @@ layers configuration."
   (spacemacs/toggle-line-numbers)
   (spacemacs/toggle-golden-ratio)
   (linum-relative-toggle)
-  (spacemacs/toggle-fill-column-indicator))
+  (spacemacs/toggle-fill-column-indicator)
+  (require 'ansi-color)
+  (defun colorize-compilation-buffer ()
+    (toggle-read-only)
+    (ansi-color-apply-on-region (point-min) (point-max))
+    (toggle-read-only))
+  (add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
