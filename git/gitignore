@@ -10,3 +10,5 @@ vendor/bundle
 log/*.log.*
 npm-debug.log
 .projectile
+app/javascripts/lib/.tern-port
+.tern-port
