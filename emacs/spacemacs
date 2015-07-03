@@ -22,13 +22,11 @@
      html
      markdown
      org
-     extralangs
-     (git :variables
-
-          git-gutter-use-fringe t)
-     hola
+     extra-langs
+     git ; For magit
+     version-control ; Mainly only because of diff-hl
      restclient
-     better-defaults
+     better-defaults ; For a sane C-a
      smex
      syntax-checking
      editorconfig
