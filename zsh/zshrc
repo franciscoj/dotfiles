@@ -20,5 +20,6 @@ alias rake='noglob bundle exec rake' # noglob needed for rake + zsh
 alias ra='rake'
 alias rspec='bundle exec rspec'
 alias r='rspec'
+alias e=$EDITOR
 
 eval "$(hub alias -s)"
