@@ -6,6 +6,8 @@
 export PATH=$HOME/.rbenv/shims:$BASIC_PATH
 export PATH=/usr/local/heroku/bin:$PATH
 
+export EDITOR="$HOME/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c"
+
 # Load autojump from homebrew
 if [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]]; then
     . $(brew --prefix)/etc/profile.d/autojump.sh
