@@ -30,9 +30,8 @@
      smex
      syntax-checking
      editorconfig
-     (colors :variables
-            colors-enable-nyan-cat-progress-bar ,(display-graphic-p))
-     ;; My own needed packages and config for them
+     colors
+     ;; Packages I need and my own config for them
      franciscoj
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -144,6 +143,7 @@ before layers configuration."
   (setq-default
     ruby-version-manager 'rbenv
     ruby-enable-ruby-on-rails-support t))
+
 
 (defun dotspacemacs/config ()
   "Configuration function.
