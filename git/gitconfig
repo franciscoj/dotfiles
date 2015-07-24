@@ -27,3 +27,7 @@
 	enabled = true
 [init]
 	templatedir = ~/Documents/src/dot-files/git/templates
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
