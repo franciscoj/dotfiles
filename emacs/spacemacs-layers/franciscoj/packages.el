@@ -13,7 +13,8 @@
 (defvar franciscoj-packages
   '(yard-mode
     rubocop
-    jade-mode)
+    jade-mode
+    ox-reveal)
   "List of all packages to install and/or initialize. Built-in packages
 which require an initialization must be listed explicitly in the list.")
 
@@ -42,3 +43,7 @@ which require an initialization must be listed explicitly in the list.")
 (defun franciscoj/init-jade-mode ()
   "Initialize jade mode"
   (use-package jade-mode))
+
+(defun franciscoj/init-ox-reveal ()
+  "Initialize org reveal"
+  (use-package ox-reveal))

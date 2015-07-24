@@ -17,7 +17,7 @@
      ;; Uncomment a layer name and press C-c C-c to install it
      ;; --------------------------------------------------------
      (auto-completion :variables
-                      auto-completion-enable-company-help-tooltip t)
+                      auto-completion-enable-help-tooltip t)
      ruby
      javascript
      html
@@ -143,7 +143,9 @@ before layers configuration."
   ;; User initialization goes here
   (setq-default
     ruby-version-manager 'rbenv
-    ruby-enable-ruby-on-rails-support t))
+    ruby-enable-ruby-on-rails-support t)
+  (add-to-list 'safe-local-variable-values
+               '(flycheck-javascript-eslint-executable . "/Users/franciscoj/Documents/src/teambox-frontend/node_modules/eslint/bin/eslint.js")))
 
 
 (defun dotspacemacs/config ()
@@ -183,7 +185,11 @@ layers configuration."
    (quote
     (jade-mode rubocop jekyll-modes yard-mode evil-leader evil use-package bind-key dash)))
  '(paradox-github-token t)
- '(ring-bell-function (quote ignore)))
+ '(ring-bell-function (quote ignore) t)
+ '(safe-local-variable-values
+   (quote
+    ((encoding . utf-8)
+     (flycheck-javascript-eslint-executable . "/Users/franciscoj/Documents/src/teambox-frontend/node_modules/eslint/bin/eslint.js")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -12,3 +12,4 @@ npm-debug.log
 .projectile
 app/javascripts/lib/.tern-port
 .tern-port
+.dir-locals.el
