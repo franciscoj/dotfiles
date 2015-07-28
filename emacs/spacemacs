@@ -36,7 +36,7 @@
      franciscoj
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(org-bullets)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'
@@ -161,7 +161,6 @@ layers configuration."
   (spacemacs/toggle-line-numbers)
   (spacemacs/toggle-golden-ratio)
   (linum-relative-toggle)
-  (spacemacs/toggle-fill-column-indicator)
   (require 'ansi-color)
   (defun colorize-compilation-buffer ()
     (toggle-read-only)
