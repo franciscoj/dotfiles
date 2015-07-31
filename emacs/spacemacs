@@ -17,21 +17,20 @@
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     (auto-completion :variables
-                      auto-completion-enable-help-tooltip t)
      ruby
      javascript
+     emacs-lisp
      html
      markdown
      org
-     extra-langs
+     better-defaults
+     syntax-checking
+     editorconfig
+     (auto-completion :variables
+                      auto-completion-enable-help-tooltip t)
      git
      version-control
      restclient
-     better-defaults
-     emacs-lisp
-     syntax-checking
-     editorconfig
      colors
      franciscoj
      )
