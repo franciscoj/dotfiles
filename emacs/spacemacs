@@ -186,9 +186,9 @@ layers configuration."
                 enh-ruby-bounce-deep-indent t
                 evil-shift-width 2)
   (add-hook 'prog-mode-hooi 'fci-mode)
-  (spacemacs/toggle-line-numbers)
-  (spacemacs/toggle-golden-ratio)
-  (linum-relative-toggle)
+  (unless (bound-and-true-p global-linum-mode) (spacemacs/toggle-line-numbers))
+  (unless (bound-and-true-p golden-ration-mode) (spacemacs/toggle-golden-ratio))
+  (unless (eq linum-format 'linum-relative) (linum-relative-toggle))
   (require 'ansi-color)
   (defun colorize-compilation-buffer ()
     (toggle-read-only)
