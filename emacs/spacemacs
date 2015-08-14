@@ -18,6 +18,7 @@
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ruby
+     ruby-on-rails
      javascript
      emacs-lisp
      html
