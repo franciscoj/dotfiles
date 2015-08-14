@@ -5,3 +5,7 @@ vendor/bundle/*
 vendor/cache/*
 CHANGELOG.txt
 coverage/*
+jquery*.js
+underscore*.js
+bootstrap*.js
+*.svg
