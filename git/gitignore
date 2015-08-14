@@ -13,3 +13,5 @@ npm-debug.log
 app/javascripts/lib/.tern-port
 .tern-port
 .dir-locals.el
+redbooth-api-v3.html
+api.md
