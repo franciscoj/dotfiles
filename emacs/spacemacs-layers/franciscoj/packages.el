@@ -38,7 +38,7 @@ which require an initialization must be listed explicitly in the list.")
 
 (defun franciscoj/init-rubocop ()
   "Initialize rubocop"
-  (use-package robocop))
+  (use-package rubocop))
 
 (defun franciscoj/init-jade-mode ()
   "Initialize jade mode"
