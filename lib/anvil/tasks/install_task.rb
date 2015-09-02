@@ -15,7 +15,7 @@ class InstallTask < Anvil::Task
     github_install 'robbyrussell/oh-my-zsh', on_home('.oh-my-zsh')
 
     symlink 'zsh/zshrc'
-    symlink 'zsh/zprofile'
+    symlink 'zsh/zshenv'
     touch_unless_exists on_home('.zshrc_local')
   end
 

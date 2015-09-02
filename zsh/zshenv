@@ -3,7 +3,8 @@
 # Basic PATH so that it can be extended later depending on the platform.
 BASIC_PATH="$PATH:$HOME/bin"
 
-export EDITOR="emacsclient -nw -a ''"
+export EDITOR='emacsclient --create-frame --alternate-editor="emacs"'
+export VISUAL=$EDITOR
 
 # Platform depending exports and sources
 platform_name=`uname`
