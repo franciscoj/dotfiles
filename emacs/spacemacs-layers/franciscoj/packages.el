@@ -14,6 +14,7 @@
   '(yard-mode
     rubocop
     jade-mode
+    yaml-mode
     ox-reveal)
   "List of all packages to install and/or initialize. Built-in packages
 which require an initialization must be listed explicitly in the list.")
@@ -47,3 +48,7 @@ which require an initialization must be listed explicitly in the list.")
 (defun franciscoj/init-ox-reveal ()
   "Initialize org reveal"
   (use-package ox-reveal))
+
+(defun franciscoj/init-yaml-mode ()
+  "Initialize yaml mode"
+  (use-package yaml-mode))
