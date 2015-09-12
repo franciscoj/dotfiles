@@ -1,0 +1,12 @@
+# -*- mode: shell-script; -*-
+
+# Load autojump from homebrew
+if [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]]; then
+  . $(brew --prefix)/etc/profile.d/autojump.sh
+fi
+
+# Load nvm from homebrew
+export NVM_DIR=~/.nvm
+if [[ -s $(brew --prefix nvm)/nvm.sh ]]; then
+   source $(brew --prefix nvm)/nvm.sh
+fi

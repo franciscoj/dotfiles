@@ -23,3 +23,5 @@ alias r='rspec'
 alias e=$EDITOR
 
 eval "$(hub alias -s)"
+
+dot_files_load zshrc

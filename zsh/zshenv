@@ -1,20 +1,18 @@
 # -*- mode: shell-script; -*-
 
+dot_files_base=$HOME/Documents/src/dot-files/zsh/
+dot_files_platform=`uname`
 # Basic PATH so that it can be extended later depending on the platform.
-BASIC_PATH="$PATH:$HOME/bin"
+basic_path=$PATH:$HOME/bin
+
+source $dot_files_base/functions.sh
 
 export EDITOR='emacsclient --create-frame --alternate-editor="emacs"'
 export VISUAL=$EDITOR
 
-# Platform depending exports and sources
-platform_name=`uname`
-if [[ "$platform_name" == 'Linux' ]]; then
-    source ~/Documents/src/dot-files/zsh/linux
-elif [[ "$platform_name" == 'Darwin' ]]; then
-    source ~/Documents/src/dot-files/zsh/mac
-fi
+dot_files_load zshenv
 
-# Load local configuration provided files exist.
+# Load local configuration (provided files exist).
 
 # Rubygems allows to split the configuration into different .gemrc equivalent
 # files. This .gemrc_local is meant to keep the private configs, like gem
