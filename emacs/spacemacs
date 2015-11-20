@@ -23,22 +23,25 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ruby
+     (ruby :variables
+           ruby-enable-enh-ruby-mode t)
      ruby-on-rails
      javascript
+     react
      emacs-lisp
      html
      markdown
      org
      better-defaults
      syntax-checking
-     editorconfig
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t)
      git
      version-control
      restclient
      colors
+     eyebrowse
+     emoji
      franciscoj
      )
    ;; List of additional packages that will be installed without being
@@ -83,10 +86,10 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-dark
-                         solarized-light
+   dotspacemacs-themes '(spacemacs-dark
                          spacemacs-light
-                         spacemacs-dark
+                         solarized-dark
+                         solarized-light
                          leuven
                          monokai
                          zenburn)
@@ -94,8 +97,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Hack Regular"
-                               :size 20
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 13
                                :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
@@ -196,9 +199,8 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
-  (setq-default
-   ruby-version-manager 'rbenv
-   ruby-enable-ruby-on-rails-support t)
+  (setq-default ruby-version-manager 'rbenv
+                ruby-enable-ruby-on-rails-support t)
   (add-to-list 'safe-local-variable-values
                '(flycheck-javascript-eslint-executable . "/home/nflamel/Documents/src/frontend/node_modules/eslint/bin/eslint.js"))
   ;; Don't change the font for some headings and titles
@@ -212,13 +214,19 @@ user code."
   (setq solarized-height-plus-3 1)
   (setq solarized-height-plus-4 1))
 
-
 (defun dotspacemacs/user-config ()
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
   (setq-default js-indent-level 2
+                ;; js2-mode
                 js2-basic-offset 2
+                ;; web-mode
+                css-indent-offset 2
+                web-mode-markup-indent-offset 2
+                web-mode-css-indent-offset 2
+                web-mode-code-indent-offset 2
+                web-mode-attr-indent-offset 2
                 powerline-default-separator 'arrow
                 enh-ruby-bounce-deep-indent t
                 evil-shift-width 2)
