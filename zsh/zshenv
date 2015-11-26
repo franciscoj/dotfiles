@@ -7,7 +7,7 @@ basic_path=$PATH:$HOME/bin
 
 source $dot_files_base/functions.sh
 
-export EDITOR='emacsclient --create-frame --alternate-editor="emacs"'
+export EDITOR='emacsclient --alternate-editor="emacs"'
 export VISUAL=$EDITOR
 
 dot_files_load zshenv
