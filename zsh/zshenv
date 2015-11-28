@@ -9,6 +9,10 @@ source $dot_files_base/functions.sh
 
 export EDITOR='emacsclient --alternate-editor="emacs"'
 export VISUAL=$EDITOR
+# I want to title my shells by myself.
+export DISABLE_AUTO_TITLE=true
+# Having PREFIX set makes nvm complaint about it. oh-my-zsh is doing it.
+unset PREFIX
 
 dot_files_load zshenv
 
@@ -22,3 +26,7 @@ dot_files_load zshenv
 # .zshrc_local is meant to keep private configurations, it is out of version
 # management.
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
+
+
+# Source the travis CLI if present.
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
