@@ -24,20 +24,26 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      (ruby :variables
-           ruby-enable-enh-ruby-mode t)
+           ruby-enable-enh-ruby-mode t
+           ruby-version-manager 'rbenv
+           ruby-test-runner 'rspec)
      ruby-on-rails
      javascript
      react
      emacs-lisp
      html
      markdown
+     puppet
      org
      better-defaults
      syntax-checking
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t)
+     (version-control :variables
+                      version-control-global-margin t
+                      version-control-diff-tool 'diff-hl)
      git
-     version-control
+     github
      restclient
      colors
      eyebrowse
@@ -119,6 +125,14 @@ values."
    ;; Major mode leader key accessible in `emacs state' and `insert state'.
    ;; (default "C-M-m)
    dotspacemacs-major-mode-emacs-leader-key "C-M-m"
+   ;; These variables control whether separate commands are bound in the GUI to
+   ;; the key pairs C-i, TAB and C-m, RET.
+   ;; Setting it to a non-nil value, allows for separate commands under <C-i>
+   ;; and TAB or <C-m> and RET.
+   ;; In the terminal, these pairs are generally indistinguishable, so this only
+   ;; works in the GUI. (default nil)
+   dotspacemacs-distinguish-gui-tab nil
+   dotspacemacs-distinguish-gui-ret nil
    ;; The command key used for Evil commands (ex-commands) and
    ;; Emacs commands (M-x).
    ;; By default the command key is `:' so ex-commands are executed like in Vim
@@ -225,8 +239,6 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost any
 user code here.  The exception is org related code, which should be placed in
 `dotspacemacs/user-config'."
-  (setq-default ruby-version-manager 'rbenv
-                ruby-enable-ruby-on-rails-support t)
   (add-to-list 'safe-local-variable-values
                '(flycheck-javascript-eslint-executable . "/home/nflamel/Documents/src/frontend/node_modules/eslint/bin/eslint.js"))
   ;; Don't change the font for some headings and titles
@@ -241,7 +253,7 @@ user code here.  The exception is org related code, which should be placed in
   (setq solarized-height-plus-4 1))
 
 (defun dotspacemacs/user-config ()
-  "Configuration function.
+  "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (setq-default js-indent-level 2

@@ -3,9 +3,13 @@ tmp/*
 db/migrate/*
 vendor/bundle/*
 vendor/cache/*
+fixtures/cassettes
 CHANGELOG.txt
 coverage/*
 jquery*.js
 underscore*.js
 bootstrap*.js
 *.svg
+node_modules
+*.txt
+*.md
