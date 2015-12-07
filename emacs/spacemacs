@@ -76,6 +76,8 @@ values."
    ;; environment, otherwise it is strongly recommended to let it set to t.
    ;; (default t)
    dotspacemacs-elpa-https t
+   ;; Maximum allowed time in seconds to contact an ELPA repository.
+   dotspacemacs-elpa-timeout 5
    ;; One of `vim', `emacs' or `hybrid'. Evil is always enabled but if the
    ;; variable is `emacs' then the `holy-mode' is enabled at startup. `hybrid'
    ;; uses emacs key bindings for vim's insert mode, but otherwise leaves evil
@@ -113,6 +115,8 @@ values."
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
                                :size 13
+                               :weight normal
+                               :width normal
                                :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
@@ -132,7 +136,7 @@ values."
    ;; In the terminal, these pairs are generally indistinguishable, so this only
    ;; works in the GUI. (default nil)
    dotspacemacs-distinguish-gui-tab nil
-   dotspacemacs-distinguish-gui-ret nil
+   ;; (Not implemented) dotspacemacs-distinguish-gui-ret nil
    ;; The command key used for Evil commands (ex-commands) and
    ;; Emacs commands (M-x).
    ;; By default the command key is `:' so ex-commands are executed like in Vim
@@ -239,9 +243,7 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost any
 user code here.  The exception is org related code, which should be placed in
 `dotspacemacs/user-config'."
-  (add-to-list 'safe-local-variable-values
-               '(flycheck-javascript-eslint-executable . "/home/nflamel/Documents/src/frontend/node_modules/eslint/bin/eslint.js"))
-  ;; Don't change the font for some headings and titles
+  ;; Don't change the font for some headings and titles on org-mode
   (setq solarized-use-variable-pitch nil)
   ;; Don't change size of org-mode headlines (but keep other size-changes)
   (setq solarized-scale-org-headlines nil)
@@ -257,21 +259,18 @@ user code here.  The exception is org related code, which should be placed in
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (setq-default js-indent-level 2
-                ;; js2-mode
                 js2-basic-offset 2
-                ;; web-mode
                 css-indent-offset 2
                 web-mode-markup-indent-offset 2
                 web-mode-css-indent-offset 2
                 web-mode-code-indent-offset 2
                 web-mode-attr-indent-offset 2
-                powerline-default-separator 'arrow
+                ;; powerline-default-separator 'arrow
                 enh-ruby-bounce-deep-indent t
                 evil-shift-width 2)
   (add-hook 'prog-mode-hooi 'fci-mode)
-  (unless (bound-and-true-p golden-ration-mode) (spacemacs/toggle-golden-ratio))
-  (require 'ansi-color)
   ;; This colorizes the compilation output.
+  (require 'ansi-color)
   (defun colorize-compilation-buffer ()
     (toggle-read-only)
     (ansi-color-apply-on-region (point-min) (point-max))
@@ -280,15 +279,6 @@ layers configuration. You are free to put any user code."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(safe-local-variable-values
-   (quote
-    ((encoding . utf-8)
-     (flycheck-javascript-eslint-executable . "/home/nflamel/Documents/src/frontend/node_modules/eslint/bin/eslint.js")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
