@@ -35,9 +35,10 @@ which require an initialization must be listed explicitly in the list.")
 (defun franciscoj/init-yard-mode ()
   "Initialize yard-mode on Ruby files"
   (use-package yard-mode
-    :init (progn
-            (add-hook 'enh-ruby-mode-hook 'yard-mode)
-            (add-hook 'ruby-mode-hook 'yard-mode))))
+    :init
+    (progn
+      (add-hook 'enh-ruby-mode-hook 'yard-mode)
+      (add-hook 'ruby-mode-hook 'yard-mode))))
 
 (defun franciscoj/init-rubocop ()
   "Initialize rubocop"
