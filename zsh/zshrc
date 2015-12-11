@@ -18,11 +18,14 @@ alias ra='rake'
 alias rspec='bundle exec rspec'
 alias r='rspec'
 alias e=$EDITOR
+alias ec='e -c'
 alias vi='e'
 
 eval "$(hub alias -s)"
 
 # NVM needs this to work.
 unset PREFIX
+
+# Load the rest depending on the system
 dot_files_load zshrc
 
