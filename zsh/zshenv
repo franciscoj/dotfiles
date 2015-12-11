@@ -7,7 +7,8 @@ basic_path=$PATH:$HOME/bin
 
 source $dot_files_base/functions.sh
 
-export EDITOR='emacsclient --alternate-editor="emacs"'
+# With this, apps using $EDITOR will use terminal emacs.
+export EDITOR='emacsclient -t --alternate-editor="emacs"'
 export VISUAL=$EDITOR
 # I want to title my shells by myself.
 export DISABLE_AUTO_TITLE=true
