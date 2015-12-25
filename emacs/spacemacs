@@ -23,8 +23,9 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     rust
      (ruby :variables
-           ruby-enable-enh-ruby-mode t
+           ruby-enable-enh-ruby-mode nil
            ruby-version-manager 'rbenv
            ruby-test-runner 'rspec)
      ruby-on-rails
@@ -46,11 +47,8 @@ values."
      github
      restclient
      colors
-     eyebrowse
      emoji
-     themes-megapack
-     franciscoj
-     )
+     franciscoj)
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
