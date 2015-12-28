@@ -1,6 +1,7 @@
 # -*- mode: shell-script; -*-
 
-export PATH=/usr/local/heroku/bin:$basic_path
+export PATH=/usr/local/heroku/bin:$basic_path:$HOME/.cargo/bin
+export RUST_SRC_PATH=$HOME/Documents/src/rust/src
 
 # This is to make the gnome-keyring work on arch linux.
 if [ -n "$DESKTOP_SESSION" ];then
