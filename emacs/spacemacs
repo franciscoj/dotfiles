@@ -51,7 +51,7 @@ values."
      franciscoj)
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
-   ;; packages then consider to create a layer, you can also put the
+   ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -236,9 +236,11 @@ values."
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
    dotspacemacs-default-package-repository nil
-   ;; Delete whitespace while saving buffer. Possible values are `all',
-   ;; `trailing', `changed' or `nil'. Default is `changed' (cleanup whitespace
-   ;; on changed lines) (default 'changed)
+   ;; Delete whitespace while saving buffer. Possible values are `all'
+   ;; to aggressively delete empty line and long sequences of whitespace,
+   ;; `trailing' to delete only the whitespace at end of lines, `changed'to
+   ;; delete only whitespace for changed lines or `nil' to disable cleanup.
+   ;; (default nil)
    dotspacemacs-whitespace-cleanup 'changed
    ))
 
