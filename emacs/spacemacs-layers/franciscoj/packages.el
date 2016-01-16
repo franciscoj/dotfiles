@@ -12,8 +12,6 @@
 
 (defvar franciscoj-packages
   '(yard-mode
-    rubocop
-    jade-mode
     yaml-mode
     ox-reveal)
   "List of all packages to install and/or initialize. Built-in packages
@@ -39,14 +37,6 @@ which require an initialization must be listed explicitly in the list.")
     (progn
       (add-hook 'enh-ruby-mode-hook 'yard-mode)
       (add-hook 'ruby-mode-hook 'yard-mode))))
-
-(defun franciscoj/init-rubocop ()
-  "Initialize rubocop"
-  (use-package rubocop))
-
-(defun franciscoj/init-jade-mode ()
-  "Initialize jade mode"
-  (use-package jade-mode))
 
 (defun franciscoj/init-ox-reveal ()
   "Initialize org reveal"
