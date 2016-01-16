@@ -14,3 +14,4 @@ app/javascripts/lib/.tern-port
 .dir-locals.el
 redbooth-api-v3.html
 api.md
+.envrc
