@@ -28,4 +28,3 @@ unset PREFIX
 
 # Load the rest depending on the system
 dot_files_load zshrc
-

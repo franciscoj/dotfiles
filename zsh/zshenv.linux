@@ -8,3 +8,6 @@ if [ -n "$DESKTOP_SESSION" ];then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
 fi
+
+# Load direnv
+eval "$(direnv hook zsh)"
