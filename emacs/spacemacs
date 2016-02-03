@@ -260,7 +260,9 @@ user code here.  The exception is org related code, which should be placed in
   (setq solarized-height-plus-1 1)
   (setq solarized-height-plus-2 1)
   (setq solarized-height-plus-3 1)
-  (setq solarized-height-plus-4 1))
+  (setq solarized-height-plus-4 1)
+  (add-hook 'ruby-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+  (add-hook 'js2-mode-hook #'(lambda () (modify-syntax-entry ?_ "w"))))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
