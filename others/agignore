@@ -13,3 +13,7 @@ bootstrap*.js
 node_modules
 *.txt
 *.md
+app/assets/javascript/tb5/lib/*.js
+app/assets/javascript/vendor/*.js
+app/assets/javascript/lib/*.js
+app/assets/font/**/*
