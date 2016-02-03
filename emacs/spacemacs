@@ -283,7 +283,8 @@ layers configuration. You are free to put any user code."
     (toggle-read-only)
     (ansi-color-apply-on-region (point-min) (point-max))
     (toggle-read-only))
-  (add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
+  (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+  (setq projectile-switch-project-action 'projectile-dired))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
