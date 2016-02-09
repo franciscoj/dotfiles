@@ -11,6 +11,9 @@ values."
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
    dotspacemacs-distribution 'spacemacs
+   ;; If non-nil layers with lazy install support are lazy installed.
+   ;; (default nil)
+   dotspacemacs-enable-lazy-installation nil
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
    dotspacemacs-configuration-layer-path '()
@@ -35,7 +38,8 @@ values."
      html
      markdown
      puppet
-     org
+     (org :variables
+          org-enable-github-support t)
      better-defaults
      syntax-checking
      (auto-completion :variables
@@ -210,11 +214,15 @@ values."
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
    dotspacemacs-inactive-transparency 90
+   ;; If non nil show the titles of transient states. (default t)
+   dotspacemacs-show-transient-state-title t
+   ;; If non nil show the color guide hint for transient state keys. (default t)
+   dotspacemacs-show-transient-state-color-guide t
    ;; If non nil unicode symbols are displayed in the mode line. (default t)
    dotspacemacs-mode-line-unicode-symbols t
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
-   ;; scrolling overrides the default behavior of Emacs which recenters the
-   ;; point when it reaches the top or bottom of the screen. (default t)
+   ;; scrolling overrides the default behavior of Emacs which recenters point
+   ;; when it reaches the top or bottom of the screen. (default t)
    dotspacemacs-smooth-scrolling t
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
@@ -260,14 +268,14 @@ user code here.  The exception is org related code, which should be placed in
   (setq solarized-height-plus-1 1)
   (setq solarized-height-plus-2 1)
   (setq solarized-height-plus-3 1)
-  (setq solarized-height-plus-4 1)
-  (add-hook 'ruby-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
-  (add-hook 'js2-mode-hook #'(lambda () (modify-syntax-entry ?_ "w"))))
+  (setq solarized-height-plus-4 1))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+
+  ;; Set default web indentations
   (setq-default js-indent-level 2
                 js2-basic-offset 2
                 css-indent-offset 2
@@ -275,10 +283,16 @@ layers configuration. You are free to put any user code."
                 web-mode-css-indent-offset 2
                 web-mode-code-indent-offset 2
                 web-mode-attr-indent-offset 2
-                ;; powerline-default-separator 'arrow
+
+                ;; When using enh-ruby-mode bounce between indentation types
                 enh-ruby-bounce-deep-indent t
+
+                ;; Switft 2 spaces with evil using '>>'
                 evil-shift-width 2)
-  (add-hook 'prog-mode-hooi 'fci-mode)
+
+  ;; Activate the fill column indicator
+  (add-hook 'prog-mode-hook 'fci-mode)
+
   ;; This colorizes the compilation output.
   (require 'ansi-color)
   (defun colorize-compilation-buffer ()
@@ -286,7 +300,31 @@ layers configuration. You are free to put any user code."
     (ansi-color-apply-on-region (point-min) (point-max))
     (toggle-read-only))
   (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
-  (setq projectile-switch-project-action 'projectile-dired))
+  (setq projectile-switch-project-action 'projectile-dired)
+
+  ;; To have word motion in underscored words
+  (add-hook 'js2-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+  (add-hook 'ruby-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+
+  ;; To run debugger no ruby specs
+  (add-hook 'after-init-hook 'inf-ruby-switch-setup)
+
+  ;; To set the default notes file for org-mode
+  (with-eval-after-load 'org
+    (setq org-default-notes-file (expand-file-name "~/Dropbox/org/notes.org")))
+
+  ;; To have reek to smell-check the ruby files
+  (flycheck-define-checker ruby-reek
+    "A Ruby smeel checker using reek
+
+See URL `https://github.com/troessner/reek'."
+    :command ("reek" "--format=xml"
+              source-original)
+    :standard-input t
+    :error-parser flycheck-parse-checkstyle
+    :modes (enh-ruby-mode ruby-mode)
+    :next-checkers ((info . ruby-rubocop)))
+  (add-to-list 'flycheck-checkers 'ruby-reek))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -304,6 +342,8 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(safe-local-variable-values
    (quote
-    ((encoding . utf-8)
+    ((eval progn
+           (setq flycheck-javascript-eslint-executable "/home/nflamel/Documents/src/nano/node_modules/.bin/eslint"))
+     (encoding . utf-8)
      (eval progn
            (setq flycheck-javascript-eslint-executable "/home/nflamel/Documents/src/frontend/node_modules/.bin/eslint"))))))
