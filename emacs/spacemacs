@@ -259,6 +259,9 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost any
 user code here.  The exception is org related code, which should be placed in
 `dotspacemacs/user-config'."
+  ;; Set emacs customizations to a separate file.
+  (setq custom-file "~/.emacs-custom.el")
+  (load custom-file)
   ;; Don't change the font for some headings and titles on org-mode
   (setq solarized-use-variable-pitch nil)
   ;; Don't change size of org-mode headlines (but keep other size-changes)

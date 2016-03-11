@@ -13,4 +13,5 @@
    CLOSED: [2014-12-05 vie 17:23]
 ** DONE Symlink git dot-files
    CLOSED: [2014-03-08 Sat 19:04]
-** TODO Add a better config for org-mode
+** DONE Add a better config for org-mode
+   CLOSED: [2016-03-11 Fri 12:55]
