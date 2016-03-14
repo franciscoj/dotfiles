@@ -46,7 +46,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
      better-defaults
      syntax-checking
      (auto-completion :variables
-                      auto-completion-enable-help-tooltip t)
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-snippets-in-popup t)
      (version-control :variables
                       version-control-global-margin t
                       version-control-diff-tool 'diff-hl)
