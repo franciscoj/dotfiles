@@ -15,13 +15,13 @@ class InstallTask < Anvil::Task
     github_install 'robbyrussell/oh-my-zsh', on_home('.oh-my-zsh')
 
     symlink 'zsh/zshrc'
-    symlink 'zsh/zshenv'
-    touch_unless_exists on_home('.zshrc_local')
+    symlink 'zsh/zprofile'
+    touch_unless_exists on_home('.zprofile_local')
   end
 
   def symlink_dotfiles
     Anvil.logger.info 'Symlinking dot-files.'
-    %w(ruby/gemrc ruby/irbrc ruby/railsrc ruby/rdebugrc ruby/pryrc).each do |file|
+    %w(ruby/gemrc ruby/irbrc ruby/pryrc).each do |file|
       symlink file
     end
 
@@ -36,7 +36,9 @@ class InstallTask < Anvil::Task
     symlink_if_exists 'ruby/default-gems',
                       on_home('.rbenv/default-gems'),
                       on_home('.rbenv')
+
     touch_unless_exists on_home('.gemrc_local')
+    touch_unless_exists on_home('.gitconfig_local')
   end
 
   def install_spacemacs

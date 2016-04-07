@@ -24,7 +24,7 @@ describe InstallTask do
     before { File.stub(:exists?).and_return(true) }
 
     it 'installs the symlinks' do
-      expect(subject).to receive(:symlink).exactly(10).times
+      expect(subject).to receive(:symlink).exactly(8).times
     end
 
     after { subject.symlink_dotfiles }
