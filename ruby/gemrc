@@ -1,3 +1,4 @@
+# -*- mode: yaml; -*-
 ---
 :backtrace: false
 :bulk_threshold: 1000
