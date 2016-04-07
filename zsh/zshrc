@@ -6,8 +6,10 @@
 # oh-my-zsh specific configuration.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="sunrise"
-plugins=(git gem rails rbenv autojump common-aliases)
+plugins=(git gem rails autojump common-aliases)
 source $ZSH/oh-my-zsh.sh
+dot_files_base=$HOME/Documents/src/dot-files/zsh/
+source $dot_files_base/functions.sh
 
 # Aliases
 alias be='bundle exec'
