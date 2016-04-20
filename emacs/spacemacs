@@ -317,6 +317,8 @@ you should place you code here."
     (ansi-color-apply-on-region (point-min) (point-max))
     (toggle-read-only))
   (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+
+  ;; When moving to a project with projectile, show the project dir.
   (setq projectile-switch-project-action 'projectile-dired)
 
   ;; To have word motion in underscored words
