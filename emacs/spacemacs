@@ -282,17 +282,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   ;; Set emacs customizations to a separate file.
   (setq custom-file "~/.emacs-custom.el")
-  (load custom-file)
-  ;; Don't change the font for some headings and titles on org-mode
-  (setq solarized-use-variable-pitch nil)
-  ;; Don't change size of org-mode headlines (but keep other size-changes)
-  (setq solarized-scale-org-headlines nil)
-  ;; Avoid all font-size changes
-  (setq solarized-height-minus-1 1)
-  (setq solarized-height-plus-1 1)
-  (setq solarized-height-plus-2 1)
-  (setq solarized-height-plus-3 1)
-  (setq solarized-height-plus-4 1))
+  (load custom-file))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
