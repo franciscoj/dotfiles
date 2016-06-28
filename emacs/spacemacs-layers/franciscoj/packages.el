@@ -1,33 +1,62 @@
-;;; packages.el --- franciscoj Layer packages File for Spacemacs
+;;; packages.el --- franciscoj layer packages file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2014 Sylvain Benner
-;; Copyright (c) 2014-2015 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
 ;;
-;; Author: Sylvain Benner <sylvain.benner@gmail.com>
+;; Author:  <fran@fran-macware>
 ;; URL: https://github.com/syl20bnr/spacemacs
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
 ;;; License: GPLv3
 
-(defvar franciscoj-packages
-  '(yard-mode
-    yaml-mode)
-  "List of all packages to install and/or initialize. Built-in packages
-which require an initialization must be listed explicitly in the list.")
+;;; Commentary:
 
-(defvar franciscoj-excluded-packages '()
-  "List of packages to exclude.")
+;; See the Spacemacs documentation and FAQs for instructions on how to implement
+;; a new layer:
+;;
+;;   SPC h SPC layers RET
+;;
+;;
+;; Briefly, each package to be installed or configured by this layer should be
+;; added to `franciscoj-packages'. Then, for each package PACKAGE:
+;;
+;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
+;;   function `franciscoj/init-PACKAGE' to load and initialize the package.
 
-;; For each package, define a function franciscoj/init-<package-franciscoj>
-;;
-;; (defun franciscoj/init-my-package ()
-;;   "Initialize my package"
-;;   )
-;;
-;; Often the body of an initialize function uses `use-package'
-;; For more info on `use-package', see readme:
-;; https://github.com/jwiegley/use-package
+;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
+;;   define the functions `franciscoj/pre-init-PACKAGE' and/or
+;;   `franciscoj/post-init-PACKAGE' to customize the package as it is loaded.
+
+;;; Code:
+
+(defconst franciscoj-packages
+  '(yard-mode)
+  "The list of Lisp packages required by the franciscoj layer.
+
+Each entry is either:
+
+1. A symbol, which is interpreted as a package to be installed, or
+
+2. A list of the form (PACKAGE KEYS...), where PACKAGE is the
+    name of the package to be installed or loaded, and KEYS are
+    any number of keyword-value-pairs.
+
+    The following keys are accepted:
+
+    - :excluded (t or nil): Prevent the package from being loaded
+      if value is non-nil
+
+    - :location: Specify a custom installation location.
+      The following values are legal:
+
+      - The symbol `elpa' (default) means PACKAGE will be
+        installed using the Emacs package manager.
+
+      - The symbol `local' directs Spacemacs to load the file at
+        `./local/PACKAGE/PACKAGE.el'
+
+      - A list beginning with the symbol `recipe' is a melpa
+        recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 (defun franciscoj/init-yard-mode ()
   "Initialize yard-mode on Ruby files"
@@ -37,6 +66,4 @@ which require an initialization must be listed explicitly in the list.")
       (add-hook 'enh-ruby-mode-hook 'yard-mode)
       (add-hook 'ruby-mode-hook 'yard-mode))))
 
-(defun franciscoj/init-yaml-mode ()
-  "Initialize yaml mode"
-  (use-package yaml-mode))
+;;; packages.el ends here
