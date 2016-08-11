@@ -9,6 +9,9 @@ eval "$(direnv hook zsh)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# Load pebble sdk
+# export PATH=$HOME/Downloads/pebble-dev/pebble-sdk-4.3-linux64/bin:$PATH
+
 # Load rust and cargo
 export PATH=$PATH:$HOME/.cargo/bin
 export RUST_SRC_PATH=$HOME/Documents/src/rust/src
