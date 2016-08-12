@@ -9,3 +9,6 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
+
+# Export ssh-agent socket
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
