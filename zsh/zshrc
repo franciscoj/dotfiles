@@ -8,8 +8,13 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="minimal"
 plugins=(git gem rails autojump common-aliases)
 source $ZSH/oh-my-zsh.sh
-dot_files_base=$HOME/Documents/src/dot-files/zsh/
-source $dot_files_base/functions.sh
+
+# With this, apps using $EDITOR will use terminal emacs.
+export EDITOR='nvim'
+export VISUAL=$EDITOR
+
+# Export ssh-agent socket
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 # Aliases
 alias be='bundle exec'
@@ -22,14 +27,6 @@ alias bs='bin/spring'
 alias rspec='bundle exec rspec'
 alias r='rspec'
 alias e=$EDITOR
-alias ec='e -c'
-alias vi='e'
+alias vi=$EDITOR
 
 eval "$(hub alias -s)"
-
-# NVM needs this to work. Some oh-my-zsh themes use it. Leaving it here just in
-# case.
-# unset PREFIX
-
-# Load the rest depending on the system
-dot_files_load zshrc
