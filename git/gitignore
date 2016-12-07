@@ -8,12 +8,8 @@ vendor/bundle
 .env.development
 log/*.log.*
 npm-debug.log
-.projectile
-app/javascripts/lib/.tern-port
 .tern-port
-.dir-locals.el
-redbooth-api-v3.html
-api.md
+.tern-port
 .envrc
 TODOs.org
 TAGS

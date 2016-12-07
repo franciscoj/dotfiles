@@ -21,15 +21,11 @@
 	amend = commit --amend --no-edit
 [push]
 	default = current
+[rebase]
+	autosquash = true
 [rerere]
 	enabled = true
 [init]
 	templatedir = ~/Documents/src/dot-files/git/templates
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
-[rebase]
-	autosquash = true
 [include]
 	path = ~/.gitconfig_local
