@@ -1,9 +1,0 @@
-# -*- mode: shell-script; -*-
-
-# Add rbenv shims first so that emacs gets the right ruby version. Emacs loads
-# on a non interactive (login) shell. That's why PATH needs to be loaded there
-# so that it works.
-export PATH=$HOME/.rbenv/shims:/usr/local/heroku/bin:$basic_path
-
-export EDITOR="$HOME/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c"
-
