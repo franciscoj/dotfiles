@@ -1,6 +1,3 @@
-" Don't try to support vi
-set nocompatible
-
 set encoding=utf-8 " default character encoding
 
 " Set leader keys before anything else
@@ -17,18 +14,14 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 Plug 'jgdavey/vim-blockle'
+Plug 'neomake/neomake'
 Plug 'itchyny/lightline.vim'
-
-Plug 'tpope/vim-fugitive'
-
-Plug 'tpope/vim-eunuch'
-
+Plug 'tpope/vim-eunuch' " Syntax sugar for unix commands
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jnurmine/Zenburn'
-Plug 'scrooloose/syntastic'
 
 call plug#end()
 
