@@ -169,5 +169,5 @@ bindsym XF86AudioLowerVolume exec /usr/bin/ponymix decrease '5%'
 bindsym XF86AudioRaiseVolume exec /usr/bin/ponymix increase '5%'
 bindsym XF86AudioMute exec /usr/bin/ponymix toggle
 
-# To make it work properly on hidpi screens (Like macbook pro)
+# To make it work properly on hidpi screens
 exec xrandr --output HDMI2 --auto --output eDP1 --auto --scale 0.5x0.5 --right-of HDMI2

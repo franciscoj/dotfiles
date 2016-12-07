@@ -5,25 +5,19 @@ general {
 
 order += "disk /home"
 order += "disk /"
-order += "wireless wlp3s0"
-order += "ethernet br0"
-order += "ethernet ens9"
+order += "wireless wlan0"
+order += "ethernet eth0"
 order += "battery 0"
 order += "volume master"
 order += "load"
 order += "time"
 
-wireless wlp3s0 {
+wireless wlan0 {
   format_up = "W: (%quality at %essid) %ip"
   format_down = "W: down"
 }
 
-ethernet br0 {
-  format_up = "E: %ip"
-  format_down = "E: down"
-}
-
-ethernet ens9 {
+ethernet eth0 {
   format_up = "E: %ip"
   format_down = "E: down"
 }
