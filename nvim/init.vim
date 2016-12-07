@@ -22,6 +22,7 @@ Plug 'tpope/vim-eunuch' " Syntax sugar for unix commands
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jnurmine/Zenburn'
+Plug 'sjl/gundo.vim'
 
 call plug#end()
 
