@@ -4,3 +4,4 @@ tags
 Gemfile.lock
 .bundle
 vendor/
+nvim/plugged
