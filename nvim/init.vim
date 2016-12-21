@@ -24,6 +24,7 @@ Plug 'jgdavey/vim-blockle'
 Plug 'neomake/neomake'
 Plug 'kassio/neoterm'
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch' " Syntax sugar for unix commands
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
