@@ -19,5 +19,8 @@ set smartindent
 set listchars=trail:~,tab:▸\ ,eol:¬ " show special characters
 set list
 
+" config for netrw
+let g:netrw_liststyle= 3
+
 " Make textwidth 80 chars long on markdown files
 au BufRead,BufNewFile *.md setlocal textwidth=80
