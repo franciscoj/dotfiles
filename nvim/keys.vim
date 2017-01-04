@@ -30,3 +30,6 @@ nnoremap <leader>s :Grepper<CR>
 " neoterm
 nmap <leader>rs :call neoterm#test#run("file")<cr>
 nmap <leader>rl :call neoterm#test#run("current")<cr>
+
+" Show tagbar
+nmap <leader>tt :TagbarToggle<CR>
