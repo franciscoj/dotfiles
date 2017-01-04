@@ -17,7 +17,7 @@ let g:lightline = {
       \ 'colorscheme': 'default',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename', 'tags' ] ]
       \ },
       \ 'component_function': {
       \   'modified': 'LightlineModified',
@@ -27,6 +27,7 @@ let g:lightline = {
       \   'fileformat': 'LightlineFileformat',
       \   'filetype': 'LightlineFiletype',
       \   'fileencoding': 'LightlineFileencoding',
+      \   'tags': 'LightLineTags',
       \   'mode': 'LightlineMode',
       \ },
       \ 'separator': { 'left': '', 'right': '' },
@@ -39,6 +40,10 @@ endfunction
 
 function! LightlineReadonly()
   return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
+endfunction
+
+function! LightLineTags()
+  return gutentags#statusline('Indexing...')
 endfunction
 
 function! LightlineFilename()
