@@ -33,3 +33,13 @@ nmap <leader>rl :call neoterm#test#run("current")<cr>
 
 " Show tagbar
 nmap <leader>tt :TagbarToggle<CR>
+
+" Edit and reload vimrc
+nmap <leader>ve :edit $MYVIMRC<CR>
+nmap <leader>vr :source $MYVIMRC<CR>
+
+" Window move around
+map <silent><C-j> :wincmd j<CR>
+map <silent><C-k> :wincmd k<CR>
+map <silent><C-l> :wincmd l<CR>
+map <silent><C-h> :wincmd h<CR>
