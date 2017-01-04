@@ -24,7 +24,7 @@ nnoremap <leader>fh :FZFHistory<cr>
 " grepper
 nnoremap \ :Grepper -query<space>
 " bind K to grep word under cursor
-nnoremap K :Grepper -noprompt -cword<CR> 
+nnoremap \\ :Grepper -noprompt -cword<CR> 
 nnoremap <leader>s :Grepper<CR>
 
 " neoterm
