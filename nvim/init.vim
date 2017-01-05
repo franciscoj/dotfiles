@@ -26,6 +26,7 @@ Plug 'sjl/gundo.vim'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'gregsexton/gitv'
 
 " Language support
 Plug 'jgdavey/vim-blockle'
