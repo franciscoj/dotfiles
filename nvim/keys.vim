@@ -21,39 +21,39 @@ nnoremap \\ :Grepper -noprompt -cword<CR>
 nnoremap <leader>s :Grepper<CR>
 
 " test-vim
-nmap <leader>tf :TestFile<CR>
-nmap <leader>tl :TestNearest<CR>
-nmap <leader>tt :TestVisit<CR>
+nnoremap <leader>tf :TestFile<CR>
+nnoremap <leader>tl :TestNearest<CR>
+nnoremap <leader>tt :TestVisit<CR>
 
 " Show tagbar
-nmap <leader><leader>t :TagbarToggle<CR>
+nnoremap <leader><leader>t :TagbarToggle<CR>
 
 " Show undo list
-nmap <leader>u :GundoToggle<CR>
+nnoremap <leader>u :GundoToggle<CR>
 
 " Edit and reload vimrc
-nmap <leader>ve :edit $MYVIMRC<CR>
-nmap <leader>vr :source $MYVIMRC<CR>
+nnoremap <leader>ve :edit $MYVIMRC<CR>
+nnoremap <leader>vr :source $MYVIMRC<CR>
 
 " Window move around
-nmap <silent><C-j> :wincmd j<CR>
-nmap <silent><C-k> :wincmd k<CR>
-nmap <silent><C-l> :wincmd l<CR>
-nmap <silent><C-h> :wincmd h<CR>
+nnoremap <silent><C-j> :wincmd j<CR>
+nnoremap <silent><C-k> :wincmd k<CR>
+nnoremap <silent><C-l> :wincmd l<CR>
+nnoremap <silent><C-h> :wincmd h<CR>
 
 " quick list and location list
-map <leader>qo :copen<CR>
-map <leader>lo :lopen<CR>
+nnoremap <leader>qo :copen<CR>
+nnoremap <leader>lo :lopen<CR>
 
-map <leader>qc :cclose<CR>
-map <leader>lc :lclose<CR>
+nnoremap <leader>qc :cclose<CR>
+nnoremap <leader>lc :lclose<CR>
 
 " Close windows and exit vim
-nmap <silent><leader>cc :wincmd c<CR>
-nmap <silent><leader>qq :qall<CR>
+nnoremap <silent><leader>cc :wincmd c<CR>
+nnoremap <silent><leader>qq :qall<CR>
 
 " Remove search highlithing
-nmap <silent><leader>nh :nohlsearch<CR>
+nnoremap <silent><leader>nh :nohlsearch<CR>
 
-nmap <leader>fs :write<CR>
-nmap <leader>fS :wall<CR>
+nnoremap <leader>fs :write<CR>
+nnoremap <leader>fS :wall<CR>
