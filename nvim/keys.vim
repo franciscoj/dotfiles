@@ -47,4 +47,4 @@ nmap <silent><C-k> :wincmd k<CR>
 nmap <silent><C-l> :wincmd l<CR>
 nmap <silent><C-h> :wincmd h<CR>
 nmap <silent><leader>cc :wincmd c<CR>
-nmap <silent><leader>qq :xa<CR>
+nmap <silent><leader>qq :qa<CR>
