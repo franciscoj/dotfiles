@@ -17,3 +17,6 @@ let g:neoterm_size = '15%'
 " Neomake
 autocmd! BufReadPost,BufWritePost * Neomake
 let g:neomake_open_list = 0
+
+" test-vim
+let test#strategy = "dispatch"

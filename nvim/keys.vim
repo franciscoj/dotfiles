@@ -20,12 +20,13 @@ nnoremap \ :Grepper -query<space>
 nnoremap \\ :Grepper -noprompt -cword<CR> 
 nnoremap <leader>s :Grepper<CR>
 
-" neoterm
-nmap <leader>rs :call neoterm#test#run("file")<cr>
-nmap <leader>rl :call neoterm#test#run("current")<cr>
+" test-vim
+nmap <leader>tf :TestFile<CR>
+nmap <leader>tl :TestNearest<CR>
+nmap <leader>tt :TestVisit<CR>
 
 " Show tagbar
-nmap <leader>tt :TagbarToggle<CR>
+nmap <leader><leader>t :TagbarToggle<CR>
 
 " Show undo list
 nmap <leader>u :GundoToggle<CR>
