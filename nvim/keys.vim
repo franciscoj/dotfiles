@@ -1,13 +1,6 @@
 " Go to Normal mode fast
 imap jj <ESC>
 
-" quick list and location list
-map <leader>qo :copen<CR>
-map <leader>lo :lopen<CR>
-
-map <leader>qc :cclose<CR>
-map <leader>lc :lclose<CR>
-
 " fugitive
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
@@ -46,5 +39,20 @@ nmap <silent><C-j> :wincmd j<CR>
 nmap <silent><C-k> :wincmd k<CR>
 nmap <silent><C-l> :wincmd l<CR>
 nmap <silent><C-h> :wincmd h<CR>
+
+" quick list and location list
+map <leader>qo :copen<CR>
+map <leader>lo :lopen<CR>
+
+map <leader>qc :cclose<CR>
+map <leader>lc :lclose<CR>
+
+" Close windows and exit vim
 nmap <silent><leader>cc :wincmd c<CR>
-nmap <silent><leader>qq :qa<CR>
+nmap <silent><leader>qq :qall<CR>
+
+" Remove search highlithing
+nmap <silent><leader>nh :nohlsearch<CR>
+
+nmap <leader>fs :write<CR>
+nmap <leader>fS :wall<CR>
