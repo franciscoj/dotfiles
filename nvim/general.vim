@@ -27,3 +27,4 @@ let g:netrw_liststyle= 3
 
 " Make textwidth 80 chars long on markdown files
 au BufRead,BufNewFile *.md setlocal textwidth=80
+set colorcolumn=80
