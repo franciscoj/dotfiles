@@ -1,5 +1,6 @@
 " Go to Normal mode fast
-imap jj <ESC>
+inoremap jj <ESC>
+inoremap <ESC> <NOP>
 
 " fugitive
 nnoremap <leader>gs :Gstatus<CR>
@@ -15,8 +16,6 @@ nnoremap <leader>ft :FZFTags<cr>
 nnoremap <leader>fh :FZFHistory<cr>
 
 " grepper
-nnoremap \ :Grepper -query<space>
-" bind K to grep word under cursor
 nnoremap \\ :Grepper -noprompt -cword<CR> 
 nnoremap <leader>s :Grepper<CR>
 
@@ -48,12 +47,14 @@ nnoremap <leader>lo :lopen<CR>
 nnoremap <leader>qc :cclose<CR>
 nnoremap <leader>lc :lclose<CR>
 
-" Close windows and exit vim
+" Close window
 nnoremap <silent><leader>cc :wincmd c<CR>
+" Exit vim
 nnoremap <silent><leader>qq :qall<CR>
 
 " Remove search highlithing
 nnoremap <silent><leader>nh :nohlsearch<CR>
 
+" Write one or all open files
 nnoremap <leader>fs :write<CR>
 nnoremap <leader>fS :wall<CR>
