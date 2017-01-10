@@ -19,6 +19,9 @@ set smartindent
 set listchars=trail:~,tab:▸\ ,eol:¬ " show special characters
 set list
 
+" Search niceties
+set inccommand=split
+
 " config for netrw
 let g:netrw_liststyle= 3
 
