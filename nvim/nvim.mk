@@ -12,10 +12,10 @@ NVIM_PLUG     := $(NVIM_DST_DIR)/autoload/plug.vim
 
 .PHONY: nvim clean_nvim
 
-nvim: banner_install_nvim $(NVIM_INIT) $(NVIM_PLUG)
+nvim: banner_install_nvim $(NVIM_DST_DIR) $(NVIM_PLUG)
 
 $(NVIM_DST_DIR):
-	$(LINK) $(NVIM_SRC_DIR)/nvim $@
+	$(LINK) $(NVIM_SRC_DIR) $@
 
 $(NVIM_PLUG): $(NVIM_DST_DIR)
 	$(MKDIR) $(@D)
@@ -23,7 +23,6 @@ $(NVIM_PLUG): $(NVIM_DST_DIR)
 	nvim +PlugInstall +qa
 
 clean_nvim: banner_clean_nvim
-	$(RM) $(NVIM_INIT)
 	$(RM) $(NVIM_DST_DIR)
 
 endif

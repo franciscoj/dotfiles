@@ -1,7 +1,7 @@
 # Makefile to install all dotfiles
 #
 # $ make # install all dotfiles
-# $ make vim # install vim dotfiles
+# $ make nvim # install nvim dotfiles
 #
 # $ make clean # uninstall all dotfiles
 # $ make clean_vim # uninstall vim dotfiles
