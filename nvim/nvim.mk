@@ -6,7 +6,6 @@ CLEANERS   += clean_nvim
 
 NVIM_SRC_DIR  := $(DOTFILES)/nvim
 NVIM_DST_DIR  := $(CONFIG_DIR)/nvim
-NVIM_INIT     := $(NVIM_DST_DIR)/init.vim
 NVIM_PLUG_URL := https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 NVIM_PLUG     := $(NVIM_DST_DIR)/autoload/plug.vim
 
