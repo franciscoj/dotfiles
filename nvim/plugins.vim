@@ -17,6 +17,7 @@ let g:neoterm_size = '15%'
 " Neomake
 autocmd! BufReadPost,BufWritePost * Neomake
 let g:neomake_open_list = 0
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 " test-vim
 let test#strategy = "dispatch"
