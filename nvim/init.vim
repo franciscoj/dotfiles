@@ -33,11 +33,14 @@ Plug 'gregsexton/gitv'
 " Language support
 Plug 'jgdavey/vim-blockle'
 Plug 'sheerun/vim-polyglot'
+Plug 'noprompt/vim-yardoc'
 Plug 'plasticboy/vim-markdown'
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'jaawerth/neomake-local-eslint-first'
+Plug 'pangloss/vim-javascript'
+Plug 'PotatoesMaster/i3-vim-syntax'
 
 " Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
