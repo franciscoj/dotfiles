@@ -56,19 +56,31 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# split in horizontal orientation
-bindsym $mod+h split h
+set $mode_split Split (h) HORIZONTAL, (v) VERTICAL
+mode "$mode_split" {
+    bindsym h split h
+    bindsym v split v
 
-# split in vertical orientation
-bindsym $mod+v split v
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+s mode "$mode_split"
+
+set $mode_layout Layout (s) STACKING (t) TABBED (e) TOGGLE SPLIT
+mode "$mode_layout" {
+    bindsym s layout stacking
+    bindsym t layout tabbed
+    bindsym e layout toggle split
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+w mode "$mode_layout"
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
