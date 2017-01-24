@@ -148,6 +148,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+set $mode_display Screens? (1) 1 SCREEN, (2) 2 SCREENS
+mode "$mode_display" {
+    bindsym 1 exec --no-startup-id ~/.screenlayout/1screen.sh
+    bindsym 2 exec --no-startup-id ~/.screenlayout/2screens.sh
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# Declare here the shortcut to bring the display selection menu
+bindsym $mod+x mode "$mode_display"
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
