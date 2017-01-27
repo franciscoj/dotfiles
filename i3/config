@@ -96,7 +96,8 @@ bindsym $mod+a focus parent
 
 set $WS1 1: term
 set $WS2 2: web
-set $WS3 3: misc
+set $WS3 3: media
+set $WS0 0: misc
 
 # switch to workspace
 bindsym $mod+1 workspace $WS1
@@ -108,7 +109,7 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+0 workspace $WS0
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $WS1
@@ -120,7 +121,7 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+0 move container to workspace $WS0
 
 # For the cases in which you have multiple screens
 bindsym $mod+m move workspace to output right
