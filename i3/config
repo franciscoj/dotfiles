@@ -32,7 +32,7 @@ font pango:Source Code Pro 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -42,7 +42,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --term="gnome-terminal" --usage-log="~/.j4-dmenu-desktop-usage.log"
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --term="xfce4-terminal" --usage-log="~/.j4-dmenu-desktop-usage.log"
 
 # change focus
 bindsym $mod+h focus left
