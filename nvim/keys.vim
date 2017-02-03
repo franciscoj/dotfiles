@@ -10,9 +10,9 @@ nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
 
 " fzf
-nnoremap <leader>ff :FZFFiles<cr>
+nnoremap <leader>ff :FZFGFiles<cr>
 nnoremap <leader>fb :FZFBuffers<cr>
-nnoremap <leader>ft :FZFTags<cr>
+nnoremap <leader>ft :FZFBTags<cr>
 nnoremap <leader>fh :FZFHistory<cr>
 
 " grepper
