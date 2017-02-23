@@ -13,40 +13,45 @@ order += "load"
 order += "time"
 
 wireless wlan0 {
-  format_up = "W: (%quality at %essid) %ip"
-  format_down = "W: down"
+  format_up = ": (%quality at %essid) %ip"
+  format_down = ": down"
 }
 
 ethernet eth0 {
-  format_up = "E: %ip"
-  format_down = "E: down"
+  format_up = ": %ip"
+  format_down = ": down"
 }
 
 battery 0 {
   format = "%status %percentage"
+  status_full = ""
+  status_chr = ""
+  status_bat = ""
+
   integer_battery_capacity = true
   low_threshold = 15
   threshold_type = time
 }
 
 time {
-  format = "%d.%m.%Y %H:%M"
+  format = " %d.%m.%Y %H:%M"
 }
 
 load {
-  format = "%1min"
+  format = " %1min"
 }
 
 disk "/" {
-  format = "%free"
+  format = "  / %free"
 }
 
 disk "/home" {
-  format = "%free"
+  format = "  /home %free"
 }
 
 volume master {
-  format = "♪: %volume"
+  format = ": %volume"
+  format_muted = " %volume"
   device = "default"
   mixer = "Master"
   mixer_idx = 0
