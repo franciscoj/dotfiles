@@ -13,13 +13,13 @@ order += "load"
 order += "time"
 
 wireless wlan0 {
-  format_up = ": (%quality at %essid) %ip"
-  format_down = ": down"
+  format_up = " (%quality at %essid) %ip"
+  format_down = " down"
 }
 
 ethernet eth0 {
-  format_up = ": %ip"
-  format_down = ": down"
+  format_up = " %ip"
+  format_down = " down"
 }
 
 battery 0 {
@@ -50,8 +50,8 @@ disk "/home" {
 }
 
 volume master {
-  format = ": %volume"
-  format_muted = " %volume"
+  format = " %volume"
+  format_muted = "   %volume"
   device = "default"
   mixer = "Master"
   mixer_idx = 0
