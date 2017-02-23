@@ -22,6 +22,7 @@ nnoremap <leader>s :Grepper<CR>
 " test-vim
 nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>tl :TestNearest<CR>
+nnoremap <leader>tr :TestLast<CR>
 nnoremap <leader>tt :TestVisit<CR>
 
 " Show tagbar
