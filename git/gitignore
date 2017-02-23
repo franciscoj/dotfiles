@@ -14,5 +14,7 @@ npm-debug.log
 TODOs.org
 TAGS
 tags
+tags.lock
+tags.temp
 vendor/host_bundle
 nvim/local.vim
