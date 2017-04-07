@@ -17,7 +17,7 @@ nnoremap <leader>fh :FZFHistory<cr>
 
 " grepper
 nnoremap \\ :Grepper -noprompt -cword<CR> 
-nnoremap <leader>s :Grepper<CR>
+nnoremap <leader>s :Grepper -query<SPACE>
 
 " test-vim
 nnoremap <leader>tf :TestFile<CR>
