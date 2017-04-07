@@ -26,5 +26,9 @@ set inccommand=split
 let g:netrw_liststyle= 3
 
 " Make textwidth 80 chars long on markdown files
-au BufRead,BufNewFile *.md setlocal textwidth=80
+autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 set colorcolumn=80
+
+" Improve the files autocomplete
+autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
+autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
