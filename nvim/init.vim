@@ -28,7 +28,7 @@ Plug 'sjl/gundo.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'gregsexton/gitv'
 
 " Language support
