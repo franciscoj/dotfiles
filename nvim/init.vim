@@ -60,6 +60,20 @@ source $HOME/.config/nvim/general.vim
 source $HOME/.config/nvim/keys.vim
 source $HOME/.config/nvim/statusline.vim
 
+" Change diff signs
+" This has to be after the general.vim loading since loading the colorscheme
+" overwrites this... however I can't add it to the plugins.vim file and load
+" that after the general.vim because the neomake autocommands for the colors
+" need to be defined before loading the colorscheme :D cool, eh?
+
+highlight DiffAdd           cterm=bold ctermbg=none ctermfg=2
+highlight DiffDelete        cterm=bold ctermbg=none ctermfg=1
+highlight DiffChange        cterm=bold ctermbg=none ctermfg=4
+
+highlight SignifySignAdd    cterm=bold ctermbg=none ctermfg=2
+highlight SignifySignDelete cterm=bold ctermbg=none ctermfg=1
+highlight SignifySignChange cterm=bold ctermbg=none ctermfg=4
+
 if filereadable('~/.config/nvim/local.vim')
   source $HOME/.config/nvim/local.vim
 endif
