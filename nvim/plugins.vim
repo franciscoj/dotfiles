@@ -5,6 +5,7 @@ let g:deoplete#enable_at_startup = 1
 let g:signify_vcs_list = ['git']
 let g:signify_sign_change = '~'
 let g:signify_sign_changedelete = '!'
+let g:signify_realtime = 1
 
 " fzf;
 let g:fzf_command_prefix = 'FZF'
