@@ -1,6 +1,9 @@
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
+" signify (gutter for git)
+let g:signify_vcs_list = ['git']
+
 " fzf
 let g:fzf_command_prefix = 'FZF'
 
