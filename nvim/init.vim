@@ -47,13 +47,16 @@ Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
 
 " Autocomplete
-Plug 'majutsushi/tagbar'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'ervandew/supertab'
 Plug 'fishbullet/deoplete-ruby'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
 
 call plug#end()
+
+" filetype plugin indent on
+" syntax enable
 
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/general.vim

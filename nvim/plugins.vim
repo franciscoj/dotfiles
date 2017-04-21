@@ -1,6 +1,11 @@
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
+" Ultisnips
+let g:UltiSnipsSnippetsDir = "/home/fran/.config/nvim/snips"
+let g:UltiSnipsSnippetDirectories=[ "snips", "UltiSnips" ]
+let g:UltiSnipsEditSplit = "vertical"
+
 " signify (gutter for git)
 let g:signify_vcs_list = ['git']
 let g:signify_sign_change = '~'
@@ -23,7 +28,6 @@ let g:neoterm_size = '15%'
 " Neomake
 autocmd! BufReadPost,BufWritePost * Neomake
 
-let g:neomake_open_list = 1
 let g:neomake_list_height = 4
 let g:neomake_logfile = '/tmp/neomake.log'
 let g:neomake_javascript_enabled_makers = ['eslint']
