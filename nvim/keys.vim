@@ -25,9 +25,6 @@ nnoremap <leader>tl :TestNearest<CR>
 nnoremap <leader>tr :TestLast<CR>
 nnoremap <leader>tt :TestVisit<CR>
 
-" Show tagbar
-nnoremap <leader><leader>t :TagbarToggle<CR>
-
 " Show undo list
 nnoremap <leader>u :GundoToggle<CR>
 
