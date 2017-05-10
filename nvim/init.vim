@@ -28,6 +28,7 @@ Plug 'sjl/gundo.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'mhinz/vim-signify'
 
 " Language support
