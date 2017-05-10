@@ -32,3 +32,7 @@ set colorcolumn=80
 " Improve the files autocomplete
 autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
 autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
+
+" Folding
+set foldmethod=syntax
+set nofoldenable
