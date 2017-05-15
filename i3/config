@@ -134,7 +134,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit?' -b 'Yes, exit' 'i3-msg exit'"
 # lock screen
-bindsym Control+$mod+l exec i3lock -i ~/Pictures/background.png -c 0c0c0e
+bindsym Control+$mod+l exec dm-tool lock
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
