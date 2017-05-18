@@ -5,3 +5,4 @@ Gemfile.lock
 .bundle
 vendor/
 nvim/plugged
+nvim/spell
