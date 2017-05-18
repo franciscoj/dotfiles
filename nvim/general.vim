@@ -23,19 +23,20 @@ set list
 " Search niceties
 set inccommand=split
 
-" config for netrw
+" configuration for netrw
 let g:netrw_liststyle= 3
 
-" Make textwidth 80 chars long on markdown files
+" Make text width 80 chars long on markdown files
 autocmd FileType markdown call SetMarkdownOptions()
 
-function SetMarkdownOptions()
+" If overwrite the SetMarkDownOptions function if it exists
+function! SetMarkdownOptions()
   setlocal textwidth=79
   setlocal spell spelllang=en_us
+  setlocal noshiftround
 endfunction
 
-" Add spelling to git commits
-"
+" Add spell check to git commits
 autocmd FileType gitcommit setlocal spell spelllang=en_us
 
 " Improve the files autocomplete
