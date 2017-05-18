@@ -27,12 +27,16 @@ set inccommand=split
 let g:netrw_liststyle= 3
 
 " Make textwidth 80 chars long on markdown files
-autocmd BufRead,BufNewFile *.md call SetMarkdownOptions()
+autocmd FileType markdown call SetMarkdownOptions()
 
 function SetMarkdownOptions()
   setlocal textwidth=79
   setlocal spell spelllang=en_us
 endfunction
+
+" Add spelling to git commits
+"
+autocmd FileType gitcommit setlocal spell spelllang=en_us
 
 " Improve the files autocomplete
 autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
