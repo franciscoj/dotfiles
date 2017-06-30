@@ -11,13 +11,8 @@ export PATH=/usr/local/heroku/bin:$PATH
 # Load direnv
 eval "$(direnv hook zsh)"
 
-# Load rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-# Load nodenv
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
+# Load asdf
+. $HOME/.asdf/asdf.sh
 
 # Add Yarn global to the path
 export PATH="$PATH:`yarn global bin`"
