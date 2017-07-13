@@ -50,6 +50,7 @@ augroup my_neomake_signs
 augroup END
 
 
+let g:neomake_elixir_enabled_makers = ['credo', 'mix']
 " test-vim
 let test#strategy = "dispatch"
 
