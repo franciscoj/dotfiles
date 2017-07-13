@@ -12,9 +12,6 @@ let g:signify_sign_change = '~'
 let g:signify_sign_changedelete = '!'
 let g:signify_realtime = 1
 
-" fzf;
-let g:fzf_command_prefix = 'FZF'
-
 " Grepper tools preference
 let g:grepper = { 'tools': ['ag', 'git'] }
 

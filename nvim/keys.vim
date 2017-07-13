@@ -9,11 +9,9 @@ nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
 
-" fzf
-nnoremap <leader>ff :FZFGFiles<cr>
-nnoremap <leader>fb :FZFBuffers<cr>
-nnoremap <leader>ft :FZFBTags<cr>
-nnoremap <leader>fh :FZFHistory<cr>
+" scout
+nnoremap <leader>ff :ScoutFiles<cr>
+nnoremap <leader>fb :ScoutBuffers<cr>
 
 " grepper
 nnoremap \\ :Grepper -noprompt -cword<CR> 

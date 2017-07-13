@@ -45,8 +45,7 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'elmcast/elm-vim'
 
 " Search
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'jhbabon/scout.vim'
 Plug 'mhinz/vim-grepper'
 
 " Autocomplete
