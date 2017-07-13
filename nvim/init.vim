@@ -42,6 +42,7 @@ Plug 'slashmili/alchemist.vim'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'pangloss/vim-javascript'
 Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'elmcast/elm-vim'
 
 " Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

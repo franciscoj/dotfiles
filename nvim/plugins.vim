@@ -59,3 +59,6 @@ let test#strategy = "dispatch"
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
+
+" elm-vim
+let g:elm_format_autosave = 1
