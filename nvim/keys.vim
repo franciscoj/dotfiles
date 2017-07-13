@@ -56,3 +56,6 @@ nnoremap <silent><leader>nh :nohlsearch<CR>
 " Write one or all open files
 nnoremap <leader>fs :write<CR>
 nnoremap <leader>fS :wall<CR>
+
+" ArgWrap
+nnoremap <silent> <leader>a :ArgWrap<CR>

@@ -25,6 +25,7 @@ Plug 'tpope/vim-eunuch' " Syntax sugar for unix commands
 Plug 'jnurmine/Zenburn'
 Plug 'eiginn/netrw' " Overwrite vim's netrw with the latest version
 Plug 'sjl/gundo.vim'
+Plug 'FooSoft/vim-argwrap'
 
 " Git
 Plug 'tpope/vim-fugitive'
