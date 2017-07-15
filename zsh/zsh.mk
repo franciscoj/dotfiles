@@ -8,8 +8,8 @@ ZSHRC_SRC     := $(DOTFILES)/zsh/zshrc
 ZSHRC         := $(DST_DIR)/.zshrc
 ZPROFILE_SRC  := $(DOTFILES)/zsh/zprofile
 ZPROFILE      := $(DST_DIR)/.zprofile
-OH_MY_ZSH_URL := https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
-OH-MY_ZSH_DST := $(DST_DIR)/.oh-my-zsh
+OH_MY_ZSH_URL := git://github.com/robbyrussell/oh-my-zsh.git
+OH_MY_ZSH_DST := $(DST_DIR)/.oh-my-zsh
 
 .PHONY: zsh clean_zsh
 
@@ -22,7 +22,7 @@ $(ZPROFILE):
 	$(LINK) $(ZPROFILE_SRC) $@
 
 $(OH_MY_ZSH_DST):
-	curl -fsSL $(OH_MY_ZSH_URL)
+	$(CLONE) $(OH_MY_ZSH_URL) $@
 
 clean_zsh: banner_clean_zsh
 	$(RM) $(ZSHRC)
