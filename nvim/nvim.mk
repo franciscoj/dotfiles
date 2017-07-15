@@ -14,6 +14,7 @@ NVIM_PLUG     := $(NVIM_DST_DIR)/autoload/plug.vim
 nvim: banner_install_nvim $(NVIM_DST_DIR) $(NVIM_PLUG)
 
 $(NVIM_DST_DIR):
+	mkdir -p $(CONFIG_DIR)
 	$(LINK) $(NVIM_SRC_DIR) $@
 
 $(NVIM_PLUG): $(NVIM_DST_DIR)
