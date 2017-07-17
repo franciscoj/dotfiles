@@ -12,9 +12,6 @@ let g:signify_sign_change = '~'
 let g:signify_sign_changedelete = '!'
 let g:signify_realtime = 1
 
-" fzf;
-let g:fzf_command_prefix = 'FZF'
-
 " Grepper tools preference
 let g:grepper = { 'tools': ['ag', 'git'] }
 
@@ -53,9 +50,13 @@ augroup my_neomake_signs
 augroup END
 
 
+let g:neomake_elixir_enabled_makers = ['credo', 'mix']
 " test-vim
 let test#strategy = "dispatch"
 
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
+
+" elm-vim
+let g:elm_format_autosave = 1

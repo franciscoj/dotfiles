@@ -36,6 +36,15 @@ function! SetMarkdownOptions()
   setlocal noshiftround
 endfunction
 
+
+autocmd FileType elm call SetElmOptions()
+
+function! SetElmOptions()
+  setlocal shiftwidth=4
+  setlocal softtabstop=2
+  setlocal expandtab
+endfunction
+
 " Add spell check to git commits
 autocmd FileType gitcommit setlocal spell spelllang=en_us
 

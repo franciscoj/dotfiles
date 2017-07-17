@@ -25,6 +25,7 @@ Plug 'tpope/vim-eunuch' " Syntax sugar for unix commands
 Plug 'jnurmine/Zenburn'
 Plug 'eiginn/netrw' " Overwrite vim's netrw with the latest version
 Plug 'sjl/gundo.vim'
+Plug 'FooSoft/vim-argwrap'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -41,10 +42,10 @@ Plug 'slashmili/alchemist.vim'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'pangloss/vim-javascript'
 Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'elmcast/elm-vim'
 
 " Search
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'jhbabon/scout.vim'
 Plug 'mhinz/vim-grepper'
 
 " Autocomplete
