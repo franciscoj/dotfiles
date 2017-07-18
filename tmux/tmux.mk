@@ -12,14 +12,16 @@ TMUX_PM_DIR      := $(TMUX_PLUGINS_DIR)/tpm
 
 .PHONY: tmux clean_tmux
 
-tmux: banner_install_tmux $(TMUX_CONFIG) $(TMUX_PM)
+tmux: banner_install_tmux $(TMUX_CONFIG) $(TMUX_PM_DIR)
 
 $(TMUX_CONFIG):
-	$(LINK) $(TMUX_SRC_DIR) $@
+	$(LINK) $(TMUX_SRC) $@
 
-$(TMUX_PM): $(TMUX_PLUGINS_DIR)
-	$(MKDIR) $(@D)
-	git clone $(TMUX_PM_URL) $(TMUX_PM_DIR)
+$(TMUX_PM_DIR): $(TMUX_PLUGINS_DIR)
+	$(CLONE) $(TMUX_PM_URL) $@
+
+$(TMUX_PLUGINS_DIR):
+	$(MKDIR) $@
 
 clean_tmux: banner_clean_tmux
 	$(RM) $(TMUX_CONFIG)
