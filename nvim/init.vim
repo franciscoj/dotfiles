@@ -55,6 +55,9 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 
+" Others
+Plug 'embear/vim-localvimrc'
+
 call plug#end()
 
 " filetype plugin indent on
@@ -78,7 +81,3 @@ highlight DiffChange        cterm=bold ctermbg=none ctermfg=4
 highlight SignifySignAdd    cterm=bold ctermbg=none ctermfg=2
 highlight SignifySignDelete cterm=bold ctermbg=none ctermfg=1
 highlight SignifySignChange cterm=bold ctermbg=none ctermfg=4
-
-if filereadable('~/.config/nvim/local.vim')
-  source $HOME/.config/nvim/local.vim
-endif
