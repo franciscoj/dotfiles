@@ -20,3 +20,4 @@ vendor/host_bundle
 nvim/local.vim
 .byebug_history
 .tool-versions
+.lvimrc
