@@ -57,6 +57,7 @@ Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 
 " Others
+Plug 'diepm/vim-rest-console'
 Plug 'embear/vim-localvimrc'
 
 call plug#end()
