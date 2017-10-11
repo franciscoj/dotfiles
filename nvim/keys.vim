@@ -30,11 +30,17 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>ve :edit $MYVIMRC<CR>
 nnoremap <leader>vr :source $MYVIMRC<CR>
 
-" Window move around
-nnoremap <silent><C-j> :wincmd j<CR>
-nnoremap <silent><C-k> :wincmd k<CR>
-nnoremap <silent><C-l> :wincmd l<CR>
-nnoremap <silent><C-h> :wincmd h<CR>
+" Move between windows
+nnoremap <silent><leader>j :wincmd j<CR>
+nnoremap <silent><leader>k :wincmd k<CR>
+nnoremap <silent><leader>l :wincmd l<CR>
+nnoremap <silent><leader>h :wincmd h<CR>
+
+" Move windows around
+nnoremap <silent><leader><leader>j :wincmd J<CR>
+nnoremap <silent><leader><leader>k :wincmd K<CR>
+nnoremap <silent><leader><leader>l :wincmd L<CR>
+nnoremap <silent><leader><leader>h :wincmd H<CR>
 
 " quick list and location list
 nnoremap <leader>qo :copen<CR>
