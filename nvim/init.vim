@@ -47,6 +47,7 @@ Plug 'elmcast/elm-vim'
 " Search
 Plug 'jhbabon/scout.vim'
 Plug 'mhinz/vim-grepper'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
