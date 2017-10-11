@@ -49,8 +49,8 @@ augroup my_neomake_signs
         \ hi NeomakeMessageSign ctermfg=white
 augroup END
 
+let g:neomake_elixir_enabled_makers = ['credo']
 
-let g:neomake_elixir_enabled_makers = ['credo', 'mix']
 " test-vim
 let test#strategy = "dispatch"
 
