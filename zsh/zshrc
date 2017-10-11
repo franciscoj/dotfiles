@@ -6,20 +6,19 @@
 # oh-my-zsh specific configuration.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="minimal"
-plugins=(git gem rails common-aliases vi-mode archlinux)
+plugins=(git gem rails common-aliases vi-mode ssh-agent)
 source $ZSH/oh-my-zsh.sh
+zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 # With this, apps using $EDITOR will use terminal emacs.
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 
-# Export ssh-agent socket
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
-
 # Aliases
 alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'
+
 # noglob needed for rake + zsh
 alias rake='noglob bundle exec rake'
 alias br='bin/rspec'
