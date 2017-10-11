@@ -60,3 +60,6 @@ let g:javascript_plugin_flow = 1
 
 " elm-vim
 let g:elm_format_autosave = 1
+
+" localvimrc
+let g:localvimrc_persistent = 2
