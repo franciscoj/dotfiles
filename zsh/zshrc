@@ -30,5 +30,4 @@ alias vi=$EDITOR
 
 eval "$(hub alias -s)"
 
-# Autoadded by fzf installation
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
