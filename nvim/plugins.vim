@@ -2,7 +2,7 @@
 let g:deoplete#enable_at_startup = 1
 
 " Ultisnips
-let g:UltiSnipsSnippetsDir = "/home/fran/.config/nvim/snips"
+let g:UltiSnipsSnippetsDir = $HOME.'/.config/nvim/snips'
 let g:UltiSnipsSnippetDirectories=[ "snips", "UltiSnips" ]
 let g:UltiSnipsEditSplit = "vertical"
 
