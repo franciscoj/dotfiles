@@ -42,12 +42,16 @@ nnoremap <silent><leader><leader>k :wincmd K<CR>
 nnoremap <silent><leader><leader>l :wincmd L<CR>
 nnoremap <silent><leader><leader>h :wincmd H<CR>
 
+" Split screens
+nnoremap <silent><leader><leader>v :wincmd v<CR>
+nnoremap <silent><leader><leader>s :wincmd s<CR>
+
 " quick list and location list
 nnoremap <leader>qo :copen<CR>
-nnoremap <leader>lo :lopen<CR>
-
 nnoremap <leader>qc :cclose<CR>
+
 nnoremap <leader>lc :lclose<CR>
+nnoremap <leader>lo :lopen<CR>
 
 " Close window
 nnoremap <silent><leader>cc :wincmd c<CR>
@@ -60,6 +64,7 @@ nnoremap <silent><leader>nh :nohlsearch<CR>
 " Write one or all open files
 nnoremap <leader>fs :write<CR>
 nnoremap <leader>fS :wall<CR>
+nnoremap <leader>fo :edit<space> 
 
 " ArgWrap
 nnoremap <silent> <leader>a :ArgWrap<CR>
