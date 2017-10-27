@@ -28,11 +28,5 @@
 	enabled = true
 [init]
 	templatedir = ~/Documents/src/dot-files/git/templates
-[merge]
-	tool = vimdiff
-[mergetool]
-	prompt = true
-[mergetool "vimdiff"]
-	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [include]
 	path = ~/.gitconfig_local
