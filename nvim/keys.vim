@@ -31,20 +31,20 @@ nnoremap <leader>ve :edit $MYVIMRC<CR>
 nnoremap <leader>vr :source $MYVIMRC<CR>
 
 " Move between windows
-nnoremap <silent><leader>j :wincmd j<CR>
-nnoremap <silent><leader>k :wincmd k<CR>
-nnoremap <silent><leader>l :wincmd l<CR>
-nnoremap <silent><leader>h :wincmd h<CR>
+nnoremap <silent><leader>wj :wincmd j<CR>
+nnoremap <silent><leader>wk :wincmd k<CR>
+nnoremap <silent><leader>wl :wincmd l<CR>
+nnoremap <silent><leader>wh :wincmd h<CR>
 
 " Move windows around
-nnoremap <silent><leader><leader>j :wincmd J<CR>
-nnoremap <silent><leader><leader>k :wincmd K<CR>
-nnoremap <silent><leader><leader>l :wincmd L<CR>
-nnoremap <silent><leader><leader>h :wincmd H<CR>
+nnoremap <silent><leader>wJ :wincmd J<CR>
+nnoremap <silent><leader>wK :wincmd K<CR>
+nnoremap <silent><leader>wL :wincmd L<CR>
+nnoremap <silent><leader>wH :wincmd H<CR>
 
 " Split screens
-nnoremap <silent><leader><leader>v :wincmd v<CR>
-nnoremap <silent><leader><leader>s :wincmd s<CR>
+nnoremap <silent><leader>wv :wincmd v<CR>
+nnoremap <silent><leader>ws :wincmd s<CR>
 
 " quick list and location list
 nnoremap <leader>qo :copen<CR>
