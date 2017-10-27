@@ -22,34 +22,14 @@ let g:vim_markdown_folding_level = 2
 " neoterm
 let g:neoterm_size = '15%'
 
-" Neomake
-autocmd! BufReadPost,BufWritePost * Neomake
+let test#strategy = "neoterm"
 
-let g:neomake_list_height = 4
-let g:neomake_logfile = '/tmp/neomake.log'
-let g:neomake_javascript_enabled_makers = ['eslint']
+" ALE - Asynchronous Linting Engine
 
-let g:neomake_error_sign = {'text': 'E>', 'texthl': 'NeomakeErrorSign'}
-let g:neomake_warning_sign = {
-      \   'text': 'W>',
-      \   'texthl': 'NeomakeWarningSign',
-      \ }
-let g:neomake_message_sign = {
-      \   'text': 'M>',
-      \   'texthl': 'NeomakeMessageSign',
-      \ }
-let g:neomake_info_sign = {'text': 'I>', 'texthl': 'NeomakeInfoSign'}
+let g:ale_sign_column_always = 1
 
-augroup my_neomake_signs
-  au!
-  autocmd ColorScheme *
-        \ hi NeomakeErrorSign ctermfg=red |
-        \ hi NeomakeWarningSign ctermfg=yellow |
-        \ hi NeomakeInfoSign ctermfg=blue |
-        \ hi NeomakeMessageSign ctermfg=white
-augroup END
-
-let g:neomake_elixir_enabled_makers = ['credo']
+let g:ale_sign_error = 'E>'
+let g:ale_sign_warning = 'W>'
 
 " test-vim
 let test#strategy = "dispatch"
