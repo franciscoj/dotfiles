@@ -21,3 +21,4 @@ nvim/local.vim
 .byebug_history
 .tool-versions
 .lvimrc
+.projections.json
