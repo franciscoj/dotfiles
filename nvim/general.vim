@@ -58,3 +58,18 @@ autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
 " Folding
 set foldmethod=syntax
 set nofoldenable
+
+" Configure backupfiles
+set backup
+set backupdir   =$HOME/.config/nvim/files/backup/
+set backupext   =-vimbackup
+set backupskip  =
+set directory   =$HOME/.config/nvim/files/swap/
+set updatecount =100
+set undofile
+set undodir     =$HOME/.config/nvim/files/undo/
+set viminfo     ='100,n$HOME/.config/nvim/files/info/viminfo
+
+" Don't loose selection when shifting
+xnoremap <  <gv
+xnoremap >  >gv
