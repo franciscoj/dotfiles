@@ -44,6 +44,7 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'pangloss/vim-javascript'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'elmcast/elm-vim'
+Plug 'rking/vim-ruby-refactoring'
 
 " Search
 Plug 'jhbabon/scout.vim'
