@@ -22,7 +22,8 @@ let g:vim_markdown_folding_level = 2
 " neoterm
 let g:neoterm_size = '15%'
 
-let test#strategy = "neoterm"
+let g:test#strategy = "neoterm"
+let g:test#runner_commands = ['RSpec']
 
 " ALE - Asynchronous Linting Engine
 let g:ale_lint_on_text_changed = 'never'
