@@ -1,3 +1,6 @@
+" Use vim in English
+language en_US
+
 " To use the system clipboard (xclip)
 set clipboard=unnamed,unnamedplus
 
