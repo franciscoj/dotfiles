@@ -13,7 +13,7 @@ let g:signify_sign_changedelete = '!'
 let g:signify_realtime = 1
 
 " Grepper tools preference
-let g:grepper = { 'tools': ['ag', 'git'] }
+let g:grepper = { 'tools': ['rg', 'ag', 'git'] }
 
 " Show those languages with syntax highliting inside Markdown
 let g:vim_markdown_fenced_languages = ['html', 'ruby', 'bash=sh', 'javascript', 'yaml']
@@ -22,7 +22,7 @@ let g:vim_markdown_folding_level = 2
 " neoterm
 let g:neoterm_size = '15%'
 
-let g:test#strategy = "neoterm"
+let g:test#strategy = "dispatch"
 let g:test#runner_commands = ['RSpec']
 
 " ALE - Asynchronous Linting Engine
@@ -39,9 +39,6 @@ let g:ale_linters = {
 let g:ale_fixers = {
       \ 'ruby': ['rubocop', 'remove_trailing_lines', 'trim_whitespace']
       \}
-
-" test-vim
-let test#strategy = "dispatch"
 
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
