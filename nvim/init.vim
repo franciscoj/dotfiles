@@ -22,7 +22,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch' " Syntax sugar for unix commands
-Plug 'tpope/vim-projectionist'
 Plug 'jnurmine/Zenburn'
 Plug 'eiginn/netrw' " Overwrite vim's netrw with the latest version
 Plug 'sjl/gundo.vim'
@@ -57,10 +56,7 @@ Plug 'fishbullet/deoplete-ruby'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
-
-" Others
-Plug 'diepm/vim-rest-console'
-Plug 'embear/vim-localvimrc'
+Plug 'tpope/vim-projectionist'
 
 call plug#end()
 
@@ -71,6 +67,7 @@ source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/general.vim
 source $HOME/.config/nvim/keys.vim
 source $HOME/.config/nvim/statusline.vim
+source $HOME/.config/nvim/projections.vim
 
 " Change diff signs
 " This has to be after the general.vim loading since loading the colorscheme
