@@ -1,3 +1,6 @@
+" Best options for changing text
+set cpoptions+=$
+
 " Use vim in English
 language en_US
 
