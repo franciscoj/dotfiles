@@ -68,3 +68,7 @@ nnoremap <leader>fo :edit<space>
 
 " ArgWrap
 nnoremap <silent> <leader>a :ArgWrap<CR>
+
+" Others
+nnoremap <leader>, A,<ESC>
+nnoremap <leader>; A;<ESC>
