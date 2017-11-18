@@ -14,6 +14,8 @@ Plug 'kana/vim-smartinput' " To have automatic closed pairs like () or {}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'w0rp/ale'
+Plug 'embear/vim-localvimrc'
+Plug 'kshenoy/vim-signature'
 Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-dispatch'
