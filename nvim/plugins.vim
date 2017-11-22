@@ -1,5 +1,6 @@
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#complete_method = 'omnifunc'
 
 " Ultisnips
 let g:UltiSnipsSnippetsDir = $HOME.'/.config/nvim/snips'
