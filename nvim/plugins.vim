@@ -17,7 +17,6 @@ let g:signify_realtime = 1
 let g:grepper = { 'tools': ['rg', 'ag', 'git'] }
 
 " Show those languages with syntax highliting inside Markdown
-let g:vim_markdown_fenced_languages = ['html', 'ruby', 'bash=sh', 'javascript', 'yaml']
 let g:vim_markdown_folding_level = 2
 
 " neoterm
