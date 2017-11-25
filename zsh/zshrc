@@ -6,7 +6,7 @@
 # oh-my-zsh specific configuration.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="minimal"
-plugins=(git gem rails common-aliases vi-mode ssh-agent)
+plugins=(git gem rails common-aliases vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 zstyle :omz:plugins:ssh-agent agent-forwarding on
@@ -34,4 +34,9 @@ alias vi=$EDITOR
 
 eval "$(hub alias -s)"
 
+BASE16_SCHEME="monokai"
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-$BASE16_SCHEME.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
+
