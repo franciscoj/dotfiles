@@ -11,7 +11,7 @@ plugins=(git mix common-aliases vi-mode ssh-agent)
 source $ZSH/oh-my-zsh.sh
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
-# With this, apps using $EDITOR will use terminal emacs.
+# With this, apps using $EDITOR will use nvim .
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 
