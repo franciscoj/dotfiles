@@ -11,14 +11,10 @@ npm-debug.log
 .tern-port
 .tern-port
 .envrc
-TODOs.org
 TAGS
 tags
 tags.lock
 tags.temp
-vendor/host_bundle
-nvim/local.vim
 .byebug_history
-.tool-versions
 .lvimrc
 .projections.json
