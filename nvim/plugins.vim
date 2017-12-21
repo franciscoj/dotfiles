@@ -21,7 +21,10 @@ let g:vim_markdown_folding_level = 2
 
 " neoterm
 let g:neoterm_size = '15%'
+let g:neoterm_split_on_tnew = 0
+let g:neoterm_autoinsert = 1
 
+" vim-test
 let g:test#strategy = "dispatch"
 let g:test#runner_commands = ['RSpec']
 
@@ -29,15 +32,17 @@ let g:test#runner_commands = ['RSpec']
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_column_always = 1
 
-let g:ale_sign_error = 'E>'
-let g:ale_sign_warning = 'W>'
+let g:ale_sign_error = 'E'
+let g:ale_sign_warning = 'W'
 
 let g:ale_linters = {
-      \ 'ruby': ['rubocop', 'ruby']
+      \ 'ruby': ['rubocop', 'ruby'],
+      \ 'elixir': ['credo', 'mix']
       \}
 
 let g:ale_fixers = {
-      \ 'ruby': ['rubocop', 'remove_trailing_lines', 'trim_whitespace']
+      \ 'ruby': ['rubocop', 'remove_trailing_lines', 'trim_whitespace'],
+      \ 'elixir': ['remove_trailing_lines', 'trim_whitespace']
       \}
 
 " vim-javascript
@@ -46,8 +51,7 @@ let g:javascript_plugin_flow = 1
 
 " elm-vim
 let g:elm_format_autosave = 1
-" disable poliglot elm
-let g:polyglot_disabled = ['elm']
+let g:polyglot_disabled = ['elm'] " disable poliglot elm
 
 " localvimrc
 let g:localvimrc_persistent = 2
