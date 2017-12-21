@@ -21,7 +21,8 @@ set smarttab
 set autoindent
 set copyindent
 set smartindent
-set colorcolumn=80
+set colorcolumn=100
+set relativenumber
 
 " Show non visual chars
 set listchars=trail:~,tab:▸\ ,eol:¬ " show special characters
