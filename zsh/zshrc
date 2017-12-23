@@ -6,7 +6,7 @@
 # oh-my-zsh specific configuration.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="minimal"
-plugins=(git mix common-aliases vi-mode ssh-agent)
+plugins=(git common-aliases vi-mode ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 zstyle :omz:plugins:ssh-agent agent-forwarding on
