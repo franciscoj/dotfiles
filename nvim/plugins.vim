@@ -51,7 +51,11 @@ let g:javascript_plugin_flow = 1
 
 " elm-vim
 let g:elm_format_autosave = 1
-let g:polyglot_disabled = ['elm'] " disable poliglot elm
+
+" Disable polyglot in favor of real language packs
+" Polyglot is great but it doesn't activate all the functionalities for all
+" languages in order to make it load fast.
+let g:polyglot_disabled = ['elm', 'elixir', 'markdown']
 
 " localvimrc
 let g:localvimrc_persistent = 2
