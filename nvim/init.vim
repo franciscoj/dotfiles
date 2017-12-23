@@ -35,17 +35,16 @@ Plug 'tpope/vim-rhubarb'
 Plug 'mhinz/vim-signify'
 
 " Language support
+Plug 'elmcast/elm-vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'plasticboy/vim-markdown'
+Plug 'slashmili/alchemist.vim'
+Plug 'noprompt/vim-yardoc'
 Plug 'jgdavey/vim-blockle'
 Plug 'sheerun/vim-polyglot'
-Plug 'noprompt/vim-yardoc'
-Plug 'plasticboy/vim-markdown'
-Plug 'elixir-lang/vim-elixir'
-Plug 'slashmili/alchemist.vim'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'pangloss/vim-javascript'
 Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'elmcast/elm-vim'
-Plug 'rking/vim-ruby-refactoring'
 
 " Search
 Plug 'jhbabon/scout.vim'
