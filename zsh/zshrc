@@ -16,17 +16,6 @@ export EDITOR='nvim'
 export VISUAL=$EDITOR
 
 # Aliases
-alias be='bundle exec'
-alias bi='bundle install'
-alias bu='bundle update'
-
-# noglob needed for rake + zsh
-alias rake='noglob bundle exec rake'
-alias br='bin/rspec'
-alias bs='bin/spring'
-alias rspec='bundle exec rspec'
-alias r='rspec'
-alias e=$EDITOR
 alias vi=$EDITOR
 
 eval "$(hub alias -s)"
