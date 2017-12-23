@@ -56,6 +56,9 @@ endfunction
 " Add spell check to git commits
 autocmd FileType gitcommit setlocal spell spelllang=en_us
 
+" Set JSON on mustached json files
+autocmd BufRead,BufNewFile *.json.mustache set filetype=json.mustache
+
 " Improve the files autocomplete
 autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
 autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
