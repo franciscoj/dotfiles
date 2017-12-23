@@ -49,8 +49,8 @@ nnoremap <silent><leader>ws :wincmd s<CR>
 nnoremap <leader>qo :copen<CR>
 nnoremap <leader>qc :cclose<CR>
 
-nnoremap <leader>lc :lclose<CR>
 nnoremap <leader>lo :lopen<CR>
+nnoremap <leader>lc :lclose<CR>
 
 " Close window
 nnoremap <silent><leader>cc :wincmd c<CR>
