@@ -47,7 +47,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'PotatoesMaster/i3-vim-syntax'
 
 " Search
-Plug 'jhbabon/scout.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'ludovicchabant/vim-gutentags'
 

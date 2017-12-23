@@ -9,9 +9,13 @@ nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
 
-" scout
-nnoremap <leader>ff :ScoutFiles<cr>
-nnoremap <leader>fb :ScoutBuffers<cr>
+" fzf
+command! -bang -nargs=* FZFFind call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+let g:fzf_command_prefix = 'FZF'
+
+nnoremap <leader>ss :FZFFind<cr>
+nnoremap <leader>ff :FZFFiles<cr>
+nnoremap <leader>fb :FZFBuffers<cr>
 
 " grepper
 nnoremap \\ :Grepper -noprompt -cword<CR> 

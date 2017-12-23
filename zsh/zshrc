@@ -29,5 +29,11 @@ BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-$BASE16_SCHEME.sh"
 # Load autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+# Load fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Use ripgrep as FZF's default search in order to respect .gitignore
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
+
+# Load local zshrc
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
 
