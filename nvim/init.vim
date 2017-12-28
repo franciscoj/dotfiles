@@ -7,28 +7,31 @@ let maplocalleader = ","
 filetype off
 call plug#begin()
 
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-endwise'
 Plug 'kana/vim-smartinput' " To have automatic closed pairs like () or {}
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
 Plug 'w0rp/ale'
 Plug 'embear/vim-localvimrc'
 Plug 'kshenoy/vim-signature'
 Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'
-Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-eunuch' " Syntax sugar for unix commands
 Plug 'jnurmine/Zenburn'
 Plug 'eiginn/netrw' " Overwrite vim's netrw with the latest version
 Plug 'scrooloose/nerdtree'
 Plug 'sjl/gundo.vim'
 Plug 'FooSoft/vim-argwrap'
+
+" Thank to the universe for Tim Pope
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch' " Syntax sugar for unix commands
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-rsi'
 
 " Git
 Plug 'tpope/vim-fugitive'
