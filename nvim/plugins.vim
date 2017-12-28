@@ -59,3 +59,9 @@ let g:polyglot_disabled = ['elm', 'elixir', 'markdown']
 
 " localvimrc
 let g:localvimrc_persistent = 2
+
+" Nerdtree
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+
+" tagbar config for elixir
