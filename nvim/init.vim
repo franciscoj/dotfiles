@@ -23,15 +23,16 @@ Plug 'sjl/gundo.vim'
 Plug 'FooSoft/vim-argwrap'
 
 " Thank to the universe for Tim Pope
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch' " Syntax sugar for unix commands
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-rsi'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -75,6 +76,7 @@ source $HOME/.config/nvim/general.vim
 source $HOME/.config/nvim/keys.vim
 source $HOME/.config/nvim/statusline.vim
 source $HOME/.config/nvim/projections.vim
+source $HOME/.config/nvim/abolish.vim
 
 " Change diff signs
 " This has to be after the general.vim loading since loading the colorscheme
