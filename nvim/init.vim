@@ -10,7 +10,6 @@ call plug#begin()
 Plug 'kana/vim-smartinput' " To have automatic closed pairs like () or {}
 Plug 'w0rp/ale'
 Plug 'embear/vim-localvimrc'
-Plug 'kshenoy/vim-signature'
 Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'
 Plug 'radenling/vim-dispatch-neovim'
