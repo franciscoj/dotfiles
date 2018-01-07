@@ -23,6 +23,7 @@ set copyindent
 set smartindent
 set colorcolumn=100
 set relativenumber
+set nowrap
 
 " Show non visual chars
 set listchars=trail:~,tab:▸\ ,eol:¬ " show special characters
