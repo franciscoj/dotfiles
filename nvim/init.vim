@@ -7,6 +7,21 @@ let maplocalleader = ","
 filetype off
 call plug#begin()
 
+" Thank to the universe for Tim Pope
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch' " Syntax sugar for unix commands
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-projectionist'
+
 Plug 'kana/vim-smartinput' " To have automatic closed pairs like () or {}
 Plug 'w0rp/ale'
 Plug 'embear/vim-localvimrc'
@@ -21,21 +36,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'sjl/gundo.vim'
 Plug 'FooSoft/vim-argwrap'
 
-" Thank to the universe for Tim Pope
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch' " Syntax sugar for unix commands
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
-
 " Git
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
 Plug 'mhinz/vim-signify'
 
 " Language support
@@ -63,7 +64,6 @@ Plug 'fishbullet/deoplete-ruby'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
-Plug 'tpope/vim-projectionist'
 
 call plug#end()
 
