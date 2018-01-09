@@ -40,7 +40,7 @@ Plug 'FooSoft/vim-argwrap'
 Plug 'mhinz/vim-signify'
 
 " Language support
-Plug 'elmcast/elm-vim'
+Plug 'ElmCast/elm-vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'plasticboy/vim-markdown'
 Plug 'slashmili/alchemist.vim'
@@ -60,6 +60,7 @@ Plug 'majutsushi/tagbar'
 
 " Autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'pbogut/deoplete-elm'
 Plug 'fishbullet/deoplete-ruby'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
