@@ -26,7 +26,7 @@ let g:neoterm_autoinsert = 1
 
 " vim-test
 let g:test#strategy = "dispatch"
-let g:test#runner_commands = ['RSpec']
+let g:test#runner_commands = ['RSpec', 'Mix']
 
 " ALE - Asynchronous Linting Engine
 let g:ale_lint_on_text_changed = 'never'
