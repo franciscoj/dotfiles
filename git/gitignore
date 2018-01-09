@@ -18,3 +18,4 @@ tags.temp
 .byebug_history
 .lvimrc
 .projections.json
+.notags
