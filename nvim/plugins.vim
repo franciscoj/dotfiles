@@ -63,5 +63,14 @@ let g:localvimrc_persistent = 2
 " Nerdtree
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
+let NERDTreeIgnore=[
+      \ '_build$[[dir]]',
+      \ 'doc$[[dir]]',
+      \ 'deps$[[dir]]',
+      \ 'elm-stuff$[[dir]]',
+      \ 'node_modules$[[dir]]',
+      \ 'tags$[[file]]',
+      \ 'mix.lock$[[file]]'
+      \ ]
 
 " tagbar config for elixir
