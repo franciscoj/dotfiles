@@ -52,7 +52,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'PotatoesMaster/i3-vim-syntax'
 
 " Search
-Plug '/usr/local/opt/fzf'
+Plug '/usr/local/opt/fzf' " Use locally instaled fzf from homebrew
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'ludovicchabant/vim-gutentags'
