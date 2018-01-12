@@ -37,7 +37,7 @@ let g:ale_sign_warning = 'W'
 
 let g:ale_linters = {
       \ 'ruby': ['rubocop', 'ruby'],
-      \ 'elixir': ['credo', 'dialyzer'],
+      \ 'elixir': ['credo'],
       \ 'vim': ['vimt']
       \}
 
