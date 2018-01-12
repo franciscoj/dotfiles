@@ -4,7 +4,7 @@ let g:deoplete#complete_method = 'omnifunc'
 
 " Ultisnips
 let g:UltiSnipsSnippetsDir = $HOME.'/.config/nvim/snips'
-let g:UltiSnipsSnippetDirectories=[ "snips", "UltiSnips" ]
+let g:UltiSnipsSnippetDirectories = ["snips", "priv_snips", "UltiSnips" ]
 let g:UltiSnipsEditSplit = "vertical"
 
 " signify (gutter for git)
