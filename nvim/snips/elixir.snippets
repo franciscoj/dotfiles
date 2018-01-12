@@ -1,5 +1,5 @@
 snippet =>
-"${1:name}" => $1
+"${1:name}" => $1,
 endsnippet
 
 snippet %
@@ -19,4 +19,16 @@ endsnippet
 snippet desc
 describe "${1:text}" do
 end
+endsnippet
+
+snippet def@
+def ${1:name}(), do: @$1
+endsnippet
+
+snippet def:
+def ${1:function_name}(${2:args}), do: ${3:body}
+endsnippet
+
+snippet defp:
+defp ${1:function_name}(${2:args}), do: ${3:body}
 endsnippet
