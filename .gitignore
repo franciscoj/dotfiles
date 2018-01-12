@@ -7,3 +7,4 @@ vendor/
 nvim/plugged
 nvim/spell
 nvim/files
+nvim/priv_snips
