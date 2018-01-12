@@ -19,3 +19,4 @@ tags.temp
 .lvimrc
 .projections.json
 .notags
+.tool-versions-e
