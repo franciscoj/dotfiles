@@ -1,3 +1,7 @@
+" ALE
+nmap <leader>lf <Plug>(ale_fix)
+nmap <leader>ld <Plug>(ale_detail)
+
 " Go to Normal mode fast
 inoremap jj <ESC>
 inoremap <ESC> <NOP>
