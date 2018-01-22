@@ -35,15 +35,20 @@ let g:ale_sign_column_always = 1
 let g:ale_sign_error = 'E'
 let g:ale_sign_warning = 'W'
 
+let g:ale_elm_make_use_global = 1
+let g:ale_elm_format_use_global = 1
+
 let g:ale_linters = {
-      \ 'ruby': ['rubocop', 'ruby'],
       \ 'elixir': ['credo'],
-      \ 'vim': ['vimt']
+      \ 'elm': ['make'],
+      \ 'ruby': ['rubocop', 'ruby'],
+      \ 'vim': ['vimt'],
       \}
 
 let g:ale_fixers = {
+      \ 'elixir': ['mix_format', 'remove_trailing_lines', 'trim_whitespace'],
+      \ 'elm': ['format'],
       \ 'ruby': ['rubocop', 'remove_trailing_lines', 'trim_whitespace'],
-      \ 'elixir': ['remove_trailing_lines', 'trim_whitespace']
       \}
 
 " vim-javascript
@@ -51,7 +56,7 @@ let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
 
 " elm-vim
-let g:elm_format_autosave = 1
+let g:elm_format_autosave = 0
 
 " Disable polyglot in favor of real language packs
 " Polyglot is great but it doesn't activate all the functionalities for all
