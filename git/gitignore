@@ -20,3 +20,4 @@ tags.temp
 .projections.json
 .notags
 .tool-versions-e
+.tool-versions
