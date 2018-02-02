@@ -1,5 +1,7 @@
 #!/bin/sh
 # Extracted from: http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html#usage
+# Usage:
+#  ./vid2gif file.mp4 file.gif
 
 palette="/tmp/palette.png"
 
