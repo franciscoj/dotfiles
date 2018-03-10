@@ -54,6 +54,12 @@ function! SetElmOptions()
   setlocal expandtab
 endfunction
 
+autocmd FileType elixir call SetElixirOptions()
+
+function! SetElixirOptions()
+  setlocal formatprg=
+endfunction
+
 " Add spell check to git commits
 autocmd FileType gitcommit setlocal spell spelllang=en_us
 
