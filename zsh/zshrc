@@ -17,6 +17,7 @@ export VISUAL=$EDITOR
 
 # Aliases
 alias vi=$EDITOR
+alias tmux="tmux -u"
 
 # Activate hub, which decorates the `git` command
 eval "$(hub alias -s)"
