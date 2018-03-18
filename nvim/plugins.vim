@@ -21,7 +21,6 @@ let g:vim_markdown_folding_level = 2
 
 " neoterm
 let g:neoterm_size = '15%'
-let g:neoterm_split_on_tnew = 0
 let g:neoterm_autoinsert = 1
 
 " vim-test
