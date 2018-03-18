@@ -58,6 +58,7 @@ autocmd FileType elixir call SetElixirOptions()
 
 function! SetElixirOptions()
   setlocal formatprg=
+  setlocal foldmethod=indent
 endfunction
 
 " Add spell check to git commits
