@@ -12,12 +12,12 @@ nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gg :Twiggy<CR>
 
 " fzf
 command! -bang -nargs=* FZFFind call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 let g:fzf_command_prefix = 'FZF'
 
-nnoremap <leader>ss :FZFFind<cr>
 nnoremap <leader>ff :FZFFiles<cr>
 nnoremap <leader>fb :FZFBuffers<cr>
 

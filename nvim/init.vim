@@ -39,6 +39,7 @@ Plug 'FooSoft/vim-argwrap'
 
 " Git
 Plug 'mhinz/vim-signify'
+Plug 'sodapopcan/vim-twiggy'
 
 " Language support
 Plug 'ElmCast/elm-vim'
