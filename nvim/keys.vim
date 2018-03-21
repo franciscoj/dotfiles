@@ -64,6 +64,8 @@ nnoremap <leader>lc :lclose<CR>
 nnoremap <silent><leader>cc :wincmd c<CR>
 " Exit vim
 nnoremap <silent><leader>qq :qall<CR>
+" Source session
+nnoremap <silent><leader>ss :source Session.vim<CR>
 
 " Remove search highlithing
 nnoremap <silent><leader>nh :nohlsearch<CR>
