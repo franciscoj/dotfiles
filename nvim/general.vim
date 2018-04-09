@@ -8,8 +8,13 @@ set cpoptions+=$
 " To use the system clipboard (xclip)
 set clipboard=unnamed,unnamedplus
 
+let base16colorspace=256
+
 set background=dark
 colorscheme zenburn
+
+" set background=light
+" colorscheme base16-solarized-light
 
 " Indent
 set tabstop=2      " number of visual spaces per TAB.
