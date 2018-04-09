@@ -42,6 +42,11 @@ Plug 'mhinz/vim-signify'
 Plug 'sodapopcan/vim-twiggy'
 
 " Language support
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'reasonml-editor/vim-reason-plus'
 Plug 'ElmCast/elm-vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'

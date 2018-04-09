@@ -76,7 +76,8 @@ let NERDTreeIgnore=[
       \ 'elm-stuff$[[dir]]',
       \ 'node_modules$[[dir]]',
       \ 'tags$[[file]]',
-      \ 'mix.lock$[[file]]'
+      \ 'mix.lock$[[file]]',
+      \ '\.bs\.js$[[file]]'
       \ ]
 
 " tagbar config for elixir

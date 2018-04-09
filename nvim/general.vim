@@ -66,6 +66,11 @@ function! SetElixirOptions()
   setlocal foldmethod=indent
 endfunction
 
+let g:LanguageClient_serverCommands = {
+    \ 'reason': ['ocaml-language-server', '--stdio'],
+    \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ }
+
 " Add spell check to git commits
 autocmd FileType gitcommit setlocal spell spelllang=en_us
 
