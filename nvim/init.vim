@@ -31,7 +31,6 @@ Plug 'janko-m/vim-test'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'jnurmine/Zenburn'
 Plug 'eiginn/netrw' " Overwrite vim's netrw with the latest version
 Plug 'scrooloose/nerdtree'
 Plug 'sjl/gundo.vim'
@@ -73,6 +72,10 @@ Plug 'fishbullet/deoplete-ruby'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
+
+" Colors
+Plug 'chriskempson/base16-vim'
+Plug 'jnurmine/Zenburn'
 
 call plug#end()
 
