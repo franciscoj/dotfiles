@@ -29,6 +29,7 @@ nnoremap <leader>s :Grepper -query<SPACE>
 nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>tl :TestNearest<CR>
 nnoremap <leader>tr :TestLast<CR>
+nnoremap <leader>to :Copen<CR>
 
 " Show undo list
 nnoremap <leader>u :GundoToggle<CR>
