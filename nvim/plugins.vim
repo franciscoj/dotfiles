@@ -48,6 +48,7 @@ let g:ale_fixers = {
       \ 'elixir': ['mix_format', 'remove_trailing_lines', 'trim_whitespace'],
       \ 'elm': ['format'],
       \ 'ruby': ['rubocop', 'remove_trailing_lines', 'trim_whitespace'],
+      \ 'javascript': ['prettier'],
       \}
 
 " vim-javascript
