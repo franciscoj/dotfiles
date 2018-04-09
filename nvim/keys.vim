@@ -61,6 +61,11 @@ nnoremap <leader>qc :cclose<CR>
 nnoremap <leader>lo :lopen<CR>
 nnoremap <leader>lc :lclose<CR>
 
+" Tabs management
+nnoremap <leader><leader>t :tabnew<CR>
+nnoremap <leader><TAB> gt
+nnoremap <leader><S-TAB> gT
+
 " Close window
 nnoremap <silent><leader>cc :wincmd c<CR>
 " Exit vim
