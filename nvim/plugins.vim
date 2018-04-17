@@ -47,6 +47,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
       \ 'elixir': ['mix_format', 'remove_trailing_lines', 'trim_whitespace'],
       \ 'elm': ['format'],
+      \ 'reason': ['refmt'],
       \ 'ruby': ['rubocop', 'remove_trailing_lines', 'trim_whitespace'],
       \ 'javascript': ['prettier'],
       \}
@@ -77,7 +78,8 @@ let NERDTreeIgnore=[
       \ 'node_modules$[[dir]]',
       \ 'tags$[[file]]',
       \ 'mix.lock$[[file]]',
-      \ '\.bs\.js$[[file]]'
+      \ '\.bs\.js$[[file]]',
+      \ '\.css[[file]]'
       \ ]
 
 " tagbar config for elixir
