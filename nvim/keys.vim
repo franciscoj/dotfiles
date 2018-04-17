@@ -3,7 +3,6 @@ autocmd FileType reason call SetReasonMLOptions()
 function! SetReasonMLOptions()
   nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
   nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-  nnoremap <silent> <leader>lf :call LanguageClient_textDocument_formatting()<cr>
 endfunction
 
 " ALE
