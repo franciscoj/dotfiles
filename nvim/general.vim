@@ -66,6 +66,9 @@ function! SetElixirOptions()
   setlocal foldmethod=indent
 endfunction
 
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_diagnosticsEnable = 0
+
 let g:LanguageClient_serverCommands = {
     \ 'reason': ['ocaml-language-server', '--stdio'],
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
