@@ -57,13 +57,12 @@ Plug 'sheerun/vim-polyglot'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'pangloss/vim-javascript'
 Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'junegunn/vader.vim'
 
 " Search
 Plug '/usr/local/opt/fzf' " Use locally instaled fzf from homebrew
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
 Plug 'brooth/far.vim'
 
 " Autocomplete
