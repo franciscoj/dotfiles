@@ -102,3 +102,10 @@ highlight DiffChange        cterm=bold ctermbg=none ctermfg=4
 highlight SignifySignAdd    cterm=bold ctermbg=none ctermfg=2
 highlight SignifySignDelete cterm=bold ctermbg=none ctermfg=1
 highlight SignifySignChange cterm=bold ctermbg=none ctermfg=4
+
+" Highlight all non ascii characters
+syntax match nonascii "[^\x00-\xFF]"
+highlight nonascii guibg=Red ctermbg=2
+
+" Find any non ascii character
+nnoremap <leader>na /[^\x00-\xFF]<CR>
