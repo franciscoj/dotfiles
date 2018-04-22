@@ -16,7 +16,10 @@ inoremap <ESC> <NOP>
 " fugitive
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gl :GV!<CR>
+nnoremap <leader>gC :Gcommit -n<CR>
+" git log for current file
+nnoremap <leader>gl :GV!<CR>     
+" git log for project
 nnoremap <leader>gL :GV<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
