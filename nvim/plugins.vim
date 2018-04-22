@@ -39,7 +39,7 @@ let g:ale_elm_make_use_global = 1
 let g:ale_elm_format_use_global = 1
 
 let g:ale_linters = {
-      \ 'elixir': [],
+      \ 'elixir': [''],
       \ 'elm': ['make'],
       \ 'reason': ['merlin', 'ols'],
       \ 'ruby': ['rubocop', 'ruby'],
@@ -84,4 +84,3 @@ let NERDTreeIgnore=[
       \ '\.css[[file]]'
       \ ]
 
-" tagbar config for elixir
