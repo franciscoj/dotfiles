@@ -1,5 +1,4 @@
 # -*- mode: shell-script; -*-
-
 export PATH=$PATH:$HOME/bin
 
 # I want to title my shells by myself.
@@ -31,3 +30,7 @@ export RUST_SRC_PATH=$HOME/Documents/src/rust/src
 
 # Ask kitty to use config from ~/.config (even on MacOS)
 export KITTY_CONFIG_DIRECTORY="$HOME/.config/kitty"
+
+# Use nvm for nodejs
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
