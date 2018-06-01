@@ -1,13 +1,9 @@
 #!/bin/bash
 
 read -r -d '' fail_words <<- EOM
-  debugger
-  show me the page
-  console.log
   >>>>>>
   <<<<<<
   ======
-  byebug
 EOM
 
 while read -r line
