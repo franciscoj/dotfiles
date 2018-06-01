@@ -23,3 +23,6 @@ tags.temp
 .tool-versions
 Session.vim
 Session*.vim
+.elixir_ls
+.vscode
+elm.js
