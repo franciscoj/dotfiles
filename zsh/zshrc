@@ -9,7 +9,6 @@ export ZSH_THEME="minimal"
 plugins=(git common-aliases vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 # With this, apps using $EDITOR will use nvim .
 export EDITOR='nvim'
@@ -26,14 +25,6 @@ eval "$(hub alias -s)"
 BASE16_SCHEME="zenburn"
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-$BASE16_SCHEME.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
-
-# Load autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-# Load fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# Use ripgrep as FZF's default search in order to respect .gitignore
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 
 # Load local zshrc
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
