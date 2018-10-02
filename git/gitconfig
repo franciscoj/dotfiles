@@ -1,32 +1,35 @@
 # -*- mode: gitconfig; -*-
 
 [user]
-	name = Fran Casas
-	email = nflamel@gmail.com
+  name = Fran Casas
+  email = nflamel@gmail.com
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+  diff = auto
+  status = auto
+  branch = auto
 [core]
-	excludesfile = ~/.gitignore
-	autocrlf = input
-	editor = nvim
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  editor = nvim
 [apply]
-	whitespace = fix
+  whitespace = fix
 [format]
-	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+  pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
 [alias]
-	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)an>%Creset' --abbrev-commit --date=relative
-	co = checkout
-	s = status --short -b
-	amend = commit --amend --no-edit
+  amend = commit --amend --no-edit
+  co = checkout
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)an>%Creset' --abbrev-commit --date=relative
+  nb = checkout -b
+  ri = rebase -i
+  rim = rebase -i master
+  s = status --short -b
 [push]
-	default = current
+  default = current
 [rebase]
-	autosquash = true
+  autosquash = true
 [rerere]
-	enabled = true
+  enabled = true
 [init]
-	templatedir = ~/Documents/src/dot-files/git/templates
+  templatedir = ~/Documents/src/dot-files/git/templates
 [include]
-	path = ~/.gitconfig_local
+  path = ~/.gitconfig_local
