@@ -1,4 +1,1 @@
 $HOME/.asdf/asdf.sh
-
-# Auto added by fzf installation
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
