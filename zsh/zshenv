@@ -1,14 +1,19 @@
 # -*- mode: shell-script; -*-
 export PATH=$PATH:$HOME/bin
 
-# I want to title my shells by myself.
-export DISABLE_AUTO_TITLE=true
-
-# Load direnv
-eval "$(direnv hook zsh)"
-
 # Load asdf
-. $HOME/.asdf/asdf.sh
+[[ -f $HOME/.asdf/asdf.sh ]] && . $HOME/.asdf/asdf.sh
+
+# Load direnv. Use the full path on mac because :hankey:
+# https://github.com/Homebrew/legacy-homebrew/issues/44997#issuecomment-148630030
+case `uname` in
+  Darwin)
+    eval "$(/usr/local/bin/direnv hook zsh)"
+  ;;
+  *)
+    eval "$(direnv hook zsh)"
+  ;;
+esac
 
 # Load local configuration (provided files exist).
 
@@ -17,6 +22,6 @@ eval "$(direnv hook zsh)"
 # sources which require username/password.
 [[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
 
-# .zshrc_local is meant to keep private configurations, it is out of version
+# .zshenv_local is meant to keep private configurations, it is out of version
 # management.
-[[ -f $HOME/.ZSHENV_local ]] && source $HOME/.ZSHENV_local
+[[ -f $HOME/.zshenv_local ]] && source $HOME/.zshenv_local
