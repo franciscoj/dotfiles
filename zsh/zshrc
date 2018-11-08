@@ -3,31 +3,47 @@
 # This file is meant to load only things which are needed on an interactive
 # shell, like customizations, special aliases, etc.
 
-# oh-my-zsh specific configuration.
-export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME="minimal"
-plugins=(git common-aliases vi-mode)
+export ZPLUG_HOME=$HOME/.zplug
 
-source $ZSH/oh-my-zsh.sh
+# In case zplug isn't installed, install it
+[[ ! -d "$ZPLUG_HOME" ]] && git clone https://github.com/zplug/zplug $ZPLUG_HOME
 
-# With this, apps using $EDITOR will use nvim .
+source $ZPLUG_HOME/init.zsh
+
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/vi-mode", from:oh-my-zsh
+zplug "modules/utility", from:prezto
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+
+zplug "themes/minimal", from:oh-my-zsh, as:theme
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load # --verbose
+
 export EDITOR='nvim'
 export VISUAL=$EDITOR
-
-# Aliases
 alias vi=$EDITOR
 alias tmux="tmux -u"
 
 # Activate hub, which decorates the `git` command
 eval "$(hub alias -s)"
 
-# I want to title my shells by myself.
-export DISABLE_AUTO_TITLE=true
-
-# Use base16 to setup terminal colors everywhere
+# Use base16 to setup terminal colors everywhere. Clone it in case it doesn't exist
+[[ ! -d "$HOME/.config/base16-shell" ]] && git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
 BASE16_SCHEME="zenburn"
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-$BASE16_SCHEME.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+
+# Load asdf completions if they exist
+[[ -d "$HOME/.asdf" ]] && source $HOME/.asdf/completions/asdf.bash
 
 # Load local zshrc
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
