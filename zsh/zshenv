@@ -1,7 +1,7 @@
 # -*- mode: shell-script; -*-
 export PATH=$PATH:$HOME/bin
 
-# Load asdf
+# Load asdf only if installed
 [[ -f $HOME/.asdf/asdf.sh ]] && . $HOME/.asdf/asdf.sh
 
 # Load direnv. Use the full path on mac because :hankey:
