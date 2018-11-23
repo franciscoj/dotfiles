@@ -13,6 +13,8 @@ source $ZPLUG_HOME/init.zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "modules/utility", from:prezto
+zplug "modules/history", from:prezto
+zplug "modules/directory", from:prezto
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
