@@ -19,6 +19,13 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 
+case `uname` in
+  Darwin)
+    # Because mac :hankey:
+    zplug "plugins/ssh-agent", from:oh-my-zsh
+  ;;
+esac
+
 zplug "themes/minimal", from:oh-my-zsh, as:theme
 
 if ! zplug check --verbose; then
