@@ -29,15 +29,20 @@ esac
 zplug "themes/minimal", from:oh-my-zsh, as:theme
 
 if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
 fi
 
 zplug load # --verbose
 
-export EDITOR='nvim'
+if [ -x "$(command -v code)" ]; then
+  export EDITOR='code --wait'
+elif [ -x "$(command -v nvim)" ]; then
+  export EDITOR='nvim'
+fi
+
 export VISUAL=$EDITOR
 alias vi=$EDITOR
 alias tmux="tmux -u"
