@@ -26,3 +26,6 @@ Session*.vim
 .elixir_ls
 .vscode
 elm.js
+.by-ssh
+.solargraph
+.rufo
