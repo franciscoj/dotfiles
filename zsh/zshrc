@@ -22,6 +22,7 @@ zplug "zsh-users/zsh-completions"
 case `uname` in
   Darwin)
     # Because mac :hankey:
+    zstyle :omz:plugins:ssh-agent agent-forwarding on
     zplug "plugins/ssh-agent", from:oh-my-zsh
   ;;
 esac
@@ -37,11 +38,7 @@ fi
 
 zplug load # --verbose
 
-if [ -x "$(command -v code)" ]; then
-  export EDITOR='code --wait'
-elif [ -x "$(command -v nvim)" ]; then
-  export EDITOR='nvim'
-fi
+export EDITOR='nvim'
 
 export VISUAL=$EDITOR
 alias vi=$EDITOR

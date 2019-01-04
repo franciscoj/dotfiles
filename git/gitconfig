@@ -10,15 +10,17 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
-  editor = code --wait
+  editor = nvim
 [merge]
-  tool = vscode
-[mergetool "vscode"]
-  cmd = code --wait $MERGED
+  tool = vimdiff
+[mergetool]
+  prompt = true
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED
+[difftool]
+  prompt = false
 [diff]
-  tool = vscode
-[difftool "vscode"]
-  cmd = code --wait --diff $LOCAL $REMOTE
+  tool = vimdiff
 [apply]
   whitespace = fix
 [format]
@@ -31,6 +33,7 @@
   ri = rebase -i
   rim = rebase -i master
   s = status --short -b
+  last = diff HEAD~1
 [push]
   default = current
 [rebase]

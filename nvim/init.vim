@@ -8,12 +8,9 @@ filetype off
 call plug#begin()
 
 " Thank to the universe for Tim Pope
-Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch' " Syntax sugar for unix commands
-Plug 'tpope/vim-obsession' " Supercool session management
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
@@ -25,53 +22,35 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-projectionist'
 
 Plug 'kana/vim-smartinput' " To have automatic closed pairs like () or {}
-Plug 'w0rp/ale'
-Plug 'embear/vim-localvimrc'
-Plug 'kassio/neoterm'
-Plug 'janko-m/vim-test'
-Plug 'radenling/vim-dispatch-neovim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'eiginn/netrw' " Overwrite vim's netrw with the latest version
-Plug 'scrooloose/nerdtree'
 Plug 'sjl/gundo.vim'
 Plug 'FooSoft/vim-argwrap'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Git
 Plug 'mhinz/vim-signify'
-Plug 'sodapopcan/vim-twiggy'
 
 " Language support
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-Plug 'reasonml-editor/vim-reason-plus'
-Plug 'ElmCast/elm-vim'
-Plug 'elixir-lang/vim-elixir'
-Plug 'slashmili/alchemist.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'noprompt/vim-yardoc'
 Plug 'jgdavey/vim-blockle'
 Plug 'sheerun/vim-polyglot'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'pangloss/vim-javascript'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'junegunn/vader.vim'
+Plug 'w0rp/ale'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'janko-m/vim-test'
 
 " Search
 Plug '/usr/local/opt/fzf' " Use locally instaled fzf from homebrew
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'brooth/far.vim'
-
-" Autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'pbogut/deoplete-elm'
-Plug 'fishbullet/deoplete-ruby'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'ervandew/supertab'
 
 " Colors
 Plug 'chriskempson/base16-vim'
@@ -84,7 +63,6 @@ call plug#end()
 
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/general.vim
-source $HOME/.config/nvim/keys.vim
 source $HOME/.config/nvim/statusline.vim
 source $HOME/.config/nvim/projections.vim
 

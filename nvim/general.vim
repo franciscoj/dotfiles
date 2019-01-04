@@ -51,14 +51,6 @@ function! SetMarkdownOptions()
 endfunction
 
 
-autocmd FileType elm call SetElmOptions()
-
-function! SetElmOptions()
-  setlocal shiftwidth=4
-  setlocal softtabstop=2
-  setlocal expandtab
-endfunction
-
 autocmd FileType elixir call SetElixirOptions()
 
 function! SetElixirOptions()
@@ -66,19 +58,8 @@ function! SetElixirOptions()
   setlocal foldmethod=indent
 endfunction
 
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_diagnosticsEnable = 0
-
-let g:LanguageClient_serverCommands = {
-    \ 'reason': ['ocaml-language-server', '--stdio'],
-    \ 'ocaml': ['ocaml-language-server', '--stdio'],
-    \ }
-
 " Add spell check to git commits
 autocmd FileType gitcommit setlocal spell spelllang=en_us
-
-" Set JSON on mustached json files
-autocmd BufRead,BufNewFile *.json.mustache set filetype=json.mustache
 
 " Improve the files autocomplete
 autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
