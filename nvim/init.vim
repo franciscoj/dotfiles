@@ -16,10 +16,9 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
-Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-dispatch'
 
 Plug 'kana/vim-smartinput' " To have automatic closed pairs like () or {}
 Plug 'vim-airline/vim-airline'
@@ -30,7 +29,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Git
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'mhinz/vim-signify'
+Plug 'junegunn/gv.vim'
 
 " Language support
 Plug 'plasticboy/vim-markdown'
@@ -40,6 +42,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'pangloss/vim-javascript'
 Plug 'w0rp/ale'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',

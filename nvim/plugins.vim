@@ -32,6 +32,8 @@ nnoremap \\ :Grepper -noprompt -cword<CR>
 nnoremap <leader>s :Grepper -query<SPACE>
 
 " test-vim
+let test#strategy="dispatch"
+
 nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>tl :TestNearest<CR>
 nnoremap <leader>tr :TestLast<CR>
