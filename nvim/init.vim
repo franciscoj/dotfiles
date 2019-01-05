@@ -408,7 +408,7 @@ set viminfo     ='100,n$HOME/.config/nvim/files/info/viminfo
 " Disable polyglot in favor of real language packs
 " Polyglot is great but it doesn't activate all the functionalities for all
 " languages in order to make it load fast.
-let g:polyglot_disabled = ['markdown']
+let g:polyglot_disabled = ['markdown', 'javascript', 'jsx']
 
 " Markdown {{{
 let g:vim_markdown_folding_level = 2
