@@ -335,6 +335,8 @@ autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
 let g:LanguageClient_serverCommands = {
     \ 'ruby': ['tcp://localhost:7658'],
     \ 'elixir': ['elixir-ls'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'typescript': ['javascript-typescript-stdio']
     \ }
 "}}}
 
