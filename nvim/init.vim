@@ -302,12 +302,14 @@ let g:ale_elm_format_use_global = 1
 let g:ale_linters = {
       \ 'elixir': ['mix', 'elixir-ls'],
       \ 'ruby': ['rubocop', 'ruby'],
+      \ 'typescript': ['tslint']
       \}
 
 let g:ale_fixers = {
-      \ 'elixir': ['mix_format', 'remove_trailing_lines', 'trim_whitespace'],
-      \ 'ruby': ['rubocop', 'remove_trailing_lines', 'trim_whitespace'],
-      \ 'javascript': ['prettier', 'remove_trailing_lines', 'trim_whitespace'],
+      \ 'elixir': ['mix_format'],
+      \ 'ruby': ['rubocop'],
+      \ 'javascript': ['prettier'],
+      \ 'typescript': ['prettier']
       \}
 
 nnoremap <silent><leader>af :ALEFix<CR>
