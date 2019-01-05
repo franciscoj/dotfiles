@@ -300,7 +300,7 @@ let g:ale_elm_make_use_global = 1
 let g:ale_elm_format_use_global = 1
 
 let g:ale_linters = {
-      \ 'elixir': [''],
+      \ 'elixir': ['mix', 'elixir-ls'],
       \ 'ruby': ['rubocop', 'ruby'],
       \}
 
@@ -333,7 +333,8 @@ autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
 
 " Language client
 let g:LanguageClient_serverCommands = {
-    \ 'ruby': ['tcp://localhost:7658']
+    \ 'ruby': ['tcp://localhost:7658'],
+    \ 'elixir': ['elixir-ls'],
     \ }
 "}}}
 
@@ -421,6 +422,15 @@ autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
 "}}}
 
 " Elixir {{{
+
+" ALE config
+let g:ale_elixir_elixir_ls_release='/opt/elixir-ls'
+let g:ale_elixir_elixir_ls_config= {
+    \   'elixirLS': {
+    \     'dialyzerEnabled': v:false,
+    \   },
+    \ }
+
 autocmd FileType elixir call SetElixirOptions()
 
 function! SetElixirOptions()
