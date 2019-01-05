@@ -19,7 +19,7 @@ case `uname` in
     [[ -f $HOME/.zprofile_local ]] && source $HOME/.zprofile_local
   ;;
   *)
-    [[ -x "$(commmand -v direnv)" ]] && eval "$(direnv hook zsh)"
+    [[ -x "$(command -v direnv)" ]] && eval "$(direnv hook zsh)"
     [[ -f $HOME/.zshenv_local ]] && source $HOME/.zshenv_local
   ;;
 esac
