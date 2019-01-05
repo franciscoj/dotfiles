@@ -153,3 +153,7 @@ let g:LanguageClient_serverCommands = {
     \ }
 
 autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
+
+" LocalVIMRC
+
+let g:localvimrc_persistent=1

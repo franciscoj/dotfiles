@@ -27,6 +27,7 @@ Plug 'sjl/gundo.vim'
 Plug 'FooSoft/vim-argwrap'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'embear/vim-localvimrc'
 
 " Git
 Plug 'tpope/vim-fugitive'
