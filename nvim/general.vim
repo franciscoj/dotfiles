@@ -1,7 +1,3 @@
-if has("gui_vimr")
-  set shell=/usr/local/bin/zsh
-endif
-
 " Best options for changing text
 set cpoptions+=$
 
