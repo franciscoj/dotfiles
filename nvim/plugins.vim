@@ -6,6 +6,9 @@ inoremap <ESC> <NOP>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gC :Gcommit -n<CR>
+nnoremap <leader>gP :Gpush<CR>
+nnoremap <leader>gp :Gpull<CR>
+nnoremap <leader>gf :Gfetch<CR>
 " git log for current file
 nnoremap <leader>gl :GV!<CR>
 " git log for project
