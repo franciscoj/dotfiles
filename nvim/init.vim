@@ -66,7 +66,6 @@ Plug 'janko-m/vim-test'
 " Search {{{
 Plug '/usr/local/opt/fzf' " Use locally instaled fzf from homebrew
 Plug 'junegunn/fzf.vim'
-Plug 'mhinz/vim-grepper'
 Plug 'brooth/far.vim'
 "}}}
 
@@ -201,12 +200,9 @@ let $FZF_DEFAULT_COMMAND = 'rg --files'
 let g:fzf_command_prefix = 'FZF'
 nnoremap <leader>ff :FZFFiles<cr>
 nnoremap <leader>fb :FZFBuffers<cr>
+nnoremap <leader>s :FZFRg<space>
+nnoremap \\ :FZFRg <c-r><c-w><cr>
 
-" grepper
-let g:grepper = { 'tools': ['rg', 'ag', 'git'] }
-
-nnoremap \\ :Grepper -noprompt -cword<CR>
-nnoremap <leader>s :Grepper -query<SPACE>
 "}}}
 
 " Windows & tabs {{{
