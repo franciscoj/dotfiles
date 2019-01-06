@@ -35,6 +35,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'embear/vim-localvimrc'
 Plug 'wellle/targets.vim'
+Plug 'sirver/ultisnips'
 "}}}
 
 " Git {{{
@@ -331,6 +332,14 @@ nnoremap <leader>to :Copen<CR>
 
 " Autocomplete {{{
 
+" Ultisnips
+let g:UltiSnipsSnippetsDir = $HOME.'/.config/nvim/snips'
+let g:UltiSnipsSnippetDirectories = ["snips", "priv_snips", "UltiSnips" ]
+let g:UltiSnipsEditSplit = "vertical"
+
+set completefunc=functions#ListSnippets
+set completeopt=menuone
+
 " Improve the files autocomplete
 autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
 autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
@@ -446,3 +455,5 @@ endfunction
 "}}}
 "}}}
 
+" Load custom functions
+source $HOME/.config/nvim/functions.vim
