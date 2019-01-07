@@ -245,6 +245,7 @@ nnoremap <silent><leader>cc :wincmd c<CR>
 "}}}
 
 " Nerdtree {{{
+let g:NERDTreeHijackNetrw=1
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 let NERDTreeIgnore=[
