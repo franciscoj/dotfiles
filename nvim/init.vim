@@ -36,6 +36,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'embear/vim-localvimrc'
 Plug 'wellle/targets.vim'
 Plug 'sirver/ultisnips'
+Plug 'junegunn/goyo.vim'
 "}}}
 
 " Git {{{
@@ -235,6 +236,9 @@ nnoremap <leader>lc :lclose<CR>
 nnoremap <leader><leader>t :tabnew<CR>
 nnoremap <leader><TAB> gt
 nnoremap <leader><S-TAB> gT
+
+" Zoom in a window
+nnoremap <leader><leader>z :Goyo<CR>
 
 " Close window
 nnoremap <silent><leader>cc :wincmd c<CR>
