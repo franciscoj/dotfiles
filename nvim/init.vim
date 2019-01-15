@@ -403,7 +403,7 @@ endfunction
 autocmd User AirlineAfterInit call MyAirline()
 "}}}
 
-" Backupfiles {{{
+" Backup files {{{
 set backup
 set backupdir   =$HOME/.config/nvim/files/backup/
 set backupext   =-vimbackup
