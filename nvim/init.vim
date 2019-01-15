@@ -244,7 +244,7 @@ nnoremap <leader><leader>z :Goyo<CR>
 nnoremap <silent><leader>cc :wincmd c<CR>
 "}}}
 
-" Nerdtree {{{
+" File navigation {{{
 let g:NERDTreeHijackNetrw=1
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
@@ -265,6 +265,8 @@ nnoremap <silent><leader><leader>ff :NERDTreeFind<CR>
 
 " configuration for netrw
 let g:netrw_liststyle= 3
+
+nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
 
 "}}}
 
