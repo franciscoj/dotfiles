@@ -440,6 +440,10 @@ endfunction
 autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
 "}}}
 
+" HAML {{{
+autocmd FileType haml setlocal foldmethod=indent
+"}}}
+
 " Elixir {{{
 
 " ALE config
