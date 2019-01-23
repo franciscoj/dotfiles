@@ -63,6 +63,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'janko-m/vim-test'
+Plug 'junegunn/vader.vim'
 "}}}
 
 " Search {{{
@@ -309,7 +310,8 @@ let g:ale_elm_format_use_global = 1
 let g:ale_linters = {
       \ 'elixir': ['mix', 'elixir-ls'],
       \ 'ruby': ['rubocop', 'ruby'],
-      \ 'typescript': ['tslint']
+      \ 'typescript': ['tslint'],
+      \ 'viml': ['vint']
       \}
 
 let g:ale_fixers = {
