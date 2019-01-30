@@ -58,10 +58,7 @@ Plug 'mxw/vim-jsx'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'janko-m/vim-test'
 Plug 'junegunn/vader.vim'
 "}}}
@@ -294,9 +291,6 @@ let g:projectionist_heuristics = {
 
 " Linting {{{
 
-" Disable language server disgnostics
-let g:LanguageClient_diagnosticsEnable=0
-
 " ALE - Asynchronous Linting Engine
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_column_always = 1
@@ -350,14 +344,13 @@ set completeopt=menuone
 autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
 autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
 
-" Language client
-let g:LanguageClient_serverCommands = {
-    \ 'ruby': ['tcp://localhost:7658'],
-    \ 'elixir': ['elixir-ls'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'typescript': ['javascript-typescript-stdio']
-    \ }
-"}}}
+" Language Server
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
+
 
 " Change diff sign colors {{{
 " This has to be after the general.vim loading since loading the colorscheme
@@ -439,7 +432,6 @@ endfunction
 "}}}
 
 " Ruby {{{
-autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
 "}}}
 
 " HAML {{{
