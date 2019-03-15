@@ -164,8 +164,13 @@ xnoremap >  >gv
 
 " Git {{{
 
-" Add spell check to git commits
-autocmd FileType gitcommit setlocal spell spelllang=en_us
+augroup git_commits
+  autocmd!
+
+  " Add spell check to git commits
+  autocmd FileType gitcommit setlocal spell spelllang=en_us
+augroup END
+
 
 " Shortcuts
 nnoremap <leader>gs :Gstatus<CR>
@@ -342,9 +347,13 @@ let g:UltiSnipsEditSplit = 'vertical'
 set completefunc=functions#ListSnippets
 set completeopt=menuone
 
-" Improve the files autocomplete
-autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
-autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
+augroup files_autocomplete
+  autocmd!
+
+  " Improve autocomplete for relative files
+  autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
+  autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
+augroup END
 
 " Language Server
 nmap <silent> gd <Plug>(coc-definition)
@@ -397,7 +406,11 @@ let g:airline#extensions#hunks#enabled = 0
 function! MyAirline()
   let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr'])
 endfunction
-autocmd User AirlineAfterInit call MyAirline()
+
+augroup airline
+  autocmd!
+  autocmd User AirlineAfterInit call MyAirline()
+augroup END
 "}}}
 
 " Backup files {{{
@@ -424,20 +437,23 @@ let g:polyglot_disabled = ['markdown', 'javascript', 'jsx']
 " Markdown {{{
 let g:vim_markdown_folding_level = 2
 
-autocmd FileType markdown call SetMarkdownOptions()
-
-function! SetMarkdownOptions()
-  setlocal textwidth=79
-  setlocal spell spelllang=en_us
-  setlocal noshiftround
-endfunction
+augroup markdown
+  autocmd!
+  autocmd FileType markdown setlocal textwidth=79
+  autocmd FileType markdown setlocal spell spelllang=en_us
+  autocmd FileType markdown setlocal noshiftround
+augroup END
 "}}}
 
 " Ruby {{{
 "}}}
 
 " HAML {{{
-autocmd FileType haml setlocal foldmethod=indent
+augroup yaml
+  autocmd!
+
+  autocmd FileType haml setlocal foldmethod=indent
+augroup END
 "}}}
 
 " Elixir {{{
@@ -450,12 +466,11 @@ let g:ale_elixir_elixir_ls_config= {
     \   },
     \ }
 
-autocmd FileType elixir call SetElixirOptions()
-
-function! SetElixirOptions()
-  setlocal formatprg=
-  setlocal foldmethod=indent
-endfunction
+augroup elixir
+  autocmd!
+  autocmd FileType elixir setlocal formatprg=
+  autocmd FileType elixir setlocal foldmethod=indent
+augroup END
 "}}}
 "}}}
 
