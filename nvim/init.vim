@@ -361,7 +361,6 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 
-
 " Change diff sign colors {{{
 " This has to be after the general.vim loading since loading the colorscheme
 " overwrites this... however I can't add it to the plugins.vim file and load
