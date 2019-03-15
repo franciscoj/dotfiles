@@ -3,8 +3,8 @@
 set encoding=utf-8 " default character encoding
 
 " Set leader keys before anything else
-let mapleader      = " "
-let maplocalleader = ","
+let mapleader      = ' '
+let maplocalleader = ','
 
 filetype off
 
@@ -272,20 +272,20 @@ nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
 
 " Projections {{{
 let g:projectionist_heuristics = {
-      \  "mix.exs": {
-      \    "lib/*.ex": {
-      \      "type": "lib",
-      \      "alternate": "test/{}_test.exs"
+      \  'mix.exs': {
+      \    'lib/*.ex': {
+      \      'type': 'lib',
+      \      'alternate': 'test/{}_test.exs'
       \    },
-      \    "test/*_test.exs": {
-      \      "type": "test",
-      \      "alternate": "lib/{}.ex"
+      \    'test/*_test.exs': {
+      \      'type': 'test',
+      \      'alternate': 'lib/{}.ex'
       \    },
-      \    "mix.exs": {
-      \      "type": "mix"
+      \    'mix.exs': {
+      \      'type': 'mix'
       \    },
-      \    "config/config.exs": {
-      \      "type": "config"
+      \    'config/config.exs': {
+      \      'type': 'config'
       \    }
       \  }
       \ }
@@ -324,7 +324,7 @@ nnoremap <silent><leader>ad :ALEDetail<CR>
 " Tests {{{
 
 " test-vim
-let test#strategy="dispatch"
+let test#strategy='dispatch'
 
 nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>tl :TestNearest<CR>
@@ -336,8 +336,8 @@ nnoremap <leader>to :Copen<CR>
 
 " Ultisnips
 let g:UltiSnipsSnippetsDir = $HOME.'/.config/nvim/snips'
-let g:UltiSnipsSnippetDirectories = ["snips", "priv_snips", "UltiSnips" ]
-let g:UltiSnipsEditSplit = "vertical"
+let g:UltiSnipsSnippetDirectories = ['snips', 'priv_snips', 'UltiSnips' ]
+let g:UltiSnipsEditSplit = 'vertical'
 
 set completefunc=functions#ListSnippets
 set completeopt=menuone
