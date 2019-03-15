@@ -37,7 +37,6 @@ Plug 'embear/vim-localvimrc'
 Plug 'wellle/targets.vim'
 Plug 'sirver/ultisnips'
 Plug 'junegunn/goyo.vim'
-Plug 'zhaocai/GoldenView.Vim'
 "}}}
 
 " Git {{{
