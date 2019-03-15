@@ -456,6 +456,15 @@ augroup yaml
 augroup END
 "}}}
 
+" YAML {{{
+augroup yaml
+  autocmd!
+
+  autocmd FileType yaml setlocal foldmethod=indent
+  autocmd FileType yaml setlocal foldenable
+augroup END
+" }}}
+
 " Elixir {{{
 
 " ALE config
