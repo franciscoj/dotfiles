@@ -97,7 +97,7 @@ set background=dark
 colorscheme zenburn
 
 " Show non visual chars
-set listchars=trail:~,tab:▸\ ,eol:¬ " show special characters
+set listchars=trail:~,tab:>\ ,eol:< " show special characters
 set list
 
 " To use the system clipboard (xclip)
