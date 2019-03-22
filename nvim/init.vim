@@ -377,8 +377,9 @@ highlight SignifySignChange cterm=bold ctermbg=none ctermfg=4
 "}}}
 
 " Status line {{{
+"let g:airline#extensions#ale#enabled = 1
+
 let g:airline_theme='deus'
-let g:airline#extensions#ale#enabled = 1
 
 " Don't display encoding unless it is unexpected
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
@@ -398,17 +399,10 @@ let g:airline_mode_map = {
       \ '' : 'S',
       \ }
 
-" Disable showing hunks
+" Disable showing git hunks
 let g:airline#extensions#hunks#enabled = 0
 
-function! MyAirline()
-  let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr'])
-endfunction
-
-augroup airline
-  autocmd!
-  autocmd User AirlineAfterInit call MyAirline()
-augroup END
+let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr'])
 "}}}
 
 " Backup files {{{
