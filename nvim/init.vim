@@ -314,6 +314,7 @@ let g:ale_linters = {
       \}
 
 let g:ale_fixers = {
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'elixir': ['mix_format'],
       \ 'ruby': ['rubocop'],
       \ 'javascript': ['prettier'],
