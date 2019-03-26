@@ -321,8 +321,8 @@ let g:ale_fixers = {
       \ 'typescript': ['prettier']
       \}
 
-nnoremap <silent><leader>af :ALEFix<CR>
-nnoremap <silent><leader>ad :ALEDetail<CR>
+nnoremap <silent><leader>lf :ALEFix<CR>
+nnoremap <silent><leader>ld :ALEDetail<CR>
 "}}}
 
 " Tests {{{
