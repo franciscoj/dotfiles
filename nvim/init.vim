@@ -377,7 +377,7 @@ highlight SignifySignChange cterm=bold ctermbg=none ctermfg=4
 "}}}
 
 " Status line {{{
-"let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 let g:airline_theme='deus'
 
