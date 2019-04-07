@@ -27,7 +27,10 @@ case `uname` in
   ;;
 esac
 
-zplug "themes/minimal", from:oh-my-zsh, as:theme
+
+export PURE_GIT_PULL=0
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
