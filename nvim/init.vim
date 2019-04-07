@@ -61,6 +61,7 @@ Plug 'tpope/vim-bundler'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'janko-m/vim-test'
 Plug 'junegunn/vader.vim'
+Plug 'rust-lang/rust.vim'
 "}}}
 
 " Search {{{
@@ -310,7 +311,8 @@ let g:ale_linters = {
       \ 'elixir': ['mix', 'elixir-ls'],
       \ 'ruby': ['rubocop', 'ruby'],
       \ 'typescript': ['tslint'],
-      \ 'viml': ['vint']
+      \ 'viml': ['vint'],
+      \ 'rust': ['cargo']
       \}
 
 let g:ale_fixers = {
@@ -318,7 +320,8 @@ let g:ale_fixers = {
       \ 'elixir': ['mix_format'],
       \ 'ruby': ['rubocop'],
       \ 'javascript': ['prettier'],
-      \ 'typescript': ['prettier']
+      \ 'typescript': ['prettier'],
+      \ 'rust': ['rustfmt']
       \}
 
 nnoremap <silent><leader>lf :ALEFix<CR>
