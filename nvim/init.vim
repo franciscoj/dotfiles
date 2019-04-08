@@ -6,6 +6,9 @@ set encoding=utf-8 " default character encoding
 let mapleader      = ' '
 let maplocalleader = ','
 
+" Get the OS name so that we can do some silly OS only stuff with it.
+let os = substitute(system('uname'), "\n", "", "")
+
 filetype off
 
 " Plugins install {{{
@@ -65,7 +68,12 @@ Plug 'rust-lang/rust.vim'
 "}}}
 
 " Search {{{
-Plug '/usr/local/opt/fzf' " Use locally instaled fzf from homebrew
+if os == "Linux"
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+else
+  Plug '/usr/local/opt/fzf' " Use locally instaled fzf from homebrew
+endif
+
 Plug 'junegunn/fzf.vim'
 Plug 'brooth/far.vim'
 "}}}
