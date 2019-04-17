@@ -19,14 +19,8 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 
-case `uname` in
-  Darwin)
-    # Because mac :hankey:
-    zstyle :omz:plugins:ssh-agent agent-forwarding on
-    zplug "plugins/ssh-agent", from:oh-my-zsh
-  ;;
-esac
-
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zplug "plugins/ssh-agent", from:oh-my-zsh
 
 export PURE_GIT_PULL=0
 zplug "mafredri/zsh-async", from:github
