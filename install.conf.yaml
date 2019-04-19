@@ -13,6 +13,8 @@
     ~/.zprofile:
       path: zsh/zshenv
       if: ./bin/is_mac.sh
+    ~/.config/nvim: nvim
 
 - shell:
-  - [./tmux/install.sh, Install tmux plugins]
+  - [./bin/install/tmux.sh, Install tmux plugins]
+  - [./bin/install/vim.sh, Install vim-plug and plugins]
