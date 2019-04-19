@@ -8,3 +8,7 @@ nvim/plugged
 nvim/spell
 nvim/files
 nvim/priv_snips
+pkg
+src
+system/*.pkg.tar
+system/*.pkg.tar.xz

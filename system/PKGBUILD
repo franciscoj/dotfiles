@@ -1,0 +1,24 @@
+pkgname=fran
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Base packages and systems conf"
+arch=('any')
+url="https://github.com/franciscoj/dot-files"
+license=('MIT')
+install='install'
+
+source=('lightdm.conf'
+        'lightdm-gtk-greeter.conf')
+
+
+md5sums=('83c9f5d16cfbdf3885f112fef5be514c'
+         '310442a4b0593cfa6b3f79f49c298420')
+
+backup=('etc/lightdm/lightdm.conf'
+        'etc/lightdm/lightdm-gtk-greeter.conf')
+
+package() {
+  install -Dm0644 lightdm.conf "$pkgdir/etc/lightdm/lightdm.conf.pacnew"
+  install -Dm0644 lightdm-gtk-greeter.conf "$pkgdir/etc/lightdm/lightdm-gtk-greeter.conf.pacnew"
+}
+

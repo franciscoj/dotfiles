@@ -30,6 +30,7 @@ fi
 zplug load # --verbose
 
 export EDITOR='nvim'
+export DIFFPROG='nvim -d'
 
 export VISUAL=$EDITOR
 alias vi=$EDITOR
