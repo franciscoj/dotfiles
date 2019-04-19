@@ -26,3 +26,5 @@
 - shell:
   - [./bin/install/tmux.sh, Install tmux plugins]
   - [./bin/install/vim.sh, Install vim-plug and plugins]
+  - [./bin/install/zsh.sh, Install zplug and bas16]
+  - [./bin/install/asdf.sh, Install asdf]

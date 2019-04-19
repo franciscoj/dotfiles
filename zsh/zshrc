@@ -3,11 +3,7 @@
 # This file is meant to load only things which are needed on an interactive
 # shell, like customizations, special aliases, etc.
 
-export ZPLUG_HOME=$HOME/.zplug
-
-# In case zplug isn't installed, install it
-[[ ! -d "$ZPLUG_HOME" ]] && git clone https://github.com/zplug/zplug $ZPLUG_HOME
-
+export ZPLUG_HOME=$HOME/.config/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "plugins/git", from:oh-my-zsh
@@ -45,7 +41,6 @@ alias tmux="tmux -u"
 [[ -x "$(command -v hub)" ]] && eval "$(hub alias -s)"
 
 # Use base16 to setup terminal colors everywhere. Clone it in case it doesn't exist
-[[ ! -d "$HOME/.config/base16-shell" ]] && git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
 BASE16_SCHEME="zenburn"
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-$BASE16_SCHEME.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
