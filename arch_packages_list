@@ -12,7 +12,13 @@ neovim
 networkmanager
 otf-font-awesome
 pacman-contrib
+pavucontrol
+playerctl
+ponymix
+pulseaudio
+pulseaudio-alsa
 rofi
+spotify
 ttf-fira-code
 unzip
 wpa_supplicant
