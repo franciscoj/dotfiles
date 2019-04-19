@@ -6,25 +6,13 @@ general {
 order += "disk /home"
 order += "disk /"
 order += "wireless wlp8s0"
-order += "battery 0"
 order += "volume master"
 order += "load"
 order += "time"
 
 wireless wlp8s0 {
-  format_up = " (%quality at %essid) %ip"
+  format_up = "  (%quality at %essid) %ip"
   format_down = " down"
-}
-
-battery 0 {
-  format = "%status %percentage"
-  status_full = ""
-  status_chr = ""
-  status_bat = ""
-
-  integer_battery_capacity = true
-  low_threshold = 15
-  threshold_type = time
 }
 
 time {

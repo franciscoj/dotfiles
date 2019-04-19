@@ -10,6 +10,7 @@ lightdm-gtk-greeter
 linux-headers
 neovim
 networkmanager
+otf-font-awesome
 pacman-contrib
 rofi
 ttf-fira-code
