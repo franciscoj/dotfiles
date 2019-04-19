@@ -22,11 +22,9 @@ export PURE_GIT_PULL=0
 zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  fi
+# Only perform the zplug check during bootstrapping
+if [ ! -z "$BOOTSTRAPPING" ] ; then
+  [[ ! "$(zplug check --verbose)" ]] && zplug install
 fi
 
 zplug load # --verbose
