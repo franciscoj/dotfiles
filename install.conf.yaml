@@ -27,6 +27,8 @@
     # i3 and desktop
     ~/.config/rofi: rofi
 
+    ~/.config/kitty: kitty
+
 - shell:
   - [./bin/install/tmux.sh, Install tmux plugins]
   - [./bin/install/vim.sh, Install vim-plug and plugins]
