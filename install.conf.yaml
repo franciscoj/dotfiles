@@ -6,6 +6,13 @@
 - link:
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
     ~/.tmux.conf: ~/.config/tmux/tmux.conf
+    ~/.zshrc: zsh/zshrc
+    ~/.zshenv:
+      path: zsh/zshenv
+      if: ./bin/is_linux.sh
+    ~/.zprofile:
+      path: zsh/zshenv
+      if: ./bin/is_mac.sh
 
 - shell:
   - [./tmux/install.sh, Install tmux plugins]

@@ -3,6 +3,8 @@
 # Usage:
 #  ./vid2gif file.mp4 file.gif
 
+set -ex
+
 palette="/tmp/palette.png"
 
 filters="fps=15,scale=640:-1:flags=lanczos"
