@@ -1,0 +1,11 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- link:
+    ~/.config/tmux/tmux.conf: tmux/tmux.conf
+    ~/.tmux.conf: ~/.config/tmux/tmux.conf
+
+- shell:
+  - [./tmux/install.sh, Install tmux plugins]
