@@ -1,0 +1,52 @@
+general {
+  colors = true
+  interval = 4
+}
+
+order += "disk /home"
+order += "disk /"
+order += "wireless wlp8s0"
+order += "battery 0"
+order += "volume master"
+order += "load"
+order += "time"
+
+wireless wlp8s0 {
+  format_up = " (%quality at %essid) %ip"
+  format_down = " down"
+}
+
+battery 0 {
+  format = "%status %percentage"
+  status_full = ""
+  status_chr = ""
+  status_bat = ""
+
+  integer_battery_capacity = true
+  low_threshold = 15
+  threshold_type = time
+}
+
+time {
+  format = " %d.%m.%Y %H:%M"
+}
+
+load {
+  format = " %1min"
+}
+
+disk "/" {
+  format = " / %free"
+}
+
+disk "/home" {
+  format = " /home %free"
+}
+
+volume master {
+  format = " %volume"
+  format_muted = "   %volume"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
+}

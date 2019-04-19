@@ -24,10 +24,18 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
 
-    # i3 and desktop
-    ~/.config/rofi: rofi
-
     ~/.config/kitty: kitty
+
+    # i3 and desktop
+    ~/.config/i3:
+      path: i3
+      if: ./bin/is_linux.sh
+    ~/.config/i3status:
+      path: i3status
+      if: ./bin/is_linux.sh
+    ~/.config/rofi:
+      path: rofi
+      if: ./bin/is_linux.sh
 
 - shell:
   - [./bin/install/tmux.sh, Install tmux plugins]
