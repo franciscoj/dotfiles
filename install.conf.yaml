@@ -4,8 +4,13 @@
       create: true
 
 - link:
+    ~/.config/nvim: nvim
+
+    # tmux on ~/.config
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
     ~/.tmux.conf: ~/.config/tmux/tmux.conf
+
+    # Zsh taking into account arch & mac
     ~/.zshrc: zsh/zshrc
     ~/.zshenv:
       path: zsh/zshenv
@@ -13,7 +18,10 @@
     ~/.zprofile:
       path: zsh/zshenv
       if: ./bin/is_mac.sh
-    ~/.config/nvim: nvim
+
+    # Git + ignores
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore: git/gitignore
 
 - shell:
   - [./bin/install/tmux.sh, Install tmux plugins]

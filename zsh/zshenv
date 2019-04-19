@@ -6,13 +6,7 @@ export PATH=$PATH:$HOME/bin
 
 # Load direnv. Use the full path on mac because :hankey:
 # https://github.com/Homebrew/legacy-homebrew/issues/44997#issuecomment-148630030
-# Load local configuration (provided files exist).
-
-# Rubygems allows to split the configuration into different .gemrc equivalent
-# files. This .gemrc_local is meant to keep the private configs, like gem
-# sources which require username/password.
-[[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
-
+# Also load local configuration (provided files exist).
 case `uname` in
   Darwin)
     eval "$(/usr/local/bin/direnv hook zsh)"
@@ -23,3 +17,9 @@ case `uname` in
     [[ -f $HOME/.zshenv_local ]] && source $HOME/.zshenv_local
   ;;
 esac
+
+# Rubygems allows to split the configuration into different .gemrc equivalent
+# files. This .gemrc_local is meant to keep the private configs, like gem
+# sources which require username/password.
+[[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
+
