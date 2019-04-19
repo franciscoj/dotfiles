@@ -1,5 +1,6 @@
 - defaults:
     link:
+      force: true
       relink: true
       create: true
 
@@ -22,6 +23,9 @@
     # Git + ignores
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
+
+    # i3 and desktop
+    ~/.config/rofi: rofi
 
 - shell:
   - [./bin/install/tmux.sh, Install tmux plugins]

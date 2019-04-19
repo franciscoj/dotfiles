@@ -1,0 +1,3 @@
+rofi.theme: Arc-Dark
+rofi.font: Fira Code Regular 14
+rofi.modi: drun,window
