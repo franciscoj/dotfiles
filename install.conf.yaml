@@ -26,7 +26,7 @@
 
     ~/.config/kitty: kitty
 
-    # i3 and desktop
+    # Desktop
     ~/.config/i3:
       path: i3
       if: ./bin/is_linux.sh
@@ -42,6 +42,12 @@
     ~/.config/nitrogen:
       path: nitrogen
       if: ./bin/is_linux.sh
+    ~/.config/gtk-3.0/settings.ini:
+      path: gtk/gtkrc-3.0
+      inf: ./bin/is_linux.sh
+    ~/.gtkrc-2.0:
+      path: gtk/gtkrc-2.0
+      inf: ./bin/is_linux.sh
 
 - shell:
   - [./bin/install/tmux.sh, Install tmux plugins]

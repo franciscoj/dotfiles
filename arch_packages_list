@@ -1,4 +1,5 @@
 arc-gtk-theme
+arc-icon-theme
 direnv
 git-extras
 hub
@@ -8,6 +9,7 @@ kitty
 lightdm
 lightdm-gtk-greeter
 linux-headers
+moka-icon-theme
 neovim
 networkmanager
 otf-font-awesome
