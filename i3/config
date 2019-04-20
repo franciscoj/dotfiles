@@ -40,7 +40,6 @@ bindsym $mod+Tab exec rofi -show window
 # kill focused window
 bindsym $mod+Shift+q kill
 
-
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -147,12 +146,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color            #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676e7d
-set $urgent-bg-color     #e53935
-set $indicator-color     #a0a0a0
+set $bg-color            #767b91
+set $inactive-bg-color   #2a324b
+set $text-color          #e1e5ee
+set $inactive-text-color #c7ccdb
+set $urgent-bg-color     #676e7d
+set $indicator-color     #676e7d
 
 # set window colors
 #                       border             background         text                 indicator
@@ -161,12 +160,11 @@ client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-col
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
 client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $indicator-color
 
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command i3status
-    font pango:Fira Code Regular 11
+  font pango:Fira Code Regular 11
+  status_command i3status
 }
 
 # floating windows
