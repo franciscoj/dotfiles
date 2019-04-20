@@ -36,6 +36,9 @@
     ~/.config/rofi:
       path: rofi
       if: ./bin/is_linux.sh
+    ~/.Xmodmap:
+      path: x/Xmodmap
+      if: ./bin/is_linux.sh
 
 - shell:
   - [./bin/install/tmux.sh, Install tmux plugins]
