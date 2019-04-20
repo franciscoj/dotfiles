@@ -1,3 +1,6 @@
-rofi.theme: Arc-Dark
 rofi.font: Fira Code Regular 14
+rofi.lines: 5
 rofi.modi: drun,window
+rofi.show-icons: true
+rofi.theme: Arc-Dark
+rofi.display-drun: Search
