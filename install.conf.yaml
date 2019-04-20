@@ -39,6 +39,9 @@
     ~/.Xmodmap:
       path: x/Xmodmap
       if: ./bin/is_linux.sh
+    ~/.config/nitrogen:
+      path: nitrogen
+      if: ./bin/is_linux.sh
 
 - shell:
   - [./bin/install/tmux.sh, Install tmux plugins]

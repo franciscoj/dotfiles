@@ -200,4 +200,4 @@ bindsym $mod+F8 exec playerctl next
 # Autostart apps
 # exec --no-startup-id "compton -cC"
 # exec --no-startup-id nm-applet
-# exec --no-startup-id "nitrogen --restore"
+exec --no-startup-id "nitrogen --restore"
