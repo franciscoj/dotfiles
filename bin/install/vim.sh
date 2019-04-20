@@ -11,3 +11,5 @@ if [ ! -f "$plug_dst" ]; then
 
   mkdir -p ~/.config/nvim/files/backup
 fi
+
+sudo pip install neovim

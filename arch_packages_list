@@ -17,6 +17,8 @@ playerctl
 ponymix
 pulseaudio
 pulseaudio-alsa
+python-pip
+ripgrep
 rofi
 spotify
 ttf-fira-code
