@@ -65,6 +65,7 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'janko-m/vim-test'
 Plug 'junegunn/vader.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'mboughaba/i3config.vim'
 "}}}
 
 " Search {{{
