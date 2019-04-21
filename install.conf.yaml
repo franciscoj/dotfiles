@@ -36,6 +36,9 @@
     ~/.config/rofi:
       path: rofi
       if: ./bin/is_linux.sh
+    ~/.config/dunst:
+      path: dunst
+      if: ./bin/is_linux.sh
     ~/.Xmodmap:
       path: x/Xmodmap
       if: ./bin/is_linux.sh

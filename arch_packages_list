@@ -1,6 +1,7 @@
 arc-gtk-theme
 arc-icon-theme
 direnv
+dunst
 git-extras
 hub
 i3-gaps
