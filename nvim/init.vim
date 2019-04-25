@@ -185,6 +185,7 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gC :Gcommit -n<CR>
 nnoremap <leader>gP :Gpush<CR>
+nnoremap <leader>gfP :Gpush --force-with-lease<CR>
 nnoremap <leader>gp :Gpull<CR>
 nnoremap <leader>gf :Gfetch<CR>
 " git log for current file
