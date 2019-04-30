@@ -54,10 +54,8 @@ Plug 'noprompt/vim-yardoc'
 Plug 'jgdavey/vim-blockle'
 Plug 'sheerun/vim-polyglot'
 Plug 'powerman/vim-plugin-AnsiEsc'
-Plug 'othree/yajs.vim'
-Plug 'othree/es.next.syntax.vim'
+Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'ianks/vim-tsx'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
@@ -194,6 +192,10 @@ nnoremap <leader>gl :GV!<CR>
 nnoremap <leader>gL :GV<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gm :Git checkout master<CR>
+nnoremap <leader>g- :Git checkout -<CR>
+nnoremap <leader>grm :Grebase -i master<CR>
+
 
 " signify (gutter for git)
 let g:signify_vcs_list = ['git']
@@ -436,6 +438,7 @@ set viewdir     =$HOME/.config/nvim/files/view
 " Language specific {{{
 
 " Disable polyglot in favor of real language packs
+"
 " Polyglot is great but it doesn't activate all the functionalities for all
 " languages in order to make it load fast.
 let g:polyglot_disabled = ['markdown', 'javascript', 'jsx']
@@ -487,6 +490,11 @@ augroup elixir
   autocmd FileType elixir setlocal foldmethod=indent
 augroup END
 "}}}
+
+" Javascript {{{
+let g:javascript_plugin_jsdoc = 1
+" }}}
+
 "}}}
 
 " Load custom functions
