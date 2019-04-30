@@ -24,7 +24,14 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
 
-    ~/.config/kitty: kitty
+    # Kitty expects its config on a different place depending on whether you
+    # are on mac or linux :facepalm:
+    ~/.config/kitty:
+      path: kitty
+      if: bin/is_linux.sh
+    ~/Library/Preferences/kitty.conf:
+      path: kitty/kitty.conf
+      if: bin/is_mac.sh
 
     # Desktop
     ~/.config/i3:
