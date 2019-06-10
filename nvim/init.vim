@@ -273,8 +273,7 @@ let NERDTreeIgnore=[
       \ 'node_modules$[[dir]]',
       \ 'tags$[[file]]',
       \ 'mix.lock$[[file]]',
-      \ '\.bs\.js$[[file]]',
-      \ '\.css[[file]]'
+      \ '\.bs\.js$[[file]]'
       \ ]
 
 nnoremap <silent><leader><leader>f :NERDTreeToggle<CR>
