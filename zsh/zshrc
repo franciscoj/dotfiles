@@ -50,3 +50,5 @@ BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-$BASE16_SCHEME.sh"
 # Load local zshrc
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
