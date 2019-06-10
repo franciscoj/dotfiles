@@ -74,7 +74,6 @@ else
   Plug '/usr/local/opt/fzf' " Use locally instaled fzf from homebrew
 endif
 
-Plug 'junegunn/fzf.vim'
 Plug 'brooth/far.vim'
 "}}}
 
