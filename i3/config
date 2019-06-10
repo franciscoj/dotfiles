@@ -196,6 +196,7 @@ client.background       $base07
 bar {
   font pango:Fira Code Regular 9
   status_command i3status
+
   colors {
     background $base00
     separator  $base01
@@ -206,7 +207,7 @@ bar {
     active_workspace    $base05 $base03 $base00
     inactive_workspace  $base03 $base01 $base05
     urgent_workspace    $base08 $base08 $base00
-    binding_mode $base00 $base0A $base00
+    binding_mode        $base00 $base0A $base00
   }
 }
 
@@ -215,12 +216,10 @@ bar {
 # volume
 bindsym XF86AudioRaiseVolume exec ponymix increase 5
 bindsym XF86AudioLowerVolume exec ponymix decrease 5
-bindsym $mod+F10 exec ponymix increase 5
-bindsym $mod+F9 exec ponymix decrease 5
-
-# mute
 bindsym XF86AudioMute exec ponymix toggle
-bindsym $mod+F11 exec ponymix toggle
+bindsym $mod+F3 exec ponymix increase 5
+bindsym $mod+F2 exec ponymix decrease 5
+bindsym $mod+F1 exec ponymix toggle
 
 # granular volume control
 bindsym $mod+XF86AudioRaiseVolume exec ponymix increase 1
@@ -232,10 +231,9 @@ bindsym XF86AudioPause exec playerctl pause-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym $mod+F5 exec playerctl play-pause
 bindsym $mod+F6 exec playerctl play-pause
-bindsym $mod+F7 exec playerctl previous
-bindsym $mod+F8 exec playerctl next
+bindsym $mod+F5 exec playerctl previous
+bindsym $mod+F7 exec playerctl next
 
 # Autostart apps
 # exec --no-startup-id "compton -cC"
