@@ -34,6 +34,7 @@
   rim = rebase -i master
   s = status --short -b
   last = diff HEAD~1
+  todo = ! git diff master | grep TODO
 [push]
   default = current
 [rebase]
