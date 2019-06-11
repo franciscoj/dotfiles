@@ -60,7 +60,10 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+" Stable COC
+" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+" Nightly COC
+Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 Plug 'janko-m/vim-test'
 Plug 'junegunn/vader.vim'
 Plug 'rust-lang/rust.vim'
