@@ -68,6 +68,8 @@ Plug 'janko-m/vim-test'
 Plug 'junegunn/vader.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'mboughaba/i3config.vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'scrooloose/vim-slumlord'
 "}}}
 
 " Search {{{
