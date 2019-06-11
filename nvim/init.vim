@@ -26,6 +26,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-characterize'
 "}}}
 
 " Misc {{{
