@@ -5,4 +5,3 @@
 :update_sources: true
 :verbose: true
 benchmark: false
-gem: --no-ri --no-rdoc
