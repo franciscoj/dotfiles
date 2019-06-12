@@ -27,6 +27,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-characterize'
+Plug 'junegunn/vim-peekaboo'
 "}}}
 
 " Misc {{{
@@ -35,6 +36,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sjl/gundo.vim'
 Plug 'FooSoft/vim-argwrap'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'embear/vim-localvimrc'
 Plug 'wellle/targets.vim'
@@ -164,6 +166,10 @@ set cpoptions+=$
 
 " ArgWrap
 nnoremap <silent> <leader>a :ArgWrap<CR>
+
+" split-join
+let g:splitjoin_ruby_curly_braces = 0
+let g:splitjoin_ruby_hanging_args = 0
 
 " Others
 nnoremap <leader>, A,<ESC>
