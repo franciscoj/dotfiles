@@ -76,13 +76,8 @@ Plug 'scrooloose/vim-slumlord'
 "}}}
 
 " Search {{{
-if os == "Linux"
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'junegunn/fzf.vim'
-else
-  Plug '/usr/local/opt/fzf' " Use locally instaled fzf from homebrew
-endif
-
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'brooth/far.vim'
 "}}}
 
