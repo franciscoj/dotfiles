@@ -391,6 +391,17 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>Lo :CocList --normal diagnostics<cr>
 nmap <leader>Ld <Plug>(coc-diagnostics-info)
 
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
 " Change diff sign colors {{{
 " This has to be after the general.vim loading since loading the colorscheme
 " overwrites this... however I can't add it to the plugins.vim file and load
