@@ -166,6 +166,9 @@ nnoremap <silent> <leader>a :ArgWrap<CR>
 let g:splitjoin_ruby_curly_braces = 0
 let g:splitjoin_ruby_hanging_args = 0
 
+" Yank list
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
 " Others
 nnoremap <leader>, A,<ESC>
 nnoremap <leader>; A;<ESC>
@@ -224,6 +227,7 @@ nnoremap <silent><leader>nh :nohlsearch<CR>
 " fzf
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 let g:fzf_command_prefix = 'FZF'
+
 nnoremap <leader>ff :FZFFiles<cr>
 nnoremap <leader>fb :FZFBuffers<cr>
 nnoremap <leader>s :FZFRg<space>
