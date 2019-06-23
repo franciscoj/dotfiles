@@ -382,11 +382,14 @@ augroup files_autocomplete
 augroup END
 
 " Language Server
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent>gd <Plug>(coc-definition)
+nmap <silent>gy <Plug>(coc-type-definition)
+nmap <silent>gi <Plug>(coc-implementation)
+nmap <silent>gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
+
+nmap <leader>Lo :CocList --normal diagnostics<cr>
+nmap <leader>Ld <Plug>(coc-diagnostics-info)
 
 " Change diff sign colors {{{
 " This has to be after the general.vim loading since loading the colorscheme
