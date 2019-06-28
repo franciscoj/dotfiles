@@ -233,6 +233,10 @@ nnoremap <leader>fb :FZFBuffers<cr>
 nnoremap <leader>s :FZFRg<space>
 nnoremap \\ :FZFRg <c-r><c-w><cr>
 
+" Far
+
+let g:far#source = 'rg'
+
 "}}}
 
 " Windows & tabs {{{
