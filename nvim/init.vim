@@ -392,9 +392,9 @@ nmap <leader>Lo :CocList --normal diagnostics<cr>
 nmap <leader>Ld <Plug>(coc-diagnostics-info)
 
 " Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call <SID>showDocumentation()<CR>
 
-function! s:show_documentation()
+function! s:showDocumentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
   else
