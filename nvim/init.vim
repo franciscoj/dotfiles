@@ -404,11 +404,6 @@ function! s:show_documentation()
 endfunction
 
 " Change diff sign colors {{{
-" This has to be after the general.vim loading since loading the colorscheme
-" overwrites this... however I can't add it to the plugins.vim file and load
-" that after the general.vim because the neomake autocommands for the colors
-" need to be defined before loading the colorscheme :D cool, eh?
-
 highlight DiffAdd           cterm=bold ctermbg=none ctermfg=2
 highlight DiffDelete        cterm=bold ctermbg=none ctermfg=1
 highlight DiffChange        cterm=bold ctermbg=none ctermfg=4
