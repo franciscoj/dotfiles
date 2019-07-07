@@ -298,7 +298,7 @@ nnoremap <silent><leader><leader>ff :NERDTreeFind<CR>
 " configuration for netrw
 let g:netrw_liststyle= 3
 
-nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
 
 "}}}
 
