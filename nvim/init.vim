@@ -335,9 +335,8 @@ let g:ale_sign_warning = 'W'
 let g:ale_linters = {
       \ 'elixir': ['mix', 'elixir-ls'],
       \ 'ruby': ['rubocop', 'ruby'],
-      \ 'typescript': ['tslint'],
-      \ 'viml': ['vint'],
-      \ 'rust': ['cargo']
+      \ 'rust': ['cargo'],
+      \ 'javascript': []
       \}
 
 let g:ale_fixers = {
