@@ -284,7 +284,6 @@ let NERDTreeIgnore=[
       \ '_build$[[dir]]',
       \ 'doc$[[dir]]',
       \ 'deps$[[dir]]',
-      \ 'elm-stuff$[[dir]]',
       \ 'node_modules$[[dir]]',
       \ 'tags$[[file]]',
       \ 'mix.lock$[[file]]',
@@ -331,9 +330,6 @@ let g:ale_sign_column_always = 1
 
 let g:ale_sign_error = 'E'
 let g:ale_sign_warning = 'W'
-
-let g:ale_elm_make_use_global = 1
-let g:ale_elm_format_use_global = 1
 
 let g:ale_linters = {
       \ 'elixir': ['mix', 'elixir-ls'],
