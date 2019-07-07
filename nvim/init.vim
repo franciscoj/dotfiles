@@ -172,6 +172,7 @@ nnoremap <silent><space>y  :<C-u>CocList -A --normal yank<cr>
 " Others
 nnoremap <leader>, A,<ESC>
 nnoremap <leader>; A;<ESC>
+nnoremap <leader>: A:<ESC>
 
 " Don't loose selection when shifting
 xnoremap <  <gv
