@@ -259,19 +259,19 @@ nnoremap <silent><leader>wv :wincmd v<CR>
 nnoremap <silent><leader>ws :wincmd s<CR>
 
 " quick list and location list
-nnoremap <leader>qo :copen<CR>
-nnoremap <leader>qc :cclose<CR>
+nnoremap <silent><leader>qo :copen<CR>
+nnoremap <silent><leader>qc :cclose<CR>
 
-nnoremap <leader>lo :lopen<CR>
-nnoremap <leader>lc :lclose<CR>
+nnoremap <silent><leader>lo :lopen<CR>
+nnoremap <silent><leader>lc :lclose<CR>
 
 " Tabs management
-nnoremap <leader><leader>t :tabnew<CR>
+nnoremap <silent><leader><leader>t :tabnew<CR>
 nnoremap <leader><TAB> gt
 nnoremap <leader><S-TAB> gT
 
 " Zoom in a window
-nnoremap <leader><leader>z :Goyo<CR>
+nnoremap <silent><leader><leader>z :Goyo<CR>
 
 " Close window
 nnoremap <silent><leader>cc :wincmd c<CR>
