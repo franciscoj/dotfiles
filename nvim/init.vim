@@ -485,7 +485,7 @@ augroup END
 "}}}
 
 " HAML {{{
-augroup yaml
+augroup haml
   autocmd!
 
   autocmd FileType haml setlocal foldmethod=indent
