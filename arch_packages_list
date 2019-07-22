@@ -3,6 +3,7 @@ arc-icon-theme
 cbatticon
 direnv
 dunst
+exa
 git-extras
 hub
 i3-gaps
@@ -32,3 +33,4 @@ xclip
 xorg-server
 yarn
 zsh
+firefox-developer-edition
