@@ -12,6 +12,7 @@ kitty
 lightdm
 lightdm-gtk-greeter
 linux-headers
+lsof
 moka-icon-theme
 neovim
 networkmanager
