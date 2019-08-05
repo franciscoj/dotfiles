@@ -333,7 +333,7 @@ let g:ale_sign_error = 'E'
 let g:ale_sign_warning = 'W'
 
 let g:ale_linters = {
-      \ 'elixir': ['mix', 'elixir-ls'],
+      \ 'elixir': ['mix', 'credo'],
       \ 'ruby': ['rubocop', 'ruby'],
       \ 'rust': ['cargo'],
       \ 'javascript': []
