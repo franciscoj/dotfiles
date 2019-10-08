@@ -55,10 +55,10 @@ Plug 'junegunn/gv.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'noprompt/vim-yardoc'
 Plug 'jgdavey/vim-blockle'
-Plug 'sheerun/vim-polyglot'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
@@ -514,6 +514,7 @@ augroup END
 
 " Javascript {{{
 let g:javascript_plugin_jsdoc = 1
+let g:vim_jsx_pretty_colorful_config = 1
 " }}}
 
 "}}}
