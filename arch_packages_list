@@ -8,6 +8,7 @@ git-extras
 hub
 i3-gaps
 i3blocks
+jq
 kitty
 lightdm
 lightdm-gtk-greeter
