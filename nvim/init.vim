@@ -512,9 +512,25 @@ augroup elixir
 augroup END
 "}}}
 
-" Javascript {{{
-let g:javascript_plugin_jsdoc = 1
+" JavaScript & TypeScript {{{
 let g:vim_jsx_pretty_colorful_config = 1
+" }}}
+
+" JSON {{{
+augroup json_configs
+  autocmd!
+
+  autocmd BufNewFile,BufRead .lintstagedrc set syntax=json
+augroup END
+
+" }}}
+"
+" Bash {{{
+augroup bash_configs
+  autocmd!
+
+  autocmd BufNewFile,BufRead .envrc set syntax=sh
+augroup END
 " }}}
 
 "}}}
