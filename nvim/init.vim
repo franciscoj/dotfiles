@@ -63,6 +63,7 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
+Plug 'neoclide/jsonc.vim'
 " Stable COC
 " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 " Nightly COC
@@ -521,6 +522,7 @@ augroup json_configs
   autocmd!
 
   autocmd BufNewFile,BufRead .lintstagedrc set syntax=json
+  autocmd BufNewFile,BufRead .eslintrc set syntax=json
 augroup END
 
 " }}}
