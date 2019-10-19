@@ -23,3 +23,5 @@ esac
 # sources which require username/password.
 [[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
 
+# Add the inflector library for the ruby Vim snippets
+export PYTHONPATH=$HOME/Documents/src/dot-files/inflector:$PYTHONPATH 

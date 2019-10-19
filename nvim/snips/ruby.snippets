@@ -1,13 +1,17 @@
+global !p
+import inflector
+endglobal
+
 snippet fro "# frozen_string_literal: true"
 # frozen_string_literal: true
 
 $0
 endsnippet
 
-snippet rspec "RSpec rails skeleton" A
+snippet rspec "RSpec rails skeleton"
 require 'rails_helper'
 
-RSpec.describe ${1:classname} do
+RSpec.describe ${1:`!p snip.rv = inflector.to_ruby(path) `} do
 	$0
 end
 endsnippet
@@ -15,7 +19,7 @@ endsnippet
 snippet spec "RSpec skeleton"
 require 'spec_helper'
 
-RSpec.describe ${1:classname} do
+RSpec.describe ${1:`!p snip.rv = inflector.to_ruby(path) `} do
 	$0
 end
 endsnippet
@@ -41,11 +45,11 @@ snippet itis "it { is_expected.to something }"
 it { is_expected.to ${1:assertion} }
 endsnippet
 
-snippet	sub "subject { something }" A
+snippet	sub "subject { something }"
 subject { ${1:described_class}$0 }
 endsnippet
 
-snippet let "let(:name) { value }" A
+snippet let "let(:name) { value }"
 let(:${1:name}) { ${2:value} }
 endsnippet
 
@@ -57,7 +61,7 @@ snippet bui "build(:factory, ...)"
 build(:${1:factory}${2:, })
 endsnippet
 
-snippet bs "build_stubbed(:factory, ...)" A
+snippet bs "build_stubbed(:factory, ...)"
 build_stubbed(:${1:factory}${2:, })
 endsnippet
 
