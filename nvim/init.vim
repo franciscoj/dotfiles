@@ -80,6 +80,7 @@ Plug 'scrooloose/vim-slumlord'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'brooth/far.vim'
+Plug 'romainl/vim-qf'
 "}}}
 
 " Colors {{{
