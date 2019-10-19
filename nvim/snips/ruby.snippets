@@ -1,10 +1,75 @@
 snippet fro "# frozen_string_literal: true"
 # frozen_string_literal: true
 
+$0
 endsnippet
 
-snippet reqs "require 'spec_helper'"
+snippet rspec "RSpec rails skeleton" A
+require 'rails_helper'
+
+RSpec.describe ${1:classname} do
+	$0
+end
+endsnippet
+
+snippet spec "RSpec skeleton"
 require 'spec_helper'
 
+RSpec.describe ${1:classname} do
+	$0
+end
 endsnippet
 
+snippet co "context 'text' do ... end"
+context '${1:contextName}' do
+	$0
+end
+endsnippet
+
+snippet de "describe 'text' do ... end"
+describe '${1:describeName}' do
+	$0
+end
+endsnippet
+
+snippet it "it 'text' do ... end"
+it '${1:text}' do
+	$0
+endsnippet
+
+snippet itis "it { is_expected.to something }"
+it { is_expected.to ${1:assertion} }
+endsnippet
+
+snippet	sub "subject { something }" A
+subject { ${1:described_class}$0 }
+endsnippet
+
+snippet let "let(:name) { value }" A
+let(:${1:name}) { ${2:value} }
+endsnippet
+
+snippet cre "create(:factory, ...)"
+create(:${1:factory}${2:, })
+endsnippet
+
+snippet bui "build(:factory, ...)"
+build(:${1:factory}${2:, })
+endsnippet
+
+snippet bs "build_stubbed(:factory, ...)" A
+build_stubbed(:${1:factory}${2:, })
+endsnippet
+
+snippet exm "expect(obj).to receive(:message) { return }"
+expect(${1:obj}).to receive(:${2:message})${3: { ${4:return} }}
+endsnippet
+
+snippet ex "expect(subject).to something"
+expect(${1:subject${2:.$3}}).to $0
+endsnippet
+
+snippet exb "expect { subject }.to something"
+expect { ${1:subject} }
+	.to $0
+endsnippet
