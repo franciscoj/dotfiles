@@ -4,12 +4,17 @@ import rb_args
 
 real_path = vim.eval('expand("%:p")')
 tabstop = int(vim.eval('&tabstop'))
-
 endglobal
 
 snippet mod "module OutherModName ... end"
 module ${1:`!p snip.rv = inflector.outer_ruby_module(real_path)`}
 	$0
+end
+endsnippet
+
+snippet mo "module Name VISUAL end"
+module ${1:ModuleName}
+	${VISUAL}
 end
 endsnippet
 
