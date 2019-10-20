@@ -336,18 +336,19 @@ let g:ale_sign_warning = 'W'
 
 let g:ale_linters = {
       \ 'elixir': ['mix', 'credo'],
+      \ 'javascript': [],
+      \ 'python': ['flake8'],
       \ 'ruby': ['rubocop', 'ruby'],
-      \ 'rust': ['cargo'],
-      \ 'javascript': []
+      \ 'rust': ['cargo']
       \}
 
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'elixir': ['mix_format'],
-      \ 'ruby': ['rubocop'],
       \ 'javascript': ['prettier'],
-      \ 'typescript': ['prettier'],
-      \ 'rust': ['rustfmt']
+      \ 'ruby': ['rubocop'],
+      \ 'rust': ['rustfmt'],
+      \ 'typescript': ['prettier']
       \}
 
 nnoremap <silent><leader>lf :ALEFix<CR>

@@ -1,16 +1,18 @@
 import re
 from string import Template
 
+
 def split(args):
     args_list = args.split(',')
 
     return clean_kw_args(args_list)
 
+
 def clean_kw_args(args_list):
-    clean = re.compile('(\s|(\s?=|:).*)')
+    clean = re.compile('(\\s|(\\s?=|:).*)')
 
     return list(
-        filter (
+        filter(
             lambda x: len(x) > 0,
             map(
                 lambda arg: clean.sub('', arg),
@@ -19,13 +21,16 @@ def clean_kw_args(args_list):
         )
     )
 
-def add_and_indent(snip, indent, line, newline = "\n"):
+
+def add_and_indent(snip, indent, line, newline="\n"):
     snip.rv += snip.mkline(line, indent) + newline
+
 
 def calculate_indent(match, tabstop):
     spaces = match.group(1)
 
     return spaces + tabstop * ' '
+
 
 def to_ruby_initializer(args, match, tabstop, snip):
     indent = calculate_indent(match, tabstop)

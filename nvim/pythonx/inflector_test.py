@@ -2,6 +2,7 @@ import unittest
 import inflector
 import pathlib
 
+
 class TestInflector(unittest.TestCase):
     def test_camelcase(self):
         self.assertEqual(
@@ -29,7 +30,9 @@ class TestInflector(unittest.TestCase):
         )
 
     def test_namespaced_controller(self):
-        path = pathlib.Path('/my_app/app/controllers/nsa/nsb/whatevers_controller.rb')
+        path = pathlib.Path(
+            '/my_app/app/controllers/nsa/nsb/whatevers_controller.rb'
+        )
 
         self.assertEqual(
             'Nsa::Nsb::WhateversController',
@@ -71,6 +74,7 @@ class TestInflector(unittest.TestCase):
             'CompName',
             inflector.outer_ruby_module(path)
         )
+
 
 if __name__ == '__main__':
     unittest.main()

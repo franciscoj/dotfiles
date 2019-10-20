@@ -1,17 +1,15 @@
-import inspect
 import rb_args
 import re
 import unittest
+
 
 class SnipMock:
     def __init__(self):
         self.rv = ''
 
-    def __iadd__(self, other):
-        return self.mkline(line)
-
-    def mkline(self, line="", indent = None):
+    def mkline(self, line="", indent=None):
         return indent + line
+
 
 class TestRbArgs(unittest.TestCase):
     def test_split_kw_arguments(self):
@@ -52,6 +50,7 @@ class TestRbArgs(unittest.TestCase):
             snip.rv,
             expected
         )
+
 
 if __name__ == '__main__':
     unittest.main()

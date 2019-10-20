@@ -1,8 +1,7 @@
 import os
 import pathlib
-import string
 
-DISCARD_LIST=[
+DISCARD_LIST = [
     'app',
     'collections',
     'concerns',
@@ -19,21 +18,26 @@ DISCARD_LIST=[
     'validators'
 ]
 
+
 def camelcase(string):
     pieces = string.split('_')
     return ''.join(x.title() for x in pieces)
 
+
 def unspec(string):
     return string.replace('_spec', '')
 
+
 def unext(string):
     return string.replace('.rb', '')
+
 
 def on_discard_list(component):
     try:
         return DISCARD_LIST.index(component)
     except ValueError:
         return -1
+
 
 def components_list(path, components):
     (tail, component) = os.path.split(path)
@@ -48,10 +52,12 @@ def components_list(path, components):
             components
         )
 
+
 def to_ruby_class(name):
     class_name = unspec(unext(name))
 
     return camelcase(class_name)
+
 
 def outer_ruby_module(path):
     try:
@@ -65,6 +71,7 @@ def outer_ruby_module(path):
 
         return 'InflectionError'
 
+
 def inner_ruby_class(path):
     try:
         components = components_list(path, [])
@@ -76,6 +83,7 @@ def inner_ruby_class(path):
         print(path)
 
         return 'InflectionError'
+
 
 def to_ruby(path):
     try:
