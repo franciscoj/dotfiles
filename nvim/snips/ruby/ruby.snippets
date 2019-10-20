@@ -9,13 +9,13 @@ endglobal
 
 snippet mod "module OutherModName ... end"
 module ${1:`!p snip.rv = inflector.outer_ruby_module(real_path)`}
-  $0
+	$0
 end
 endsnippet
 
 snippet cla "module InnerClassName ... end"
 class ${1:`!p snip.rv = inflector.inner_ruby_class(real_path)`}
-  $0
+	$0
 end
 endsnippet
 
@@ -23,4 +23,10 @@ snippet "(\s*)defi" "def initializer(arg:,) ... end" r
 `!p snip.rv = match.group(1)`def initializer(${1:arg})
 `!p rb_args.to_ruby_initializer(t[1], match, tabstop, snip)`
 `!p snip.rv = match.group(1)`end
+endsnippet
+
+snippet def "def method_name(args...) ... end"
+def ${1:method_name}${2:(${3:args})}
+	$0
+end
 endsnippet
