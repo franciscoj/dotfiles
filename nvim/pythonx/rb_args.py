@@ -1,5 +1,4 @@
 import re
-import vim
 from string import Template
 
 def split(args):
@@ -8,23 +7,41 @@ def split(args):
     return clean_kw_args(args_list)
 
 def clean_kw_args(args_list):
+    clean = re.compile('(\s|(\s?=|:).*)')
+
     return list(
-        map(
-            lambda arg: arg.replace(':', '').replace(' ', ''),
-            args_list
+        filter (
+            lambda x: len(x) > 0,
+            map(
+                lambda arg: clean.sub('', arg),
+                args_list
+            )
         )
     )
 
-def add_and_indent(snip, line):
-    print(vim.current.window.cursor)
-    column = snip.column
-    indent = column / 2
+def add_and_indent(snip, indent, line, newline = "\n"):
+    snip.rv += snip.mkline(line, indent) + newline
 
-    snip.rv += snip.mkline(line, indent) + "\n"
+def calculate_indent(match, tabstop):
+    spaces = match.group(1)
 
-def to_ruby_initializer(args, snip):
+    return spaces + tabstop * ' '
+
+def to_ruby_initializer(args, match, tabstop, snip):
+    indent = calculate_indent(match, tabstop)
     clean_list = split(args)
     temp = Template('@$arg = $arg')
 
-    for arg in clean_list:
-        add_and_indent(snip, temp.substitute(arg=arg))
+    for arg in clean_list[:-1]:
+        add_and_indent(
+            snip,
+            indent,
+            temp.substitute(arg=arg)
+        )
+
+    add_and_indent(
+        snip,
+        indent,
+        temp.substitute(arg=clean_list[-1]),
+        ''
+    )

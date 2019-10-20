@@ -1,18 +1,19 @@
-import unittest
 import inspect
 import rb_args
+import re
+import unittest
 
 class SnipMock:
-    def __init__(self, column):
-        self.column = column
+    def __init__(self):
+        self.rv = ''
 
     def __iadd__(self, other):
         return self.mkline(line)
 
     def mkline(self, line="", indent = None):
-        return "\n" + line
+        return indent + line
 
-class RbArgs(unittest.TestCase):
+class TestRbArgs(unittest.TestCase):
     def test_split_kw_arguments(self):
         args = 'first:, second:, third:'
 
@@ -21,16 +22,35 @@ class RbArgs(unittest.TestCase):
             rb_args.split(args)
         )
 
-    def test_build_init_from_kw_args(self):
-        args = 'first:, second:, third:'
+    def test_split_with_default_args(self):
+        args = 'first = first, second: sec'
 
         self.assertEqual(
-            inspect.cleandoc(f'''\
+            ['first', 'second'],
+            rb_args.split(args)
+        )
 
-                @first = first
-                @second = second
-                @third = third'''),
-            rb_args.to_ruby_initializer(args, SnipMock(4))
+    def test_build_init_from_kw_args(self):
+        args = 'first:, second:, third:'
+        match = re.search(r'(\s*)defi', '      defi')
+        tabstop = 2
+        snip = SnipMock()
+
+        rb_args.to_ruby_initializer(
+            args,
+            match,
+            tabstop,
+            snip
+        )
+
+        expected = '''\
+        @first = first
+        @second = second
+        @third = third'''
+
+        self.assertEqual(
+            snip.rv,
+            expected
         )
 
 if __name__ == '__main__':
