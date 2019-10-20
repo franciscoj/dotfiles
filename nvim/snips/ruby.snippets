@@ -1,5 +1,7 @@
 global !p
 import inflector
+
+real_path = vim.eval('expand("%:p")')
 endglobal
 
 snippet fro "# frozen_string_literal: true"
@@ -11,7 +13,7 @@ endsnippet
 snippet rspec "RSpec rails skeleton"
 require 'rails_helper'
 
-RSpec.describe ${1:`!p snip.rv = inflector.to_ruby(path) `} do
+RSpec.describe ${1:`!p snip.rv = inflector.to_ruby(real_path) `} do
 	$0
 end
 endsnippet
@@ -19,7 +21,7 @@ endsnippet
 snippet spec "RSpec skeleton"
 require 'spec_helper'
 
-RSpec.describe ${1:`!p snip.rv = inflector.to_ruby(path) `} do
+RSpec.describe ${1:`!p snip.rv = inflector.to_ruby(real_path) `} do
 	$0
 end
 endsnippet

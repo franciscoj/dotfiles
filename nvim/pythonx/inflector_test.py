@@ -39,14 +39,13 @@ class TestInflector(unittest.TestCase):
             inflector.to_ruby(path)
         )
 
-    def test_spec_service(self):
-        path = pathlib.Path('/my_app/spec/services/namespace/whatever_spec.rb')
+    def test_service_on_a_component(self):
+        path = pathlib.Path('/my_app/components/comp/comp_namje/spec/services/comp_name/class_name.rb')
 
         self.assertEqual(
-            'Namespace::Whatever',
+            'CompName::ClassName',
             inflector.to_ruby(path)
         )
-
 
 if __name__ == '__main__':
     unittest.main()

@@ -46,9 +46,14 @@ def to_ruby_class(name):
     return camelcase(class_name)
 
 def to_ruby(path):
-    components = components_list(os.path.abspath(path), [])
-    camelcased = list(map(lambda x: to_ruby_class(x), components))
-    camelcased.reverse()
+    try:
+        components = components_list(os.path.abspath(path), [])
+        camelcased = list(map(lambda x: to_ruby_class(x), components))
+        camelcased.reverse()
 
-    return '::'.join(camelcased)
+        return '::'.join(camelcased)
+    except RecursionError:
+        print('RecursionError: while trying on path:')
+        print(path)
 
+        return 'Inflection::Error'
