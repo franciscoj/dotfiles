@@ -1,5 +1,6 @@
 global !p
 import inflector
+import rb_args
 
 real_path = vim.eval('expand("%:p")')
 endglobal
@@ -16,8 +17,8 @@ class ${1:`!p snip.rv = inflector.inner_ruby_class(real_path)`}
 end
 endsnippet
 
-snippet defi "def initializer(arg:,) ... end"
-def initializer(${1:arg})
-  @$1 = $1
-end
-endsnippet
+# snippet defi "def initializer(arg:,) ... end" "True" e
+# def initializer(${1:arg})
+#   `!p rb_args.to_ruby_initializer(t[1], snip)`
+# end
+# endsnippet
