@@ -1,0 +1,9 @@
+snippet sig "sig { params(param: Type).returns(Type) }"
+sig do
+	params(${1:param}).${2:returns}
+end
+endsnippet
+
+snippet tsig "extends T::Sig"
+extends T::Sig
+endsnippet
