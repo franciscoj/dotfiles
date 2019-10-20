@@ -1,0 +1,23 @@
+global !p
+import inflector
+
+real_path = vim.eval('expand("%:p")')
+endglobal
+
+snippet mod "module OutherModName ... end"
+module ${1:`!p snip.rv = inflector.outer_ruby_module(real_path)`}
+  $0
+end
+endsnippet
+
+snippet cla "module InnerClassName ... end"
+class ${1:`!p snip.rv = inflector.inner_ruby_class(real_path)`}
+  $0
+end
+endsnippet
+
+snippet defi "def initializer(arg:,) ... end"
+def initializer(${1:arg})
+  @$1 = $1
+end
+endsnippet

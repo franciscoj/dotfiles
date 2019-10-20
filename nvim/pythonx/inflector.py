@@ -3,12 +3,20 @@ import pathlib
 import string
 
 DISCARD_LIST=[
-    'models',
-    'controllers',
-    'services',
+    'app',
+    'collections',
     'concerns',
+    'controllers',
+    'event_handlers',
     'interactor',
-    'lib'
+    'jobs',
+    'lib',
+    'mailers',
+    'models',
+    'policies',
+    'presenters',
+    'services',
+    'validators'
 ]
 
 def camelcase(string):
@@ -45,9 +53,33 @@ def to_ruby_class(name):
 
     return camelcase(class_name)
 
+def outer_ruby_module(path):
+    try:
+        components = components_list(path, [])
+        outer = components[-1]
+
+        return to_ruby_class(outer)
+    except RecursionError:
+        print('RecursionError: while trying on path:')
+        print(path)
+
+        return 'InflectionError'
+
+def inner_ruby_class(path):
+    try:
+        components = components_list(path, [])
+        outer = components[0]
+
+        return to_ruby_class(outer)
+    except RecursionError:
+        print('RecursionError: while trying on path:')
+        print(path)
+
+        return 'InflectionError'
+
 def to_ruby(path):
     try:
-        components = components_list(os.path.abspath(path), [])
+        components = components_list(path, [])
         camelcased = list(map(lambda x: to_ruby_class(x), components))
         camelcased.reverse()
 
