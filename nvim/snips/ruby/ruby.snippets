@@ -24,8 +24,8 @@ class ${1:`!p snip.rv = inflector.inner_ruby_class(real_path)`}
 end
 endsnippet
 
-snippet "(\s*)defi" "def initializer(arg:,) ... end" r
-`!p snip.rv = match.group(1)`def initializer(${1:arg})
+snippet "(\s*)defi" "def initialize(arg:,) ... end" r
+`!p snip.rv = match.group(1)`def initialize(${1:arg})
 `!p rb_args.to_ruby_initializer(t[1], match, tabstop, snip)`
 `!p snip.rv = match.group(1)`end
 endsnippet
