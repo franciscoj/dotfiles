@@ -56,15 +56,15 @@ let(:${1:name}) { ${2:value} }
 endsnippet
 
 snippet cre "create(:factory, ...)"
-create(:${1:factory}${2:, })
+create(:${1:factory}${2:, ${3:arg}})
 endsnippet
 
 snippet bui "build(:factory, ...)"
-build(:${1:factory}${2:, })
+build(:${1:factory}${2:, ${3:arg}})
 endsnippet
 
 snippet bs "build_stubbed(:factory, ...)"
-build_stubbed(:${1:factory}${2:, })
+build_stubbed(:${1:factory}${2:, ${3:arg}})
 endsnippet
 
 snippet exm "expect(obj).to receive(:message) { return }"
