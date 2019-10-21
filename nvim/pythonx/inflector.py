@@ -5,6 +5,7 @@ DISCARD_LIST = [
     'app',
     'collections',
     'concerns',
+    'context_matchers',
     'controllers',
     'event_handlers',
     'interactor',
