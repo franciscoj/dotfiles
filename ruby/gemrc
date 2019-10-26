@@ -1,4 +1,4 @@
-# -*- mode: yaml; -*-
+# vim: ft=yaml
 ---
 :backtrace: false
 :bulk_threshold: 1000
