@@ -1,5 +1,5 @@
 pkgname=fran
-pkgver=1.0.0
+pkgver=1.0.1
 pkgrel=1
 pkgdesc="Base packages and systems conf"
 arch=('any')
@@ -11,7 +11,7 @@ source=('lightdm.conf'
         'lightdm-gtk-greeter.conf')
 
 
-md5sums=('83c9f5d16cfbdf3885f112fef5be514c'
+md5sums=('eff19c86b37f2eee563ec8693677aa60'
          '310442a4b0593cfa6b3f79f49c298420')
 
 backup=('etc/lightdm/lightdm.conf'
