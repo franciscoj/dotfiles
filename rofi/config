@@ -1,4 +1,4 @@
-rofi.font: Fira Code Regular 14
+rofi.font: FuraCode Nerd Font Regular 30
 rofi.lines: 5
 rofi.modi: drun,window
 rofi.show-icons: true
