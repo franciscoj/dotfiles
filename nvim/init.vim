@@ -83,8 +83,9 @@ Plug 'brooth/far.vim'
 Plug 'romainl/vim-qf'
 "}}}
 
-" Colors {{{
+" Look & Feel {{{
 Plug 'jnurmine/Zenburn'
+Plug 'ryanoasis/vim-devicons'
 "}}}
 
 call plug#end()
