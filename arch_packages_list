@@ -4,6 +4,7 @@ cbatticon
 direnv
 dunst
 exa
+firefox-developer-edition
 git-extras
 hub
 i3-gaps
@@ -16,6 +17,7 @@ linux-headers
 lsof
 moka-icon-theme
 neovim
+nerd-fonts-fira-code
 networkmanager
 otf-font-awesome
 pacman-contrib
@@ -28,11 +30,9 @@ python-pip
 ripgrep
 rofi
 spotify
-ttf-fira-code
 unzip
 wpa_supplicant
 xclip
 xorg-server
 yarn
 zsh
-firefox-developer-edition
