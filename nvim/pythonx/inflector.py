@@ -8,7 +8,7 @@ DISCARD_LIST = [
     'context_matchers',
     'controllers',
     'event_handlers',
-    'interactor',
+    'interactors',
     'jobs',
     'lib',
     'mailers',
