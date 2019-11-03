@@ -49,6 +49,9 @@
     ~/.Xmodmap:
       path: x/Xmodmap
       if: ./bin/is_linux.sh
+    ~/.Xcompose:
+      path: x/Xcompose
+      if: ./bin/is_linux.sh
     ~/.config/nitrogen:
       path: nitrogen
       if: ./bin/is_linux.sh

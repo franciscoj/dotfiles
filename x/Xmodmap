@@ -1,4 +1,11 @@
 clear lock
 clear control
+
+! map caps lock to control for easier typing, as in the xmodmap man
+! page
 keycode 66 = Control_L
 add control = Control_L Control_R
+
+! set right Alt key to be Compose
+remove Mod1 = Alt_R
+keysym Alt_R = Multi_key
