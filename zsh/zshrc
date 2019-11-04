@@ -34,12 +34,13 @@ export DIFFPROG='nvim -d'
 
 export VISUAL=$EDITOR
 alias vi=$EDITOR
+alias e=$EDITOR
 alias tmux="tmux -u"
 
 # Activate hub, which decorates the `git` command
 [[ -x "$(command -v hub)" ]] && eval "$(hub alias -s)"
 
-# Use base16 to setup terminal colors everywhere. Clone it in case it doesn't exist
+# Use base16 to setup terminal colors everywhere.
 BASE16_SCHEME="zenburn"
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-$BASE16_SCHEME.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
@@ -49,6 +50,5 @@ BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-$BASE16_SCHEME.sh"
 
 # Load local zshrc
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
