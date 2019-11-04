@@ -8,12 +8,12 @@ source $ZPLUG_HOME/init.zsh
 
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
-zplug "modules/utility", from:prezto
 zplug "modules/history", from:prezto
 zplug "modules/directory", from:prezto
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
+zplug "~/Documents/src/dot-files/zsh/alias", from:local
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zplug "plugins/ssh-agent", from:oh-my-zsh
@@ -33,9 +33,6 @@ export EDITOR='nvim'
 export DIFFPROG='nvim -d'
 
 export VISUAL=$EDITOR
-alias vi=$EDITOR
-alias e=$EDITOR
-alias tmux="tmux -u"
 
 # Activate hub, which decorates the `git` command
 [[ -x "$(command -v hub)" ]] && eval "$(hub alias -s)"
