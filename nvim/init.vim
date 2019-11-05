@@ -533,6 +533,11 @@ augroup json_configs
   autocmd BufNewFile,BufRead .eslintrc set syntax=json
 augroup END
 
+augroup snippets
+  autocmd!
+
+  autocmd FileType javascriptreact :call UltiSnips#AddFiletypes('javascript')
+augroup END
 " }}}
 "
 " Bash {{{
