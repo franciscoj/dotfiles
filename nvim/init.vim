@@ -135,6 +135,11 @@ nnoremap <leader>fs :write<CR>
 nnoremap <leader>fS :wall<CR>
 nnoremap <leader>fo :edit<space>
 
+" Load QF list
+nnoremap <leader>ll :LoadList<space>
+nnoremap <leader>ls :SaveList<space>
+nnoremap <leader>lr :Reject<CR>
+
 " LocalVIMRC
 let g:localvimrc_persistent=1
 
