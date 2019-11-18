@@ -140,6 +140,9 @@ nnoremap <leader>ll :LoadList<space>
 nnoremap <leader>ls :SaveList<space>
 nnoremap <leader>lr :Reject<CR>
 
+" Toggle word wrap
+nnoremap <leader>ww :set wrap!<CR>
+
 " LocalVIMRC
 let g:localvimrc_persistent=1
 
