@@ -248,6 +248,7 @@ nnoremap \\ :FZFRg <c-r><c-w><cr>
 " Far
 
 let g:far#source = 'rg'
+let g:far#window_layout = 'tab'
 
 "}}}
 
