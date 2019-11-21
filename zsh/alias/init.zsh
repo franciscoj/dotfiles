@@ -3,8 +3,8 @@
 alias _="sudo"
 alias rake="noglob rake"
 
-alias e="${(z)VISUAL:-${(z)EDITOR}}"
-alias vi=$EDITOR
+alias e='${(z)VISUAL:-${(z)EDITOR}}'
+alias vi='$EDITOR'
 
 alias tmux="tmux -u"
 
