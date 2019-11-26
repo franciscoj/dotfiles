@@ -28,7 +28,8 @@
 [alias]
   amend = commit --amend --no-edit
   co = checkout
-  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)an>%Creset' --abbrev-commit --date=relative
+  l = ll -n 10
+  ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)an>%Creset' --abbrev-commit --date=relative
   nb = checkout -b
   ri = rebase -i
   rim = rebase -i master
