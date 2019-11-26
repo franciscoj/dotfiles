@@ -22,6 +22,7 @@ networkmanager
 otf-font-awesome
 pacman-contrib
 pavucontrol
+perl-goo-canvas
 playerctl
 ponymix
 pulseaudio
@@ -29,6 +30,7 @@ pulseaudio-alsa
 python-pip
 ripgrep
 rofi
+shutter
 spotify
 unzip
 wpa_supplicant
