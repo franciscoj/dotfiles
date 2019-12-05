@@ -27,14 +27,15 @@
   pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
 [alias]
   amend = commit --amend --no-edit
+  cm = commit -m
   co = checkout
   l = ll -n 10
+  last = diff HEAD~1
   ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)an>%Creset' --abbrev-commit --date=relative
   nb = checkout -b
   ri = rebase -i
   rim = rebase -i master
   s = status --short -b
-  last = diff HEAD~1
   todo = ! git diff master | grep TODO
 [push]
   default = current
