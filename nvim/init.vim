@@ -402,7 +402,7 @@ nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 
-nmap <leader>Lo :CocList --normal diagnostics<cr>
+nmap <leader>Lo :<C-u>CocList diagnostics<cr>
 nmap <leader>Ld <Plug>(coc-diagnostics-info)
 
 " Use K to show documentation in preview window
