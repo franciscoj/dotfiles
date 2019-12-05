@@ -88,6 +88,13 @@ Plug 'jnurmine/Zenburn'
 Plug 'ryanoasis/vim-devicons'
 "}}}
 
+" Others {{{
+" Adds auto commands on syntax changes. To be able to activate/deactivate auto
+" wrap on comments
+Plug 'inkarkat/vim-OnSyntaxChange'
+Plug 'inkarkat/vim-ingo-library'
+" }}}
+
 call plug#end()
 " }}}
 
@@ -554,6 +561,16 @@ augroup END
 " }}}
 
 "}}}
+
+
+" When entering comments, activate text wrap automatically and deactivate it
+" when leaving them.
+call OnSyntaxChange#Install('Comment', '^Comment$', 0, 'i')
+
+augroup auto_wrap_comments
+  autocmd User SyntaxCommentEnterI set tw=79
+  autocmd User SyntaxCommentLeaveI set tw=0
+augroup END
 
 " Load custom functions
 source $HOME/.config/nvim/functions.vim
