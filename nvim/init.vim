@@ -42,6 +42,7 @@ Plug 'embear/vim-localvimrc'
 Plug 'wellle/targets.vim'
 Plug 'sirver/ultisnips'
 Plug 'junegunn/goyo.vim'
+Plug 'powerman/vim-plugin-AnsiEsc'
 "}}}
 
 " Git {{{
@@ -53,26 +54,21 @@ Plug 'junegunn/gv.vim'
 
 " Language support {{{
 Plug 'plasticboy/vim-markdown'
-Plug 'noprompt/vim-yardoc'
-Plug 'jgdavey/vim-blockle'
-Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'sheerun/vim-polyglot'
-Plug 'w0rp/ale'
+Plug 'noprompt/vim-yardoc'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
 Plug 'neoclide/jsonc.vim'
-" Stable COC
-" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
-" Nightly COC
+Plug 'rust-lang/rust.vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'junegunn/vader.vim'
+Plug 'sheerun/vim-polyglot'
+
+Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 Plug 'janko-m/vim-test'
-Plug 'junegunn/vader.vim'
-Plug 'rust-lang/rust.vim'
-Plug 'mboughaba/i3config.vim'
-Plug 'aklt/plantuml-syntax'
 Plug 'scrooloose/vim-slumlord'
 "}}}
 
