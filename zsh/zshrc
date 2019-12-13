@@ -13,15 +13,19 @@ zplug "modules/directory", from:prezto
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
-zplug "~/Documents/src/dot-files/zsh/alias", from:local
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zplug "plugins/ssh-agent", from:oh-my-zsh
 
-export PURE_GIT_PULL=0
 zplug "mafredri/zsh-async", from:github
-# zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+
+zplug "~/Documents/src/dot-files/zsh/alias", from:local
+zplug "~/Documents/src/dot-files/zsh/spaceship_config", from:local
+zplug "~/Documents/src/dot-files/zsh/editor", from:local
+zplug "~/Documents/src/dot-files/zsh/base16", from:local
+zplug "~/Documents/src/dot-files/zsh/commands", from:local
+
 
 # Only perform the zplug check during bootstrapping
 if [ ! -z "$BOOTSTRAPPING" ] ; then
@@ -30,23 +34,5 @@ fi
 
 zplug load # --verbose
 
-export EDITOR='nvim'
-export DIFFPROG='nvim -d'
-
-export VISUAL=$EDITOR
-
-# Activate hub, which decorates the `git` command
-[[ -x "$(command -v hub)" ]] && eval "$(hub alias -s)"
-
-# Use base16 to setup terminal colors everywhere.
-BASE16_SCHEME="zenburn"
-BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-$BASE16_SCHEME.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
-
-# Load asdf completions if they exist
-[[ -d "$HOME/.asdf" ]] && source $HOME/.asdf/completions/asdf.bash
-
 # Load local zshrc
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
