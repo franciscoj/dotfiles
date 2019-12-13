@@ -36,3 +36,5 @@ zplug load # --verbose
 
 # Load local zshrc
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
