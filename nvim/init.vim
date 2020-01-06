@@ -41,7 +41,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'embear/vim-localvimrc'
 Plug 'wellle/targets.vim'
 Plug 'sirver/ultisnips'
-Plug 'junegunn/goyo.vim'
 Plug 'powerman/vim-plugin-AnsiEsc'
 "}}}
 
