@@ -64,6 +64,7 @@ Plug 'neoclide/jsonc.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'junegunn/vader.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'sheerun/vim-polyglot'
 
 Plug 'w0rp/ale'
@@ -113,7 +114,7 @@ set background=dark
 colorscheme zenburn
 
 " Show non visual chars
-set listchars=trail:~,tab:>\ ,eol:< " show special characters
+set listchars=trail:~,tab:\|-,eol:< " show special characters
 set list
 
 " To use the system clipboard (xclip)
@@ -479,7 +480,7 @@ set viewdir     =$HOME/.config/nvim/files/view
 "
 " Polyglot is great but it doesn't activate all the functionalities for all
 " languages in order to make it load fast.
-let g:polyglot_disabled = ['markdown', 'javascript', 'jsx']
+let g:polyglot_disabled = ['markdown', 'javascript', 'jsx', 'go']
 
 " Markdown {{{
 let g:vim_markdown_folding_level = 2
