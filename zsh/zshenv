@@ -22,3 +22,5 @@ esac
 # files. This .gemrc_local is meant to keep the private configs, like gem
 # sources which require username/password.
 [[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
+
+export PATH="$HOME/.cargo/bin:$PATH"
