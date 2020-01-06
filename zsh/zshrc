@@ -25,7 +25,7 @@ zplug "~/Documents/src/dot-files/zsh/spaceship_config", from:local
 zplug "~/Documents/src/dot-files/zsh/editor", from:local
 zplug "~/Documents/src/dot-files/zsh/base16", from:local
 zplug "~/Documents/src/dot-files/zsh/commands", from:local
-
+zplug "~/Documents/src/dot-files/zsh/golang", from:local
 
 # Only perform the zplug check during bootstrapping
 if [ ! -z "$BOOTSTRAPPING" ] ; then
