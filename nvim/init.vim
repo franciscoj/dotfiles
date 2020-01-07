@@ -33,7 +33,6 @@ Plug 'junegunn/vim-peekaboo'
 " Misc {{{
 Plug 'kana/vim-smartinput' " To have automatic closed pairs like () or {}
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'sjl/gundo.vim'
 Plug 'FooSoft/vim-argwrap'
 Plug 'AndrewRadev/splitjoin.vim'
