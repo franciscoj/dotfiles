@@ -32,6 +32,7 @@
   l = ll -n 10
   last = diff HEAD~1
   ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)'
+  lll = log --graph
   nb = checkout -b
   ri = rebase -i
   rim = rebase -i master
