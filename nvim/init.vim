@@ -7,7 +7,7 @@ let mapleader      = ' '
 let maplocalleader = ','
 
 " Get the OS name so that we can do some silly OS only stuff with it.
-let os = substitute(system('uname'), "\n", "", "")
+let os = substitute(system('uname'), "\n", '', '')
 
 filetype off
 
