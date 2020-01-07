@@ -430,16 +430,6 @@ function! s:showDocumentation()
   endif
 endfunction
 
-" Change diff sign colors {{{
-highlight DiffAdd           cterm=bold ctermbg=none ctermfg=2
-highlight DiffDelete        cterm=bold ctermbg=none ctermfg=1
-highlight DiffChange        cterm=bold ctermbg=none ctermfg=4
-
-highlight SignifySignAdd    cterm=bold ctermbg=none ctermfg=2
-highlight SignifySignDelete cterm=bold ctermbg=none ctermfg=1
-highlight SignifySignChange cterm=bold ctermbg=none ctermfg=4
-"}}}
-
 " Status line {{{
 let g:airline#extensions#ale#enabled = 1
 
