@@ -66,7 +66,7 @@ Plug 'junegunn/vader.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'sheerun/vim-polyglot'
 
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 Plug 'janko-m/vim-test'
 Plug 'scrooloose/vim-slumlord'
