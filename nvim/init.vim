@@ -56,6 +56,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'noprompt/vim-yardoc'
+Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
@@ -480,7 +481,7 @@ set viewdir     =$HOME/.config/nvim/files/view
 "
 " Polyglot is great but it doesn't activate all the functionalities for all
 " languages in order to make it load fast.
-let g:polyglot_disabled = ['markdown', 'javascript', 'jsx', 'go']
+let g:polyglot_disabled = [ 'go', 'javascript', 'jsx', 'markdown', 'ruby', ]
 
 " Markdown {{{
 let g:vim_markdown_folding_level = 2
@@ -494,6 +495,7 @@ augroup END
 "}}}
 
 " Ruby {{{
+let g:ruby_indent_block_style = 'do'
 "}}}
 
 " HAML {{{
