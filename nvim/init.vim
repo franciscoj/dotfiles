@@ -81,6 +81,7 @@ Plug 'romainl/vim-qf'
 
 " Look & Feel {{{
 Plug 'jnurmine/Zenburn'
+Plug 'rakr/vim-one'
 Plug 'ryanoasis/vim-devicons'
 "}}}
 
@@ -110,7 +111,8 @@ inoremap <ESC> <NOP>
 let base16colorspace=256
 
 set background=dark
-colorscheme zenburn
+set termguicolors
+colorscheme one
 
 " Show non visual chars
 set listchars=trail:~,tab:\|-,eol:< " show special characters
@@ -432,7 +434,7 @@ highlight SignifySignChange cterm=bold ctermbg=none ctermfg=4
 " Status line {{{
 let g:airline#extensions#ale#enabled = 1
 
-let g:airline_theme='deus'
+let g:airline_theme='one'
 
 " Don't display encoding unless it is unexpected
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
