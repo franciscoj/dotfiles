@@ -24,14 +24,14 @@
 [apply]
   whitespace = fix
 [format]
-  pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+  pretty = %Cred%h%Creset - %s%nby %C(bold blue)%an%Creset %C(yellow)%d%Creset%non %Cgreen(%cD)%n%b
 [alias]
   amend = commit --amend --no-edit
   cm = commit -m
   co = checkout
   l = ll -n 10
   last = diff HEAD~1
-  ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)an>%Creset' --abbrev-commit --date=relative
+  ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)'
   nb = checkout -b
   ri = rebase -i
   rim = rebase -i master
