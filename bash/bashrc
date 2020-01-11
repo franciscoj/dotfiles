@@ -1,1 +1,13 @@
-$HOME/.asdf/asdf.sh
+# vim: set ft=sh
+
+export EDITOR='nvim'
+export DIFFPROG='nvim -d'
+
+export VISUAL=$EDITOR
+
+alias _="sudo"
+alias be="bundle exec"
+alias vi='$EDITOR'
+alias e='$EDITOR'
+alias g='git'
+
