@@ -1,18 +1,3 @@
 {
-  "languageserver": {
-    "flow": {
-      "command": "flow",
-      "args": ["lsp"],
-      "filetypes": ["javascript", "javascriptreact"],
-      "initializationOptions": {},
-      "requireRootPattern": true,
-      "settings": {},
-      "rootPatterns": [".flowconfig"]
-    },
-    "elixirLS": {
-      "command": "/home/fran/Documents/src/elixir-ls-fork-release/language_server.sh",
-      "filetypes": ["elixir", "eelixir"]
-    }
-  },
   "tsserver.enableJavascript": false
 }
