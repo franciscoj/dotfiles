@@ -67,7 +67,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'sheerun/vim-polyglot'
 
 Plug 'dense-analysis/ale'
-Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'janko-m/vim-test'
 Plug 'scrooloose/vim-slumlord'
 "}}}
@@ -176,7 +176,7 @@ set smartindent
 set cpoptions+=$
 
 " ArgWrap
-nnoremap <silent> <leader>a :ArgWrap<CR>
+nnoremap <silent><leader>a :ArgWrap<CR>
 
 " split-join
 let g:splitjoin_ruby_curly_braces = 0
@@ -417,6 +417,8 @@ nmap <silent>gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 
 nmap <leader>Lo :<C-u>CocList diagnostics<cr>
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <leader>Ld <Plug>(coc-diagnostics-info)
 
 " Use K to show documentation in preview window
