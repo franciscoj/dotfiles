@@ -566,6 +566,10 @@ augroup bash_configs
 augroup END
 " }}}
 
+" Golang {{{
+let g:go_version_warning = 0
+" }}}
+
 "}}}
 
 " Load custom functions
