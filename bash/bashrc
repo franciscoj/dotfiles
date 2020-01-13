@@ -1,5 +1,6 @@
 # vim: set ft=sh
 
+export TERM='xterm-256color'
 export EDITOR='nvim'
 export DIFFPROG='nvim -d'
 
