@@ -114,7 +114,7 @@ inoremap jj <ESC>
 inoremap <ESC> <NOP>
 
 " Colorscheme
-let base16colorspace=256
+" let base16colorspace=256
 
 set background=dark
 set termguicolors
