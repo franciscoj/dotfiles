@@ -120,6 +120,11 @@ set background=dark
 set termguicolors
 colorscheme one
 
+" Better color on tmux
+set t_8b=[48;2;%lu;%lu;%lum
+set t_8f=[38;2;%lu;%lu;%lum
+
+
 " Show non visual chars
 set listchars=trail:~,tab:\|-,eol:< " show special characters
 set list
