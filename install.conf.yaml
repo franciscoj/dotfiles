@@ -37,6 +37,9 @@
     ~/.config/i3:
       path: i3
       if: ./bin/is_linux.sh
+    ~/.config/fontconfig:
+      path: fontconfig
+      if: ./bin/is_linux.sh
     ~/.config/i3status:
       path: i3status
       if: ./bin/is_linux.sh
