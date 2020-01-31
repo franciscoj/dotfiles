@@ -86,7 +86,6 @@ Plug 'romainl/vim-qf'
 "}}}
 
 " Look & Feel {{{
-Plug 'jnurmine/Zenburn'
 Plug 'rakr/vim-one'
 Plug 'ryanoasis/vim-devicons'
 "}}}
