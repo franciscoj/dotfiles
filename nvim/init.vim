@@ -394,6 +394,7 @@ nnoremap <silent><leader>ld :ALEDetail<CR>
 
 " test-vim
 let test#strategy='dispatch'
+let test#runner_commands = ['RSpec', 'Jest']
 
 nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>tl :TestNearest<CR>
@@ -507,6 +508,7 @@ augroup END
 
 " Ruby {{{
 let g:ruby_indent_block_style = 'do'
+let test#ruby#rspec#executable = 'bin/spring rspec'
 "}}}
 
 " HAML {{{
