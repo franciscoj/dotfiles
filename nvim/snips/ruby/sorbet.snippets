@@ -1,9 +1,22 @@
-snippet sig "sig { params(param: Type).returns(Type) }"
+snippet tsig "extends T::Sig"
+extend T::Sig
+endsnippet
+
+snippet sig "sig do params(param: Type).returns(Type) end"
 sig do
-	params(${1:param}).${2:returns}
+	${1:params($2)}
+		${3:.${4:returns(${5:type})}}
 end
 endsnippet
 
-snippet tsig "extends T::Sig"
-extend T::Sig
+snippet si "sig { cursor }"
+sig { $1 }
+endsnippet
+
+snippet sigr "sig { params(params).returns(Type) }"
+sig { ${1:params(${2:param}: ${3:type}).}returns(${4:type}) }
+endsnippet
+
+snippet sigv "sig { params(params).void }"
+sig { ${1:params(${2:param}: ${3:type}).}void }
 endsnippet
