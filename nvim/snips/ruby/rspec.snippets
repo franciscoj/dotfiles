@@ -72,6 +72,10 @@ snippet exm "expect(obj).to receive(:message) { return }"
 expect(${1:obj}).to receive(:${2:message})${3: { ${4:return} }}
 endsnippet
 
+snippet letd "let(:something) { instance_double(Something) }"
+let(:${1:name}) { instance_double(${2:classname}) }
+endsnippet
+
 snippet ex "expect(subject).to something"
 expect(${1:subject${2:.$3}}).to $0
 endsnippet
