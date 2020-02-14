@@ -258,7 +258,7 @@ let g:signify_realtime = 1
 set inccommand=split
 
 " Remove search highlithing
-nnoremap <silent><leader>nh :nohlsearch<CR>
+nnoremap <ESC><ESC> :nohlsearch<CR>
 
 " fzf
 let $FZF_DEFAULT_COMMAND = 'rg --files'
