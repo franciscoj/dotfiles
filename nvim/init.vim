@@ -308,9 +308,6 @@ nnoremap <silent><leader><leader>T :tabnew %<CR>
 nnoremap <leader><TAB> gt
 nnoremap <leader><S-TAB> gT
 
-" Zoom in a window
-nnoremap <silent><leader><leader>z :Goyo<CR>
-
 " Close window
 nnoremap <silent><leader>cc :wincmd c<CR>
 "}}}
@@ -338,27 +335,6 @@ let g:netrw_liststyle= 3
 
 nnoremap <leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
 
-"}}}
-
-" Projections {{{
-let g:projectionist_heuristics = {
-      \  'mix.exs': {
-      \    'lib/*.ex': {
-      \      'type': 'lib',
-      \      'alternate': 'test/{}_test.exs'
-      \    },
-      \    'test/*_test.exs': {
-      \      'type': 'test',
-      \      'alternate': 'lib/{}.ex'
-      \    },
-      \    'mix.exs': {
-      \      'type': 'mix'
-      \    },
-      \    'config/config.exs': {
-      \      'type': 'config'
-      \    }
-      \  }
-      \ }
 "}}}
 
 " Linting {{{
