@@ -38,6 +38,7 @@
   rim = rebase -i master
   s = status --short -b
   todo = ! git diff master | grep TODO
+  wtf = log -p --word-diff
 [push]
   default = current
 [rebase]
