@@ -263,10 +263,27 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 " fzf
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 let g:fzf_command_prefix = 'FZF'
+let g:fzf_layout = { 'down': '~60%' }
 
+" Add preview to search results with FZFRg
+command! -bang -nargs=* FZFRg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview('up'), <bang>0)
+
+" Add preview to search results with FZFFiles
+command! -bang -nargs=? -complete=dir FZFFiles
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('up'), <bang>0)
+
+" Search files
 nnoremap <leader>ff :FZFFiles<cr>
+" Search files on git status
+nnoremap <leader>fg :FZFGFiles?<cr>
+" Search buffers
 nnoremap <leader>fb :FZFBuffers<cr>
+" Search with ripgrep
 nnoremap <leader>s :FZFRg<space>
+" Search with ripgrep the word under the cursor
 nnoremap \\ :FZFRg <c-r><c-w><cr>
 
 " Far
