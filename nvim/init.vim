@@ -505,6 +505,13 @@ augroup END
 " Ruby {{{
 let g:ruby_indent_block_style = 'do'
 let test#ruby#rspec#executable = 'bin/spring rspec'
+
+augroup ruby
+  autocmd!
+
+  " Rails schema.rb file can be a pain to open.
+  autocmd BufRead schema.rb setlocal ft=off
+augroup END
 "}}}
 
 " HAML {{{
