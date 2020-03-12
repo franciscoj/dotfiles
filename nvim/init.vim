@@ -106,8 +106,11 @@ call plug#end()
 " Misc {{{
 
 set relativenumber
-set nowrap
 set modeline
+
+" Toggle word wrap
+set nowrap
+nnoremap <leader>ww :set wrap!<CR>
 
 " Go to Normal mode fast
 inoremap jj <ESC>
@@ -158,9 +161,6 @@ nnoremap <leader>fo :edit<space>
 nnoremap <leader>ll :LoadList<space>
 nnoremap <leader>ls :SaveList<space>
 nnoremap <leader>lr :Reject<CR>
-
-" Toggle word wrap
-nnoremap <leader>ww :set wrap!<CR>
 
 " LocalVIMRC
 let g:localvimrc_persistent=1
