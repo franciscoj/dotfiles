@@ -348,7 +348,6 @@ let NERDTreeIgnore=[
       \ 'node_modules$[[dir]]',
       \ 'tags$[[file]]',
       \ 'mix.lock$[[file]]',
-      \ '\.bs\.js$[[file]]',
       \ '\.scss\.d\.ts$[[file]]'
       \ ]
 
@@ -546,6 +545,7 @@ let g:ale_elixir_elixir_ls_config= {
 
 augroup elixir
   autocmd!
+
   autocmd FileType elixir setlocal formatprg=
   autocmd FileType elixir setlocal foldmethod=indent
 augroup END
