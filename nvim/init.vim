@@ -88,6 +88,7 @@ Plug 'romainl/vim-qf'
 " Look & Feel {{{
 Plug 'rakr/vim-one'
 Plug 'ryanoasis/vim-devicons'
+Plug 'camspiers/lens.vim'
 "}}}
 
 " Others {{{
@@ -123,6 +124,9 @@ colorscheme one
 set t_8b=[48;2;%lu;%lu;%lum
 set t_8f=[38;2;%lu;%lu;%lum
 
+" Autoresize
+let g:lens#disabled_filetypes = ['nerdtree', 'fzf']
+let g:lens#width_resize_min = 5
 
 " Show non visual chars
 set listchars=trail:~,tab:\|-,eol:< " show special characters
