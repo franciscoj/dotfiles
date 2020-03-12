@@ -553,6 +553,12 @@ augroup END
 
 " JavaScript & TypeScript {{{
 let g:vim_jsx_pretty_colorful_config = 1
+
+augroup snippets
+  autocmd!
+
+  autocmd FileType javascriptreact :call UltiSnips#AddFiletypes('javascript')
+augroup END
 " }}}
 
 " JSON {{{
@@ -561,12 +567,6 @@ augroup json_configs
 
   autocmd BufNewFile,BufRead .lintstagedrc set syntax=json
   autocmd BufNewFile,BufRead .eslintrc set syntax=json
-augroup END
-
-augroup snippets
-  autocmd!
-
-  autocmd FileType javascriptreact :call UltiSnips#AddFiletypes('javascript')
 augroup END
 " }}}
 "
