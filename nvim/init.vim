@@ -156,6 +156,8 @@ nnoremap <silent><leader>qq :qall<CR>
 nnoremap <leader>fs :write<CR>
 nnoremap <leader>fS :wall<CR>
 nnoremap <leader>fo :edit<space>
+nnoremap <leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
+
 
 " Load QF list
 nnoremap <leader>ll :LoadList<space>
@@ -355,9 +357,6 @@ nnoremap <silent><leader><leader>ff :NERDTreeFind<CR>
 
 " configuration for netrw
 let g:netrw_liststyle= 3
-
-nnoremap <leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
-
 "}}}
 
 " Linting {{{
