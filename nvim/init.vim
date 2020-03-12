@@ -330,9 +330,9 @@ nnoremap <silent><leader>lo :lopen<CR>
 nnoremap <silent><leader>lc :lclose<CR>
 
 " Tabs management
-nnoremap <silent><leader><leader>t :tabnew<CR>
-nnoremap <silent><leader><leader>tc :tabclose<CR>
-nnoremap <silent><leader><leader>T :tabnew %<CR>
+nnoremap <silent><leader>t :tabnew<CR>
+nnoremap <silent><leader>tc :tabclose<CR>
+nnoremap <silent><leader>T :tabnew %<CR>
 nnoremap <leader><TAB> gt
 nnoremap <leader><S-TAB> gT
 "}}}
