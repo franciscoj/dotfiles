@@ -319,6 +319,9 @@ nnoremap <silent><leader>wH :wincmd H<CR>
 nnoremap <silent><leader>wv :wincmd v<CR>
 nnoremap <silent><leader>ws :wincmd s<CR>
 
+" Close window
+nnoremap <silent><leader>cc :wincmd c<CR>
+
 " quick list and location list
 nnoremap <silent><leader>qo :copen<CR>
 nnoremap <silent><leader>qc :cclose<CR>
@@ -332,9 +335,6 @@ nnoremap <silent><leader><leader>tc :tabclose<CR>
 nnoremap <silent><leader><leader>T :tabnew %<CR>
 nnoremap <leader><TAB> gt
 nnoremap <leader><S-TAB> gT
-
-" Close window
-nnoremap <silent><leader>cc :wincmd c<CR>
 "}}}
 
 " File navigation {{{
