@@ -196,9 +196,11 @@ let g:splitjoin_ruby_hanging_args = 0
 nnoremap <silent><space>y  :<C-u>CocList -A --normal yank<cr>
 
 " Others
-nnoremap <leader>, A,<ESC>
-nnoremap <leader>; A;<ESC>
-nnoremap <leader>: A:<ESC>
+" Add characters to the end of the line and go back to the expot in which you
+" were.
+nnoremap <leader>, mzA,<esc>`z
+nnoremap <leader>; mzA;<esc>`z
+nnoremap <leader>: mzA:<esc>`z
 
 " Don't loose selection when shifting
 xnoremap <  <gv
