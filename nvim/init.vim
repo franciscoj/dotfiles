@@ -79,7 +79,7 @@ Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 "}}}
 
 " Search {{{
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'brooth/far.vim'
 Plug 'romainl/vim-qf'
