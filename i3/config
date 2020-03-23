@@ -240,3 +240,4 @@ bindsym $mod+F7 exec playerctl next
 # exec --no-startup-id nm-applet
 exec --no-startup-id "${HOME}/bin/cbatticon.sh"
 exec --no-startup-id "nitrogen --restore"
+exec --no-startup-id nm-applet --sm-disable
