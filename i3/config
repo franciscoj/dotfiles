@@ -15,7 +15,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:FuraCode Nerd Font 9
+font pango:JetBrains Mono Nerd Font 9
 
 hide_edge_borders both
 smart_borders on
@@ -85,6 +85,9 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+
+# Make the window sticky
+bindsym $mod+Shift+s sticky toggle
 
 # focus the child container
 #bindsym $mod+d focus child
