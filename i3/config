@@ -95,8 +95,8 @@ bindsym $mod+Shift+s sticky toggle
 # Workspaces
 set $ws1 "1:  term"
 set $ws2 "2:  firefox"
-set $ws3 "3:  misc"
-set $ws4 "4:  misc"
+set $ws3 "3:  slack"
+set $ws4 "4: 切 comms"
 set $ws5 "5:  misc"
 set $ws6 "6:  misc"
 set $ws7 "7:  misc"
@@ -129,10 +129,12 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # App specific config
-assign [class="Spotify"] $ws10
-for_window [class="Spotify"] move to workspace $ws10
-assign [class="Nautilus"] $ws9
+for_window [class="(?i)slack"] move to workspace $ws3
+for_window [class="(?i)firefox"] move to workspace $ws2
+for_window [class="Telegram"] move to workspace $ws4
 for_window [class="Nautilus"] move to workspace $ws9
+for_window [class="Spotify"] move to workspace $ws10
+
 for_window [class="Pavucontrol"] floating enable
 
 # reload the configuration file
@@ -243,4 +245,4 @@ bindsym $mod+F7 exec playerctl next
 # exec --no-startup-id nm-applet
 exec --no-startup-id "${HOME}/bin/cbatticon.sh"
 exec --no-startup-id "nitrogen --restore"
-exec --no-startup-id nm-applet --sm-disable
+exec --no-startup-id "nm-applet --sm-disable"
