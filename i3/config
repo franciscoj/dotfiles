@@ -144,7 +144,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
+set $mode_resize Resize: (h) thiner, (l) thiner, (k) higher, (j) shorter
+mode "$mode_resize" {
     # These bindings trigger as soon as you enter the resize mode
 
     # Pressing left will shrink the window’s width.
@@ -161,7 +162,8 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "$mode_resize"
+
 set $Locker i3lock -i $HOME/Pictures/backgrounds/arch-background.png && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
