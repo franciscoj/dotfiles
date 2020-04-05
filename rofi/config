@@ -1,4 +1,4 @@
-rofi.font: FuraCode Nerd Font Regular 30
+rofi.font: JetBrains Mono Nerd Font 30
 rofi.lines: 5
 rofi.modi: drun,window
 rofi.show-icons: true
