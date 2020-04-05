@@ -26,6 +26,7 @@ pacman-contrib
 pavucontrol
 perl-goo-canvas
 playerctl
+polkit
 ponymix
 pulseaudio
 pulseaudio-alsa
