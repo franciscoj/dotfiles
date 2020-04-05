@@ -1,5 +1,5 @@
 pkgname=fran
-pkgver=1.0.1
+pkgver=1.0.2
 pkgrel=1
 pkgdesc="Base packages and systems conf"
 arch=('any')
@@ -8,17 +8,17 @@ license=('MIT')
 install='install'
 
 source=('lightdm.conf'
-        'lightdm-gtk-greeter.conf')
+        'lightdm-webkit2-greeter.conf')
 
 
-md5sums=('eff19c86b37f2eee563ec8693677aa60'
-         '310442a4b0593cfa6b3f79f49c298420')
+md5sums=('1146bb9492025ec581e4a78dae2fb393'
+         '29b4c2207a66f9a88e258028dcf6f761')
 
 backup=('etc/lightdm/lightdm.conf'
-        'etc/lightdm/lightdm-gtk-greeter.conf')
+        'etc/lightdm/lightdm-webkit2-greeter.conf')
 
 package() {
   install -Dm0644 lightdm.conf "$pkgdir/etc/lightdm/lightdm.conf.pacnew"
-  install -Dm0644 lightdm-gtk-greeter.conf "$pkgdir/etc/lightdm/lightdm-gtk-greeter.conf.pacnew"
+  install -Dm0644 lightdm-webkit2-greeter.conf "$pkgdir/etc/lightdm/lightdm-webkit2-greeter.conf.pacnew"
 }
 
