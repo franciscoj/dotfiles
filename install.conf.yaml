@@ -43,6 +43,9 @@
     ~/.config/i3status:
       path: i3status
       if: ./bin/is_linux.sh
+    ~/.config/picom:
+      path: picom
+      if: ./bin/is_linux.sh
     ~/.config/rofi:
       path: rofi
       if: ./bin/is_linux.sh

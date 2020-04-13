@@ -254,8 +254,7 @@ bindsym $mod+F5 exec playerctl previous
 bindsym $mod+F7 exec playerctl next
 
 # Autostart apps
-# exec --no-startup-id "compton -cC"
-# exec --no-startup-id nm-applet
+exec --no-startup-id "picom"
 exec --no-startup-id "${HOME}/bin/cbatticon.sh"
 exec --no-startup-id "nitrogen --restore"
 exec --no-startup-id "nm-applet --sm-disable"
