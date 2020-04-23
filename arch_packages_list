@@ -1,7 +1,7 @@
 arc-gtk-theme
 arc-icon-theme
-cbatticon
 bat
+cbatticon
 direnv
 dunst
 exa
@@ -36,6 +36,7 @@ ripgrep
 rofi
 shutter
 spotify
+starship
 unzip
 wpa_supplicant
 xclip
