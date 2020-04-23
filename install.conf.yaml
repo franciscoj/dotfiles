@@ -20,6 +20,9 @@
       path: zsh/zshenv
       if: ./bin/is_mac.sh
 
+    # Starship shell https://starship.rs
+    ~/.config/starship.toml: starship/starship.toml
+
     # Git + ignores
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
