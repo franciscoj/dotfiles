@@ -7,7 +7,6 @@ export ZPLUG_HOME=$HOME/.config/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "plugins/git", from:oh-my-zsh
-# zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "modules/history", from:prezto
 zplug "modules/directory", from:prezto
 zplug "zsh-users/zsh-syntax-highlighting"
