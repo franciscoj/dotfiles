@@ -117,6 +117,10 @@ nnoremap <leader>ww :set wrap!<CR>
 inoremap jj <ESC>
 inoremap <ESC> <NOP>
 
+" Better start and end of the line
+map H ^
+map L $
+
 " Colorscheme
 " let base16colorspace=256
 
@@ -373,7 +377,7 @@ let g:ale_linters = {
       \ 'javascript': [],
       \ 'python': ['flake8'],
       \ 'ruby': ['rubocop', 'ruby'],
-      \ 'rust': ['cargo']
+      \ 'rust': []
       \}
 
 let g:ale_fixers = {
@@ -381,7 +385,7 @@ let g:ale_fixers = {
       \ 'elixir': ['mix_format'],
       \ 'javascript': ['prettier'],
       \ 'ruby': ['rubocop'],
-      \ 'rust': ['rustfmt'],
+      \ 'rust': [],
       \ 'typescript': ['prettier']
       \}
 
@@ -581,6 +585,15 @@ augroup END
 
 " Golang {{{
 let g:go_version_warning = 0
+" }}}
+
+" Rust {{{
+augroup rust_configs
+  autocmd!
+
+  autocmd FileType rust xmap <leader>lf  :RustFmtRange<CR>
+  autocmd FileType rust nmap <leader>lf  :RustFmt<CR>
+augroup END
 " }}}
 
 "}}}
