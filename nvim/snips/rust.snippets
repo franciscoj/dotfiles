@@ -1,0 +1,28 @@
+snippet tests "#[cfg(test)]\nmod tests {...}"
+#[cfg(test)]
+mod tests {
+	$0
+}
+endsnippet
+
+snippet test "#[test]\n fn ..."
+#[test]
+fn ${1:test_name}() {
+	$0
+}
+endsnippet
+
+snippet debug "#[derive(Debug)]"
+#[derive(Debug)]
+endsnippet
+
+snippet dc "#[allow(dead_code)]"
+#[allow(dead_code)]
+endsnippet
+
+snippet enum "enum with derives"
+#[derive(Debug, PartialEq)]
+enum ${1:name} {
+	$0
+}
+endsnippet
