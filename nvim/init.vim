@@ -106,7 +106,10 @@ call plug#end()
 
 " Misc {{{
 
+" Show both current linen number and relative number
 set relativenumber
+set number
+
 set modeline
 
 " Toggle word wrap
