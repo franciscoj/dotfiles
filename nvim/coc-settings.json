@@ -1,3 +1,4 @@
 {
-  "tsserver.enableJavascript": false
+  "tsserver.enableJavascript": false,
+  "tsserver.enable": false
 }
