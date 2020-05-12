@@ -69,14 +69,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
 Plug 'janko-m/vim-test'
 Plug 'scrooloose/vim-slumlord'
-
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-Plug 'amiralies/coc-flow', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-yank', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/coc-rust-analyzer', { 'do': 'yarn install --frozen-lockfile'}
 "}}}
 
 " Search {{{
@@ -98,6 +90,8 @@ Plug 'camspiers/lens.vim'
 Plug 'inkarkat/vim-OnSyntaxChange'
 Plug 'inkarkat/vim-ingo-library'
 " }}}
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 " }}}
@@ -371,7 +365,7 @@ let g:netrw_liststyle= 3
 " ALE - Asynchronous Linting Engine
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_column_always = 1
-let g:ale_disable_lsp = 1
+" let g:ale_disable_lsp = 1
 
 let g:ale_sign_error = 'E'
 let g:ale_sign_warning = 'W'
@@ -380,8 +374,8 @@ let g:ale_linters = {
       \ 'elixir': ['mix', 'credo'],
       \ 'javascript': [],
       \ 'python': ['flake8'],
-      \ 'ruby': ['rubocop', 'ruby'],
-      \ 'rust': []
+      \ 'ruby': ['solargraph', 'rubocop', 'ruby'],
+      \ 'rust': ['analyzer']
       \}
 
 let g:ale_fixers = {
@@ -427,17 +421,19 @@ augroup files_autocomplete
   autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
 augroup END
 
-" Language Server
-nmap <silent>gd <Plug>(coc-definition)
-nmap <silent>gy <Plug>(coc-type-definition)
-nmap <silent>gi <Plug>(coc-implementation)
-nmap <silent>gr <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename)
+" Deoplete
+let g:deoplete#enable_at_startup = 1
 
-nmap <leader>Lo :<C-u>CocList diagnostics<cr>
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <leader>Ld <Plug>(coc-diagnostics-info)
+call deoplete#custom#option('sources', {
+      \ '_': ['ale', 'ultisnips'],
+      \})
+call deoplete#custom#option('auto_complete_delay', 100)
+
+" Language Server
+nmap <silent>gd :ALEGoToDefinition<CR>
+nmap <silent>gy :ALEGoToTypeDefinition<CR>
+nmap <silent>gr :ALEFindReferences<CR>
+nmap <leader>rn :ALERename
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>showDocumentation()<CR>
@@ -446,7 +442,7 @@ function! s:showDocumentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
   else
-    call CocAction('doHover')
+    :ALEHover
   endif
 endfunction
 
