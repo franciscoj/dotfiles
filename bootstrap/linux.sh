@@ -12,6 +12,3 @@ yay -S --needed - < arch_packages_list
 cd system
 makepkg -di
 cd ..
-
-# Install neovim's package
-pip install neovim
