@@ -19,16 +19,15 @@ zplug "plugins/ssh-agent", from:oh-my-zsh
 zplug "~/Documents/src/dot-files/zsh/alias", from:local
 zplug "~/Documents/src/dot-files/zsh/editor", from:local
 zplug "~/Documents/src/dot-files/zsh/base16", from:local
-zplug "~/Documents/src/dot-files/zsh/commands", from:local
-zplug "~/Documents/src/dot-files/zsh/golang", from:local
 zplug "~/Documents/src/dot-files/zsh/starthip_init", from:local
+zplug "~/Documents/src/dot-files/zsh/commands", from:local
 
 # Only perform the zplug check during bootstrapping
 if [ ! -z "$BOOTSTRAPPING" ] ; then
   [[ ! "$(zplug check --verbose)" ]] && zplug install
 fi
 
-zplug load # --verbose
+zplug load --verbose
 
 # Load local zshrc
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
