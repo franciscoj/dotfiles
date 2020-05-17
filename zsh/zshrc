@@ -27,7 +27,7 @@ if [ ! -z "$BOOTSTRAPPING" ] ; then
   [[ ! "$(zplug check --verbose)" ]] && zplug install
 fi
 
-zplug load --verbose
+zplug load # --verbose
 
 # Load local zshrc
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
