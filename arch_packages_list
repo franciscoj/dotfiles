@@ -19,6 +19,7 @@ lightdm-webkit-theme-litarvan
 linux-headers
 lsof
 moka-icon-theme
+nautilus
 neovim
 nerd-fonts-jetbrains-mono
 network-manager-applet
@@ -40,10 +41,13 @@ python-pip
 ripgrep
 rofi
 shutter
+slack-desktop
 spotify
 starship-bin
 telegram-desktop
 unzip
+vagrant
+virtualbox
 wpa_supplicant
 xclip
 xorg-server
