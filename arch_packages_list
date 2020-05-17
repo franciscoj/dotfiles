@@ -11,7 +11,7 @@ firefox-developer-edition
 git-extras
 hub
 i3-gaps
-i3blocks
+i3status
 jq
 kitty
 lightdm
@@ -23,6 +23,7 @@ neovim
 nerd-fonts-jetbrains-mono
 network-manager-applet
 networkmanager
+nitrogen
 nvidia
 otf-font-awesome
 pacman-contrib
