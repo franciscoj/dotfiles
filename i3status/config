@@ -4,6 +4,7 @@ general {
 }
 
 order += "disk /home"
+order += "disk /var"
 order += "disk /"
 order += "wireless wlp8s0"
 order += "volume master"
@@ -29,6 +30,10 @@ disk "/" {
 
 disk "/home" {
   format = " /home %free"
+}
+
+disk "/var" {
+  format = " /var %free"
 }
 
 volume master {
