@@ -212,7 +212,7 @@ client.background       $base07
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  font pango:FuraCode Nerd Font 9
+  font pango:JetBrains Mono Nerd Font 9
   status_command i3status
 
   colors {
