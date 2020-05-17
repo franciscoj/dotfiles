@@ -44,6 +44,7 @@ unzip
 wpa_supplicant
 xclip
 xorg-server
+xorg-xmodmap
 yarn
 zplug
 zsh
