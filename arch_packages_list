@@ -3,6 +3,8 @@ arc-icon-theme
 bat
 cbatticon
 direnv
+docker
+docker-compose
 dunst
 exa
 firefox-developer-edition
@@ -21,6 +23,7 @@ neovim
 nerd-fonts-jetbrains-mono
 network-manager-applet
 networkmanager
+nvidia
 otf-font-awesome
 pacman-contrib
 pavucontrol
@@ -36,10 +39,11 @@ ripgrep
 rofi
 shutter
 spotify
-starship
+starship-bin
 unzip
 wpa_supplicant
 xclip
 xorg-server
 yarn
+zplug
 zsh
