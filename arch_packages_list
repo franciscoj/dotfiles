@@ -18,12 +18,16 @@ lightdm
 lightdm-webkit-theme-litarvan
 linux-headers
 lsof
+lxc
+lxc-templates
+mariadb-clients
 moka-icon-theme
 nautilus
 neovim
 nerd-fonts-jetbrains-mono
 network-manager-applet
 networkmanager
+nfs-utils
 nitrogen
 nvidia
 openssh
@@ -45,6 +49,7 @@ slack-desktop
 spotify
 starship-bin
 telegram-desktop
+ttf-joypixels
 unzip
 vagrant
 virtualbox
