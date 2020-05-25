@@ -27,11 +27,12 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-characterize'
-Plug 'junegunn/vim-peekaboo'
 "}}}
 
 " Misc {{{
+Plug 'kassio/neoterm'
 Plug 'kana/vim-smartinput' " To have automatic closed pairs like () or {}
+Plug 'junegunn/vim-peekaboo'
 Plug 'vim-airline/vim-airline'
 Plug 'sjl/gundo.vim'
 Plug 'FooSoft/vim-argwrap'
@@ -108,7 +109,6 @@ set modeline
 
 " Toggle word wrap
 set nowrap
-nnoremap <leader>ww :set wrap!<CR>
 
 " Go to Normal mode fast
 inoremap jj <ESC>
@@ -134,7 +134,7 @@ let g:lens#disabled_filetypes = ['nerdtree', 'fzf']
 let g:lens#width_resize_min = 5
 
 " Show non visual chars
-set listchars=trail:~,tab:\|-,eol:< " show special characters
+set listchars=trail:~,tab:\|-,eol:¬ " show special characters
 set list
 
 " To use the system clipboard (xclip)
@@ -332,9 +332,9 @@ nnoremap <silent><leader>lo :lopen<CR>
 nnoremap <silent><leader>lc :lclose<CR>
 
 " Tabs management
-nnoremap <silent><leader>t :tabnew<CR>
-nnoremap <silent><leader>tc :tabclose<CR>
-nnoremap <silent><leader>T :tabnew %<CR>
+nnoremap <silent><leader>Tc :tabclose<CR>
+nnoremap <silent><leader>TT :tabnew %<CR>
+nnoremap <silent><leader>T :tabnew<CR>
 nnoremap <leader><TAB> gt
 nnoremap <leader><S-TAB> gT
 "}}}
@@ -391,10 +391,16 @@ nnoremap <silent><leader>lf :ALEFix<CR>
 nnoremap <silent><leader>ld :ALEDetail<CR>
 "}}}
 
+" Neoterm {{{
+let g:neoterm_default_mod='botright'
+nnoremap <leader>tc :Tclear<CR>
+nnoremap <leader>tt :Ttoggle<CR>
+" }}}
+
 " Tests {{{
 
 " test-vim
-let test#strategy='dispatch'
+let test#strategy='neoterm'
 let test#runner_commands = ['RSpec', 'Jest']
 
 nnoremap <leader>tf :TestFile<CR>
