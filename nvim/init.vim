@@ -64,7 +64,7 @@ Plug 'neoclide/jsonc.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'junegunn/vader.vim'
-Plug 'fatih/vim-go' " , { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go' , { 'do': ':GoUpdateBinaries' }
 Plug 'sheerun/vim-polyglot'
 
 Plug 'dense-analysis/ale'
