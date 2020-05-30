@@ -15,6 +15,7 @@ DISCARD_LIST = [
     'models',
     'policies',
     'presenters',
+    'queries',
     'services',
     'validators'
 ]
