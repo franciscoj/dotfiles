@@ -1,53 +1,85 @@
-snippet befe "beforeEach(function ()..."
-beforeEach(function () {
-  $0
-});
+snippet befe "beforeEach(() =>..."
+beforeEach(() => {
+	$0
+})
 
 endsnippet
 
-snippet bef "before(function ()..."
-before(function () {
-  $0
-});
+snippet bef "before(() =>..."
+before(() => {
+	$0
+})
 
 endsnippet
 
-snippet afe "afterEach(function ()..."
-afterEach(function () {
-  $0
-});
+snippet afe "afterEach(() =>..."
+afterEach(() => {
+	$0
+})
 
 endsnippet
 
-snippet af "after(function ()..."
-after(function () {
-  $0
-});
+snippet af "after(() =>..."
+after(() => {
+	$0
+})
 
 endsnippet
 
-snippet it "it('some statement', function ()...)"
-it('$1', function () {
-  $0
-});
+snippet it "it('some statement', () =>...)"
+it('$1', () => {
+	$0
+})
 endsnippet
 
 snippet des "describe('something', function()...)"
-describe('$1', function () {
-  $0
-});
+describe('$1', () => {
+	$0
+})
 endsnippet
 
 snippet con "context('something', function()...)"
-context('$1', function () {
-  $0
-});
+context('$1', () => {
+	$0
+})
 endsnippet
 
 snippet clog "console.log('...')"
-console.log('$1');$0
+console.log('$1')
+$0
 endsnippet
 
 snippet cinfo "console.info(...)"
-console.info($1);$0
+console.info($1)
+$0
+endsnippet
+
+snippet rfn "cons Name = () => {}"
+const ${1:Name} = (${2:{${3:prop1}}:Props}) => {
+	$0
+}
+endsnippet
+
+snippet ed "export default"
+export default $0
+endsnippet
+
+snippet react
+import * as React from 'react'
+$0
+endsnippet
+
+snippet moment
+import moment from 'moment'
+$0
+endsnippet
+
+snippet flow
+// @flow
+
+$0
+endsnippet
+
+snippet imp "import ..."
+import ${1:{ ${2:Module} }} from '${3:path}'
 endsnippet
