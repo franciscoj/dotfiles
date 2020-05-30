@@ -502,7 +502,13 @@ set viewdir     =$HOME/.config/nvim/files/view
 "
 " Polyglot is great but it doesn't activate all the functionalities for all
 " languages in order to make it load fast.
-let g:polyglot_disabled = [ 'go', 'javascript', 'jsx', 'markdown', 'ruby', ]
+let g:polyglot_disabled = [
+      \'javascript',
+      \'javascriptreact',
+      \'markdown',
+      \'ruby',
+      \'typescript'
+      \]
 
 " Markdown {{{
 let g:vim_markdown_folding_level = 2
