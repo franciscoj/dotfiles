@@ -54,6 +54,7 @@ Plug 'junegunn/gv.vim'
 " Language support {{{
 Plug 'plasticboy/vim-markdown'
 Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'noprompt/vim-yardoc'
 Plug 'vim-ruby/vim-ruby'
@@ -385,7 +386,8 @@ let g:ale_fixers = {
       \ 'javascript': ['prettier'],
       \ 'ruby': ['rubocop'],
       \ 'rust': [],
-      \ 'typescript': ['prettier']
+      \ 'typescript': ['prettier'],
+      \ 'typescriptreact': ['prettier']
       \}
 
 nnoremap <silent><leader>lf :ALEFix<CR>
@@ -508,7 +510,8 @@ let g:polyglot_disabled = [
       \'javascriptreact',
       \'markdown',
       \'ruby',
-      \'typescript'
+      \'typescript',
+      \'typescriptreact'
       \]
 
 " Markdown {{{
