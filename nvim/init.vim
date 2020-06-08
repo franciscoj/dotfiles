@@ -238,22 +238,22 @@ augroup END
 
 
 " Shortcuts
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gC :Gcommit -n<CR>
-nnoremap <leader>gP :Gpush<CR>
+nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gC :Git commit -n<CR>
+nnoremap <leader>gP :Git push<CR>
 nnoremap <leader>gfP :Gpush --force-with-lease<CR>
-nnoremap <leader>gp :Gpull<CR>
-nnoremap <leader>gf :Gfetch<CR>
+nnoremap <leader>gp :Git pull<CR>
+nnoremap <leader>gf :Git fetch<CR>
 " git log for current file
 nnoremap <leader>gl :GV!<CR>
 " git log for project
 nnoremap <leader>gL :GV<CR>
-nnoremap <leader>gd :Gvdiff<CR>
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gd :Gvdiffsplit<CR>
+nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gm :Git checkout master<CR>
 nnoremap <leader>g- :Git checkout -<CR>
-nnoremap <leader>grm :Grebase -i master<CR>
+nnoremap <leader>grm :Git rebase -i master<CR>
 
 
 " signify (gutter for git)
