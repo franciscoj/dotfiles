@@ -2,6 +2,12 @@ snippet tsig "extends T::Sig"
 extend T::Sig
 endsnippet
 
+snippet ty "# typed: true"
+# typed: true
+
+$0
+endsnippet
+
 snippet sig "sig do params(param: Type).returns(Type) end"
 sig do
 	${1:params($2)}
