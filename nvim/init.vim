@@ -373,7 +373,7 @@ let g:ale_sign_error = 'E'
 let g:ale_sign_warning = 'W'
 
 let g:ale_linters = {
-      \ 'elixir': ['mix', 'credo'],
+      \ 'elixir': ['mix', 'elixir-ls'],
       \ 'javascript': [],
       \ 'python': ['flake8'],
       \ 'ruby': ['solargraph', 'rubocop', 'ruby'],
@@ -557,7 +557,7 @@ augroup END
 " Elixir {{{
 
 " ALE config
-let g:ale_elixir_elixir_ls_release='/opt/elixir-ls'
+let g:ale_elixir_elixir_ls_release=$HOME.'/Documents/src/elixir-ls-release'
 let g:ale_elixir_elixir_ls_config= {
     \   'elixirLS': {
     \     'dialyzerEnabled': v:false,
