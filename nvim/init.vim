@@ -53,9 +53,9 @@ Plug 'junegunn/gv.vim'
 
 " Language support {{{
 Plug 'plasticboy/vim-markdown'
-Plug 'pangloss/vim-javascript'
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'yuezk/vim-js'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'noprompt/vim-yardoc'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
