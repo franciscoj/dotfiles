@@ -83,3 +83,25 @@ endsnippet
 snippet imp "import ..."
 import ${1:{ ${2:Module} }} from '${3:path}'
 endsnippet
+
+snippet conf "const name = () => {...}"
+const ${1:name} = (${2:args}) => {
+	$0
+}
+endsnippet
+
+snippet props "type Props ..."
+type Props = {
+	$0
+}
+endsnippet
+
+snippet children "children: React.Node"
+children: React.Node
+endsnippet
+
+snippet ret "return ()"
+return (
+	$0
+)
+endsnippet
