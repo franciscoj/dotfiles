@@ -22,15 +22,24 @@ DISCARD_LIST = [
 
 
 def camelcase(string):
+    """
+    Transforms "snake_case" string into "SnakeCase"
+    """
     pieces = string.split('_')
     return ''.join(x.title() for x in pieces)
 
 
 def unspec(string):
+    """
+    Transforms "some_file_spec.rb" info "some_file.rb"
+    """
     return string.replace('_spec', '')
 
 
 def unext(string):
+    """
+    Removes the extension from a ruby file name
+    """
     return string.replace('.rb', '')
 
 

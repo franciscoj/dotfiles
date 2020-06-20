@@ -44,6 +44,9 @@ def to_ruby_initializer(args, match, tabstop, snip):
             temp.substitute(arg=arg)
         )
 
+    if not clean_list:
+        return
+
     add_and_indent(
         snip,
         indent,

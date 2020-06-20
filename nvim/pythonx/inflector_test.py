@@ -10,6 +10,12 @@ class TestInflector(unittest.TestCase):
             inflector.camelcase('my_class_name')
         )
 
+    def test_unspec(self):
+        self.assertEqual(
+            'some_file.rb',
+            inflector.unspec('some_file_spec.rb')
+        )
+
     def test_to_ruby_class(self):
         self.assertEqual(
             'MyClassName',
@@ -58,7 +64,7 @@ class TestInflector(unittest.TestCase):
         )
 
     def test_service_on_a_component(self):
-        path = pathlib.Path('/my_app/components/comp/comp_namje/spec/services/comp_name/class_name.rb')
+        path = pathlib.Path('/my_app/components/comp/comp_name/spec/services/comp_name/class_name.rb')
 
         self.assertEqual(
             'CompName::ClassName',

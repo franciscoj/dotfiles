@@ -28,6 +28,7 @@ class TestRbArgs(unittest.TestCase):
             rb_args.split(args)
         )
 
+
     def test_build_init_from_kw_args(self):
         args = 'first:, second:, third:'
         match = re.search(r'(\s*)defi', '      defi')
@@ -52,7 +53,27 @@ class TestRbArgs(unittest.TestCase):
         )
 
 
+
+    def test_build_init_without_args(self):
+        args = ''
+        match = re.search(r'(\s*)defi', '      defi')
+        tabstop = 2
+        snip = SnipMock()
+
+        rb_args.to_ruby_initializer(
+            args,
+            match,
+            tabstop,
+            snip
+        )
+
+        expected = ''
+
+        self.assertEqual(
+            snip.rv,
+            expected
+        )
+
+
 if __name__ == '__main__':
     unittest.main()
-
-
