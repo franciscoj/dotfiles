@@ -21,6 +21,7 @@ zplug "~/Documents/src/dot-files/zsh/editor", from:local
 zplug "~/Documents/src/dot-files/zsh/base16", from:local
 zplug "~/Documents/src/dot-files/zsh/starthip_init", from:local
 zplug "~/Documents/src/dot-files/zsh/commands", from:local
+zplug "~/Documents/src/dot-files/zsh/z", from:local
 
 # Only perform the zplug check during bootstrapping
 if [ ! -z "$BOOTSTRAPPING" ] ; then
