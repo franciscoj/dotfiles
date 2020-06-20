@@ -91,6 +91,8 @@ Plug 'camspiers/lens.vim'
 " wrap on comments
 Plug 'inkarkat/vim-OnSyntaxChange'
 Plug 'inkarkat/vim-ingo-library'
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 " }}}
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
