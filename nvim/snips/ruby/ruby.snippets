@@ -1,6 +1,7 @@
 global !p
 import inflector
 import rb_args
+import memo
 
 real_path = vim.eval('expand("%:p")')
 current_indent = int(vim.eval('indent(".")/&shiftwidth'))
@@ -30,11 +31,6 @@ def initialize(${1:arg})`!p rb_args.to_ruby_initializer(t[1], current_indent, sn
 end
 endsnippet
 
-# snippet defi "def initialize ..."
-# def initialize($1)`!p write_instance_vars(t[1],snip)`$0
-# end
-# endsnippet
-
 snippet def "def method_name(args...) ... end"
 def ${1:method_name}${2:(${3:args})}
 	$0
@@ -44,6 +40,12 @@ endsnippet
 snippet defm "def method_name; @method_name ||= ..."
 def ${1:method_name}
 	@$1 ||= $0
+end
+endsnippet
+
+snippet memo
+def `!p memo.var_name(snip)`
+	@`!p memo.var_name(snip)` ||= `!p memo.body(snip)`
 end
 endsnippet
 
