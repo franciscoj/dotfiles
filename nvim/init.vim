@@ -100,22 +100,11 @@ call plug#end()
 
 " Config {{{
 
-" Misc {{{
+" Look & Feel {{{
 
 " Show both current linen number and relative number
 set relativenumber
 set number
-
-" Allows to use modelines. Modelines are indications for vim on the editing
-" files with small configurations like indenting rules, etc.
-"
-" See an example at the top of this file.
-set modeline
-set nowrap " Disable word wrap
-
-" Go to Normal mode fast
-inoremap jj <ESC>
-inoremap <ESC> <NOP>
 
 " Configure 'One' colorscheme {{{
 set background=dark
@@ -127,6 +116,35 @@ colorscheme one
 set t_8b=[48;2;%lu;%lu;%lum
 set t_8f=[38;2;%lu;%lu;%lum
 " }}}
+
+" Status line {{{
+let g:airline#extensions#ale#enabled = 1
+
+let g:airline_theme='one'
+
+" Don't display encoding unless it is unexpected
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+
+" Use abbreviations to display modes
+let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ }
+
+" Disable showing git hunks
+let g:airline#extensions#hunks#enabled = 0
+
+let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr'])
+"}}}
 
 " Autoresize
 let g:lens#disabled_filetypes = ['nerdtree', 'fzf']
@@ -142,6 +160,64 @@ set clipboard=unnamed,unnamedplus
 " Folding
 set foldmethod=syntax
 set nofoldenable
+"}}}
+
+" Edit {{{
+
+" Go to Normal mode fast
+inoremap jj <ESC>
+inoremap <ESC> <NOP>
+
+" Indention {{{
+set tabstop=2      " number of visual spaces per TAB.
+set shiftwidth=2   " number of spaces to use for each step of (auto)indent.
+set softtabstop=2  " number of spaces in tab when editing.
+set shiftround     " round indent to multiple of 'shiftwidth'
+set expandtab      " tabs are spaces
+set smarttab
+set autoindent
+set copyindent
+set smartindent
+"}}}
+
+" Best options for changing text
+set cpoptions+=$
+
+" Allows to use modelines. Modelines are indications for vim on the editing
+" files with small configurations like indenting rules, etc.
+"
+" See an example at the top of this file.
+set modeline
+set nowrap " Disable word wrap
+
+" ArgWrap
+nnoremap <silent><leader>a :ArgWrap<CR>
+
+" split-join
+let g:splitjoin_ruby_curly_braces = 0
+let g:splitjoin_ruby_hanging_args = 0
+
+" Add characters to the end of the line and go back to the spot in which you
+" were.
+nnoremap <leader>, mzA,<esc>`z
+nnoremap <leader>; mzA;<esc>`z
+nnoremap <leader>: mzA:<esc>`z
+
+" Don't loose selection when shifting
+xnoremap <  <gv
+xnoremap >  >gv
+
+" When entering comments, activate text wrap automatically and deactivate it
+" when leaving them.
+"
+" Comments break line {{{
+call OnSyntaxChange#Install('Comment', '^Comment$', 0, 'i')
+
+augroup auto_wrap_comments
+  autocmd User SyntaxCommentEnterI setlocal tw=79
+  autocmd User SyntaxCommentLeaveI setlocal tw=0
+augroup END
+"}}}
 
 " Show undo list
 let g:gundo_prefer_python3=1
@@ -175,49 +251,6 @@ highlight nonascii guibg=Red ctermbg=2
 
 " Find any non ascii character
 nnoremap <leader>na /[^\x00-\xFF]<CR>
-"}}}
-
-" Edit {{{
-
-" Indention
-set tabstop=2      " number of visual spaces per TAB.
-set shiftwidth=2   " number of spaces to use for each step of (auto)indent.
-set softtabstop=2  " number of spaces in tab when editing.
-set shiftround     " round indent to multiple of 'shiftwidth'
-set expandtab      " tabs are spaces
-set smarttab
-set autoindent
-set copyindent
-set smartindent
-
-" Best options for changing text
-set cpoptions+=$
-
-" ArgWrap
-nnoremap <silent><leader>a :ArgWrap<CR>
-
-" split-join
-let g:splitjoin_ruby_curly_braces = 0
-let g:splitjoin_ruby_hanging_args = 0
-
-" Add characters to the end of the line and go back to the spot in which you
-" were.
-nnoremap <leader>, mzA,<esc>`z
-nnoremap <leader>; mzA;<esc>`z
-nnoremap <leader>: mzA:<esc>`z
-
-" Don't loose selection when shifting
-xnoremap <  <gv
-xnoremap >  >gv
-
-" When entering comments, activate text wrap automatically and deactivate it
-" when leaving them.
-call OnSyntaxChange#Install('Comment', '^Comment$', 0, 'i')
-
-augroup auto_wrap_comments
-  autocmd User SyntaxCommentEnterI setlocal tw=79
-  autocmd User SyntaxCommentLeaveI setlocal tw=0
-augroup END
 
 "}}}
 
@@ -449,35 +482,6 @@ function! s:showDocumentation()
   endif
 endfunction
 
-" Status line {{{
-let g:airline#extensions#ale#enabled = 1
-
-let g:airline_theme='one'
-
-" Don't display encoding unless it is unexpected
-let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-
-" Use abbreviations to display modes
-let g:airline_mode_map = {
-      \ '__' : '-',
-      \ 'n'  : 'N',
-      \ 'i'  : 'I',
-      \ 'R'  : 'R',
-      \ 'c'  : 'C',
-      \ 'v'  : 'V',
-      \ 'V'  : 'V',
-      \ '' : 'V',
-      \ 's'  : 'S',
-      \ 'S'  : 'S',
-      \ '' : 'S',
-      \ }
-
-" Disable showing git hunks
-let g:airline#extensions#hunks#enabled = 0
-
-let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr'])
-"}}}
-
 " Backup files {{{
 set backup
 set backupdir   =$HOME/.config/nvim/files/backup/
@@ -569,7 +573,7 @@ augroup END
 " JavaScript & TypeScript {{{
 let g:vim_jsx_pretty_colorful_config = 1
 
-augroup snippets
+augroup js_snippets
   autocmd!
 
   autocmd FileType javascriptreact :call UltiSnips#AddFiletypes('javascript')
@@ -591,10 +595,6 @@ augroup bash_configs
 
   autocmd BufNewFile,BufRead .envrc set syntax=sh
 augroup END
-" }}}
-
-" Golang {{{
-let g:go_version_warning = 0
 " }}}
 
 " Rust {{{
