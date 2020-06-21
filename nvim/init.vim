@@ -42,6 +42,13 @@ Plug 'embear/vim-localvimrc'
 Plug 'wellle/targets.vim'
 Plug 'sirver/ultisnips'
 Plug 'powerman/vim-plugin-AnsiEsc'
+
+" Adds auto commands on syntax changes. To be able to activate/deactivate auto
+" wrap on comments
+Plug 'inkarkat/vim-OnSyntaxChange'
+Plug 'inkarkat/vim-ingo-library'
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 "}}}
 
 " Git {{{
@@ -52,6 +59,7 @@ Plug 'junegunn/gv.vim'
 "}}}
 
 " Language support {{{
+Plug 'sheerun/vim-polyglot'
 Plug 'plasticboy/vim-markdown'
 Plug 'yuezk/vim-js'
 Plug 'MaxMEllon/vim-jsx-pretty'
@@ -63,13 +71,8 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
 Plug 'neoclide/jsonc.vim'
 Plug 'rust-lang/rust.vim'
-Plug 'aklt/plantuml-syntax'
 Plug 'junegunn/vader.vim'
-" Plug 'fatih/vim-go' , { 'do': ':GoUpdateBinaries' }
-Plug 'sheerun/vim-polyglot'
-
-Plug 'dense-analysis/ale'
-Plug 'janko-m/vim-test'
+Plug 'aklt/plantuml-syntax'
 Plug 'scrooloose/vim-slumlord'
 "}}}
 
@@ -86,19 +89,14 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'camspiers/lens.vim'
 "}}}
 
-" Others {{{
-" Adds auto commands on syntax changes. To be able to activate/deactivate auto
-" wrap on comments
-Plug 'inkarkat/vim-OnSyntaxChange'
-Plug 'inkarkat/vim-ingo-library'
-Plug 'tpope/vim-dadbod'
-Plug 'kristijanhusak/vim-dadbod-ui'
-" }}}
-
+" Linting, autocomplete, etc... {{{
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'dense-analysis/ale'
+Plug 'janko-m/vim-test'
+"}}}
 
 call plug#end()
-" }}}
+"}}}
 
 " Config {{{
 
