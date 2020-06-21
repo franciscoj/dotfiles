@@ -1,0 +1,42 @@
+snippet clog "console.log('...')"
+console.log('$1')
+$0
+endsnippet
+
+snippet cinfo "console.info(...)"
+console.info('$1', $2)
+$0
+endsnippet
+
+snippet ed "export default"
+export default $0
+endsnippet
+
+snippet moment
+import moment from 'moment'
+$0
+endsnippet
+
+snippet imp "import ..."
+import ${1:{ ${2:Module} }} from '${3:path}'
+endsnippet
+
+snippet conf "const name = () => {...}"
+const ${1:name} = (${2:args}) => {
+	$0
+}
+endsnippet
+
+snippet const "const { name } = something"
+const ${1:{ ${2:name} }} = $0
+endsnippet
+
+snippet ary "Array<Type>"
+Array<${1:Type}>
+endsnippet
+
+snippet flow
+// @flow
+
+$0
+endsnippet

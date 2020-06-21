@@ -1,0 +1,36 @@
+snippet react
+import * as React from 'react'
+$0
+endsnippet
+
+snippet rf "cons Name = () => {}"
+const ${1:Name} = (${2:{${3:prop1}}:Props}) => {
+	$0
+}
+endsnippet
+
+snippet props "type Props ..."
+type Props = {
+	$0
+}
+endsnippet
+
+snippet children "children: React.Node"
+children: React.Node
+endsnippet
+
+snippet ret "return ()"
+return (
+	$0
+)
+endsnippet
+
+snippet useS "const [val, hook] = React.useState<Type>(val)"
+const [${1:value}, set${1/\w+\s*/\u$0/}] = React.useState${2:<${3:Type}>}(${4:val})
+endsnippet
+
+snippet useE "React.useEffect(() => ...)"
+React.useEffect(() => {
+	$0
+}${1:, [${2:deps}]})
+endsnippet

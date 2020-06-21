@@ -44,42 +44,4 @@ context('$1', () => {
 })
 endsnippet
 
-snippet clog "console.log('...')"
-console.log('$1')
-$0
-endsnippet
 
-snippet cinfo "console.info(...)"
-console.info($1)
-$0
-endsnippet
-
-snippet rfn "cons Name = () => {}"
-const ${1:Name} = (${2:{${3:prop1}}:Props}) => {
-	$0
-}
-endsnippet
-
-snippet ed "export default"
-export default $0
-endsnippet
-
-snippet react
-import * as React from 'react'
-$0
-endsnippet
-
-snippet moment
-import moment from 'moment'
-$0
-endsnippet
-
-snippet flow
-// @flow
-
-$0
-endsnippet
-
-snippet imp "import ..."
-import ${1:{ ${2:Module} }} from '${3:path}'
-endsnippet

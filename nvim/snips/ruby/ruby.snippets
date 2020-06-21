@@ -36,6 +36,12 @@ def ${1:method_name}${2:(${3:args})}
 end
 endsnippet
 
+snippet defm "def method_name; @method_name ||= ..."
+def ${1:method_name}
+	@$1 ||= $0
+end
+endsnippet
+
 snippet @= "@ivar = value"
 @${1:var} = $0
 endsnippet
@@ -48,7 +54,7 @@ snippet @@ "@arg = arg"
 @${1:arg} = $1
 endsnippet
 
-snippet := "var: var"
+snippet := "var: var" i
 ${1:name}: $1
 endsnippet
 

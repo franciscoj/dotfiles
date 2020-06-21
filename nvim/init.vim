@@ -53,9 +53,9 @@ Plug 'junegunn/gv.vim'
 
 " Language support {{{
 Plug 'plasticboy/vim-markdown'
-Plug 'pangloss/vim-javascript'
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'yuezk/vim-js'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'noprompt/vim-yardoc'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
@@ -91,6 +91,8 @@ Plug 'camspiers/lens.vim'
 " wrap on comments
 Plug 'inkarkat/vim-OnSyntaxChange'
 Plug 'inkarkat/vim-ingo-library'
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 " }}}
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -106,22 +108,18 @@ call plug#end()
 set relativenumber
 set number
 
+" Allows to use modelines. Modelines are indications for vim on the editing
+" files with small configurations like indenting rules, etc.
+"
+" See an example at the top of this file.
 set modeline
-
-" Toggle word wrap
-set nowrap
+set nowrap " Disable word wrap
 
 " Go to Normal mode fast
 inoremap jj <ESC>
 inoremap <ESC> <NOP>
 
-" Better start and end of the line
-map H ^
-map L $
-
-" Colorscheme
-" let base16colorspace=256
-
+" Configure 'One' colorscheme {{{
 set background=dark
 set termguicolors
 let g:one_allow_italics = 1 " I love italic for comments
@@ -130,6 +128,7 @@ colorscheme one
 " Better color on tmux
 set t_8b=[48;2;%lu;%lu;%lum
 set t_8f=[38;2;%lu;%lu;%lum
+" }}}
 
 " Autoresize
 let g:lens#disabled_filetypes = ['nerdtree', 'fzf']
@@ -147,6 +146,7 @@ set foldmethod=syntax
 set nofoldenable
 
 " Show undo list
+let g:gundo_prefer_python3=1
 nnoremap <leader>u :GundoToggle<CR>
 
 " Edit and reload vimrc
