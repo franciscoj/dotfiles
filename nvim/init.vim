@@ -202,9 +202,6 @@ nnoremap <silent><leader>a :ArgWrap<CR>
 let g:splitjoin_ruby_curly_braces = 0
 let g:splitjoin_ruby_hanging_args = 0
 
-" Yank list
-nnoremap <silent><space>y  :<C-u>CocList -A --normal yank<cr>
-
 " Others
 " Add characters to the end of the line and go back to the expot in which you
 " were.
