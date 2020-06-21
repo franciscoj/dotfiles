@@ -202,8 +202,7 @@ nnoremap <silent><leader>a :ArgWrap<CR>
 let g:splitjoin_ruby_curly_braces = 0
 let g:splitjoin_ruby_hanging_args = 0
 
-" Others
-" Add characters to the end of the line and go back to the expot in which you
+" Add characters to the end of the line and go back to the spot in which you
 " were.
 nnoremap <leader>, mzA,<esc>`z
 nnoremap <leader>; mzA;<esc>`z
