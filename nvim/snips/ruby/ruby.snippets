@@ -3,7 +3,8 @@ import inflector
 import rb_args
 
 real_path = vim.eval('expand("%:p")')
-tabstop = int(vim.eval('&tabstop'))
+current_indent = int(vim.eval('indent(".")/&shiftwidth'))
+
 endglobal
 
 snippet mod "module OutherModName ... end"
@@ -24,11 +25,15 @@ class ${1:`!p snip.rv = inflector.inner_ruby_class(real_path)`}
 end
 endsnippet
 
-snippet "(\s*)defi" "def initialize(arg:,) ... end" r
-`!p snip.rv = match.group(1)`def initialize(${1:arg})
-`!p rb_args.to_ruby_initializer(t[1], match, tabstop, snip)`
-`!p snip.rv = match.group(1)`end
+snippet defi "def initialize(arg:,) ... end"
+def initialize(${1:arg})`!p rb_args.to_ruby_initializer(t[1], current_indent, snip)`
+end
 endsnippet
+
+# snippet defi "def initialize ..."
+# def initialize($1)`!p write_instance_vars(t[1],snip)`$0
+# end
+# endsnippet
 
 snippet def "def method_name(args...) ... end"
 def ${1:method_name}${2:(${3:args})}
