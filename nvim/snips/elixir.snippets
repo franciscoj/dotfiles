@@ -1,27 +1,32 @@
-snippet =>
-"${1:name}" => $1,
+snippet > "|>" i
+|> $0
 endsnippet
 
-snippet %
-%\{"${1:name}" => $1\}
+snippet := "" i
+${1:name}: ${2:$1}$0
 endsnippet
 
-snippet %:
-%\{${1:name}: $1\}
+snippet => "" i
+"${1:name}" => ${2:$1}${3:,}
 endsnippet
 
-snippet prop
-property "${1:description}" do
-end
+snippet % "%{name: name}" i
+%{"${1:name}" => ${2:$1}}
 endsnippet
 
-snippet cha
-check all ${1:variable} <- ${2:generator} do
-end
+snippet %: "%{name: name}" i
+%{${1:name}: ${2:$1}}
 endsnippet
 
 snippet desc
 describe "${1:text}" do
+	$0
+end
+endsnippet
+
+snippet test
+describe "${1:text}" do
+	$0
 end
 endsnippet
 
