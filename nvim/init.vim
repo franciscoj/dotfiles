@@ -59,8 +59,20 @@ Plug 'junegunn/gv.vim'
 "}}}
 
 " Language support {{{
+
+" FIXME: Find a better way to load this.
+" Disable polyglot in favor of real language packs
+"
+" Polyglot is great but it doesn't activate all the functionalities for all
+" languages in order to make it load fast.
+let g:polyglot_disabled = [
+      \'javascript',
+      \'typescript'
+      \'jsx',
+      \'markdown',
+      \'ruby',
+      \]
 Plug 'sheerun/vim-polyglot'
-Plug 'plasticboy/vim-markdown'
 Plug 'yuezk/vim-js'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'HerringtonDarkholme/yats.vim'
@@ -499,21 +511,9 @@ set viewdir     =$HOME/.config/nvim/files/view
 
 " Language specific {{{
 
-" Disable polyglot in favor of real language packs
-"
-" Polyglot is great but it doesn't activate all the functionalities for all
-" languages in order to make it load fast.
-let g:polyglot_disabled = [
-      \'javascript',
-      \'javascriptreact',
-      \'markdown',
-      \'ruby',
-      \'typescript',
-      \'typescriptreact'
-      \]
-
 " Markdown {{{
 let g:vim_markdown_folding_level = 2
+Plug 'plasticboy/vim-markdown'
 
 augroup markdown
   autocmd!
