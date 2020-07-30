@@ -8,6 +8,13 @@ current_indent = int(vim.eval('indent(".")/&shiftwidth'))
 
 endglobal
 
+snippet fro "# frozen_string_literal: true"
+# frozen_string_literal: true
+
+$0
+endsnippet
+
+
 snippet mod "module OutherModName ... end"
 module ${1:`!p snip.rv = inflector.outer_ruby_module(real_path)`}
 	$0
