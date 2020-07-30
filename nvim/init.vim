@@ -295,6 +295,8 @@ nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gm :Git checkout master<CR>
 nnoremap <leader>g- :Git checkout -<CR>
 nnoremap <leader>grm :Git rebase -i master<CR>
+nnoremap <leader>gg :Git<SPACE>
+nnoremap <leader>gco :Git checkout<SPACE>
 
 
 " signify (gutter for git)
