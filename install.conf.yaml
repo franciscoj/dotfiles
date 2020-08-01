@@ -32,8 +32,8 @@
     ~/.config/kitty:
       path: kitty
       if: bin/is_linux.sh
-    ~/Library/Preferences/kitty.conf:
-      path: kitty/kitty.conf
+    ~/.config/kitty:
+      path: kitty-mac
       if: bin/is_mac.sh
 
     # Desktop
