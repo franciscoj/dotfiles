@@ -390,7 +390,6 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 let NERDTreeIgnore=[
       \ '_build$[[dir]]',
-      \ 'doc$[[dir]]',
       \ 'deps$[[dir]]',
       \ 'node_modules$[[dir]]',
       \ 'tags$[[file]]',
