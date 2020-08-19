@@ -27,6 +27,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-abolish'
 "}}}
 
 " Misc {{{
@@ -42,6 +43,7 @@ Plug 'embear/vim-localvimrc'
 Plug 'wellle/targets.vim'
 Plug 'sirver/ultisnips'
 Plug 'powerman/vim-plugin-AnsiEsc'
+Plug 'junegunn/vim-easy-align'
 
 " Adds auto commands on syntax changes. To be able to activate/deactivate auto
 " wrap on comments
@@ -73,6 +75,8 @@ let g:polyglot_disabled = [
       \'ruby',
       \]
 Plug 'sheerun/vim-polyglot'
+Plug 'plasticboy/vim-markdown'
+
 Plug 'yuezk/vim-js'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'HerringtonDarkholme/yats.vim'
@@ -98,13 +102,20 @@ Plug 'romainl/vim-qf'
 " Look & Feel {{{
 Plug 'rakr/vim-one'
 Plug 'ryanoasis/vim-devicons'
-Plug 'camspiers/lens.vim'
+" Plug 'camspiers/lens.vim'
 "}}}
 
 " Linting, autocomplete, etc... {{{
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'dense-analysis/ale'
 Plug 'janko-m/vim-test'
+"}}}
+
+" Testing... {{{
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-renderer-devicons.vim'
+
+let g:fern#renderer = "devicons"
 "}}}
 
 call plug#end()
@@ -159,10 +170,10 @@ let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr'])
 "}}}
 
 " Autoresize
-let g:lens#disabled_filetypes = ['nerdtree', 'fzf', 'neoterm']
-let g:lens#width_resize_max = 100
-let g:lens#width_resize_min = 5
-let g:lens#height_resize_min = 5
+" let g:lens#disabled_filetypes = ['nerdtree', 'fzf', 'neoterm']
+" let g:lens#width_resize_max = 100
+" let g:lens#width_resize_min = 5
+" let g:lens#height_resize_min = 5
 
 " Show non visual chars
 set listchars=trail:~,tab:\|-,eol:¬ " show special characters
@@ -221,6 +232,9 @@ nnoremap <leader>: mzA:<esc>`z
 xnoremap <  <gv
 xnoremap >  >gv
 
+" Select current line, only
+nnoremap vvl v_o$h
+
 " When entering comments, activate text wrap automatically and deactivate it
 " when leaving them.
 "
@@ -266,6 +280,9 @@ highlight nonascii guibg=Red ctermbg=2
 " Find any non ascii character
 nnoremap <leader>na /[^\x00-\xFF]<CR>
 
+" When the file changes in disk, read it automatically
+set autoread
+
 "}}}
 
 " Git {{{
@@ -283,7 +300,7 @@ nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gc :Git commit<CR>
 nnoremap <leader>gC :Git commit -n<CR>
 nnoremap <leader>gP :Git push<CR>
-nnoremap <leader>gfP :Gpush --force-with-lease<CR>
+nnoremap <leader>gPP :Git push --force-with-lease<CR>
 nnoremap <leader>gp :Git pull<CR>
 nnoremap <leader>gf :Git fetch<CR>
 " git log for current file
@@ -355,6 +372,10 @@ nnoremap <silent><leader>wj :wincmd j<CR>
 nnoremap <silent><leader>wk :wincmd k<CR>
 nnoremap <silent><leader>wl :wincmd l<CR>
 nnoremap <silent><leader>wh :wincmd h<CR>
+nnoremap <silent><C-J> :wincmd j<CR>
+nnoremap <silent><C-K> :wincmd k<CR>
+nnoremap <silent><C-H> :wincmd h<CR>
+nnoremap <silent><C-L> :wincmd l<CR>
 
 " Move windows around
 nnoremap <silent><leader>wJ :wincmd J<CR>
@@ -438,7 +459,6 @@ nnoremap <silent><leader>ld :ALEDetail<CR>
 
 " Neoterm {{{
 let g:neoterm_default_mod='botright'
-nnoremap <leader>tc :Tclear<CR>
 nnoremap <leader>tt :Ttoggle<CR>
 " }}}
 
@@ -516,7 +536,6 @@ set viewdir     =$HOME/.config/nvim/files/view
 
 " Markdown {{{
 let g:vim_markdown_folding_level = 2
-Plug 'plasticboy/vim-markdown'
 
 augroup markdown
   autocmd!
@@ -534,7 +553,7 @@ augroup ruby
   autocmd!
 
   " Rails schema.rb file can be a pain to open.
-  autocmd BufRead schema.rb setlocal ft=off
+  autocmd BufRead db/schema.rb setlocal ft=off
 augroup END
 "}}}
 
@@ -609,6 +628,13 @@ augroup rust_configs
 augroup END
 " }}}
 
+"}}}
+
+" plantuml {{{
+augroup plantuml_configs
+  autocmd!
+  autocmd Filetype foo setlocal makeprg=plantuml %
+augroup END
 "}}}
 
 " Load custom functions
