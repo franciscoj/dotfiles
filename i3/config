@@ -94,7 +94,7 @@ bindsym $mod+Shift+s sticky toggle
 
 # Workspaces
 set $ws1 "1:  term"
-set $ws2 "2:  firefox"
+set $ws2 "2:  browser"
 set $ws3 "3:  slack"
 set $ws4 "4: 切 comms"
 set $ws5 "5:  misc"
@@ -131,6 +131,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # App specific config
 for_window [class="(?i)slack"] move to workspace $ws3
 for_window [class="(?i)firefox"] move to workspace $ws2
+for_window [class="(?i)chrom"] move to workspace $ws2
 for_window [class="Telegram"] move to workspace $ws4
 for_window [class="Nautilus"] move to workspace $ws9
 for_window [class="Spotify"] move to workspace $ws10
