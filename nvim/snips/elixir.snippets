@@ -41,3 +41,7 @@ endsnippet
 snippet defp:
 defp ${1:function_name}(${2:args}), do: ${3:body}
 endsnippet
+
+snippet ins "|> IO.inspect(label: ...)" i
+|> IO.inspect(${1:label: "${2:label}"})
+endsnippet
