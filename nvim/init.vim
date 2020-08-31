@@ -90,6 +90,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'junegunn/vader.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'scrooloose/vim-slumlord'
+Plug 'elixir-editors/vim-elixir'
 "}}}
 
 " Search {{{
