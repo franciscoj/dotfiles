@@ -1,3 +1,19 @@
+function! functions#EnableZen() abort
+  call sy#disable()
+  set norelativenumber
+  set nolist
+endfunction
+
+command! EnableZen call functions#EnableZen()
+
+function! functions#DisableZen() abort
+  call sy#enable()
+  set relativenumber
+  set list
+endfunction
+
+command! DisableZen call functions#DisableZen()
+
 " List all the snippets for `completefunc` matching the current word for
 " completion with C-X C-U
 function! functions#ListSnippets(findstart, base) abort

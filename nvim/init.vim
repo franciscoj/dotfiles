@@ -27,7 +27,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-characterize'
-Plug 'tpope/vim-abolish'
+Plug 'junegunn/goyo.vim'
 "}}}
 
 " Misc {{{
@@ -102,6 +102,7 @@ Plug 'romainl/vim-qf'
 
 " Look & Feel {{{
 Plug 'rakr/vim-one'
+Plug 'jnurmine/Zenburn'
 Plug 'ryanoasis/vim-devicons'
 " Plug 'camspiers/lens.vim'
 "}}}
@@ -223,11 +224,16 @@ nnoremap <silent><leader>a :ArgWrap<CR>
 let g:splitjoin_ruby_curly_braces = 0
 let g:splitjoin_ruby_hanging_args = 0
 
+
 " Add characters to the end of the line and go back to the spot in which you
 " were.
 nnoremap <leader>, mzA,<esc>`z
 nnoremap <leader>; mzA;<esc>`z
 nnoremap <leader>: mzA:<esc>`z
+
+" Zen mode
+nnoremap <leader>z :EnableZen<CR>
+nnoremap <leader>zz :DisableZen<CR>
 
 " Don't loose selection when shifting
 xnoremap <  <gv
