@@ -50,6 +50,12 @@ snippet let "let(:name) { value }"
 let(:${1:name}) { ${2:${VISUAL}} }
 endsnippet
 
+snippet ldo "let(:name) do ... end"
+let(:${1:name}) do
+	${VISUAL}
+end
+endsnippet
+
 snippet cre "create(:factory, ...)"
 create(:${1:factory}${2:, ${3:arg}})
 endsnippet
@@ -86,11 +92,11 @@ end
 endsnippet
 
 snippet fac "factory :name, class: ClassName do ... end"
-factory :${1:factory_name}, ${2: class: ${3: ClassName}} do
+factory :${1:factory_name}, ${2:class: ${3:ClassName}} do
 	$0
 end
 endsnippet
 
 snippet ffi "field_name { field_value }"
-${1:field_name} { ${2:value} }
+${1:field_name} { ${2:$1} }
 endsnippet

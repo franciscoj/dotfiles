@@ -48,27 +48,35 @@ const :${1:name}, ${2:Type}${3:, default:${4: value}}
 endsnippet
 
 snippet nil "T.nilable(Type)" i
-T.nilable(${1:Type})
+T.nilable(${1:${VISUAL}})
 endsnippet
 
 snippet tary "T::Array[Something]" i
-T::Array[${1:Type}]
+T::Array[${1:${VISUAL}}]
 endsnippet
 
 snippet thash "T::Hash[Something, Something]" i
 T::Hash[${1:KeyType}, ${2:ValueType}]
 endsnippet
 
-snippet range "T::Range[Type]" i
-T::Range[${1:Type}]
+snippet trange "T::Range[Type]" i
+T::Range[${1:${VISUAL}}]
+endsnippet
+
+snippet tbool "T::Boolean" i
+T::Boolean
 endsnippet
 
 snippet tlet "T.let(val, Type)"
-T.let(${VISUAL}, ${1: Type})
+T.let(${1:${VISUAL}}, ${2: Type})
+endsnippet
+
+snippet tcast "T.cast(val, Type)"
+T.cast(${1:${VISUAL}}, ${2: Type})
 endsnippet
 
 snippet tmust "T.must(val)"
-T.must(${VISUAL})
+T.must(${1:${VISUAL}})
 endsnippet
 
 snippet tparams "some_params = TypedParams[SomeType].new.extract!(params)"
@@ -76,5 +84,5 @@ ${1:action}_params = TypedParams[${1/.*/\u$0/}Params].new.extract!(params)
 endsnippet
 
 snippet rets "returns(Type)" i
-returns(${1:Type})
+returns(${1:${VISUAL}})
 endsnippet
