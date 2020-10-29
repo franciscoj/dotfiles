@@ -187,6 +187,8 @@ set clipboard=unnamed,unnamedplus
 " Folding
 set foldmethod=syntax
 set nofoldenable
+set fillchars+=fold:·
+set foldtext=functions#CustomFoldtext()
 "}}}
 
 " Edit {{{

@@ -14,6 +14,19 @@ endfunction
 
 command! DisableZen call functions#DisableZen()
 
+" From https://www.youtube.com/watch?v=AoHckHMogbk&feature=emb_logo
+let s:middot='·'
+let s:raquo='»'
+let s:small_l='ℓ'
+
+function! functions#CustomFoldtext() abort
+  let l:lines='[' . (v:foldend - v:foldstart + 1) . s:small_l . ']'
+  let l:first=substitute(getline(v:foldstart), '\v *', '', '')
+  let l:fold_levels_count=strlen(v:folddashes) - 1
+  let l:fold_level= l:fold_levels_count . ':' . s:raquo
+  return l:fold_level . ' ' . l:first . ': ' . l:lines
+endfunction
+
 " List all the snippets for `completefunc` matching the current word for
 " completion with C-X C-U
 function! functions#ListSnippets(findstart, base) abort
