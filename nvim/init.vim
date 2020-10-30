@@ -114,10 +114,20 @@ Plug 'janko-m/vim-test'
 "}}}
 
 " Testing... {{{
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/glyph-palette.vim'
 Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern-renderer-devicons.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/fern-git-status.vim'
 
-let g:fern#renderer = "devicons"
+let g:fern#renderer = "nerdfont"
+
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType nerdtree call glyph_palette#apply()
+augroup END
 "}}}
 
 call plug#end()
