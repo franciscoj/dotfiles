@@ -74,7 +74,7 @@ let g:polyglot_disabled = [
       \'markdown',
       \'ruby',
       \]
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'plasticboy/vim-markdown'
 
 Plug 'yuezk/vim-js'
