@@ -16,21 +16,22 @@ endsnippet
 
 snippet sig "sig do params(param: Type).returns(Type) end"
 sig do
-	${1:params($2)}
-		${3:.${4:returns(${5:type})}}
+	$0
 end
 endsnippet
 
-snippet part "param: Type(,)" i
-${1:param}: ${2:type}${3:, }
+snippet par "params($0)"
+params(
+	$0
+)
 endsnippet
 
 snippet si "sig { cursor }"
 sig { $1 }
 endsnippet
 
-snippet sigr "sig { params(params).returns(Type) }"
-sig { ${1:params(${2:param}: ${3:type}).}returns(${4:type}) }
+snippet part "param: Type(,)" i
+${1:param}: ${2:type}${3:, }
 endsnippet
 
 snippet sigv "sig { params(params).void }"
@@ -75,7 +76,7 @@ snippet tcast "T.cast(val, Type)"
 T.cast(${1:${VISUAL}}, ${2: Type})
 endsnippet
 
-snippet tmust "T.must(val)"
+snippet tmust "T.must(val)" i
 T.must(${1:${VISUAL}})
 endsnippet
 
@@ -85,4 +86,9 @@ endsnippet
 
 snippet rets "returns(Type)" i
 returns(${1:${VISUAL}})
+endsnippet
+
+snippet tar "Typed attribute reader"
+sig { returns(${1:Type}) }
+attr_reader :${2:method_name}
 endsnippet
