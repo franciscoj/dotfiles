@@ -13,3 +13,4 @@ src
 system/*.pkg.tar
 system/*.pkg.tar.xz
 nvim/pythonx/__pycache__
+fontconfig/conf.d/
