@@ -3,6 +3,7 @@ import pathlib
 
 DISCARD_LIST = [
     'app',
+    'boundaries',
     'collections',
     'concerns',
     'context_matchers',
@@ -11,6 +12,7 @@ DISCARD_LIST = [
     'interactors',
     'jobs',
     'lib',
+    'loaders',
     'mailers',
     'models',
     'policies',
