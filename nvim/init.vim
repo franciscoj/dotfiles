@@ -236,10 +236,6 @@ nnoremap <leader>, mzA,<esc>`z
 nnoremap <leader>; mzA;<esc>`z
 nnoremap <leader>: mzA:<esc>`z
 
-" Zen mode
-nnoremap <leader>z :EnableZen<CR>
-nnoremap <leader>zz :DisableZen<CR>
-
 " Don't loose selection when shifting
 xnoremap <  <gv
 xnoremap >  >gv
