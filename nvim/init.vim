@@ -345,18 +345,29 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 let g:fzf_command_prefix = 'FZF'
 let g:fzf_preview_window = ['up:60%', 'ctrl-/']
+let default_fzf_options =  {
+        \ 'window': { 'width': 0.95, 'height': 0.70 },
+        \ 'options': [
+          \ '--preview-window',
+          \ 'up:40%',
+          \ '--bind',
+          \ 'alt-j:preview-half-page-down,alt-k:preview-half-page-up'
+        \ ]
+      \ }
 
 " Add preview to search results with FZFRg
-command! -bang -nargs=* FZFRg
-      \ call fzf#vim#grep(
-      \ 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-      \ fzf#vim#with_preview({ 'window': { 'width': 0.9, 'height': 0.9 }, 'options': ['--preview-window', 'up:60%']}), <bang>0)
+command! -bang -nargs=* FZFRg call fzf#vim#grep(
+        \ 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>),
+        \ 1,
+        \ fzf#vim#with_preview(default_fzf_options),
+        \ <bang>0
+      \ )
 
 " Add preview to search results with FZFFiles
-command! -bang -nargs=? -complete=dir FZFFiles
-      \ call fzf#vim#files(<q-args>,
-      \ fzf#vim#with_preview({ 'window': { 'width': 0.9, 'height': 0.9 }, 'options': ['--preview-window', 'up:60%'] }),
-      \ <bang>0
+command! -bang -nargs=? -complete=dir FZFFiles call fzf#vim#files(
+        \ <q-args>,
+        \ fzf#vim#with_preview(default_fzf_options),
+        \ <bang>0
       \ )
 
 " Search files
