@@ -1,19 +1,3 @@
-function! functions#EnableZen() abort
-  call sy#disable()
-  set norelativenumber
-  set nolist
-endfunction
-
-command! EnableZen call functions#EnableZen()
-
-function! functions#DisableZen() abort
-  call sy#enable()
-  set relativenumber
-  set list
-endfunction
-
-command! DisableZen call functions#DisableZen()
-
 " From https://www.youtube.com/watch?v=AoHckHMogbk&feature=emb_logo
 let s:middot='·'
 let s:raquo='»'
