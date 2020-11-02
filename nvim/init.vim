@@ -483,7 +483,6 @@ let test#runner_commands = ['RSpec', 'Jest']
 nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>tl :TestNearest<CR>
 nnoremap <leader>tr :TestLast<CR>
-nnoremap <leader>to :Copen<CR>
 "}}}
 
 " Autocomplete {{{
