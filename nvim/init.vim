@@ -104,7 +104,6 @@ Plug 'romainl/vim-qf'
 Plug 'rakr/vim-one'
 Plug 'jnurmine/Zenburn'
 Plug 'ryanoasis/vim-devicons'
-" Plug 'camspiers/lens.vim'
 "}}}
 
 " Linting, autocomplete, etc... {{{
@@ -180,12 +179,6 @@ let g:airline#extensions#hunks#enabled = 0
 
 let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr'])
 "}}}
-
-" Autoresize
-" let g:lens#disabled_filetypes = ['nerdtree', 'fzf', 'neoterm']
-" let g:lens#width_resize_max = 100
-" let g:lens#width_resize_min = 5
-" let g:lens#height_resize_min = 5
 
 " Show non visual chars
 set listchars=trail:~,tab:\|-,eol:¬ " show special characters
