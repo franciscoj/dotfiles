@@ -92,3 +92,9 @@ snippet tar "Typed attribute reader"
 sig { returns(${1:Type}) }
 attr_reader :${2:method_name}
 endsnippet
+
+snippet tstruct "class ${name} < T::Struct ... end"
+class ${1:ClassName} < T::Struct
+	$0
+end
+endsnippet
