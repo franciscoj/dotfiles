@@ -107,8 +107,9 @@ Plug 'ryanoasis/vim-devicons'
 "}}}
 
 " Linting, autocomplete, etc... {{{
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:ale_disable_lsp = 1
 Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'janko-m/vim-test'
 "}}}
 
@@ -459,10 +460,10 @@ let g:ale_sign_error = '!'
 let g:ale_sign_warning = '>'
 
 let g:ale_linters = {
-      \ 'elixir': ['mix', 'elixir-ls'],
+      \ 'elixir': ['mix'],
       \ 'javascript': [],
       \ 'python': ['flake8'],
-      \ 'ruby': ['solargraph', 'rubocop', 'ruby'],
+      \ 'ruby': ['rubocop', 'ruby'],
       \ 'rust': ['analyzer']
       \}
 
@@ -514,31 +515,54 @@ augroup files_autocomplete
   autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
 augroup END
 
-" Deoplete
-let g:deoplete#enable_at_startup = 1
+" " Deoplete
+" let g:deoplete#enable_at_startup = 1
 
-call deoplete#custom#option('sources', {
-      \ '_': ['ale', 'ultisnips'],
-      \})
-call deoplete#custom#option('auto_complete_delay', 100)
+" call deoplete#custom#option('sources', {
+"       \ '_': ['ultisnips'],
+"       \})
+" call deoplete#custom#option('auto_complete_delay', 100)
 
 " Language Server
-nmap <silent>gd :ALEGoToDefinition<CR>
-nmap <silent>gy :ALEGoToTypeDefinition<CR>
-nmap <silent>gr :ALEFindReferences<CR>
-nmap <leader>rn :ALERename
+let g:coc_global_extensions = [
+      \ 'coc-json',
+      \ 'coc-tsserver',
+      \ 'coc-solargraph',
+      \ 'coc-elixir',
+      \ 'coc-flow',
+      \ 'coc-vimlsp',
+      \ 'coc-jedi'
+      \ ]
 
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>showDocumentation()<CR>
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-function! s:showDocumentation()
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
+
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
   else
-    :ALEHover
+    execute '!' . &keywordprg . ' ' . expand('<cword>')
   endif
 endfunction
 
+inoremap <silent><expr> <c-space> coc#refresh()
+nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 " Backup files {{{
 set backup
 set backupdir   =$HOME/.config/nvim/files/backup/
