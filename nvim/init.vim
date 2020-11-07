@@ -485,7 +485,7 @@ nnoremap <silent><leader>ld :ALEDetail<CR>
 
 " Neoterm {{{
 let g:neoterm_default_mod='botright'
-nnoremap <leader>tt :Ttoggle resize=80<CR>
+nnoremap <leader>tt :Ttoggle resize=40<CR>
 " }}}
 
 " Tests {{{
