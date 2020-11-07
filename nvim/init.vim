@@ -201,6 +201,7 @@ set foldtext=functions#CustomFoldtext()
 " Go to Normal mode fast
 inoremap jj <ESC>
 inoremap <ESC> <NOP>
+inoremap ;; ::
 
 " Indention {{{
 set tabstop=2      " number of visual spaces per TAB.
