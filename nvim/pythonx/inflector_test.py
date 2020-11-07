@@ -64,7 +64,9 @@ class TestInflector(unittest.TestCase):
         )
 
     def test_service_on_a_component(self):
-        path = pathlib.Path('/my_app/components/comp/comp_name/spec/services/comp_name/class_name.rb')
+        path = pathlib.Path(
+            '/my_app/components/comp/comp_name/spec/services/comp_name/class_name.rb'
+        )
 
         self.assertEqual(
             'CompName::ClassName',
@@ -84,4 +86,3 @@ class TestInflector(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-

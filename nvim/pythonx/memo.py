@@ -10,4 +10,3 @@ def body(snip):
     var_name = text.split(' = ')[1]
 
     snip.rv = var_name
-

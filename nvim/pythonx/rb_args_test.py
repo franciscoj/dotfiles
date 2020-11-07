@@ -1,5 +1,4 @@
 import rb_args
-import re
 import unittest
 
 
@@ -41,7 +40,6 @@ class TestRbArgs(unittest.TestCase):
             rb_args.split(args)
         )
 
-
     def test_build_init_from_kw_args(self):
         args = 'first:, second:'
         snip = SnipMock()
@@ -49,8 +47,6 @@ class TestRbArgs(unittest.TestCase):
         expected = '  @first = first\n  @second = second\n'
 
         self.assertEqual(snip.rv, expected)
-
-
 
     def test_build_init_without_args(self):
         args = ''

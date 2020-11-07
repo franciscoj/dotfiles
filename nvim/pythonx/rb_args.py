@@ -5,7 +5,7 @@ from string import Template
 def split(args):
     """
     Given the text with the list of args of a ruby initializer it splits the
-    neme of each one of them and cleans up default values.
+    name of each one of them and cleans up default values.
     """
     args_list = args.split(',')
 
