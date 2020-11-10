@@ -1,2 +1,12 @@
 {
+  "languageserver": {
+    "sorbet": {
+      "command": "srb",
+      "args": ["tc", "--enable-all-experimental-lsp-features", "--lsp", "--disable-watchman"],
+      "filetypes": ["ruby"],
+      "rootPatterns": ["sorbet/config"],
+      "initializationOptions": {},
+      "settings": {}
+    }
+  } 
 }
