@@ -1,4 +1,4 @@
-import rb_args
+from .. import rb_args
 import unittest
 
 

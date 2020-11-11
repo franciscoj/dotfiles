@@ -1,7 +1,6 @@
 global !p
-import inflector
-import rb_args
-import memo
+from dot.snips import inflector
+from dot.snips import rb_args
 
 real_path = vim.eval('expand("%:p")')
 current_indent = int(vim.eval('indent(".")/&shiftwidth'))
@@ -47,12 +46,6 @@ endsnippet
 snippet defm "def method_name; @method_name ||= ..."
 def ${1:method_name}
 	@$1 ||= $0
-end
-endsnippet
-
-snippet memo
-def `!p memo.var_name(snip)`
-	@`!p memo.var_name(snip)` ||= `!p memo.body(snip)`
 end
 endsnippet
 
