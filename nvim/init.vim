@@ -101,7 +101,7 @@ Plug 'romainl/vim-qf'
 "}}}
 
 " Look & Feel {{{
-Plug 'rakr/vim-one'
+Plug 'morhetz/gruvbox'
 Plug 'jnurmine/Zenburn'
 Plug 'ryanoasis/vim-devicons'
 "}}}
@@ -141,21 +141,23 @@ call plug#end()
 set relativenumber
 set number
 
-" Configure 'One' colorscheme {{{
+" Gruvbox colrscheme setup {{{
 set background=dark
 set termguicolors
-let g:one_allow_italics = 1 " I love italic for comments
-colorscheme one
-
+let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_italic=1
+let g:gruvbox_italicize_strings=1
+let g:airline_theme='gruvbox'
+colorscheme gruvbox
 " Better color on tmux
 set t_8b=[48;2;%lu;%lu;%lum
 set t_8f=[38;2;%lu;%lu;%lum
+"}}}
+
 " }}}
 
 " Status line {{{
 let g:airline#extensions#ale#enabled = 1
-
-let g:airline_theme='one'
 
 " Don't display encoding unless it is unexpected
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
