@@ -58,6 +58,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'mhinz/vim-signify'
 Plug 'junegunn/gv.vim'
+
+let g:git_messenger_no_default_mappings=v:true
+Plug 'rhysd/git-messenger.vim'
 "}}}
 
 " Language support {{{
@@ -307,7 +310,7 @@ augroup git_commits
 augroup END
 
 
-" Shortcuts
+" Git Shortcuts {{{
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gc :Git commit<CR>
 nnoremap <leader>gC :Git commit -n<CR>
@@ -315,10 +318,8 @@ nnoremap <leader>gP :Git push<CR>
 nnoremap <leader>gPP :Git push --force-with-lease<CR>
 nnoremap <leader>gp :Git pull<CR>
 nnoremap <leader>gf :Git fetch<CR>
-" git log for current file
-nnoremap <leader>gl :GV!<CR>
-" git log for project
-nnoremap <leader>gL :GV<CR>
+nnoremap <leader>gl :GV!<CR> " git log for current file
+nnoremap <leader>gL :GV<CR> " git log for project
 nnoremap <leader>gd :Gvdiffsplit<CR>
 nnoremap <leader>gdd :Gvdiffsplit!<CR>
 nnoremap <leader>gb :Git blame<CR>
@@ -327,13 +328,20 @@ nnoremap <leader>g- :Git checkout -<CR>
 nnoremap <leader>grr :Git rebase -i master<CR>
 nnoremap <leader>gg :Git<SPACE>
 nnoremap <leader>gco :Git checkout<SPACE>
+"}}}
 
-
-" signify (gutter for git)
+" signify (gutter for git) {{{
 let g:signify_vcs_list = ['git']
 let g:signify_sign_change = '~'
 let g:signify_sign_changedelete = '!'
 let g:signify_realtime = 1
+"}}}
+
+" git-messenger {{{
+let g:git_messenger_include_diff='current'
+let g:git_messenger_always_into_popup=v:true
+nnoremap <leader>gM :GitMessenger<CR>
+"}}}
 
 "}}}
 
