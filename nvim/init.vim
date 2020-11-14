@@ -17,7 +17,6 @@ call plug#begin()
 
 " Thank to the universe for Tim Pope {{{
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch' " Syntax sugar for unix commands
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
@@ -33,7 +32,7 @@ Plug 'junegunn/goyo.vim'
 
 " Misc {{{
 Plug 'kassio/neoterm'
-Plug 'kana/vim-smartinput' " To have automatic closed pairs like () or {}
+Plug 'cohama/lexima.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'vim-airline/vim-airline'
 Plug 'sjl/gundo.vim'
@@ -604,6 +603,44 @@ augroup ruby
   " Rails schema.rb file can be a pain to open.
   autocmd BufRead db/schema.rb setlocal ft=off
 augroup END
+
+call lexima#add_rule({
+      \   'at': '\%#',
+      \   'char': '{',
+      \   'input': '{<Space>',
+      \   'input_after': '<Space>}',
+      \   'filetype': ['ruby'],
+      \ })
+
+call lexima#add_rule({
+      \   'at': '\%#',
+      \   'char': '#',
+      \   'input': '#{',
+      \   'input_after': '}',
+      \   'filetype': ['ruby', 'elixir'],
+      \   'syntax': ['rubyString', 'rubyStringDelimiter',
+      \              'elixirString', 'elixirStringDelimiter'],
+      \ })
+
+call lexima#add_rule({
+      \   'at': '\%#',
+      \   'char': '$',
+      \   'input': '${',
+      \   'input_after': '}',
+      \   'filetype': ['javascript', 'typescript'],
+      \   'syntax': ['sqlTemplateString', 'typescriptTemplate'],
+      \ })
+
+call lexima#add_rule({
+      \   'at': '\({\|\<do\>\)\s*\%#',
+      \   'except': '\(|\)\%#\(|\)',
+      \   'char': '<Bar>',
+      \   'input': '<Bar>',
+      \   'input_after': '<Bar>',
+      \   'filetype': ['ruby'],
+      \ })
+"
+call lexima#add_rule({'char': '<BS>', 'at': '|\%#|', 'delete': 1})
 "}}}
 
 " HAML {{{
