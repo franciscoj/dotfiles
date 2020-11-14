@@ -567,6 +567,9 @@ nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<
 inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
 inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
+set shortmess+=c
+
+
 " Backup files {{{
 set backup
 set backupdir   =$HOME/.config/nvim/files/backup/
@@ -574,6 +577,7 @@ set backupext   =-vimbackup
 set backupskip  =
 set directory   =$HOME/.config/nvim/files/swap/
 set updatecount =100
+set updatetime  =300
 set undofile
 set undodir     =$HOME/.config/nvim/files/undo/
 set viminfo     ='100,n$HOME/.config/nvim/files/info/viminfo
