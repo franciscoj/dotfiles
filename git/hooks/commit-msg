@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# This hook adds a `+` as the first character on the commit message when the
+# commit message has more than 1 line.
+#
+# This helps me identify commit messages that have extended information so that
+# I can properly manage them on log sessions of `rebase -i`.
+if [ $(grep -c -v -e '^[[:space:]]*$' -e '^#' $1) -gt 1 ]; then
+  sed -i '1s/^/\+/' $1
+fi
