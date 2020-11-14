@@ -3,7 +3,7 @@ let s:middot='·'
 let s:raquo='»'
 let s:small_l='ℓ'
 
-function! functions#CustomFoldtext() abort
+function! dot#CustomFoldtext() abort
   let l:lines='[' . (v:foldend - v:foldstart + 1) . s:small_l . ']'
   let l:first=substitute(getline(v:foldstart), '\v *', '', '')
   let l:fold_levels_count=strlen(v:folddashes) - 1
@@ -13,7 +13,7 @@ endfunction
 
 " List all the snippets for `completefunc` matching the current word for
 " completion with C-X C-U
-function! functions#ListSnippets(findstart, base) abort
+function! dot#ListSnippets(findstart, base) abort
   if empty(UltiSnips#SnippetsInCurrentScope(1))
     return ''
   endif

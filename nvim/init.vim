@@ -193,7 +193,7 @@ set clipboard=unnamed,unnamedplus
 set foldmethod=syntax
 set nofoldenable
 set fillchars+=fold:·
-set foldtext=functions#CustomFoldtext()
+set foldtext=dot#CustomFoldtext()
 "}}}
 
 " Edit {{{
@@ -506,7 +506,7 @@ let g:UltiSnipsSnippetsDir = $HOME.'/.config/nvim/snips'
 let g:UltiSnipsSnippetDirectories = ['snips', 'priv_snips', 'UltiSnips' ]
 let g:UltiSnipsEditSplit = 'vertical'
 
-set completefunc=functions#ListSnippets
+set completefunc=dot#ListSnippets
 set completeopt=menuone
 
 augroup files_autocomplete
@@ -685,8 +685,5 @@ augroup plantuml_configs
   autocmd Filetype foo setlocal makeprg=plantuml %
 augroup END
 "}}}
-
-" Load custom functions
-source $HOME/.config/nvim/functions.vim
 
 " }}}
