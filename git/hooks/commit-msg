@@ -5,6 +5,12 @@
 #
 # This helps me identify commit messages that have extended information so that
 # I can properly manage them on log sessions of `rebase -i`.
+OS=`uname`
+
 if [ $(grep -c -v -e '^[[:space:]]*$' -e '^#' $1) -gt 1 ]; then
-  sed -i '1s/^/\+/' $1
+  if [ "$OS" = 'Darwin' ]; then
+    gsed -i '1s/^/\+/' $1
+  else
+    sed -i '1s/^/\+/' $1
+  fi
 fi
