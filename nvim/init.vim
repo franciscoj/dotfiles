@@ -44,6 +44,7 @@ Plug 'wellle/targets.vim'
 Plug 'sirver/ultisnips'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'junegunn/vim-easy-align'
+Plug 'kshenoy/vim-signature'
 
 " Adds auto commands on syntax changes. To be able to activate/deactivate auto
 " wrap on comments
