@@ -1,4 +1,5 @@
 {
+  "tsserver.enableJavascript": false,
   "languageserver": {
     "sorbet": {
       "command": "srb",
