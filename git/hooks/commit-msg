@@ -9,8 +9,8 @@ OS=`uname`
 
 if [ $(grep -c -v -e '^[[:space:]]*$' -e '^#' $1) -gt 1 ]; then
   if [ "$OS" = 'Darwin' ]; then
-    gsed -i '1s/^/\+/' $1
+    gsed -i '1s/^\+\?/\+/' $1
   else
-    sed -i '1s/^/\+/' $1
+    sed -i '1s/^\+\?/\+/' $1
   fi
 fi
