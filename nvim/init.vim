@@ -79,6 +79,7 @@ let g:polyglot_disabled = [
       \ 'javascript',
       \ 'jsx',
       \ 'markdown',
+      \ 'plantuml',
       \ 'ruby',
       \ 'rust',
       \ 'typescript',
