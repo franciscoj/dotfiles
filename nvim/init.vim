@@ -73,12 +73,17 @@ Plug 'rhysd/git-messenger.vim'
 " Polyglot is great but it doesn't activate all the functionalities for all
 " languages in order to make it load fast.
 let g:polyglot_disabled = [
-      \'javascript',
-      \'typescript'
-      \'jsx',
-      \'markdown',
-      \'ruby',
-      \]
+      \ 'eelixir',
+      \ 'elixir',
+      \ 'git',
+      \ 'javascript',
+      \ 'jsx',
+      \ 'markdown',
+      \ 'ruby',
+      \ 'rust',
+      \ 'typescript',
+      \ 'yard'
+      \ ]
 Plug 'sheerun/vim-polyglot'
 Plug 'plasticboy/vim-markdown'
 
