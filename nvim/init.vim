@@ -59,6 +59,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
+Plug 'sodapopcan/vim-twiggy'
 
 let g:git_messenger_no_default_mappings=v:true
 Plug 'rhysd/git-messenger.vim'
@@ -321,7 +322,6 @@ augroup git_commits
   " Add spell check to git commits
   autocmd FileType gitcommit setlocal spell spelllang=en_us
 augroup END
-
 
 " Git Shortcuts {{{
 nnoremap <leader>gs :Git<CR>
