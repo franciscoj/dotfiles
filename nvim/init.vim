@@ -545,7 +545,8 @@ let g:coc_global_extensions = [
       \ 'coc-elixir',
       \ 'coc-flow',
       \ 'coc-vimlsp',
-      \ 'coc-jedi'
+      \ 'coc-jedi',
+      \ 'coc-tailwindcss'
       \ ]
 
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
