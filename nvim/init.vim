@@ -108,6 +108,7 @@ Plug 'romainl/vim-qf'
 Plug 'morhetz/gruvbox'
 Plug 'jnurmine/Zenburn'
 Plug 'ryanoasis/vim-devicons'
+Plug 'junegunn/goyo.vim'
 "}}}
 
 " Linting, autocomplete, etc... {{{
@@ -156,6 +157,9 @@ colorscheme gruvbox
 set t_8b=[48;2;%lu;%lu;%lum
 set t_8f=[38;2;%lu;%lu;%lum
 "}}}
+
+let g:goyo_width=120
+let g:goyo_height=100
 
 " }}}
 
