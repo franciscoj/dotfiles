@@ -253,9 +253,9 @@ let g:splitjoin_ruby_hanging_args = 0
 
 " Add characters to the end of the line and go back to the spot in which you
 " were.
-nnoremap <leader>, mzA,<esc>`z
-nnoremap <leader>; mzA;<esc>`z
-nnoremap <leader>: mzA:<esc>`z
+nnoremap <leader>, mzA,<esc>`z:delm z<cr>
+nnoremap <leader>; mzA;<esc>`z:delm z<cr>
+nnoremap <leader>: mzA:<esc>`z:delm z<cr>
 
 " Don't loose selection when shifting
 xnoremap <  <gv
