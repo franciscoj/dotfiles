@@ -111,7 +111,6 @@ Plug 'ryanoasis/vim-devicons'
 "}}}
 
 " Linting, autocomplete, etc... {{{
-let g:ale_disable_lsp = 1
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'janko-m/vim-test'
@@ -466,10 +465,9 @@ let g:netrw_liststyle= 3
 " ALE - Asynchronous Linting Engine
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_column_always = 1
-" let g:ale_disable_lsp = 1
-
-let g:ale_sign_error = '!'
-let g:ale_sign_warning = '>'
+let g:ale_disable_lsp = 1
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
 
 let g:ale_linters = {
       \ 'elixir': ['mix'],
