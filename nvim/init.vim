@@ -145,6 +145,7 @@ call plug#end()
 " Show both current linen number and relative number
 set relativenumber
 set number
+set signcolumn=auto:3
 
 " Gruvbox colrscheme setup {{{
 set background=dark
