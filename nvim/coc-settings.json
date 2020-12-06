@@ -1,5 +1,8 @@
 {
   "tsserver.enableJavascript": false,
+  "diagnostic.infoSign": "_i",
+  "diagnostic.errorSign": "_●",
+  "diagnostic.warningSign": "_.",
   "languageserver": {
     "sorbet": {
       "command": "srb",
@@ -9,5 +12,5 @@
       "initializationOptions": {},
       "settings": {}
     }
-  } 
+  }
 }
