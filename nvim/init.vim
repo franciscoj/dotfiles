@@ -56,6 +56,7 @@ Plug 'kristijanhusak/vim-dadbod-ui'
 
 " Git {{{
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
