@@ -57,7 +57,7 @@ Plug 'kristijanhusak/vim-dadbod-ui'
 " Git {{{
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
 
 let g:git_messenger_no_default_mappings=v:true
@@ -330,11 +330,8 @@ nnoremap <leader>gg :Git<SPACE>
 nnoremap <leader>gco :Git checkout<SPACE>
 "}}}
 
-" signify (gutter for git) {{{
-let g:signify_vcs_list = ['git']
-let g:signify_sign_change = '~'
-let g:signify_sign_changedelete = '!'
-let g:signify_realtime = 1
+" gitgutter {{{
+let g:gitgutter_diff_args = '-w'
 "}}}
 
 " git-messenger {{{
