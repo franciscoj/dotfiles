@@ -38,8 +38,3 @@ zplug load # --verbose
 # https://wiki.archlinux.org/index.php/Node.js_#Allow_user-wide_installations
 export PATH=$HOME/.node_modules/bin:$PATH
 export npm_config_prefix=$HOME/.node_modules
-
-# For expo
-export ANDROID_SDK=$HOME/Android/Sdk
-export PATH=$HOME/Documents/src/android-studio/bin:$PATH
-export PATH=$ANDROID_SDK/platform-tools:$PATH
