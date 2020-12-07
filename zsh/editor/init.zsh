@@ -1,5 +1,6 @@
 export EDITOR='nvim'
 export DIFFPROG='nvim -d'
+export MANPAGER='nvim +Man!'
 
 export VISUAL=$EDITOR
 
