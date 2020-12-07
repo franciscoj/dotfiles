@@ -344,11 +344,7 @@ nnoremap <leader>gL :GV<CR> " git log for project
 nnoremap <leader>gd :Gvdiffsplit<CR>
 nnoremap <leader>gdd :Gvdiffsplit!<CR>
 nnoremap <leader>gb :Git blame<CR>
-nnoremap <leader>gm :Git checkout master<CR>
-nnoremap <leader>g- :Git checkout -<CR>
-nnoremap <leader>grr :Git rebase -i master<CR>
 nnoremap <leader>gg :Git<SPACE>
-nnoremap <leader>gco :Git checkout<SPACE>
 "}}}
 
 " gitgutter {{{
