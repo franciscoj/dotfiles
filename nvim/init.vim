@@ -36,22 +36,30 @@ Plug 'cohama/lexima.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'vim-airline/vim-airline'
 Plug 'sjl/gundo.vim'
-Plug 'FooSoft/vim-argwrap'
-Plug 'AndrewRadev/splitjoin.vim'
-
 Plug 'scrooloose/nerdtree'
 Plug 'embear/vim-localvimrc'
 Plug 'sirver/ultisnips'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'junegunn/vim-easy-align'
+
+" Improved text objects
+Plug 'wellle/targets.vim'
+
+" Split arguments, blocks, etc...
+Plug 'FooSoft/vim-argwrap'
+Plug 'AndrewRadev/splitjoin.vim'
+
+" Show marks on the gutter
 Plug 'kshenoy/vim-signature'
 
 " Adds auto commands on syntax changes. To be able to activate/deactivate auto
-" wrap on comments
+" wrap on comments.
 Plug 'inkarkat/vim-OnSyntaxChange'
 Plug 'inkarkat/vim-ingo-library'
-Plug 'tpope/vim-dadbod'
+
+" Adds a UI for the database.
 Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'tpope/vim-dadbod'
 "}}}
 
 " Git {{{
@@ -60,6 +68,8 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
+
+" Allows to manage git branches
 Plug 'sodapopcan/vim-twiggy'
 
 let g:git_messenger_no_default_mappings=v:true
@@ -87,11 +97,17 @@ let g:polyglot_disabled = [
       \ 'yard'
       \ ]
 Plug 'sheerun/vim-polyglot'
+
 Plug 'plasticboy/vim-markdown'
 
+" JavaScript
 Plug 'yuezk/vim-js'
 Plug 'MaxMEllon/vim-jsx-pretty'
+
+" TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
+
+" Ruby
 Plug 'noprompt/vim-yardoc'
 Plug 'vim-ruby/vim-ruby'
 Plug 'neoclide/jsonc.vim'
@@ -105,24 +121,34 @@ Plug 'elixir-editors/vim-elixir'
 " Search {{{
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" Find and Replace
 Plug 'brooth/far.vim'
+
+" Quicklist management
 Plug 'romainl/vim-qf'
 "}}}
 
 " Look & Feel {{{
 Plug 'morhetz/gruvbox'
-Plug 'jnurmine/Zenburn'
 Plug 'ryanoasis/vim-devicons'
+
+" Focus mode
 Plug 'junegunn/goyo.vim'
 "}}}
 
 " Linting, autocomplete, etc... {{{
+" Only linting and fixing
 Plug 'dense-analysis/ale'
+
+" LSP support
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'janko-m/vim-test'
 "}}}
 
 " Testing... {{{
+" Fern, a different project navigation and file manager than nerdtree
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
@@ -165,7 +191,9 @@ set termguicolors
 let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_italic=1
 let g:gruvbox_italicize_strings=1
+let g:gruvbox_invert_selection=0
 let g:airline_theme='gruvbox'
+let g:gruvbox_guisp_fallback='fg'
 colorscheme gruvbox
 " Better color on tmux
 set t_8b=[48;2;%lu;%lu;%lum
