@@ -180,9 +180,12 @@ call plug#end()
 
 " Look & Feel {{{
 
-" Show both current linen number and relative number
+" Show both current line number and relative number
 set relativenumber
 set number
+
+" Allow to have up to 3 different columns in the gutter (e.g. git, linter and
+" marks)
 set signcolumn=auto:3
 
 " Gruvbox colrscheme setup {{{
@@ -195,6 +198,7 @@ let g:gruvbox_invert_selection=0
 let g:airline_theme='gruvbox'
 let g:gruvbox_guisp_fallback='fg'
 colorscheme gruvbox
+
 " Better color on tmux
 set t_8b=[48;2;%lu;%lu;%lum
 set t_8f=[38;2;%lu;%lu;%lum
@@ -231,7 +235,6 @@ let g:airline_mode_map = {
                   \ ''     : 'V',
                   \ }
 
-" Disable showing git hunks
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#fugitiveline#enabled = 1
@@ -294,6 +297,9 @@ let g:splitjoin_ruby_hanging_args = 0
 
 " Add characters to the end of the line and go back to the spot in which you
 " were.
+"
+" This saves the current cursor location on mark `z`, adds the new character,
+" goes back to the previous location and removes the mark.
 nnoremap <leader>, mzA,<esc>`z:delm z<cr>
 nnoremap <leader>; mzA;<esc>`z:delm z<cr>
 nnoremap <leader>: mzA:<esc>`z:delm z<cr>
@@ -302,7 +308,7 @@ nnoremap <leader>: mzA:<esc>`z:delm z<cr>
 xnoremap <  <gv
 xnoremap >  >gv
 
-" Select current line, only
+" Select only the text in the current line.
 nnoremap vvl v_o$h
 
 " When entering comments, activate text wrap automatically and deactivate it
@@ -331,14 +337,7 @@ nnoremap <silent><leader>qq :qall<CR>
 " Write one or all open files
 nnoremap <leader>fs :write<CR>
 nnoremap <leader>fS :wall<CR>
-nnoremap <leader>fo :edit<space>
 nnoremap <leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
-
-
-" Load QF list
-nnoremap <leader>ll :LoadList<space>
-nnoremap <leader>ls :SaveList<space>
-nnoremap <leader>lr :Reject<CR>
 
 " LocalVIMRC
 let g:localvimrc_persistent=1
@@ -481,8 +480,13 @@ nnoremap <silent><leader>lc :lclose<CR>
 
 " Tabs management
 nnoremap <silent><leader>Tc :tabclose<CR>
+" Current buffer on a new tab
 nnoremap <silent><leader>TT :tabnew %<CR>
+
+" New empty tab
 nnoremap <silent><leader>T :tabnew<CR>
+
+" next/prev tab
 nnoremap <leader><TAB> gt
 nnoremap <leader><S-TAB> gT
 "}}}
@@ -520,7 +524,7 @@ let g:ale_linters = {
       \ 'elixir': ['mix'],
       \ 'javascript': [],
       \ 'python': ['flake8'],
-      \ 'ruby': ['rubocop', 'ruby'],
+      \ 'ruby': ['ruby'],
       \ 'rust': ['analyzer']
       \}
 
@@ -540,6 +544,9 @@ nnoremap <silent><leader>ld :ALEDetail<CR>
 
 " Neoterm {{{
 let g:neoterm_default_mod='botright'
+
+" Use a count to toggle a different terminal. E.g. 1tt will toggle the first
+" one, while 2<leader>tt will toggle the second one.
 nnoremap <leader>tt :<c-u>exec v:count.'Ttoggle resize=40'<CR>
 nnoremap <leader>tcl :<c-u>exec v:count.'Tclear'<cr>
 
@@ -573,14 +580,6 @@ augroup files_autocomplete
   autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
   autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
 augroup END
-
-" " Deoplete
-" let g:deoplete#enable_at_startup = 1
-
-" call deoplete#custom#option('sources', {
-"       \ '_': ['ultisnips'],
-"       \})
-" call deoplete#custom#option('auto_complete_delay', 100)
 
 " Language Server
 let g:coc_global_extensions = [
