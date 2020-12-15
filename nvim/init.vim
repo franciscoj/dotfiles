@@ -38,9 +38,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'sjl/gundo.vim'
 Plug 'FooSoft/vim-argwrap'
 Plug 'AndrewRadev/splitjoin.vim'
+
 Plug 'scrooloose/nerdtree'
 Plug 'embear/vim-localvimrc'
-Plug 'wellle/targets.vim'
 Plug 'sirver/ultisnips'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'junegunn/vim-easy-align'
@@ -94,9 +94,6 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'noprompt/vim-yardoc'
 Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-bundler'
 Plug 'neoclide/jsonc.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'junegunn/vader.vim'
@@ -132,6 +129,14 @@ Plug 'lambdalisue/glyph-palette.vim'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/fern-git-status.vim'
+Plug 'wellle/targets.vim'
+Plug 'AndrewRadev/switch.vim'
+Plug 'AndrewRadev/sideways.vim'
+
+nnoremap <leader><leader>h :SidewaysLeft<cr>
+nnoremap <leader><leader>l :SidewaysRight<cr>
+nnoremap <leader>h :SidewaysJumpLeft<cr>
+nnoremap <leader>l :SidewaysJumpRight<cr>
 
 let g:fern#renderer = 'nerdfont'
 
