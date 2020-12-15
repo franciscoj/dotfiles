@@ -281,7 +281,7 @@ nnoremap vvl v_o$h
 " when leaving them.
 "
 " Comments break line {{{
-call OnSyntaxChange#Install('Comment', '^Comment$', 0, 'i')
+call OnSyntaxChange#Install('Comment', '^Comment$', 1, 'i')
 
 augroup auto_wrap_comments
   autocmd User SyntaxCommentEnterI setlocal tw=79
