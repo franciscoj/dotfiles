@@ -87,6 +87,7 @@ let g:polyglot_disabled = [
       \ 'eelixir',
       \ 'elixir',
       \ 'git',
+      \ 'go',
       \ 'javascript',
       \ 'jsx',
       \ 'markdown',
@@ -116,6 +117,7 @@ Plug 'junegunn/vader.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'scrooloose/vim-slumlord'
 Plug 'elixir-editors/vim-elixir'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "}}}
 
 " Search {{{
@@ -535,7 +537,8 @@ let g:ale_fixers = {
       \ 'ruby': ['rubocop'],
       \ 'rust': [],
       \ 'typescript': ['prettier'],
-      \ 'typescriptreact': ['prettier']
+      \ 'typescriptreact': ['prettier'],
+      \ 'go': ['gofmt']
       \}
 
 nnoremap <silent><leader>lf :ALEFix<CR>
