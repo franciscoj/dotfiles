@@ -41,6 +41,9 @@ Plug 'embear/vim-localvimrc'
 Plug 'sirver/ultisnips'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'junegunn/vim-easy-align'
+Plug 'justinmk/vim-sneak'
+let g:sneak#label = 1
+let g:sneak#prompt = 'Jump to:'
 
 " Improved text objects
 Plug 'wellle/targets.vim'
