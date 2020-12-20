@@ -45,6 +45,9 @@ Plug 'justinmk/vim-sneak'
 let g:sneak#label = 1
 let g:sneak#prompt = 'Jump to:'
 
+Plug 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_duration = 200
+
 " Improved text objects
 Plug 'wellle/targets.vim'
 
