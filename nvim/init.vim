@@ -94,22 +94,15 @@ let g:polyglot_disabled = [
       \ 'elixir',
       \ 'git',
       \ 'go',
-      \ 'javascript',
-      \ 'jsx',
       \ 'markdown',
       \ 'plantuml',
       \ 'ruby',
       \ 'rust',
-      \ 'typescript',
       \ 'yard'
       \ ]
 Plug 'sheerun/vim-polyglot'
 
 Plug 'plasticboy/vim-markdown'
-
-" JavaScript
-Plug 'yuezk/vim-js'
-Plug 'MaxMEllon/vim-jsx-pretty'
 
 " TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
