@@ -1,7 +1,23 @@
+[aws]
+symbol = " "
+
 [battery]
 full_symbol = ""
 charging_symbol = ""
 discharging_symbol = ""
+
+[character]
+vicmd_symbol = "[➜](bold purple) "
+
+[conda]
+symbol = " "
+disabled = true
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
 
 [docker]
 symbol = " "
@@ -9,14 +25,35 @@ symbol = " "
 [elixir]
 symbol = " "
 
+[elm]
+symbol = " "
+
 [git_branch]
 symbol = " "
 
 [golang]
 symbol = " "
 
+[haskell]
+symbol = " "
+
 [hg_branch]
 symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
 
 [nodejs]
 symbol = " "
@@ -24,9 +61,20 @@ symbol = " "
 [package]
 symbol = " "
 
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
 [ruby]
 symbol = " "
 
 [rust]
-symbol = " "
+symbol = " "
 
+[swift]
+symbol = "ﯣ "
