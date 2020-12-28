@@ -1,0 +1,15 @@
+snippet iferr "if err != nil { ... }"
+if err != nil {
+	$0
+}
+endsnippet
+
+snippet struct "type whatever struct { ... }"
+type ${1:name} struct {
+	$0
+}
+endsnippet
+
+snippet = "something := somethingElse(...)"
+${1:name} := ${2:equalsTo}
+endsnippet
