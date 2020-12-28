@@ -567,14 +567,15 @@ augroup END
 
 " Language Server
 let g:coc_global_extensions = [
-      \ 'coc-json',
-      \ 'coc-tsserver',
-      \ 'coc-solargraph',
       \ 'coc-elixir',
       \ 'coc-flow',
-      \ 'coc-vimlsp',
+      \ 'coc-gocode',
       \ 'coc-jedi',
-      \ 'coc-tailwindcss'
+      \ 'coc-json',
+      \ 'coc-solargraph',
+      \ 'coc-tailwindcss',
+      \ 'coc-tsserver',
+      \ 'coc-vimlsp'
       \ ]
 
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
