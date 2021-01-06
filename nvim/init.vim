@@ -153,11 +153,9 @@ nnoremap <leader><leader>l :SidewaysRight<cr>
 nnoremap <leader>h :SidewaysJumpLeft<cr>
 nnoremap <leader>l :SidewaysJumpRight<cr>
 
-let g:fern#renderer = 'nerdfont'
 
 augroup tree-glyph-palette
   autocmd! *
-  autocmd FileType fern call glyph_palette#apply()
   autocmd FileType nerdtree call glyph_palette#apply()
 augroup END
 "}}}
