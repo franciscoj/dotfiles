@@ -129,6 +129,7 @@ Plug 'romainl/vim-qf'
 " Look & Feel {{{
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Focus mode
 Plug 'junegunn/goyo.vim'
