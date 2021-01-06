@@ -145,17 +145,9 @@ Plug 'janko-m/vim-test'
 "}}}
 
 " Testing... {{{
-" Fern, a different project navigation and file manager than nerdtree
-Plug 'antoinemadec/FixCursorHold.nvim'
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/glyph-palette.vim'
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'lambdalisue/fern-git-status.vim'
 Plug 'wellle/targets.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'AndrewRadev/sideways.vim'
-
 nnoremap <leader><leader>h :SidewaysLeft<cr>
 nnoremap <leader><leader>l :SidewaysRight<cr>
 nnoremap <leader>h :SidewaysJumpLeft<cr>
@@ -528,12 +520,13 @@ let g:ale_linters = {
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'elixir': ['mix_format'],
+      \ 'go': ['gofmt'],
       \ 'javascript': ['prettier'],
+      \ 'markdown': ['prettier'],
       \ 'ruby': ['rubocop'],
       \ 'rust': [],
       \ 'typescript': ['prettier'],
-      \ 'typescriptreact': ['prettier'],
-      \ 'go': ['gofmt']
+      \ 'typescriptreact': ['prettier']
       \}
 
 nnoremap <silent><leader>lf :ALEFix<CR>
