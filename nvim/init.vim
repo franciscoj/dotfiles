@@ -152,12 +152,6 @@ nnoremap <leader><leader>h :SidewaysLeft<cr>
 nnoremap <leader><leader>l :SidewaysRight<cr>
 nnoremap <leader>h :SidewaysJumpLeft<cr>
 nnoremap <leader>l :SidewaysJumpRight<cr>
-
-
-augroup tree-glyph-palette
-  autocmd! *
-  autocmd FileType nerdtree call glyph_palette#apply()
-augroup END
 "}}}
 
 call plug#end()
