@@ -44,9 +44,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'machakann/vim-highlightedyank'
 let g:highlightedyank_highlight_duration = 200
 
-" Improved text objects
-Plug 'wellle/targets.vim'
-
 " Split arguments, blocks, etc...
 Plug 'FooSoft/vim-argwrap'
 Plug 'AndrewRadev/splitjoin.vim'
