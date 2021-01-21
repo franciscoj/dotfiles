@@ -417,6 +417,7 @@ nnoremap <leader>fb :FZFBuffers<cr>
 nnoremap <leader>s :FZFRg<space>
 " Search with ripgrep the word under the cursor
 nnoremap \\ :FZFRg <c-r><c-w><cr>
+nnoremap <leader>sc :%s//&/n<cr>
 
 " Far
 
