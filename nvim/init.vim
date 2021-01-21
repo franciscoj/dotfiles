@@ -579,11 +579,11 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename)
+nmap <silent><leader><leader>d <Plug>(coc-definition)
+nmap <silent><leader><leader>y <Plug>(coc-type-definition)
+nmap <silent><leader><leader>i <Plug>(coc-implementation)
+nmap <silent><leader><leader>r <Plug>(coc-references)
+nmap <leader><leader><leader>n <Plug>(coc-rename)
 
 
 " Use K to show documentation in preview window.
