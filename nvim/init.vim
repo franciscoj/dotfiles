@@ -179,8 +179,8 @@ let g:gruvbox_guisp_fallback='fg'
 colorscheme gruvbox
 
 " Better color on tmux
-set t_8b=[48;2;%lu;%lu;%lum
-set t_8f=[38;2;%lu;%lu;%lum
+" set t_8b=[48;2;%lu;%lu;%lum
+" set t_8f=[38;2;%lu;%lu;%lum
 "}}}
 
 let g:goyo_width=120
