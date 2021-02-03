@@ -4,13 +4,13 @@
   "diagnostic.errorSign": "●",
   "diagnostic.warningSign": ".",
   "languageserver": {
-    "sorbet": {
-      "command": "srb",
-      "args": ["tc", "--enable-all-experimental-lsp-features", "--lsp", "--disable-watchman"],
-      "filetypes": ["ruby"],
-      "rootPatterns": ["sorbet/config"],
-      "initializationOptions": {},
-      "settings": {}
-    }
+    /* "sorbet": { */
+    /*   "command": "srb", */
+    /*   "args": ["tc", "--enable-all-experimental-lsp-features", "--lsp", "--disable-watchman"], */
+    /*   "filetypes": ["ruby"], */
+    /*   "rootPatterns": ["sorbet/config"], */
+    /*   "initializationOptions": {}, */
+    /*   "settings": {} */
+    /* } */
   }
 }
