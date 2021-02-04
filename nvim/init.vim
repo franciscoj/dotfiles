@@ -70,9 +70,6 @@ Plug 'junegunn/gv.vim'
 
 " Allows to manage git branches
 Plug 'sodapopcan/vim-twiggy'
-
-let g:git_messenger_no_default_mappings=v:true
-Plug 'rhysd/git-messenger.vim'
 "}}}
 
 " Language support {{{
@@ -360,12 +357,6 @@ nnoremap <leader>gg :Git<SPACE>
 
 " gitgutter {{{
 let g:gitgutter_diff_args = '-w'
-"}}}
-
-" git-messenger {{{
-let g:git_messenger_include_diff='current'
-let g:git_messenger_always_into_popup=v:true
-nnoremap <leader>gM :GitMessenger<CR>
 "}}}
 
 "}}}
