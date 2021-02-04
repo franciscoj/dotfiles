@@ -137,7 +137,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'dense-analysis/ale'
 
 " LSP support
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'kosayoda/nvim-lightbulb'
 
 Plug 'janko-m/vim-test'
 "}}}
@@ -215,7 +216,6 @@ let g:airline_mode_map = {
                   \ }
 
 let g:airline#extensions#hunks#enabled = 1
-let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#fugitiveline#enabled = 1
 let g:airline#extensions#nerdtree_statusline = 1
 let g:airline#extensions#ale#enabled = 1
@@ -553,7 +553,7 @@ let g:UltiSnipsSnippetDirectories = ['snips', 'priv_snips', 'UltiSnips' ]
 let g:UltiSnipsEditSplit = 'vertical'
 
 set completefunc=dot#ListSnippets
-set completeopt=menuone
+set completeopt=menu,menuone,noinsert,noselect
 
 augroup files_autocomplete
   autocmd!
@@ -564,50 +564,6 @@ augroup files_autocomplete
 augroup END
 
 " Language Server
-let g:coc_global_extensions = [
-      \ 'coc-elixir',
-      \ 'coc-flow',
-      \ 'coc-gocode',
-      \ 'coc-jedi',
-      \ 'coc-json',
-      \ 'coc-solargraph',
-      \ 'coc-tailwindcss',
-      \ 'coc-tsserver',
-      \ 'coc-vimlsp'
-      \ ]
-
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent><leader><leader>d <Plug>(coc-definition)
-nmap <silent><leader><leader>y <Plug>(coc-type-definition)
-nmap <silent><leader><leader>i <Plug>(coc-implementation)
-nmap <silent><leader><leader>r <Plug>(coc-references)
-nmap <leader><leader><leader>n <Plug>(coc-rename)
-
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . ' ' . expand('<cword>')
-  endif
-endfunction
-
-inoremap <silent><expr> <c-space> coc#refresh()
-nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-
-set shortmess+=c
-
 
 " Backup files {{{
 set backup
@@ -708,13 +664,6 @@ augroup END
 " Elixir {{{
 
 " ALE config
-let g:ale_elixir_elixir_ls_release=$HOME.'/Documents/src/elixir-ls-release'
-let g:ale_elixir_elixir_ls_config= {
-    \   'elixirLS': {
-    \     'dialyzerEnabled': v:false,
-    \   },
-    \ }
-
 augroup elixir
   autocmd!
 
@@ -767,5 +716,7 @@ augroup plantuml_configs
   autocmd Filetype foo setlocal makeprg=plantuml %
 augroup END
 "}}}
+
+lua require('lsp')
 
 " }}}
