@@ -53,8 +53,8 @@ end
 local nvim_lsp = require('lspconfig')
 
 nvim_lsp["solargraph"].setup { on_attach = on_attach }
-nvim_lsp["flow"].setup { on_attach = on_attach, cmd = { "./node_modules/.bin/flow", "lsp" } }
 nvim_lsp["rust_analyzer"].setup { on_attach = on_attach }
+nvim_lsp["gopls"].setup { on_attach = on_attach }
 
 -- Setup the LSP actions hint
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
