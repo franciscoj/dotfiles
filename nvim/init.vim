@@ -517,11 +517,15 @@ nnoremap <silent><leader>ld :ALEDetail<CR>
 
 " Neoterm {{{
 let g:neoterm_default_mod='botright'
+let g:neoterm_autoinsert=1
 
 " Use a count to toggle a different terminal. E.g. 1tt will toggle the first
 " one, while 2<leader>tt will toggle the second one.
-nnoremap <leader>tt :<c-u>exec v:count.'Ttoggle resize=40'<CR>
-nnoremap <leader>tcl :<c-u>exec v:count.'Tclear'<cr>
+nnoremap <leader><ESC> :<C-U>exec v:count.'Ttoggle resize=40'<CR>
+nnoremap <leader><leader><ESC> :<C-U>exec v:count.'Tclear'<cr>
+tnoremap <leader><leader><ESC> <C-\><C-N>:<C-U>exec v:count.'Tclear'<cr>A
+" <ESC><ESC> will get into normal mode and toggle-off the terminal
+tnoremap <leader><ESC> <C-\><C-N>:<C-U>exec v:count.'Ttoggle resize=40'<CR>
 
 " }}}
 
