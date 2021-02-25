@@ -589,6 +589,10 @@ augroup markdown
 augroup END
 "}}}
 
+" Golang {{{
+let test#go#gotest#executable = 'go test -v'
+"}}}
+
 " Ruby {{{
 let g:ruby_indent_block_style = 'do'
 let test#ruby#rspec#executable = 'bin/spring rspec'
