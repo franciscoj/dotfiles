@@ -1,4 +1,3 @@
-
 bat
 direnv
 docker
@@ -7,6 +6,7 @@ exa
 git-extras
 hub
 jq
+libssl-dev
 lsof
 mariadb-client
 python3-pip
