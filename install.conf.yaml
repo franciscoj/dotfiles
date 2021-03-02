@@ -5,7 +5,9 @@
       create: true
 
 - link:
-    ~/.config/nvim: nvim
+    ~/.config/nvim:
+      path: nvim
+      if: ./bin/is_linux.sh
 
     # tmux on ~/.config
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
@@ -31,7 +33,7 @@
     # are on mac or linux :facepalm:
     ~/.config/kitty:
       path: kitty
-      if: bin/is_linux.sh
+      if: bin/is_arch.sh
     ~/.config/kitty:
       path: kitty-mac
       if: bin/is_mac.sh
@@ -39,37 +41,37 @@
     # Desktop
     ~/.config/i3:
       path: i3
-      if: ./bin/is_linux.sh
+      if: ./bin/is_arch.sh
     ~/.config/fontconfig:
       path: fontconfig
-      if: ./bin/is_linux.sh
+      if: ./bin/is_arch.sh
     ~/.config/i3status:
       path: i3status
-      if: ./bin/is_linux.sh
+      if: ./bin/is_arch.sh
     ~/.config/picom:
       path: picom
-      if: ./bin/is_linux.sh
+      if: ./bin/is_arch.sh
     ~/.config/rofi:
       path: rofi
-      if: ./bin/is_linux.sh
+      if: ./bin/is_arch.sh
     ~/.config/dunst:
       path: dunst
-      if: ./bin/is_linux.sh
+      if: ./bin/is_arch.sh
     ~/.Xmodmap:
       path: x/Xmodmap
-      if: ./bin/is_linux.sh
+      if: ./bin/is_arch.sh
     ~/.Xcompose:
       path: x/Xcompose
-      if: ./bin/is_linux.sh
+      if: ./bin/is_arch.sh
     ~/.config/nitrogen:
       path: nitrogen
-      if: ./bin/is_linux.sh
+      if: ./bin/is_arch.sh
     ~/.config/gtk-3.0/settings.ini:
       path: gtk/gtkrc-3.0
-      if: ./bin/is_linux.sh
+      if: ./bin/is_arch.sh
     ~/.gtkrc-2.0:
       path: gtk/gtkrc-2.0
-      if: ./bin/is_linux.sh
+      if: ./bin/is_arch.sh
 
 - shell:
   - [./bin/install/tmux.sh, Install tmux plugins]
