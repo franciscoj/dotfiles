@@ -23,4 +23,4 @@ esac
 # sources which require username/password.
 [[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
 
-export PATH="$HOME/.cargo/bin:$PATH"
+source "$HOME/.cargo/env"
