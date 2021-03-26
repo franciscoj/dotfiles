@@ -524,8 +524,9 @@ let g:neoterm_autoinsert=1
 nnoremap <leader><ESC> :<C-U>exec v:count.'Ttoggle resize=40'<CR>
 nnoremap <leader><leader><ESC> :<C-U>exec v:count.'Tclear'<cr>
 tnoremap <leader><leader><ESC> <C-\><C-N>:<C-U>exec v:count.'Tclear'<cr>A
-" <ESC><ESC> will get into normal mode and toggle-off the terminal
 tnoremap <leader><ESC> <C-\><C-N>:<C-U>exec v:count.'Ttoggle resize=40'<CR>
+" <ESC><ESC> will get into normal mode and toggle-off the terminal
+tnoremap <ESC><ESC> <C-\><C-N>
 
 " }}}
 
