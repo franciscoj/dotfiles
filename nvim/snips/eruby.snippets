@@ -9,3 +9,7 @@ endsnippet
 snippet % "<% something %>" i
 <% ${1:content} %>
 endsnippet
+
+snippet rc "<%= render(NameComponent.new()) %>"
+<%= render(${1:Name}Component.new($2)) %>$0
+endsnippet
