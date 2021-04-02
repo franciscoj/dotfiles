@@ -7,7 +7,5 @@ export VISUAL=$EDITOR
 alias e='${(z)VISUAL:-${(z)EDITOR}}'
 alias vi='$EDITOR'
 
-# Edit lines on the shell with vim
-autoload -z edit-command-line
-zle -N edit-command-line
-bindkey "^X^E" edit-command-line
+# But still use emacs-style zsh bindings
+bindkey -e
