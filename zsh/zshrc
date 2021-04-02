@@ -35,7 +35,3 @@ zplug load # --verbose
 [[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# https://wiki.archlinux.org/index.php/Node.js_#Allow_user-wide_installations
-export PATH=$HOME/.node_modules/bin:$PATH
-export npm_config_prefix=$HOME/.node_modules
