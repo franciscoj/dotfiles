@@ -7,7 +7,6 @@
 - link:
     ~/.config/nvim:
       path: nvim
-      if: ./bin/is_linux.sh
 
     # tmux on ~/.config
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
