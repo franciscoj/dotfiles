@@ -135,7 +135,7 @@ Plug 'dense-analysis/ale'
 
 " LSP support
 Plug 'neovim/nvim-lspconfig'
-Plug 'kosayoda/nvim-lightbulb'
+Plug 'glepnir/lspsaga.nvim'
 
 Plug 'janko-m/vim-test'
 "}}}
