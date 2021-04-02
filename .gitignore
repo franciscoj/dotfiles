@@ -14,3 +14,4 @@ system/*.pkg.tar
 system/*.pkg.tar.xz
 fontconfig/conf.d/
 *.pyc
+Brewfile.lock.json
