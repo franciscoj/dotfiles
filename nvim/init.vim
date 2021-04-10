@@ -73,8 +73,6 @@ Plug 'sodapopcan/vim-twiggy'
 "}}}
 
 " Language support {{{
-
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " FIXME: Find a better way to load this.
 " Disable polyglot in favor of real language packs
 "
@@ -134,10 +132,7 @@ Plug 'junegunn/goyo.vim'
 " Only linting and fixing
 Plug 'dense-analysis/ale'
 
-" LSP support
-Plug 'neovim/nvim-lspconfig'
-Plug 'glepnir/lspsaga.nvim'
-
+" Running tests
 Plug 'janko-m/vim-test'
 "}}}
 
@@ -150,6 +145,32 @@ nnoremap <leader><leader>l :SidewaysRight<cr>
 nnoremap <leader>h :SidewaysJumpLeft<cr>
 nnoremap <leader>l :SidewaysJumpRight<cr>
 "}}}
+
+" nvim specific testing {{{
+Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim'
+
+Plug 'nvim-lua/completion-nvim'
+autocmd BufEnter * lua require'completion'.on_attach()
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+let g:completion_enable_snippet = 'UltiSnips'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+" }}}
 
 call plug#end()
 "}}}
@@ -400,11 +421,11 @@ command! -bang -nargs=? -complete=dir FZFFiles call fzf#vim#files(
       \ )
 
 " Search files
-nnoremap <leader>ff :FZFFiles<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
 " Search files on git status
 nnoremap <leader>fg :FZFGFiles?<cr>
 " Search buffers
-nnoremap <leader>fb :FZFBuffers<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
 " Search with ripgrep
 nnoremap <leader>s :FZFRg<space>
 " Search with ripgrep the word under the cursor
@@ -718,7 +739,8 @@ augroup plantuml_configs
 augroup END
 "}}}
 
-lua require('lsp')
-lua require('tree_sitter')
+lua require('conf.lsp')
+lua require('conf.tree_sitter')
+lua require('conf.telescope')
 
 " }}}
