@@ -74,6 +74,7 @@ Plug 'sodapopcan/vim-twiggy'
 
 " Language support {{{
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " FIXME: Find a better way to load this.
 " Disable polyglot in favor of real language packs
 "
@@ -718,5 +719,6 @@ augroup END
 "}}}
 
 lua require('lsp')
+lua require('tree_sitter')
 
 " }}}
