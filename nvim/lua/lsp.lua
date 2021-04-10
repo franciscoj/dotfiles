@@ -6,7 +6,13 @@ local on_attach = function(client, bufnr)
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   -- Initialize LSP Saga plugin
-  saga.init_lsp_saga()
+  saga.init_lsp_saga({
+    code_action_prompt = {
+      sign = false,
+      virtual_text = true
+    },
+    border_style = 2
+  })
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -27,15 +33,17 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   -- Help
+  buf_set_keymap('i', '<C-k>', ':Lspsaga signature_help<CR>', opts)
   buf_set_keymap('n', '<C-k>', ':Lspsaga signature_help<CR>', opts)
   buf_set_keymap('n', 'K', ':Lspsaga hover_doc<CR>', opts)
+  buf_set_keymap('n', '<C-l>', ':Lspsaga preview_definition<CR>', opts)
   -- Actions
   buf_set_keymap('n', '<leader>a',":Lspsaga code_action<CR>", opts)
   buf_set_keymap('v', '<leader>a',':<C-U>Lspsaga range_code_action<CR>', opts)
   buf_set_keymap('n', '<leader>rn', ':Lspsaga rename<CR>', opts)
   -- Scroll
-  buf_set_keymap('n', '<C-f>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)", opts)
-  buf_set_keymap('n', '<C-b>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)", opts)
+  buf_set_keymap('n', '<C-f>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", opts)
+  buf_set_keymap('n', '<C-b>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", opts)
 
 
   -- Format (if available)
@@ -46,7 +54,7 @@ local on_attach = function(client, bufnr)
   end
 end
 
--- Configure LSPs
+-- Configure specific LSPs
 nvim_lsp["solargraph"].setup {
   on_attach = on_attach,
   cmd = { "./bin/solargraph", "stdio" },
@@ -62,3 +70,12 @@ nvim_lsp["solargraph"].setup {
 nvim_lsp["rust_analyzer"].setup { on_attach = on_attach }
 nvim_lsp["gopls"].setup { on_attach = on_attach }
 nvim_lsp["tsserver"].setup { on_attach = on_attach }
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    -- Enable underline, use default values
+    underline = true,
+    -- Enable virtual text only on Warning or above, override spacing to 2
+    virtual_text = false,
+  }
+)
