@@ -19,13 +19,13 @@ local on_attach = function(client, bufnr)
   ---------------
   -- Mappings. --
   ---------------
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap = true, silent = true }
 
   -- Diagnostics
   buf_set_keymap('n', '[d', ':Lspsaga diagnostic_jump_next<CR>', opts)
   buf_set_keymap('n', ']d', ':Lspsaga diagnostic_jump_prev<CR>', opts)
   buf_set_keymap('n', '<leader>e', ':Lspsaga show_line_diagnostics<CR>', opts)
-  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   -- Moving
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -33,10 +33,10 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   -- Help
-  buf_set_keymap('i', '<C-k>', ':Lspsaga signature_help<CR>', opts)
-  buf_set_keymap('n', '<C-k>', ':Lspsaga signature_help<CR>', opts)
+  buf_set_keymap('i', '<C-l>', ':Lspsaga signature_help<CR>', opts)
+  buf_set_keymap('n', '<C-l>', ':Lspsaga signature_help<CR>', opts)
   buf_set_keymap('n', 'K', ':Lspsaga hover_doc<CR>', opts)
-  buf_set_keymap('n', '<C-l>', ':Lspsaga preview_definition<CR>', opts)
+  buf_set_keymap('n', '<C-k>', ':Lspsaga preview_definition<CR>', opts)
   -- Actions
   buf_set_keymap('n', '<leader>a',":Lspsaga code_action<CR>", opts)
   buf_set_keymap('v', '<leader>a',':<C-U>Lspsaga range_code_action<CR>', opts)
@@ -73,9 +73,9 @@ nvim_lsp["tsserver"].setup { on_attach = on_attach }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
-    -- Enable underline, use default values
+    -- Enable underline
     underline = true,
-    -- Enable virtual text only on Warning or above, override spacing to 2
+    -- Disable virtual text completely
     virtual_text = false,
   }
 )
