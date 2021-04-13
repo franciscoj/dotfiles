@@ -736,4 +736,7 @@ lua require('conf.lsp')
 lua require('conf.tree_sitter')
 lua require('conf.telescope')
 
+nnoremap N Nzz
+nnoremap n nzz
+
 " }}}
