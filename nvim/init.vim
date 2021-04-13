@@ -35,7 +35,6 @@ Plug 'kassio/neoterm'
 Plug 'cohama/lexima.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'sjl/gundo.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'embear/vim-localvimrc'
@@ -123,6 +122,7 @@ Plug 'romainl/vim-qf'
 " Look & Feel {{{
 Plug 'morhetz/gruvbox'
 Plug 'chriskempson/base16-vim'
+Plug 'dracula/vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
@@ -192,7 +192,7 @@ set signcolumn=auto:3
 " Gruvbox colrscheme setup {{{
 set background=dark
 set termguicolors
-colorscheme base16-dracula
+colorscheme dracula
 "}}}
 
 let g:goyo_width=120
@@ -226,7 +226,7 @@ let g:airline_mode_map = {
                   \ ''     : 'V',
                   \ }
 
-let g:airline_theme='base16_dracula'
+let g:airline_theme='dracula'
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#fugitiveline#enabled = 1
 let g:airline#extensions#nerdtree_statusline = 1
