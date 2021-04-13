@@ -62,7 +62,7 @@ nvim_lsp["solargraph"].setup {
     solargraph = {
       -- I'm still not sure I like the diagnostics signals that the LSP uses,
       -- I'll work later on to improve the styles a bit
-      diagnostics = false
+      diagnostics = true
     }
   }
 }
