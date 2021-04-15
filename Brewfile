@@ -2,6 +2,7 @@
 
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
@@ -48,4 +49,5 @@ cask "slack"
 cask "spotify"
 cask "telegram"
 cask "visual-studio-code"
+cask "zsa-wally"
 cask "zoom"
