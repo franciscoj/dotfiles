@@ -607,6 +607,11 @@ augroup END
 
 " Golang {{{
 let test#go#gotest#executable = 'go test -v'
+
+augroup golang
+  autocmd!
+  autocmd FileType go setlocal nolist
+augroup END
 "}}}
 
 " Ruby {{{
