@@ -1,4 +1,4 @@
-snippet iferr "if err != nil { ... }"
+snippet ife "if err != nil { ... }"
 if err != nil {
 	$0
 }
@@ -16,4 +16,22 @@ endsnippet
 
 snippet fp "fmt.Println(...)"
 fmt.Println($0)
+endsnippet
+
+snippet var "var name Type"
+var ${1:name} ${2:Type}$0
+endsnippet
+
+snippet var= "var name = something"
+var ${1:name} = ${2:value}
+endsnippet
+
+snippet lerr "if err != nil { logger.Fatal(err) }"
+if err != nil {
+	logger.Fatal(err)
+}$0
+endsnippet
+
+snippet err= "something, err = someCall()"
+${1:name}, err = ${2:call()}$0
 endsnippet
