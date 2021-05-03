@@ -24,7 +24,7 @@
 [apply]
   whitespace = fix
 [format]
-  pretty = %Cred%h%Creset - %s%nby %C(bold blue)%an%Creset %C(yellow)%d%Creset%non %Cgreen(%cD)%n%b
+  pretty = %Cred%h%Creset - %s%nby %C(bold blue)%an <%ae>%Creset %C(yellow)%d%Creset%non %Cgreen(%cD)%n%b
 [alias]
   amend = commit --amend --no-edit
   co = checkout
@@ -44,3 +44,7 @@
   path = ~/.gitconfig_local
 [init]
   defaultBranch = main
+[github]
+	user = franciscoj
+[credential]
+	helper = osxkeychain
