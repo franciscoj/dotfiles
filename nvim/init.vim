@@ -154,6 +154,7 @@ Plug 'glepnir/lspsaga.nvim'
 
 Plug 'nvim-lua/completion-nvim'
 autocmd BufEnter * lua require'completion'.on_attach()
+Plug 'onsails/lspkind-nvim'
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
