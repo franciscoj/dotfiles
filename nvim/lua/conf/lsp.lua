@@ -12,7 +12,7 @@ local on_attach = function(client, bufnr)
       sign = false,
       virtual_text = true
     },
-    border_style = 2
+    border_style = "round"
   })
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
