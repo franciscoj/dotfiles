@@ -71,6 +71,7 @@ nvim_lsp["solargraph"].setup {
 nvim_lsp["rust_analyzer"].setup { on_attach = on_attach }
 nvim_lsp["gopls"].setup { on_attach = on_attach }
 nvim_lsp["tsserver"].setup { on_attach = on_attach }
+nvim_lsp["vimls"].setup { on_attach = on_attach }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
