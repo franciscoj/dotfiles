@@ -35,3 +35,23 @@ endsnippet
 snippet err= "something, err = someCall()"
 ${1:name}, err = ${2:call()}$0
 endsnippet
+
+snippet tt "tests := [] struct { ... }"
+tests := []struct {
+	name string
+} {
+	{
+		$1
+	},$0
+}
+endsnippet
+
+snippet := "name: value"
+${1:name}: ${2:value}
+endsnippet
+
+snippet ftest "for _, test := range tests { ... }"
+for _, test := range tests {
+	$0
+}
+endsnippet
