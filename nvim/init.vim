@@ -186,10 +186,6 @@ call plug#end()
 set relativenumber
 set number
 
-" Allow to have up to 3 different columns in the gutter (e.g. git, linter and
-" marks)
-set signcolumn=auto:3
-
 " Gruvbox colrscheme setup {{{
 set background=dark
 set termguicolors
