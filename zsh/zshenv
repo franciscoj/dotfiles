@@ -1,9 +1,6 @@
 # -*- mode: shell-script; -*-
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin:$PWD/bin
 
-# Load asdf only if installed
-[[ -f $HOME/.asdf/asdf.sh ]] && . $HOME/.asdf/asdf.sh
-
 # Load direnv. Use the full path on mac because :hankey:
 # https://github.com/Homebrew/legacy-homebrew/issues/44997#issuecomment-148630030
 # Also load local configuration (provided files exist).
@@ -23,4 +20,10 @@ esac
 # sources which require username/password.
 [[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
 
-source "$HOME/.cargo/env"
+
+if [ -z ${CODESPACES+x} ]; then
+  source "$HOME/.cargo/env"
+
+  # Load asdf only if installed
+  [[ -f $HOME/.asdf/asdf.sh ]] && . $HOME/.asdf/asdf.sh
+fi

@@ -1,0 +1,16 @@
+# vim: set ft=ruby
+
+brew "autoconf"
+brew "bat"
+brew "direnv"
+brew "exa"
+brew "fzf"
+brew "git-extras"
+brew "jq"
+brew "neovim", args: ["HEAD"]
+brew "python"
+brew "ripgrep"
+brew "starship"
+brew "tmux"
+brew "tree"
+brew "z"

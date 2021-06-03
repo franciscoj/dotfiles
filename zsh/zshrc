@@ -6,6 +6,12 @@
 export ZPLUG_HOME=$HOME/.config/zplug
 source $ZPLUG_HOME/init.zsh
 
+DOT_HOME=~/Documents/src/dot-files
+
+if [ -n "$CODESPACES" ]; then
+  DOT_HOME=/workspaces/.codespaces/.persistedshared/dotfiles
+fi
+
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zplug "plugins/ssh-agent", from:oh-my-zsh
 zplug "zsh-users/zsh-syntax-highlighting"
@@ -15,13 +21,14 @@ zplug "zsh-users/zsh-completions"
 zplug "plugins/git", from:oh-my-zsh
 zplug "modules/history", from:prezto
 zplug "modules/directory", from:prezto
-zplug "~/Documents/src/dot-files/zsh/alias", from:local
-zplug "~/Documents/src/dot-files/zsh/editor", from:local
-zplug "~/Documents/src/dot-files/zsh/base16", from:local
-zplug "~/Documents/src/dot-files/zsh/starthip_init", from:local
-zplug "~/Documents/src/dot-files/zsh/commands", from:local
-zplug "~/Documents/src/dot-files/zsh/z", from:local
-zplug "~/Documents/src/dot-files/zsh/golang/", from:local
+zplug "$DOT_HOME/zsh/alias", from:local
+zplug "$DOT_HOME/zsh/editor", from:local
+zplug "$DOT_HOME/zsh/base16", from:local
+zplug "$DOT_HOME/zsh/starthip_init", from:local
+zplug "$DOT_HOME/zsh/commands", from:local
+zplug "$DOT_HOME/zsh/z", from:local
+zplug "$DOT_HOME/zsh/golang/", from:local
+zplug "$DOT_HOME/zsh/codespaces/", from:local
 
 # Only perform the zplug check during bootstrapping
 if [ ! -z "$BOOTSTRAPPING" ] ; then
