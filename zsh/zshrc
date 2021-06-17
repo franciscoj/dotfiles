@@ -8,8 +8,8 @@ source $ZPLUG_HOME/init.zsh
 
 DOT_HOME=~/Documents/src/dot-files
 
-if [ -n "$CODESPACES" ]; then
-  DOT_HOME=/workspaces/.codespaces/.persistedshared/dotfiles
+if [[ -f /workspaces/.codespaces/.persistedshare/dotfiles/README.md ]]; then
+  DOT_HOME=/workspaces/.codespaces/.persistedshare/dotfiles
 fi
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
