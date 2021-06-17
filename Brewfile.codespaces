@@ -7,7 +7,6 @@ brew "exa"
 brew "fzf"
 brew "git-extras"
 brew "jq"
-brew "neovim", args: ["HEAD"]
 brew "python"
 brew "ripgrep"
 brew "starship"
