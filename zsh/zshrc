@@ -3,14 +3,15 @@
 # This file is meant to load only things which are needed on an interactive
 # shell, like customizations, special aliases, etc.
 
-export ZPLUG_HOME=$HOME/.config/zplug
-source $ZPLUG_HOME/init.zsh
-
-DOT_HOME=~/Documents/src/dot-files
-
 if [[ -f /workspaces/.codespaces/.persistedshare/dotfiles/README.md ]]; then
   DOT_HOME=/workspaces/.codespaces/.persistedshare/dotfiles
+  export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
+else
+  DOT_HOME=~/Documents/src/dot-files
+  export ZPLUG_HOME=$HOME/.config/zplug
 fi
+
+source $ZPLUG_HOME/init.zsh
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zplug "plugins/ssh-agent", from:oh-my-zsh
