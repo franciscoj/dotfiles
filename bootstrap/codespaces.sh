@@ -14,5 +14,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # Use linuxbrew to install anything else :)
 brew bundle --file=Brewfile.codespaces
 
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"
+
 pip3 install dotbot
 pip3 install pynvim
