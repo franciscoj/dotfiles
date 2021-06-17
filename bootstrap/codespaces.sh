@@ -18,3 +18,5 @@ export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbi
 
 pip3 install dotbot
 pip3 install pynvim
+
+dotbot -c ../install.conf.yaml
