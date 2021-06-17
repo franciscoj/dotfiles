@@ -17,7 +17,7 @@ call plug#begin()
 
 " Thank to the universe for Tim Pope {{{
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch' " Syntax sugar for unix commands
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
@@ -27,7 +27,6 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-characterize'
-Plug 'junegunn/goyo.vim'
 "}}}
 
 " Misc {{{
@@ -43,10 +42,6 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'junegunn/vim-easy-align'
 Plug 'machakann/vim-highlightedyank'
 let g:highlightedyank_highlight_duration = 200
-
-" Split arguments, blocks, etc...
-Plug 'FooSoft/vim-argwrap'
-Plug 'AndrewRadev/splitjoin.vim'
 
 " Show marks on the gutter
 Plug 'kshenoy/vim-signature'
@@ -73,7 +68,7 @@ Plug 'sodapopcan/vim-twiggy'
 "}}}
 
 " Language support {{{
-" FIXME: Find a better way to load this.
+
 " Disable polyglot in favor of real language packs
 "
 " Polyglot is great but it doesn't activate all the functionalities for all
@@ -90,20 +85,20 @@ let g:polyglot_disabled = [
       \ 'yard'
       \ ]
 Plug 'sheerun/vim-polyglot'
-
 Plug 'plasticboy/vim-markdown'
 
-" TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
 
 " Ruby
 Plug 'noprompt/vim-yardoc'
 Plug 'vim-ruby/vim-ruby'
+
+Plug 'aklt/plantuml-syntax'
+Plug 'scrooloose/vim-slumlord'
+
 Plug 'neoclide/jsonc.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'junegunn/vader.vim'
-Plug 'aklt/plantuml-syntax'
-Plug 'scrooloose/vim-slumlord'
 Plug 'elixir-editors/vim-elixir'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "}}}
@@ -120,8 +115,6 @@ Plug 'romainl/vim-qf'
 "}}}
 
 " Look & Feel {{{
-Plug 'morhetz/gruvbox'
-Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -138,8 +131,9 @@ Plug 'dense-analysis/ale'
 Plug 'janko-m/vim-test'
 "}}}
 
-" Testing... {{{
-Plug 'wellle/targets.vim'
+" Split arguments, blocks, etc... {{{
+Plug 'FooSoft/vim-argwrap'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'AndrewRadev/sideways.vim'
 nnoremap <leader><leader>h :SidewaysLeft<cr>
@@ -147,15 +141,16 @@ nnoremap <leader><leader>l :SidewaysRight<cr>
 nnoremap <leader>h :SidewaysJumpLeft<cr>
 nnoremap <leader>l :SidewaysJumpRight<cr>
 "}}}
+"
+" Testing this one I'm still not sure if I'm using it well or not.
+Plug 'wellle/targets.vim'
 
-" nvim specific testing {{{
+" Neovim LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 
 Plug 'nvim-lua/completion-nvim'
 autocmd BufEnter * lua require'completion'.on_attach()
-Plug 'onsails/lspkind-nvim'
-
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -163,16 +158,21 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
 
-" Avoid showing message extra message when using completion
+" Avoid showing extra message when using completion
 set shortmess+=c
 
 let g:completion_enable_snippet = 'UltiSnips'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+" Telescope + dependencies
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+" Octo + dependencies
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'pwntester/octo.nvim'
 " }}}
 
 call plug#end()
@@ -186,7 +186,7 @@ call plug#end()
 set relativenumber
 set number
 
-" Gruvbox colrscheme setup {{{
+" Dracula colrscheme setup {{{
 set background=dark
 set termguicolors
 colorscheme dracula
@@ -224,7 +224,7 @@ let g:airline_mode_map = {
                   \ }
 
 let g:airline_theme='dracula'
-let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#fugitiveline#enabled = 1
 let g:airline#extensions#nerdtree_statusline = 1
 let g:airline#extensions#ale#enabled = 1
@@ -566,7 +566,6 @@ let g:UltiSnipsSnippetDirectories = ['snips', 'priv_snips', 'UltiSnips' ]
 let g:UltiSnipsEditSplit = 'vertical'
 
 set completefunc=dot#ListSnippets
-set completeopt=menu,menuone,noinsert,noselect
 
 augroup files_autocomplete
   autocmd!
@@ -742,6 +741,7 @@ augroup END
 lua require('conf.lsp')
 lua require('conf.tree_sitter')
 lua require('conf.telescope')
+lua require('conf.misc')
 
 nnoremap N Nzz
 nnoremap n nzz
