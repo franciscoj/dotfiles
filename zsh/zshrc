@@ -9,7 +9,6 @@ source $ZPLUG_HOME/init.zsh
 DOT_HOME=~/Documents/src/dot-files
 
 if [[ -f /workspaces/.codespaces/.persistedshare/dotfiles/README.md ]]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   DOT_HOME=/workspaces/.codespaces/.persistedshare/dotfiles
 fi
 
