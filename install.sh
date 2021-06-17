@@ -4,6 +4,4 @@ set -ex
 
 ./bootstrap.sh
 
-CONFIG="install.conf.yaml"
-
-dotbot -c "${CONFIG}"
+dotbot -c install.conf.yaml
