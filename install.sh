@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ex
+set -x
 
 is_wsl=$(uname -a | grep WSL)
 is_arch=$(uname -a | grep arch)
