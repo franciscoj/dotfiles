@@ -21,9 +21,7 @@ esac
 [[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
 
 
-if [ -z ${CODESPACES+x} ]; then
-  source "$HOME/.cargo/env"
+[[ -f $HOME/.cargo/env ]] && source "$HOME/.cargo/env"
 
-  # Load asdf only if installed
-  [[ -f $HOME/.asdf/asdf.sh ]] && . $HOME/.asdf/asdf.sh
-fi
+# Load asdf only if installed
+[[ -f $HOME/.asdf/asdf.sh ]] && . $HOME/.asdf/asdf.sh
