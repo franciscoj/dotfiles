@@ -13,3 +13,4 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew bundle --file=Brewfile.codespaces
 
 pip3 install --user dotbot
+pip3 install --user pynvim
