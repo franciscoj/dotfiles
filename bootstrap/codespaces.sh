@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -ex
+set -e
 
 xargs -a codespaces_packages_list sudo apt-get install -y
 chsh -s /bin/zsh root
