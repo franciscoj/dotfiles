@@ -2,8 +2,6 @@
 
 set -ex
 
-./bootstrap.sh
-
 is_wsl=$(uname -a | grep WSL)
 is_arch=$(uname -a | grep arch)
 
