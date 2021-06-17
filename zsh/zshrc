@@ -26,7 +26,6 @@ zplug "$DOT_HOME/zsh/alias", from:local
 zplug "$DOT_HOME/zsh/editor", from:local
 zplug "$DOT_HOME/zsh/base16", from:local
 zplug "$DOT_HOME/zsh/starthip_init", from:local
-zplug "$DOT_HOME/zsh/commands", from:local
 zplug "$DOT_HOME/zsh/z", from:local
 zplug "$DOT_HOME/zsh/golang/", from:local
 zplug "$DOT_HOME/zsh/codespaces/", from:local
