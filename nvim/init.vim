@@ -100,7 +100,7 @@ Plug 'neoclide/jsonc.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'junegunn/vader.vim'
 Plug 'elixir-editors/vim-elixir'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go' ", { 'do': ':GoUpdateBinaries' }
 "}}}
 
 " Search {{{
