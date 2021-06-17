@@ -2,7 +2,6 @@
 
 set -ex
 
-# TODO: Finetune this so that the bare-minimum is installed through this
 xargs -a codespaces_packages_list sudo apt-get install -y
 chsh -s /bin/zsh root
 
@@ -12,3 +11,5 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Use linuxbrew to install anything else :)
 brew bundle --file=Brewfile.codespaces
+
+pip3 install --user dotbot
