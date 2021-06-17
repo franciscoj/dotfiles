@@ -6,9 +6,9 @@ xargs -a codespaces_packages_list sudo apt-get install -y
 chsh -s /bin/zsh root
 
 # Install linuxbrew
-CI=1
+export CI=1
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-CI=
+export CI=
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Use linuxbrew to install anything else :)
