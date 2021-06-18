@@ -3,6 +3,8 @@ set -ex
 
 # Don't install zplug on codespaces
 if [[ -f /workspaces/.codespaces/.persistedshare/dotfiles/README.md ]]; then
+  echo "Skipping zplug on Codespaces"
+
   base16_home=$HOME/.config/base16-shell
   base16_git=https://github.com/chriskempson/base16-shell.git
 

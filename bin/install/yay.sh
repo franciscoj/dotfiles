@@ -2,15 +2,19 @@
 
 set -ex
 
-yay_folder=$HOME/yay-$RANDOM
-yay_aur_git=https://aur.archlinux.org/yay.git
+if [[ -f /workspaces/.codespaces/.persistedshare/dotfiles/README.md ]]; then
+  echo "Skipping yay in Codespaces"
+else
+  yay_folder=$HOME/yay-$RANDOM
+  yay_aur_git=https://aur.archlinux.org/yay.git
 
-if [ ! -x "$(command -v yay)" ]; then
-  git clone $yay_aur_git $yay_folder
-  cd $yay_folder
-  makepkg -si
+  if [ ! -x "$(command -v yay)" ]; then
+    git clone $yay_aur_git $yay_folder
+    cd $yay_folder
+    makepkg -si
 
-  cd -
+    cd -
 
-  rm -rf $yay_folder
+    rm -rf $yay_folder
+  fi
 fi

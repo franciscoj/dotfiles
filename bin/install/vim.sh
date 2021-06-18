@@ -2,7 +2,7 @@
 
 set -ex
 
-if [ -n "$CODESPACES" ]; then
+if [[ -f /workspaces/.codespaces/.persistedshare/dotfiles/README.md ]]; then
   cd ~/
   curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
   chmod u+x nvim.appimage

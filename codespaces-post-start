@@ -1,0 +1,3 @@
+cd /workspaces/.codespaces/.persistedshare/dotfiles
+
+CODESPACES=true dotbot -c install.conf.yaml
