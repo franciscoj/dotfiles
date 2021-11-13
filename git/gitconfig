@@ -45,6 +45,6 @@
 [init]
   defaultBranch = main
 [github]
-	user = franciscoj
+  user = franciscoj
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
