@@ -4,7 +4,7 @@
 # shell, like customizations, special aliases, etc.
 
 if [[ -v CODESPACES ]]; then
-  export ZPLUG_HOME=/home/.zplug
+  export ZPLUG_HOME=/root/.zplug
 else
   export ZPLUG_HOME=$HOME/.config/zplug
 fi
