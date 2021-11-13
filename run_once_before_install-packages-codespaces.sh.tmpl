@@ -2,20 +2,7 @@
 {{- if $codespaces -}}
 #!/bin/sh
 
-apt-get install -y libssl-dev zsh squashfuse
-
-brew bundle --no-lock --file=/dev/stdin <<EOF
-brew "bat"
-brew "exa"
-brew "git-extras"
-brew "jq"
-brew "ripgrep"
-brew "starship"
-brew "tmux"
-brew "tree"
-brew "z"
-brew "zplug"
-EOF
-
+apt-get install -y libssl-dev zsh squashfuse exa jq ripgrep git-extras
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 chsh -s /bin/zsh root
 {{end -}}
