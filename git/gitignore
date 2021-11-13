@@ -5,7 +5,6 @@
 .bundle/config
 vendor/bundle
 .#*
-.env.development
 log/*.log.*
 npm-debug.log
 .tern-port
