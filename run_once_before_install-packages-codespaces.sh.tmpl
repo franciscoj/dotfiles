@@ -2,7 +2,7 @@
 {{- if $codespaces -}}
 #!/bin/sh
 
-apt-get install -y libssl-dev zsh squashfuse exa jq ripgrep git-extras
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+apt-get install -y zsh zplug exa jq ripgrep git-extras
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 chsh -s /bin/zsh root
 {{end -}}
