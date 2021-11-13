@@ -1,0 +1,9 @@
+#!/bin/bash
+
+src=$(readlink $1)
+echo "Delinking $1 from $src"
+echo "Removing $src"
+rm $1
+echo "Copying $src into $1"
+cp $src $1
+echo "Done!"

@@ -1,0 +1,25 @@
+[battery]
+full_symbol = ""
+charging_symbol = ""
+discharging_symbol = ""
+
+[character]
+vicmd_symbol = "[➜](bold purple) "
+
+[directory]
+read_only = " "
+
+[git_branch]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[golang]
+symbol = " "

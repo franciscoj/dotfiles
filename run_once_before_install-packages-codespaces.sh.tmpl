@@ -1,0 +1,23 @@
+{{- $codespaces:= env "CODESPACES" | not | not -}}
+{{- if $codespaces -}}
+#!/bin/sh
+
+apt-get install -y libssl-dev zsh squashfuse
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+brew "autoconf"
+brew "bat"
+brew "direnv"
+brew "exa"
+brew "fzf"
+brew "git-extras"
+brew "jq"
+brew "ripgrep"
+brew "starship"
+brew "tmux"
+brew "tree"
+brew "z"
+EOF
+
+chsh -s /bin/zsh root
+{{end -}}

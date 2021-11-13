@@ -1,0 +1,41 @@
+# -*- mode: shell-script; -*-
+
+# This file is meant to load only things which are needed on an interactive
+# shell, like customizations, special aliases, etc.
+
+if [[ -v CODESPACES ]]; then
+  export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
+else
+  export ZPLUG_HOME=$HOME/.config/zplug
+fi
+
+source $ZPLUG_HOME/init.zsh
+
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zplug "plugins/ssh-agent", from:oh-my-zsh
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "plugins/history-substring-search", from:oh-my-zsh
+zplug "zsh-users/zsh-completions"
+zplug "plugins/git", from:oh-my-zsh
+zplug "modules/history", from:prezto
+zplug "modules/directory", from:prezto
+zplug "$HOME/.config/zplugins/alias", from:local
+zplug "$HOME/.config/zplugins/editor", from:local
+zplug "$HOME/.config/zplugins/base16", from:local
+zplug "$HOME/.config/zplugins/starthip_init", from:local
+zplug "$HOME/.config/zplugins/z", from:local
+zplug "$HOME/.config/zplugins/golang/", from:local
+zplug "$HOME/.config/zplugins/codespaces/", from:local
+
+# Only perform the zplug check during bootstrapping
+if [ -v BOOTSTRAPPING ] ; then
+  [[ ! "$(zplug check --verbose)" ]] && zplug install
+fi
+
+zplug load # --verbose
+
+# Load local zshrc
+[[ -f $HOME/.zshrc_local ]] && source $HOME/.zshrc_local
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
