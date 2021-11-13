@@ -2,7 +2,9 @@
 
 set -e # -e: exit on error
 
-apt-get install -y exa
+if [ -v CODESPACES ]; then
+  apt-get install -y exa ripgrep
+fi
 
 if [ ! "$(command -v chezmoi)" ]; then
   bin_dir="$HOME/.local/bin"
