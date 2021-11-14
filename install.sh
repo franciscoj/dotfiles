@@ -5,7 +5,7 @@ set -e # -e: exit on error
 if [[ -z "${CODESPACES}" ]]; then
   echo "not codespaces"
 else
-  apt-get install -y exa ripgrep
+  apt install -y ripgrep
 
   if [ ! "$(command -v chezmoi)" ]; then
     bin_dir="$HOME/.local/bin"
