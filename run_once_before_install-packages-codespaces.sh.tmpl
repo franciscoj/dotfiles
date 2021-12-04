@@ -2,8 +2,15 @@
 {{- if $codespaces -}}
 #!/bin/sh
 
+# Install zplug
+ZPLUG_HOME=$HOME/.config/zplug
+mkdir -p $ZPLUG_HOME
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
+# Install starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
+
+# Setup zsh for all users
 chsh -s /bin/zsh root
 chsh -s /bin/zsh codespace
 {{end -}}

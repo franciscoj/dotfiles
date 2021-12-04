@@ -3,15 +3,11 @@
 # This file is meant to load only things which are needed on an interactive
 # shell, like customizations, special aliases, etc.
 
-if [[ -v CODESPACES ]]; then
-  export ZPLUG_HOME=/root/.zplug
-else
-  export ZPLUG_HOME=$HOME/.config/zplug
-fi
-
+export ZPLUG_HOME=$HOME/.config/zplug
 source $ZPLUG_HOME/init.zsh
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
+
 zplug "plugins/ssh-agent", from:oh-my-zsh
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
