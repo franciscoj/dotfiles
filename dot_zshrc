@@ -25,7 +25,8 @@ zplug "$HOME/.config/zplugins/golang/", from:local
 zplug "$HOME/.config/zplugins/codespaces/", from:local
 
 # Only perform the zplug check during bootstrapping
-if [ -v BOOTSTRAPPING ] ; then
+if [ -v CODESPACES ] ; then
+  echo "checking zplug..."
   [[ ! "$(zplug check --verbose)" ]] && zplug install
 fi
 

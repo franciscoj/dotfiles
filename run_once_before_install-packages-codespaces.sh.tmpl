@@ -2,6 +2,11 @@
 {{- if $codespaces -}}
 #!/bin/sh
 
+echo "Installing: exa ********************"
+curl -L https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip -o /tmp/exa.zip
+unzip /tmp/exa.zip -d /tmp
+cp /tmp/bin/exa $HOME/.local/bin
+
 echo "Installing: zplug ********************"
 export ZPLUG_HOME=$HOME/.config/zplug
 mkdir -p $ZPLUG_HOME
@@ -10,9 +15,4 @@ git clone https://github.com/zplug/zplug $ZPLUG_HOME
 echo "Installing: starship ********************"
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 sudo chsh -s /bin/zsh codespace
-
-echo "Installing: exa ********************"
-curl -L https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip -o /tmp/exa.zip
-unzip /tmp/exa.zip -d /tmp
-cp /tmp/exa $HOME/.local/bin
 {{end -}}
