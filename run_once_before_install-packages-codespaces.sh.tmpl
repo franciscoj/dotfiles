@@ -15,4 +15,10 @@ git clone https://github.com/zplug/zplug $ZPLUG_HOME
 echo "Installing: starship ********************"
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 sudo chsh -s /bin/zsh codespace
+
+echo "Installing: nvim ********************"
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+./nvim.appimage --appimage-extract
+./squashfs-root/AppRun --version
+sudo mv squashfs-root / && ln -s /squashfs-root/AppRun /usr/bin/nvim
 {{end -}}
