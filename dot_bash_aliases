@@ -1,0 +1,22 @@
+export TERM='xterm-256color'
+export EDITOR='nvim'
+export DIFFPROG='nvim -d'
+
+export VISUAL=$EDITOR
+
+function git_current_branch() {
+  git branch | grep '^*' |sed s/\*\ //
+}
+
+alias _="sudo"
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias ggpull='git pull origin "$(git_current_branch)"'
+alias ggpush='git push origin "$(git_current_branch)"'
+alias gb='git branch'
+
+alias be="bundle exec"
+alias vi='$EDITOR'
+alias e='$EDITOR'
+alias g='git'
