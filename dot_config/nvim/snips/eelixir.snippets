@@ -1,0 +1,11 @@
+snippet % "<% something %>" i
+<% ${1:${VISUAL}} %>
+endsnippet
+
+snippet = "<%= something %>" i
+<%= ${1:${VISUAL}} %>
+endsnippet
+
+snippet path "Route.some_path(@conn, something)"
+Routes.${1:some}_path(@conn${2:,${3: param}})
+endsnippet

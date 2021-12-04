@@ -1,0 +1,9 @@
+snippet scope "scope :name, lambda { |param| ... }"
+scope :${1:name}, lambda { ${2:|${3:param}|}
+	$0
+}
+endsnippet
+
+snippet sco "scope :name, ->(param) { ... }"
+scope :${1:name}, ->${2:(${3:param})} { $0 }
+endsnippet

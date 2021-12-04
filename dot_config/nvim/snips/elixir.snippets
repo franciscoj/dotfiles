@@ -1,0 +1,47 @@
+snippet > "|>" i
+|> $0
+endsnippet
+
+snippet := "" i
+${1:name}: ${2:$1}$0
+endsnippet
+
+snippet => "" i
+"${1:name}" => ${2:$1}${3:,}
+endsnippet
+
+snippet % "%{name: name}" i
+%{"${1:name}" => ${2:$1}}
+endsnippet
+
+snippet %: "%{name: name}" i
+%{${1:name}: ${2:$1}}
+endsnippet
+
+snippet desc
+describe "${1:text}" do
+	$0
+end
+endsnippet
+
+snippet test
+test "${1:text}" do
+	$0
+end
+endsnippet
+
+snippet def@
+def ${1:name}(), do: @$1
+endsnippet
+
+snippet def:
+def ${1:function_name}(${2:args}), do: ${3:body}
+endsnippet
+
+snippet defp:
+defp ${1:function_name}(${2:args}), do: ${3:body}
+endsnippet
+
+snippet ins "|> IO.inspect(label: ...)" i
+|> IO.inspect(${1:label: "${2:label}"})
+endsnippet
