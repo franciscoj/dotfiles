@@ -8,9 +8,7 @@ else
   sudo apt install -y ripgrep
 
   if [ ! "$(command -v chezmoi)" ]; then
-    echo "********************************************************************************"
-    echo "****************************Installing chezmoi**********************************"
-    echo "********************************************************************************"
+    echo "Installing: chezmoi ********************"
 
     bin_dir="$HOME/.local/bin"
     chezmoi="$bin_dir/chezmoi"

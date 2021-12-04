@@ -2,18 +2,12 @@
 {{- if $codespaces -}}
 #!/bin/sh
 
-# Install zplug
-echo "********************************************************************************"
-echo "****************************Installing zplug************************************"
-echo "********************************************************************************"
+echo "Installing: zplug ********************"
 export ZPLUG_HOME=$HOME/.config/zplug
 mkdir -p $ZPLUG_HOME
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+git clone https://github.com/zplug/zplug $ZPLUG_HOME
 
-echo "********************************************************************************"
-echo "****************************Installing starship*********************************"
-echo "********************************************************************************"
-# Install starship
+echo "Instaling: starship ********************"
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 sudo chsh -s /bin/zsh codespace
 {{end -}}
