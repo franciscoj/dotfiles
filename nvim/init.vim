@@ -27,9 +27,6 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-characterize'
-"}}}
-
-" Misc {{{
 Plug 'kassio/neoterm'
 Plug 'cohama/lexima.vim'
 Plug 'junegunn/vim-peekaboo'
@@ -40,139 +37,23 @@ Plug 'embear/vim-localvimrc'
 Plug 'sirver/ultisnips'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'junegunn/vim-easy-align'
-Plug 'machakann/vim-highlightedyank'
 let g:highlightedyank_highlight_duration = 200
-
-" Show marks on the gutter
-Plug 'kshenoy/vim-signature'
-
-" Adds auto commands on syntax changes. To be able to activate/deactivate auto
-" wrap on comments.
-Plug 'inkarkat/vim-OnSyntaxChange'
-Plug 'inkarkat/vim-ingo-library'
-
-" Adds a UI for the database.
-Plug 'kristijanhusak/vim-dadbod-ui'
-Plug 'tpope/vim-dadbod'
-"}}}
-
-" Git {{{
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
-
-" Allows to manage git branches
-Plug 'sodapopcan/vim-twiggy'
-"}}}
-
-" Language support {{{
-
-" Disable polyglot in favor of real language packs
-"
-" Polyglot is great but it doesn't activate all the functionalities for all
-" languages in order to make it load fast.
-let g:polyglot_disabled = [
-      \ 'eelixir',
-      \ 'elixir',
-      \ 'git',
-      \ 'go',
-      \ 'markdown',
-      \ 'plantuml',
-      \ 'ruby',
-      \ 'rust',
-      \ 'yard'
-      \ ]
 Plug 'sheerun/vim-polyglot'
-Plug 'plasticboy/vim-markdown'
-
-Plug 'HerringtonDarkholme/yats.vim'
-
-" Ruby
-Plug 'noprompt/vim-yardoc'
-Plug 'vim-ruby/vim-ruby'
-
-Plug 'aklt/plantuml-syntax'
-Plug 'scrooloose/vim-slumlord'
-
-Plug 'neoclide/jsonc.vim'
-Plug 'rust-lang/rust.vim'
-Plug 'junegunn/vader.vim'
-Plug 'elixir-editors/vim-elixir'
-Plug 'fatih/vim-go' ", { 'do': ':GoUpdateBinaries' }
-"}}}
-
-" Search {{{
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
-" Find and Replace
-Plug 'brooth/far.vim'
-
-" Quicklist management
-Plug 'romainl/vim-qf'
-"}}}
-
-" Look & Feel {{{
 Plug 'dracula/vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-" Focus mode
-Plug 'junegunn/goyo.vim'
-"}}}
-
-" Linting, autocomplete, etc... {{{
-" Only linting and fixing
-Plug 'dense-analysis/ale'
-
-" Running tests
 Plug 'janko-m/vim-test'
-"}}}
-
-" Split arguments, blocks, etc... {{{
 Plug 'FooSoft/vim-argwrap'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'AndrewRadev/switch.vim'
-Plug 'AndrewRadev/sideways.vim'
-nnoremap <leader><leader>h :SidewaysLeft<cr>
-nnoremap <leader><leader>l :SidewaysRight<cr>
-nnoremap <leader>h :SidewaysJumpLeft<cr>
-nnoremap <leader>l :SidewaysJumpRight<cr>
 "}}}
 "
-" Testing this one I'm still not sure if I'm using it well or not.
-Plug 'wellle/targets.vim'
-
-" Neovim LSP
-Plug 'neovim/nvim-lspconfig'
-Plug 'glepnir/lspsaga.nvim'
-
-Plug 'nvim-lua/completion-nvim'
-autocmd BufEnter * lua require'completion'.on_attach()
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
-
-" Avoid showing extra message when using completion
-set shortmess+=c
-
-let g:completion_enable_snippet = 'UltiSnips'
-
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-" Telescope + dependencies
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-
-" Octo + dependencies
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'pwntester/octo.nvim'
 " }}}
 
 call plug#end()
@@ -302,18 +183,6 @@ xnoremap >  >gv
 
 " Select only the text in the current line.
 nnoremap vvl v_o$h
-
-" When entering comments, activate text wrap automatically and deactivate it
-" when leaving them.
-"
-" Comments break line {{{
-call OnSyntaxChange#Install('Comment', '^Comment$', 1, 'i')
-
-augroup auto_wrap_comments
-  autocmd User SyntaxCommentEnterI setlocal tw=79
-  autocmd User SyntaxCommentLeaveI setlocal tw=0
-augroup END
-"}}}
 
 " Show undo list
 let g:gundo_prefer_python3=1
@@ -498,39 +367,6 @@ nnoremap <silent><leader><leader>ff :NERDTreeFind<CR>
 let g:netrw_liststyle= 3
 "}}}
 
-" Linting {{{
-
-" ALE - Asynchronous Linting Engine
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_sign_column_always = 1
-let g:ale_disable_lsp = 1
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '.'
-
-let g:ale_linters = {
-      \ 'elixir': ['mix'],
-      \ 'javascript': [],
-      \ 'python': ['flake8'],
-      \ 'ruby': ['ruby'],
-      \ 'rust': ['analyzer']
-      \}
-
-let g:ale_fixers = {
-      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \ 'elixir': ['mix_format'],
-      \ 'go': ['gofmt'],
-      \ 'javascript': ['prettier'],
-      \ 'markdown': ['prettier'],
-      \ 'ruby': ['rubocop'],
-      \ 'rust': [],
-      \ 'typescript': ['prettier'],
-      \ 'typescriptreact': ['prettier']
-      \}
-
-nnoremap <silent><leader>lf :ALEFix<CR>
-nnoremap <silent><leader>ld :ALEDetail<CR>
-"}}}
-
 " Neoterm {{{
 let g:neoterm_default_mod='botright'
 let g:neoterm_autoinsert=1
@@ -593,29 +429,6 @@ set viewdir     =$HOME/.config/nvim/files/view
 
 "}}}
 
-" Language specific {{{
-
-" Markdown {{{
-let g:vim_markdown_folding_level = 2
-
-augroup markdown
-  autocmd!
-  autocmd FileType markdown setlocal textwidth=79
-  autocmd FileType markdown setlocal spell spelllang=en_us
-  autocmd FileType markdown setlocal noshiftround
-augroup END
-"}}}
-
-" Golang {{{
-let test#go#gotest#executable = 'go test -v'
-
-augroup golang
-  autocmd!
-  autocmd FileType go setlocal nolist
-augroup END
-"}}}
-
-" Ruby {{{
 let g:ruby_indent_block_style = 'do'
 let test#ruby#rspec#executable = 'bin/spring rspec'
 
@@ -665,14 +478,6 @@ call lexima#add_rule({
 call lexima#add_rule({'char': '<BS>', 'at': '|\%#|', 'delete': 1})
 "}}}
 
-" HAML {{{
-augroup haml
-  autocmd!
-
-  autocmd FileType haml setlocal foldmethod=indent
-augroup END
-"}}}
-
 " YAML {{{
 augroup yaml
   autocmd!
@@ -681,67 +486,6 @@ augroup yaml
   autocmd FileType yaml setlocal foldenable
 augroup END
 " }}}
-
-" Elixir {{{
-
-" ALE config
-augroup elixir
-  autocmd!
-
-  autocmd FileType elixir setlocal formatprg=
-  autocmd FileType elixir setlocal foldmethod=indent
-augroup END
-"}}}
-
-" JavaScript & TypeScript {{{
-let g:vim_jsx_pretty_colorful_config = 1
-
-augroup js_snippets
-  autocmd!
-
-  autocmd FileType javascriptreact :call UltiSnips#AddFiletypes('javascript')
-augroup END
-" }}}
-
-" JSON {{{
-augroup json_configs
-  autocmd!
-
-  autocmd BufNewFile,BufRead .lintstagedrc set syntax=json
-  autocmd BufNewFile,BufRead .eslintrc set syntax=json
-augroup END
-" }}}
-"
-" Bash {{{
-augroup bash_configs
-  autocmd!
-
-  autocmd BufNewFile,BufRead .envrc set syntax=sh
-augroup END
-" }}}
-
-" Rust {{{
-augroup rust_configs
-  autocmd!
-
-  autocmd FileType rust xmap <leader>lf  :RustFmtRange<CR>
-  autocmd FileType rust nmap <leader>lf  :RustFmt<CR>
-augroup END
-" }}}
-
-"}}}
-
-" plantuml {{{
-augroup plantuml_configs
-  autocmd!
-  autocmd Filetype foo setlocal makeprg=plantuml %
-augroup END
-"}}}
-
-lua require('conf.lsp')
-lua require('conf.tree_sitter')
-lua require('conf.telescope')
-lua require('conf.misc')
 
 nnoremap N Nzz
 nnoremap n nzz
