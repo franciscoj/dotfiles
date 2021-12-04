@@ -8,6 +8,10 @@ else
   sudo apt install -y ripgrep
 
   if [ ! "$(command -v chezmoi)" ]; then
+    echo "********************************************************************************"
+    echo "****************************Installing chezmoi**********************************"
+    echo "********************************************************************************"
+
     bin_dir="$HOME/.local/bin"
     chezmoi="$bin_dir/chezmoi"
     if [ "$(command -v curl)" ]; then
