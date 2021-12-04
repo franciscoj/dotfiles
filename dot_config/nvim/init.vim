@@ -284,11 +284,11 @@ command! -bang -nargs=? -complete=dir FZFFiles call fzf#vim#files(
       \ )
 
 " Search files
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ff :FZFFiles<CR>
 " Search files on git status
-nnoremap <leader>fg :FZFGFiles?<cr>
+nnoremap <leader>fg :FZFGFiles?<CR>
 " Search buffers
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fb :FZFBuffers<CR>
 " Search with ripgrep
 nnoremap <leader>s :FZFRg<space>
 " Search with ripgrep the word under the cursor
