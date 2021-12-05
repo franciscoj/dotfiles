@@ -1,0 +1,7 @@
+{{ if (eq .chezmoi.os "darwin") }}
+{{- template "zenv" "zprofile" -}}
+# Load direnv. Use the full path on mac because :hankey:
+# https://github.com/Homebrew/legacy-homebrew/issues/44997#issuecomment-148630030 Also load local
+# configuration (provided files exist).
+eval "$(/usr/local/bin/direnv hook zsh)"
+{{ end }}

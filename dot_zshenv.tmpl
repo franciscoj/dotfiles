@@ -1,0 +1,4 @@
+{{ if (eq .chezmoi.os "linux") }}
+{{- template "zenv" "zshenv" -}}
+[[ -x "$(command -v direnv)" ]] && eval "$(direnv hook zsh)"
+{{ end }}

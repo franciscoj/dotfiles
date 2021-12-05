@@ -1,0 +1,8 @@
+export PATH=$PATH:$HOME/.local/bin:$PWD/bin
+[[ -f $HOME/.cargo/env ]] && source "$HOME/.cargo/env"
+[[ -f $HOME/.asdf/asdf.sh ]] && . $HOME/.asdf/asdf.sh
+# Rubygems allows to split the configuration into different .gemrc equivalent files. This
+# .gemrc_local is meant to keep the private configs, like gem sources which require
+# username/password.
+[[ -f $HOME/.gemrc_local ]] && export GEMRC=$HOME/.gemrc_local
+[[ -f $HOME/.{{ . }}_local ]] && source $HOME/.{{ . }}_local
