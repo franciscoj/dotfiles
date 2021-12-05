@@ -11,8 +11,10 @@ then
   alias ll="ls -lh"
   alias la="ls -lha"
 else
-  alias ll="exa -lh"
-  alias la="exa -lha"
+  exa_params=('--git' '--icons' '--classify' '--group-directories-first' '--time-style=long-iso' '--group' '--color-scale')
+  alias ll="exa -lh ${exa_params}"
+  alias la="exa -lha ${exa_params}"
 fi
 
 alias be="bundle exec"
+alias path='echo -e ${PATH//:/\\n}'
