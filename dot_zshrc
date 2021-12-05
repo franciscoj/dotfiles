@@ -21,8 +21,8 @@ zplug "$HOME/.config/zplugins/editor", from:local
 zplug "$HOME/.config/zplugins/base16", from:local
 zplug "$HOME/.config/zplugins/starthip_init", from:local
 zplug "$HOME/.config/zplugins/z", from:local
-zplug "$HOME/.config/zplugins/golang/", from:local
-zplug "$HOME/.config/zplugins/codespaces/", from:local
+zplug "$HOME/.config/zplugins/golang", from:local
+zplug "$HOME/.config/zplugins/codespaces", from:local
 
 # Only perform the zplug check during bootstrapping
 if [ -v CODESPACES ] ; then
