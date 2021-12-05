@@ -1,8 +1,8 @@
 export EDITOR='nvim'
+export VISUAL='code -w'
+
 export DIFFPROG='nvim -d'
 export MANPAGER='nvim +Man!'
-
-export VISUAL='code -w'
 
 alias e='${(z)VISUAL:-${(z)EDITOR}}'
 alias vi='$EDITOR'
