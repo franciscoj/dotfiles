@@ -156,25 +156,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- }
 lvim.plugins = {
   {"dracula/vim"},
-  {
-    "tpope/vim-fugitive",
-    cmd = {
-      "G",
-      "Git",
-      "Gdiffsplit",
-      "Gread",
-      "Gwrite",
-      "Ggrep",
-      "GMove",
-      "GDelete",
-      "GBrowse",
-      "GRemove",
-      "GRename",
-      "Glgrep",
-      "Gedit"
-    },
-    ft = {"fugitive"}
-  },
+  {"tpope/vim-fugitive"},
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
