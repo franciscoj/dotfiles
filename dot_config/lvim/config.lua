@@ -54,6 +54,13 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.builtin.which_key.mappings[","] = { "mzA,<esc>`z:delm z<cr>", "Add trailing ," }
 lvim.builtin.which_key.mappings[";"] = { "mzA;<esc>`z:delm z<cr>", "Add trailing ;" }
 lvim.builtin.which_key.mappings[":"] = { "mzA:<esc>`z:delm z<cr>", "Add trailing :" }
+lvim.builtin.which_key.mappings["<leader>"] = {
+  name = "+Fugitive",
+  s = { ":Git<cr>", "Status" },
+  b = { ":Git blame<cr>", "Blame" },
+  l = { ":GV!<cr>", "Log for current file" },
+  L = { ":GV<cr>", "Log for project" },
+}
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -160,6 +167,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.plugins = {
   {"dracula/vim"},
   {"tpope/vim-fugitive"},
+  {"junegunn/gv.vim"},
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
