@@ -165,9 +165,17 @@ lvim.builtin.treesitter.highlight.enabled = true
 --     },
 -- }
 lvim.plugins = {
-  {"dracula/vim"},
+  {"dracula/vim"}, -- colorscheme
+   -- git plugins
   {"tpope/vim-fugitive"},
   {"junegunn/gv.vim"},
+  {"tpope/vim-rhubarb"},
+   -- QoL plugins
+  {"tpope/vim-surround"},
+  {"tpope/vim-unimpaired"},
+  {"tpope/vim-repeat"},
+  {"tpope/vim-rsi"},
+
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
