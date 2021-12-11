@@ -175,29 +175,26 @@ lvim.plugins = {
   {"tpope/vim-unimpaired"},
   {"tpope/vim-repeat"},
   {"tpope/vim-rsi"},
-  {"kassio/neoterm"},
+  {
+    "kassio/neoterm",
+    config = function ()
+      local h = require("h")
+      vim.g["neoterm_default_mod"] = 'botright'
+      vim.g["neoterm_autoinsert"] = 1
+
+      -- Use count to toggle a different format, e.g. 2<leader><esc> will toggle a second and different terminal
+      h.nnoremap("<leader><esc>", ":<C-U>exec v:count.'Ttoggle resize=40'<CR>")
+      h.tnoremap("<leader><esc>", "<C-\\><C-N>:<C-U>exec v:count.'Ttoggle resize=40'<CR>")
+      h.nnoremap("<leader><leader><esc>", ":<C-U>exec v:count.'Tclear'<cr>")
+      h.nnoremap("<leader><leader><esc>", "<C-\\><C-N>:<C-U>exec v:count.'Tclear'<cr>A")
+      h.nnoremap("<esc><esc>", "<C-\\><C-N>")
+    end,
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
-
--- Helpers for mappingns
-local nnoremap = function (key, cmd) vim.api.nvim_set_keymap("n", key, cmd, {noremap = true}) end
-local tnoremap = function (key, cmd) vim.api.nvim_set_keymap("t", key, cmd, {noremap = true}) end
-
--- **************
--- Neoterm config
--- **************
-vim.g["neoterm_default_mod"] = 'botright'
-vim.g["neoterm_autoinsert"] = 1
-
--- Use count to toggle a different format, e.g. 2<leader><esc> will toggle a second and different terminal
-nnoremap("<leader><esc>", ":<C-U>exec v:count.'Ttoggle resize=40'<CR>")
-tnoremap("<leader><esc>", "<C-\\><C-N>:<C-U>exec v:count.'Ttoggle resize=40'<CR>")
-nnoremap("<leader><leader><esc>", ":<C-U>exec v:count.'Tclear'<cr>")
-tnoremap("<leader><leader><esc>", "<C-\\><C-N>:<C-U>exec v:count.'Tclear'<cr>A")
-tnoremap("<esc><esc>", "<C-\\><C-N>")
 
 vim.opt.timeoutlen = 500
