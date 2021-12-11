@@ -175,6 +175,7 @@ lvim.plugins = {
   {"tpope/vim-unimpaired"},
   {"tpope/vim-repeat"},
   {"tpope/vim-rsi"},
+  -- Running tests
   {
     "kassio/neoterm",
     config = function ()
@@ -208,6 +209,7 @@ lvim.plugins = {
       vim.g.localvimrc_persistent = true
     end
   },
+  -- Per project config
   {
     "AndrewRadev/splitjoin.vim",
     config = function ()
