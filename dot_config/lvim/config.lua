@@ -186,8 +186,8 @@ lvim.plugins = {
       h.nnoremap("<leader><esc>", ":<C-U>exec v:count.'Ttoggle resize=40'<CR>")
       h.tnoremap("<leader><esc>", "<C-\\><C-N>:<C-U>exec v:count.'Ttoggle resize=40'<CR>")
       h.nnoremap("<leader><leader><esc>", ":<C-U>exec v:count.'Tclear'<cr>")
-      h.nnoremap("<leader><leader><esc>", "<C-\\><C-N>:<C-U>exec v:count.'Tclear'<cr>A")
-      h.nnoremap("<esc><esc>", "<C-\\><C-N>")
+      h.tnoremap("<leader><leader><esc>", "<C-\\><C-N>:<C-U>exec v:count.'Tclear'<cr>A")
+      h.tnoremap("<esc><esc>", "<C-\\><C-N>")
     end,
   },
 }
