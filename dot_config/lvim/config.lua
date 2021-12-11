@@ -197,4 +197,6 @@ lvim.plugins = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
 
+-- Default on lunarvim is too low and makes it rather impossible to use some
+-- "samekey" combinations like `jj` instead of <esc> and `cc` on fugitive
 vim.opt.timeoutlen = 500
