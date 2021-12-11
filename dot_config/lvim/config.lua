@@ -179,8 +179,8 @@ lvim.plugins = {
     "kassio/neoterm",
     config = function ()
       local h = require("h")
-      vim.g["neoterm_default_mod"] = 'botright'
-      vim.g["neoterm_autoinsert"] = 1
+      vim.g.neoterm_default_mod = 'botright'
+      vim.g.neoterm_autoinsert = 1
 
       -- Use count to toggle a different format, e.g. 2<leader><esc> will toggle a second and different terminal
       h.nnoremap("<leader><esc>", ":<C-U>exec v:count.'Ttoggle resize=40'<CR>")
@@ -190,6 +190,31 @@ lvim.plugins = {
       h.tnoremap("<esc><esc>", "<C-\\><C-N>")
     end,
   },
+  {
+    "vim-test/vim-test",
+    config = function ()
+      local h = require("h")
+      vim.g["test#strategy"] = "neoterm"
+
+      h.nnoremap("<leader>tf", ":TestFile<cr>")
+      h.nnoremap("<leader>tl", ":TestNearest<cr>")
+      h.nnoremap("<leader>tr", ":TestLast<cr>")
+      h.nnoremap("<leader>ts", ":TestSuite<cr>")
+    end,
+  },
+  {
+    "embear/vim-localvimrc",
+    config = function ()
+      vim.g.localvimrc_persistent = true
+    end
+  },
+  {
+    "AndrewRadev/splitjoin.vim",
+    config = function ()
+      vim.g.splitjoin_ruby_curly_braces = false
+      vim.g.splitjoin_ruby_hanging_args = false
+    end
+  }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
