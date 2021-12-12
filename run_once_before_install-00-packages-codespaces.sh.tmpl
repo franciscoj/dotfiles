@@ -19,7 +19,7 @@ git clone https://github.com/zplug/zplug $ZPLUG_HOME
 
 echo "Installing: starship ********************"
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
-sudo chsh -s /bin/zsh codespace
+sudo chsh -s /bin/zsh $(whoami)
 
 echo "Installing: nvim ********************"
 pip3 install --user pynvim
