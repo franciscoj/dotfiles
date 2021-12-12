@@ -1,7 +1,10 @@
 {{- $codespaces:= env "CODESPACES" | not | not -}}
 {{- if $codespaces -}}
 #!/bin/sh
-echo "Installing: dependencies"
+
+set -e
+
+echo "Installing: dependencies ********************"
 sudo apt install -y ripgrep fd-find
 
 echo "Installing: exa ********************"

@@ -1,6 +1,8 @@
 {{- if (eq .chezmoi.os "darwin") -}}
 #!/bin/sh
 
+set -e
+
 pip3 install --user pynvim
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
