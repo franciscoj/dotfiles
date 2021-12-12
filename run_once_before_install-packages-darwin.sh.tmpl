@@ -1,6 +1,8 @@
 {{- if (eq .chezmoi.os "darwin") -}}
 #!/bin/sh
 
+pip3 install --user pynvim
+
 brew bundle --no-lock --file=/dev/stdin <<EOF
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -15,6 +17,7 @@ brew "bat"
 brew "coreutils"
 brew "direnv"
 brew "exa"
+brew "fd"
 brew "fzf"
 brew "gh"
 brew "git-extras"
@@ -49,7 +52,7 @@ cask "slack"
 cask "spotify"
 cask "telegram"
 cask "visual-studio-code"
-cask "zsa-wally"
 cask "zoom"
+cask "zsa-wally"
 EOF
 {{ end -}}

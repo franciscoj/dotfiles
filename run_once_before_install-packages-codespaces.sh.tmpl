@@ -1,6 +1,8 @@
 {{- $codespaces:= env "CODESPACES" | not | not -}}
 {{- if $codespaces -}}
 #!/bin/sh
+echo "Installing: dependencies"
+sudo apt install -y ripgrep fd-find
 
 echo "Installing: exa ********************"
 curl -L https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip -o /tmp/exa.zip
@@ -17,6 +19,7 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 sudo chsh -s /bin/zsh codespace
 
 echo "Installing: nvim ********************"
+pip3 install --user pynvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
 ./nvim.appimage --appimage-extract
