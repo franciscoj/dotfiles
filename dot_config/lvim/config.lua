@@ -206,7 +206,7 @@ lvim.plugins = {
   {
     "embear/vim-localvimrc",
     config = function ()
-      vim.g.localvimrc_persistent = true
+      vim.g.localvimrc_persistent = 1
     end
   },
   -- Per project config
