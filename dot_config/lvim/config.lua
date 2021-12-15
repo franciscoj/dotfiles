@@ -196,6 +196,13 @@ lvim.plugins = {
   {"tpope/vim-unimpaired"},
   {"tpope/vim-repeat"},
   {"tpope/vim-rsi"},
+  {
+    "AndrewRadev/splitjoin.vim",
+    config = function ()
+      vim.g.splitjoin_ruby_curly_braces = false
+      vim.g.splitjoin_ruby_hanging_args = false
+    end
+  },
   -- Running tests
   {
     "kassio/neoterm",
@@ -224,20 +231,21 @@ lvim.plugins = {
       h.nnoremap("<leader>ts", ":TestSuite<cr>")
     end,
   },
+  -- Per project config
   {
     "embear/vim-localvimrc",
     config = function ()
       vim.g.localvimrc_persistent = 1
     end
   },
-  -- Per project config
+  -- Improved quickfix
+  { "kevinhwang91/nvim-bqf", ft = 'qf' },
   {
-    "AndrewRadev/splitjoin.vim",
-    config = function ()
-      vim.g.splitjoin_ruby_curly_braces = false
-      vim.g.splitjoin_ruby_hanging_args = false
+    "junegunn/fzf",
+    run = function ()
+      vim.fn['fzf#install']()
     end
-  }
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
