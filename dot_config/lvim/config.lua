@@ -22,6 +22,18 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- edit a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 
+-- Remove all the default mappings that I don't want
+lvim.keys.insert_mode["jk"] = false
+lvim.keys.insert_mode["kj"] = false
+lvim.keys.normal_mode["<C-h>"] = false
+lvim.keys.normal_mode["<C-j>"] = false
+lvim.keys.normal_mode["<C-k>"] = false
+lvim.keys.normal_mode["<C-l>"] = false
+lvim.keys.term_mode["<C-h>"] = false
+lvim.keys.term_mode["<C-j>"] = false
+lvim.keys.term_mode["<C-k>"] = false
+lvim.keys.term_mode["<C-l>"] = false
+
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
 -- local _, actions = pcall(require, "telescope.actions")
@@ -54,6 +66,15 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.builtin.which_key.mappings[","] = { "mzA,<esc>`z:delm z<cr>", "Add trailing ," }
 lvim.builtin.which_key.mappings[";"] = { "mzA;<esc>`z:delm z<cr>", "Add trailing ;" }
 lvim.builtin.which_key.mappings[":"] = { "mzA:<esc>`z:delm z<cr>", "Add trailing :" }
+lvim.builtin.which_key.mappings["w"] = {
+  name = "+Window",
+  h = { "<C-w>h", "Left" },
+  j = { "<C-w>j", "Down" },
+  k = { "<C-w>k", "Up" },
+  l = { "<C-w>l", "Right" },
+}
+lvim.builtin.which_key.mappings["x"] = { ":w<cr>", "Save" }
+lvim.builtin.which_key.mappings["X"] = { ":wa<cr>", "Save" }
 lvim.builtin.which_key.mappings["<leader>"] = {
   name = "+Fugitive",
   s = { ":Git<cr>", "Status" },
