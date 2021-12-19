@@ -86,9 +86,11 @@ lvim.builtin.which_key.mappings["<leader>"] = {
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = false
-lvim.builtin.terminal.active = true
+lvim.builtin.terminal.active = false
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.nvimtree.show_icons.git = 1
+lvim.builtin.telescope.defaults.layout_config.width = 0.99
+lvim.builtin.telescope.defaults.layout_config.height = 0.99
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -98,8 +100,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "javascript",
   "json",
   "lua",
-  "python",
-  "rust",
+  "ruby",
   "typescript",
   "yaml",
 }
