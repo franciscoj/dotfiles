@@ -248,6 +248,7 @@ lvim.plugins = {
       vim.fn['fzf#install']()
     end
   },
+  { "fatih/vim-go" },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
