@@ -55,6 +55,13 @@ local packer_plugins = function(use)
       vim.g.localvimrc_persistent = 1
     end
   }
+  use {
+    "AndrewRadev/splitjoin.vim",
+    config = function ()
+      vim.g.splitjoin_ruby_curly_braces = false
+      vim.g.splitjoin_ruby_hanging_args = false
+    end
+  }
 
 
   if PACKER_BOOTSTRAP then

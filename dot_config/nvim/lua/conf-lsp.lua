@@ -12,7 +12,7 @@ local on_attach = function(client, bufnr)
   h.nnoremap("<LocalLeader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
   h.nnoremap("<LocalLeader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
   h.nnoremap("<LocalLeader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
-  h.nnoremap("<LocalLeader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+  h.nnoremap("<LocalLeader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>")
   h.nnoremap("gr", "<cmd>lua vim.lsp.buf.references()<CR>")
   h.nnoremap("<LocalLeader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
   h.nnoremap("[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
@@ -42,7 +42,7 @@ lsp_installer.on_server_ready(function(server)
       common_opts.settings = {
         Lua = {
           diagnostics = {
-            globals = { "vim" },
+            globals = { "vim", "hs" },
           },
         }
       }
