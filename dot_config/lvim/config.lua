@@ -249,6 +249,7 @@ lvim.plugins = {
     end
   },
   { "fatih/vim-go" },
+  { "tpope/vim-abolish" },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
