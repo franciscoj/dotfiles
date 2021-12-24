@@ -45,6 +45,17 @@ local packer_plugins = function(use)
     },
     config = function() require("conf-git") end,
   }
+  use {
+    "vim-test/vim-test",
+    config = function() require("conf-test") end,
+  }
+  use {
+    "embear/vim-localvimrc",
+    config = function ()
+      vim.g.localvimrc_persistent = 1
+    end
+  }
+
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
