@@ -1,7 +1,7 @@
 local h = require("h")
 
 h.nnoremap("<leader>f", ":Telescope find_files<cr>")
-h.nnoremap("<leader>s", ":Telescope live_grep<cr>")
+h.nnoremap("<leader>g", ":Telescope live_grep<cr>")
 h.nnoremap("<leader>F", ":Telescope resume<cr>")
 
 local action_layout = require("telescope.actions.layout")

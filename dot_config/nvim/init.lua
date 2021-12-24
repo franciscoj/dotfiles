@@ -24,7 +24,7 @@ local packer_plugins = function(use)
   use { "nvim-treesitter/nvim-treesitter", config = function() require("conf-treesitter") end }
   use {
     "neovim/nvim-lspconfig",
-    require = "williamboman/nvim-lsp-installer",
+    requires = "williamboman/nvim-lsp-installer",
     config = function() require("conf-lsp") end,
   }
   use {
@@ -34,6 +34,16 @@ local packer_plugins = function(use)
       "nvim-lua/plenary.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
     },
+  }
+  use { "kassio/neoterm", config = function() require("conf-neoterm") end }
+  use {
+    "tpope/vim-fugitive",
+    requires = {
+      "tpope/vim-git",
+      "tpope/vim-rhubarb",
+      "junegunn/gv.vim",
+    },
+    config = function() require("conf-git") end,
   }
 
   if PACKER_BOOTSTRAP then
