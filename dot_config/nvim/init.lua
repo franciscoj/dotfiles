@@ -63,7 +63,17 @@ local packer_plugins = function(use)
       vim.g.splitjoin_ruby_hanging_args = false
     end
   }
-
+  use {
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-vsnip",
+      "hrsh7th/vim-vsnip",
+      "rafamadriz/friendly-snippets",
+      "onsails/lspkind-nvim",
+    },
+    config = function () require("conf-cmp") end
+  }
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

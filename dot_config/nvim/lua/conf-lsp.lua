@@ -1,9 +1,9 @@
 local installer = require("nvim-lsp-installer")
 local saga = require 'lspsaga'
 local h = require("h")
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-saga.setup {
-}
+saga.setup({})
 
 local on_attach = function(client, bufnr)
   h.nnoremap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
@@ -40,7 +40,10 @@ for _, name in pairs(servers) do
 end
 
 installer.on_server_ready(function(server)
-  local common_opts = { on_attach = on_attach }
+  local common_opts = {
+    on_attach = on_attach,
+    capabilities = capabilities
+  }
 
   -- -- Now we'll create a server_opts table where we'll specify our custom LSP server configuration
   local server_opts = {
