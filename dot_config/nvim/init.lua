@@ -20,11 +20,12 @@ local packer_plugins = function(use)
   use "tpope/vim-surround"
   use "tpope/vim-unimpaired"
   use "tpope/vim-vinegar"
+  use "kyazdani42/nvim-web-devicons"
   use { "dracula/vim", config = "vim.cmd[[colorscheme dracula]]" }
   use { "nvim-treesitter/nvim-treesitter", config = function() require("conf-treesitter") end }
   use {
     "neovim/nvim-lspconfig",
-    requires = "williamboman/nvim-lsp-installer",
+    requires = { "williamboman/nvim-lsp-installer", "tami5/lspsaga.nvim" },
     config = function() require("conf-lsp") end,
   }
   use {
