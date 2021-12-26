@@ -11,6 +11,8 @@ end
 
 local packer_plugins = function(use)
   use "wbthomason/packer.nvim"
+
+  -- QOL plugins
   use "tpope/vim-abolish"
   use "tpope/vim-characterize"
   use "tpope/vim-commentary"
@@ -20,8 +22,35 @@ local packer_plugins = function(use)
   use "tpope/vim-surround"
   use "tpope/vim-unimpaired"
   use "tpope/vim-vinegar"
+  use {
+    "AndrewRadev/splitjoin.vim",
+    config = function ()
+      vim.g.splitjoin_ruby_curly_braces = false
+      vim.g.splitjoin_ruby_hanging_args = false
+    end
+  }
+  -- Git
+  use {
+    "tpope/vim-fugitive",
+    requires = {
+      "tpope/vim-git",
+      "tpope/vim-rhubarb",
+      "junegunn/gv.vim",
+    },
+    config = function() require("conf-git") end,
+  }
+  -- Support project specific config
+  use {
+    "embear/vim-localvimrc",
+    config = function ()
+      vim.g.localvimrc_persistent = 1
+    end
+  }
+  -- Look & Feel
   use "kyazdani42/nvim-web-devicons"
   use { "dracula/vim", config = "vim.cmd[[colorscheme dracula]]" }
+  use { 'nvim-lualine/lualine.nvim', config = function() require("conf-statusline") end }
+  -- Neovim/treesitter/LSP specific
   use { "nvim-treesitter/nvim-treesitter", config = function() require("conf-treesitter") end }
   use {
     "neovim/nvim-lspconfig",
@@ -36,43 +65,23 @@ local packer_plugins = function(use)
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
     },
   }
-  use { "kassio/neoterm", config = function() require("conf-neoterm") end }
-  use {
-    "tpope/vim-fugitive",
-    requires = {
-      "tpope/vim-git",
-      "tpope/vim-rhubarb",
-      "junegunn/gv.vim",
-    },
-    config = function() require("conf-git") end,
-  }
-  use {
-    "vim-test/vim-test",
-    config = function() require("conf-test") end,
-  }
-  use {
-    "embear/vim-localvimrc",
-    config = function ()
-      vim.g.localvimrc_persistent = 1
-    end
-  }
-  use {
-    "AndrewRadev/splitjoin.vim",
-    config = function ()
-      vim.g.splitjoin_ruby_curly_braces = false
-      vim.g.splitjoin_ruby_hanging_args = false
-    end
-  }
+  -- Autocomplete + snippets
   use {
     "hrsh7th/nvim-cmp",
     requires = {
       "hrsh7th/cmp-nvim-lsp",
+      "onsails/lspkind-nvim",
       "hrsh7th/cmp-vsnip",
       "hrsh7th/vim-vsnip",
       "rafamadriz/friendly-snippets",
-      "onsails/lspkind-nvim",
     },
     config = function () require("conf-cmp") end
+  }
+  -- Running tests
+  use { "kassio/neoterm", config = function() require("conf-neoterm") end }
+  use {
+    "vim-test/vim-test",
+    config = function() require("conf-test") end,
   }
 
   if PACKER_BOOTSTRAP then
