@@ -4,7 +4,8 @@
 
 This is version 4 of my dotfiles. It is much smaller since I don't use linux as my main machine anymore and most of my development work happens on Mac and some of it on [codespaces][1].
 
-I've also removed support for LSPs from neovim since my main editor now is [VS Code][4] although I still keep Vim around for some things like macro usage, etc.
+~~I've also removed support for LSPs from neovim since my main editor now is [VS Code][4] although I still keep Vim around for some things like macro usage, etc.~~
+I've also redone my Neovim configuration so that it is based in Lua instead of VimL.
 
 The previous version used [dotbot][2] and it is still available in the [dotbot branch][3]
 
