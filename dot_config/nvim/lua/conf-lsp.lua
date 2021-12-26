@@ -5,7 +5,8 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 saga.setup({})
 
-local on_attach = function(client, bufnr)
+---@diagnostic disable-next-line: unused-local
+local on_attach = function(_client, _bufnr)
   h.nnoremap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
   h.nnoremap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
   h.nnoremap("<LocalLeader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>")
