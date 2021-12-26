@@ -22,6 +22,7 @@ local on_attach = function(client, bufnr)
   h.nnoremap("[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
   h.nnoremap("]d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
+  h.nnoremap("<LocalLeader>o", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>")
   h.nnoremap("gr", ":Telescope lsp_references<CR>")
   h.nnoremap("gi", ":Telescope lsp_implementations<CR>")
   h.nnoremap("<LocalLeader>d", "<cmd>Telescope diagnostics bufnr=0<CR>")
