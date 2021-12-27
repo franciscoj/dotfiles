@@ -30,6 +30,17 @@ local plugins = function(use)
       vim.g.splitjoin_ruby_hanging_args = false
     end
   }
+  use {
+    "windwp/nvim-autopairs",
+    config = function()
+      local npairs = require("nvim-autopairs")
+
+      npairs.setup{}
+      npairs.add_rules(require("nvim-autopairs.rules.endwise-elixir"))
+      npairs.add_rules(require("nvim-autopairs.rules.endwise-lua"))
+      npairs.add_rules(require("nvim-autopairs.rules.endwise-ruby"))
+    end
+  }
 
   -- Git
   use {
