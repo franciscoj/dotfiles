@@ -103,7 +103,7 @@ local plugins = function(use)
       "rafamadriz/friendly-snippets",
     },
     config = function () require("conf-cmp") end,
-    after = "windwp/nvim-autopairs"
+    after = "nvim-autopairs"
   }
 
   -- Running tests
