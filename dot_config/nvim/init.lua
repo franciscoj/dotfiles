@@ -102,7 +102,8 @@ local plugins = function(use)
       "hrsh7th/vim-vsnip",
       "rafamadriz/friendly-snippets",
     },
-    config = function () require("conf-cmp") end
+    config = function () require("conf-cmp") end,
+    after = "windwp/nvim-autopairs"
   }
 
   -- Running tests
