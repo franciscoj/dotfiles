@@ -53,11 +53,11 @@ local plugins = function(use)
     config = function() require("conf-git") end,
   }
   use {
-    'lewis6991/gitsigns.nvim',
+    "lewis6991/gitsigns.nvim",
     requires = {
-      'nvim-lua/plenary.nvim'
+      "nvim-lua/plenary.nvim"
     },
-    config = function() require('gitsigns').setup() end
+    config = function() require("gitsigns").setup() end
   }
 
   -- Support project specific config
@@ -120,7 +120,7 @@ end
 local config = {
   display = {
     open_fn = function()
-      return require('packer.util').float({ border = 'single' })
+      return require("packer.util").float({ border = "single" })
     end
   }
 }
