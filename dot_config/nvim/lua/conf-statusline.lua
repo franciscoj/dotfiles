@@ -88,30 +88,54 @@ ins_left {
   -- mode component
   function()
     -- auto change color according to neovims mode
-    local mode_color = {
-      n = colors.red,
-      i = colors.green,
-      v = colors.cyan,
-      [''] = colors.cyan,
-      V = colors.cyan,
-      c = colors.magenta,
-      no = colors.red,
-      s = colors.orange,
-      S = colors.orange,
-      [''] = colors.orange,
-      ic = colors.yellow,
-      R = colors.purple,
-      Rv = colors.purple,
-      cv = colors.red,
-      ce = colors.red,
-      r = colors.cyan,
-      rm = colors.cyan,
-      ['r?'] = colors.cyan,
-      ['!'] = colors.red,
-      t = colors.red,
+    local mode_cfg = {
+      -- Normal
+      n = { color = colors.green, abbr = "N" }, -- normal modes
+      no = { color = colors.green, abbr = "N" },
+      nov = { color = colors.green, abbr = "N" },
+      noV = { color = colors.green, abbr = "N" },
+      ['no'] = { color = colors.green, abbr = "N" },
+      niI = { color = colors.green, abbr = "N" },
+      niR = { color = colors.green, abbr = "N" },
+      niV = { color = colors.green, abbr = "N" },
+      nt = { color = colors.green, abbr = "" }, -- terminal emulator
+
+      -- Visual
+      v = { color = colors.cyan, abbr = "v" },
+      vs = { color = colors.cyan, abbr = "v" },
+      V = { color = colors.cyan, abbr = "V" },
+      Vs = { color = colors.cyan, abbr = "V" },
+      [''] = { color = colors.cyan, abbr = "" },
+      ['s'] = { color = colors.cyan, abbr = "" },
+      s = { color = colors.orange, abbr = "s" },
+      S = { color = colors.orange, abbr = "S" },
+      [''] = { color = colors.orange, abbr = "" },
+
+      -- Insert
+      i = { color = colors.red, abbr = "I" },
+      ic = { color = colors.yellow, abbr = "I" },
+      ix = { color = colors.yellow, abbr = "I" },
+
+      -- Replace
+      R = { color = colors.purple, abbr = "R" },
+      Rv = { color = colors.purple, abbr = "R" },
+      Rc = { color = colors.purple, abbr = "R" },
+      Rx = { color = colors.purple, abbr = "R" },
+      Rvc = { color = colors.purple, abbr = "R" },
+      Rvx = { color = colors.purple, abbr = "R" },
+
+      -- Other modes
+      c = { color = colors.magenta, abbr = "c" },
+      cv = { color = colors.red, abbr = "cv" },
+      r = { color = colors.cyan, abbr = "r" },
+      rm = { color = colors.cyan, abbr = "rm" },
+      ['r?'] = { color = colors.cyan, abbr = "r?" },
+      ['!'] = { color = colors.red, abbr = "!" },
+      t = { color = colors.red, abbr = "" }, -- terminal mode
     }
-    vim.api.nvim_command('hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg)
-    return ''
+    local cfg = mode_cfg[vim.fn.mode()]
+    vim.api.nvim_command('hi! LualineMode guifg=' .. cfg.color .. ' guibg=' .. colors.bg .. ' gui=bold')
+    return cfg.abbr
   end,
   color = 'LualineMode',
   padding = { right = 1 },
