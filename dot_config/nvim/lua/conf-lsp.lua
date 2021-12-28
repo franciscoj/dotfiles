@@ -6,7 +6,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 saga.setup({})
 
 ---@diagnostic disable-next-line: unused-local
-local on_attach = function(_client, _bufnr)
+local on_attach = function(client, _bufnr)
   -- Using LSP defaults
   h.nnoremap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
   h.nnoremap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
@@ -35,6 +35,19 @@ local on_attach = function(_client, _bufnr)
 
   -- Disable global diagnostics because they are mostly annoying
   vim.diagnostic.config({virtual_text = false})
+
+  if client.resolved_capabilities.code_lens then
+    vim.api.nvim_exec([[
+      augroup lsp_code_lens_refresh
+        autocmd! * <buffer>
+
+        autocmd BufEnter,InsertLeave,CursorHold <buffer> lua vim.lsp.codelens.refresh()
+        autocmd BufEnter <buffer> lua vim.lsp.codelens.display()
+      augroup END
+    ]], false)
+
+    h.nnoremap("<LocalLeader>A", "<cmd>lua vim.lsp.codelens.run()<cr>")
+  end
 end
 
 local servers = { "gopls", "sumneko_lua" }
