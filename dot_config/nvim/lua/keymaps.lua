@@ -30,3 +30,7 @@ h.inoremap("jj", "<esc>")
 -- Reselect after indent
 h.xnoremap("<", "<gv")
 h.xnoremap(">", ">gv")
+
+-- Neovim config
+h.nnoremap("<Leader>vr", ":source $MYVIMRC<CR>")
+h.nnoremap("<Leader>ve", ":e $MYVIMRC<CR>")

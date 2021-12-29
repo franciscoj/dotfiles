@@ -1,7 +1,6 @@
 require("options") -- Load the base defaults
 require("keymaps") -- Global key mappings that don't deppend on plugins
 
-
 -- Install packer if it isn't installed
 local fn = vim.fn
 local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
@@ -30,17 +29,18 @@ local plugins = function(use)
       vim.g.splitjoin_ruby_hanging_args = false
     end
   }
-  use {
-    "windwp/nvim-autopairs",
-    config = function()
-      local npairs = require("nvim-autopairs")
+  -- use {
+  --   "windwp/nvim-autopairs",
+  --   config = function()
+  --     local npairs = require("nvim-autopairs")
 
-      npairs.setup{}
-      npairs.add_rules(require("nvim-autopairs.rules.endwise-elixir"))
-      npairs.add_rules(require("nvim-autopairs.rules.endwise-lua"))
-      npairs.add_rules(require("nvim-autopairs.rules.endwise-ruby"))
-    end
-  }
+  --     npairs.setup{}
+  --     npairs.add_rules(require("nvim-autopairs.rules.endwise-elixir"))
+  --     npairs.add_rules(require("nvim-autopairs.rules.endwise-lua"))
+  --     npairs.add_rules(require("nvim-autopairs.rules.endwise-ruby"))
+  --   end
+  -- }
+  use "cohama/lexima.vim"
 
   -- Git
   use {
@@ -99,20 +99,17 @@ local plugins = function(use)
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "onsails/lspkind-nvim",
-      "hrsh7th/cmp-vsnip",
-      "hrsh7th/vim-vsnip",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
     },
     config = function () require("conf-cmp") end,
-    after = "nvim-autopairs"
+    -- after = "nvim-autopairs"
   }
 
   -- Running tests
   use { "kassio/neoterm", config = function() require("conf-neoterm") end }
-  use {
-    "vim-test/vim-test",
-    config = function() require("conf-test") end,
-  }
+  use { "vim-test/vim-test", config = function() require("conf-test") end }
 
   if PACKER_BOOTSTRAP then
     packer.sync()

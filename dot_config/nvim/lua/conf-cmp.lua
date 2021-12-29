@@ -1,6 +1,9 @@
 local cmp = require("cmp")
 local lspkind = require("lspkind")
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local luasnip = require("luasnip")
+
+-- This should load vscode snippets from friendly snippets
+require('luasnip.loaders.from_vscode').lazy_load()
 
 local has_words_before = function()
   ---@diagnostic disable-next-line: deprecated
@@ -8,26 +11,20 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-local feedkey = function(key, mode)
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
-end
-
 cmp.setup({
   formatting = {
     format = lspkind.cmp_format({
       with_text = true,
       menu = ({
-        buffer = "[Buffer]",
-        nvim_lsp = "[LSP]",
-        luasnip = "[LuaSnip]",
-        nvim_lua = "[Lua]",
-        latex_symbols = "[Latex]",
+        buffer = "[buffer]",
+        nvim_lsp = "[lsp]",
+        luasnip = "[snip]",
       })
     }),
   },
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      luasnip.lsp_expand(args.body)
     end,
   },
   documentation = {
@@ -41,34 +38,37 @@ cmp.setup({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
-    ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    -- TODO: I need to review this, snippet expansion/completion doesn't work
-    -- unless I confirm with <CR>
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif vim.fn["vsnip#available"](1) == 1 then
-        feedkey("<Plug>(vsnip-expand-or-jump)", "")
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
       elseif has_words_before() then
         cmp.complete()
       else
-        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+        fallback()
       end
     end, { "i", "s" }),
-    ["<S-Tab>"] = cmp.mapping(function()
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-        feedkey("<Plug>(vsnip-jump-prev)", "")
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
       end
     end, { "i", "s" }),
   },
-  sources = cmp.config.sources({
-    { name = "nvim_lsp" },
-    { name = "vsnip" },
-  }, {
-      { name = "buffer" },
-    })
+  sources = cmp.config.sources(
+    {
+      { name = "nvim_lsp" },
+      { name = "luasnip" },
+    },
+    {
+      { name = "buffer", keyword_length = 3 },
+    }
+  )
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won"t work anymore).
@@ -86,5 +86,3 @@ cmp.setup.cmdline(":", {
       { name = "cmdline" }
     })
 })
-
-cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
