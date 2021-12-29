@@ -71,7 +71,8 @@ local plugins = function(use)
   -- Look & Feel
   use "kyazdani42/nvim-web-devicons"
   use { "dracula/vim", config = "vim.cmd[[colorscheme dracula]]" }
-  use { 'nvim-lualine/lualine.nvim', config = function() require("conf-statusline") end }
+  use { "nvim-lualine/lualine.nvim", config = function() require("conf-statusline") end }
+  use { "akinsho/bufferline.nvim", config = function() require("conf-bufferline") end }
 
   -- Neovim/treesitter/LSP specific
   use { "nvim-treesitter/nvim-treesitter", config = function() require("conf-treesitter") end }
