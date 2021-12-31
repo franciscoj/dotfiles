@@ -1,7 +1,6 @@
 -- These are what I consider my preferred and sensible vim options
 local home = os.getenv("HOME")
 local options = {
-  autoread = true,
   backup = true,
   backupdir = home.."/.config/nvim/files/backup/",
   clipboard = "unnamedplus",
