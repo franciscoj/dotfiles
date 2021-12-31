@@ -3,7 +3,7 @@
 
 local hyper = {"ctrl", "alt", "shift", "cmd"}
 
-hs.window.animationDuration = 0
+hs.window.animationDuration = 0.10
 hs.hotkey.bind(hyper, "R", "Reload Configuration", function ()
    hs.reload()
 end)
@@ -42,3 +42,24 @@ local function fullscreen(window, screen)
   window.x = 0 window.y = 0 window.w = max.w window.h = max.h
 end
 hs.hotkey.bind(hyper, "Up", nil, function() resize_win(fullscreen) end)
+
+local function reduced(window, screen)
+  local max = screen:fullFrame()
+
+  window.x = max.w/16
+  window.y = max.h/16
+  window.w = max.w/16 * 14
+  window.h = max.h/16 * 14
+end
+hs.hotkey.bind(hyper, "Down", nil, function() resize_win(reduced) end)
+
+local function mini(window, screen)
+  local max = screen:fullFrame()
+
+  window.x = max.w/16 * 10
+  window.y = max.h/16 * 2
+  window.w = max.w/16 * 5
+  window.h = max.h/16 * 10
+end
+hs.hotkey.bind(hyper, "M", nil, function() resize_win(mini) end)
+
