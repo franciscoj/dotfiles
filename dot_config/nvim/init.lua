@@ -59,7 +59,7 @@ local plugins = function(use)
 
   -- Look & Feel
   use "kyazdani42/nvim-web-devicons"
-  use { "dracula/vim", config = "vim.cmd[[colorscheme dracula]]" }
+  use { "catppuccin/nvim", as = "catppuccin", config = function () require("conf-catppuccin") end }
   use { "nvim-lualine/lualine.nvim", config = function() require("conf-statusline") end }
   use { "akinsho/bufferline.nvim", config = function() require("conf-bufferline") end }
 

@@ -1,19 +1,17 @@
 local line = require("lualine")
+local theme_colors = require("catppuccin.api.colors").get_colors()
 
--- Based on https://github.com/nvim-lualine/lualine.nvim/blob/a5b3895b57a0ca2e8fec0040afc6cfa81b2a95a4/examples/evil_lualine.lua
--- Colors from https://draculatheme.com/contribute
+-- Colors are extracted from the catppuccin theme API
 local colors = {
-  fg = "#f8f8f2",
-  -- bg = "#282a36",
-  bg = "#44475a", -- current_line
-  comment = "#6272a4", -- comment
-  cyan = "#8be9fd",
-  green = "#50fa7b",
-  orange = "#ffb86c",
-  pink = "#ff79c6",
-  purple = "#bd93f9",
-  red = "#ff5555",
-  yellow = "#f1fa8c",
+  fg = theme_colors.white,
+  bg = theme_colors.black4,
+  blue = theme_colors.sky,
+  green = theme_colors.green,
+  orange = theme_colors.peach,
+  pink = theme_colors.pink ,
+  purple = theme_colors.lavender,
+  red = theme_colors.red,
+  yellow = theme_colors.yellow,
 }
 local WIDTH_LIMIT = 90
 
@@ -80,7 +78,7 @@ ins_left {
   function()
     return '▊'
   end,
-  color = { fg = colors.cyan }, -- Sets highlighting of component
+  color = { fg = colors.blue }, -- Sets highlighting of component
   padding = { left = 0, right = 1 }, -- We don't need space before this
 }
 
@@ -101,12 +99,12 @@ ins_left {
       nt = { color = colors.green, abbr = "" }, -- terminal emulator
 
       -- Visual
-      v = { color = colors.cyan, abbr = "v" },
-      vs = { color = colors.cyan, abbr = "v" },
-      V = { color = colors.cyan, abbr = "V" },
-      Vs = { color = colors.cyan, abbr = "V" },
-      [''] = { color = colors.cyan, abbr = "" },
-      ['s'] = { color = colors.cyan, abbr = "" },
+      v = { color = colors.blue, abbr = "v" },
+      vs = { color = colors.blue, abbr = "v" },
+      V = { color = colors.blue, abbr = "V" },
+      Vs = { color = colors.blue, abbr = "V" },
+      [''] = { color = colors.blue, abbr = "" },
+      ['s'] = { color = colors.blue, abbr = "" },
       s = { color = colors.orange, abbr = "s" },
       S = { color = colors.orange, abbr = "S" },
       [''] = { color = colors.orange, abbr = "" },
@@ -127,9 +125,9 @@ ins_left {
       -- Other modes
       c = { color = colors.magenta, abbr = "c" },
       cv = { color = colors.red, abbr = "cv" },
-      r = { color = colors.cyan, abbr = "r" },
-      rm = { color = colors.cyan, abbr = "rm" },
-      ['r?'] = { color = colors.cyan, abbr = "r?" },
+      r = { color = colors.blue, abbr = "r" },
+      rm = { color = colors.blue, abbr = "rm" },
+      ['r?'] = { color = colors.blue, abbr = "r?" },
       ['!'] = { color = colors.red, abbr = "!" },
       t = { color = colors.red, abbr = "" }, -- terminal mode
     }
@@ -159,7 +157,7 @@ ins_left {
   diagnostics_color = {
     color_error = { fg = colors.red },
     color_warn = { fg = colors.yellow },
-    color_info = { fg = colors.cyan },
+    color_info = { fg = colors.blue },
   },
 }
 
@@ -203,7 +201,7 @@ ins_right {
 ins_right {
   'fileformat',
   fmt = string.upper,
-  color = { fg = colors.cyan },
+  color = { fg = colors.blue },
 }
 
 ins_right {
@@ -227,7 +225,7 @@ ins_right {
   function()
     return '▊'
   end,
-  color = { fg = colors.cyan },
+  color = { fg = colors.blue },
   padding = { left = 1 },
 }
 
