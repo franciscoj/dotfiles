@@ -93,7 +93,6 @@ local plugins = function(use)
       "rafamadriz/friendly-snippets",
     },
     config = function () require("conf-cmp") end,
-    -- after = "nvim-autopairs"
   }
 
   -- Running tests
