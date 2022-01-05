@@ -3,7 +3,9 @@ local saga = require("lspsaga")
 local h = require("h")
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-saga.setup({})
+saga.setup({
+ border_style = "round"
+})
 
 ---@diagnostic disable-next-line: unused-local
 local on_attach = function(client, _bufnr)
