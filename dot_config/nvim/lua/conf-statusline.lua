@@ -129,6 +129,7 @@ ins_left {
       rm = { color = colors.blue, abbr = "rm" },
       ['r?'] = { color = colors.blue, abbr = "r?" },
       ['!'] = { color = colors.red, abbr = "!" },
+      [''] = { color = colors.red, abbr = "C" }, -- Command mode
       t = { color = colors.red, abbr = "" }, -- terminal mode
     }
     local cfg = mode_cfg[vim.fn.mode()]
