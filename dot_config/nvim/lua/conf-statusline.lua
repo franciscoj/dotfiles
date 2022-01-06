@@ -123,7 +123,7 @@ ins_left {
       Rvx = { color = colors.purple, abbr = "R" },
 
       -- Other modes
-      c = { color = colors.magenta, abbr = "c" },
+      c = { color = colors.pink, abbr = "c" },
       cv = { color = colors.red, abbr = "cv" },
       r = { color = colors.blue, abbr = "r" },
       rm = { color = colors.blue, abbr = "rm" },
