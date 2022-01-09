@@ -1,20 +1,23 @@
 local h = require("h")
+local action_layout = require("telescope.actions.layout")
+local trouble = require("trouble.providers.telescope")
+local telescope = require("telescope")
 
 h.nnoremap("<leader>f", ":Telescope find_files<cr>")
 h.nnoremap("<leader>g", ":Telescope live_grep<cr>")
 h.nnoremap("<leader>F", ":Telescope resume<cr>")
 h.nnoremap("<leader>m", ":Telescope marks<cr>")
 
-local action_layout = require("telescope.actions.layout")
-local telescope = require("telescope")
 telescope.setup({
   defaults = {
     mappings = {
       n = {
-        ["<M-p>"] = action_layout.toggle_preview
+        ["<M-p>"] = action_layout.toggle_preview,
+        ["<c-t>"] = trouble.open_with_trouble,
       },
       i = {
-        ["<M-p>"] = action_layout.toggle_preview
+        ["<M-p>"] = action_layout.toggle_preview,
+        ["<c-t>"] = trouble.open_with_trouble,
       },
     },
     layout_config = {
