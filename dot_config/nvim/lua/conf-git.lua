@@ -7,10 +7,10 @@ h.nnoremap("<leader>gl", ":GV!<cr>") -- Log for current file
 h.nnoremap("<leader>gL", ":GV<cr>") -- Log for repo
 
 -- Add spell check to git commits
-vim.cmd [[
+vim.cmd([[
 augroup git_commits
   autocmd!
 
   autocmd FileType gitcommit setlocal spell spelllang=en_us
 augroup END
-]]
+]])
