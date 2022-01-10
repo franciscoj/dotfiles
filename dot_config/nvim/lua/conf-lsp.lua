@@ -19,6 +19,7 @@ local on_attach = function(client, _bufnr)
   h.nnoremap("<LocalLeader>k", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
   h.nnoremap("<LocalLeader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
   h.nnoremap("<LocalLeader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+  h.nnoremap("<LocalLeader>l", [[<cmd>lua vim.diagnostic.open_float(nil, {focus=false, border="rounded"})<CR>]])
 
   -- Using Telescope
   h.nnoremap("<LocalLeader>o", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>")
@@ -60,7 +61,11 @@ end
 installer.on_server_ready(function(server)
   local common_opts = {
     on_attach = on_attach,
-    capabilities = capabilities
+    capabilities = capabilities,
+    handlers = {
+      ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = "rounded"}),
+      ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = "rounded"}),
+    },
   }
 
   -- -- Now we'll create a server_opts table where we'll specify our custom LSP server configuration
