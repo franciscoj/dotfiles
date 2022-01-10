@@ -5,7 +5,6 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protoco
 
 trouble.setup({})
 
----@diagnostic disable-next-line: unused-local
 local on_attach = function(client, _bufnr)
 	-- Using LSP defaults
 	h.nnoremap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
@@ -86,6 +85,21 @@ installer.on_server_ready(function(server)
 					},
 				},
 			}
+			common_opts.on_attach = function(client, bufnr)
+				on_attach(client, bufnr)
+			end
+
+			-- Disable publishing LSP's diagnostics to use the ones from luacheck instead
+			common_opts.handlers["textDocument/publishDiagnostics"] = function() end
+		end,
+		["gopls"] = function()
+			common_opts.on_attach = function(client, bufnr)
+				-- disable  formatting for gopls so that null-ls handles it
+				client.resolved_capabilities.document_formatting = false
+				client.resolved_capabilities.document_range_formatting = false
+
+				on_attach(client, bufnr)
+			end
 		end,
 	}
 
@@ -96,10 +110,24 @@ end)
 
 local null_ls = require("null-ls")
 local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
 	debug = false,
 	sources = {
+		diagnostics.golangci_lint,
+		diagnostics.luacheck,
+		formatting.goimports,
 		formatting.stylua,
 	},
+	on_attach = function(client)
+		if client.resolved_capabilities.document_formatting then
+			vim.cmd([[
+      augroup LspFormatting
+          autocmd! * <buffer>
+          autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+      augroup END
+      ]])
+		end
+	end,
 })

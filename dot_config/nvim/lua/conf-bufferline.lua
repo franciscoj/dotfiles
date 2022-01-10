@@ -6,7 +6,6 @@ bufferline.setup({
 		diagnostics = "nvim_lsp",
 		show_buffer_close_icons = false,
 		show_close_icon = false,
-		---@diagnostic disable-next-line: unused-local
 		diagnostics_indicator = function(_count, _level, diagnostics_dict, _context)
 			local diagnostics = " "
 

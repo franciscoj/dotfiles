@@ -4,8 +4,10 @@ require("keymaps") -- Global key mappings that don't deppend on plugins
 -- Install packer if it isn't installed
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local bootstrap_packer = false
+
 if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system({
+	bootstrap_packer = fn.system({
 		"git",
 		"clone",
 		"--depth",
@@ -102,7 +104,10 @@ local plugins = function(use)
 		requires = {
 			"williamboman/nvim-lsp-installer",
 			"folke/trouble.nvim",
-			"jose-elias-alvarez/null-ls.nvim",
+			{
+				"jose-elias-alvarez/null-ls.nvim",
+				rocks = { "luacheck" },
+			},
 		},
 		config = function()
 			require("conf-lsp")
@@ -151,7 +156,7 @@ local plugins = function(use)
 		end,
 	})
 
-	if PACKER_BOOTSTRAP then
+	if bootstrap_packer then
 		packer.sync()
 	end
 end
