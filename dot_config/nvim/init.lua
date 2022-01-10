@@ -67,7 +67,11 @@ local plugins = function(use)
   use { "nvim-treesitter/nvim-treesitter", config = function() require("conf-treesitter") end }
   use {
     "neovim/nvim-lspconfig",
-    requires = { "williamboman/nvim-lsp-installer", "folke/trouble.nvim" },
+    requires = {
+      "williamboman/nvim-lsp-installer",
+      "folke/trouble.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
+    },
     config = function() require("conf-lsp") end,
   }
   use {

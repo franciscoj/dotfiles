@@ -90,3 +90,13 @@ installer.on_server_ready(function(server)
   local opts = server_opts[server.name] and server_opts[server.name]() or common_opts
   server:setup(opts)
 end)
+
+local null_ls = require("null-ls")
+local formatting = null_ls.builtins.formatting
+
+null_ls.setup {
+  debug = false,
+  sources = {
+    formatting.stylua,
+  },
+}
