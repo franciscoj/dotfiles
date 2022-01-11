@@ -35,13 +35,13 @@ local on_attach = function(client, _bufnr)
 	if client.resolved_capabilities.code_lens then
 		vim.api.nvim_exec(
 			[[
-      augroup lsp_code_lens_refresh
-        autocmd! * <buffer>
+        augroup lsp_code_lens_refresh
+          autocmd! * <buffer>
 
-        autocmd BufEnter,InsertLeave,CursorHold <buffer> lua vim.lsp.codelens.refresh()
-        autocmd BufEnter <buffer> lua vim.lsp.codelens.display()
-      augroup END
-    ]],
+          autocmd BufEnter,InsertLeave,CursorHold <buffer> lua vim.lsp.codelens.refresh()
+          autocmd BufEnter <buffer> lua vim.lsp.codelens.display()
+        augroup END
+      ]],
 			false
 		)
 
@@ -124,8 +124,8 @@ null_ls.setup({
 		if client.resolved_capabilities.document_formatting then
 			vim.cmd([[
       augroup LspFormatting
-          autocmd! * <buffer>
-          autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+        autocmd! * <buffer>
+        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
       augroup END
       ]])
 		end
