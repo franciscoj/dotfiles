@@ -49,7 +49,7 @@ local on_attach = function(client, _bufnr)
 	end
 end
 
-local servers = { "gopls", "sumneko_lua" }
+local servers = { "gopls", "sumneko_lua", "solargraph" }
 for _, name in pairs(servers) do
 	local found, server = installer.get_server(name)
 	if found then
