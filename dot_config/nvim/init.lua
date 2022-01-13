@@ -99,20 +99,35 @@ local plugins = function(use)
 			require("conf-treesitter")
 		end,
 	})
-	use({
-		"neovim/nvim-lspconfig",
-		requires = {
-			"williamboman/nvim-lsp-installer",
-			"folke/trouble.nvim",
-			{
-				"jose-elias-alvarez/null-ls.nvim",
-				rocks = { "luacheck" },
+	if vim.env.DOTFILES then
+		use({
+			"neovim/nvim-lspconfig",
+			requires = {
+				"williamboman/nvim-lsp-installer",
+				"folke/trouble.nvim",
+				{
+					"jose-elias-alvarez/null-ls.nvim",
+					rocks = { "luacheck" },
+				},
 			},
-		},
-		config = function()
-			require("conf-lsp")
-		end,
-	})
+			config = function()
+				require("conf-lsp")
+			end,
+		})
+	else
+		print("Skipping LUA stuff since not editing dotfiles")
+		use({
+			"neovim/nvim-lspconfig",
+			requires = {
+				"williamboman/nvim-lsp-installer",
+				"folke/trouble.nvim",
+				"jose-elias-alvarez/null-ls.nvim",
+			},
+			config = function()
+				require("conf-lsp")
+			end,
+		})
+	end
 	use({
 		"nvim-telescope/telescope.nvim",
 		config = function()

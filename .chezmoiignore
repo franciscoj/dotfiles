@@ -2,4 +2,5 @@ install.sh
 README.md
 dot_config/lvim/plugin
 .luacheckrc
+.envrc
 

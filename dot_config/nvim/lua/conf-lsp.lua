@@ -1,3 +1,4 @@
+local lsp = require("lspconfig")
 local installer = require("nvim-lsp-installer")
 local trouble = require("trouble")
 local h = require("h")
@@ -49,7 +50,7 @@ local on_attach = function(client, _bufnr)
 	end
 end
 
-local servers = { "gopls", "sumneko_lua", "solargraph" }
+local servers = { "gopls", "sumneko_lua" }
 for _, name in pairs(servers) do
 	local found, server = installer.get_server(name)
 	if found then
@@ -112,14 +113,22 @@ local null_ls = require("null-ls")
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
+local sources = {
+	diagnostics.golangci_lint,
+	formatting.goimports,
+}
+
+-- This is only relevant when editing dotfiles
+if vim.env.DOTFILES then
+	table.insert(sources, diagnostics.luacheck)
+	table.insert(sources, formatting.stylua)
+else
+	print("Skipping LUA stuff since not editing dotfiles")
+end
+
 null_ls.setup({
 	debug = false,
-	sources = {
-		diagnostics.golangci_lint,
-		diagnostics.luacheck,
-		formatting.goimports,
-		formatting.stylua,
-	},
+	sources = sources,
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
 			vim.cmd([[
@@ -131,3 +140,12 @@ null_ls.setup({
 		end
 	end,
 })
+
+if vim.fn.executable("bin/solargraph") == 1 then
+	print("Using local solargraph")
+	lsp.solargraph.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+		cmd = { "bin/solargraph", "stdio" },
+	})
+end
