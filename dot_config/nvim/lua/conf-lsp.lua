@@ -74,8 +74,8 @@ if has_goimports then
 end
 
 if has_rubocop then
-	table.insert(null_ls_sources, formatting.rubocop.with({ cmd = "bin/rubocop" }))
-	table.insert(null_ls_sources, diagnostics.rubocop.with({ cmd = "bin/rubocop" }))
+	table.insert(null_ls_sources, formatting.rubocop.with({ command = "bin/rubocop" }))
+	table.insert(null_ls_sources, diagnostics.rubocop.with({ command = "bin/rubocop" }))
 end
 
 -- These is only relevant when editing dotfiles
