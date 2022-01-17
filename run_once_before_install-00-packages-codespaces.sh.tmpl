@@ -23,7 +23,7 @@ sudo chsh -s /bin/zsh $(whoami)
 
 echo "Installing: nvim ********************"
 pip3 install --user pynvim
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+curl -LO https://github.com/neovim/neovim/releases/stable/download/nvim.appimage
 chmod u+x nvim.appimage
 ./nvim.appimage --appimage-extract
 ./squashfs-root/AppRun --version
