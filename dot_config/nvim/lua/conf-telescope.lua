@@ -7,6 +7,7 @@ h.nnoremap("<leader>f", ":Telescope find_files<cr>")
 h.nnoremap("<leader>g", ":Telescope live_grep<cr>")
 h.nnoremap("<leader>F", ":Telescope resume<cr>")
 h.nnoremap("<leader>m", ":Telescope marks<cr>")
+h.nnoremap("<leader><leader>", ":Telescope buffers<cr>")
 
 telescope.setup({
 	defaults = {
