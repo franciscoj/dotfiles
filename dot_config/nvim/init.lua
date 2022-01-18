@@ -163,6 +163,17 @@ local plugins = function(use)
 			require("conf-test")
 		end,
 	})
+	-- Fern
+	use({
+		"lambdalisue/fern.vim",
+		requires = {
+			"lambdalisue/fern-hijack.vim",
+			"lambdalisue/fern-git-status.vim",
+		},
+		config = function()
+			require("conf-fern")
+		end,
+	})
 
 	if bootstrap_packer then
 		packer.sync()
