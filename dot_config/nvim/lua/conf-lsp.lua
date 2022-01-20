@@ -105,7 +105,7 @@ if #null_ls_sources ~= 0 then
 end
 
 -- Setup servers that I want automatically installed
-local installable_servers = { "gopls", "sumneko_lua" }
+local installable_servers = { "gopls", "sumneko_lua", "yamlls" }
 for _, name in pairs(installable_servers) do
 	local found, server = installer.get_server(name)
 	if found then
@@ -158,6 +158,16 @@ installer.on_server_ready(function(server)
 
 				on_attach(client, bufnr)
 			end
+		end,
+		["yamlls"] = function()
+			common_opts.settings = {
+				yaml = {
+					schemas = {
+						["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+						["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose*.yml",
+					},
+				},
+			}
 		end,
 	}
 
