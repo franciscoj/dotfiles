@@ -110,6 +110,12 @@ local plugins = function(use)
 		"folke/trouble.nvim",
 	}
 	if vim.env.DOTFILES then
+		-- This makes luacheck installation work on Mac
+		-- https://github.com/wbthomason/packer.nvim/issues/180#issuecomment-871634199
+		if jit.os == "OSX" then
+			vim.fn.setenv("MACOSX_DEPLOYMENT_TARGET", "10.15")
+		end
+
 		table.insert(lsp_requires, {
 			"jose-elias-alvarez/null-ls.nvim",
 			rocks = { "luacheck" },
