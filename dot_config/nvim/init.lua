@@ -15,6 +15,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
 		"https://github.com/wbthomason/packer.nvim",
 		install_path,
 	})
+
+	-- Add the directory where we just installed packer to the runtimepath so
+	-- that it is taken into account. Otherwise it is going to be ignored and
+	-- require("packer") won't work.
+	vim.o.runtimepath = vim.fn.stdpath("data") .. "/site/pack/*/start/*," .. vim.o.runtimepath
 end
 
 local packer = require("packer")
