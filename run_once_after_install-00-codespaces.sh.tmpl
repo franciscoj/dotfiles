@@ -1,0 +1,11 @@
+{{- $codespaces:= env "CODESPACES" | not | not -}}
+{{- if $codespaces -}}
+#!/bin/sh
+
+set -e
+
+# Since neovim config is bootstrapped, this will also make sure that all
+# plugins are installed before considering the dotfiles installed
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+{{end -}}
+
