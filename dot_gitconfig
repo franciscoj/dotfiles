@@ -1,50 +1,50 @@
-# -*- mode: gitconfig; -*-
+# vim: ft=gitconfig
 
 [user]
-  name = Fran Casas
-  email = nflamel@gmail.com
+	name = Fran Casas
+	email = nflamel@gmail.com
 [color]
-  diff = auto
-  status = auto
-  branch = auto
+	diff = auto
+	status = auto
+	branch = auto
 [core]
-  excludesfile = ~/.gitignore
-  autocrlf = input
-  editor = nvim
+	excludesfile = ~/.gitignore
+	autocrlf = input
+	editor = nvim
 [merge]
-  tool = vimdiff
+	tool = vimdiff
 [mergetool]
-  prompt = true
+	prompt = true
 [mergetool "vimdiff"]
-  cmd = nvim -d $LOCAL $REMOTE $MERGED
+	cmd = nvim -d $LOCAL $REMOTE $MERGED
 [difftool]
-  prompt = false
+	prompt = false
 [diff]
-  tool = vimdiff
+	tool = vimdiff
 [apply]
-  whitespace = fix
+	whitespace = fix
 [format]
-  pretty = %Cred%h%Creset - %s%nby %C(bold blue)%an <%ae>%Creset %C(yellow)%d%Creset%non %Cgreen(%cD)%n%b
+	pretty = %Cred%h%Creset - %s%nby %C(bold blue)%an <%ae>%Creset %C(yellow)%d%Creset%non %Cgreen(%cD)%n%b
 [alias]
-  amend = commit --amend --no-edit
-  co = checkout
-  l = ll -n 10
-  ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)'
-  lll = log --graph
-  s = status --short -b
-  last = diff HEAD~1
-  wtf = log -p --word-diff
+	amend = commit --amend --no-edit
+	co = checkout
+	l = ll -n 10
+	ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)'
+	lll = log --graph
+	s = status --short -b
+	last = diff HEAD~1
+	wtf = log -p --word-diff
 [push]
-  default = current
+	default = current
 [rebase]
-  autosquash = true
+	autosquash = true
 [rerere]
-  enabled = true
+	enabled = true
 [include]
-  path = ~/.gitconfig_local
+	path = ~/.gitconfig_local
 [init]
-  defaultBranch = main
+	defaultBranch = main
 [github]
-  user = franciscoj
+	user = franciscoj
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
