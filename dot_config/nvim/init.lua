@@ -108,6 +108,7 @@ local plugins = function(use)
 	local lsp_requires = {
 		"williamboman/nvim-lsp-installer",
 		"folke/trouble.nvim",
+		"folke/lua-dev.nvim",
 	}
 	if vim.env.DOTFILES then
 		-- This makes luacheck installation work on Mac
@@ -174,6 +175,7 @@ local plugins = function(use)
 			require("conf-test")
 		end,
 	})
+
 	-- Fern
 	use({
 		"lambdalisue/fern.vim",
