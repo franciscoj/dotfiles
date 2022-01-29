@@ -44,6 +44,7 @@ local plugins = function(use)
 		end,
 	})
 	use("cohama/lexima.vim")
+	use({ "inkarkat/vim-mark", requires = "inkarkat/vim-ingo-library" })
 
 	-- Git
 	use({

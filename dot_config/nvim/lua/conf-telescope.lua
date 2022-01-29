@@ -6,7 +6,7 @@ local telescope = require("telescope")
 h.nnoremap("<leader>f", "<cmd>Telescope find_files<cr>")
 h.nnoremap("<leader>g", "<cmd>Telescope live_grep<cr>")
 h.nnoremap("<leader>F", "<cmd>Telescope resume<cr>")
-h.nnoremap("<leader>m", "<cmd>Telescope marks<cr>")
+h.nnoremap("<LocalLeader>m", "<cmd>Telescope marks<cr>")
 h.nnoremap('<leader>"', "<cmd>Telescope registers<cr>")
 h.nnoremap("<leader><leader>", "<cmd>Telescope buffers<cr>")
 
