@@ -4,7 +4,12 @@
 local cfg = require("franciscoj.lsp.cfg")
 local h = require("h")
 local installer = require("nvim-lsp-installer")
-local installable_servers = { "gopls", "sumneko_lua", "yamlls" }
+local installable_servers = {
+	"gopls",
+	"rust_analyzer",
+	"sumneko_lua",
+	"yamlls",
+}
 
 for _, name in pairs(installable_servers) do
 	local found, server = installer.get_server(name)
