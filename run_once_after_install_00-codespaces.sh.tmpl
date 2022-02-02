@@ -1,0 +1,12 @@
+{{- $codespaces:= env "CODESPACES" | not | not -}}
+{{- if $codespaces -}}
+#!/bin/sh
+
+set -e
+
+echo "Installing: tmux plugins ********************"
+~/.tmux/plugins/tpm/bin/install_plugins
+
+echo "Installing: Bootstrapping nvim ********************""
+~/.local/bin/nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+{{end -}}
