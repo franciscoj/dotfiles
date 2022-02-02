@@ -28,4 +28,7 @@ chmod u+x nvim.appimage
 ./nvim.appimage --appimage-extract
 ./squashfs-root/AppRun --version
 sudo mv squashfs-root / && ln -s /squashfs-root/AppRun $HOME/.local/bin/nvim
+
+echo "Installing: tmux plugin manager ********************"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 {{end -}}
