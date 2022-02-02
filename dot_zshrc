@@ -1,4 +1,4 @@
-# -*- mode: shell-script; -*-
+# vim: ft=sh
 
 # This file is meant to load only things which are needed on an interactive
 # shell, like customizations, special aliases, etc.
@@ -25,8 +25,9 @@ zplug "$HOME/.config/zplugins/codespaces", from:local
 
 # Only perform the zplug check during bootstrapping
 if [ -v CODESPACES ] ; then
-  echo "checking zplug..."
-  [[ ! "$(zplug check --verbose)" ]] && zplug install
+  if ! zplug check --verbose; then
+    zplug install
+  fi
 fi
 
 zplug load # --verbose
