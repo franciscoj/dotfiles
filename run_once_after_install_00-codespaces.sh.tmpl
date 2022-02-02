@@ -7,6 +7,6 @@ set -e
 echo "Installing: tmux plugins ********************"
 ~/.tmux/plugins/tpm/bin/install_plugins
 
-echo "Installing: Bootstrapping nvim ********************""
+echo "Installing: Bootstrapping nvim ********************"
 ~/.local/bin/nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 {{end -}}
