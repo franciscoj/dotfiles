@@ -45,6 +45,30 @@ local plugins = function(use)
 	})
 	use("cohama/lexima.vim")
 	use({ "inkarkat/vim-mark", requires = "inkarkat/vim-ingo-library" })
+	use({
+		"folke/zen-mode.nvim",
+		config = function()
+			require("zen-mode").setup({
+				window = {
+					width = 80,
+				},
+				plugins = {
+					gitsigns = { enabled = true },
+				},
+			})
+		end,
+	})
+	use({
+		"pwntester/octo.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"kyazdani42/nvim-web-devicons",
+		},
+		config = function()
+			require("octo").setup()
+		end,
+	})
 
 	-- Git
 	use({
