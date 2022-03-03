@@ -10,14 +10,9 @@ npm-debug.log
 .tern-port
 .tern-port
 .envrc
-TAGS
-tags
-tags.lock
-tags.temp
 .byebug_history
 .lvimrc
 .projections.json
-.notags
 .tool-versions-e
 .tool-versions
 Session.vim
