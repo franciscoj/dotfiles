@@ -169,6 +169,8 @@ local plugins = function(use)
 		},
 	})
 
+	use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" })
+
 	-- Autocomplete + snippets
 	use({
 		"hrsh7th/nvim-cmp",
