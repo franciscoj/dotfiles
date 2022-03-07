@@ -44,7 +44,6 @@ local plugins = function(use)
 		end,
 	})
 	use("cohama/lexima.vim")
-	use({ "inkarkat/vim-mark", requires = "inkarkat/vim-ingo-library" })
 	use({
 		"folke/zen-mode.nvim",
 		config = function()
