@@ -37,6 +37,12 @@ local plugins = function(use)
 	use("tpope/vim-unimpaired")
 	use("tpope/vim-vinegar")
 	use({
+		"tpope/vim-projectionist",
+		config = function()
+			require("conf-projectionist")
+		end,
+	})
+	use({
 		"AndrewRadev/splitjoin.vim",
 		config = function()
 			vim.g.splitjoin_ruby_curly_braces = false
