@@ -1,3 +1,5 @@
+local h = require("h")
+
 vim.g.projectionist_heuristics = {
 	["go.mod"] = {
 		["internal/*.go"] = {
@@ -10,3 +12,6 @@ vim.g.projectionist_heuristics = {
 		},
 	},
 }
+
+h.nnoremap("<leader><leader>", "<cmd>A<cr>")
+h.nnoremap("1<leader><leader>", "<cmd>AV<cr>")
