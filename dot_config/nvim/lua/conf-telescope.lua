@@ -8,6 +8,7 @@ h.nnoremap("<leader>g", "<cmd>Telescope live_grep<cr>")
 h.nnoremap("<leader>F", "<cmd>Telescope resume<cr>")
 h.nnoremap("<LocalLeader>m", "<cmd>Telescope marks<cr>")
 h.nnoremap('<leader>"', "<cmd>Telescope registers<cr>")
+h.nnoremap("<leader>B", "<cmd>Telescope buffers<cr>")
 
 telescope.setup({
 	defaults = {
