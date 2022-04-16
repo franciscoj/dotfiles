@@ -1,31 +1,41 @@
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-local h = require("h")
+local builtin = require("telescope.builtin")
+local themes = require("telescope.themes")
 
 local function on_attach(client, _bufnr)
 	-- Using LSP defaults
-	h.nnoremap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
-	h.nnoremap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-	h.nnoremap("<LocalLeader>t", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
-	h.nnoremap("<LocalLeader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
-	h.nnoremap("K", "<cmd>lua vim.lsp.buf.hover()<CR>")
-	h.nnoremap("<LocalLeader>k", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-	h.nnoremap("<LocalLeader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
-	h.nnoremap("<LocalLeader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-	h.nnoremap("<LocalLeader>l", [[<cmd>lua vim.diagnostic.open_float(nil, {focus=false, border="rounded"})<CR>]])
+	vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+	vim.keymap.set("n", "<LocalLeader>t", vim.lsp.buf.type_definition)
+	vim.keymap.set("n", "<LocalLeader>f", vim.lsp.buf.formatting)
+	vim.keymap.set("n", "K", vim.lsp.buf.hover)
+	vim.keymap.set("n", "<LocalLeader>k", vim.lsp.buf.signature_help)
+	vim.keymap.set("n", "<LocalLeader>r", vim.lsp.buf.rename)
+	vim.keymap.set("n", "<LocalLeader>;", function()
+		vim.diagnostic.open_float(nil, { focus = false, border = "rounded" })
+	end)
 
 	-- I'm not sure why these are for
-	-- h.nnoremap("<LocalLeader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>")
-	-- h.nnoremap("<LocalLeader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>")
-	-- h.nnoremap("<LocalLeader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
+	-- vim.keymap.set("n", "<LocalLeader>wa", vim.lsp.buf.add_workspace_folder)
+	-- vim.keymap.set("n", "<LocalLeader>wr", vim.lsp.buf.remove_workspace_folder)
+	-- vim.keymap.set("n", "<LocalLeader>wl", function()
+	-- 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+	-- end)
 
 	-- Using Telescope
-	h.nnoremap("<LocalLeader>o", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>")
-	h.nnoremap("gr", ":Telescope lsp_references<CR>")
-	h.nnoremap("gi", ":Telescope lsp_implementations<CR>")
+	vim.keymap.set("n", "<LocalLeader>o", builtin.lsp_dynamic_workspace_symbols)
+	vim.keymap.set("n", "gr", builtin.lsp_references)
+	vim.keymap.set("n", "gi", builtin.lsp_implementations)
+	vim.keymap.set("n", "<LocalLeader>a", function()
+		builtin.lsp_code_actions(themes.get_cursor())
+	end)
+	vim.keymap.set("x", "<LocalLeader>a", function()
+		builtin.lsp_range_code_actions(themes.get_cursor())
+	end)
 
 	-- Using trouble.nvim
-	h.nnoremap("<LocalLeader>d", "<cmd>Trouble document_diagnostics<CR>")
-	h.nnoremap("<LocalLeader>D", "<cmd>Trouble workspace_diagnostics<CR>")
+	vim.keymap.set("n", "<LocalLeader>d", "<cmd>Trouble document_diagnostics<CR>")
+	vim.keymap.set("n", "<LocalLeader>D", "<cmd>Trouble workspace_diagnostics<CR>")
 
 	-- Disable virtual diagnostics because they are mostly annoying
 	vim.diagnostic.config({ virtual_text = false })
@@ -43,7 +53,7 @@ local function on_attach(client, _bufnr)
 			false
 		)
 
-		h.nnoremap("<LocalLeader>A", "<cmd>lua vim.lsp.codelens.run()<cr>")
+		vim.keymap.set("n", "<LocalLeader>A", vim.lsp.codelens.run)
 	end
 end
 

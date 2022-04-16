@@ -1,17 +1,15 @@
-local h = require("h")
-
 vim.g.projectionist_heuristics = {
 	["go.mod"] = {
-		["internal/*.go"] = {
-			alternate = "internal/{}_test.go",
+		["*.go"] = {
+			alternate = "{}_test.go",
 			type = "source",
 		},
-		["internal/*_test.go"] = {
-			alternate = "internal/{}.go",
+		["*_test.go"] = {
+			alternate = "{}.go",
 			type = "test",
 		},
 	},
 }
 
-h.nnoremap("<leader><leader>", "<cmd>A<cr>")
-h.nnoremap("1<leader><leader>", "<cmd>AV<cr>")
+vim.keymap.set("n", "<leader><leader>", "<cmd>A<cr>")
+vim.keymap.set("n", "1<leader><leader>", "<cmd>AV<cr>")

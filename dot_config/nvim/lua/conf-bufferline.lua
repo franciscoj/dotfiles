@@ -1,4 +1,3 @@
-local h = require("h")
 local bufferline = require("bufferline")
 
 bufferline.setup({
@@ -30,4 +29,5 @@ bufferline.setup({
 	},
 })
 
-h.nnoremap("<Leader>b", "<cmd>:BufferLinePick<CR>")
+vim.keymap.set("n", "<leader>b", bufferline.pick_buffer)
+vim.keymap.set("n", "<leader>bd", "<cmd>:bdelete<cr>")

@@ -1,14 +1,17 @@
-local h = require("h")
 local action_layout = require("telescope.actions.layout")
 local trouble = require("trouble.providers.telescope")
 local telescope = require("telescope")
+local builtin = require("telescope.builtin")
+local themes = require("telescope.themes")
 
-h.nnoremap("<leader>f", "<cmd>Telescope find_files<cr>")
-h.nnoremap("<leader>g", "<cmd>Telescope live_grep<cr>")
-h.nnoremap("<leader>F", "<cmd>Telescope resume<cr>")
-h.nnoremap("<LocalLeader>m", "<cmd>Telescope marks<cr>")
-h.nnoremap('<leader>"', "<cmd>Telescope registers<cr>")
-h.nnoremap("<leader>B", "<cmd>Telescope buffers<cr>")
+vim.keymap.set("n", "<leader>f", builtin.find_files)
+vim.keymap.set("n", "<leader>g", builtin.live_grep)
+vim.keymap.set("n", "<leader>F", builtin.resume)
+vim.keymap.set("n", "<LocalLeader>m", builtin.marks)
+vim.keymap.set("n", '<leader>"', function()
+	builtin.registers(themes.get_cursor())
+end)
+vim.keymap.set("n", "<leader>B", builtin.buffers)
 
 telescope.setup({
 	defaults = {
