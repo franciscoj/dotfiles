@@ -130,6 +130,7 @@ local plugins = function(use)
 	-- Neovim/treesitter/LSP specific
 	use({
 		"nvim-treesitter/nvim-treesitter",
+		requires = "nvim-treesitter/nvim-treesitter-textobjects",
 		config = function()
 			require("conf-treesitter")
 		end,
