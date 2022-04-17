@@ -1,7 +1,7 @@
-regexp==== RUN .*
+regexp==== RUN
 colour=blue
 -
-regexp=--- PASS: .*
+regexp=--- PASS:
 colour=green
 -
 regexp=^PASS$
@@ -13,8 +13,11 @@ colour=default
 regexp=^\s*panic: .*
 colour=red
 -
-regexp=--- FAIL: .*
-colour=bold red
+regexp=--- FAIL:
+colours=bold white on_red
 -
 regexp=[^\s]+\.go(:\d+)?
 colour=cyan
+-
+regexp==== (PAUSE|CONT)
+colours=yellow
