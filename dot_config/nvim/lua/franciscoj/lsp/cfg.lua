@@ -41,17 +41,19 @@ local function on_attach(client, _bufnr)
 	vim.diagnostic.config({ virtual_text = false })
 
 	if client.resolved_capabilities.code_lens then
-		vim.api.nvim_exec(
-			[[
-        augroup lsp_code_lens_refresh
-          autocmd! * <buffer>
+		local id = vim.api.nvim_create_augroup("lsp_code_lens_refresh", { clear = false })
+		vim.api.nvim_clear_autocmds({ buffer = 0, group = id })
+		vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "CursorHold" }, {
+			buffer = 0,
+			group = id,
+			callback = vim.lsp.codelens.refresh,
+		})
 
-          autocmd BufEnter,InsertLeave,CursorHold <buffer> lua vim.lsp.codelens.refresh()
-          autocmd BufEnter <buffer> lua vim.lsp.codelens.display()
-        augroup END
-      ]],
-			false
-		)
+		vim.api.nvim_create_autocmd({ "BufEnter" }, {
+			buffer = 0,
+			callback = vim.lsp.codelens.display,
+			group = id,
+		})
 
 		vim.keymap.set("n", "<LocalLeader>A", vim.lsp.codelens.run)
 	end
