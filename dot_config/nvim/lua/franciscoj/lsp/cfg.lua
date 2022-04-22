@@ -49,7 +49,7 @@ local function on_attach(client, _bufnr)
 			callback = vim.lsp.codelens.refresh,
 		})
 
-		vim.api.nvim_create_autocmd({ "BufEnter" }, {
+		vim.api.nvim_create_autocmd("BufEnter" , {
 			buffer = 0,
 			callback = vim.lsp.codelens.display,
 			group = id,
