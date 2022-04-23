@@ -30,6 +30,9 @@ cmp.setup({
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
 	},
+	view = {
+		entries = { name = "custom", selection_order = "near_cursor" },
+	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
@@ -63,6 +66,7 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
+		{ name = "nvim_lsp_signature_help" },
 	}, {
 		{ name = "buffer", keyword_length = 3 },
 	}),
@@ -71,6 +75,9 @@ cmp.setup({
 -- Use buffer source for `/` (if you enabled `native_menu`, this won"t work anymore).
 cmp.setup.cmdline("/", {
 	mapping = cmp.mapping.preset.cmdline(),
+	view = {
+		entries = { name = "wildmenu", separator = "|" },
+	},
 	sources = {
 		{ name = "buffer" },
 	},
@@ -79,6 +86,9 @@ cmp.setup.cmdline("/", {
 -- Use cmdline & path source for ":" (if you enabled `native_menu`, this won"t work anymore).
 cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
+	view = {
+		entries = { name = "wildmenu", separator = "|" },
+	},
 	sources = cmp.config.sources({
 		{ name = "path" },
 	}, {
