@@ -16,6 +16,9 @@ colour=red
 regexp=--- FAIL:
 colours=bold white on_red
 -
+regexp=FAIL
+colours=bold white on_red
+-
 regexp=[^\s]+\.go(:\d+)?
 colour=cyan
 -
