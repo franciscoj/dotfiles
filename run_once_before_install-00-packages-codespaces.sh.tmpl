@@ -31,4 +31,9 @@ sudo mv squashfs-root / && ln -s /squashfs-root/AppRun $HOME/.local/bin/nvim
 
 echo "Installing: tmux plugin manager ********************"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+echo "Installing: RDM ********************"
+wget https://github.com/BlakeWilliams/remote-development-manager/releases/latest/download/rdm-linux-amd64
+mv rdm-linux-amd64 $HOME/.local/bin/rdm
+chmod +x $HOME/.local/bin/rdm
 {{end -}}
