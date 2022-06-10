@@ -61,3 +61,17 @@ vim.opt.termguicolors = true -- Enables 24-bit RGB color
 vim.opt.wrap = false -- Don't auto-wrap lines by default
 -- On a delete and insert (e.g. `caw`) it mark where the change ends.
 vim.opt.cpoptions:append("$")
+
+if vim.env.CODESPACES then
+  vim.g.clipboard = {
+    name = "rdm",
+    copy = {
+      "+" = {"rdm", "copy"} ,
+      "*" = {"rdm", "copy"} 
+    },
+    paste = {
+      "+" = {"rdm", "paste"} ,
+      "*" = {"rdm", "paste"} 
+    },
+  }
+end
