@@ -13,6 +13,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "franciscoj/remote-development-manager"
 brew "autoconf"
 brew "bash"
 brew "bat"
@@ -32,6 +33,7 @@ brew "jq"
 brew "neovim"
 brew "openssl"
 brew "python"
+brew "remote-development-manager"
 brew "ripgrep"
 brew "starship"
 brew "stylua"
@@ -57,11 +59,6 @@ cask "visual-studio-code"
 cask "zoom"
 cask "zsa-wally"
 EOF
-
-echo "Installing: rdm plugins ********************"
-wget https://github.com/BlakeWilliams/remote-development-manager/releases/latest/download/rdm-darwin-amd64
-mv rdm-darwin-amd64 $HOME/.local/bin/rdm
-chmod +x $HOME/.local/bin/rdm
 
 {{ end -}}
 
