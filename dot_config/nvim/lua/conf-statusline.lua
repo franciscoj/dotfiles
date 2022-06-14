@@ -4,7 +4,7 @@ local theme_colors = require("catppuccin.api.colors").get_colors()
 -- Colors are extracted from the catppuccin theme API
 local colors = {
 	fg = theme_colors.white,
-	bg = theme_colors.black4,
+	bg = theme_colors.surface1,
 	blue = theme_colors.sky,
 	green = theme_colors.green,
 	orange = theme_colors.peach,
