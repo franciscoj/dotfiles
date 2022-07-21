@@ -1,5 +1,5 @@
 local line = require("lualine")
-local theme_colors = require("catppuccin.api.colors").get_colors()
+local theme_colors = require("catppuccin.palettes").get_palette()
 
 -- Colors are extracted from the catppuccin theme API
 local colors = {
