@@ -2,10 +2,13 @@ local null_ls = require("null-ls")
 local features = require("franciscoj.lsp.features")
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
+local code_actions = null_ls.builtins.code_actions
 
 -- No sources by default, if feature detection for any of the linters I'm
 -- interested in  works, then those are enabled.
-local sources = {}
+local sources = {
+  code_actions.gitsigns
+}
 
 if features.golangci_lint then
 	table.insert(sources, diagnostics.golangci_lint)
@@ -20,7 +23,7 @@ if features.rubocop then
 	table.insert(sources, diagnostics.rubocop.with({ command = "bin/rubocop" }))
 end
 
--- These is only relevant when editing DOTFILES
+-- These are only relevant when editing DOTFILES
 if vim.env.DOTFILES then
 	if features.luacheck then
 		table.insert(sources, diagnostics.luacheck)
