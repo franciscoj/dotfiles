@@ -1,5 +1,7 @@
 local catppuccin = require("catppuccin")
 
+vim.g.catppuccin_flavour = "macchiato"
+
 catppuccin.setup({
   dim_inactive = {
     enabled = true,
