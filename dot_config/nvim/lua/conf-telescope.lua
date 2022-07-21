@@ -18,11 +18,11 @@ telescope.setup({
     mappings = {
       n = {
         ["<M-p>"] = action_layout.toggle_preview,
-        ["<c-t>"] = trouble.open_with_trouble,
+        ["<C-t>"] = trouble.open_with_trouble,
       },
       i = {
         ["<M-p>"] = action_layout.toggle_preview,
-        ["<c-t>"] = trouble.open_with_trouble,
+        ["<C-t>"] = trouble.open_with_trouble,
       },
     },
     layout_config = {
@@ -41,7 +41,7 @@ telescope.setup({
       -- the default case_mode is "smart_case"
     },
     ["ui-select"] = {
-      themes.get_cursor { } -- even more opts 
+      themes.get_cursor {} -- even more opts
     }
   },
   -- other configuration values here

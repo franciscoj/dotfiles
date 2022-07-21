@@ -3,6 +3,9 @@ local catppuccin = require("catppuccin")
 vim.g.catppuccin_flavour = "macchiato"
 
 catppuccin.setup({
+  compile = {
+    enabled = true,
+  },
   dim_inactive = {
     enabled = true,
     shade = "dark",
