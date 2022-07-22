@@ -38,6 +38,7 @@ mv rdm-linux-amd64 $HOME/.local/bin/rdm
 chmod +x $HOME/.local/bin/rdm
 
 echo "Installing: alacritty terminfo ********************"
+# from https://github.com/alacritty/alacritty/issues/2838#issuecomment-1032517876
 wget https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info
 tic -xe alacritty,alacritty-direct alacritty.info
 rm alacritty.info
