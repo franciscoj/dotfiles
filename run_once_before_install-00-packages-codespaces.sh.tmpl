@@ -36,4 +36,7 @@ echo "Installing: RDM ********************"
 wget https://github.com/BlakeWilliams/remote-development-manager/releases/latest/download/rdm-linux-amd64
 mv rdm-linux-amd64 $HOME/.local/bin/rdm
 chmod +x $HOME/.local/bin/rdm
+
+echo "Installing: alacritty terminfo ********************"
+wget https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info && tic -xe alacritty,alacritty-direct alacritty.info && rm alacritty.info
 {{end -}}
