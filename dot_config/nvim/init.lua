@@ -218,6 +218,8 @@ local plugins = function(use)
     requires = {
       "lambdalisue/fern-hijack.vim",
       "lambdalisue/fern-git-status.vim",
+      "lambdalisue/nerdfont.vim",
+      "lambdalisue/fern-renderer-nerdfont.vim",
     },
     config = function()
       require("conf-fern")
