@@ -28,4 +28,6 @@ catppuccin.setup({
     treesitter = true,
   },
 })
+
 vim.cmd([[colorscheme catppuccin]])
+vim.cmd [[highlight WinSeparator guibg=None]]
