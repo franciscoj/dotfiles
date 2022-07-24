@@ -22,9 +22,15 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.o.runtimepath = vim.fn.stdpath("data") .. "/site/pack/*/start/*," .. vim.o.runtimepath
 end
 
+local ok, impatient = pcall(require, "impatient")
+if not ok then
+  print("Not loading impatient")
+end
+
 local packer = require("packer")
 local plugins = function(use)
   use("wbthomason/packer.nvim")
+  use("lewis6991/impatient.nvim")
 
   -- QOL plugins
   use("tpope/vim-abolish")
@@ -70,6 +76,7 @@ local plugins = function(use)
       "nvim-telescope/telescope.nvim",
       "kyazdani42/nvim-web-devicons",
     },
+    cmd = { "Octo" },
     config = function()
       require("octo").setup()
     end,
@@ -81,7 +88,7 @@ local plugins = function(use)
     requires = {
       "tpope/vim-git",
       "tpope/vim-rhubarb",
-      "junegunn/gv.vim",
+      { "junegunn/gv.vim", cmd = { "GV", "GV!" } },
     },
     config = function()
       require("conf-git")
@@ -89,9 +96,7 @@ local plugins = function(use)
   })
   use({
     "lewis6991/gitsigns.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-    },
+    requires = { "nvim-lua/plenary.nvim" },
     config = function()
       require("gitsigns").setup()
     end,
@@ -132,6 +137,7 @@ local plugins = function(use)
   use({
     "nvim-treesitter/nvim-treesitter",
     requires = "nvim-treesitter/nvim-treesitter-textobjects",
+    run = ":TSUpdate",
     config = function()
       require("conf-treesitter")
     end,
@@ -177,7 +183,11 @@ local plugins = function(use)
     },
   })
 
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" })
+  use({
+    "iamcco/markdown-preview.nvim",
+    ft = { "markdown" },
+    run = "cd app && yarn install"
+  })
 
   -- Autocomplete + snippets
   use({
