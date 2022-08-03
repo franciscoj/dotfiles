@@ -14,7 +14,6 @@ catppuccin.setup({
     comments = { "italic" },
     functions = { "italic", "bold" },
     keywords = { "bold" },
-    strings = { "italic" },
   },
   integrations = {
     bufferline = true,
