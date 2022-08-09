@@ -46,5 +46,7 @@
 	defaultBranch = main
 [github]
 	user = franciscoj
+{{if (eq .chezmoi.os "darwin") -}}
 [credential]
 	helper = osxkeychain
+{{ end -}}
