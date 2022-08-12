@@ -6,8 +6,8 @@ local config = cfg.defaults()
 config.on_attach = function(client, bufnr)
   -- disable  formatting for tsserver so that prettier handles it through
   -- null-ls
-  client.resolved_capabilities.document_formatting = not features.goimports
-  client.resolved_capabilities.document_range_formatting = not features.goimports
+  client.resolved_capabilities.document_formatting = false
+  client.resolved_capabilities.document_range_formatting = false
 
   cfg.on_attach(client, bufnr)
 end
