@@ -18,6 +18,7 @@ config.on_attach = function(client, bufnr)
   client.resolved_capabilities.document_formatting = false
   client.resolved_capabilities.document_range_formatting = false
 
+  vim.keymap.set("n", "<LocalLeader>O", "<cmd>:OrganizeImports<CR>")
   cfg.on_attach(client, bufnr)
 end
 
