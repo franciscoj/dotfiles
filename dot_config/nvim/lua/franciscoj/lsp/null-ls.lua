@@ -7,7 +7,8 @@ local code_actions = null_ls.builtins.code_actions
 -- No sources by default, if feature detection for any of the linters I'm
 -- interested in  works, then those are enabled.
 local sources = {
-  code_actions.gitsigns
+  code_actions.gitsigns,
+  formatting.prettier,
 }
 
 if features.golangci_lint then
