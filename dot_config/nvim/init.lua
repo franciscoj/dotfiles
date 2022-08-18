@@ -70,6 +70,13 @@ local plugins = function(use)
     end,
   })
   use({
+    "simnalamburt/vim-mundo",
+    config = function()
+      vim.keymap.set("n", "<leader>U", "<cmd>MundoToggle<cr>")
+    end
+  })
+
+  use({
     "pwntester/octo.nvim",
     requires = {
       "nvim-lua/plenary.nvim",
