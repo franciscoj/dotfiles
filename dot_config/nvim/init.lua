@@ -170,6 +170,14 @@ local plugins = function(use)
     table.insert(lsp_requires, "jose-elias-alvarez/null-ls.nvim")
   end
 
+  -- Show LSP progress information
+  use({
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup({})
+    end,
+  })
+
   use({
     "neovim/nvim-lspconfig",
     requires = lsp_requires,
