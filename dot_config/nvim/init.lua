@@ -158,7 +158,8 @@ local plugins = function(use)
   })
 
   local lsp_requires = {
-    "williamboman/nvim-lsp-installer",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
     "folke/trouble.nvim",
     "folke/lua-dev.nvim",
   }
@@ -177,19 +178,19 @@ local plugins = function(use)
     table.insert(lsp_requires, "jose-elias-alvarez/null-ls.nvim")
   end
 
-  -- Show LSP progress information
-  use({
-    "j-hui/fidget.nvim",
-    config = function()
-      require("fidget").setup({})
-    end,
-  })
-
   use({
     "neovim/nvim-lspconfig",
     requires = lsp_requires,
     config = function()
       require("conf-lsp")
+    end,
+  })
+
+  -- Show LSP progress information
+  use({
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup({})
     end,
   })
 
