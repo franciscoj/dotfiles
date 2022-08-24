@@ -10,6 +10,6 @@ local lspconfig = require("lspconfig")
 local cfg = require("franciscoj.lsp.cfg")
 local config = cfg.defaults()
 
-config.cmd = { "bin/sorbet", "tc", "--lsp" }
+config.cmd = { "bin/srb", "tc", "--lsp" }
 
 lspconfig.sorbet.setup(config)
