@@ -75,6 +75,13 @@ local plugins = function(use)
       vim.keymap.set("n", "<leader>U", "<cmd>MundoToggle<cr>")
     end
   })
+  use({
+    "junegunn/vim-easy-align",
+    config = function()
+      vim.keymap.set("n", "ga", "<Plug>(EasyAlign)")
+      vim.keymap.set("x", "ga", "<Plug>(EasyAlign)")
+    end
+  })
 
   use({
     "pwntester/octo.nvim",
