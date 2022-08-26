@@ -60,9 +60,7 @@ local plugins = function(use)
     "folke/zen-mode.nvim",
     config = function()
       require("zen-mode").setup({
-        window = {
-          width = 80,
-        },
+        window = { width = 100, },
         plugins = {
           gitsigns = { enabled = true },
         },
@@ -206,6 +204,8 @@ local plugins = function(use)
     },
   })
 
+  use("pechorin/any-jump.vim")
+
   use({
     "iamcco/markdown-preview.nvim",
     ft = { "markdown" },
@@ -245,7 +245,7 @@ local plugins = function(use)
     end,
   })
 
-  -- Fern
+  -- Fern - File explorer
   use({
     "lambdalisue/fern.vim",
     requires = {
