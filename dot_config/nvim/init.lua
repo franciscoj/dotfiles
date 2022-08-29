@@ -204,7 +204,9 @@ local plugins = function(use)
     },
   })
 
+  -- Sometimes LSPs are not enough
   use("pechorin/any-jump.vim")
+  use("preservim/tagbar")
 
   use({
     "iamcco/markdown-preview.nvim",
