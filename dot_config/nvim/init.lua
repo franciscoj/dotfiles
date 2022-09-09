@@ -68,6 +68,11 @@ local plugins = function(use)
     end,
   })
   use({
+    "iamcco/markdown-preview.nvim",
+    ft = { "markdown" },
+    run = "cd app && yarn install"
+  })
+  use({
     "simnalamburt/vim-mundo",
     config = function()
       vim.keymap.set("n", "<leader>U", "<cmd>MundoToggle<cr>")
@@ -80,17 +85,10 @@ local plugins = function(use)
       vim.keymap.set("x", "ga", "<Plug>(EasyAlign)")
     end
   })
-
   use({
-    "pwntester/octo.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-      "kyazdani42/nvim-web-devicons",
-    },
-    cmd = { "Octo" },
+    "embear/vim-localvimrc",
     config = function()
-      require("octo").setup()
+      vim.g.localvimrc_persistent = 1
     end,
   })
 
@@ -113,14 +111,19 @@ local plugins = function(use)
       require("gitsigns").setup()
     end,
   })
-
-  -- Support project specific config
   use({
-    "embear/vim-localvimrc",
+    "pwntester/octo.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "kyazdani42/nvim-web-devicons",
+    },
+    cmd = { "Octo" },
     config = function()
-      vim.g.localvimrc_persistent = 1
+      require("octo").setup()
     end,
   })
+
 
   -- Look & Feel
   use("kyazdani42/nvim-web-devicons")
@@ -207,12 +210,6 @@ local plugins = function(use)
   -- Sometimes LSPs are not enough
   use("pechorin/any-jump.vim")
   use("preservim/tagbar")
-
-  use({
-    "iamcco/markdown-preview.nvim",
-    ft = { "markdown" },
-    run = "cd app && yarn install"
-  })
 
   -- Autocomplete + snippets
   use({
