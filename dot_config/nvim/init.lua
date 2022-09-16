@@ -44,9 +44,7 @@ local plugins = function(use)
   use("tpope/vim-vinegar")
   use({
     "tpope/vim-projectionist",
-    config = function()
-      require("conf-projectionist")
-    end,
+    config = require("conf-projectionist")
   })
   use({
     "AndrewRadev/splitjoin.vim",
@@ -58,14 +56,7 @@ local plugins = function(use)
   use("cohama/lexima.vim")
   use({
     "folke/zen-mode.nvim",
-    config = function()
-      require("zen-mode").setup({
-        window = { width = 100, },
-        plugins = {
-          gitsigns = { enabled = true },
-        },
-      })
-    end,
+    config = require("conf-zen"),
   })
   use({
     "iamcco/markdown-preview.nvim",
@@ -100,9 +91,7 @@ local plugins = function(use)
       "tpope/vim-rhubarb",
       { "junegunn/gv.vim", cmd = { "GV", "GV!" } },
     },
-    config = function()
-      require("conf-git")
-    end,
+    config = require("conf-git")
   })
   use({
     "lewis6991/gitsigns.nvim",
@@ -131,31 +120,26 @@ local plugins = function(use)
     "catppuccin/nvim",
     as = "catppuccin",
     run = ":CatppuccinCompile",
-    config = function()
-      require("conf-catppuccin")
-    end,
+    config = require("conf-catppuccin")
   })
   use({
     "nvim-lualine/lualine.nvim",
-    config = function()
-      require("conf-statusline")
-    end,
+    config = require("conf-statusline"),
   })
   use({
     "akinsho/bufferline.nvim",
-    config = function()
-      require("conf-bufferline")
-    end,
+    config = require("conf-bufferline"),
   })
 
   -- Neovim/treesitter/LSP specific
   use({
     "nvim-treesitter/nvim-treesitter",
-    requires = "nvim-treesitter/nvim-treesitter-textobjects",
+    requires = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      "andymass/vim-matchup",
+    },
     run = ":TSUpdate",
-    config = function()
-      require("conf-treesitter")
-    end,
+    config = require("conf-treesitter"),
   })
 
   local lsp_requires = {
@@ -182,9 +166,7 @@ local plugins = function(use)
   use({
     "neovim/nvim-lspconfig",
     requires = lsp_requires,
-    config = function()
-      require("conf-lsp")
-    end,
+    config = require("conf-lsp"),
   })
 
   -- Show LSP progress information
@@ -197,14 +179,12 @@ local plugins = function(use)
 
   use({
     "nvim-telescope/telescope.nvim",
-    config = function()
-      require("conf-telescope")
-    end,
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
     },
+    config = require("conf-telescope"),
   })
 
   -- Sometimes LSPs are not enough
@@ -225,23 +205,17 @@ local plugins = function(use)
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
     },
-    config = function()
-      require("conf-cmp")
-    end,
+    config = require("conf-cmp")
   })
 
   -- Running tests
   use({
     "kassio/neoterm",
-    config = function()
-      require("conf-neoterm")
-    end,
+    config = require("conf-neoterm"),
   })
   use({
     "vim-test/vim-test",
-    config = function()
-      require("conf-test")
-    end,
+    config = require("conf-test"),
   })
 
   -- Fern - File explorer
@@ -253,9 +227,7 @@ local plugins = function(use)
       "lambdalisue/nerdfont.vim",
       "lambdalisue/fern-renderer-nerdfont.vim",
     },
-    config = function()
-      require("conf-fern")
-    end,
+    config = require("conf-fern")
   })
 
   if bootstrap_packer then

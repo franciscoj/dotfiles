@@ -1,3 +1,5 @@
--- Fern conf
+return function()
+  -- Fern conf
 
-vim.g["fern#renderer"] = "nerdfont"
+  vim.g["fern#renderer"] = "nerdfont"
+end
