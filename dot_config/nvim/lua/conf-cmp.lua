@@ -13,12 +13,13 @@ return function()
 
   cmp.setup({
     formatting = {
+      fields = { "abbr", "kind", "menu" },
       format = lspkind.cmp_format({
-        with_text = true,
+        mode = "symbol",
         menu = {
-          buffer = "[buf]",
-          nvim_lsp = "[lsp]",
-          luasnip = "[snip]",
+          buffer = "(buf)",
+          nvim_lsp = "(lsp)",
+          luasnip = "(snip)",
         },
       }),
     },
@@ -35,7 +36,7 @@ return function()
       entries = { name = "custom", selection_order = "near_cursor" },
     },
     mapping = cmp.mapping.preset.insert({
-      ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+      ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
       ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
       ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
       ["<C-e>"] = cmp.mapping({
