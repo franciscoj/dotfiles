@@ -49,10 +49,11 @@ local conventionalCommit = function(trigger)
 end
 
 ls.add_snippets("gitcommit", {
-  conventionalCommit("feat"),
+  conventionalCommit("chore"),
   conventionalCommit("docs"),
-  conventionalCommit("refactor"),
+  conventionalCommit("feat"),
   conventionalCommit("fix"),
+  conventionalCommit("refactor"),
   conventionalCommit("wip")
 })
 
