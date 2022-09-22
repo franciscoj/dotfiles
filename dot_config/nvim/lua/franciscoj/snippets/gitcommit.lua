@@ -18,7 +18,8 @@ local fmta = require("luasnip.extras.fmt").fmta
 local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.expand_conditions")
 
-local conventionalCommit = function(trigger)
+-- Returns a snippet for a conventional commit with the given trigger.
+local conventional_commit = function(trigger)
   return s(trigger, {
     t(trigger),
     sn(1, { t("("), i(1, ""), t(")") }),
@@ -28,10 +29,10 @@ local conventionalCommit = function(trigger)
 end
 
 ls.add_snippets("gitcommit", {
-  conventionalCommit("chore"),
-  conventionalCommit("docs"),
-  conventionalCommit("feat"),
-  conventionalCommit("fix"),
-  conventionalCommit("refactor"),
-  conventionalCommit("wip")
+  conventional_commit("chore"),
+  conventional_commit("docs"),
+  conventional_commit("feat"),
+  conventional_commit("fix"),
+  conventional_commit("refactor"),
+  conventional_commit("wip")
 })
