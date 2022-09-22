@@ -38,13 +38,9 @@ ls.add_snippets("all", {
 local conventionalCommit = function(trigger)
   return s(trigger, {
     t(trigger),
-    sn(1, {
-      t "(",
-      i(1, ""),
-      t ")"
-    }),
+    sn(1, { t("("), i(1, ""), t(")") }),
     t(": "),
-    i(2, "")
+    i(2, "message"),
   })
 end
 
@@ -57,11 +53,13 @@ ls.add_snippets("gitcommit", {
   conventionalCommit("wip")
 })
 
--- TODO: (@franciscoj) make this with lua
-vim.cmd [[
-imap <expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-n>'
-smap <expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-n>'
-imap <expr> <C-p> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-p>'
-smap <expr> <C-p> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-p>'
-inoremap <C-j> <cmd>lua require("luasnip.extras.select_choice")()<cr>
-]]
+-- navigate choice nodes
+vim.keymap.set({ "i", "s" }, "<C-n>", function()
+  ls.change_choice(1)
+end)
+vim.keymap.set({ "i", "s" }, "<C-p>", function()
+  ls.change_choice(-1)
+end)
+
+-- show choice list
+vim.keymap.set("i", "<C-j>", require("luasnip.extras.select_choice"))
