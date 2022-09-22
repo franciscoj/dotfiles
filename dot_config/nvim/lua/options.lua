@@ -50,10 +50,10 @@ vim.opt.shiftwidth = 2
 vim.opt.smartindent = true
 vim.opt.smarttab = true
 vim.opt.tabstop = 2
--- Ignore spelling by default, but use en_US when using it (mainly .md and
--- commit messages)
+-- Ignore spelling by default, but use en when using it (mainly .md and commit
+-- messages)
 vim.opt.spell = false
-vim.opt.spelllang = "en_US"
+vim.opt.spelllang = "en"
 -- These make things look prettier
 vim.opt.cmdheight = 1 -- Single line for command mode
 vim.opt.cursorline = true -- Highlights the line where the cursor is
