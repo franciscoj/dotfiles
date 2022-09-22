@@ -33,15 +33,28 @@ local plugins = function(use)
   use("lewis6991/impatient.nvim")
 
   -- QOL plugins
+  use({
+    "numToStr/Comment.nvim",
+    config = function()
+      require('Comment').setup()
+    end
+  })
+  use({
+    "kylechui/nvim-surround",
+    config = function()
+      require("nvim-surround").setup()
+    end
+  })
+
+  -- praise tpope section
   use("tpope/vim-abolish")
   use("tpope/vim-characterize")
-  use("tpope/vim-commentary")
   use("tpope/vim-eunuch")
   use("tpope/vim-repeat")
   use("tpope/vim-rsi")
-  use("tpope/vim-surround")
   use("tpope/vim-unimpaired")
   use("tpope/vim-vinegar")
+
   use({
     "tpope/vim-projectionist",
     config = require("conf-projectionist")
