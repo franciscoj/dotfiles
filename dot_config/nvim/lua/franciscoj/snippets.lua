@@ -6,6 +6,7 @@ require("luasnip.loaders.from_vscode").load({ exclude = { "gitcommit" } })
 -- Load snippets per file type
 require("franciscoj.snippets.all")
 require("franciscoj.snippets.gitcommit")
+require("franciscoj.snippets.go")
 
 --- Returns a function that changes the coice of a choice node when called.
 -- @param direction 1 for next, -1 for prev
