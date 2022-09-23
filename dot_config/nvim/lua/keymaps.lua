@@ -30,5 +30,7 @@ vim.keymap.set("x", "<", "<gv")
 vim.keymap.set("x", ">", ">gv")
 
 -- Neovim config
-vim.keymap.set("n", "<Leader>vr", ":source $MYVIMRC<CR>")
+
+require("franciscoj.reload")
+vim.keymap.set("n", "<leader>vr", "<cmd>lua ReloadConfig()<CR>")
 vim.keymap.set("n", "<Leader>ve", ":e $MYVIMRC<CR>")
