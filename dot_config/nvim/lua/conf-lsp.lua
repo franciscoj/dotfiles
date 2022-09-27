@@ -6,7 +6,13 @@ return function()
   }
 
   require("mason-lspconfig").setup {
-    ensure_installed = { "sumneko_lua", "gopls", "yamlls", "tsserver" },
+    ensure_installed = {
+      "gopls",
+      "marksman",
+      "sumneko_lua",
+      "tsserver",
+      "yamlls",
+    },
   }
 
   require("franciscoj.lsp.null-ls")

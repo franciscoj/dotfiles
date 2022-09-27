@@ -9,3 +9,5 @@ local lspconfig = require("lspconfig")
 local cfg = require("franciscoj.lsp.cfg")
 local features = require("franciscoj.lsp.features")
 local config = cfg.defaults()
+
+lspconfig.marksman.setup(config)
