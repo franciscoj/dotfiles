@@ -10,6 +10,8 @@ return function()
       "jsonc",
       "lua",
       "make",
+      "markdown",
+      "markdown_inline",
       "ruby",
       "rust",
       "scss",
