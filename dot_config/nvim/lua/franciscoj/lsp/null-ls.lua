@@ -4,8 +4,6 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
 
--- No sources by default, if feature detection for any of the linters I'm
--- interested in  works, then those are enabled.
 local sources = {
   code_actions.gitsigns,
   formatting.prettier,
@@ -36,20 +34,18 @@ if vim.env.DOTFILES then
   end
 end
 
-if #sources ~= 0 then
-  null_ls.setup({
-    debug = false,
-    sources = sources,
-    on_attach = function(client)
-      if client.resolved_capabilities.document_formatting then
-        local id = vim.api.nvim_create_augroup("lsp_formatting", { clear = false })
-        vim.api.nvim_clear_autocmds({ buffer = 0, group = id })
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          buffer = 0,
-          group = id,
-          callback = vim.lsp.buf.formatting_sync,
-        })
-      end
-    end,
-  })
-end
+null_ls.setup({
+  debug = false,
+  sources = sources,
+  on_attach = function(client)
+    if client.resolved_capabilities.document_formatting then
+      local id = vim.api.nvim_create_augroup("lsp_formatting", { clear = false })
+      vim.api.nvim_clear_autocmds({ buffer = 0, group = id })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = 0,
+        group = id,
+        callback = vim.lsp.buf.formatting_sync,
+      })
+    end
+  end,
+})
