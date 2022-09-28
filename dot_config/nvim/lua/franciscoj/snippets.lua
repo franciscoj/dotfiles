@@ -13,7 +13,9 @@ require("franciscoj.snippets.go")
 -- @return a function that changes the choice
 local choose = function(direction)
   return function()
-    ls.change_choice(direction)
+    if ls.choice_active() then
+      ls.change_choice(direction)
+    end
   end
 end
 
