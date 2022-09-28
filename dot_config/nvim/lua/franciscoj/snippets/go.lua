@@ -20,15 +20,27 @@ local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.expand_conditions")
 
 ls.add_snippets("go", {
-  s("wire", {
+  s({ trig = "wire", desc = "wire build tags" }, {
     t({
       "//go:build wireinject",
       "// +build wireinject",
     }),
   }),
-  s("wireg", { t("//go:generate wire") }),
-  s("tshort", {
+  s({ trig = "wireg", desc = "wire generate" }, { t("//go:generate wire") }),
+  s({ trig = "tshort", desc = "skip integration test" }, {
     t({ "if testing.Short() {", "\t" }),
     t({ [[t.Skip("skipping integration test")]], "}" }),
   }),
+  s({ trig = "require", desc = "testify require" }, {
+    t({ "require := require.New(t)" })
+  }),
+
+  -- //go:generate mockery --name DeliveryTracker --inpackage --filename mock_deliverytracking.go --structname DeliveryTrackerMock
+  s({ trig = "mock", desc = "go:generate mockery ..." }, {
+    t("//go:generate mockery"),
+    t(" --name "), i(1, "Interface"),
+    t(" --structname "), i(2, "InterfaceMock"),
+    t(" --filename mock_"), i(3, "interface"), t(".go"),
+    t(" --inpackage"),
+  })
 })
