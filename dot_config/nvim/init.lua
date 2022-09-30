@@ -238,6 +238,7 @@ local plugins = function(use)
       "lambdalisue/fern-hijack.vim",
       "lambdalisue/fern-git-status.vim",
       "lambdalisue/nerdfont.vim",
+      "lambdalisue/glyph-palette.vim",
       "lambdalisue/fern-renderer-nerdfont.vim",
     },
     config = require("conf-fern")
