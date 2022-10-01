@@ -1,22 +1,19 @@
 local null_ls = require("null-ls")
 local features = require("franciscoj.lsp.features")
+local mason = require("franciscoj.mason")
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
 
+mason.ensure_tools()
+
 local sources = {
   code_actions.gitsigns,
-  formatting.prettier,
+  diagnostics.golangci_ci.with({ command = mason.get_path("golangci-lint") }),
   diagnostics.tsc,
+  formatting.goimports.with({ command = mason.get_path("goimports") }),
+  formatting.prettier,
 }
-
-if features.golangci_lint then
-  table.insert(sources, diagnostics.golangci_lint)
-end
-
-if features.goimports then
-  table.insert(sources, formatting.goimports)
-end
 
 if features.rubocop then
   table.insert(sources, formatting.rubocop.with({ command = "bin/rubocop" }))
