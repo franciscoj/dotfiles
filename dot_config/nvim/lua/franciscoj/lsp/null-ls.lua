@@ -5,13 +5,16 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
 
-mason.ensure_tools()
+mason.ensure_tools({
+  { name = "golangci-lint", version = "v1.49.0" },
+  { name = "goimports", version = "latest" },
+})
 
 local sources = {
   code_actions.gitsigns,
-  diagnostics.golangci_ci.with({ command = mason.get_path("golangci-lint") }),
+  diagnostics.golangci_lint.with({ command = mason.get_path("golangci-lint") .. "/golangci-lint" }),
   diagnostics.tsc,
-  formatting.goimports.with({ command = mason.get_path("goimports") }),
+  formatting.goimports.with({ command = mason.get_path("goimports") .. "/goimports" }),
   formatting.prettier,
 }
 

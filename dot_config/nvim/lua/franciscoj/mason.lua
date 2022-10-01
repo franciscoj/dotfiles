@@ -6,13 +6,8 @@ function get_path(package_name)
   return package:get_install_path()
 end
 
-function ensure_tools()
-  local packages = {
-    { name = "golangci-lint", version = "v1.49.0" },
-    { name = "goimports", version = "latest" },
-    { name = "delve", version = "latest" },
-  }
-
+-- Receives a table of { name = "package", version = "v1.1.1" } and makes sure they are all installed.
+function ensure_tools(packages)
   for idx, package in ipairs(packages) do
     local p = reg.get_package(package["name"])
 

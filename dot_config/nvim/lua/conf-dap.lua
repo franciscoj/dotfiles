@@ -3,6 +3,11 @@
 return function()
   local dap = require("dap")
   local dapui = require("dapui")
+  local mason = require("franciscoj.mason")
+
+  mason.ensure_tools({
+    { name = "delve", version = "latest" },
+  })
 
 
   dap.adapters.rdbg = function(callback, config)
@@ -31,6 +36,41 @@ return function()
       localfs = true,
       command = "ruby",
       script = "${file}",
+    }
+  }
+
+  dap.adapters.delve = function(callback, config)
+    callback {
+      type = "server",
+      port = "${port}",
+      executable = {
+        command = mason.get_path("delve") .. "/dlv",
+        args = { "dap", "-l", "127.0.0.1:${port}" },
+      }
+    }
+  end
+
+  dap.configurations.go = {
+    {
+      type = "delve",
+      name = "Debug",
+      request = "launch",
+      program = "${file}"
+    },
+    {
+      type = "delve",
+      name = "Debug test", -- configuration for debugging test files
+      request = "launch",
+      mode = "test",
+      program = "${file}"
+    },
+    -- works with go.mod packages and sub packages
+    {
+      type = "delve",
+      name = "Debug test (go.mod)",
+      request = "launch",
+      mode = "test",
+      program = "./${relativeFileDirname}"
     }
   }
 
