@@ -34,7 +34,7 @@ return function()
     }
   }
 
-  vim.keymap.set("n", "<leader>dc", dap.continue)
+  vim.keymap.set("n", "<leader>dd", dap.continue)
   vim.keymap.set("n", "<leader>ds", dap.step_over)
   vim.keymap.set("n", "<leader>di", dap.step_into)
   vim.keymap.set("n", "<leader>do", dap.step_out)
@@ -50,7 +50,7 @@ return function()
   sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
   sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
   sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = "" })
-  sign("DapStopped", { text = "", texthl = "DapLogPoint", linehl = "", numhl = "" })
+  sign("DapStopped", { text = "", texthl = "DapStopped", linehl = "", numhl = "" })
 
   dapui.setup()
 

@@ -41,4 +41,5 @@ return function()
   })
 
   vim.cmd([[colorscheme catppuccin]])
+  vim.api.nvim_set_hl(0, 'DapStopped', { fg = colors.sky })
 end
