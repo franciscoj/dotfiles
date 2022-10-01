@@ -155,6 +155,13 @@ local plugins = function(use)
     config = require("conf-treesitter"),
   })
 
+  -- DAP and debuggers
+  use({
+    "rcarriga/nvim-dap-ui",
+    requires = { "mfussenegger/nvim-dap" },
+    config = require("conf-dap"),
+  })
+
   local lsp_requires = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -186,7 +193,11 @@ local plugins = function(use)
   use({
     "j-hui/fidget.nvim",
     config = function()
-      require("fidget").setup({})
+      require("fidget").setup({
+        window = {
+          blend = 0,
+        },
+      })
     end,
   })
 
