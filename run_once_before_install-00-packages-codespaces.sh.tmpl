@@ -6,11 +6,6 @@ set -e
 echo "Installing: dependencies ********************"
 sudo apt install -y ripgrep fd-find tmux busybox
 
-echo "Installing: exa ********************"
-curl -L https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip -o /tmp/exa.zip
-unzip /tmp/exa.zip -d /tmp
-cp /tmp/bin/exa $HOME/.local/bin
-
 echo "Installing: zplug ********************"
 export ZPLUG_HOME=$HOME/.config/zplug
 mkdir -p $ZPLUG_HOME
