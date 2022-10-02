@@ -35,23 +35,23 @@ local function on_attach(client, _bufnr)
 	-- Disable virtual diagnostics because they are mostly annoying
 	vim.diagnostic.config({ virtual_text = false })
 
-	if client.server_capabilities.codeLensProvider then
-		local id = vim.api.nvim_create_augroup("lsp_code_lens_refresh", { clear = false })
-		vim.api.nvim_clear_autocmds({ buffer = 0, group = id })
-		vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "CursorHold" }, {
-			buffer = 0,
-			group = id,
-			callback = vim.lsp.codelens.refresh,
-		})
-
-		vim.api.nvim_create_autocmd("BufEnter", {
-			buffer = 0,
-			callback = vim.lsp.codelens.display,
-			group = id,
-		})
-
-		vim.keymap.set("n", "<LocalLeader>A", vim.lsp.codelens.run)
-	end
+	-- if client.server_capabilities.codeLensProvider then
+	-- 	local id = vim.api.nvim_create_augroup("lsp_code_lens_refresh", { clear = false })
+	-- 	vim.api.nvim_clear_autocmds({ buffer = 0, group = id })
+	-- 	vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "CursorHold" }, {
+	-- 		buffer = 0,
+	-- 		group = id,
+	-- 		callback = vim.lsp.codelens.refresh,
+	-- 	})
+	--
+	-- 	vim.api.nvim_create_autocmd("BufEnter", {
+	-- 		buffer = 0,
+	-- 		callback = vim.lsp.codelens.display,
+	-- 		group = id,
+	-- 	})
+	--
+	-- 	vim.keymap.set("n", "<LocalLeader>A", vim.lsp.codelens.run)
+	-- end
 end
 
 local M = {}
