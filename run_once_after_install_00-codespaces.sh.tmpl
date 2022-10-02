@@ -1,5 +1,4 @@
-{{- $codespaces:= env "CODESPACES" | not | not -}}
-{{- if $codespaces -}}
+{{- if .codespaces -}}
 #!/bin/sh
 
 set -e

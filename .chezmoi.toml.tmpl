@@ -1,0 +1,4 @@
+{{- $codespaces:= env "CODESPACES" | not | not -}}
+
+[data]
+  codespaces = {{ $codespaces }}
