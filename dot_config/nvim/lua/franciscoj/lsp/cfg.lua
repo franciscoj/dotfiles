@@ -1,6 +1,5 @@
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local builtin = require("telescope.builtin")
-local themes = require("telescope.themes")
 
 local function on_attach(client, _bufnr)
 	-- Using LSP defaults
