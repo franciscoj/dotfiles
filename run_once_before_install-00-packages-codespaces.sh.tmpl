@@ -6,11 +6,6 @@ set -e
 echo "Installing: dependencies ********************"
 sudo apt install -y ripgrep fd-find tmux busybox
 
-echo "Installing: zplug ********************"
-export ZPLUG_HOME=$HOME/.config/zplug
-mkdir -p $ZPLUG_HOME
-git clone https://github.com/zplug/zplug $ZPLUG_HOME
-
 echo "Installing: starship ********************"
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 sudo chsh -s /bin/zsh $(whoami)
@@ -22,14 +17,6 @@ chmod u+x nvim.appimage
 ./nvim.appimage --appimage-extract
 ./squashfs-root/AppRun --version
 sudo mv squashfs-root / && ln -s /squashfs-root/AppRun $HOME/.local/bin/nvim
-
-echo "Installing: tmux plugin manager ********************"
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-echo "Installing: RDM ********************"
-wget https://github.com/BlakeWilliams/remote-development-manager/releases/latest/download/rdm-linux-amd64
-mv rdm-linux-amd64 $HOME/.local/bin/rdm
-chmod +x $HOME/.local/bin/rdm
 
 echo "Installing: alacritty terminfo ********************"
 # from https://github.com/alacritty/alacritty/issues/2838#issuecomment-1032517876

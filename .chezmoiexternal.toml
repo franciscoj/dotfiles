@@ -6,4 +6,18 @@
     [".local/bin/exa".filter]
       command = "busybox"
       args = ["unzip", "-", "bin/exa", "-p"]
+
+[".local/bin/rdm"]
+	type = "file"
+	url = "https://github.com/BlakeWilliams/remote-development-manager/releases/latest/download/rdm-linux-amd64"
+  executable = true
+
+[".tmux/plugins/tpm"]
+	type = "git-repo"
+	url = "https://github.com/tmux-plugins/tpm.git"
+
+[".config/zplug"]
+	type = "git-repo"
+	url = "https://github.com/zplug/zplug.git"
+
 {{ end }}
