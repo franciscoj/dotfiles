@@ -1,12 +1,6 @@
 local lspconfig = require("lspconfig")
-local config = require("franciscoj.lsp.cfg").defaults()
-local features = require("franciscoj.lsp.features")
-
--- Disable publishing LSP's diagnostics to use the ones from luacheck
--- instead
-if features.luacheck then
-	config.handlers["textDocument/publishDiagnostics"] = function() end
-end
+local cfg = require("franciscoj.lsp.cfg")
+local config = cfg.defaults()
 
 if vim.env.DOTFILES then
 	config.settings = {
@@ -20,6 +14,17 @@ if vim.env.DOTFILES then
 	config = require("lua-dev").setup({
 		lspconfig = config,
 	})
+end
+
+-- Disable the diagnostics from the LSP as I tipically use luacheck, which is configured on null-ls
+config.handlers["textDocument/publishDiagnostics"] = function() end
+config.on_attach = function(client, bufnr)
+	-- disable  formatting for gopls so that goimports handles it through
+	-- null-ls
+	client.server_capabilities.documentFormattingProvider = false
+	client.server_capabilities.documentRangeFormattingProvider = false
+
+	cfg.on_attach(client, bufnr)
 end
 
 lspconfig.sumneko_lua.setup(config)

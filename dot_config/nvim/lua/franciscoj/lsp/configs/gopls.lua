@@ -1,15 +1,14 @@
 local lspconfig = require("lspconfig")
 local cfg = require("franciscoj.lsp.cfg")
-local features = require("franciscoj.lsp.features")
 local config = cfg.defaults()
 
 config.on_attach = function(client, bufnr)
-  -- disable  formatting for gopls so that goimports handles it through
-  -- null-ls
-  client.resolved_capabilities.document_formatting = false
-  client.resolved_capabilities.document_range_formatting = false
+	-- disable  formatting for gopls so that goimports handles it through
+	-- null-ls
+	client.server_capabilities.documentFormattingProvider = false
+	client.server_capabilities.documentRangeFormattingProvider = false
 
-  cfg.on_attach(client, bufnr)
+	cfg.on_attach(client, bufnr)
 end
 
 lspconfig.gopls.setup(config)

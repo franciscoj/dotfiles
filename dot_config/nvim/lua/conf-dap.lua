@@ -44,7 +44,7 @@ return function()
       type = "server",
       port = "${port}",
       executable = {
-        command = mason.get_path("delve") .. "/dlv",
+        command = mason.get_path("delve"),
         args = { "dap", "-l", "127.0.0.1:${port}" },
       }
     }

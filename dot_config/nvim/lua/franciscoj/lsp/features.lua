@@ -5,12 +5,8 @@
 -- formatting. However goimports works through null-ls while gopls works
 -- through the regular lspconfig configuration.
 return {
-  -- Lua
-  luacheck = vim.fn.executable("luacheck") == 1,
-  stylua = vim.fn.executable("stylua") == 1,
-
-  -- Ruby
-  rubocop = vim.fn.executable("bin/rubocop") == 1,
-  solargraph = vim.fn.executable("bin/solargraph") == 1,
-  sorbet = vim.fn.executable("bin/srb") == 1,
+	-- Ruby
+	rubocop = vim.fn.executable("bin/rubocop") == 1,
+	solargraph = vim.fn.executable("bin/solargraph") == 1,
+	sorbet = vim.fn.executable("bin/srb") == 1,
 }
