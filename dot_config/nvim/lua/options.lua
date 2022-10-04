@@ -91,3 +91,5 @@ if vim.env.CODESPACES then
 end
 
 vim.opt.laststatus = 3
+-- TODO: (@franciscoj 03/10/2022) find the full name for this option
+vim.opt.ch = 0
