@@ -1,26 +1,29 @@
+local nnoremap = function(lhs, rhs)
+  vim.keymap.set("n", lhs, rhs, { silent = true })
+end
 -- Easily add ending characters
-vim.keymap.set("n", "<leader>,", "mzA,<esc>`z:delm z<cr>")
-vim.keymap.set("n", "<leader>;", "mzA;<esc>`z:delm z<cr>")
-vim.keymap.set("n", "<leader>:", "mzA:<esc>`z:delm z<cr>")
+nnoremap("<leader>,", "mzA,<esc>`z:delm z<cr>")
+nnoremap("<leader>;", "mzA;<esc>`z:delm z<cr>")
+nnoremap("<leader>:", "mzA:<esc>`z:delm z<cr>")
 
 -- Save
-vim.keymap.set("n", "<leader>w", ":write<cr>")
-vim.keymap.set("n", "<leader>wa", ":wall<cr>")
+nnoremap("<leader>w", ":write<cr>")
+nnoremap("<leader>wa", ":wall<cr>")
 
 -- Edit file on current folder
-vim.keymap.set("n", "<leader>e", ":e <C-R>=expand('%:p:h') . '/'<cr>")
+nnoremap("<leader>e", ":e <C-R>=expand('%:p:h') . '/'<cr>")
 
 -- Toggle search highlight off
-vim.keymap.set("n", "<LocalLeader><esc>", ":nohlsearch<cr>")
+nnoremap("<LocalLeader><esc>", ":nohlsearch<cr>")
 
 -- Win management
-vim.keymap.set("n", "<C-J>", ":wincmd j<CR>")
-vim.keymap.set("n", "<C-K>", ":wincmd k<CR>")
-vim.keymap.set("n", "<C-H>", ":wincmd h<CR>")
-vim.keymap.set("n", "<C-L>", ":wincmd l<CR>")
-vim.keymap.set("n", "<leader>s", ":wincmd s<CR>")
-vim.keymap.set("n", "<leader>v", ":wincmd v<CR>")
-vim.keymap.set("n", "<leader>q", ":wincmd c<CR>")
+nnoremap("<C-J>", ":wincmd j<CR>")
+nnoremap("<C-K>", ":wincmd k<CR>")
+nnoremap("<C-H>", ":wincmd h<CR>")
+nnoremap("<C-L>", ":wincmd l<CR>")
+nnoremap("<leader>s", ":wincmd s<CR>")
+nnoremap("<leader>v", ":wincmd v<CR>")
+nnoremap("<leader>q", ":wincmd c<CR>")
 
 -- More comfortable <esc>
 vim.keymap.set("i", "jj", "<esc>")
@@ -32,5 +35,5 @@ vim.keymap.set("x", ">", ">gv")
 -- Neovim config
 
 require("franciscoj.reload")
-vim.keymap.set("n", "<leader>vr", "<cmd>lua ReloadConfig()<CR>")
-vim.keymap.set("n", "<Leader>ve", ":e $MYVIMRC<CR>")
+nnoremap("<leader>vr", "<cmd>lua ReloadConfig()<CR>")
+nnoremap("<Leader>ve", ":e $MYVIMRC<CR>")
