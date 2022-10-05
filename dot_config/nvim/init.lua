@@ -103,6 +103,7 @@ local plugins = function(use)
       "tpope/vim-git",
       "tpope/vim-rhubarb",
       { "junegunn/gv.vim", cmd = { "GV", "GV!" } },
+      { "sindrets/diffview.nvim" },
     },
     config = require("conf-git")
   })
