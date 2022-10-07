@@ -8,30 +8,23 @@ local code_actions = null_ls.builtins.code_actions
 mason.ensure_tools({
 	{ name = "golangci-lint", version = "v1.49.0" },
 	{ name = "goimports", version = "latest" },
+	{ name = "luacheck" },
+	{ name = "stylua" },
 })
 
 local sources = {
 	code_actions.gitsigns,
 	diagnostics.golangci_lint.with({ command = mason.get_path("golangci-lint") }),
+	diagnostics.luacheck.with({ command = mason.get_path("luacheck") }),
 	diagnostics.tsc,
 	formatting.goimports.with({ command = mason.get_path("goimports") }),
 	formatting.prettier,
+	formatting.stylua.with({ command = mason.get_path("stylua") }),
 }
 
 if features.rubocop then
 	table.insert(sources, formatting.rubocop.with({ command = "bin/rubocop" }))
 	table.insert(sources, diagnostics.rubocop.with({ command = "bin/rubocop" }))
-end
-
--- These are only relevant when editing DOTFILES
-if vim.env.DOTFILES then
-	mason.ensure_tools({
-		{ name = "luacheck" },
-		{ name = "stylua" },
-	})
-
-	table.insert(sources, diagnostics.luacheck.with({ command = mason.get_path("luacheck") }))
-	table.insert(sources, formatting.stylua.with({ command = mason.get_path("stylua") }))
 end
 
 null_ls.setup({
