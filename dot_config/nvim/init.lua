@@ -166,7 +166,7 @@ local plugins = function(use)
 	use({
 		"neovim/nvim-lspconfig",
 		requires = {
-			"williamboman/mason.nvim",
+			{ "franciscoj/mason.nvim", branch = "franciscoj/feature/add-iferr" },
 			"williamboman/mason-lspconfig.nvim",
 			"folke/trouble.nvim",
 			"folke/lua-dev.nvim",
@@ -199,6 +199,7 @@ local plugins = function(use)
 	-- Sometimes LSPs are not enough
 	use("pechorin/any-jump.vim")
 	use("preservim/tagbar")
+	use({ "olexsmir/gopher.nvim", config = require("conf-gopher") })
 
 	-- Autocomplete + snippets
 	use({
