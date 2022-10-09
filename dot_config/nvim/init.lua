@@ -1,5 +1,6 @@
 require("options") -- Load the base defaults
 require("keymaps") -- Global key mappings that don't deppend on plugins
+require("franciscoj") -- Some niceties to explore/code Lua code
 
 -- Install packer if it isn't installed
 local fn = vim.fn
@@ -102,8 +103,8 @@ local plugins = function(use)
 		requires = {
 			"tpope/vim-git",
 			"tpope/vim-rhubarb",
+			"sindrets/diffview.nvim",
 			{ "junegunn/gv.vim", cmd = { "GV", "GV!" } },
-			{ "sindrets/diffview.nvim" },
 		},
 		config = require("conf-git"),
 	})
@@ -179,9 +180,8 @@ local plugins = function(use)
 		"j-hui/fidget.nvim",
 		config = function()
 			require("fidget").setup({
-				window = {
-					blend = 0,
-				},
+				text = { spinner = "moon" },
+				window = { blend = 0 },
 			})
 		end,
 	})
