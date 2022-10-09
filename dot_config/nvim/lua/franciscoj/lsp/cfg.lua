@@ -33,8 +33,12 @@ local function on_attach(client, _bufnr)
 	h.nnoremap("<LocalLeader>d", "<cmd>TroubleToggle document_diagnostics<CR>")
 	h.nnoremap("<LocalLeader>D", "<cmd>TroubleToggle workspace_diagnostics<CR>")
 
-	h.nnoremap("]d", vim.diagnostic.goto_next)
-	h.nnoremap("[d", vim.diagnostic.goto_prev)
+	h.nnoremap("]d", function()
+		vim.diagnostic.goto_next({ float = { focus = false, border = "rounded" } })
+	end)
+	h.nnoremap("[d", function()
+		vim.diagnostic.goto_prev({ float = { focus = false, border = "rounded" } })
+	end)
 
 	-- Disable virtual diagnostics because they are mostly annoying
 	vim.diagnostic.config({ virtual_text = false })
