@@ -220,8 +220,8 @@ local plugins = function(use)
 
 	-- Running tests
 	use({
-		"kassio/neoterm",
-		config = require("conf-neoterm"),
+		"numToStr/FTerm.nvim",
+		config = require("conf-fterm"),
 	})
 	use({
 		"vim-test/vim-test",
