@@ -1,4 +1,5 @@
 return function()
+	local h = require("h")
 	local gopher = require("gopher")
 	local mason = require("franciscoj.mason")
 
@@ -15,4 +16,8 @@ return function()
 			iferr = mason.get_path("iferr"),
 		},
 	})
+
+	h.nnoremap("<LocalLeader>ii", ":GoImpl ")
+	h.nnoremap("<LocalLeader>ie", ":GoIfErr<CR>")
+	h.nnoremap("<LocalLeader>ta", ":GoTagAdd ")
 end

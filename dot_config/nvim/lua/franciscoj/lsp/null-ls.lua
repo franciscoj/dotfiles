@@ -1,13 +1,13 @@
 local null_ls = require("null-ls")
 local features = require("franciscoj.lsp.features")
 local mason = require("franciscoj.mason")
-local formatting = null_ls.builtins.formatting
-local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
+local diagnostics = null_ls.builtins.diagnostics
+local formatting = null_ls.builtins.formatting
 
 mason.ensure_tools({
-	{ name = "golangci-lint", version = "v1.49.0" },
 	{ name = "goimports", version = "latest" },
+	{ name = "golangci-lint", version = "v1.49.0" },
 	{ name = "luacheck" },
 	{ name = "stylua" },
 })
