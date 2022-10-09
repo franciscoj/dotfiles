@@ -16,10 +16,6 @@
 	type = "git-repo"
 	url = "https://github.com/tmux-plugins/tpm.git"
 
-[".config/private.nvim"]
-  type = "git-repo"
-	url = "https://github.com/franciscoj/private.nvim.git"
-
 [".config/zplug"]
 	type = "git-repo"
 	url = "https://github.com/zplug/zplug.git"
