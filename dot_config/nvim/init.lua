@@ -199,7 +199,10 @@ local plugins = function(use)
 	-- Sometimes LSPs are not enough
 	use("pechorin/any-jump.vim")
 	use("preservim/tagbar")
-	use({ "olexsmir/gopher.nvim", config = require("conf-gopher") })
+	use({
+		"olexsmir/gopher.nvim",
+		config = require("conf-gopher"),
+	})
 
 	-- Autocomplete + snippets
 	use({
@@ -241,7 +244,13 @@ local plugins = function(use)
 		config = require("conf-fern"),
 	})
 
-	use("~/Documents/src/private.nvim/")
+	use({
+		"phaazon/hop.nvim",
+		branch = "v2",
+		config = require("conf-hop"),
+	})
+
+	use("~/.config/private.nvim/")
 
 	if bootstrap_packer then
 		packer.sync()
