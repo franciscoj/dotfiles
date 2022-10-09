@@ -166,7 +166,7 @@ local plugins = function(use)
 	use({
 		"neovim/nvim-lspconfig",
 		requires = {
-			{ "franciscoj/mason.nvim", branch = "franciscoj/feature/add-iferr" },
+			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"folke/trouble.nvim",
 			"folke/lua-dev.nvim",
@@ -240,6 +240,8 @@ local plugins = function(use)
 		},
 		config = require("conf-fern"),
 	})
+
+	use("~/Documents/src/private.nvim/")
 
 	if bootstrap_packer then
 		packer.sync()
