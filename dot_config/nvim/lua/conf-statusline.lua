@@ -227,14 +227,6 @@ return function()
 	ins_right({ "location", color = { fg = colors.fg, gui = "bold" } })
 	ins_right({ "progress", color = { fg = colors.fg, gui = "bold" } })
 
-	-- ins_right({
-	-- 	function()
-	-- 		return "▊"
-	-- 	end,
-	-- 	color = { fg = colors.blue },
-	-- 	padding = { left = 1 },
-	-- })
-	--
 	-- Now don't forget to initialize lualine
 	line.setup(config)
 end
