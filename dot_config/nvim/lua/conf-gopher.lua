@@ -17,7 +17,7 @@ return function()
 		},
 	})
 
-	h.nnoremap("<LocalLeader>ii", ":GoImpl ")
 	h.nnoremap("<LocalLeader>ie", ":GoIfErr<CR>")
-	h.nnoremap("<LocalLeader>ta", ":GoTagAdd ")
+	vim.keymap.set("n", "<LocalLeader>ii", ":GoImpl ")
+	vim.keymap.set("n", "<LocalLeader>ta", ":GoTagAdd ")
 end
