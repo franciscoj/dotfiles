@@ -1,4 +1,5 @@
 return function()
+	local h = require("h")
 	vim.g.projectionist_heuristics = {
 		["go.mod"] = {
 			["*.go"] = {
@@ -12,6 +13,7 @@ return function()
 		},
 	}
 
-	vim.keymap.set("n", "<leader><leader>", "<cmd>A<cr>")
-	vim.keymap.set("n", "1<leader><leader>", "<cmd>AV<cr>")
+	h.nnoremap("<leader><leader>", "<cmd>A<cr>")
+	h.nnoremap("v<leader><leader>", "<cmd>AV<cr>")
+	h.nnoremap("s<leader><leader>", "<cmd>AS<cr>")
 end
