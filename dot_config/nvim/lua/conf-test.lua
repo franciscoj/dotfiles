@@ -1,4 +1,5 @@
 return function()
+	local h = require("h")
 	local fterm = function(cmd)
 		require("FTerm").run(cmd)
 	end
@@ -6,8 +7,8 @@ return function()
 	vim.g["test#custom_strategies"] = { fterm = fterm }
 	vim.g["test#strategy"] = "fterm"
 
-	vim.keymap.set("n", "<leader>tf", ":TestFile<cr>")
-	vim.keymap.set("n", "<leader>tl", ":TestNearest<cr>")
-	vim.keymap.set("n", "<leader>tr", ":TestLast<cr>")
-	vim.keymap.set("n", "<leader>ts", ":TestSuite<cr>")
+	h.nnoremap("<leader>tf", ":TestFile<cr>")
+	h.nnoremap("<leader>tl", ":TestNearest<cr>")
+	h.nnoremap("<leader>tr", ":TestLast<cr>")
+	h.nnoremap("<leader>ts", ":TestSuite<cr>")
 end
