@@ -76,14 +76,6 @@ return function()
 	end
 
 	ins_left({
-		function()
-			return "▊"
-		end,
-		color = { fg = colors.blue }, -- Sets highlighting of component
-		padding = { left = 0, right = 1 }, -- We don't need space before this
-	})
-
-	ins_left({
 		-- mode component
 		function()
 			-- auto change color according to neovims mode
@@ -138,12 +130,7 @@ return function()
 			return cfg.abbr
 		end,
 		color = "LualineMode",
-		padding = { right = 1 },
-	})
-
-	ins_left({
-		"filetype",
-		cond = conditions.buffer_not_empty,
+		padding = { right = 1, left = 1 },
 	})
 
 	ins_left({
@@ -163,6 +150,23 @@ return function()
 		},
 	})
 
+	ins_left({
+		"branch",
+		icon = "",
+		color = { fg = colors.purple, gui = "bold" },
+	})
+
+	ins_left({
+		"diff",
+		-- Is it me or the symbol for modified is really weird
+		symbols = { added = "+", modified = "~", removed = "-" },
+		diff_color = {
+			added = { fg = colors.green },
+			modified = { fg = colors.orange },
+			removed = { fg = colors.red },
+		},
+	})
+
 	-- Insert mid section. You can make any number of sections in neovim :)
 	-- for lualine it's any number greater then 2
 	ins_left({
@@ -172,25 +176,39 @@ return function()
 	})
 
 	ins_left({
-		-- Lsp server name .
+		"filetype",
+		cond = conditions.buffer_not_empty,
+		padding = { right = 0 },
+	})
+
+	ins_left({
+		-- Lsp servers names .
 		function()
-			local msg = "No Active Lsp"
+			local none = "(no LSP)"
 			local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
 			local clients = vim.lsp.get_active_clients()
 			if next(clients) == nil then
-				return msg
+				return none
 			end
-			for _, client in ipairs(clients) do
+
+			local names = {}
+			for i, client in ipairs(clients) do
 				local filetypes = client.config.filetypes
 				if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-					return client.name
+					names[i] = client.name
 				end
 			end
-			return msg
+
+			if #names == 0 then
+				return none
+			end
+
+			return "(" .. table.concat(names, ", ") .. ")"
 		end,
-		icon = " LSP:",
+		icon = "",
 		cond = conditions.hide_in_width,
 		color = { fg = colors.fg, gui = "bold" },
+		padding = { left = 0 },
 	})
 
 	-- Add components to right sections
@@ -206,31 +224,17 @@ return function()
 		color = { fg = colors.blue },
 	})
 
-	ins_right({
-		"branch",
-		icon = "",
-		color = { fg = colors.purple, gui = "bold" },
-	})
+	ins_right({ "location", color = { fg = colors.fg, gui = "bold" } })
+	ins_right({ "progress", color = { fg = colors.fg, gui = "bold" } })
 
-	ins_right({
-		"diff",
-		-- Is it me or the symbol for modified us really weird
-		symbols = { added = "+", modified = "~", removed = "-" },
-		diff_color = {
-			added = { fg = colors.green },
-			modified = { fg = colors.orange },
-			removed = { fg = colors.red },
-		},
-	})
-
-	ins_right({
-		function()
-			return "▊"
-		end,
-		color = { fg = colors.blue },
-		padding = { left = 1 },
-	})
-
+	-- ins_right({
+	-- 	function()
+	-- 		return "▊"
+	-- 	end,
+	-- 	color = { fg = colors.blue },
+	-- 	padding = { left = 1 },
+	-- })
+	--
 	-- Now don't forget to initialize lualine
 	line.setup(config)
 end
