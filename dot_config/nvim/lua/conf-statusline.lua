@@ -133,7 +133,7 @@ return function()
 					symbols = { error = " ", warn = " ", info = " " },
 				},
 				{ "branch", icon = "" },
-				{ "diff", symbols = { added = "+", modified = "~", removed = "-" } },
+				"diff",
 				center,
 				{
 					"filetype",
