@@ -12,11 +12,11 @@ require("franciscoj.snippets.go")
 -- @param direction 1 for next, -1 for prev
 -- @return a function that changes the choice
 local choose = function(direction)
-  return function()
-    if ls.choice_active() then
-      ls.change_choice(direction)
-    end
-  end
+	return function()
+		if ls.choice_active() then
+			ls.change_choice(direction)
+		end
+	end
 end
 
 -- Navigate choice nodes

@@ -20,19 +20,19 @@ local conds = require("luasnip.extras.expand_conditions")
 
 -- Returns a snippet for a conventional commit with the given trigger.
 local conventional_commit = function(trigger)
-  return s(trigger, {
-    t(trigger),
-    sn(1, { t("("), i(1, ""), t(")") }),
-    t(": "),
-    i(2, "message"),
-  })
+	return s(trigger, {
+		t(trigger),
+		sn(1, { t("("), i(1, ""), t(")") }),
+		t(": "),
+		i(2, "message"),
+	})
 end
 
 ls.add_snippets("gitcommit", {
-  conventional_commit("chore"),
-  conventional_commit("docs"),
-  conventional_commit("feat"),
-  conventional_commit("fix"),
-  conventional_commit("refactor"),
-  conventional_commit("wip")
+	conventional_commit("chore"),
+	conventional_commit("docs"),
+	conventional_commit("feat"),
+	conventional_commit("fix"),
+	conventional_commit("refactor"),
+	conventional_commit("wip"),
 })

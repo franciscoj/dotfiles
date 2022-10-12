@@ -19,14 +19,14 @@ local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.expand_conditions")
 
 local date = function()
-  return os.date("%d/%m/%Y")
+	return os.date("%d/%m/%Y")
 end
 
 ls.add_snippets("all", {
-  s("todo", {
-    c(1, { t("TODO"), t("NOTE"), t("FIXME"), }),
-    t(": (@franciscoj "),
-    f(date, {}),
-    t(") "),
-  })
+	s("todo", {
+		c(1, { t("TODO"), t("NOTE"), t("FIXME") }),
+		t(": (@franciscoj "),
+		f(date, {}),
+		t(") "),
+	}),
 })

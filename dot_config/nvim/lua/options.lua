@@ -77,17 +77,17 @@ vim.opt.wrap = false -- Don't auto-wrap lines by default
 vim.opt.cpoptions:append("$")
 
 if vim.env.CODESPACES then
-  vim.g.clipboard = {
-    name = "rdm",
-    copy = {
-      ["+"] = { "rdm", "copy" },
-      ["*"] = { "rdm", "copy" }
-    },
-    paste = {
-      ["+"] = { "rdm", "paste" },
-      ["*"] = { "rdm", "paste" }
-    },
-  }
+	vim.g.clipboard = {
+		name = "rdm",
+		copy = {
+			["+"] = { "rdm", "copy" },
+			["*"] = { "rdm", "copy" },
+		},
+		paste = {
+			["+"] = { "rdm", "paste" },
+			["*"] = { "rdm", "paste" },
+		},
+	}
 end
 
 vim.opt.laststatus = 3
