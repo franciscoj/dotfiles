@@ -1,4 +1,5 @@
 return function()
+	local h = require("h")
 	local bufferline = require("bufferline")
 	bufferline.setup({
 		options = {
@@ -16,19 +17,9 @@ return function()
 
 				return diagnostics
 			end,
-			custom_filter = function(bufnr)
-				local filetype = vim.bo[bufnr].filetype
-
-				-- Hide both neoterm and netrw. For some reason filetype for netrw is empty.
-				if filetype == "neoterm" or filetype == "" or filetype == "fugitive" then
-					return false
-				end
-
-				return true
-			end,
 		},
 	})
 
-	vim.keymap.set("n", "<leader>b", bufferline.pick_buffer)
-	vim.keymap.set("n", "<leader>bd", "<cmd>:bdelete<cr>")
+	h.nnoremap("<leader>b", bufferline.pick_buffer)
+	h.nnoremap("<leader>bd", "<cmd>:bdelete<cr>")
 end
