@@ -1,4 +1,6 @@
 {{- $codespaces:= env "CODESPACES" | not | not -}}
+{{- $private_nvim_github_token:= env "PRIVATE_NVIM_GITHUB_TOKEN" -}}
 
 [data]
   codespaces = {{ $codespaces }}
+  private_nvim_github_token = { $private_nvim_github_token }
