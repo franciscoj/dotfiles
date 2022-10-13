@@ -1,4 +1,4 @@
-["~/.local/share/nvim/site/pack/packer/start/packer.nvim"]
+[".local/share/nvim/site/pack/packer/start/packer.nvim"]
   type = "git-repo"
   url = "https://github.com/wbthomason/packer.nvim"
 
