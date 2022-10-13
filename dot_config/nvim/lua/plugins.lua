@@ -5,6 +5,8 @@ vim.cmd([[
   augroup end
 ]])
 
+vim.cmd([[packadd packer.nvim]])
+
 local packer = require("packer")
 local plugins = function(use)
 	use("wbthomason/packer.nvim")
