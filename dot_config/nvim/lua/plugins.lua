@@ -140,7 +140,7 @@ local plugins = function(use)
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"folke/trouble.nvim",
-			"folke/lua-dev.nvim",
+			"folke/neodev.nvim",
 			"jose-elias-alvarez/null-ls.nvim",
 		},
 		config = require("conf-lsp"),
