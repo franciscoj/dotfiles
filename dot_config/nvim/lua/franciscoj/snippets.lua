@@ -1,7 +1,7 @@
 local ls = require("luasnip")
 
 -- This should load vscode snippets from friendly snippets
-require("luasnip.loaders.from_vscode").load({ exclude = { "gitcommit" } })
+require("luasnip.loaders.from_vscode").load({ include = { "go", "ruby", "lua" } })
 
 -- Load snippets per file type
 require("franciscoj.snippets.all")
