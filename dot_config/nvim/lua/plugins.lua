@@ -125,6 +125,7 @@ local plugins = function(use)
 		"rcarriga/nvim-dap-ui",
 		requires = { "mfussenegger/nvim-dap" },
 		config = require("conf-dap"),
+		event = "BufReadPost",
 	})
 
 	use({
@@ -137,6 +138,7 @@ local plugins = function(use)
 			"jose-elias-alvarez/null-ls.nvim",
 		},
 		config = require("conf-lsp"),
+		event = "BufReadPost",
 	})
 
 	-- Show LSP progress information
@@ -148,6 +150,7 @@ local plugins = function(use)
 				window = { blend = 0 },
 			})
 		end,
+		event = "BufReadPost",
 	})
 
 	use({
@@ -166,6 +169,7 @@ local plugins = function(use)
 	use({
 		"olexsmir/gopher.nvim",
 		config = require("conf-gopher"),
+		ft = "go",
 	})
 
 	-- Autocomplete + snippets
@@ -183,16 +187,19 @@ local plugins = function(use)
 			"rafamadriz/friendly-snippets",
 		},
 		config = require("conf-cmp"),
+		event = { "BufReadPost" },
 	})
 
 	-- Running tests
 	use({
 		"numToStr/FTerm.nvim",
 		config = require("conf-fterm"),
+		event = { "BufReadPost" },
 	})
 	use({
 		"vim-test/vim-test",
 		config = require("conf-test"),
+		event = { "BufReadPost" },
 	})
 
 	-- Fern - File explorer
