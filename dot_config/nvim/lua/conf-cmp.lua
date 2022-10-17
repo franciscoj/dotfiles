@@ -70,19 +70,17 @@ return function()
 			{ name = "luasnip" },
 			{ name = "nvim_lsp_signature_help" },
 		}, {
-			{ name = "buffer", keyword_length = 3 },
+			{ name = "buffer", keyword_length = 4 },
 		}),
 	})
 
-	-- Use buffer source for `/` (if you enabled `native_menu`, this won"t work anymore).
-	cmp.setup.cmdline("/", {
+	cmp.setup.cmdline({ "/", "?" }, {
 		mapping = cmp.mapping.preset.cmdline(),
 		sources = {
-			{ name = "buffer" },
+			{ name = "buffer", keyword_length = 4 },
 		},
 	})
 
-	-- Use cmdline & path source for ":" (if you enabled `native_menu`, this won"t work anymore).
 	cmp.setup.cmdline(":", {
 		mapping = cmp.mapping.preset.cmdline(),
 		sources = cmp.config.sources({
