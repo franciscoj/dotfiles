@@ -22,8 +22,10 @@ local conds = require("luasnip.extras.expand_conditions")
 local conventional_commit = function(trigger)
 	return s(trigger, {
 		t(trigger),
-		sn(1, { t("("), i(1, ""), t(")") }),
-		t(": "),
+		c(1, {
+			{ t("("), i(1, ""), t("): ") },
+			t(": "),
+		}),
 		i(2, "message"),
 	})
 end
