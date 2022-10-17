@@ -1,8 +1,7 @@
-local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-local builtin = require("telescope.builtin")
-local h = require("h")
-
 local function on_attach(client, _bufnr)
+	local builtin = require("telescope.builtin")
+	local h = require("h")
+
 	-- Using LSP defaults
 	h.nnoremap("gD", vim.lsp.buf.declaration)
 	h.nnoremap("gd", vim.lsp.buf.definition)
@@ -11,9 +10,6 @@ local function on_attach(client, _bufnr)
 	h.nnoremap("K", vim.lsp.buf.hover)
 	h.nnoremap("<LocalLeader>k", vim.lsp.buf.signature_help)
 	h.nnoremap("<LocalLeader>r", vim.lsp.buf.rename)
-	h.nnoremap("<LocalLeader>;", function()
-		vim.diagnostic.open_float(nil, { focus = false, border = "rounded" })
-	end)
 
 	-- I'm not sure why these are for
 	-- h.nnoremap("<LocalLeader>wa", vim.lsp.buf.add_workspace_folder)
@@ -33,6 +29,9 @@ local function on_attach(client, _bufnr)
 	h.nnoremap("<LocalLeader>d", "<cmd>TroubleToggle document_diagnostics<CR>")
 	h.nnoremap("<LocalLeader>D", "<cmd>TroubleToggle workspace_diagnostics<CR>")
 
+	h.nnoremap("<LocalLeader>;", function()
+		vim.diagnostic.open_float(nil, { focus = false, border = "rounded" })
+	end)
 	h.nnoremap("]d", function()
 		vim.diagnostic.goto_next({ float = { focus = false, border = "rounded" } })
 	end)
@@ -66,6 +65,8 @@ local M = {}
 
 --- Returns the default configurations that are common to all LSPs
 M.defaults = function()
+	local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 	return {
 		capabilities = capabilities,
 		handlers = {
