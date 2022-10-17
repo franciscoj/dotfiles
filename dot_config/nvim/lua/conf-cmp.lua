@@ -47,12 +47,24 @@ return function()
 					else
 						cmp.select_next_item()
 					end
-				elseif luasnip.jumpable(1) then
-					luasnip.jump(1)
 				elseif luasnip.expand_or_locally_jumpable() then
 					luasnip.expand_or_jump()
 				elseif has_words_before() then
 					cmp.complete()
+				else
+					fallback()
+				end
+			end, { "i", "s" }),
+			["<C-l>"] = cmp.mapping(function(fallback)
+				if luasnip.jumpable(1) then
+					luasnip.jump(1)
+				else
+					fallback()
+				end
+			end, { "i", "s" }),
+			["<C-h>"] = cmp.mapping(function(fallback)
+				if luasnip.jumpable(-1) then
+					luasnip.jump(-1)
 				else
 					fallback()
 				end
