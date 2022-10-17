@@ -6,6 +6,10 @@ return function()
 
 	vim.g["test#custom_strategies"] = { fterm = fterm }
 	vim.g["test#strategy"] = "fterm"
+	vim.g["test#go#gotest#options"] = {
+		nearest = "-v",
+		file = "-v",
+	}
 
 	h.nnoremap("<leader>tf", ":TestFile<cr>")
 	h.nnoremap("<leader>tl", ":TestNearest<cr>")
