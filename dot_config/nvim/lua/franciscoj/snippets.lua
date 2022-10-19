@@ -1,4 +1,5 @@
 local ls = require("luasnip")
+ls.setup({ store_selection_keys = "<Tab>" })
 
 -- This should load vscode snippets from friendly snippets
 require("luasnip.loaders.from_vscode").load({ include = { "go", "ruby", "lua" } })
@@ -7,6 +8,7 @@ require("luasnip.loaders.from_vscode").load({ include = { "go", "ruby", "lua" } 
 require("franciscoj.snippets.all")
 require("franciscoj.snippets.gitcommit")
 require("franciscoj.snippets.go")
+require("franciscoj.snippets.ruby")
 
 --- Returns a function that changes the coice of a choice node when called.
 -- @param direction 1 for next, -1 for prev
