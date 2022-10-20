@@ -34,17 +34,33 @@ ls.add_snippets("go", {
 	s({ trig = "require", desc = "testify require" }, {
 		t({ "require := require.New(t)" }),
 	}),
+})
 
-	-- //go:generate mockery --name DeliveryTracker --inpackage --filename mock_deliverytracking.go --structname DeliveryTrackerMock
-	s({ trig = "mock", desc = "go:generate mockery ..." }, {
+-- https://codegolf.stackexchange.com/a/177958
+local to_snake_case = function(txt)
+	return txt:gsub("%f[^%l]%u", "_%1")
+		:gsub("%f[^%a]%d", "_%1")
+		:gsub("%f[^%d]%a", "_%1")
+		:gsub("(%u)(%u%l)", "%1_%2")
+		:lower()
+end
+
+local structname = function(args, _snip)
+	return " --structname " .. args[1][1] .. "Mock"
+end
+
+local filename = function(args, _snip)
+	return " --filename mock_" .. to_snake_case(args[1][1]) .. ".go"
+end
+
+ls.add_snippets("go", {
+	-- //go:generate mockery --name Interface --inpackage --filename mock_interface.go --structname InterfaceMock
+	s({ trig = "mock", desc = "//go:generate mockery ..." }, {
 		t("//go:generate mockery"),
 		t(" --name "),
 		i(1, "Interface"),
-		t(" --structname "),
-		i(2, "InterfaceMock"),
-		t(" --filename mock_"),
-		i(3, "interface"),
-		t(".go"),
+		f(structname, { 1 }),
+		f(filename, { 1 }),
 		t(" --inpackage"),
 	}),
 })
