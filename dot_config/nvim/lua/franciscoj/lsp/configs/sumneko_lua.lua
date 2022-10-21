@@ -1,7 +1,9 @@
 local lspconfig = require("lspconfig")
 local cfg = require("franciscoj.lsp.cfg")
 local config = cfg.defaults()
-config = require("neodev").setup({ lspconfig = config })
+local neodev = require("neodev")
+
+neodev.setup()
 
 config.settings = {
 	Lua = {
