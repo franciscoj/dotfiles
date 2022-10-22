@@ -113,17 +113,7 @@ local plugins = function(use)
 		"folke/noice.nvim",
 		event = "VimEnter",
 		config = function()
-			require("noice").setup({
-				routes = {
-					{
-						filter = {
-							event = "cmdline",
-							find = "^%s*[/?]",
-						},
-						view = "cmdline",
-					},
-				},
-			})
+			require("noice").setup({})
 		end,
 		requires = {
 			"MunifTanjim/nui.nvim",
