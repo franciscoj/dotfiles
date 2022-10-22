@@ -5,6 +5,7 @@ return function()
 			"comment",
 			"dockerfile",
 			"go",
+			"help",
 			"html",
 			"javascript",
 			"jsonc",
