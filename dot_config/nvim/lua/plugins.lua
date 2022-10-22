@@ -102,6 +102,7 @@ local plugins = function(use)
 	})
 	use({
 		"nvim-lualine/lualine.nvim",
+		after = { "catppuccin/nvim" },
 		config = require("conf-statusline"),
 	})
 	use({
