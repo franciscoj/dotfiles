@@ -108,6 +108,27 @@ local plugins = function(use)
 		"akinsho/bufferline.nvim",
 		config = require("conf-bufferline"),
 	})
+	use({
+		"folke/noice.nvim",
+		event = "VimEnter",
+		config = function()
+			require("noice").setup({
+				routes = {
+					{
+						filter = {
+							event = "cmdline",
+							find = "^%s*[/?]",
+						},
+						view = "cmdline",
+					},
+				},
+			})
+		end,
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+	})
 
 	-- Neovim/treesitter/LSP specific
 	use({
@@ -137,17 +158,6 @@ local plugins = function(use)
 			"jose-elias-alvarez/null-ls.nvim",
 		},
 		config = require("conf-lsp"),
-	})
-
-	-- Show LSP progress information
-	use({
-		"j-hui/fidget.nvim",
-		config = function()
-			require("fidget").setup({
-				text = { spinner = "moon" },
-				window = { blend = 0 },
-			})
-		end,
 	})
 
 	use({

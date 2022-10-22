@@ -32,6 +32,7 @@ return function()
 			native_lsp = {
 				enabled = true,
 			},
+			noice = true,
 			telescope = true,
 			treesitter = true,
 			treesitter_context = true,
