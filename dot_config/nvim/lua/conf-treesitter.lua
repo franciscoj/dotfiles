@@ -13,6 +13,7 @@ return function()
 			"make",
 			"markdown",
 			"markdown_inline",
+			"regex",
 			"ruby",
 			"rust",
 			"scss",
