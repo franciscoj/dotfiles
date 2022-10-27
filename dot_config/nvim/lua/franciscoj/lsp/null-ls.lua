@@ -7,7 +7,7 @@ local formatting = null_ls.builtins.formatting
 
 mason.ensure_tools({
 	{ name = "goimports", version = "latest" },
-	{ name = "golangci-lint", version = "v1.49.0" },
+	{ name = "golangci-lint", version = "v1.50.1" },
 	{ name = "luacheck" },
 	{ name = "stylua" },
 })
