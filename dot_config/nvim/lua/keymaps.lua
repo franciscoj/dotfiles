@@ -24,6 +24,12 @@ h.nnoremap("<leader>s", ":wincmd s<CR>")
 h.nnoremap("<leader>v", ":wincmd v<CR>")
 h.nnoremap("<leader>q", ":wincmd c<CR>")
 
+-- Code movement
+h.nnoremap("<C-u>", "<C-u>zz")
+h.nnoremap("<C-d>", "<C-d>zz")
+h.nnoremap("n", "nzz")
+h.nnoremap("N", "Nzz")
+
 -- More comfortable <esc>
 vim.keymap.set("i", "jj", "<esc>")
 
