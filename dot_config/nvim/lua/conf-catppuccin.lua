@@ -1,12 +1,10 @@
 return function()
-	local catppuccin = require("catppuccin")
 	vim.g.catppuccin_flavour = "macchiato"
+	local catppuccin = require("catppuccin")
 	local colors = require("catppuccin.palettes").get_palette()
 
 	catppuccin.setup({
-		compile = {
-			enabled = true,
-		},
+		compile = { enabled = true },
 		dim_inactive = {
 			enabled = true,
 			shade = "dark",
@@ -24,7 +22,6 @@ return function()
 				enable_ui = true,
 			},
 			fern = true,
-			fidget = true,
 			gitsigns = true,
 			hop = true,
 			lsp_trouble = true,
