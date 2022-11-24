@@ -65,7 +65,7 @@ ls.add_snippets("ruby", {
 		c(1, { t("true"), t("false"), t("strict") }),
 	}),
 	s("tary", fmt("T::Array[{type}]", { type = d(1, selection_or("Type")) })),
-	s("tbool", fmt("T::Boolean")),
+	s("tbool", { t("T::Boolean") }),
 	s("tcast", fmt("T.cast({val}, {type})", { val = d(1, selection_or("val")), type = i(2, "Type") })),
 	s("thash", fmt("T::Hash[{key}, {val}]", { key = i(1, "Type"), val = i(2, "Type") })),
 	s("tlet", fmt("T.let({val}, {type})", { val = d(1, selection_or("val")), type = i(2, "Type") })),
