@@ -1,4 +1,5 @@
 require("franciscoj.lsp.configs.gopls")
+require("franciscoj.lsp.configs.rust_analyzer")
 require("franciscoj.lsp.configs.solargraph")
 require("franciscoj.lsp.configs.sorbet")
 require("franciscoj.lsp.configs.sumneko_lua")

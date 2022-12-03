@@ -9,6 +9,7 @@ mason.ensure_tools({
 	{ name = "goimports", version = "latest" },
 	{ name = "golangci-lint", version = "v1.50.1" },
 	{ name = "luacheck" },
+	{ name = "rustfmt" },
 	{ name = "stylua" },
 })
 
@@ -19,6 +20,7 @@ local sources = {
 	diagnostics.tsc,
 	formatting.goimports.with({ command = mason.get_path("goimports") }),
 	formatting.prettier,
+	formatting.rustfmt.with({ command = mason.get_path("rustfmt") }),
 	formatting.stylua.with({ command = mason.get_path("stylua") }),
 }
 
