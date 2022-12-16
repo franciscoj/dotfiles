@@ -31,9 +31,10 @@ ls.add_snippets("go", {
 		t({ "if testing.Short() {", "\t" }),
 		t({ [[t.Skip("skipping integration test")]], "}" }),
 	}),
-	s({ trig = "require", desc = "testify require" }, {
+	s({ trig = "req", desc = "testify require" }, {
 		t({ "require := require.New(t)" }),
 	}),
+	s({ trig = "ctx" }, { t({ "ctx context.Context" }) }),
 })
 
 -- https://codegolf.stackexchange.com/a/177958
