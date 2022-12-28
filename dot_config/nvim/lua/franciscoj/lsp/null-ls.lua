@@ -15,7 +15,10 @@ mason.ensure_tools({
 
 local sources = {
 	code_actions.gitsigns,
-	diagnostics.golangci_lint.with({ command = mason.get_path("golangci-lint") }),
+	diagnostics.golangci_lint.with({
+		command = mason.get_path("golangci-lint"),
+		args = { "run", "--fix=false", "--out-format=json", "--path-prefix", "$ROOT" },
+	}),
 	diagnostics.luacheck.with({ command = mason.get_path("luacheck") }),
 	diagnostics.tsc,
 	formatting.goimports.with({ command = mason.get_path("goimports") }),
