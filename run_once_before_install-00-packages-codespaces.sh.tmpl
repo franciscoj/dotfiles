@@ -3,9 +3,6 @@
 
 set -e
 
-echo "Installing: dependencies ********************"
-sudo apt update && sudo apt install -y ripgrep fd-find tmux busybox
-
 echo "Installing: starship ********************"
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 sudo chsh -s /bin/zsh $(whoami)
