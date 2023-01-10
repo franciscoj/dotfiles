@@ -23,7 +23,8 @@ local function on_attach(client, _bufnr)
 	h.nnoremap("gr", builtin.lsp_references)
 	h.nnoremap("gi", builtin.lsp_implementations)
 	h.nnoremap("<LocalLeader>a", vim.lsp.buf.code_action)
-	h.xnoremap("<LocalLeader>a", vim.lsp.buf.range_code_action)
+	-- TODO: (@franciscoj 10/01/2023) this seems broken, removing it just in case
+	-- h.xnoremap("<LocalLeader>a", vim.lsp.buf.range_code_action)
 
 	-- Using trouble.nvim
 	h.nnoremap("<LocalLeader>d", "<cmd>TroubleToggle document_diagnostics<CR>")
