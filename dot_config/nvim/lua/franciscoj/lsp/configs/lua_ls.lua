@@ -23,4 +23,4 @@ config.on_attach = function(client, bufnr)
 	cfg.on_attach(client, bufnr)
 end
 
-lspconfig.sumneko_lua.setup(config)
+lspconfig.lua_ls.setup(config)
