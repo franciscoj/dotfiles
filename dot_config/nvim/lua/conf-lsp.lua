@@ -7,9 +7,10 @@ return function()
 
 	require("mason-lspconfig").setup({
 		ensure_installed = {
+			"elixirls",
 			"gopls",
-			"marksman",
 			"lua_ls",
+			"marksman",
 			"tsserver",
 			"yamlls",
 		},
