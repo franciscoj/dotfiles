@@ -11,6 +11,7 @@ return function()
 			"gopls",
 			"lua_ls",
 			"marksman",
+			"tailwindcss",
 			"tsserver",
 			"yamlls",
 		},

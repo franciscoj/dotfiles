@@ -2,7 +2,13 @@ local ls = require("luasnip")
 ls.setup({ store_selection_keys = "<Tab>" })
 
 -- This should load vscode snippets from friendly snippets
-require("luasnip.loaders.from_vscode").load({ include = { "go", "ruby", "lua" } })
+require("luasnip.loaders.from_vscode").load({ include = {
+	"eelixir",
+	"elixir",
+	"go",
+	"lua",
+	"ruby",
+} })
 
 -- Load snippets per file type
 require("franciscoj.snippets.all")

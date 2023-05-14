@@ -10,6 +10,7 @@ mason.ensure_tools({
 	{ name = "golangci-lint", version = "v1.50.1" },
 	{ name = "luacheck" },
 	{ name = "rustfmt" },
+	{ name = "rustywind" },
 	{ name = "stylua" },
 })
 
@@ -24,6 +25,10 @@ local sources = {
 	formatting.goimports.with({ command = mason.get_path("goimports") }),
 	formatting.prettier,
 	formatting.rustfmt.with({ command = mason.get_path("rustfmt") }),
+	formatting.rustywind.with({
+		command = mason.get_path("rustywind"),
+		filetypes = { "elixir", "eelixir", "heex", "html" },
+	}),
 	formatting.stylua.with({ command = mason.get_path("stylua") }),
 }
 
