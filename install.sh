@@ -7,10 +7,10 @@ if [ -z "${CODESPACES}" ]; then
   exit
 fi
 
-if [ "$EUID" -ne 0 ]; then
-  apt install -y ripgrep
-else
+if [[ "$EUID" -ne 0 ]]; then
   sudo apt install -y ripgrep
+else
+  apt install -y ripgrep
 fi
 
 if [ ! "$(command -v chezmoi)" ]; then
