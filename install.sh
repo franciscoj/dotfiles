@@ -7,7 +7,7 @@ if [ -z "${CODESPACES}" ]; then
   exit
 fi
 
-if [ "$EUID" -ne 0 ]
+if [ "$EUID" -ne 0 ]; then
   apt install -y ripgrep
 else
   sudo apt install -y ripgrep
