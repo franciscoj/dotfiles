@@ -10,7 +10,8 @@ fi
 if [[ "$EUID" -ne 0 ]]; then
   sudo apt install -y ripgrep
 else
-  apt install -y ripgrep
+  wget https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
+  dpkg -i ripgrep_13.0.0_amd64.deb
 fi
 
 if [ ! "$(command -v chezmoi)" ]; then
