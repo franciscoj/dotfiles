@@ -27,4 +27,4 @@ local cfg = Config:new({
 	end,
 })
 
-lspconfig.tsserver.setup(cfg.to_lspconfig())
+lspconfig.tsserver.setup(cfg:to_lspconfig())

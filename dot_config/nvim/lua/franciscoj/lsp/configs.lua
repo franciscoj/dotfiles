@@ -7,7 +7,7 @@ require("franciscoj.lsp.configs.yamlls")
 
 local Config = require("franciscoj.lsp.config")
 local lspconfig = require("lspconfig")
-local cfg = Config:new()
+local cfg = Config:new({})
 
 lspconfig.elixirls.setup(cfg:to_lspconfig())
 lspconfig.marksman.setup(cfg:to_lspconfig())
