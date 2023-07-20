@@ -7,9 +7,10 @@ if not features.sorbet then
 end
 
 local lspconfig = require("lspconfig")
-local cfg = require("franciscoj.lsp.cfg")
-local config = cfg.defaults()
+local Config = require("franciscoj.lsp.config")
 
-config.cmd = { "bin/srb", "tc", "--lsp" }
+local cfg = Config:new({
+	cmd = { "bin/srb", "tc", "--lsp" },
+})
 
-lspconfig.sorbet.setup(config)
+lspconfig.sorbet.setup(cfg:to_lspconfig())

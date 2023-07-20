@@ -1,6 +1,5 @@
 local lspconfig = require("lspconfig")
-local cfg = require("franciscoj.lsp.cfg")
-local config = cfg.defaults()
+local Config = require("franciscoj.lsp.config")
 
 local function organize_imports()
 	local params = {
@@ -11,21 +10,21 @@ local function organize_imports()
 	vim.lsp.buf.execute_command(params)
 end
 
-config.on_attach = function(client, bufnr)
-	-- disable  formatting for tsserver so that prettier handles it through
-	-- null-ls
-	client.server_capabilities.documentFormattingProvider = false
-	client.server_capabilities.documentRangeFormattingProvider = false
-
-	vim.keymap.set("n", "<LocalLeader>O", "<cmd>:OrganizeImports<CR>")
-	cfg.on_attach(client, bufnr)
-end
-
-config.commands = {
-	OrganizeImports = {
-		organize_imports,
-		description = "Organize Imports",
+local cfg = Config:new({
+	commands = {
+		OrganizeImports = {
+			organize_imports,
+			description = "Organize Imports",
+		},
 	},
-}
+	on_attach = function(client, _bufnr)
+		-- disable  formatting for tsserver so that prettier handles it through
+		-- null-ls
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentRangeFormattingProvider = false
 
-lspconfig.tsserver.setup(config)
+		vim.keymap.set("n", "<LocalLeader>O", "<cmd>:OrganizeImports<CR>")
+	end,
+})
+
+lspconfig.tsserver.setup(cfg.to_lspconfig())

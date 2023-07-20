@@ -1,13 +1,15 @@
 local lspconfig = require("lspconfig")
-local config = require("franciscoj.lsp.cfg").defaults()
+local Config = require("franciscoj.lsp.config")
 
-config.settings = {
-	yaml = {
-		schemas = {
-			["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-			["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose*.yml",
+local cfg = Config:new({
+	settings = {
+		yaml = {
+			schemas = {
+				["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+				["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose*.yml",
+			},
 		},
 	},
-}
+})
 
-lspconfig.yamlls.setup(config)
+lspconfig.yamlls.setup(cfg:to_lspconfig())

@@ -1,26 +1,25 @@
 local lspconfig = require("lspconfig")
-local cfg = require("franciscoj.lsp.cfg")
-local config = cfg.defaults()
+local Config = require("franciscoj.lsp.config")
 local neodev = require("neodev")
 
 neodev.setup()
 
-config.settings = {
-	Lua = {
-		diagnostics = {
-			globals = { "vim" },
+local cfg = Config:new({
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
 		},
 	},
-}
--- Disable the diagnostics from the LSP as I tipically use luacheck, which is configured on null-ls
-config.handlers["textDocument/publishDiagnostics"] = function() end
-config.on_attach = function(client, bufnr)
-	-- disable  formatting for gopls so that goimports handles it through
-	-- null-ls
-	client.server_capabilities.documentFormattingProvider = false
-	client.server_capabilities.documentRangeFormattingProvider = false
+	handlers = {
+		-- Disable the diagnostics from the LSP as I tipically use luacheck, which is configured on null-ls
+		["textDocument/publishDiagnostics"] = function() end,
+	},
+	on_attach = function(client, _bufnr)
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentRangeFormattingProvider = false
+	end,
+})
 
-	cfg.on_attach(client, bufnr)
-end
-
-lspconfig.lua_ls.setup(config)
+lspconfig.lua_ls.setup(cfg:to_lspconfig())

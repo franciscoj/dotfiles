@@ -7,18 +7,17 @@ if not features.solargraph then
 end
 
 local lspconfig = require("lspconfig")
-local cfg = require("franciscoj.lsp.cfg")
-local config = cfg.defaults()
+local Config = require("franciscoj.lsp.config")
 
-config.settings = { solargraph = { diagnostics = not features.rubocop } }
-config.cmd = { "bin/solargraph", "stdio" }
-config.on_attach = function(client, bufnr)
-	-- disable  formatting for solargraph so that rubocop handles it through
-	-- null-ls
-	client.server_capabilities.documentFormattingProvider = features.rubucop
-	client.server_capabilities.documentRangeFormattingProvider = features.rubocop
+local cfg = Config:new({
+	settings = { solargraph = { diagnostics = not features.rubocop } },
+	cmd = { "bin/solargraph", "stdio" },
+	on_attach = function(client, _bufnr)
+		-- disable  formatting for solargraph so that rubocop handles it through
+		-- null-ls
+		client.server_capabilities.documentFormattingProvider = features.rubucop
+		client.server_capabilities.documentRangeFormattingProvider = features.rubocop
+	end,
+})
 
-	cfg.on_attach(client, bufnr)
-end
-
-lspconfig.solargraph.setup(config)
+lspconfig.solargraph.setup(cfg:to_lspconfig())
