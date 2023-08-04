@@ -2,13 +2,12 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
+			"creativenull/efmls-configs-nvim",
 			"folke/neodev.nvim",
 			"folke/trouble.nvim",
-			"jose-elias-alvarez/null-ls.nvim",
 			"williamboman/mason.nvim",
 		},
 		config = function()
-			require("franciscoj.lsp.null-ls")
 			require("franciscoj.lsp.configs")
 		end,
 	},
