@@ -1,10 +1,14 @@
 return {
 	{
 		"folke/noice.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("noice").setup({
 				cmdline = {
 					view = "cmdline",
+				},
+				messages = {
+					enabled = false,
 				},
 				lsp = {
 					-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
