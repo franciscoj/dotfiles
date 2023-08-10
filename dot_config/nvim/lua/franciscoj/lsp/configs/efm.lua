@@ -6,12 +6,14 @@ local mason = require("franciscoj.mason")
 mason.ensure_tools({
 	{ name = "efm" },
 	{ name = "goimports", version = "latest" },
-	{ name = "golangci-lint", version = "v1.50.1" },
+	{ name = "golangci-lint", version = "v1.53.3" },
 	{ name = "luacheck" },
 	{ name = "rustfmt" },
 	{ name = "rustywind" },
 	{ name = "stylua" },
 })
+
+local golangci_lint = ("%s run --color never --out-format tab ${INPUT}"):format(mason.get_path("golangci_lint"))
 
 local configs = {
 	javascript = {
@@ -22,7 +24,13 @@ local configs = {
 		formatter = require("efmls-configs.formatters.stylua"),
 	},
 	go = {
-		linter = require("efmls-configs.linters.golangci_lint"),
+		linter = {
+			prefix = "golangci-lint",
+			lintCommand = golangci_lint,
+			lintStdin = false,
+			lintFormats = { "%.%#:%l:%c %m" },
+			rootMarkers = {},
+		},
 		formatter = require("efmls-configs.formatters.goimports"),
 	},
 	rust = {
