@@ -11,6 +11,7 @@ return {
 			vim.keymap.set("n", "<leader>gs", ":Git<cr>")
 			vim.keymap.set("n", "<leader>gb", ":Git blame<cr>")
 			vim.keymap.set("n", "<leader>go", ":GBrowse<CR>")
+			vim.keymap.set("n", "<leader>gr", ":Git rebase -i main")
 			vim.keymap.set("v", "<leader>go", ":'<,'>GBrowse<CR>")
 		end,
 	},
