@@ -14,14 +14,18 @@
       command = "busybox"
       args = ["unzip", "-", "bin/exa", "-p"]
 
+[".local/bin/zellij"]
+  type = "file"
+  url = "https://github.com/zellij-org/zellij/releases/download/v0.38.0/zellij-x86_64-unknown-linux-musl.tar.gz"
+  executable = true
+  [".local/bin/zellij".filter]
+    command = "busybox"
+    args = ["tar", "zxf"]
+
 [".local/bin/rdm"]
 	type = "file"
 	url = "https://github.com/BlakeWilliams/remote-development-manager/releases/latest/download/rdm-linux-amd64"
   executable = true
-
-[".tmux/plugins/tpm"]
-	type = "git-repo"
-	url = "https://github.com/tmux-plugins/tpm.git"
 
 [".config/zplug"]
 	type = "git-repo"

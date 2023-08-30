@@ -3,9 +3,6 @@
 
 set -e
 
-echo "Installing: tmux plugins ********************"
-~/.tmux/plugins/tpm/bin/install_plugins
-
 echo "Installing: bootstrapping neovim plugins ********************"
 ~/.local/bin/nvim --headless "+Lazy! sync" +qa
 {{end -}}

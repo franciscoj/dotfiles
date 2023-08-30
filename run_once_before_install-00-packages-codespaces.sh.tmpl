@@ -4,7 +4,7 @@
 set -e
 
 echo "Installing: dependencies ********************"
-sudo apt update && sudo apt install -y ripgrep fd-find tmux busybox
+sudo apt update && sudo apt install -y ripgrep fd-find busybox
 
 echo "Installing: starship ********************"
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
