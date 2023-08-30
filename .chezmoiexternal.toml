@@ -18,9 +18,9 @@
   type = "file"
   url = "https://github.com/zellij-org/zellij/releases/download/v0.38.0/zellij-x86_64-unknown-linux-musl.tar.gz"
   executable = true
-  [".local/bin/zellij".filter]
-    command = "busybox"
-    args = ["tar", "zxf", "-"]
+    [".local/bin/zellij".filter]
+      command = "busybox"
+      args = ["tar", "zxf", "-"]
 
 [".local/bin/rdm"]
 	type = "file"
