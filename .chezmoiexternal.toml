@@ -20,7 +20,7 @@
   executable = true
   [".local/bin/zellij".filter]
     command = "busybox"
-    args = ["tar", "zxf"]
+    args = ["tar", "zxf", "-"]
 
 [".local/bin/rdm"]
 	type = "file"
