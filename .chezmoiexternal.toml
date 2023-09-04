@@ -2,25 +2,23 @@
   type = "git-repo"
   url = "https://github.com/folke/lazy.nvim.git"
   stripComponents = 1
-  [".local/share/nvim/lazy/lazy.nvim".clone]
-    args = ["--filter=blob:none"]
+  clone.args = ["--filter=blob:none"]
 
 {{ if (.codespaces) }}
+
+{{ $exaVersion := "v0.10.1" }}
 [".local/bin/exa"]
   type = "file"
-  url = "https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip"
+  url = "https://github.com/ogham/exa/releases/download/{{ $exaVersion }}/exa-linux-x86_64-{{ $exaVersion }}.zip"
   executable = true
-    [".local/bin/exa".filter]
-      command = "busybox"
-      args = ["unzip", "-", "bin/exa", "-p"]
+  filter.command = "busybox"
+  filter.args = ["unzip", "-", "bin/exa", "-p"]
 
+{{ $zellijVersion := "v0.38.1" -}}
 [".local/bin/zellij"]
-  type = "file"
-  url = "https://github.com/zellij-org/zellij/releases/download/v0.38.0/zellij-x86_64-unknown-linux-musl.tar.gz"
-  executable = true
-    [".local/bin/zellij".filter]
-      command = "busybox"
-      args = ["tar", "zxf", "-"]
+  type = "archive-file"
+  url = "https://github.com/zellij-org/zellij/releases/download/{{ $zellijVersion }}/zellij-x86_64-unknown-linux-musl.tar.gz"
+  path = "zellij"
 
 [".local/bin/rdm"]
 	type = "file"
