@@ -1,3 +1,4 @@
+local lspconfig = require("lspconfig")
 local efmls = require("efmls-configs")
 local Config = require("franciscoj.lsp.config")
 local features = require("franciscoj.lsp.features")
@@ -15,7 +16,7 @@ mason.ensure_tools({
 
 local golangci_lint = ("%s run --color never --out-format tab ${INPUT}"):format(mason.get_path("golangci_lint"))
 
-local configs = {
+local languages = {
 	javascript = {
 		formatter = require("efmls-configs.formatters.prettier"),
 	},
@@ -39,15 +40,25 @@ local configs = {
 }
 
 if features.rubocop then
-	table.insert(configs, {
+	table.insert(languages, {
 		ruby = {
 			linter = require("efmls-configs.linters.rubocop"),
 		},
 	})
 end
 
+local efmls_config = {
+	filetypes = vim.tbl_keys(languages),
+	settings = {
+		languages = languages,
+	},
+	init_options = {
+		documentFormatting = true,
+		documentRangeFormatting = true,
+	},
+}
+
 local cfg = Config:new({
-	init_options = { documentFormatting = true },
 	on_attach = function(client)
 		if client.server_capabilities.documentFormattingProvider then
 			local id = vim.api.nvim_create_augroup("lsp_formatting", { clear = false })
@@ -62,5 +73,5 @@ local cfg = Config:new({
 		end
 	end,
 })
-efmls.init(cfg:to_lspconfig())
-efmls.setup(configs)
+
+lspconfig.efm.setup(vim.tbl_extend("force", efmls_config, cfg:to_lspconfig()))
