@@ -1,4 +1,8 @@
 {{ if (eq .chezmoi.os "linux") }}
 {{- template "zenv" "zshenv" -}}
 [[ -x "$(command -v direnv)" ]] && eval "$(direnv hook zsh)"
+
+{{ if .wsl }}
+export PATH=$PATH:/snap/bin
+{{ end }}
 {{ end }}

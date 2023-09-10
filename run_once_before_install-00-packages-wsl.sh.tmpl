@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+{{ if .wsl }}
+echo "Installing: dependencies ********************"
+sudo apt install -y zsh ripgrep fd-find python3-pip direnv busybox
+sudo snap install --classic nvim
+
+echo "Installing: starship ********************"
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
+sudo chsh -s /bin/zsh $(whoami)
+{{ end }}

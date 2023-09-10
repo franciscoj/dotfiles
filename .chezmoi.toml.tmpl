@@ -1,6 +1,8 @@
 {{- $codespaces:= env "CODESPACES" | not | not -}}
 {{- $private_nvim_github_token:= env "PRIVATE_NVIM_GITHUB_TOKEN" -}}
+{{- $wsl:= and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
 
 [data]
   codespaces = {{ $codespaces }}
   private_nvim_github_token = {{ $private_nvim_github_token | quote }}
+  wsl = {{ $wsl }}

@@ -4,7 +4,7 @@
   stripComponents = 1
   clone.args = ["--filter=blob:none"]
 
-{{ if (.codespaces) }}
+{{ if or .codespaces .wsl }}
 
 {{ $exaVersion := "v0.10.1" }}
 [".local/bin/exa"]
@@ -29,6 +29,9 @@
 	type = "git-repo"
 	url = "https://github.com/zplug/zplug.git"
 
+{{ end }}
+
+{{ if .codespaces }}
 [".config/private.nvim"]
   type = "git-repo"
   url = "https://franciscoj:{{.private_nvim_github_token}}@github.com/franciscoj/private.nvim"
