@@ -2,7 +2,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			"creativenull/efmls-configs-nvim",
 			"folke/neodev.nvim",
 			"folke/trouble.nvim",
 			"williamboman/mason.nvim",

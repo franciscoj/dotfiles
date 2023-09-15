@@ -1,4 +1,3 @@
-require("franciscoj.lsp.configs.efm")
 require("franciscoj.lsp.configs.gopls")
 require("franciscoj.lsp.configs.lua_ls")
 require("franciscoj.lsp.configs.solargraph")
