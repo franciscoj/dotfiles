@@ -11,12 +11,12 @@ return {
 
 			require("conform").setup({
 				formatters_by_ft = {
-					lua = { "stylua" },
-					ruby = { "rubocop" },
 					go = { "goimports" },
 					javascript = { "prettier" },
-					typescript = { "prettier" },
 					json = { "prettier" },
+					lua = { "stylua" },
+					ruby = { "rubocop" },
+					typescript = { "prettier" },
 					["*"] = { "trim_whitespace" },
 				},
 				format_on_save = {
