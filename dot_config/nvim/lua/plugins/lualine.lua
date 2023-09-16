@@ -1,7 +1,10 @@
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		dependencies = { "catppuccin" },
+		dependencies = {
+			"catppuccin",
+			"SmiteshP/nvim-navic",
+		},
 		config = function()
 			local line = require("lualine")
 			local theme_colors = require("catppuccin.palettes").get_palette()
@@ -163,13 +166,17 @@ return {
 				winbar = {
 					lualine_a = {},
 					lualine_b = {},
-					lualine_c = { { "filename", path = 1 } },
+					lualine_c = {
+						{ "filename", path = 1 },
+						{ "diff", symbols = { added = "+", modified = "~", removed = "-" } },
+						{ "navic" },
+					},
 				},
 				inactive_winbar = {
 					lualine_a = {},
 					lualine_b = {},
 					lualine_c = {
-						{ "filename", cond = conditions.buffer_not_empty },
+						{ "filename", path = 1 },
 						{ "diff", symbols = { added = "+", modified = "~", removed = "-" } },
 					},
 				},

@@ -1,7 +1,10 @@
 local Config = {
-	["__on_attach"] = function(client, _bufnr)
+	["__on_attach"] = function(client, bufnr)
 		local builtin = require("telescope.builtin")
 		local h = require("h")
+		local navic = require("nvim-navic")
+
+		navic.attach(client, bufnr)
 
 		-- Using LSP defaults
 		h.nnoremap("gD", vim.lsp.buf.declaration)
