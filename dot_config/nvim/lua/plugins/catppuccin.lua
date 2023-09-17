@@ -29,8 +29,10 @@ return {
 					fern = true,
 					gitsigns = true,
 					hop = true,
+					indent_blankline = true,
 					lsp_trouble = true,
 					markdown = true,
+					mason = true,
 					native_lsp = {
 						enabled = true,
 					},
@@ -38,6 +40,7 @@ return {
 						enabled = true,
 						custom_bg = "NONE",
 					},
+					neotest = true,
 					noice = true,
 					telescope = true,
 					treesitter = true,
