@@ -34,6 +34,10 @@ return {
 					native_lsp = {
 						enabled = true,
 					},
+					navic = {
+						enabled = true,
+						custom_bg = "NONE",
+					},
 					noice = true,
 					telescope = true,
 					treesitter = true,

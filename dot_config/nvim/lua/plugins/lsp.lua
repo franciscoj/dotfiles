@@ -2,11 +2,15 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
+			"SmiteshP/nvim-navic",
 			"folke/neodev.nvim",
 			"folke/trouble.nvim",
 			"williamboman/mason.nvim",
 		},
 		config = function()
+			require("nvim-navic").setup({
+				highlight = true,
+			})
 			require("franciscoj.lsp.configs")
 		end,
 	},
