@@ -13,7 +13,8 @@ local cfg = Config:new({
 		},
 	},
 	handlers = {
-		-- Disable the diagnostics from the LSP as I tipically use luacheck, which is configured on null-ls
+		-- Disable the diagnostics from the LSP as I tipically use luacheck,
+		-- which is configured on a different plugin
 		["textDocument/publishDiagnostics"] = function() end,
 	},
 	on_attach = function(client, _bufnr)
