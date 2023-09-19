@@ -2,7 +2,21 @@ local lspconfig = require("lspconfig")
 local Config = require("franciscoj.lsp.config")
 local neodev = require("neodev")
 
-neodev.setup()
+neodev.setup({
+	override = function(root_dir, library)
+		local dotfiles_root = root_dir .. "/.chezmoi.toml.tmpl"
+		local f = io.open(dotfiles_root, "r")
+
+		if f ~= nil then
+			library.enabled = true
+			library.runtime = true
+			library.types = true
+			library.plugins = true
+
+			io.close(f)
+		end
+	end,
+})
 
 local cfg = Config:new({
 	settings = {
