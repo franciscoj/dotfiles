@@ -6,15 +6,13 @@
 
 {{ if or .codespaces .wsl }}
 
-{{ $exaVersion := "v0.10.1" }}
-[".local/bin/exa"]
-  type = "file"
-  url = "https://github.com/ogham/exa/releases/download/{{ $exaVersion }}/exa-linux-x86_64-{{ $exaVersion }}.zip"
-  executable = true
-  filter.command = "busybox"
-  filter.args = ["unzip", "-", "bin/exa", "-p"]
+{{ $ezaVersion := "v0.13.0" }}
+[".local/bin/eza"]
+  type = "archive-file"
+  url = "https://github.com/eza-community/eza/releases/download/{{ $ezaVersion }}/eza_x86_64-unknown-linux-musl.zip"
+  path = "eza"
 
-{{ $zellijVersion := "v0.38.1" -}}
+{{ $zellijVersion := "v0.38.2" -}}
 [".local/bin/zellij"]
   type = "archive-file"
   url = "https://github.com/zellij-org/zellij/releases/download/{{ $zellijVersion }}/zellij-x86_64-unknown-linux-musl.tar.gz"
