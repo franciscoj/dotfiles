@@ -4,7 +4,9 @@ local Config = {
 		local h = require("h")
 		local navic = require("nvim-navic")
 
-		navic.attach(client, bufnr)
+		if client.server_capabilities.documentSymbolProvider then
+			navic.attach(client, bufnr)
+		end
 
 		-- Using LSP defaults
 		h.nnoremap("gD", vim.lsp.buf.declaration)

@@ -67,6 +67,7 @@ return {
 					"gopls",
 					"lua_ls",
 					"marksman",
+					"ruby-lsp",
 					"tailwindcss",
 					"tsserver",
 					"yamlls",

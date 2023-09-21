@@ -1,6 +1,5 @@
 require("franciscoj.lsp.configs.gopls")
 require("franciscoj.lsp.configs.lua_ls")
-require("franciscoj.lsp.configs.solargraph")
 require("franciscoj.lsp.configs.sorbet")
 require("franciscoj.lsp.configs.tsserver")
 require("franciscoj.lsp.configs.yamlls")
@@ -13,5 +12,6 @@ local cfg = Config:new({})
 
 lspconfig.elixirls.setup(cfg:to_lspconfig())
 lspconfig.marksman.setup(cfg:to_lspconfig())
+lspconfig.ruby_ls.setup(cfg:to_lspconfig())
 lspconfig.rust_analyzer.setup(cfg:to_lspconfig())
 lspconfig.tailwindcss.setup(cfg:to_lspconfig())

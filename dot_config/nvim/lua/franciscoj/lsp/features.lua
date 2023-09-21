@@ -7,6 +7,5 @@
 return {
 	-- Ruby
 	rubocop = vim.fn.executable("bin/rubocop") == 1,
-	solargraph = vim.fn.executable("bin/solargraph") == 1,
 	sorbet = vim.fn.executable("bin/srb") == 1,
 }
