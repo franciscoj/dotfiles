@@ -8,7 +8,7 @@
 
 [data]
   codespaces = {{ $codespaces }}
-  codespaces_repo = {{ $codespaces_repo }}
+  codespaces_repo = {{ $codespaces_repo | quote }}
   private_nvim_github_token = {{ $private_nvim_github_token | quote }}
   private_zsh_github_token = {{ $private_zsh_github_token | quote }}
   wsl = {{ $wsl }}
