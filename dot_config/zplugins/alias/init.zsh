@@ -11,7 +11,7 @@ then
   alias ll="ls -lh"
   alias la="ls -lha"
 else
-  eza_params=('--git' '--icons' '--classify' '--group-directories-first' '--time-style=long-iso' '--group' '--color-scale')
+  eza_params=('--icons' '--classify' '--group-directories-first' '--time-style=long-iso' '--group' '--color-scale')
   alias ll="eza -lh ${eza_params}"
   alias la="eza -lha ${eza_params}"
 fi
