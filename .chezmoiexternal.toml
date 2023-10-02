@@ -33,7 +33,7 @@
   type = "git-repo"
   url = "https://franciscoj:{{.private_nvim_github_token}}@github.com/franciscoj/private.nvim"
 
-[".zshrc_local"]
+[".zshenv_local"]
   type = "file"
-  url = "https://franciscoj:{{.private_zsh_github_token}}@raw.githubusercontent.com/franciscoj/private.zsh/master/{{.codespaces_repo}}/zshrc_local"
+  url = "https://franciscoj:{{.private_zsh_github_token}}@raw.githubusercontent.com/franciscoj/private.zsh/master/{{.codespaces_repo}}/zshenv_local"
 {{ end }}
