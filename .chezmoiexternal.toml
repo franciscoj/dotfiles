@@ -6,7 +6,7 @@
 
 {{ if or .codespaces .wsl }}
 
-{{ $ezaVersion := "v0.13.0" }}
+{{ $ezaVersion := "v0.13.1" }}
 [".local/bin/eza"]
   type = "archive-file"
   url = "https://github.com/eza-community/eza/releases/download/{{ $ezaVersion }}/eza_x86_64-unknown-linux-musl.zip"
@@ -26,11 +26,14 @@
 [".config/zplug"]
 	type = "git-repo"
 	url = "https://github.com/zplug/zplug.git"
-
 {{ end }}
 
 {{ if .codespaces }}
 [".config/private.nvim"]
   type = "git-repo"
   url = "https://franciscoj:{{.private_nvim_github_token}}@github.com/franciscoj/private.nvim"
+
+[".zshrc_local"]
+  type = "file"
+  url = "https://franciscoj:{{.private_zsh_github_token}}@raw.githubusercontent.com/franciscoj/private.zsh/master/{{.codespaces_repo}}/zshrc_local"
 {{ end }}

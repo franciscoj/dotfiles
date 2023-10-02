@@ -1,8 +1,14 @@
+# vim: ft=toml
+
 {{- $codespaces:= env "CODESPACES" | not | not -}}
 {{- $private_nvim_github_token:= env "PRIVATE_NVIM_GITHUB_TOKEN" -}}
+{{- $private_zsh_github_token:= env "PRIVATE_NVIM_GITHUB_TOKEN" -}}
+{{- $codespaces_repo:= env "GITHUB_REPOSITORY" -}}
 {{- $wsl:= and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
 
 [data]
   codespaces = {{ $codespaces }}
+  codespaces_repo = {{ $codespaces_repo }}
   private_nvim_github_token = {{ $private_nvim_github_token | quote }}
+  private_zsh_github_token = {{ $private_zsh_github_token | quote }}
   wsl = {{ $wsl }}
