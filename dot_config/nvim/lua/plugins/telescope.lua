@@ -11,7 +11,9 @@ return {
 			{ "<leader>g" },
 			{ "<leader>F" },
 			{ "<LocalLeader>m" },
-			{ '<leader>"' },
+			{ "<LocalLeader>'" },
+			{ "<leader>B" },
+			{ "<leader>h" },
 		},
 		config = function()
 			local action_layout = require("telescope.actions.layout")
@@ -24,10 +26,11 @@ return {
 			vim.keymap.set("n", "<leader>g", builtin.live_grep)
 			vim.keymap.set("n", "<leader>F", builtin.resume)
 			vim.keymap.set("n", "<LocalLeader>m", builtin.marks)
-			vim.keymap.set("n", '<leader>"', function()
+			vim.keymap.set("n", "<LocalLeader>'", function()
 				builtin.registers(themes.get_cursor())
 			end)
 			vim.keymap.set("n", "<leader>B", builtin.buffers)
+			vim.keymap.set("n", "<leader>h", builtin.help_tags)
 
 			telescope.setup({
 				defaults = {
