@@ -33,8 +33,10 @@ end
 ls.add_snippets("gitcommit", {
 	conventional_commit("chore"),
 	conventional_commit("docs"),
+	conventional_commit("experiment"),
 	conventional_commit("feat"),
 	conventional_commit("fix"),
 	conventional_commit("refactor"),
+	conventional_commit("test"),
 	conventional_commit("wip"),
 })

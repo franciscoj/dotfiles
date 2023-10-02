@@ -16,7 +16,7 @@ require("franciscoj.snippets.gitcommit")
 require("franciscoj.snippets.go")
 require("franciscoj.snippets.ruby")
 
---- Returns a function that changes the coice of a choice node when called.
+--- Returns a function that changes the option of a choice node when called.
 -- @param direction 1 for next, -1 for prev
 -- @return a function that changes the choice
 local choose = function(direction)

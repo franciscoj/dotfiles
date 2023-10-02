@@ -22,11 +22,19 @@ local date = function()
 	return os.date("%d/%m/%Y")
 end
 
-ls.add_snippets("all", {
-	s("todo", {
-		c(1, { t("TODO"), t("NOTE"), t("FIXME") }),
-		t(": (@franciscoj "),
+-- Returns a snippet that introduces a TODO formatted with my username and a
+-- date so that I can easily track them.
+local comment = function(trigger, opts)
+	return s(trigger, {
+		c(1, opts),
+		t("(franciscoj): [On "),
 		f(date, {}),
-		t(") "),
-	}),
+		t("] "),
+	})
+end
+
+ls.add_snippets("all", {
+	comment("fix", { t("FIXME"), t("NOTE"), t("TODO") }),
+	comment("note", { t("NOTE"), t("TODO"), t("FIXME") }),
+	comment("todo", { t("TODO"), t("NOTE"), t("FIXME") }),
 })

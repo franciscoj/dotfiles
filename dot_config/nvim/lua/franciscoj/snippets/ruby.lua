@@ -59,15 +59,37 @@ ls.add_snippets("ruby", {
 			{ name = i(1, "Module"), content = d(2, selection_or("")) }
 		)
 	),
+	s(
+		"cc",
+		fmt(
+			[[
+			class {name}
+			  {content}
+			end
+			]],
+			{ name = i(1, "Class"), content = d(2, selection_or("")) }
+		)
+	),
 	-- Sorbet specific
-	s("ty", {
-		t("# typed: "),
-		c(1, { t("true"), t("false"), t("strict") }),
-	}),
+	s(
+		"ty",
+		fmt(
+			[[
+			# typed: {sigil}
+			# fronzen_string_literal: true
+
+
+			]],
+			{ sigil = c(1, { t("true"), t("false"), t("strict") }) }
+		)
+	),
+	s("talias", fmta("T.type_alias { <type> }", { type = i(1, "Type") })),
 	s("tary", fmt("T::Array[{type}]", { type = d(1, selection_or("Type")) })),
+	s("tbind", fmt("T.bind(self, {type})", { type = i(1, "Type") })),
 	s("tbool", { t("T::Boolean") }),
 	s("tcast", fmt("T.cast({val}, {type})", { val = d(1, selection_or("val")), type = i(2, "Type") })),
 	s("thash", fmt("T::Hash[{key}, {val}]", { key = i(1, "Type"), val = i(2, "Type") })),
+	s("thel", { t("extend T::Helpers") }),
 	s("tlet", fmt("T.let({val}, {type})", { val = d(1, selection_or("val")), type = i(2, "Type") })),
 	s("tmust", fmt("T.must({val})", { val = d(1, selection_or("val")) })),
 	s("tnil", fmt("T.nilable({type})", { type = d(1, selection_or("Type")) })),
