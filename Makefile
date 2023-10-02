@@ -1,3 +1,5 @@
+all: apply
+
 install:
 	./install.sh
 
