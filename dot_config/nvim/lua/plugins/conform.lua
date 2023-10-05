@@ -9,7 +9,7 @@ return {
 				{ name = "prettier" },
 			}
 			if features.go then
-				ensure.insert({ name = "goimports", version = "latest" })
+				table.insert(ensure, { name = "goimports", version = "latest" })
 			end
 			mason.ensure_tools(ensure)
 

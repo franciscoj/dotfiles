@@ -10,7 +10,7 @@ return {
 			}
 
 			if features.go then
-				ensure.insert({ name = "golangci-lint", version = "v1.53.3" })
+				table.insert(ensure, { name = "golangci-lint", version = "v1.53.3" })
 			end
 
 			mason.ensure_tools(ensure)

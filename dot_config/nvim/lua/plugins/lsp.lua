@@ -65,20 +65,20 @@ return {
 			local ensure = { "yamlls", "marksman" }
 
 			if features.ruby then
-				ensure.insert("ruby_ls")
+				table.insert(ensure, "ruby_ls")
 			end
 
 			if features.elixir then
-				ensure.insert("elixirls")
+				table.insert(ensure, "elixirls")
 			end
 
 			if features.go then
-				ensure.insert("gopls")
+				table.insert(ensure, "gopls")
 			end
 
 			if features.typescript then
-				ensure.insert("tsserver")
-				ensure.insert("tailwindcss")
+				table.insert(ensure, "tsserver")
+				table.insert(ensure, "tailwindcss")
 			end
 
 			require("mason-lspconfig").setup({ ensure_installed = ensure })
