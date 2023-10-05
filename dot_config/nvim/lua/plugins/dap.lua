@@ -10,13 +10,16 @@ return {
 			{ "<leader>db" },
 		},
 		config = function()
+			local features = require("franciscoj.lsp.features")
 			local dap = require("dap")
 			local dapui = require("dapui")
 			local mason = require("franciscoj.mason")
 
-			mason.ensure_tools({
-				{ name = "delve", version = "latest" },
-			})
+			if features.go then
+				mason.ensure_tools({
+					{ name = "delve", version = "latest" },
+				})
+			end
 
 			dap.adapters.rdbg = function(callback, config)
 				callback({
@@ -48,7 +51,7 @@ return {
 				},
 			}
 
-			dap.adapters.delve = function(callback, config)
+			dap.adapters.delve = function(callback, _config)
 				callback({
 					type = "server",
 					port = "${port}",

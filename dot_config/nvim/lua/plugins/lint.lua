@@ -3,14 +3,23 @@ return {
 		"mfussenegger/nvim-lint",
 		dependencies = { "williamboman/mason.nvim" },
 		config = function()
+			local features = require("franciscoj.lsp.features")
 			local mason = require("franciscoj.mason")
-			mason.ensure_tools({
-				{ name = "golangci-lint", version = "v1.53.3" },
+			local ensure = {
 				{ name = "luacheck" },
-			})
+			}
+
+			if features.go then
+				ensure.insert({ name = "golangci-lint", version = "v1.53.3" })
+			end
+
+			mason.ensure_tools(ensure)
 
 			require("lint").linters.luacheck.cmd = mason.get_path("luacheck")
-			require("lint").linters.golangcilint.cmd = mason.get_path("golangci-lint")
+
+			if features.go then
+				require("lint").linters.golangcilint.cmd = mason.get_path("golangci-lint")
+			end
 
 			require("lint").linters_by_ft = {
 				eslint = { "eslint" },

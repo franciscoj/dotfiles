@@ -1,5 +1,10 @@
+local features = require("franciscoj.lsp.features")
 local lspconfig = require("lspconfig")
 local Config = require("franciscoj.lsp.config")
+
+if not features.typescript then
+	return
+end
 
 local function organize_imports()
 	local params = {

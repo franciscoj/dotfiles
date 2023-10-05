@@ -57,22 +57,31 @@ return {
 		"williamboman/mason.nvim",
 		dependencies = { "williamboman/mason-lspconfig.nvim" },
 		config = function()
+			local features = require("franciscoj.lsp.features")
 			require("mason").setup({
 				ui = { border = "rounded" },
 			})
 
-			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"elixirls",
-					"gopls",
-					"lua_ls",
-					"marksman",
-					"ruby-lsp",
-					"tailwindcss",
-					"tsserver",
-					"yamlls",
-				},
-			})
+			local ensure = { "yamlls", "marksman" }
+
+			if features.ruby then
+				ensure.insert("ruby_ls")
+			end
+
+			if features.elixir then
+				ensure.insert("elixirls")
+			end
+
+			if features.go then
+				ensure.insert("gopls")
+			end
+
+			if features.typescript then
+				ensure.insert("tsserver")
+				ensure.insert("tailwindcss")
+			end
+
+			require("mason-lspconfig").setup({ ensure_installed = ensure })
 		end,
 	},
 }
