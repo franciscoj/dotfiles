@@ -100,6 +100,13 @@ ls.add_snippets("ruby", {
 			factory = d(2, value_on, { 1 }),
 		})
 	),
+	s(
+		"cre",
+		fmt("{name} = create(:{factory})", {
+			name = i(1, "name"),
+			factory = d(2, value_on, { 1 }),
+		})
+	),
 	-- Sorbet specific
 	s(
 		"ty",
