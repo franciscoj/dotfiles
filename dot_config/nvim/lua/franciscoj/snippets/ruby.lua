@@ -83,6 +83,28 @@ ls.add_snippets("ruby", {
 			{ sigil = c(1, { t("true"), t("false"), t("strict") }) }
 		)
 	),
+	s(
+		"tst",
+		fmt(
+			[[
+			test "{statement}" do
+			  {content}
+			end
+			]],
+			{ statement = i(1, "test"), content = i(2, "content") }
+		)
+	),
+	s(
+		"ctx",
+		fmt(
+			[[
+			context "{statement}" do
+			  {content}
+			end
+			]],
+			{ statement = i(1, "test"), content = d(2, selection_or("")) }
+		)
+	),
 	s("talias", fmta("T.type_alias { <type> }", { type = i(1, "Type") })),
 	s("tary", fmt("T::Array[{type}]", { type = d(1, selection_or("Type")) })),
 	s("tbind", fmt("T.bind(self, {type})", { type = i(1, "Type") })),
