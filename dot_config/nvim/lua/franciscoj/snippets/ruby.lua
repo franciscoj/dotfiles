@@ -70,19 +70,7 @@ ls.add_snippets("ruby", {
 			{ name = i(1, "Class"), content = d(2, selection_or("")) }
 		)
 	),
-	-- Sorbet specific
-	s(
-		"ty",
-		fmt(
-			[[
-			# typed: {sigil}
-			# fronzen_string_literal: true
-
-
-			]],
-			{ sigil = c(1, { t("true"), t("false"), t("strict") }) }
-		)
-	),
+	-- Tests
 	s(
 		"tst",
 		fmt(
@@ -103,6 +91,26 @@ ls.add_snippets("ruby", {
 			end
 			]],
 			{ statement = i(1, "test"), content = d(2, selection_or("")) }
+		)
+	),
+	s(
+		"@cre",
+		fmt("@{name} = create(:{factory})", {
+			name = i(1, "name"),
+			factory = d(2, value_on, { 1 }),
+		})
+	),
+	-- Sorbet specific
+	s(
+		"ty",
+		fmt(
+			[[
+			# typed: {sigil}
+			# fronzen_string_literal: true
+
+
+			]],
+			{ sigil = c(1, { t("true"), t("false"), t("strict") }) }
 		)
 	),
 	s("talias", fmta("T.type_alias { <type> }", { type = i(1, "Type") })),
