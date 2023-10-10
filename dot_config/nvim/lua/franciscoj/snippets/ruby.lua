@@ -113,7 +113,7 @@ ls.add_snippets("ruby", {
 		fmt(
 			[[
 			# typed: {sigil}
-			# fronzen_string_literal: true
+			# frozen_string_literal: true
 
 
 			]],
