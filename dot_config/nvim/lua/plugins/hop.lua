@@ -2,6 +2,7 @@ return {
 	{
 		"phaazon/hop.nvim",
 		branch = "v2",
+		enabled = vim.g.started_by_firenvim ~= true,
 		config = function()
 			local hop = require("hop")
 			hop.setup({})

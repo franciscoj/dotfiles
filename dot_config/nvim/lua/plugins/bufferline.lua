@@ -1,6 +1,7 @@
 return {
 	{
 		"akinsho/bufferline.nvim",
+		enabled = vim.g.started_by_firenvim ~= true,
 		config = function()
 			local h = require("h")
 			local bufferline = require("bufferline")

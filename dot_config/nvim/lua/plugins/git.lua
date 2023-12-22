@@ -2,6 +2,7 @@
 return {
 	{
 		"tpope/vim-fugitive",
+		enabled = vim.g.started_by_firenvim ~= true,
 		dependencies = {
 			"tpope/vim-git",
 			"tpope/vim-rhubarb",
@@ -17,6 +18,7 @@ return {
 	},
 	{
 		"junegunn/gv.vim",
+		enabled = vim.g.started_by_firenvim ~= true,
 		keys = {
 			{ "<leader>gl" },
 			{ "<leader>gL" },
@@ -28,6 +30,7 @@ return {
 	},
 	{
 		"lewis6991/gitsigns.nvim",
+		enabled = vim.g.started_by_firenvim ~= true,
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("gitsigns").setup()
@@ -35,6 +38,7 @@ return {
 	},
 	{
 		"pwntester/octo.nvim",
+		enabled = vim.g.started_by_firenvim ~= true,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
@@ -47,6 +51,7 @@ return {
 	},
 	{
 		"sindrets/diffview.nvim",
+		enabled = vim.g.started_by_firenvim ~= true,
 		cmd = {
 			"DiffViewOpen",
 			"DiffviewFileHistory",

@@ -2,7 +2,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			"SmiteshP/nvim-navic",
 			"folke/neodev.nvim",
 			"folke/trouble.nvim",
 			"williamboman/mason.nvim",
@@ -13,6 +12,7 @@ return {
 	},
 	{
 		"SmiteshP/nvim-navic",
+		enabled = vim.g.started_by_firenvim ~= true,
 		config = function()
 			require("nvim-navic").setup({
 				highlight = true,

@@ -1,6 +1,7 @@
 return {
 	{
 		"lambdalisue/fern.vim",
+		enabled = vim.g.started_by_firenvim ~= true,
 		dependencies = {
 			"lambdalisue/fern-hijack.vim",
 			"lambdalisue/fern-git-status.vim",
