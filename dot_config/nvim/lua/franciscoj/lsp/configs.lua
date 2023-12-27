@@ -1,5 +1,6 @@
 require("franciscoj.lsp.configs.gopls")
 require("franciscoj.lsp.configs.lua_ls")
+require("franciscoj.lsp.configs.rust_analyzer")
 require("franciscoj.lsp.configs.sorbet")
 require("franciscoj.lsp.configs.tsserver")
 require("franciscoj.lsp.configs.yamlls")
@@ -22,5 +23,6 @@ end
 if features.typescript then
 	lspconfig.tailwindcss.setup(cfg:to_lspconfig())
 end
+
 
 lspconfig.marksman.setup(cfg:to_lspconfig())

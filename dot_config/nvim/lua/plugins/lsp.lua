@@ -81,6 +81,10 @@ return {
 				table.insert(ensure, "tailwindcss")
 			end
 
+			if features.rust then
+				table.insert(ensure, "rust_analyzer")
+			end
+
 			require("mason-lspconfig").setup({ ensure_installed = ensure })
 		end,
 	},

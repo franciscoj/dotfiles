@@ -34,6 +34,7 @@ return {
 				formatting.goimports,
 				formatting.prettier,
 				formatting.rubocop.with({ timeout = 5000 }),
+				formatting.rustfmt,
 				formatting.stylua,
 				formatting.trim_newlines,
 				formatting.trim_whitespace,

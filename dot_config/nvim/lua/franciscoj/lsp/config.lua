@@ -1,3 +1,4 @@
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local Config = {
 	["__on_attach"] = function(client, bufnr)
 		local builtin = require("telescope.builtin")
@@ -31,7 +32,6 @@ local Config = {
 		h.nnoremap("gr", builtin.lsp_references)
 		h.nnoremap("gi", builtin.lsp_implementations)
 		h.nnoremap("<LocalLeader>a", vim.lsp.buf.code_action)
-		-- TODO: (@franciscoj 10/01/2023) this seems broken, removing it just in case
 		-- h.xnoremap("<LocalLeader>a", vim.lsp.buf.range_code_action)
 
 		-- Using trouble.nvim
@@ -51,26 +51,17 @@ local Config = {
 		-- Disable virtual diagnostics because they are mostly annoying
 		vim.diagnostic.config({ virtual_text = false })
 
-		-- TODO: (@franciscoj 20/07/2023) Find what hapens with codelens so that it
-		-- doesn't work. It is useful, but it just fails and I don't know why.
-		--
-		-- if client.server_capabilities.codeLensProvider then
-		-- 	local id = vim.api.nvim_create_augroup("lsp_code_lens_refresh", { clear = false })
-		-- 	vim.api.nvim_clear_autocmds({ buffer = 0, group = id })
-		-- 	vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "CursorHold" }, {
-		-- 		buffer = 0,
-		-- 		group = id,
-		-- 		callback = vim.lsp.codelens.refresh,
-		-- 	})
-		--
-		-- 	vim.api.nvim_create_autocmd("BufEnter", {
-		-- 		buffer = 0,
-		-- 		callback = vim.lsp.codelens.display,
-		-- 		group = id,
-		-- 	})
-		--
-		-- 	h.nnoremap("<LocalLeader>A", vim.lsp.codelens.run)
-		-- end
+		if client.server_capabilities.codeLensProvider then
+			local id = vim.api.nvim_create_augroup("lsp_code_lens_refresh", { clear = false })
+			vim.api.nvim_clear_autocmds({ buffer = 0, group = id })
+			vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "CursorHold" }, {
+				buffer = 0,
+				group = id,
+				callback = vim.lsp.codelens.refresh,
+			})
+
+			h.nnoremap("<LocalLeader>A", vim.lsp.codelens.run)
+		end
 	end,
 	["__handlers"] = {
 		["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
@@ -86,12 +77,12 @@ end
 -- on each on of the lsps arguments. For `on_attach` and `handlers` they add on
 -- to the defualts, everything else is passed through to the lspconfig
 function Config:new(args)
-	local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 	local lsp = setmetatable({}, self)
 	self.__index = self
 
 	local config = {
 		capabilities = capabilities,
+		handlers = {},
 	}
 
 	config.on_attach = function(client, bufnr)
@@ -102,8 +93,12 @@ function Config:new(args)
 		self.__on_attach(client, bufnr)
 	end
 
-	config.handlers = self.__handlers
+	-- copy the default handlers
+	for k, v in pairs(self.__handlers) do
+		config.handlers[k] = v
+	end
 
+	-- add any extra handler
 	if args.handlers ~= nil then
 		for k, v in pairs(args.handlers) do
 			config.handlers[k] = v

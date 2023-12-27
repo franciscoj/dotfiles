@@ -52,8 +52,8 @@ return {
 					entries = { name = "custom", selection_order = "near_cursor" },
 				},
 				mapping = cmp.mapping.preset.insert({
-					["<M-d>"] = cmp.mapping.scroll_docs(-4),
-					["<M-f>"] = cmp.mapping.scroll_docs(4),
+					["<C-b>"] = cmp.mapping.scroll_docs(-4),
+					["<C-f>"] = cmp.mapping.scroll_docs(4),
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 					["<Tab>"] = cmp.mapping(function(fallback)

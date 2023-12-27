@@ -19,5 +19,6 @@ return {
 	-- Ruby
 	ruby = detect("Gemfile"),
 	rubocop = vim.fn.executable("bin/rubocop") == 1,
+	rust = detect("Cargo.toml"),
 	sorbet = vim.fn.executable("bin/srb") == 1,
 }
