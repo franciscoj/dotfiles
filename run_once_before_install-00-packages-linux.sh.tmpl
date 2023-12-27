@@ -1,7 +1,7 @@
 #!/bin/sh
 
 set -e
-{{ if or .wsl .ubuntu }}
+{{ if .linux }}
 echo "Installing: dependencies ********************"
 sudo apt install -y zsh ripgrep fd-find python3-pip direnv busybox
 sudo snap install --classic nvim
