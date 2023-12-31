@@ -26,3 +26,4 @@ end
 
 
 lspconfig.marksman.setup(cfg:to_lspconfig())
+lspconfig.jsonls.setup(cfg:to_lspconfig())

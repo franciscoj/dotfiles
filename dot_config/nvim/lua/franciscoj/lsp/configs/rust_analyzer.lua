@@ -16,6 +16,11 @@ local cfg = Config:new({
 			},
 		},
 	},
+	init_options = {
+		userLanguages = {
+			rust = "html",
+		},
+	},
 })
 
 lspconfig.rust_analyzer.setup(cfg:to_lspconfig())
