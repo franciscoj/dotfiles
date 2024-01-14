@@ -1,8 +1,9 @@
+{{ if .apt }}
 #!/bin/sh
 
 set -e
-{{ if .linux }}
-echo "Installing: dependencies ********************"
+
+echo "Installing: dependencies with apt ********************"
 sudo apt install -y zsh ripgrep fd-find python3-pip direnv busybox
 sudo snap install --classic nvim
 

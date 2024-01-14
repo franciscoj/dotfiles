@@ -4,7 +4,11 @@
 # shell, like customizations, special aliases, etc.
 
 export ZPLUG_HOME=$HOME/.config/zplug
+{{ if .arch }}
+source /usr/share/zsh/scripts/zplug/init.zsh
+{{ else }}
 source $ZPLUG_HOME/init.zsh
+{{ end }}
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 

@@ -1,0 +1,7 @@
+#!/bin/sh
+{{ if .arch }}
+
+set -e
+echo "Installing: dependencies with paru ********************"
+paru -S ripgrep fd python-pip direnv starship neovim ttf-jetbrains-mono-nerd zellij zplug
+{{ end }}
