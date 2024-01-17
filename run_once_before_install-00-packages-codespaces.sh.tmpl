@@ -1,5 +1,6 @@
 #!/bin/sh
-{{- if .codespaces -}}
+
+{{ if .codespaces -}}
 
 set -e
 
@@ -28,4 +29,4 @@ done
 rm alacritty.info
 {{ else }}
 echo "Skipping codespaces packages"
-{{end -}}
+{{ end -}}

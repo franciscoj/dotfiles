@@ -1,6 +1,6 @@
-{{- if (eq .chezmoi.os "darwin") -}}
 #!/bin/sh
 
+{{if (eq .chezmoi.os "darwin") -}}
 set -e
 
 pip3 install --user pynvim
@@ -58,7 +58,7 @@ cask "zoom"
 cask "zsa-wally"
 EOF
 
-{{ else }}
+{{ else -}}
 echo "Skipping mac packages"
 {{ end -}}
 

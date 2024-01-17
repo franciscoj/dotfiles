@@ -1,8 +1,8 @@
-{{- if .codespaces -}}
 #!/bin/sh
 
+{{ if .codespaces -}}
 set -e
 
 echo "Installing: bootstrapping neovim plugins ********************"
 ~/.local/bin/nvim --headless "+Lazy! sync" +qa
-{{end -}}
+{{ end -}}
