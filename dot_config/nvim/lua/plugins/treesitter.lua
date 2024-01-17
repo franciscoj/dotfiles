@@ -15,6 +15,7 @@ return {
 					"eex",
 					"elixir",
 					"go",
+					"graphql",
 					"heex",
 					"html",
 					"javascript",
