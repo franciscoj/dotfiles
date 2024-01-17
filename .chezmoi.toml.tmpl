@@ -5,7 +5,7 @@
 {{- $private_zsh_github_token:= env "PRIVATE_NVIM_GITHUB_TOKEN" -}}
 {{- $codespaces_repo:= env "GITHUB_REPOSITORY" -}}
 {{- $wsl:= and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-{{- $ubuntu:= and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "ubuntu") }}
+{{- $ubuntu:= and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "ubuntu") (not $codespaces) }}
 {{- $arch:= and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch") }}
 {{- $apt:= or $wsl $ubuntu }}
 
