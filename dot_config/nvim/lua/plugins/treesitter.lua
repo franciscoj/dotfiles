@@ -23,6 +23,7 @@ return {
 					"make",
 					"markdown",
 					"markdown_inline",
+					"query",
 					"regex",
 					"ruby",
 					"rust",
