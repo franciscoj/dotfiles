@@ -1,5 +1,5 @@
-{{ if .apt }}
 #!/bin/sh
+{{ if .apt }}
 
 set -e
 
@@ -10,4 +10,6 @@ sudo snap install --classic nvim
 echo "Installing: starship ********************"
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 sudo chsh -s /bin/zsh $(whoami)
+{{ else }}
+echo "Skipping APT packages"
 {{ end }}

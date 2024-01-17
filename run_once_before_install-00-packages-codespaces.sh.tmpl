@@ -1,5 +1,5 @@
-{{- if .codespaces -}}
 #!/bin/sh
+{{- if .codespaces -}}
 
 set -e
 
@@ -26,4 +26,6 @@ do
     $tic -xe alacritty,alacritty-direct - < alacritty.info && break
 done
 rm alacritty.info
+{{ else }}
+echo "Skipping codespaces packages"
 {{end -}}
