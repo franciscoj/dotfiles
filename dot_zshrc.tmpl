@@ -6,6 +6,9 @@
 export ZPLUG_HOME=$HOME/.config/zplug
 {{ if .arch }}
 source /usr/share/zsh/scripts/zplug/init.zsh
+{{ else if .darwin }}
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
+source $ZPLUG_HOME/init.zsh
 {{ else }}
 source $ZPLUG_HOME/init.zsh
 {{ end }}

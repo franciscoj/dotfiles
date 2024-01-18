@@ -8,6 +8,7 @@
 {{- $ubuntu:= and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "ubuntu") (not $codespaces) }}
 {{- $arch:= and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch") }}
 {{- $apt:= or $wsl $ubuntu }}
+{{- $darwin:= eq .chezmoi.os "darwin" }}
 
 [data]
   codespaces = {{ $codespaces }}
@@ -18,3 +19,4 @@
   ubuntu = {{ $ubuntu }}
   apt = {{ $apt }}
   arch = {{ $arch }}
+  darwin = {{ $darwin }}

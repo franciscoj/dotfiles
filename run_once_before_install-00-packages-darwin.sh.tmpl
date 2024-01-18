@@ -7,11 +7,8 @@ pip3 install --user pynvim
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
 tap "franciscoj/remote-development-manager"
 brew "autoconf"
@@ -32,7 +29,7 @@ brew "jq"
 brew "neovim"
 brew "openssl"
 brew "python"
-brew "remote-development-manager"
+brew "remote-development-manager", args: ["HEAD"]
 brew "ripgrep"
 brew "starship"
 brew "stylua"
@@ -47,15 +44,10 @@ brew "zoxide"
 cask "alacritty"
 cask "adobe-acrobat-reader"
 cask "docker"
-cask "firefox-developer-edition"
 cask "font-jetbrains-mono-nerd-font"
-cask "gimp"
 cask "raycast"
-cask "slack"
 cask "telegram"
 cask "visual-studio-code"
-cask "zoom"
-cask "zsa-wally"
 EOF
 
 {{ else -}}
