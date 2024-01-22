@@ -1,7 +1,7 @@
 return {
 	{
 		"olexsmir/gopher.nvim",
-		enabled = vim.g.started_by_firenvim ~= true,
+		enabled = not vim.g.started_by_firenvim,
 		ft = "go",
 		config = function()
 			local h = require("h")

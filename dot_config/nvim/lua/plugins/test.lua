@@ -1,7 +1,7 @@
 return {
 	{
 		"vim-test/vim-test",
-		enabled = vim.g.started_by_firenvim ~= true,
+		enabled = not vim.g.started_by_firenvim,
 		keys = {
 			{ "<leader>tf" },
 			{ "<leader>tl" },

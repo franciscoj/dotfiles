@@ -1,7 +1,7 @@
 return {
 	{
 		"pechorin/any-jump.vim",
-		enabled = vim.g.started_by_firenvim ~= true,
+		enabled = not vim.g.started_by_firenvim,
 		keys = {
 			-- FIXME: (@franciscoj 15/05/2023) Mode "x" doesn't really work
 			-- here, don't know why. I'll have to investigate a bit about it.

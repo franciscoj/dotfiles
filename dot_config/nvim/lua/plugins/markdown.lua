@@ -1,7 +1,7 @@
 return {
 	{
 		"iamcco/markdown-preview.nvim",
-		enabled = vim.g.started_by_firenvim ~= true,
+		enabled = not vim.g.started_by_firenvim,
 		ft = { "markdown" },
 		build = "cd app && yarn install",
 	},

@@ -1,7 +1,7 @@
 return {
 	{
 		"rcarriga/nvim-dap-ui",
-		enabled = vim.g.started_by_firenvim ~= true,
+		enabled = not vim.g.started_by_firenvim,
 		dependencies = { "mfussenegger/nvim-dap", "williamboman/mason.nvim" },
 		keys = {
 			{ "<leader>dd" },

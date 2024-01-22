@@ -3,7 +3,7 @@ local Config = {
 	["__on_attach"] = function(client, bufnr)
 		local builtin = require("telescope.builtin")
 		local h = require("h")
-		if vim.g.started_by_firenvim ~= true then
+		if not vim.g.started_by_firenvim then
 			local navic = require("nvim-navic")
 
 			if client.server_capabilities.documentSymbolProvider then

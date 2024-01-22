@@ -2,11 +2,17 @@ return {
 	{
 		"glacambre/firenvim",
 		config = function()
-			vim.g.firenvim_config.localSettings[".*"] = { takeover = "never" }
+			vim.g.firenvim_config = {
+				localSettings = {
+					[".*"] = {
+						takeover = "never",
+					},
+				},
+			}
 		end,
 		-- Lazy load firenvim
 		-- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
-		lazy = not vim.g.started_by_firenvim,
+		-- lazy = not vim.g.started_by_firenvim,
 		build = function()
 			vim.fn["firenvim#install"](0)
 		end,

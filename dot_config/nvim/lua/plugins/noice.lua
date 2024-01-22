@@ -6,7 +6,7 @@ return {
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
-		enabled = vim.g.started_by_firenvim ~= true,
+		enabled = not vim.g.started_by_firenvim,
 		config = function()
 			require("noice").setup({
 				cmdline = {

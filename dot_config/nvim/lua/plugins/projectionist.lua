@@ -1,7 +1,7 @@
 return {
 	{
 		"tpope/vim-projectionist",
-		enabled = vim.g.started_by_firenvim ~= true,
+		enabled = not vim.g.started_by_firenvim,
 		config = function()
 			local h = require("h")
 			vim.g.projectionist_heuristics = {
