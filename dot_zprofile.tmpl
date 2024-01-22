@@ -3,5 +3,6 @@
 # Load direnv. Use the full path on mac because :hankey:
 # https://github.com/Homebrew/legacy-homebrew/issues/44997#issuecomment-148630030 Also load local
 # configuration (provided files exist).
-eval "$(/usr/local/bin/direnv hook zsh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/direnv hook zsh)"
 {{ end }}
