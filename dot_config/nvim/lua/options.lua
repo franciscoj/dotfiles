@@ -91,3 +91,5 @@ if vim.env.CODESPACES then
 end
 
 vim.opt.laststatus = 3
+
+vim.cmd [[set guifont=JetBrainsMono\ Nerd\ Font:h20]]
