@@ -1,6 +1,7 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		event = { "VimEnter" },
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			"andymass/vim-matchup",
@@ -32,6 +33,7 @@ return {
 					"toml",
 					"tsx",
 					"typescript",
+					"vimdoc",
 					"yaml",
 				},
 				highlight = { enable = true },

@@ -1,5 +1,14 @@
 return {
 	"nvimtools/none-ls.nvim",
+	lazy = true,
+	ft = {
+		"go",
+		"json",
+		"lua",
+		"ruby",
+		"rust",
+		"yaml",
+	},
 	config = function()
 		local null_ls = require("null-ls")
 		local actions = null_ls.builtins.code_actions

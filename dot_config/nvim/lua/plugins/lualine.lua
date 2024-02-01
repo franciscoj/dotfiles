@@ -1,9 +1,9 @@
 return {
 	{
 		"nvim-lualine/lualine.nvim",
+		event = { "BufRead", "BufNewFile", "VimEnter" },
 		dependencies = {
 			"catppuccin",
-			"SmiteshP/nvim-navic",
 		},
 		config = function()
 			local line = require("lualine")
@@ -31,7 +31,6 @@ return {
 					no = { color = colors.green, abbr = "N" },
 					nov = { color = colors.green, abbr = "N" },
 					noV = { color = colors.green, abbr = "N" },
-					["no"] = { color = colors.green, abbr = "N" },
 					niI = { color = colors.green, abbr = "N" },
 					niR = { color = colors.green, abbr = "N" },
 					niV = { color = colors.green, abbr = "N" },
@@ -42,11 +41,8 @@ return {
 					vs = { color = colors.blue, abbr = "v" },
 					V = { color = colors.blue, abbr = "V" },
 					Vs = { color = colors.blue, abbr = "V" },
-					[""] = { color = colors.blue, abbr = "" },
-					["s"] = { color = colors.blue, abbr = "" },
 					s = { color = colors.orange, abbr = "s" },
 					S = { color = colors.orange, abbr = "S" },
-					[""] = { color = colors.orange, abbr = "" },
 
 					-- Insert
 					i = { color = colors.red, abbr = "I" },
@@ -169,7 +165,6 @@ return {
 					lualine_c = {
 						{ "filename", path = 1 },
 						{ "diff", symbols = { added = "+", modified = "~", removed = "-" } },
-						{ "navic" },
 					},
 				},
 				inactive_winbar = {

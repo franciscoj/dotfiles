@@ -1,62 +1,40 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
+		ft = {
+			"elixir",
+			"go",
+			"javascript",
+			"json",
+			"lua",
+			"markdown",
+			"ruby",
+			"rust",
+			"typescript",
+			"yaml",
+		},
 		dependencies = {
 			"folke/neoconf.nvim",
 			"folke/neodev.nvim",
 			"folke/trouble.nvim",
 			"williamboman/mason.nvim",
 		},
+		lazy = true,
 		config = function()
 			require("neoconf").setup({})
 			require("franciscoj.lsp.configs")
 		end,
 	},
 	{
-		"SmiteshP/nvim-navic",
-		enabled = not vim.g.started_by_firenvim,
-		config = function()
-			require("nvim-navic").setup({
-				highlight = true,
-				icons = {
-					File = " ",
-					Module = " ",
-					Namespace = " ",
-					Package = " ",
-					Class = " ",
-					Method = " ",
-					Property = " ",
-					Field = " ",
-					Constructor = " ",
-					Enum = " ",
-					Interface = " ",
-					Function = " ",
-					Variable = " ",
-					Constant = " ",
-					String = " ",
-					Number = " ",
-					Boolean = " ",
-					Array = " ",
-					Object = " ",
-					Key = " ",
-					Null = " ",
-					EnumMember = " ",
-					Struct = " ",
-					Event = " ",
-					Operator = " ",
-					TypeParameter = " ",
-				},
-			})
-		end,
-	},
-	{
 		"folke/trouble.nvim",
+		lazy = true,
 		config = function()
 			require("trouble").setup({})
 		end,
 	},
 	{
 		"williamboman/mason.nvim",
+		lazy = true,
 		dependencies = { "williamboman/mason-lspconfig.nvim" },
 		config = function()
 			local features = require("franciscoj.lsp.features")

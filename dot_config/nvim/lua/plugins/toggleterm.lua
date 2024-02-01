@@ -3,10 +3,13 @@ local math = require("math")
 return {
 	{
 		"akinsho/toggleterm.nvim",
+		lazy = true,
+		keys = {
+			{ "<leader><ESC>", [[<CMD>:ToggleTerm<CR>]] },
+			{ mode = "t", "<leader><ESC>", [[<C-\><C-N><CMD>:ToggleTerm<CR>]] },
+			{ mode = "t", "<LocalLeader><ESC>", [[<C-\><C-N>]] },
+		},
 		config = function()
-			vim.keymap.set("n", "<leader><ESC>", [[<CMD>:ToggleTerm<CR>]])
-			vim.keymap.set("t", "<leader><ESC>", [[<C-\><C-N><CMD>:ToggleTerm<CR>]])
-			vim.keymap.set("t", "<LocalLeader><ESC>", [[<C-\><C-N>]])
 			require("toggleterm").setup({
 				direction = "float",
 				float_opts = {

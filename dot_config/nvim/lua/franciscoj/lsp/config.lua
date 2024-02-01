@@ -1,15 +1,8 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local Config = {
-	["__on_attach"] = function(client, bufnr)
+	["__on_attach"] = function(client, _bufnr)
 		local builtin = require("telescope.builtin")
 		local h = require("h")
-		if not vim.g.started_by_firenvim then
-			local navic = require("nvim-navic")
-
-			if client.server_capabilities.documentSymbolProvider then
-				navic.attach(client, bufnr)
-			end
-		end
 
 		-- Using LSP defaults
 		h.nnoremap("gD", vim.lsp.buf.declaration)

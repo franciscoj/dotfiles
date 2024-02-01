@@ -31,6 +31,10 @@ return {
 	"cohama/lexima.vim",
 	{
 		"folke/zen-mode.nvim",
+		lazy = true,
+		keys = {
+			{ "<leader>zz", "<cmd>ZenMode<cr>" },
+		},
 		config = function()
 			local h = require("h")
 
@@ -40,8 +44,6 @@ return {
 					gitsigns = { enabled = true },
 				},
 			})
-
-			h.nnoremap("<leader>zz", "<cmd>ZenMode<cr>")
 		end,
 	},
 	{
