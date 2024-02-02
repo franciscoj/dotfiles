@@ -1,22 +1,13 @@
-if vim.g.started_by_firenvim then
-	return {}
-end
-
 return {
 	{
 		"stevearc/overseer.nvim",
+		enabled = not vim.g.started_by_firenvim,
 		keys = {
-			{ "<leader>T" },
-			{ "<leader>O" },
+			{ "<leader>T", "<CMD>OverseerRun<CR>" },
+			{ "<leader>O", "<CMD>OverseerToggle<CR>" },
 		},
 		config = function()
-			local h = require("h")
-
-			h.nnoremap("<leader>T", "<CMD>OverseerRun<CR>")
-			h.nnoremap("<leader>O", "<CMD>OverseerToggle<CR>")
-			require("overseer").setup({
-				strategy = "toggleterm",
-			})
+			require("overseer").setup({ strategy = "toggleterm" })
 		end,
 	},
 }

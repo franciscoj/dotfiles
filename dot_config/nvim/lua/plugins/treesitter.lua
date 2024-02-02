@@ -1,12 +1,12 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		event = { "VimEnter" },
+		event = { "VeryLazy" },
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			"andymass/vim-matchup",
 		},
-		build = ":TSUpdate",
+		build = ":TSUpdateSync",
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {

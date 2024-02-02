@@ -7,14 +7,15 @@ return {
 			"tpope/vim-git",
 			"tpope/vim-rhubarb",
 		},
-		config = function()
-			vim.keymap.set("n", "<leader>gg", ":Git<space>")
-			vim.keymap.set("n", "<leader>gs", ":Git<cr>")
-			vim.keymap.set("n", "<leader>gb", ":Git blame<cr>")
-			vim.keymap.set("n", "<leader>go", ":GBrowse<CR>")
-			vim.keymap.set("n", "<leader>gr", ":Git rebase -i main")
-			vim.keymap.set("v", "<leader>go", ":'<,'>GBrowse<CR>")
-		end,
+		keys = {
+			{ "<leader>gg", ":Git<space>" },
+			{ "<leader>gs", "<cmd>Git<cr>" },
+			{ "<leader>gb", "<cmd>Git blame<cr>" },
+			{ "<leader>go", "<cmd>GBrowse<CR>" },
+			{ "<leader>gr", ":Git rebase -i main" },
+			{ "<leader>go", "<cmd>'<,'>GBrowse<CR>" },
+		},
+		ft = "git",
 	},
 	{
 		"junegunn/gv.vim",
@@ -30,6 +31,7 @@ return {
 	},
 	{
 		"lewis6991/gitsigns.nvim",
+		event = "VeryLazy",
 		enabled = not vim.g.started_by_firenvim,
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()

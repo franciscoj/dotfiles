@@ -2,6 +2,7 @@ return {
 	{
 		"akinsho/bufferline.nvim",
 		enabled = not vim.g.started_by_firenvim,
+		event = "VeryLazy",
 		config = function()
 			local h = require("h")
 			local bufferline = require("bufferline")

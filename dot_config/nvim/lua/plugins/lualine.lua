@@ -1,6 +1,7 @@
 return {
 	{
 		"nvim-lualine/lualine.nvim",
+		enabled = not vim.g.started_by_firenvim,
 		event = { "BufRead", "BufNewFile", "VimEnter" },
 		dependencies = {
 			"catppuccin",
