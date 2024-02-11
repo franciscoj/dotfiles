@@ -117,6 +117,17 @@ return {
 			}
 
 			line.setup({
+				extensions = {
+					"fern",
+					"fugitive",
+					"man",
+					"mason",
+					"mundo",
+					"overseer",
+					"quickfix",
+					"toggleterm",
+					"trouble",
+				},
 				options = {
 					-- Disable sections and component separators
 					component_separators = "",
@@ -135,6 +146,7 @@ return {
 							"diagnostics",
 							sources = { "nvim_diagnostic" },
 							symbols = { error = " ", warn = " ", info = " " },
+							always_visible = true,
 						},
 						{ "branch", icon = "" },
 						"diff",
@@ -146,7 +158,7 @@ return {
 						},
 						{ lsp, padding = { left = 0 } },
 					},
-					lualine_x = { "enconding", "fileformat", "location", "progress" },
+					lualine_x = { "searchcount", "enconding", "fileformat", "location", "progress" },
 					lualine_y = {},
 					lualine_z = {},
 				},
