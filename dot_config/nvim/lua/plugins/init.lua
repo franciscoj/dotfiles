@@ -3,12 +3,14 @@ return {
 	-- QOL plugins
 	{
 		"numToStr/Comment.nvim",
+		event = { "VeryLazy" },
 		config = function()
 			require("Comment").setup()
 		end,
 	},
 	{
 		"kylechui/nvim-surround",
+		event = { "VeryLazy" },
 		config = function()
 			require("nvim-surround").setup()
 		end,
@@ -23,12 +25,16 @@ return {
 	"tpope/vim-vinegar",
 	{
 		"AndrewRadev/splitjoin.vim",
+		event = { "VeryLazy" },
 		config = function()
 			vim.g.splitjoin_ruby_curly_braces = false
 			vim.g.splitjoin_ruby_hanging_args = false
 		end,
 	},
-	"cohama/lexima.vim",
+	{
+		"cohama/lexima.vim",
+		event = { "VeryLazy" },
+	},
 	{
 		"folke/zen-mode.nvim",
 		lazy = true,
@@ -36,8 +42,6 @@ return {
 			{ "<leader>zz", "<cmd>ZenMode<cr>" },
 		},
 		config = function()
-			local h = require("h")
-
 			require("zen-mode").setup({
 				window = { width = 100 },
 				plugins = {
@@ -48,16 +52,17 @@ return {
 	},
 	{
 		"simnalamburt/vim-mundo",
-		config = function()
-			vim.keymap.set("n", "<leader>U", "<cmd>MundoToggle<cr>")
-		end,
+		keys = {
+			{ "<leader>U", "<cmd>MundoToggle<cr>" },
+		},
 	},
 	{
 		"junegunn/vim-easy-align",
-		config = function()
-			vim.keymap.set("n", "ga", "<Plug>(EasyAlign)")
-			vim.keymap.set("x", "ga", "<Plug>(EasyAlign)")
-		end,
+		keys = {
+			{ "ga", "<Plug>(EasyAlign)", mode = "n" },
+			{ "ga", "<Plug>(EasyAlign)", mode = "x" },
+		},
+		config = function() end,
 	},
 	{ dir = "~/.config/private.nvim/" },
 }

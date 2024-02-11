@@ -34,7 +34,6 @@ return {
 					fern = true,
 					gitsigns = true,
 					hop = true,
-					indent_blankline = true,
 					lsp_trouble = true,
 					markdown = true,
 					mason = true,

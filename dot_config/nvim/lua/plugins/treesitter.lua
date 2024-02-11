@@ -15,6 +15,7 @@ return {
 					"dockerfile",
 					"eex",
 					"elixir",
+					"glimmer",
 					"go",
 					"graphql",
 					"heex",
