@@ -9,10 +9,19 @@ return {
 		end,
 	},
 	{
-		"kylechui/nvim-surround",
+		"echasnovski/mini.surround",
+		version = "*",
 		event = { "VeryLazy" },
 		config = function()
-			require("nvim-surround").setup()
+			require("mini.surround").setup()
+		end,
+	},
+	{
+		"echasnovski/mini.pairs",
+		version = "*",
+		event = { "VeryLazy" },
+		config = function()
+			require("mini.pairs").setup()
 		end,
 	},
 	-- praise tpope section
@@ -30,10 +39,6 @@ return {
 			vim.g.splitjoin_ruby_curly_braces = false
 			vim.g.splitjoin_ruby_hanging_args = false
 		end,
-	},
-	{
-		"cohama/lexima.vim",
-		event = { "VeryLazy" },
 	},
 	{
 		"folke/zen-mode.nvim",
