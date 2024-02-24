@@ -45,8 +45,8 @@ return {
 		}
 
 		if features.typescript then
-			table.insert(sources, diagnostics.tsc)
-			table.insert(sources, diagnostics.eslint)
+			table.insert(sources, diagnostics.tsc.with({ prefer_local = "node_modules/.bin" }))
+			table.insert(sources, diagnostics.eslint.with({ prefer_local = "node_modules/.bin" }))
 			table.insert(sources, formatting.prettier)
 		end
 
@@ -67,8 +67,8 @@ return {
 		end
 
 		if features.rubocop then
-			table.insert(sources, diagnostics.rubocop.with({ timeout = 5000 }))
-			table.insert(sources, formatting.rubocop.with({ timeout = 5000 }))
+			table.insert(sources, diagnostics.rubocop.with({ timeout = 5000, prefer_local = "bin" }))
+			table.insert(sources, formatting.rubocop.with({ timeout = 5000, prefer_local = "bin" }))
 		end
 
 		local cfg = Config:new({ sources = sources })
