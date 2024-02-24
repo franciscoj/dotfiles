@@ -24,3 +24,4 @@ elm.js
 .solargraph.yml
 .ignore
 bin/myci
+.rgignore
