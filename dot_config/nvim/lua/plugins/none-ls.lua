@@ -45,6 +45,7 @@ return {
 		}
 
 		if features.typescript then
+			table.insert(sources, diagnostics.tsc)
 			table.insert(sources, diagnostics.eslint)
 			table.insert(sources, formatting.prettier)
 		end
