@@ -3,10 +3,12 @@ return {
 	lazy = true,
 	ft = {
 		"go",
+		"javascript",
 		"json",
 		"lua",
 		"ruby",
 		"rust",
+		"typescript",
 		"yaml",
 	},
 	config = function()
@@ -18,11 +20,16 @@ return {
 		local features = require("franciscoj.lsp.features")
 		local mason = require("franciscoj.mason")
 
-		local ensure = {
-			{ name = "stylua" },
-			{ name = "prettier" },
-			{ name = "luacheck" },
-		}
+		local ensure = {}
+
+		if features.typescript then
+			table.insert(ensure, { name = "prettier" })
+		end
+
+		if features.lua then
+			table.insert(ensure, { name = "stylua" })
+			table.insert(ensure, { name = "luacheck" })
+		end
 
 		if features.go then
 			table.insert(ensure, { name = "goimports", version = "latest" })
@@ -31,24 +38,39 @@ return {
 
 		mason.ensure_tools(ensure)
 
-		local cfg = Config:new({
-			sources = {
-				actions.gitsigns,
-				actions.gomodifytags,
-				actions.impl,
-				diagnostics.eslint,
-				diagnostics.golangci_lint,
-				diagnostics.luacheck,
-				diagnostics.rubocop.with({ timeout = 5000 }),
-				formatting.goimports,
-				formatting.prettier,
-				formatting.rubocop.with({ timeout = 5000 }),
-				formatting.rustfmt,
-				formatting.stylua,
-				formatting.trim_newlines,
-				formatting.trim_whitespace,
-			},
-		})
+		local sources = {
+			actions.gitsigns,
+			formatting.trim_newlines,
+			formatting.trim_whitespace,
+		}
+
+		if features.typescript then
+			table.insert(features, diagnostics.eslint)
+			table.insert(features, formatting.prettier)
+		end
+
+		if features.lua then
+			table.insert(features, formatting.stylua)
+			table.insert(features, diagnostics.luacheck)
+		end
+
+		if features.go then
+			table.insert(features, actions.gomodifytags)
+			table.insert(features, actions.impl)
+			table.insert(features, formatting.goimports)
+			table.insert(features, diagnostics.golangci_lint)
+		end
+
+		if features.rust then
+			table.insert(features, formatting.rustfmt)
+		end
+
+		if features.rubocop then
+			table.insert(features, diagnostics.rubocop.with({ timeout = 5000 }))
+			table.insert(features, formatting.rubocop.with({ timeout = 5000 }))
+		end
+
+		local cfg = Config:new({ sources = sources })
 		null_ls.setup(cfg:to_lspconfig())
 	end,
 }

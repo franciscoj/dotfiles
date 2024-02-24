@@ -10,15 +10,16 @@ local detect = function(file)
 end
 
 return {
-	-- Elixir
 	elixir = detect("mix.exs"),
-	-- Go
 	go = detect("go.mod"),
-	-- JS/TS
-	typescript = detect("package.json"),
-	-- Ruby
-	ruby = detect("Gemfile"),
-	rubocop = vim.fn.executable("bin/rubocop") == 1,
+	lua = detect(".luacheckrc"),
 	rust = detect("Cargo.toml"),
+	typescript = detect("package.json"),
+	tailwind = detect("tailwind.config.js"),
+
+	-- Ruby
+	ruby_ls = vim.fn.executable("ruby-lsp") == 1,
+	rubocop = vim.fn.executable("bin/rubocop") == 1,
+	ruby = detect("Gemfile"),
 	sorbet = vim.fn.executable("bin/srb") == 1,
 }

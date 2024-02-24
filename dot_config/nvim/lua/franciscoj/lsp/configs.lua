@@ -16,11 +16,11 @@ if features.elixir then
 	lspconfig.elixirls.setup(cfg:to_lspconfig())
 end
 
-if features.ruby then
+if features.ruby_ls then
 	lspconfig.ruby_ls.setup(cfg:to_lspconfig())
 end
 
-if features.typescript then
+if features.tailwind then
 	lspconfig.tailwindcss.setup(cfg:to_lspconfig())
 end
 

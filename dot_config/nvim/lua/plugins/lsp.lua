@@ -58,6 +58,9 @@ return {
 
 			if features.typescript then
 				table.insert(ensure, "tsserver")
+			end
+
+			if features.tailwind then
 				table.insert(ensure, "tailwindcss")
 			end
 
