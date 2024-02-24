@@ -34,7 +34,7 @@ local comment = function(trigger, opts)
 end
 
 ls.add_snippets("all", {
-	comment("fix", { t("FIXME"), t("NOTE"), t("TODO") }),
+	comment("fixme", { t("FIXME"), t("NOTE"), t("TODO") }),
 	comment("note", { t("NOTE"), t("TODO"), t("FIXME") }),
 	comment("todo", { t("TODO"), t("NOTE"), t("FIXME") }),
 })
