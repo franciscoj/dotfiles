@@ -37,6 +37,9 @@ vim.keymap.set("i", "jj", "<esc>")
 vim.keymap.set("x", "<", "<gv")
 vim.keymap.set("x", ">", ">gv")
 
+-- Easy add ::
+vim.keymap.set("i", ";;", "::")
+
 -- Neovim config
 
 require("franciscoj.reload")
