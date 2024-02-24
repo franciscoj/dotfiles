@@ -45,29 +45,29 @@ return {
 		}
 
 		if features.typescript then
-			table.insert(features, diagnostics.eslint)
-			table.insert(features, formatting.prettier)
+			table.insert(sources, diagnostics.eslint)
+			table.insert(sources, formatting.prettier)
 		end
 
 		if features.lua then
-			table.insert(features, formatting.stylua)
-			table.insert(features, diagnostics.luacheck)
+			table.insert(sources, formatting.stylua)
+			table.insert(sources, diagnostics.luacheck)
 		end
 
 		if features.go then
-			table.insert(features, actions.gomodifytags)
-			table.insert(features, actions.impl)
-			table.insert(features, formatting.goimports)
-			table.insert(features, diagnostics.golangci_lint)
+			table.insert(sources, actions.gomodifytags)
+			table.insert(sources, actions.impl)
+			table.insert(sources, formatting.goimports)
+			table.insert(sources, diagnostics.golangci_lint)
 		end
 
 		if features.rust then
-			table.insert(features, formatting.rustfmt)
+			table.insert(sources, formatting.rustfmt)
 		end
 
 		if features.rubocop then
-			table.insert(features, diagnostics.rubocop.with({ timeout = 5000 }))
-			table.insert(features, formatting.rubocop.with({ timeout = 5000 }))
+			table.insert(sources, diagnostics.rubocop.with({ timeout = 5000 }))
+			table.insert(sources, formatting.rubocop.with({ timeout = 5000 }))
 		end
 
 		local cfg = Config:new({ sources = sources })
