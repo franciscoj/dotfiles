@@ -25,3 +25,4 @@ elm.js
 .ignore
 bin/myci
 .rgignore
+.editorconfig
