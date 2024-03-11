@@ -3,7 +3,7 @@
 {{if (eq .chezmoi.os "darwin") -}}
 set -e
 
-pip3 install --user pynvim
+# pip3 install --user pynvim
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
 tap "franciscoj/remote-development-manager"
@@ -12,18 +12,18 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "oven-sh/bun"
-brew "autoconf"
-brew "coreutils"
-brew "openssl@3"
 brew "asdf"
+brew "autoconf"
 brew "bash"
 brew "bat"
 brew "chezmoi"
+brew "coreutils"
 brew "deno"
 brew "direnv"
 brew "elixir"
 brew "eza"
 brew "fd"
+brew "franciscoj/remote-development-manager/remote-development-manager", args: ["HEAD"]
 brew "fzf"
 brew "gh"
 brew "git-extras"
@@ -35,6 +35,8 @@ brew "jq"
 brew "luarocks"
 brew "neovim"
 brew "node"
+brew "openssl@3"
+brew "oven-sh/bun/bun"
 brew "python@3.11"
 brew "ripgrep"
 brew "starship"
@@ -48,8 +50,6 @@ brew "zellij"
 brew "zoxide"
 brew "zplug"
 brew "zsh"
-brew "franciscoj/remote-development-manager/remote-development-manager", args: ["HEAD"]
-brew "oven-sh/bun/bun"
 cask "adobe-acrobat-reader"
 cask "alacritty"
 cask "docker"
