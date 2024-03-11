@@ -48,8 +48,6 @@ return {
 
 		local sources = {
 			actions.gitsigns,
-			formatting.trim_newlines,
-			formatting.trim_whitespace,
 		}
 
 		if features.typescript then
