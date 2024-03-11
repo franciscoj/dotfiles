@@ -57,6 +57,7 @@ return {
 			end
 
 			if features.typescript then
+				table.insert(ensure, "eslint_lsp")
 				table.insert(ensure, "tsserver")
 			end
 

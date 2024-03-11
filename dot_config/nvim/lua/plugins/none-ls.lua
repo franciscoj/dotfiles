@@ -11,13 +11,21 @@ return {
 		"typescript",
 		"yaml",
 	},
+	dependencies = {
+		"gbprod/none-ls-luacheck.nvim",
+	},
 	config = function()
+		local features = require("franciscoj.lsp.features")
 		local null_ls = require("null-ls")
+
+		if features.lua then
+			null_ls.register(require("none-ls-luacheck.diagnostics.luacheck"))
+		end
+
 		local actions = null_ls.builtins.code_actions
 		local diagnostics = null_ls.builtins.diagnostics
 		local Config = require("franciscoj.lsp.config")
 		local formatting = null_ls.builtins.formatting
-		local features = require("franciscoj.lsp.features")
 		local mason = require("franciscoj.mason")
 
 		local ensure = {}
@@ -45,8 +53,6 @@ return {
 		}
 
 		if features.typescript then
-			table.insert(sources, diagnostics.tsc.with({ prefer_local = "node_modules/.bin" }))
-			table.insert(sources, diagnostics.eslint.with({ prefer_local = "node_modules/.bin" }))
 			table.insert(sources, formatting.prettier)
 		end
 
