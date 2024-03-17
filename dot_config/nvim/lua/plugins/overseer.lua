@@ -6,6 +6,9 @@ return {
 			{ "<leader>T", "<CMD>OverseerRun<CR>" },
 			{ "<leader>O", "<CMD>OverseerToggle<CR>" },
 		},
+		dependencies = {
+			"akinsho/toggleterm.nvim",
+		},
 		config = function()
 			require("overseer").setup({ strategy = "toggleterm" })
 		end,

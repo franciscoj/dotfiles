@@ -7,6 +7,9 @@ return {
 			{ "<leader>tl" },
 			{ "<leader>tr" },
 		},
+		dependencies = {
+			"akinsho/toggleterm.nvim",
+		},
 		config = function()
 			local h = require("h")
 
