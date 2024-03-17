@@ -7,9 +7,6 @@ return {
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
 		keys = {
-			{ "<leader>f" },
-			{ "<leader>g" },
-			{ "<leader>F" },
 			{ "<LocalLeader>m" },
 			{ "<LocalLeader>'" },
 			{ "<leader>B" },
@@ -22,9 +19,6 @@ return {
 			local builtin = require("telescope.builtin")
 			local themes = require("telescope.themes")
 
-			vim.keymap.set("n", "<leader>f", builtin.find_files)
-			vim.keymap.set("n", "<leader>g", builtin.live_grep)
-			vim.keymap.set("n", "<leader>F", builtin.resume)
 			vim.keymap.set("n", "<LocalLeader>m", builtin.marks)
 			vim.keymap.set("n", "<LocalLeader>'", function()
 				builtin.registers(themes.get_cursor())
