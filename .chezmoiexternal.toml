@@ -6,7 +6,7 @@
 
 {{ if or .codespaces .wsl .ubuntu }}
 
-{{ $ezaVersion := "v0.17.0" }}
+{{ $ezaVersion := "v0.18.7" -}}
 [".local/bin/eza"]
   type = "archive-file"
   url = "https://github.com/eza-community/eza/releases/download/{{ $ezaVersion }}/eza_x86_64-unknown-linux-musl.zip"
@@ -17,6 +17,12 @@
   type = "archive-file"
   url = "https://github.com/zellij-org/zellij/releases/download/{{ $zellijVersion }}/zellij-x86_64-unknown-linux-musl.tar.gz"
   path = "zellij"
+
+{{ $fzfVersion := "0.48.1" -}}
+[".local/bin/fzf"]
+  type = "archive-file"
+  url = "https://github.com/junegunn/fzf/releases/download/{{ $fzfVersion }}/fzf-{{ $fzfVersion }}-linux_amd64.tar.gz"
+  path = "fzf"
 
 [".config/zplug"]
 	type = "git-repo"
