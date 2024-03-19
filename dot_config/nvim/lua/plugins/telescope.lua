@@ -7,37 +7,19 @@ return {
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
 		keys = {
-			{ "<LocalLeader>m" },
-			{ "<LocalLeader>'" },
-			{ "<leader>B" },
-			{ "<leader>h" },
+			{ "<leader>fr" },
 		},
 		config = function()
-			local action_layout = require("telescope.actions.layout")
-			local trouble = require("trouble.providers.telescope")
 			local telescope = require("telescope")
 			local builtin = require("telescope.builtin")
 			local themes = require("telescope.themes")
 
-			vim.keymap.set("n", "<LocalLeader>m", builtin.marks)
-			vim.keymap.set("n", "<LocalLeader>'", function()
+			vim.keymap.set("n", "<leader>fr", function()
 				builtin.registers(themes.get_cursor())
 			end)
-			vim.keymap.set("n", "<leader>B", builtin.buffers)
-			vim.keymap.set("n", "<leader>h", builtin.help_tags)
 
 			telescope.setup({
 				defaults = {
-					mappings = {
-						n = {
-							["<M-p>"] = action_layout.toggle_preview,
-							["<C-t>"] = trouble.open_with_trouble,
-						},
-						i = {
-							["<M-p>"] = action_layout.toggle_preview,
-							["<C-t>"] = trouble.open_with_trouble,
-						},
-					},
 					layout_config = {
 						width = 0.9,
 						height = 0.9,

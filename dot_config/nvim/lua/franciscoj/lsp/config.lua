@@ -21,11 +21,10 @@ local Config = {
 		-- end)
 
 		-- Using Telescope
-		h.nnoremap("<LocalLeader>o", builtin.lsp_dynamic_workspace_symbols)
+		h.nnoremap("<leader>fo", builtin.lsp_dynamic_workspace_symbols)
 		h.nnoremap("gr", builtin.lsp_references)
 		h.nnoremap("gi", builtin.lsp_implementations)
 		h.nnoremap("<LocalLeader>a", vim.lsp.buf.code_action)
-		-- h.xnoremap("<LocalLeader>a", vim.lsp.buf.range_code_action)
 
 		-- Using trouble.nvim
 		h.nnoremap("<LocalLeader>d", "<cmd>TroubleToggle document_diagnostics<CR>")

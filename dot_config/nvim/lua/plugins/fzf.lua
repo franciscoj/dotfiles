@@ -8,6 +8,7 @@ return {
 			{ "<leader>fg" },
 			{ "<leader>fG" },
 			{ "<leader>gf" },
+			{ "<leader>fm" },
 		},
 		config = function()
 			local fzf = require("fzf-lua")
@@ -36,6 +37,7 @@ return {
 			vim.keymap.set("n", "<leader>fg", fzf.live_grep)
 			vim.keymap.set("n", "<leader>fG", fzf.grep)
 			vim.keymap.set("n", "<leader>gf", fzf.git_status)
+			vim.keymap.set("n", "<leader>fm", fzf.marks)
 		end,
 	},
 }
