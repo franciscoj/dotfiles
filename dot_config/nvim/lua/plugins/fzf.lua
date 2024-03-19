@@ -4,9 +4,10 @@ return {
 		-- optional for icon support
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
-			{ "<leader>f" },
-			{ "<leader>g" },
-			{ "<leader>G" },
+			{ "<leader>ff" },
+			{ "<leader>fg" },
+			{ "<leader>fG" },
+			{ "<leader>gf" },
 		},
 		config = function()
 			local fzf = require("fzf-lua")
@@ -31,9 +32,10 @@ return {
 			})
 			-- calling `setup` is optional for customization
 
-			vim.keymap.set("n", "<leader>f", fzf.files)
-			vim.keymap.set("n", "<leader>g", fzf.live_grep)
-			vim.keymap.set("n", "<leader>G", fzf.grep)
+			vim.keymap.set("n", "<leader>ff", fzf.files)
+			vim.keymap.set("n", "<leader>fg", fzf.live_grep)
+			vim.keymap.set("n", "<leader>fG", fzf.grep)
+			vim.keymap.set("n", "<leader>gf", fzf.git_status)
 		end,
 	},
 }
