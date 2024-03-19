@@ -2,6 +2,7 @@ local h = require("h")
 
 -- Easily add ending characters
 h.nnoremap("<leader>,", "mzA,<esc>`z:delm z<cr>")
+h.nnoremap("<leader>.", "mzA.<esc>`z:delm z<cr>")
 h.nnoremap("<leader>;", "mzA;<esc>`z:delm z<cr>")
 h.nnoremap("<leader>:", "mzA:<esc>`z:delm z<cr>")
 
