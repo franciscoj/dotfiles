@@ -13,13 +13,6 @@ local Config = {
 		h.nnoremap("<LocalLeader>k", vim.lsp.buf.signature_help)
 		h.nnoremap("<LocalLeader>r", vim.lsp.buf.rename)
 
-		-- I'm not sure why these are for
-		-- h.nnoremap("<LocalLeader>wa", vim.lsp.buf.add_workspace_folder)
-		-- h.nnoremap("<LocalLeader>wr", vim.lsp.buf.remove_workspace_folder)
-		-- h.nnoremap("<LocalLeader>wl", function()
-		-- 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-		-- end)
-
 		-- Using Telescope
 		h.nnoremap("<leader>fo", builtin.lsp_dynamic_workspace_symbols)
 		h.nnoremap("gr", builtin.lsp_references)
