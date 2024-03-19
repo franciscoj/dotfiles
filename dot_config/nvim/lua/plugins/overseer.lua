@@ -10,7 +10,10 @@ return {
 			"akinsho/toggleterm.nvim",
 		},
 		config = function()
-			require("overseer").setup({ strategy = "toggleterm" })
+			require("overseer").setup({ strategy = {
+				"toggleterm",
+				direction = "tab"
+			} })
 		end,
 	},
 }
