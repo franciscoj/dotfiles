@@ -41,8 +41,16 @@ vim.keymap.set("x", ">", ">gv")
 -- Easy add ::
 vim.keymap.set("i", ";;", "::")
 
--- Neovim config
+-- Load session in case it exists
+vim.keymap.set("n", "<leader>sl", function()
+	if vim.fn.getftype("Session.vim") ~= "" then
+		vim.cmd [[source Session.vim]]
+	else
+		print("No Session.vim file")
+	end
+end)
 
+-- Neovim config
 require("franciscoj.reload")
 h.nnoremap("<leader>vr", "<cmd>lua ReloadConfig()<CR>")
 h.nnoremap("<Leader>ve", ":e $MYVIMRC<CR>")
