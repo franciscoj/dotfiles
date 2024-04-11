@@ -24,6 +24,9 @@ if features.tailwind then
 	lspconfig.tailwindcss.setup(cfg:to_lspconfig())
 end
 
+if features.ansible then
+	lspconfig.ansiblels.setup(cfg:to_lspconfig())
+end
 
 lspconfig.marksman.setup(cfg:to_lspconfig())
 lspconfig.jsonls.setup(cfg:to_lspconfig())

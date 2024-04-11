@@ -16,6 +16,7 @@ return {
 	rust = detect("Cargo.toml"),
 	typescript = detect("package.json"),
 	tailwind = detect("tailwind.config.js"),
+	ansible = detect("playbook.yml"),
 
 	-- Ruby
 	ruby_ls = vim.fn.executable("ruby-lsp") == 1,

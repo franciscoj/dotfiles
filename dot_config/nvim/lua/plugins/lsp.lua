@@ -69,6 +69,10 @@ return {
 				table.insert(ensure, "rust_analyzer")
 			end
 
+			if features.ansible then
+				table.insert(ensure, "ansible_ls")
+			end
+
 			require("mason-lspconfig").setup({ ensure_installed = ensure })
 		end,
 	},
