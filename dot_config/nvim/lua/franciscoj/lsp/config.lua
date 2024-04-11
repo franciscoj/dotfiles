@@ -1,8 +1,8 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local Config = {
 	["__on_attach"] = function(client, _bufnr)
-		local builtin = require("telescope.builtin")
 		local h = require("h")
+		local fzf = require("fzf-lua")
 
 		-- Using LSP defaults
 		h.nnoremap("gD", vim.lsp.buf.declaration)
@@ -12,12 +12,12 @@ local Config = {
 		h.nnoremap("K", vim.lsp.buf.hover)
 		h.nnoremap("<LocalLeader>k", vim.lsp.buf.signature_help)
 		h.nnoremap("<LocalLeader>r", vim.lsp.buf.rename)
-
-		-- Using Telescope
-		h.nnoremap("<leader>fo", builtin.lsp_dynamic_workspace_symbols)
-		h.nnoremap("gr", builtin.lsp_references)
-		h.nnoremap("gi", builtin.lsp_implementations)
 		h.nnoremap("<LocalLeader>a", vim.lsp.buf.code_action)
+
+		-- Using fzf-lua
+		h.nnoremap("<leader>fo", fzf.lsp_workspace_symbols)
+		h.nnoremap("gr", fzf.lsp_references)
+		h.nnoremap("gi", fzf.lsp_implementations)
 
 		-- Using trouble.nvim
 		h.nnoremap("<LocalLeader>d", "<cmd>TroubleToggle document_diagnostics<CR>")
