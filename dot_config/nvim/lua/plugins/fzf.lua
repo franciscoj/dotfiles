@@ -4,14 +4,14 @@ return {
 		-- optional for icon support
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
-			{ "<leader>fG" },
-			{ "<leader>fb" },
-			{ "<leader>ff" },
-			{ "<leader>fg" },
-			{ "<leader>fm" },
-			{ "<leader>fr" },
-			{ "<leader>gf" },
-			{ "i", "<localleader>'" },
+			"<leader>fG",
+			"<leader>fb",
+			"<leader>ff",
+			"<leader>fg",
+			"<leader>fm",
+			"<leader>fr",
+			"<leader>gf",
+			{ "<localleader>'", mode = "i" },
 		},
 		config = function()
 			local fzf = require("fzf-lua")

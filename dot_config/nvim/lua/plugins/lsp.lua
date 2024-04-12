@@ -18,6 +18,7 @@ return {
 			"folke/neodev.nvim",
 			"folke/trouble.nvim",
 			"williamboman/mason.nvim",
+			"ibhagwan/fzf-lua",
 		},
 		lazy = true,
 		config = function()
