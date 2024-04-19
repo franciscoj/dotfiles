@@ -8,14 +8,21 @@ return {
 			"tpope/vim-rhubarb",
 		},
 		keys = {
-			{ "<leader>gg", ":Git<space>" },
-			{ "<leader>gs", "<cmd>Git<cr>" },
-			{ "<leader>gb", "<cmd>Git blame<cr>" },
-			{ "<leader>go", "<cmd>GBrowse<CR>" },
-			{ "<leader>gr", ":Git rebase -i main" },
-			{ "<leader>go", "<cmd>'<,'>GBrowse<CR>" },
+			"<leader>gb",
+			"<leader>gg",
+			"<leader>gr",
+			"<leader>gs",
+			{ "<leader>go", mode = { "n", "v" } },
 		},
 		ft = "git",
+		config = function()
+			vim.keymap.set("n", "<leader>gb", "<cmd>Git blame<cr>")
+			vim.keymap.set("n", "<leader>gg", ":Git<space>")
+			vim.keymap.set("n", "<leader>go", "<cmd>GBrowse<cr>")
+			vim.keymap.set("n", "<leader>gr", ":Git rebase -i main")
+			vim.keymap.set("n", "<leader>gs", "<cmd>Git<cr>")
+			vim.keymap.set("v", "<leader>go", ":'<,'>GBrowse<CR>")
+		end,
 	},
 	{
 		"junegunn/gv.vim",
@@ -25,8 +32,8 @@ return {
 			{ "<leader>gL" },
 		},
 		config = function()
-			vim.keymap.set("n", "<leader>gl", ":GV!<cr>") -- Log for current file
-			vim.keymap.set("n", "<leader>gL", ":GV<cr>") -- Log for repo
+			vim.keymap.set("n", "<leader>gl", "<cmd>GV!<cr>") -- Log for current file
+			vim.keymap.set("n", "<leader>gL", "<cmd>GV<cr>") -- Log for repo
 		end,
 	},
 	{
