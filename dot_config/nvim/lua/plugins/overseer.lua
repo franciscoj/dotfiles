@@ -8,6 +8,7 @@ return {
 		},
 		dependencies = {
 			"akinsho/toggleterm.nvim",
+			"nvim-telescope/telescope.nvim",
 		},
 		config = function()
 			require("overseer").setup({ strategy = {
