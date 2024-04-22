@@ -1,6 +1,9 @@
+local features = require("franciscoj.lsp.features")
+
 return {
 	{
 		"glacambre/firenvim",
+		enabled = not features.codespaces,
 		config = function()
 			vim.g.firenvim_config = {
 				localSettings = {

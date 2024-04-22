@@ -10,6 +10,7 @@ local detect = function(file)
 end
 
 return {
+	codespaces = os.getenv("CODESPACES"),
 	elixir = detect("mix.exs"),
 	go = detect("go.mod"),
 	lua = detect(".luacheckrc"),
