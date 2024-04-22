@@ -10,8 +10,9 @@ return {
 			"<leader>fg",
 			"<leader>fm",
 			"<leader>fr",
+			"<leader>fw",
 			"<leader>gf",
-			{ "<localleader>'", mode = "i" },
+			{ "<localleader>'", mode = {"n", "i"} },
 		},
 		config = function()
 			local fzf = require("fzf-lua")
@@ -42,8 +43,9 @@ return {
 			vim.keymap.set("n", "<leader>fg", fzf.live_grep)
 			vim.keymap.set("n", "<leader>fm", fzf.marks)
 			vim.keymap.set("n", "<leader>fr", fzf.registers)
+			vim.keymap.set("n", "<leader>fw", fzf.grep_cword)
 			vim.keymap.set("n", "<leader>gf", fzf.git_status)
-			vim.keymap.set("i", "<localleader>'", fzf.registers)
+			vim.keymap.set({"n", "i"}, "<localleader>'", fzf.registers)
 		end,
 	},
 }
