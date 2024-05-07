@@ -1,0 +1,7 @@
+[tools]
+node = "lts"
+deno = "latest"
+"npm:prettier" = "latest"
+
+[settings]
+experimental = true

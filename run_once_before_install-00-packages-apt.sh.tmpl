@@ -5,12 +5,15 @@
 set -e
 
 echo "Installing: dependencies with apt ********************"
-sudo apt install -y zsh ripgrep fd-find python3-pip direnv busybox
+sudo apt install -y zsh ripgrep fd-find python3-pip busybox
 sudo snap install --classic nvim
 
 echo "Installing: starship ********************"
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 sudo chsh -s /bin/zsh $(whoami)
+
+echo "Installing: mise ********************"
+curl "https://mise.run" | sh
 {{ else }}
 echo "Skipping APT packages"
 {{ end }}

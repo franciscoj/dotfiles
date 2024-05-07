@@ -1,6 +1,6 @@
 {{ if (eq .chezmoi.os "linux") }}
 {{- template "zenv" "zshenv" -}}
-[[ -x "$(command -v direnv)" ]] && eval "$(direnv hook zsh)"
+[[ -x "$(command -v mise)" ]] && eval "$(mise activate --shims zsh)"
 
 {{ if .wsl }}
 export PATH=$PATH:/snap/bin

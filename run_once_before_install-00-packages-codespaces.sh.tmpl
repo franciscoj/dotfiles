@@ -11,6 +11,9 @@ echo "Installing: starship ********************"
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 sudo chsh -s /bin/zsh $(whoami)
 
+echo "Installing: mise ********************"
+curl "https://mise.run" | sh
+
 echo "Installing: nvim ********************"
 pip3 install --user pynvim
 curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
