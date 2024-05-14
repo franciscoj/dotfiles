@@ -62,7 +62,7 @@ return {
 		"sindrets/diffview.nvim",
 		enabled = not vim.g.started_by_firenvim,
 		cmd = {
-			"DiffViewOpen",
+			"DiffviewOpen",
 			"DiffviewFileHistory",
 			"DiffviewClose",
 			"DiffviewToggleFiles",
