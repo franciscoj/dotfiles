@@ -12,7 +12,7 @@ return {
 			"<leader>fr",
 			"<leader>fw",
 			"<leader>gf",
-			{ "<localleader>'", mode = {"n", "i"} },
+			{ "<localleader>'", mode = { "n", "i" } },
 		},
 		config = function()
 			local fzf = require("fzf-lua")
@@ -45,7 +45,17 @@ return {
 			vim.keymap.set("n", "<leader>fr", fzf.registers)
 			vim.keymap.set("n", "<leader>fw", fzf.grep_cword)
 			vim.keymap.set("n", "<leader>gf", fzf.git_status)
-			vim.keymap.set({"n", "i"}, "<localleader>'", fzf.registers)
+			vim.keymap.set({ "n", "i" }, "<localleader>'", fzf.registers)
+		end,
+	},
+	{
+		"stevearc/dressing.nvim",
+		config = function()
+			require("dressing").setup({
+				select = {
+					backend = { "fzf_lua", "nui", "telescope", "builtin" },
+				},
+			})
 		end,
 	},
 }
