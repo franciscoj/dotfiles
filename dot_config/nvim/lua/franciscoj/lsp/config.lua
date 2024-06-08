@@ -9,7 +9,7 @@ local Config = {
 		h.nnoremap("gd", vim.lsp.buf.definition)
 		h.nnoremap("<LocalLeader>t", vim.lsp.buf.type_definition)
 		h.nnoremap("<LocalLeader>f", function()
-			vim.lsp.buf.format({timeout_ms = 5000})
+			vim.lsp.buf.format({ timeout_ms = 5000 })
 		end)
 		h.nnoremap("K", vim.lsp.buf.hover)
 		h.nnoremap("<LocalLeader>k", vim.lsp.buf.signature_help)
@@ -37,10 +37,12 @@ local Config = {
 		if client.server_capabilities.codeLensProvider then
 			local id = vim.api.nvim_create_augroup("lsp_code_lens_refresh", { clear = false })
 			vim.api.nvim_clear_autocmds({ buffer = 0, group = id })
-			vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "CursorHold" }, {
+			vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
 				buffer = 0,
 				group = id,
-				callback = vim.lsp.codelens.refresh,
+				callback = function()
+					vim.lsp.codelens.refresh({ burnr = 0 })
+				end,
 			})
 
 			h.nnoremap("<LocalLeader>A", vim.lsp.codelens.run)
