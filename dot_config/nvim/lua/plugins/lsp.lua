@@ -1,4 +1,5 @@
 return {
+	{ "folke/lazydev.nvim", ft = "lua" },
 	{
 		"neovim/nvim-lspconfig",
 		ft = {
@@ -15,7 +16,6 @@ return {
 		},
 		dependencies = {
 			"folke/neoconf.nvim",
-			"folke/neodev.nvim",
 			"folke/trouble.nvim",
 			"williamboman/mason.nvim",
 			"ibhagwan/fzf-lua",
