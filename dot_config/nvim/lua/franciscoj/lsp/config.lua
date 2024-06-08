@@ -21,10 +21,6 @@ local Config = {
 		h.nnoremap("gr", fzf.lsp_references)
 		h.nnoremap("gi", fzf.lsp_implementations)
 
-		-- Using trouble.nvim
-		h.nnoremap("<LocalLeader>d", "<cmd>TroubleToggle document_diagnostics<CR>")
-		h.nnoremap("<LocalLeader>D", "<cmd>TroubleToggle workspace_diagnostics<CR>")
-
 		h.nnoremap("<LocalLeader>;", function()
 			vim.diagnostic.open_float(nil, { focus = false, border = "rounded" })
 		end)

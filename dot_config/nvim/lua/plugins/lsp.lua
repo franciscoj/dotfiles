@@ -28,10 +28,20 @@ return {
 	},
 	{
 		"folke/trouble.nvim",
-		lazy = true,
-		config = function()
-			require("trouble").setup({})
-		end,
+		opts = {},
+		cmd = "Trouble",
+		keys = {
+			{
+				"<localleader>D",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"<localleader>d",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Buffer Diagnostics (Trouble)",
+			},
+		},
 	},
 	{
 		"williamboman/mason.nvim",
