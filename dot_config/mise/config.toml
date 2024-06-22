@@ -2,6 +2,7 @@
 node = "lts"
 deno = "latest"
 "npm:prettier" = "latest"
+go = "latest"
 
 [settings]
 experimental = true
