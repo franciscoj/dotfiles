@@ -42,6 +42,7 @@ return {
 	"tpope/vim-vinegar",
 	{
 		"AndrewRadev/splitjoin.vim",
+		submodules = false,
 		event = { "VeryLazy" },
 		config = function()
 			vim.g.splitjoin_ruby_curly_braces = false
