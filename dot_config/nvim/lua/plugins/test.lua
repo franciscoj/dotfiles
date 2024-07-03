@@ -3,21 +3,27 @@ return {
 		"vim-test/vim-test",
 		enabled = not vim.g.started_by_firenvim,
 		keys = {
-			{ "<leader>tf" },
-			{ "<leader>tl" },
-			{ "<leader>tr" },
+			{
+				"<LocalLeader>tf",
+				"<CMD>TestFile<CR>",
+				desc = "Run current test file",
+			},
+			{
+				"<LocalLeader>tl",
+				"<CMD>TestNearest<CR>",
+				desc = "Run nearest test",
+			},
+			{
+				"<LocalLeader>tr",
+				"<CMD>TestLast<CR>",
+				desc = "Repeat last test run",
+			},
 		},
 		dependencies = {
 			"akinsho/toggleterm.nvim",
 		},
 		config = function()
-			local h = require("h")
-
 			vim.g["test#strategy"] = "toggleterm"
-			h.nnoremap("<leader>tf", "<CMD>TestFile<CR>")
-			h.nnoremap("<leader>tl", "<CMD>TestNearest<CR>")
-			h.nnoremap("<leader>tr", "<CMD>TestLast<CR>")
-			h.nnoremap("<leader>ts", "<CMD>TestSuite<CR>")
 		end,
 	},
 }
