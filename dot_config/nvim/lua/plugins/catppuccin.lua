@@ -31,7 +31,7 @@ return {
 						enabled = true,
 						enable_ui = true,
 					},
-					fern = true,
+					neotree = true,
 					gitsigns = true,
 					hop = true,
 					lsp_trouble = true,
