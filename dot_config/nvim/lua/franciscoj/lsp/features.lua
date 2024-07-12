@@ -15,7 +15,8 @@ return {
 	go = detect("go.mod"),
 	lua = detect(".luacheckrc"),
 	rust = detect("Cargo.toml"),
-	typescript = detect("package.json"),
+	-- Phoenix apps usually keep the JS stack inside the assets folder
+	typescript = detect("package.json") or detect("assets/package.json"),
 	tailwind = detect("tailwind.config.js"),
 	ansible = detect("playbook.yml"),
 

@@ -17,6 +17,7 @@ require("luasnip.loaders.from_vscode").load({
 
 -- Load snippets per file type
 require("franciscoj.snippets.all")
+require("franciscoj.snippets.elixir")
 require("franciscoj.snippets.gitcommit")
 require("franciscoj.snippets.go")
 require("franciscoj.snippets.ruby")
