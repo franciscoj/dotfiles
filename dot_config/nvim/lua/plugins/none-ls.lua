@@ -11,15 +11,12 @@ return {
 		"typescript",
 		"yaml",
 	},
-	dependencies = {
-		"gbprod/none-ls-luacheck.nvim",
-	},
 	config = function()
 		local features = require("franciscoj.lsp.features")
 		local null_ls = require("null-ls")
 
 		if features.lua then
-			null_ls.register(require("none-ls-luacheck.diagnostics.luacheck"))
+			null_ls.register(null_ls.builtins.diagnostics.selene)
 		end
 
 		local actions = null_ls.builtins.code_actions
@@ -28,6 +25,7 @@ return {
 		local formatting = null_ls.builtins.formatting
 		local mason = require("franciscoj.mason")
 
+		-- These will be automatically installed through mason
 		local ensure = {}
 
 		if features.typescript then
@@ -36,7 +34,7 @@ return {
 
 		if features.lua then
 			table.insert(ensure, { name = "stylua" })
-			table.insert(ensure, { name = "luacheck" })
+			table.insert(ensure, { name = "selene" })
 		end
 
 		if features.go then
