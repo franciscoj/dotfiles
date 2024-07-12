@@ -41,7 +41,11 @@ local Config = {
 				buffer = 0,
 				group = id,
 				callback = function()
-					vim.lsp.codelens.refresh({ burnr = 0 })
+					-- Only refresh if there are any codelens available.
+					local codelens = vim.lsp.codelens.get()
+					if #codelens ~= 0 then
+						vim.lsp.codelens.refresh({ burnr = 0 })
+					end
 				end,
 			})
 
