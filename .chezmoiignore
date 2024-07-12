@@ -1,7 +1,7 @@
 install.sh
 README.md
-dot_config/lvim/plugin
-.luacheckrc
 .envrc
 Makefile
 Session.vim
+selene.toml
+neovim.toml
