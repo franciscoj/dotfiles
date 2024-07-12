@@ -10,7 +10,7 @@ local cfg = Config:new({
 		},
 	},
 	handlers = {
-		-- Disable the diagnostics from the LSP as I tipically use luacheck,
+		-- Disable the diagnostics from the LSP as I tipically use selene,
 		-- which is configured on a different plugin
 		["textDocument/publishDiagnostics"] = function() end,
 	},
