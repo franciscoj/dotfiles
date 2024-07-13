@@ -1,7 +1,6 @@
 return {
 	{
-		"phaazon/hop.nvim",
-		branch = "v2",
+		"smoka7/hop.nvim",
 		enabled = not vim.g.started_by_firenvim,
 		event = "VeryLazy",
 		config = function()
