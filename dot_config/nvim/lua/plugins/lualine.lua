@@ -118,11 +118,12 @@ return {
 
 			line.setup({
 				extensions = {
-					"fern",
 					"fugitive",
+					"lazy",
 					"man",
 					"mason",
 					"mundo",
+					"neo-tree",
 					"overseer",
 					"quickfix",
 					"toggleterm",
