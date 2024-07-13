@@ -12,6 +12,8 @@ h.nnoremap("<leader>wa", ":wall<cr>")
 
 -- Edit file on current folder
 h.nnoremap("<leader>e", ":e <C-R>=expand('%:p:h') . '/'<cr>")
+h.nnoremap("<leader>ec", [[:let @+ = expand("%")<cr>]])
+h.nnoremap("<leader>eC", [[:let @+ = expand("%:p")<cr>]])
 
 -- Toggle search highlight off
 h.nnoremap("<LocalLeader><esc>", ":nohlsearch<cr>")
