@@ -12,6 +12,10 @@ return {
 				popup_border_style = "rounded",
 				filesystem = {
 					hijack_netrw_behavior = "open_current",
+					cwd_target = {
+						sidebar = "none",
+						current = "none",
+					},
 				},
 			})
 		end,
