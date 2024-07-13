@@ -4,7 +4,9 @@ local i = ls.insert_node
 local isn = ls.indent_snippet_node
 local t = ls.text_node
 
-local selection_or = function(default)
+local U = {}
+
+function U.selection_or(default)
 	return function(_args, snip)
 		local env = snip.env
 		local selected = env.TM_SELECTED_TEXT
@@ -25,11 +27,8 @@ local selection_or = function(default)
 	end
 end
 
-local value_on = function(args, _snip)
+function U.value_on(args, _snip)
 	return sn(nil, { i(1, args[1][1]) })
 end
 
-return {
-	selection_or,
-	value_on,
-}
+return U

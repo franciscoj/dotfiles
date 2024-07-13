@@ -18,7 +18,7 @@ local fmt = require("luasnip.extras.fmt").fmt
 -- local fmta = require("luasnip.extras.fmt").fmta
 -- local types = require("luasnip.util.types")
 -- local conds = require("luasnip.extras.expand_conditions")
-local utils = require("utils")
+local utils = require("franciscoj.snippets.utils")
 
 ls.add_snippets("elixir", {
 	s(
