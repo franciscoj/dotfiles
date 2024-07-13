@@ -15,10 +15,6 @@ return {
 		local features = require("franciscoj.lsp.features")
 		local null_ls = require("null-ls")
 
-		if features.lua then
-			null_ls.register(null_ls.builtins.diagnostics.selene)
-		end
-
 		local actions = null_ls.builtins.code_actions
 		local diagnostics = null_ls.builtins.diagnostics
 		local Config = require("franciscoj.lsp.config")
@@ -54,7 +50,7 @@ return {
 
 		if features.lua then
 			table.insert(sources, formatting.stylua)
-			table.insert(sources, diagnostics.luacheck)
+			table.insert(sources, diagnostics.selene)
 		end
 
 		if features.go then

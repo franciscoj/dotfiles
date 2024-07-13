@@ -13,7 +13,7 @@ return {
 	codespaces = os.getenv("CODESPACES"),
 	elixir = detect("mix.exs"),
 	go = detect("go.mod"),
-	lua = detect(".luacheckrc"),
+	lua = detect("selene.toml"),
 	rust = detect("Cargo.toml"),
 	-- Phoenix apps usually keep the JS stack inside the assets folder
 	typescript = detect("package.json") or detect("assets/package.json"),
