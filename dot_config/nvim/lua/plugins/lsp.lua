@@ -53,7 +53,7 @@ return {
 				ui = { border = "rounded" },
 			})
 
-			local ensure = { "yamlls", "marksman" }
+			local ensure = { "yamlls", "marksman", "jsonls" }
 
 			if features.ruby then
 				table.insert(ensure, "ruby_ls")
