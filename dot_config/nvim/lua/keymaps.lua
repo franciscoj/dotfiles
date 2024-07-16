@@ -29,7 +29,7 @@ h.nnoremap("<leader>q", ":wincmd c<CR>")
 
 -- Tab management
 h.nnoremap("<leader>tt", ":tabnew %<CR>")
-h.nnoremap("<leader>tc", ":tabclose")
+h.nnoremap("<leader>tc", ":tabclose<CR>")
 
 -- Code movement
 h.nnoremap("<C-u>", "<C-u>zz")
