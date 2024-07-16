@@ -15,12 +15,9 @@ require("luasnip.loaders.from_vscode").load({
 	},
 })
 
--- Load snippets per file type
-require("franciscoj.snippets.all")
-require("franciscoj.snippets.elixir")
-require("franciscoj.snippets.gitcommit")
-require("franciscoj.snippets.go")
-require("franciscoj.snippets.ruby")
+require("luasnip.loaders.from_lua").load({
+	fs_event_providers = { libuv = true },
+})
 
 --- Returns a function that changes the option of a choice node when called.
 -- @param direction 1 for next, -1 for prev

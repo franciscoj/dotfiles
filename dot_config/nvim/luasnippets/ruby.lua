@@ -20,7 +20,7 @@ local fmta = require("luasnip.extras.fmt").fmta
 -- local conds = require("luasnip.extras.expand_conditions")
 local utils = require("franciscoj.snippets.utils")
 
-ls.add_snippets("ruby", {
+return {
 	-- Ruby general
 	s("@@", fmt("@{name} = {val}", { name = i(1, "name"), val = d(2, utils.value_on, { 1 }) })),
 	s("=", fmt("{name} = {val}", { name = i(1, "name"), val = d(2, utils.value_on, { 1 }) })),
@@ -107,4 +107,4 @@ ls.add_snippets("ruby", {
 	s("tmust", fmt("T.must({val})", { val = d(1, utils.selection_or("val")) })),
 	s("tnil", fmt("T.nilable({type})", { type = d(1, utils.selection_or("Type")) })),
 	s("tsig", { t("extend T::Sig") }),
-})
+}
