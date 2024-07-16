@@ -1,5 +1,6 @@
 local ls = require("luasnip")
-ls.setup({ store_selection_keys = "<Tab>" })
+ls.setup()
+ls.filetype_extend("elixir", { "heex" })
 
 -- This should load vscode snippets from friendly snippets
 require("luasnip.loaders.from_vscode").load({

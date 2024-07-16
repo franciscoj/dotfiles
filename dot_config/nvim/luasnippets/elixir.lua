@@ -2,10 +2,10 @@ local ls = require("luasnip")
 local s = ls.snippet
 -- local sn = ls.snippet_node
 -- local isn = ls.indent_snippet_node
-local t = ls.text_node
+-- local t = ls.text_node
 local i = ls.insert_node
 -- local f = ls.function_node
-local c = ls.choice_node
+-- local c = ls.choice_node
 local d = ls.dynamic_node
 -- local r = ls.restore_node
 -- local l = require("luasnip.extras").lambda
@@ -24,28 +24,6 @@ return {
 	s(
 		"dg",
 		fmt([[dgettext("{domain}", "{message}")]], {
-			domain = i(1, "domain"),
-			message = d(2, utils.selection_or("message")),
-		})
-	),
-
-	-- TODO(franciscoj): [On 16/07/2024] find a way to not have to copy/paste
-	-- these from the heex file
-	--  For components
-	s("=", fmt([[<%= {txt} %>]], { txt = i(1, "txt") })),
-	s(
-		"a=",
-		fmt([[{attr}={val}]], {
-			attr = i(1, "class"),
-			val = c(2, {
-				{ t([["]]), i(1, "val"), t([["]]) },
-				{ t([[{]]), i(1, "val"), t([[}]]) },
-			}),
-		})
-	),
-	s(
-		"=dg",
-		fmt([[<%= dgettext("{domain}", "{message}") %>]], {
 			domain = i(1, "domain"),
 			message = d(2, utils.selection_or("message")),
 		})
