@@ -6,6 +6,8 @@ local t = ls.text_node
 
 local U = {}
 
+-- Returns a snippet node that, uses as content whatever is currently selected,
+-- if not, it returns an insert node with the text given as default.
 function U.selection_or(default)
 	return function(_args, snip)
 		local env = snip.env
@@ -27,6 +29,8 @@ function U.selection_or(default)
 	end
 end
 
+-- Returns a snippet node for an insertion that has, as a default the value
+-- inserted somewhere else already.
 function U.value_on(args, _snip)
 	return sn(nil, { i(1, args[1][1]) })
 end

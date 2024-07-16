@@ -22,8 +22,20 @@ local utils = require("franciscoj.snippets.utils")
 
 return {
 	-- Ruby general
-	s("@@", fmt("@{name} = {val}", { name = i(1, "name"), val = d(2, utils.value_on, { 1 }) })),
-	s("=", fmt("{name} = {val}", { name = i(1, "name"), val = d(2, utils.value_on, { 1 }) })),
+	s(
+		"@@",
+		fmt("@{name} = {val}", {
+			name = i(1, "name"),
+			val = d(2, utils.value_on, { 1 }),
+		})
+	),
+	s(
+		"=",
+		fmt("{name} = {val}", {
+			name = i(1, "name"),
+			val = d(2, utils.value_on, { 1 }),
+		})
+	),
 	s(
 		"mm",
 		fmt(
@@ -48,7 +60,7 @@ return {
 	),
 	-- Tests
 	s(
-		"tst",
+		"tt",
 		fmt(
 			[[
 			test "{statement}" do
@@ -102,9 +114,9 @@ return {
 	s("tbool", { t("T::Boolean") }),
 	s("tcast", fmt("T.cast({val}, {type})", { val = d(1, utils.selection_or("val")), type = i(2, "Type") })),
 	s("thash", fmt("T::Hash[{key}, {val}]", { key = i(1, "Type"), val = i(2, "Type") })),
-	s("thel", { t("extend T::Helpers") }),
 	s("tlet", fmt("T.let({val}, {type})", { val = d(1, utils.selection_or("val")), type = i(2, "Type") })),
 	s("tmust", fmt("T.must({val})", { val = d(1, utils.selection_or("val")) })),
 	s("tnil", fmt("T.nilable({type})", { type = d(1, utils.selection_or("Type")) })),
+	s("thel", { t("extend T::Helpers") }),
 	s("tsig", { t("extend T::Sig") }),
 }
