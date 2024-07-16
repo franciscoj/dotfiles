@@ -3,6 +3,9 @@ ls.setup({
 	-- This uses the currently selected test as the value for an insert node
 	store_selection_keys = "<Tab>",
 })
+
+-- This way the snippets for heex are included on elixir by default. That's
+-- useful for phoenix components.
 ls.filetype_extend("elixir", { "heex" })
 
 -- This should load vscode snippets from friendly snippets
