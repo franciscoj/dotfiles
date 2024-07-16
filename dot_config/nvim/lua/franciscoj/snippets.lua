@@ -1,5 +1,8 @@
 local ls = require("luasnip")
-ls.setup()
+ls.setup({
+	-- This uses the currently selected test as the value for an insert node
+	store_selection_keys = "<Tab>",
+})
 ls.filetype_extend("elixir", { "heex" })
 
 -- This should load vscode snippets from friendly snippets
