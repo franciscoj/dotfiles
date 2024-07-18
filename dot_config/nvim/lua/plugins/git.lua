@@ -63,12 +63,6 @@ return {
 				end
 			},
 			{
-				"<localleader>gD",
-				function ()
-					require("gitsigns").preview_hunk_inline()
-				end
-			},
-			{
 				"<localleader>gs",
 				function ()
 					require("gitsigns").stage_hunk()
