@@ -1,18 +1,19 @@
+--# selene: allow(mixed_table)
 return {
 	{
 		"ibhagwan/fzf-lua",
 		-- optional for icon support
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
-			"<leader>fG",
-			"<leader>fb",
-			"<leader>ff",
-			"<leader>fg",
-			"<leader>fm",
-			"<leader>fr",
-			"<leader>fw",
-			"<leader>gf",
-			{ "<localleader>'", mode = { "n", "i" } },
+			{ "<leader>fG", function() require("fzf-lua").grep() end },
+			{ "<leader>fb", function() require("fzf-lua").buffers() end },
+			{ "<leader>ff", function() require("fzf-lua").files() end },
+			{ "<leader>fg", function() require("fzf-lua").live_grep() end },
+			{ "<leader>fm", function() require("fzf-lua").marks() end },
+			{ "<leader>fr", function() require("fzf-lua").registers() end },
+			{ "<leader>fw", function() require("fzf-lua").grep_cword() end },
+			{ "<leader>gf", function() require("fzf-lua").git_status() end },
+			{ "<localleader>'", function() require("fzf-lua").registers() end, mode = { "n", "i" } },
 		},
 		config = function()
 			local fzf = require("fzf-lua")
@@ -35,17 +36,6 @@ return {
 					},
 				},
 			})
-			-- calling `setup` is optional for customization
-
-			vim.keymap.set("n", "<leader>fG", fzf.grep)
-			vim.keymap.set("n", "<leader>fb", fzf.buffers)
-			vim.keymap.set("n", "<leader>ff", fzf.files)
-			vim.keymap.set("n", "<leader>fg", fzf.live_grep)
-			vim.keymap.set("n", "<leader>fm", fzf.marks)
-			vim.keymap.set("n", "<leader>fr", fzf.registers)
-			vim.keymap.set("n", "<leader>fw", fzf.grep_cword)
-			vim.keymap.set("n", "<leader>gf", fzf.git_status)
-			vim.keymap.set({ "n", "i" }, "<localleader>'", fzf.registers)
 		end,
 	},
 	{

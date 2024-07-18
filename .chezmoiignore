@@ -5,3 +5,4 @@ Makefile
 Session.vim
 selene.toml
 neovim.toml
+stylua.toml
