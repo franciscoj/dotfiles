@@ -57,18 +57,6 @@ return {
 				end,
 			},
 			{
-				"]C",
-				function()
-					require("gitsigns").nav_hunk("last")
-				end,
-			},
-			{
-				"[C",
-				function()
-					require("gitsigns").nav_hunk("first")
-				end,
-			},
-			{
 				"<localleader>gd",
 				function ()
 					require("gitsigns").preview_hunk()
