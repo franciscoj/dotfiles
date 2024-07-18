@@ -28,14 +28,11 @@ return {
 	{
 		"junegunn/gv.vim",
 		enabled = not vim.g.started_by_firenvim,
+		dependencies = { "tpope/vim-fugitive" },
 		keys = {
-			{ "<leader>gl" },
-			{ "<leader>gL" },
+			{ "<leader>gl", "<CMD>GV!<CR>" }, -- Log for current file
+			{ "<leader>gL", "<CMD>GV<CR>" }, -- Log for repo
 		},
-		config = function()
-			vim.keymap.set("n", "<leader>gl", "<cmd>GV!<cr>") -- Log for current file
-			vim.keymap.set("n", "<leader>gL", "<cmd>GV<cr>") -- Log for repo
-		end,
 	},
 	{
 		"lewis6991/gitsigns.nvim",
