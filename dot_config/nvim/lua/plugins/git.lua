@@ -9,21 +9,13 @@ return {
 			"tpope/vim-rhubarb",
 		},
 		keys = {
-			"<leader>gb",
-			"<leader>gg",
-			"<leader>gr",
-			"<leader>gs",
-			{ "<leader>go", mode = { "n", "v" } },
+			{ "<leader>gg", ":Git<space>" },
+			{ "<leader>gr", ":Git rebase -i main" },
+			{ "<leader>gc", "<cmd>Git commit<cr>" },
+			{ "<leader>gs", "<cmd>Git<cr>" },
+			{ "<leader>go", "<cmd>GBrowse<cr>", mode = { "n", "v" } },
 		},
 		ft = "git",
-		config = function()
-			vim.keymap.set("n", "<leader>gb", "<cmd>Git blame<cr>")
-			vim.keymap.set("n", "<leader>gg", ":Git<space>")
-			vim.keymap.set("n", "<leader>go", "<cmd>GBrowse<cr>")
-			vim.keymap.set("n", "<leader>gr", ":Git rebase -i main")
-			vim.keymap.set("n", "<leader>gs", "<cmd>Git<cr>")
-			vim.keymap.set("v", "<leader>go", ":'<,'>GBrowse<CR>")
-		end,
 	},
 	{
 		"junegunn/gv.vim",
@@ -39,6 +31,68 @@ return {
 		event = "VeryLazy",
 		enabled = not vim.g.started_by_firenvim,
 		dependencies = { "nvim-lua/plenary.nvim" },
+		keys = {
+			{
+				"<leader>gb",
+				function()
+					require("gitsigns").blame()
+				end,
+			},
+			{
+				"<localleader>gb",
+				function()
+					require("gitsigns").blame_line()
+				end,
+			},
+			{
+				"]c",
+				function()
+					require("gitsigns").nav_hunk("next")
+				end,
+			},
+			{
+				"[c",
+				function()
+					require("gitsigns").nav_hunk("prev")
+				end,
+			},
+			{
+				"]C",
+				function()
+					require("gitsigns").nav_hunk("last")
+				end,
+			},
+			{
+				"[C",
+				function()
+					require("gitsigns").nav_hunk("first")
+				end,
+			},
+			{
+				"<localleader>gd",
+				function ()
+					require("gitsigns").preview_hunk()
+				end
+			},
+			{
+				"<localleader>gD",
+				function ()
+					require("gitsigns").preview_hunk_inline()
+				end
+			},
+			{
+				"<localleader>gs",
+				function ()
+					require("gitsigns").stage_hunk()
+				end
+			},
+			{
+				"<localleader>gus",
+				function ()
+					require("gitsigns").undo_stage_hunk()
+				end
+			}
+		},
 		config = function()
 			require("gitsigns").setup()
 		end,
