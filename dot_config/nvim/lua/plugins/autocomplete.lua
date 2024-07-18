@@ -8,6 +8,7 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
+			"petertriho/cmp-git",
 			-- snippets
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
@@ -58,6 +59,7 @@ return {
 					{ name = "luasnip" },
 					{ name = "path" },
 					{ name = "buffer", keyword_length = 4 },
+					{ name = "git", keyword_length = 1 },
 				}),
 			})
 
@@ -72,7 +74,7 @@ return {
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({
 					{ name = "path", keyword_length = 4 },
-					{ name = "cmdline", keyword_length = 4 },
+					{ name = "cmdline", keyword_length = 3 },
 				}),
 			})
 		end,

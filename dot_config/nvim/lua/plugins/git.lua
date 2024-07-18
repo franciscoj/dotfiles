@@ -35,50 +35,34 @@ return {
 		keys = {
 			{
 				"<leader>gb",
-				function()
-					require("gitsigns").blame()
-				end,
+				function() require("gitsigns").blame() end,
 			},
 			{
 				"<localleader>gb",
-				function()
-					require("gitsigns").blame_line()
-				end,
+				function() require("gitsigns").blame_line() end,
 			},
 			{
 				"]h",
-				function()
-					require("gitsigns").nav_hunk("next")
-				end,
+				function() require("gitsigns").nav_hunk("next") end,
 			},
 			{
 				"[h",
-				function()
-					require("gitsigns").nav_hunk("prev")
-				end,
+				function() require("gitsigns").nav_hunk("prev") end,
 			},
 			{
 				"<localleader>hd",
-				function ()
-					require("gitsigns").preview_hunk()
-				end
+				function() require("gitsigns").preview_hunk() end,
 			},
 			{
 				"<localleader>hs",
-				function ()
-					require("gitsigns").stage_hunk()
-				end
+				function() require("gitsigns").stage_hunk() end,
 			},
 			{
 				"<localleader>hu",
-				function ()
-					require("gitsigns").undo_stage_hunk()
-				end
-			}
+				function() require("gitsigns").undo_stage_hunk() end,
+			},
 		},
-		config = function()
-			require("gitsigns").setup()
-		end,
+		config = function() require("gitsigns").setup() end,
 	},
 	{
 		"pwntester/octo.nvim",
@@ -88,14 +72,21 @@ return {
 			"nvim-telescope/telescope.nvim",
 			"nvim-tree/nvim-web-devicons",
 		},
+		keys = {
+			{ "<leader>pm", "<cmd>Octo pr list author=franciscoj<cr>" },
+			{ "<leader>il", "<cmd>Octo issue list<cr>" },
+		},
 		cmd = { "Octo" },
-		config = function()
-			require("octo").setup()
-		end,
+		config = function() require("octo").setup() end,
 	},
 	{
 		"sindrets/diffview.nvim",
 		enabled = not vim.g.started_by_firenvim,
+		keys = {
+			{ "<leader>gd", "<CMD>DiffviewOpen<CR>" },
+			{ "<leader>gD", "<CMD>DiffviewOpen HEAD~1<CR>" },
+			{ "<leader>dc", "<CMD>DiffViewClose<CR>" },
+		},
 		cmd = {
 			"DiffviewOpen",
 			"DiffviewFileHistory",
