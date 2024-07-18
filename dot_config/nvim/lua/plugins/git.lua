@@ -1,4 +1,5 @@
 -- Plugins related with Git the usage of Git and GitHub
+--# selene: allow(mixed_table)
 return {
 	{
 		"tpope/vim-fugitive",
