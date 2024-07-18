@@ -22,8 +22,8 @@ return {
 		enabled = not vim.g.started_by_firenvim,
 		dependencies = { "tpope/vim-fugitive" },
 		keys = {
-			{ "<leader>gl", "<CMD>GV!<CR>" }, -- Log for current file
-			{ "<leader>gL", "<CMD>GV<CR>" }, -- Log for repo
+			{ "<localleader>gl", "<CMD>GV!<CR>" }, -- Log for current file
+			{ "<leader>gl", "<CMD>GV<CR>" }, -- Log for repo
 		},
 	},
 	{
