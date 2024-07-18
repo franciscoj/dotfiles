@@ -45,31 +45,31 @@ return {
 				end,
 			},
 			{
-				"]c",
+				"]h",
 				function()
 					require("gitsigns").nav_hunk("next")
 				end,
 			},
 			{
-				"[c",
+				"[h",
 				function()
 					require("gitsigns").nav_hunk("prev")
 				end,
 			},
 			{
-				"<localleader>gd",
+				"<localleader>hd",
 				function ()
 					require("gitsigns").preview_hunk()
 				end
 			},
 			{
-				"<localleader>gs",
+				"<localleader>hs",
 				function ()
 					require("gitsigns").stage_hunk()
 				end
 			},
 			{
-				"<localleader>gus",
+				"<localleader>hu",
 				function ()
 					require("gitsigns").undo_stage_hunk()
 				end
