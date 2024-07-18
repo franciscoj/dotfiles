@@ -64,7 +64,7 @@ return {
 		keys = {
 			{ "<leader>gd", "<CMD>DiffviewOpen<CR>" },
 			{ "<leader>gD", "<CMD>DiffviewOpen HEAD~1<CR>" },
-			{ "<leader>dc", "<CMD>DiffViewClose<CR>" },
+			{ "<leader>dc", "<CMD>DiffviewClose<CR>" },
 		},
 		cmd = {
 			"DiffviewOpen",
