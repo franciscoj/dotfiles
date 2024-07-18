@@ -33,34 +33,13 @@ return {
 		enabled = not vim.g.started_by_firenvim,
 		dependencies = { "nvim-lua/plenary.nvim" },
 		keys = {
-			{
-				"<leader>gb",
-				function() require("gitsigns").blame() end,
-			},
-			{
-				"<localleader>gb",
-				function() require("gitsigns").blame_line() end,
-			},
-			{
-				"]h",
-				function() require("gitsigns").nav_hunk("next") end,
-			},
-			{
-				"[h",
-				function() require("gitsigns").nav_hunk("prev") end,
-			},
-			{
-				"<localleader>hd",
-				function() require("gitsigns").preview_hunk() end,
-			},
-			{
-				"<localleader>hs",
-				function() require("gitsigns").stage_hunk() end,
-			},
-			{
-				"<localleader>hu",
-				function() require("gitsigns").undo_stage_hunk() end,
-			},
+			{ "<leader>gb", function() require("gitsigns").blame() end },
+			{ "<localleader>gb", function() require("gitsigns").blame_line() end },
+			{ "]h", function() require("gitsigns").nav_hunk("next") end },
+			{ "[h", function() require("gitsigns").nav_hunk("prev") end },
+			{ "<localleader>hd", function() require("gitsigns").preview_hunk() end },
+			{ "<localleader>hs", function() require("gitsigns").stage_hunk() end },
+			{ "<localleader>hu", function() require("gitsigns").undo_stage_hunk() end },
 		},
 		config = function() require("gitsigns").setup() end,
 	},
