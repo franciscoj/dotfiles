@@ -47,16 +47,46 @@ vim.keymap.set("x", ">", ">gv")
 -- Easy add ::
 vim.keymap.set("i", ";;", "::")
 
--- Load session in case it exists
+-- Load Session.vim in case it exists
 vim.keymap.set("n", "<leader>sl", function()
 	if vim.fn.getftype("Session.vim") ~= "" then
-		vim.cmd [[source Session.vim]]
+		vim.cmd([[source Session.vim]])
 	else
-		print("No Session.vim file")
+		vim.notify("No Session.vim file", vim.log.levels.WARN)
 	end
 end)
 
--- Neovim config
-require("franciscoj.reload")
-h.nnoremap("<leader>vr", "<cmd>lua ReloadConfig()<CR>")
-h.nnoremap("<Leader>ve", ":e $MYVIMRC<CR>")
+-- Open the repo name inside quotes on the browser
+local open_cmd = function()
+	if vim.fn.executable("open") == 1 then
+		return "open"
+	end
+
+	if vim.fn.executable("xdg-open") == 1 then
+		return "xdg-open"
+	end
+
+	return false
+end
+
+local open = function(url)
+	local cmd = open_cmd()
+
+	if not cmd then
+		vim.notify("couldn't find open or xdg-open, doing nothing", vim.log.levels.WARN)
+	end
+
+	local Job = require("plenary.job")
+	Job:new({
+		command = cmd,
+		args = { url },
+		cwd = "/usr/bin",
+	}):sync() -- or start()
+end
+
+vim.keymap.set("n", "<leader>og", function()
+	vim.cmd([[normal yi"]])
+	local url = "https://github.com/" .. vim.fn.getreg("*")
+
+	open(url)
+end)

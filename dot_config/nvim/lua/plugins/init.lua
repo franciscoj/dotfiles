@@ -2,6 +2,7 @@
 return {
 	"folke/lazy.nvim",
 	-- QOL plugins
+	{ "nvim-lua/plenary.nvim" },
 	{
 		"numToStr/Comment.nvim",
 		event = { "VeryLazy" },
