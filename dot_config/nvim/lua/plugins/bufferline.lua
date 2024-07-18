@@ -29,8 +29,8 @@ return {
 
 			h.nnoremap("<leader>b", bufferline.pick_buffer)
 			h.nnoremap("<leader>bd", "<cmd>BufferLinePickClose<cr>")
-			h.nnoremap("]b", "<cmd>BufferLineCycleNext>")
-			h.nnoremap("[b", "<cmd>BufferLineCyclePrev>")
+			h.nnoremap("]b", "<cmd>BufferLineCycleNext<cr>")
+			h.nnoremap("[b", "<cmd>BufferLineCyclePrev<cr>")
 		end,
 	},
 }
