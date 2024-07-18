@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 local math = require("math")
 
 return {
@@ -6,8 +7,8 @@ return {
 		lazy = true,
 		keys = {
 			{ "<leader><ESC>", [[<CMD>:ToggleTerm<CR>]] },
-			{ mode = "t", "<leader><ESC>", [[<C-\><C-N><CMD>:ToggleTerm<CR>]] },
-			{ mode = "t", "<LocalLeader><ESC>", [[<C-\><C-N>]] },
+			{ "<leader><ESC>", [[<C-\><C-N><CMD>:ToggleTerm<CR>]], mode = "t" },
+			{ "<LocalLeader><ESC>", [[<C-\><C-N>]], mode = "t" },
 		},
 		config = function()
 			require("toggleterm").setup({

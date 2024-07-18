@@ -1,36 +1,29 @@
+--# selene: allow(mixed_table)
 return {
 	"folke/lazy.nvim",
 	-- QOL plugins
 	{
 		"numToStr/Comment.nvim",
 		event = { "VeryLazy" },
-		config = function()
-			require("Comment").setup()
-		end,
+		config = function() require("Comment").setup() end,
 	},
 	{
 		"echasnovski/mini.surround",
 		version = "*",
 		event = { "VeryLazy" },
-		config = function()
-			require("mini.surround").setup()
-		end,
+		config = function() require("mini.surround").setup() end,
 	},
 	{
 		"echasnovski/mini.indentscope",
 		version = "*",
 		event = { "VeryLazy" },
-		config = function()
-			require("mini.indentscope").setup()
-		end,
+		config = function() require("mini.indentscope").setup() end,
 	},
 	{
 		"echasnovski/mini.pairs",
 		version = "*",
 		event = { "VeryLazy" },
-		config = function()
-			require("mini.pairs").setup()
-		end,
+		config = function() require("mini.pairs").setup() end,
 	},
 	-- praise tpope section
 	"tpope/vim-abolish",
@@ -76,7 +69,6 @@ return {
 			{ "ga", "<Plug>(EasyAlign)", mode = "n" },
 			{ "ga", "<Plug>(EasyAlign)", mode = "x" },
 		},
-		config = function() end,
 	},
 	{ dir = "~/.config/private.nvim/" },
 }

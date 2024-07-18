@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 return {
 	{
 		"nvim-pack/nvim-spectre",

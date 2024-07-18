@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 return {
 	{
 		"nvim-neo-tree/neo-tree.nvim",

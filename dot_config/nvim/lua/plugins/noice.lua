@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 if vim.g.started_by_firenvim then
 	return {}
 end

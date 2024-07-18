@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -72,25 +73,25 @@ return {
 						goto_next_start = {
 							["<localleader>l"] = "@parameter.inner",
 							["]f"] = "@function.outer",
-							["]b"] = "@block.outer",
+							-- ["]b"] = "@block.outer",
 							["]]"] = "@class.outer",
 						},
 						goto_next_end = {
 							["<localleader><localleader>l"] = "@parameter.inner",
 							["]F"] = "@function.outer",
-							["]B"] = "@block.outer",
+							-- ["]B"] = "@block.outer",
 							["]["] = "@class.outer",
 						},
 						goto_previous_start = {
 							["<localleader>h"] = "@parameter.inner",
 							["[f"] = "@function.outer",
-							["[b"] = "@block.outer",
+							-- ["[b"] = "@block.outer",
 							["[["] = "@class.outer",
 						},
 						goto_previous_end = {
 							["<localleader><localleader>h"] = "@parameter.inner",
 							["[F"] = "@function.outer",
-							["[B"] = "@block.outer",
+							-- ["[B"] = "@block.outer",
 							["[]"] = "@class.outer",
 						},
 					},

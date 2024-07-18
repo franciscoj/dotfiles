@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 return {
 	{
 		"vim-test/vim-test",
@@ -22,8 +23,6 @@ return {
 		dependencies = {
 			"akinsho/toggleterm.nvim",
 		},
-		config = function()
-			vim.g["test#strategy"] = "toggleterm"
-		end,
+		config = function() vim.g["test#strategy"] = "toggleterm" end,
 	},
 }

@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 return {
 	{
 		"nvim-lualine/lualine.nvim",
@@ -74,6 +75,7 @@ return {
 			end
 
 			-- centers any component that comes after it
+			-- stylua: ignore
 			local center = function()
 				return "%="
 			end
@@ -103,12 +105,8 @@ return {
 			end
 
 			local conditions = {
-				buffer_not_empty = function()
-					return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
-				end,
-				hide_in_width = function()
-					return vim.fn.winwidth(0) > WIDTH_LIMIT
-				end,
+				buffer_not_empty = function() return vim.fn.empty(vim.fn.expand("%:t")) ~= 1 end,
+				hide_in_width = function() return vim.fn.winwidth(0) > WIDTH_LIMIT end,
 				check_git_workspace = function()
 					local filepath = vim.fn.expand("%:p:h")
 					local gitdir = vim.fn.finddir(".git", filepath .. ";")

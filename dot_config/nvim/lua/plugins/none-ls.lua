@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 return {
 	"nvimtools/none-ls.nvim",
 	lazy = true,

@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 return {
 	{
 		"akinsho/bufferline.nvim",
@@ -28,6 +29,8 @@ return {
 
 			h.nnoremap("<leader>b", bufferline.pick_buffer)
 			h.nnoremap("<leader>bd", "<cmd>BufferLinePickClose<cr>")
+			h.nnoremap("]b", "<cmd>BufferLineCycleNext>")
+			h.nnoremap("[b", "<cmd>BufferLineCyclePrev>")
 		end,
 	},
 }

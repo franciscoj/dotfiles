@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 local features = require("franciscoj.lsp.features")
 
 return {

@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 return {
 	{
 		"hrsh7th/nvim-cmp",
@@ -21,9 +22,7 @@ return {
 
 			cmp.setup({
 				snippet = {
-					expand = function(args)
-						luasnip.lsp_expand(args.body)
-					end,
+					expand = function(args) luasnip.lsp_expand(args.body) end,
 				},
 				window = {
 					completion = cmp.config.window.bordered(),

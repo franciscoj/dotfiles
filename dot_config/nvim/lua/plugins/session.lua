@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 return {
 	{
 		"tpope/vim-obsession",

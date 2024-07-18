@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 return {
 	{
 		"stevearc/overseer.nvim",
@@ -13,7 +14,7 @@ return {
 		config = function()
 			require("overseer").setup({ strategy = {
 				"toggleterm",
-				direction = "tab"
+				direction = "tab",
 			} })
 		end,
 	},
