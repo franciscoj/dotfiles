@@ -5,7 +5,6 @@ return {
 		enabled = not vim.g.started_by_firenvim,
 		event = "VeryLazy",
 		config = function()
-			local h = require("h")
 			local bufferline = require("bufferline")
 			bufferline.setup({
 				options = {
@@ -27,10 +26,10 @@ return {
 				},
 			})
 
-			h.nnoremap("<leader>b", bufferline.pick_buffer)
-			h.nnoremap("<leader>bd", "<cmd>BufferLinePickClose<cr>")
-			h.nnoremap("]b", "<cmd>BufferLineCycleNext<cr>")
-			h.nnoremap("[b", "<cmd>BufferLineCyclePrev<cr>")
+			vim.keymap.set("n", "<leader>b", bufferline.pick_buffer, { desc = "Buffer pick" })
+			vim.keymap.set("n", "<leader>bd", "<cmd>BufferLinePickClose<cr>", { desc = "Buffer delete" })
+			vim.keymap.set("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "Buffer next" })
+			vim.keymap.set("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "Buffer prev" })
 		end,
 	},
 }

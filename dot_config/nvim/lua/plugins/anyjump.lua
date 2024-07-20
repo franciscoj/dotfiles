@@ -4,9 +4,9 @@ return {
 		"pechorin/any-jump.vim",
 		enabled = not vim.g.started_by_firenvim,
 		keys = {
-			{ "<leader>j" },
-			{ "<leader>ab" },
-			{ "<leader>al" },
+			{ "<leader>j", desc = "Anyjump" },
+			{ "<leader>ab", desc = "Anyjump back"  },
+			{ "<leader>al", desc = "Anyjump last results" },
 		},
 	},
 }

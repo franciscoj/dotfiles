@@ -1,6 +1,20 @@
 --# selene: allow(mixed_table)
 return {
 	"folke/lazy.nvim",
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = {
+			preset = "helix",
+		},
+		keys = {
+			{
+				"<leader>?",
+				function() require("which-key").show({ global = false }) end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
+		},
+	},
 	-- QOL plugins
 	{ "nvim-lua/plenary.nvim" },
 	{
@@ -47,7 +61,7 @@ return {
 		"folke/zen-mode.nvim",
 		lazy = true,
 		keys = {
-			{ "<leader>zz", "<cmd>ZenMode<cr>" },
+			{ "<leader>zz", "<cmd>ZenMode<cr>", desc = "Zen mode" },
 		},
 		config = function()
 			require("zen-mode").setup({
@@ -61,7 +75,7 @@ return {
 	{
 		"simnalamburt/vim-mundo",
 		keys = {
-			{ "<leader>U", "<cmd>MundoToggle<cr>" },
+			{ "<leader>U", "<cmd>MundoToggle<cr>", desc = "Undo tree" },
 		},
 	},
 	{

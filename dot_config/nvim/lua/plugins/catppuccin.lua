@@ -45,6 +45,7 @@ return {
 					telescope = true,
 					treesitter = true,
 					treesitter_context = true,
+					which_key = true,
 				},
 				highlight_overrides = {
 					WinSeparator = { bg = colors.none },

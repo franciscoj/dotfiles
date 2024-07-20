@@ -1,41 +1,39 @@
-local h = require("h")
-
 -- Easily add ending characters
-h.nnoremap("<leader>,", "mzA,<esc>`z:delm z<cr>")
-h.nnoremap("<leader>.", "mzA.<esc>`z:delm z<cr>")
-h.nnoremap("<leader>;", "mzA;<esc>`z:delm z<cr>")
-h.nnoremap("<leader>:", "mzA:<esc>`z:delm z<cr>")
+vim.keymap.set("n", "<leader>,", "mzA,<esc>`z:delm z<cr>", { desc = "EOL ," })
+vim.keymap.set("n", "<leader>.", "mzA.<esc>`z:delm z<cr>", { desc = "EOL ." })
+vim.keymap.set("n", "<leader>;", "mzA;<esc>`z:delm z<cr>", { desc = "EOL ;" })
+vim.keymap.set("n", "<leader>:", "mzA:<esc>`z:delm z<cr>", { desc = "EOL :" })
 
 -- Save
-h.nnoremap("<leader>w", ":write<cr>")
-h.nnoremap("<leader>wa", ":wall<cr>")
+vim.keymap.set("n", "<leader>w", ":write<cr>", { desc = "Write file" })
+vim.keymap.set("n", "<leader>wa", ":wall<cr>", { desc = "Write all files" })
 
 -- Edit file on current folder
-h.nnoremap("<leader>e", ":e <C-R>=expand('%:p:h') . '/'<cr>")
-h.nnoremap("<leader>ec", [[:let @+ = expand("%")<cr>]])
-h.nnoremap("<leader>eC", [[:let @+ = expand("%:p")<cr>]])
+vim.keymap.set("n", "<leader>e", ":e <C-R>=expand('%:p:h') . '/'<cr>", { desc = "Edit on current folder" })
+vim.keymap.set("n", "<leader>ec", [[:let @+ = expand("%")<cr>]], { desc = "Copy current path" })
+vim.keymap.set("n", "<leader>eC", [[:let @+ = expand("%:p")<cr>]], { desc = "Copy current absolute path" })
 
 -- Toggle search highlight off
-h.nnoremap("<LocalLeader><esc>", ":nohlsearch<cr>")
+vim.keymap.set("n", "<LocalLeader><esc>", ":nohlsearch<cr>", { desc = "Hide highlights" })
 
 -- Win management
-h.nnoremap("<C-J>", ":wincmd j<CR>")
-h.nnoremap("<C-K>", ":wincmd k<CR>")
-h.nnoremap("<C-H>", ":wincmd h<CR>")
-h.nnoremap("<C-L>", ":wincmd l<CR>")
-h.nnoremap("<leader>s", ":wincmd s<CR>")
-h.nnoremap("<leader>v", ":wincmd v<CR>")
-h.nnoremap("<leader>q", ":wincmd c<CR>")
+vim.keymap.set("n", "<C-J>", ":wincmd j<CR>", { desc = "Window ->" })
+vim.keymap.set("n", "<C-K>", ":wincmd k<CR>", { desc = "Window ↓" })
+vim.keymap.set("n", "<C-H>", ":wincmd h<CR>", { desc = "Window <-" })
+vim.keymap.set("n", "<C-L>", ":wincmd l<CR>", { desc = "Window ↑" })
+vim.keymap.set("n", "<leader>s", ":wincmd s<CR>", { desc = "Split --" })
+vim.keymap.set("n", "<leader>v", ":wincmd v<CR>", { desc = "Split |" })
+vim.keymap.set("n", "<leader>q", ":wincmd c<CR>", { desc = "Close window" })
 
 -- Tab management
-h.nnoremap("<leader>tt", ":tabnew %<CR>")
-h.nnoremap("<leader>tc", ":tabclose<CR>")
+vim.keymap.set("n", "<leader>tt", ":tabnew %<CR>", { desc = "New tab" })
+vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { desc = "Close tab" })
 
 -- Code movement
-h.nnoremap("<C-u>", "<C-u>zz")
-h.nnoremap("<C-d>", "<C-d>zz")
-h.nnoremap("n", "nzz")
-h.nnoremap("N", "Nzz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
 
 -- More comfortable <esc>
 vim.keymap.set("i", "jj", "<esc>")
@@ -54,7 +52,7 @@ vim.keymap.set("n", "<leader>sl", function()
 	else
 		vim.notify("No Session.vim file", vim.log.levels.WARN)
 	end
-end)
+end, { desc = "Session load" })
 
 -- Open the repo name inside quotes on the browser
 local open_cmd = function()
@@ -89,4 +87,4 @@ vim.keymap.set("n", "<leader>og", function()
 	local url = "https://github.com/" .. vim.fn.getreg("*")
 
 	open(url)
-end)
+end, { desc = "Browse repo under cursor" })

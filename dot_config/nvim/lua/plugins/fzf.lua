@@ -5,14 +5,13 @@ return {
 		-- optional for icon support
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
-			{ "<leader>fG", function() require("fzf-lua").grep() end },
-			{ "<leader>fb", function() require("fzf-lua").buffers() end },
-			{ "<leader>ff", function() require("fzf-lua").files() end },
-			{ "<leader>fg", function() require("fzf-lua").live_grep() end },
-			{ "<leader>fm", function() require("fzf-lua").marks() end },
-			{ "<leader>fr", function() require("fzf-lua").registers() end },
-			{ "<leader>fw", function() require("fzf-lua").grep_cword() end },
-			{ "<leader>gf", function() require("fzf-lua").git_status() end },
+			{ "<leader>fG", function() require("fzf-lua").grep() end, desc = "Grep" },
+			{ "<leader>fb", function() require("fzf-lua").buffers() end, desc = "Find Buffer" },
+			{ "<leader>ff", function() require("fzf-lua").files() end, desc = "Find File" },
+			{ "<leader>fg", function() require("fzf-lua").live_grep() end, desc = "Live Grep" },
+			{ "<leader>fm", function() require("fzf-lua").marks() end, desc = "Find Mark" },
+			{ "<leader>fr", function() require("fzf-lua").registers() end, desc = "Find Registers" },
+			{ "<leader>fw", function() require("fzf-lua").grep_cword() end, desc = "Find Word Under Cursor" },
 			{ "<localleader>'", function() require("fzf-lua").registers() end, mode = { "n", "i" } },
 		},
 		config = function()

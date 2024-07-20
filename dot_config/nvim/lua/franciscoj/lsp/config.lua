@@ -1,35 +1,46 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local Config = {
 	["__on_attach"] = function(client, _bufnr)
-		local h = require("h")
 		local fzf = require("fzf-lua")
 
 		-- Using LSP defaults
-		h.nnoremap("gD", vim.lsp.buf.declaration)
-		h.nnoremap("gd", vim.lsp.buf.definition)
-		h.nnoremap("<LocalLeader>t", vim.lsp.buf.type_definition)
-		h.nnoremap("<LocalLeader>f", function()
-			vim.lsp.buf.format({ timeout_ms = 5000 })
-		end)
-		h.nnoremap("K", vim.lsp.buf.hover)
-		h.nnoremap("<LocalLeader>k", vim.lsp.buf.signature_help)
-		h.nnoremap("<LocalLeader>r", vim.lsp.buf.rename)
-		h.nnoremap("<LocalLeader>a", vim.lsp.buf.code_action)
+		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration (LSP)" })
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition (LSP)" })
+		vim.keymap.set("n", "<LocalLeader>t", vim.lsp.buf.type_definition, { desc = "Go to type definition (LSP)" })
+		vim.keymap.set(
+			"n",
+			"<LocalLeader>f",
+			function() vim.lsp.buf.format({ timeout_ms = 5000 }) end,
+			{ desc = "Format buffer (LSP)" }
+		)
+		vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "See docs (LSP)" })
+		vim.keymap.set("n", "<LocalLeader>k", vim.lsp.buf.signature_help, { desc = "Signature help (LSP)" })
+		vim.keymap.set("n", "<LocalLeader>r", vim.lsp.buf.rename, { desc = "Rename symbol (LSP)" })
+		vim.keymap.set("n", "<LocalLeader>a", vim.lsp.buf.code_action, { desc = "Run code action (LSP)" })
 
 		-- Using fzf-lua
-		h.nnoremap("<leader>fo", fzf.lsp_workspace_symbols)
-		h.nnoremap("gr", fzf.lsp_references)
-		h.nnoremap("gi", fzf.lsp_implementations)
+		vim.keymap.set("n", "<leader>fo", fzf.lsp_workspace_symbols, { desc = "Find symbol (LSP)" })
+		vim.keymap.set("n", "gr", fzf.lsp_references, { desc = "Find references (LSP)" })
+		vim.keymap.set("n", "gi", fzf.lsp_implementations, { desc = " Find implementations (LSP)" })
 
-		h.nnoremap("<LocalLeader>;", function()
-			vim.diagnostic.open_float(nil, { focus = false, border = "rounded" })
-		end)
-		h.nnoremap("]d", function()
-			vim.diagnostic.goto_next({ float = { focus = false, border = "rounded" } })
-		end)
-		h.nnoremap("[d", function()
-			vim.diagnostic.goto_prev({ float = { focus = false, border = "rounded" } })
-		end)
+		vim.keymap.set(
+			"n",
+			"<LocalLeader>;",
+			function() vim.diagnostic.open_float(nil, { focus = false, border = "rounded" }) end,
+			{ desc = "Diagnostic detail (LSP)" }
+		)
+		vim.keymap.set(
+			"n",
+			"]d",
+			function() vim.diagnostic.goto_next({ float = { focus = false, border = "rounded" } }) end,
+			{ desc = "Next diagnostic (LSP)" }
+		)
+		vim.keymap.set(
+			"n",
+			"[d",
+			function() vim.diagnostic.goto_prev({ float = { focus = false, border = "rounded" } }) end,
+			{ desc = "Prev diagnostic (LSP)" }
+		)
 
 		-- Disable virtual diagnostics because they are mostly annoying
 		vim.diagnostic.config({ virtual_text = false })
@@ -40,12 +51,10 @@ local Config = {
 			vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
 				buffer = 0,
 				group = id,
-				callback = function()
-					vim.lsp.codelens.refresh({ bufnr = 0 })
-				end,
+				callback = function() vim.lsp.codelens.refresh({ bufnr = 0 }) end,
 			})
 
-			h.nnoremap("<LocalLeader>A", vim.lsp.codelens.run)
+			vim.keymap.set("n", "<LocalLeader>A", vim.lsp.codelens.run, { desc = "Run codelens (LSP)" })
 		end
 	end,
 	["__handlers"] = {
@@ -54,6 +63,7 @@ local Config = {
 	},
 }
 
+-- stylua: ignore
 function Config:to_lspconfig()
 	return self.config
 end

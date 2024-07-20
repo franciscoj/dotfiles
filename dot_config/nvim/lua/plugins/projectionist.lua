@@ -5,7 +5,6 @@ return {
 		enabled = not vim.g.started_by_firenvim,
 		event = "VeryLazy",
 		config = function()
-			local h = require("h")
 			vim.g.projectionist_heuristics = {
 				["go.mod"] = {
 					["*.go"] = {
@@ -19,9 +18,9 @@ return {
 				},
 			}
 
-			h.nnoremap("<leader><leader>", "<cmd>A<cr>")
-			h.nnoremap("v<leader><leader>", "<cmd>AV<cr>")
-			h.nnoremap("s<leader><leader>", "<cmd>AS<cr>")
+			vim.keymap.set("n", "<leader><leader>", "<cmd>A<cr>", { desc = "Alternate file" })
+			vim.keymap.set("n", "v<leader><leader>", "<cmd>AV<cr>", { desc = "Alternate file (vert)" })
+			vim.keymap.set("n", "s<leader><leader>", "<cmd>AS<cr>", { desc = "Alternate file (hor)" })
 		end,
 	},
 }
