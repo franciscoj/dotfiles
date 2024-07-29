@@ -1,20 +1,6 @@
 --# selene: allow(mixed_table)
 return {
 	"folke/lazy.nvim",
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		opts = {
-			preset = "helix",
-		},
-		keys = {
-			{
-				"<leader>?",
-				function() require("which-key").show({ global = false }) end,
-				desc = "Buffer Local Keymaps (which-key)",
-			},
-		},
-	},
 	-- QOL plugins
 	{ "nvim-lua/plenary.nvim" },
 	{

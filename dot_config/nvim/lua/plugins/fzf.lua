@@ -12,7 +12,6 @@ return {
 			{ "<leader>fm", function() require("fzf-lua").marks() end, desc = "Find Mark" },
 			{ "<leader>fr", function() require("fzf-lua").registers() end, desc = "Find Registers" },
 			{ "<leader>fw", function() require("fzf-lua").grep_cword() end, desc = "Find Word Under Cursor" },
-			{ "<localleader>'", function() require("fzf-lua").registers() end, mode = { "n", "i" } },
 		},
 		config = function()
 			local fzf = require("fzf-lua")
