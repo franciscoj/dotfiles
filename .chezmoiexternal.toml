@@ -21,7 +21,7 @@
 {{ $fzfVersion := "0.54.3" -}}
 [".local/bin/fzf"]
   type = "archive-file"
-  url = "https://github.com/junegunn/fzf/releases/download/{{ $fzfVersion }}/fzf-{{ $fzfVersion }}-linux_amd64.tar.gz"
+  url = "https://github.com/junegunn/fzf/releases/download/v{{ $fzfVersion }}/fzf-{{ $fzfVersion }}-linux_amd64.tar.gz"
   path = "fzf"
 
 [".config/zplug"]
