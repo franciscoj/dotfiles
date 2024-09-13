@@ -23,7 +23,7 @@ local cfg = Config:new({
 		},
 	},
 	on_attach = function(client, _bufnr)
-		-- disable  formatting for tsserver so that prettier handles it through
+		-- disable  formatting for ts_ls so that prettier handles it through
 		-- null-ls
 		client.server_capabilities.documentFormattingProvider = false
 		client.server_capabilities.documentRangeFormattingProvider = false
@@ -32,4 +32,4 @@ local cfg = Config:new({
 	end,
 })
 
-lspconfig.tsserver.setup(cfg:to_lspconfig())
+lspconfig.ts_ls.setup(cfg:to_lspconfig())
