@@ -42,7 +42,7 @@ return {
 
 		if features.go then
 			table.insert(ensure, { name = "goimports", version = "latest" })
-			table.insert(ensure, { name = "golangci-lint", version = "v1.53.3" })
+			table.insert(ensure, { name = "golangci-lint", version = "v1.60.3" })
 
 			table.insert(sources, actions.gomodifytags)
 			table.insert(sources, actions.impl)
