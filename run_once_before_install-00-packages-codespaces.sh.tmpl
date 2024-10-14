@@ -5,7 +5,11 @@
 set -e
 
 echo "Installing: dependencies with apt ********************"
-sudo apt update && sudo apt install -y ripgrep fd-find busybox universal-ctags
+sudo apt update && sudo apt install -y fd-find busybox universal-ctags
+
+echo "Installing: ripgrep ********************"
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.1/ripgrep_14.1.1-1_amd64.deb
+sudo dpkg -i ripgrep_14.1.1-1_amd64.deb
 
 echo "Installing: starship ********************"
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
