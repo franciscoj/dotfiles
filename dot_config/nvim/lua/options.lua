@@ -76,6 +76,11 @@ vim.opt.wrap = false -- Don't auto-wrap lines by default
 -- On a delete and insert (e.g. `caw`) it mark where the change ends.
 vim.opt.cpoptions:append("$")
 
+-- Use zsh if available
+if vim.fn.executable("/bin/zsh") then
+	vim.opt.shell = "/bin/zsh"
+end
+
 if vim.env.CODESPACES then
 	vim.g.clipboard = {
 		name = "rdm",
