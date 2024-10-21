@@ -12,7 +12,7 @@ return {
 			require("neo-tree").setup({
 				popup_border_style = "rounded",
 				filesystem = {
-					hijack_netrw_behavior = "open_current",
+					hijack_netrw_behavior = "disabled",
 					cwd_target = {
 						sidebar = "none",
 						current = "none",

@@ -71,5 +71,13 @@ return {
 			{ "ga", "<Plug>(EasyAlign)", mode = "x" },
 		},
 	},
+	{
+		"stevearc/oil.nvim",
+		---@module 'oil'
+		---@type oil.SetupOpts
+		opts = {},
+		-- Optional dependencies
+		dependencies = { { "echasnovski/mini.icons", opts = {} } },
+	},
 	{ dir = "~/.config/private.nvim/" },
 }
