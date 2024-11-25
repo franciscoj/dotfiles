@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead Dockerfile.*, Dockerfile_* set filetype=dockerfile
+autocmd BufNewFile,BufRead Dockerfile.*,Dockerfile_* set filetype=dockerfile
