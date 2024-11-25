@@ -1,8 +1,3 @@
-import = [
-  # uncomment the flavour you want below:
-  "~/.config/alacritty/catppuccin-mocha.toml"
-  # "~/.config/alacritty/catppuccin-latte.toml"
-]
 
 [env]
 TERM = "alacritty"
@@ -34,4 +29,11 @@ startup_mode = "Maximized"
 [keyboard]
 bindings = [
 { key = "Space", mods = "Alt|Shift", action = "ToggleViMode" },
+]
+
+[general]
+import = [
+  # uncomment the flavour you want below:
+  "~/.config/alacritty/catppuccin-mocha.toml"
+  # "~/.config/alacritty/catppuccin-latte.toml"
 ]
