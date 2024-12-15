@@ -10,7 +10,10 @@ return {
 			"hrsh7th/cmp-cmdline",
 			"petertriho/cmp-git",
 			-- snippets
-			"L3MON4D3/LuaSnip",
+			{
+				"L3MON4D3/LuaSnip",
+				submodules = false,
+			},
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
 		},
