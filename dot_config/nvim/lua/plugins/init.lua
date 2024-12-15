@@ -79,5 +79,4 @@ return {
 		-- Optional dependencies
 		dependencies = { { "echasnovski/mini.icons", opts = {} } },
 	},
-	{ dir = "~/.config/private.nvim/" },
 }
