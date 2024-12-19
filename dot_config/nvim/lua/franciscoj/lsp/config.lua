@@ -10,7 +10,7 @@ local Config = {
 		vim.keymap.set(
 			"n",
 			"<LocalLeader>f",
-			function() vim.lsp.buf.format({ timeout_ms = 5000, id = client.id, bufnr = 0 }) end,
+			function() vim.lsp.buf.format({ timeout_ms = 5000 }) end,
 			{ desc = "Format buffer (LSP)" }
 		)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "See docs (LSP)" })
