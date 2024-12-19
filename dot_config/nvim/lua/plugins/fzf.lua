@@ -11,6 +11,7 @@ return {
 			{ "<leader>fg", function() require("fzf-lua").live_grep() end, desc = "Live Grep" },
 			{ "<leader>fm", function() require("fzf-lua").marks() end, desc = "Find Mark" },
 			{ "<leader>fr", function() require("fzf-lua").registers() end, desc = "Find Registers" },
+			{ "<leader>fv", function() require("fzf-lua").grep_visual() end, desc = "Find Visual Selection", mode = { "x" } },
 			{ "<leader>fw", function() require("fzf-lua").grep_cword() end, desc = "Find Word Under Cursor" },
 		},
 		config = function()
