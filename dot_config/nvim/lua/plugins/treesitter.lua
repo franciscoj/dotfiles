@@ -12,6 +12,7 @@ return {
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
 					"bash",
+					"c_sharp",
 					"comment",
 					"dockerfile",
 					"eex",
