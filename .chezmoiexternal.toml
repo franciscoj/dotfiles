@@ -6,19 +6,19 @@
 
 {{ if or .codespaces .wsl .ubuntu }}
 
-{{ $ezaVersion := "v0.20.2" -}}
+{{ $ezaVersion := "v0.20.24" -}}
 [".local/bin/eza"]
   type = "archive-file"
   url = "https://github.com/eza-community/eza/releases/download/{{ $ezaVersion }}/eza_x86_64-unknown-linux-musl.zip"
   path = "eza"
 
-{{ $zellijVersion := "v0.41.1" -}}
+{{ $zellijVersion := "v0.42.0" -}}
 [".local/bin/zellij"]
   type = "archive-file"
   url = "https://github.com/zellij-org/zellij/releases/download/{{ $zellijVersion }}/zellij-x86_64-unknown-linux-musl.tar.gz"
   path = "zellij"
 
-{{ $fzfVersion := "0.55.0" -}}
+{{ $fzfVersion := "0.60.3" -}}
 [".local/bin/fzf"]
   type = "archive-file"
   url = "https://github.com/junegunn/fzf/releases/download/v{{ $fzfVersion }}/fzf-{{ $fzfVersion }}-linux_amd64.tar.gz"
