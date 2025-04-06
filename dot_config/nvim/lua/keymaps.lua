@@ -67,6 +67,7 @@ local open_cmd = function()
 	return false
 end
 
+-- Open a URL in the browser
 local open = function(url)
 	local cmd = open_cmd()
 
