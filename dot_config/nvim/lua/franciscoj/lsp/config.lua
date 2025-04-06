@@ -13,15 +13,11 @@ local Config = {
 			function() vim.lsp.buf.format({ timeout_ms = 5000 }) end,
 			{ desc = "Format buffer (LSP)" }
 		)
-		vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "See docs (LSP)" })
-		vim.keymap.set("n", "<LocalLeader>k", vim.lsp.buf.signature_help, { desc = "Signature help (LSP)" })
-		vim.keymap.set("n", "<LocalLeader>r", vim.lsp.buf.rename, { desc = "Rename symbol (LSP)" })
-		vim.keymap.set("n", "<LocalLeader>a", vim.lsp.buf.code_action, { desc = "Run code action (LSP)" })
 
 		-- Using fzf-lua
 		vim.keymap.set("n", "<leader>fo", fzf.lsp_workspace_symbols, { desc = "Find symbol (LSP)" })
-		vim.keymap.set("n", "gr", fzf.lsp_references, { desc = "Find references (LSP)" })
-		vim.keymap.set("n", "gi", fzf.lsp_implementations, { desc = " Find implementations (LSP)" })
+		vim.keymap.set("n", "grr", fzf.lsp_references, { desc = "Find references (LSP)" })
+		vim.keymap.set("n", "gri", fzf.lsp_implementations, { desc = " Find implementations (LSP)" })
 
 		vim.keymap.set(
 			"n",
@@ -42,8 +38,11 @@ local Config = {
 			{ desc = "Prev diagnostic (LSP)" }
 		)
 
-		-- Disable virtual diagnostics because they are mostly annoying
-		vim.diagnostic.config({ virtual_text = false })
+		-- Disable virtual diagnostics because they are mostly and enable virtual lines for the current line.
+		vim.diagnostic.config({
+			virtual_text = false,
+			virtual_lines = { current_line = true },
+		})
 
 		if client.server_capabilities.codeLensProvider then
 			local id = vim.api.nvim_create_augroup("lsp_code_lens_refresh", { clear = false })
