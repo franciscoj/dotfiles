@@ -32,7 +32,6 @@ return {
 	"tpope/vim-eunuch",
 	"tpope/vim-repeat",
 	"tpope/vim-rsi",
-	"tpope/vim-unimpaired",
 	"tpope/vim-vinegar",
 	{
 		"AndrewRadev/splitjoin.vim",
