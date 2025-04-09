@@ -9,12 +9,16 @@ local detect = function(file)
 	return vim.fn.getftype(file) ~= ""
 end
 
+local is_forced = function(name)
+	return os.getenv("LSP_FORCE"):find(name)
+end
+
 return {
 	codespaces = os.getenv("CODESPACES"),
 	elixir = detect("mix.exs"),
 	go = detect("go.mod"),
 	lua = detect("selene.toml"),
-	rust = detect("Cargo.toml"),
+	rust = detect("Cargo.toml") or is_forced("rust"),
 	-- Phoenix apps usually keep the JS stack inside the assets folder
 	typescript = detect("package.json") or detect("assets/package.json"),
 	tailwind = detect("tailwind.config.js"),
