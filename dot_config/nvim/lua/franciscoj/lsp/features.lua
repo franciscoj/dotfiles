@@ -10,7 +10,8 @@ local detect = function(file)
 end
 
 local is_forced = function(name)
-	return os.getenv("LSP_FORCE"):find(name)
+	local env = os.getenv("LSP_FORCE")
+	return env and env:find(name) or false
 end
 
 return {
