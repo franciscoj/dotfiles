@@ -2,7 +2,6 @@
 return {
 	{
 		"tpope/vim-projectionist",
-		enabled = not vim.g.started_by_firenvim,
 		event = "VeryLazy",
 		config = function()
 			vim.g.projectionist_heuristics = {

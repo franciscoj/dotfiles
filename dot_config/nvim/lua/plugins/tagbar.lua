@@ -2,7 +2,6 @@
 return {
 	{
 		"preservim/tagbar",
-		enabled = not vim.g.started_by_firenvim,
 		cmd = {
 			"TagbarOpen",
 			"TagbarClose",

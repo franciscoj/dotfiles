@@ -4,7 +4,6 @@ return {
 	-- more than a year and I don't know if I need it.
 	-- {
 	-- 	"rcarriga/nvim-dap-ui",
-	-- 	enabled = not vim.g.started_by_firenvim,
 	-- 	dependencies = { "mfussenegger/nvim-dap", "williamboman/mason.nvim" },
 	-- 	keys = {
 	-- 		{ "<leader>dd" },

@@ -1,13 +1,8 @@
 --# selene: allow(mixed_table)
-if vim.g.started_by_firenvim then
-	return {}
-end
-
 return {
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
-		enabled = not vim.g.started_by_firenvim,
 		config = function()
 			require("noice").setup({
 				cmdline = {

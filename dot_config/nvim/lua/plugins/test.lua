@@ -2,7 +2,6 @@
 return {
 	{
 		"vim-test/vim-test",
-		enabled = not vim.g.started_by_firenvim,
 		keys = {
 			{ "<LocalLeader>tf", "<CMD>TestFile<CR>", desc = "Run test file" },
 			{ "<LocalLeader>tl", "<CMD>TestNearest<CR>", desc = "Run nearest test" },

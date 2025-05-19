@@ -3,7 +3,6 @@
 return {
 	{
 		"tpope/vim-fugitive",
-		enabled = not vim.g.started_by_firenvim,
 		dependencies = {
 			"tpope/vim-git",
 			"tpope/vim-rhubarb",
@@ -20,7 +19,6 @@ return {
 	},
 	{
 		"junegunn/gv.vim",
-		enabled = not vim.g.started_by_firenvim,
 		dependencies = { "tpope/vim-fugitive" },
 		keys = {
 			{ "<localleader>gl", "<CMD>GV!<CR>", desc = "Git log current file" },
@@ -30,7 +28,6 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "VeryLazy",
-		enabled = not vim.g.started_by_firenvim,
 		dependencies = { "nvim-lua/plenary.nvim" },
 		keys = {
 			{ "<leader>gb", function() require("gitsigns").blame() end, desc = "Git blame" },
@@ -45,7 +42,6 @@ return {
 	},
 	{
 		"pwntester/octo.nvim",
-		enabled = not vim.g.started_by_firenvim,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
@@ -60,7 +56,6 @@ return {
 	},
 	{
 		"sindrets/diffview.nvim",
-		enabled = not vim.g.started_by_firenvim,
 		keys = {
 			{ "<leader>gd", "<CMD>DiffviewOpen<CR>", desc = "Git diff" },
 			{ "<leader>gD", "<CMD>DiffviewOpen HEAD~1<CR>", desc = "Git diff last commit" },

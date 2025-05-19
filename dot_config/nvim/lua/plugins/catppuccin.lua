@@ -5,11 +5,7 @@ return {
 		name = "catppuccin",
 		build = ":CatppuccinCompile",
 		config = function()
-			if vim.g.started_by_firenvim == true then
-				vim.g.catppuccin_flavour = "latte"
-			else
-				vim.g.catppuccin_flavour = "macchiato"
-			end
+			vim.g.catppuccin_flavour = "macchiato"
 
 			local catppuccin = require("catppuccin")
 			local colors = require("catppuccin.palettes").get_palette()

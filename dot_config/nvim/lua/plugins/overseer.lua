@@ -2,7 +2,6 @@
 return {
 	{
 		"stevearc/overseer.nvim",
-		enabled = not vim.g.started_by_firenvim,
 		keys = {
 			{ "<leader>T", "<CMD>OverseerRun<CR>", desc = "Run Task" },
 			{ "<leader>O", "<CMD>OverseerToggle<CR>", desc = "Toggle Overseer" },

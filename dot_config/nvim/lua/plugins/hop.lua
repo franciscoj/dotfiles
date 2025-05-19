@@ -2,7 +2,6 @@
 return {
 	{
 		"smoka7/hop.nvim",
-		enabled = not vim.g.started_by_firenvim,
 		event = "VeryLazy",
 		config = function()
 			local hop = require("hop")
