@@ -12,13 +12,25 @@ return {
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
 		dependencies = {
-			{ "zbirenbaum/copilot.lua" }, -- or zbirenbaum/copilot.lua
-			{ "nvim-lua/plenary.nvim" }, -- for curl, log and async functions
+			{ "zbirenbaum/copilot.lua" },
+			{ "nvim-lua/plenary.nvim" },
+			{ "ibhagwan/fzf-lua" },
 		},
-		-- build = "make tiktoken", -- Only on MacOS or Linux
+		build = "make tiktoken",
 		opts = {
-			-- See Configuration section for options
+			highlight_headers = false,
+			separator = "---",
+			error_header = "> [!ERROR] Error",
+
 		},
-		-- See Commands section for default commands if you want to lazy load on them
+	},
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+		---@module 'render-markdown'
+		---@type render.md.UserConfig
+		opts = {
+			file_types = { "markdown", "copilot-chat" },
+		},
 	},
 }
