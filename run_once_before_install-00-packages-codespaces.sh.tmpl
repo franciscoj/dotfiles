@@ -20,7 +20,7 @@ curl "https://mise.run" | sh
 
 echo "Installing: nvim ********************"
 pip3 install --user pynvim
-curl -LO https://github.com/neovim/neovim/releases/download/v0.11.1/nvim-linux-x86_64.appimage
+curl -LO https://github.com/neovim/neovim-releases/releases/download/v0.11.1/nvim-linux-x86_64.appimage
 chmod u+x nvim-linux-x86_64.appimage
 ./nvim-linux-x86_64.appimage --appimage-extract
 ./squashfs-root/AppRun --version
