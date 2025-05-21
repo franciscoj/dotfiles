@@ -20,11 +20,11 @@ curl "https://mise.run" | sh
 
 echo "Installing: nvim ********************"
 pip3 install --user pynvim
-curl -LO https://github.com/neovim/neovim/releases/download/v0.10.2/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage --appimage-extract
+curl -LO https://github.com/neovim/neovim/releases/download/v0.11.1/nvim-linux-x86_64.appimage
+chmod u+x nvim-linux-x86_64.appimage
+./nvim-linux-x86_64.appimage --appimage-extract
 ./squashfs-root/AppRun --version
-sudo mv squashfs-root / && ln -s /squashfs-root/AppRun $HOME/.local/bin/nvim
+sudo mv squashfs-root / && ln -s /squashfs-root/usr/bin/nvim $HOME/.local/bin/nvim
 
 echo "Installing: alacritty terminfo ********************"
 # from https://github.com/alacritty/alacritty/issues/2838#issuecomment-1032517876
