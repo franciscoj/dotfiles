@@ -52,6 +52,10 @@ return {
 			local features = require("franciscoj.lsp.features")
 			require("mason").setup({
 				ui = { border = "rounded" },
+				registries = {
+					"github:mason-org/mason-registry",
+					"github:Crashdummyy/mason-registry",
+				},
 			})
 
 			local ensure = { "yamlls", "marksman", "jsonls" }
@@ -87,5 +91,14 @@ return {
 
 			require("mason-lspconfig").setup({ ensure_installed = ensure })
 		end,
+	},
+	{
+		"seblyng/roslyn.nvim",
+		ft = "cs",
+		---@module 'roslyn.config'
+		---@type RoslynNvimConfig
+		opts = {
+			-- your configuration comes here; leave empty for default settings
+		},
 	},
 }
