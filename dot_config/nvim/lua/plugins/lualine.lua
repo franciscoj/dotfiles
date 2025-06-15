@@ -83,7 +83,7 @@ return {
 			local lsp = function()
 				local none = "(no LSP)"
 				local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-				local clients = vim.lsp.get_active_clients()
+				local clients = vim.lsp.get_clients()
 				if next(clients) == nil then
 					return none
 				end
