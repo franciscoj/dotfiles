@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "github": {
+      "headers": {
+        "Authorization": "Bearer ${cmd: gh auth token}"
+      },
+      "disabled": false,
+      "url": "https://api.githubcopilot.com/mcp/"
+    }
+  },
+  "nativeMCPServers": [
+    
+  ]
+}

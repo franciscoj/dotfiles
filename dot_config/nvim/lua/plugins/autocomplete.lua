@@ -12,9 +12,7 @@ return {
 			-- copilot
 			{
 				"zbirenbaum/copilot-cmp",
-				config = function()
-					require("copilot_cmp").setup()
-				end,
+				config = function() require("copilot_cmp").setup() end,
 			},
 			-- snippets
 			{
