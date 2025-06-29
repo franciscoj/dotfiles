@@ -10,8 +10,9 @@ vim.keymap.set("n", "<leader>wa", ":wall<cr>", { desc = "Write all files" })
 
 -- Edit file on current folder
 vim.keymap.set("n", "<leader>e", ":e <C-R>=expand('%:p:h') . '/'<cr>", { desc = "Edit on current folder" })
-vim.keymap.set("n", "<leader>ec", [[:let @+ = expand("%")<cr>]], { desc = "Copy current path" })
+vim.keymap.set("n", "<leader>ec", [[:let @+ = expand("%:p:h")<cr>]], { desc = "Copy current path" })
 vim.keymap.set("n", "<leader>eC", [[:let @+ = expand("%:p")<cr>]], { desc = "Copy current absolute path" })
+vim.keymap.set("n", "<leader>ef", [[:let @+ = expand("%:p:t")<cr>]], { desc = "Copy current file name" })
 
 -- Toggle search highlight off
 vim.keymap.set("n", "<LocalLeader><esc>", ":nohlsearch<cr>", { desc = "Hide highlights" })
@@ -52,7 +53,7 @@ vim.keymap.set("n", "<leader>sl", function()
 	else
 		vim.notify("No Session.vim file", vim.log.levels.WARN)
 	end
-end, { desc = "Session load" })
+end, { desc = "Load session" })
 
 -- Open the repo name inside quotes on the browser
 local open_cmd = function()
