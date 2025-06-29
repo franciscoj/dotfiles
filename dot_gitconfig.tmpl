@@ -40,13 +40,11 @@
 	autosquash = true
 [rerere]
 	enabled = true
-[include]
-	path = ~/.gitconfig_local
 [init]
 	defaultBranch = main
-[github]
-	user = franciscoj
 {{if (eq .chezmoi.os "darwin") -}}
 [credential]
 	helper = osxkeychain
 {{ end -}}
+[include]
+	path = ~/.gitconfig_local
