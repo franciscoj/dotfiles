@@ -11,17 +11,20 @@ return {
 	},
 	{
 		"olimorris/codecompanion.nvim",
+		keys = {
+			{ "<leader>C", "<cmd>CodeCompanionChat Toggle<cr>" },
+			{ "<localleader>C", "<cmd>CodeCompanion<cr>" },
+		},
 		opts = {
-			strategies = {
+			display = {
 				chat = {
-					adapter = "copilot",
+					intro_message = "",
 				},
-				inline = {
-					adapter = "copilot",
-				},
-				cmd = {
-					adapter = "copilot",
-				},
+			},
+			strategies = {
+				chat = { adapter = "copilot" },
+				inline = { adapter = "copilot" },
+				cmd = { adapter = "copilot" },
 			},
 			extensions = {
 				mcphub = {
@@ -51,10 +54,7 @@ return {
 		"echasnovski/mini.diff",
 		config = function()
 			local diff = require("mini.diff")
-			diff.setup({
-				-- Disabled by default
-				source = diff.gen_source.none(),
-			})
+			diff.setup({ source = diff.gen_source.none() })
 		end,
 	},
 	{
@@ -65,11 +65,11 @@ return {
 		build = "npm install -g mcp-hub@latest", -- Installs `mcp-hub` node binary globally
 		config = function()
 			require("mcphub").setup({
-				log = {
-					level = vim.log.levels.DEBUG,
-					to_file = true,
-					file_path = vim.fn.expand("~/mcphub.log"),
-				},
+				-- log = {
+				-- 	level = vim.log.levels.DEBUG,
+				-- 	to_file = true,
+				-- 	file_path = vim.fn.expand("~/mcphub.log"),
+				-- },
 			})
 		end,
 	},
