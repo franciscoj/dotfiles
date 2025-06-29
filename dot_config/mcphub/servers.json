@@ -1,5 +1,14 @@
 {
   "mcpServers": {
+    "git": {  
+      "command": "uvx",  
+      "args": ["mcp-server-git"]  
+    },
+    "context7": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
     "github": {
       "headers": {
         "Authorization": "Bearer ${cmd: gh auth token}"
