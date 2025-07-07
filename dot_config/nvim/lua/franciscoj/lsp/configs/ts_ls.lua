@@ -1,6 +1,4 @@
 local features = require("franciscoj.lsp.features")
-local lspconfig = require("lspconfig")
-local Config = require("franciscoj.lsp.config")
 
 if not features.typescript then
 	return
@@ -15,7 +13,7 @@ local function organize_imports()
 	vim.lsp.buf.execute_command(params)
 end
 
-local cfg = Config:new({
+vim.lsp.config("ts_ls", {
 	commands = {
 		OrganizeImports = {
 			organize_imports,
@@ -31,5 +29,4 @@ local cfg = Config:new({
 		vim.keymap.set("n", "<LocalLeader>O", "<cmd>:OrganizeImports<CR>")
 	end,
 })
-
-lspconfig.ts_ls.setup(cfg:to_lspconfig())
+vim.lsp.enable("ts_ls")

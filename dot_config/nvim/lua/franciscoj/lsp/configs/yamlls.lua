@@ -1,7 +1,4 @@
-local lspconfig = require("lspconfig")
-local Config = require("franciscoj.lsp.config")
-
-local cfg = Config:new({
+vim.lsp.config("yamlls", {
 	settings = {
 		yaml = {
 			schemas = {
@@ -11,5 +8,4 @@ local cfg = Config:new({
 		},
 	},
 })
-
-lspconfig.yamlls.setup(cfg:to_lspconfig())
+vim.lsp.enable("yamlls")

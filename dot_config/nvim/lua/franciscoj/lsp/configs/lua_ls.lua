@@ -1,23 +1,15 @@
-local lspconfig = require("lspconfig")
-local Config = require("franciscoj.lsp.config")
+local lazydev = require("lazydev")
+lazydev.setup()
 
-local cfg = Config:new({
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim" },
-			},
-		},
-	},
+vim.lsp.config("lua_ls", {
+	root_dir = function(bufnr, on_dir) on_dir(lazydev.find_workspace(bufnr)) end,
 	handlers = {
-		-- Disable the diagnostics from the LSP as I tipically use selene,
-		-- which is configured on a different plugin
 		["textDocument/publishDiagnostics"] = function() end,
 	},
-	on_attach = function(client, _bufnr)
+	on_attach = function(client)
+		-- Disable the default formatting capabilities of the lua LSP
 		client.server_capabilities.documentFormattingProvider = false
 		client.server_capabilities.documentRangeFormattingProvider = false
 	end,
 })
-
-lspconfig.lua_ls.setup(cfg:to_lspconfig())
+vim.lsp.enable("lua_ls")

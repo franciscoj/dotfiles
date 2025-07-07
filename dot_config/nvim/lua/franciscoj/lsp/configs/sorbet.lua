@@ -6,11 +6,7 @@ if not features.sorbet then
 	return
 end
 
-local lspconfig = require("lspconfig")
-local Config = require("franciscoj.lsp.config")
-
-local cfg = Config:new({
+vim.lsp.config("sorber", {
 	cmd = { "bin/srb", "tc", "--lsp" },
 })
-
-lspconfig.sorbet.setup(cfg:to_lspconfig())
+vim.lsp.enable("sorbet")
