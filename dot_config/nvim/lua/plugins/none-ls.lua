@@ -18,7 +18,6 @@ return {
 
 		local actions = null_ls.builtins.code_actions
 		local diagnostics = null_ls.builtins.diagnostics
-		local Config = require("franciscoj.lsp.config")
 		local formatting = null_ls.builtins.formatting
 		local mason = require("franciscoj.mason")
 
@@ -60,8 +59,6 @@ return {
 		end
 
 		mason.ensure_tools(ensure)
-
-		local cfg = Config:new({ sources = sources })
-		null_ls.setup(cfg:to_lspconfig())
+		null_ls.setup({ sources = sources })
 	end,
 }
