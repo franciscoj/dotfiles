@@ -1,6 +1,5 @@
 require("franciscoj.lsp.configs.gopls")
 require("franciscoj.lsp.configs.lua_ls")
-require("franciscoj.lsp.configs.roslyn")
 require("franciscoj.lsp.configs.rust_analyzer")
 require("franciscoj.lsp.configs.sorbet")
 require("franciscoj.lsp.configs.ts_ls")
