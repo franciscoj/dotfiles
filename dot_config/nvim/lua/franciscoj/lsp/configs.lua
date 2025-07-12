@@ -48,15 +48,26 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		)
 
 		if client:supports_method("textDocument/codeLens") then
-			local id = vim.api.nvim_create_augroup("lsp_code_lens_refresh", { clear = false })
-			vim.api.nvim_clear_autocmds({ buffer = 0, group = id })
+			local id = vim.api.nvim_create_augroup("lsp_code_lens_refresh", { clear = true })
 			vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
-				buffer = 0,
+				buffer = args.buf,
 				group = id,
-				callback = function() vim.lsp.codelens.refresh({ bufnr = 0 }) end,
+				callback = function() vim.lsp.codelens.refresh({ bufnr = args.buf }) end,
 			})
 
-			vim.keymap.set("n", "<LocalLeader>A", vim.lsp.codelens.run, { desc = "Run codelens (LSP)" })
+			vim.keymap.set(
+				"n",
+				"<localLeader><localLeader>A",
+				function() vim.lsp.codelens.refresh({ bufnr = args.buf }) end,
+				{ desc = "Refresh codelens (LSP)", buffer = args.buf }
+			)
+
+			vim.keymap.set(
+				"n",
+				"<LocalLeader>A",
+				vim.lsp.codelens.run,
+				{ desc = "Run codelens (LSP)", buffer = args.buf }
+			)
 		end
 
 		-- Disable virtual diagnostics because they are mostly annoying and enable virtual lines for the current line.
