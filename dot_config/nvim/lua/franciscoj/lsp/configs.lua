@@ -24,6 +24,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		)
 		-- Using fzf-lua
 		vim.keymap.set("n", "<leader>fo", fzf.lsp_workspace_symbols, { desc = "Find symbol (LSP)" })
+		vim.keymap.set("n", "gO", fzf.lsp_document_symbols, { desc = "Find symbol in document (LSP)" })
 		vim.keymap.set("n", "grr", fzf.lsp_references, { desc = "Find references (LSP)" })
 		vim.keymap.set("n", "gri", fzf.lsp_implementations, { desc = " Find implementations (LSP)" })
 
@@ -36,17 +37,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set(
 			"n",
 			"]d",
-			function() vim.diagnostic.goto_next({ float = { focus = false, border = "rounded" } }) end,
+			function() vim.diagnostic.jump({ count = 1, float = { focus = false, border = "rounded" } }) end,
 			{ desc = "Next diagnostic (LSP)" }
 		)
 		vim.keymap.set(
 			"n",
 			"[d",
-			function() vim.diagnostic.goto_prev({ float = { focus = false, border = "rounded" } }) end,
+			function() vim.diagnostic.jump({ count = -1, float = { focus = false, border = "rounded" } }) end,
 			{ desc = "Prev diagnostic (LSP)" }
 		)
 
-		if client.server_capabilities.codeLensProvider then
+		if client:supports_method("textDocument/codeLens") then
 			local id = vim.api.nvim_create_augroup("lsp_code_lens_refresh", { clear = false })
 			vim.api.nvim_clear_autocmds({ buffer = 0, group = id })
 			vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
@@ -58,7 +59,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.keymap.set("n", "<LocalLeader>A", vim.lsp.codelens.run, { desc = "Run codelens (LSP)" })
 		end
 
-		-- Disable virtual diagnostics because they are mostly and enable virtual lines for the current line.
+		-- Disable virtual diagnostics because they are mostly annoying and enable virtual lines for the current line.
 		vim.diagnostic.config({
 			virtual_text = false,
 			virtual_lines = { current_line = true },
