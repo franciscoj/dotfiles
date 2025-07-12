@@ -5,9 +5,7 @@
 -- formatting. However goimports works through null-ls while gopls works
 -- through the regular lspconfig configuration.
 
-local detect = function(file)
-	return vim.fn.getftype(file) ~= ""
-end
+local detect = function(file) return vim.fn.getftype(file) ~= "" end
 
 local is_forced = function(name)
 	local env = os.getenv("LSP_FORCE")
@@ -30,4 +28,5 @@ return {
 	rubocop = vim.fn.executable("bin/rubocop") == 1,
 	ruby = detect("Gemfile"),
 	sorbet = vim.fn.executable("bin/srb") == 1,
+	roslyn = vim.fs.root(0, function(fname, _) return fname:match("%.sln$") ~= nil end) ~= nil,
 }

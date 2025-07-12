@@ -74,20 +74,10 @@ vim.lsp.config("*", {
 	},
 })
 
-if features.elixir then
-	vim.lsp.enable("elixirls")
-end
-
-if features.ruby_ls then
-	vim.lsp.enable("ruby_ls")
-end
-
-if features.tailwind then
-	vim.lsp.enable("tailwindcss")
-end
-
-if features.ansible then
-	vim.lsp.enable("ansiblels")
-end
-
-vim.lsp.enable({ "marksman", "jsonls", "eslint", "roslyn" })
+vim.lsp.enable("elixirls", features.elixir)
+vim.lsp.enable("ruby_ls", features.ruby_ls)
+vim.lsp.enable("tailwindcss", features.tailwind)
+vim.lsp.enable("ansiblels", features.ansible)
+vim.lsp.enable("eslint", features.typescript)
+vim.lsp.enable("roslyn", features.roslyn)
+vim.lsp.enable({ "marksman", "jsonls" })
