@@ -1,9 +1,5 @@
 local features = require("franciscoj.lsp.features")
 
-if not features.go then
-	return
-end
-
 vim.lsp.config("gopls", {
 	on_attach = function(client, _bufnr)
 		-- disable  formatting for gopls so that goimports handles it through
@@ -12,4 +8,4 @@ vim.lsp.config("gopls", {
 		client.server_capabilities.documentRangeFormattingProvider = false
 	end,
 })
-vim.lsp.enable("gopls")
+vim.lsp.enable("gopls", features.go)

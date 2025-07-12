@@ -11,7 +11,7 @@ end
 
 local is_forced = function(name)
 	local env = os.getenv("LSP_FORCE")
-	return env and env:find(name) or false
+	return env and env:find(name) ~= nil or false
 end
 
 return {

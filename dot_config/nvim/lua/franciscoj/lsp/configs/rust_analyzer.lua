@@ -1,9 +1,5 @@
 local features = require("franciscoj.lsp.features")
 
-if features.rust ~= true then
-	return
-end
-
 vim.lsp.config("rust_analyzer", {
 	settings = {
 		-- to enable rust-analyzer settings visit:
@@ -20,4 +16,4 @@ vim.lsp.config("rust_analyzer", {
 		},
 	},
 })
-vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("rust_analyzer", features.rust)
