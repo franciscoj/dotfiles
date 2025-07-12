@@ -4,3 +4,6 @@ name = "vim"
 
 [vim]
 any = true
+
+[Snacks]
+any = true
