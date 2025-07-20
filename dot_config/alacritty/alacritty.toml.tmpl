@@ -3,7 +3,11 @@
 TERM = "alacritty"
 
 [font]
-size = 14.0
+{{ if .arch -}}
+size = 9.0
+{{ else }}
+size = 12.0
+{{ end -}}
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
