@@ -44,7 +44,7 @@ return {
 		"pwntester/octo.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
+			"ibhagwan/fzf-lua",
 			"nvim-tree/nvim-web-devicons",
 		},
 		keys = {
@@ -52,7 +52,9 @@ return {
 			{ "<leader>li", "<cmd>Octo issue list<cr>", desc = "List issues" },
 		},
 		cmd = { "Octo" },
-		config = function() require("octo").setup() end,
+		opts = {
+			picker = "fzf-lua",
+		},
 	},
 	{
 		"sindrets/diffview.nvim",
