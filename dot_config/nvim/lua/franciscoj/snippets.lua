@@ -11,6 +11,7 @@ ls.filetype_extend("elixir", { "heex" })
 -- This should load vscode snippets from friendly snippets
 require("luasnip.loaders.from_vscode").load({
 	include = {
+		"csharp",
 		"eelixir",
 		"elixir",
 		"go",
