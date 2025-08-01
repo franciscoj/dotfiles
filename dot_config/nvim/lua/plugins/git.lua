@@ -34,11 +34,9 @@ return {
 			{ "<localleader>gb", function() require("gitsigns").blame_line() end, desc = "Git blame line" },
 			{ "]h", function() require("gitsigns").nav_hunk("next") end, desc = "Next git change" },
 			{ "[h", function() require("gitsigns").nav_hunk("prev") end, desc = "Prev git change" },
-			{ "<leader>hd", function() require("gitsigns").preview_hunk() end, desc = "Diff git change" },
+			{ "<leader>hd", function() require("gitsigns").preview_hunk_inline() end, desc = "Diff git change" },
 			{ "<leader>hs", function() require("gitsigns").stage_hunk() end, desc = "Stage git change" },
-			{ "<leader>hu", function() require("gitsigns").undo_stage_hunk() end, desc = "Unstage git change" },
 		},
-		config = function() require("gitsigns").setup() end,
 	},
 	{
 		"pwntester/octo.nvim",
