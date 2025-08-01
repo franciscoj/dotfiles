@@ -37,6 +37,7 @@ return {
 	conventional_commit("feat"),
 	conventional_commit("fix"),
 	conventional_commit("refactor"),
+	conventional_commit("style"),
 	conventional_commit("test"),
 	conventional_commit("wip"),
 }
