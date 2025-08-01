@@ -8,11 +8,6 @@ return {
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
 			"petertriho/cmp-git",
-			-- copilot
-			{
-				"zbirenbaum/copilot-cmp",
-				config = function() require("copilot_cmp").setup() end,
-			},
 			-- snippets
 			{
 				"L3MON4D3/LuaSnip",
@@ -63,7 +58,6 @@ return {
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
-					{ name = "copilot" },
 					{ name = "path" },
 					{ name = "buffer", keyword_length = 4 },
 					{ name = "git", keyword_length = 1 },
