@@ -24,8 +24,10 @@ return {
 					-- Create some toggle mappings
 					Snacks.toggle.option("wrap", { name = "Wrap" }):map("yow")
 					Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("yor")
+					Snacks.toggle.option("list", { name = "List" }):map("yol")
 					Snacks.toggle.diagnostics():map("yod")
 					Snacks.toggle.line_number():map("yon")
+					Snacks.toggle.indent():map("yoi")
 				end,
 			})
 		end,
