@@ -7,13 +7,14 @@ return {
 			"tpope/vim-git",
 			"tpope/vim-rhubarb",
 		},
+		cmd = { "GBrowse" },
 		keys = {
-			{ "<leader>gg", ":Git<space>", desc = "Git" },
+			{ "<leader>gg", ":Git<space>",         desc = "Git" },
 			{ "<leader>gr", ":Git rebase -i main", desc = "Git rebase" },
 			{ "<leader>gc", "<cmd>Git commit<cr>", desc = "Git commit" },
-			{ "<leader>gs", "<cmd>Git<cr>", desc = "Git status" },
-			{ "<leader>go", "<cmd>GBrowse<cr>", mode = { "n" }, desc = "Show file on GitHub" },
-			{ "<leader>go", ":'<,'>GBrowse<cr>", mode = { "x" }, desc = "Show selection on GitHub" },
+			{ "<leader>gs", "<cmd>Git<cr>",        desc = "Git status" },
+			{ "<leader>go", "<cmd>GBrowse<cr>",    mode = { "n" },     desc = "Show file on GitHub" },
+			{ "<leader>go", ":'<,'>GBrowse<cr>",   mode = { "x" },     desc = "Show selection on GitHub" },
 		},
 		ft = "git",
 	},
@@ -22,7 +23,7 @@ return {
 		dependencies = { "tpope/vim-fugitive" },
 		keys = {
 			{ "<localleader>gl", "<CMD>GV!<CR>", desc = "Git log current file" },
-			{ "<leader>gl", "<CMD>GV<CR>", desc = "Git log for repo" },
+			{ "<leader>gl",      "<CMD>GV<CR>",  desc = "Git log for repo" },
 		},
 	},
 	{
@@ -30,12 +31,12 @@ return {
 		event = "VeryLazy",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		keys = {
-			{ "<leader>gb", function() require("gitsigns").blame() end, desc = "Git blame" },
-			{ "<localleader>gb", function() require("gitsigns").blame_line() end, desc = "Git blame line" },
-			{ "]h", function() require("gitsigns").nav_hunk("next") end, desc = "Next git change" },
-			{ "[h", function() require("gitsigns").nav_hunk("prev") end, desc = "Prev git change" },
-			{ "<leader>hd", function() require("gitsigns").preview_hunk_inline() end, desc = "Diff git change" },
-			{ "<leader>hs", function() require("gitsigns").stage_hunk() end, desc = "Stage git change" },
+			{ "<leader>gb",      function() require("gitsigns").blame() end,               desc = "Git blame" },
+			{ "<localleader>gb", function() require("gitsigns").blame_line() end,          desc = "Git blame line" },
+			{ "]h",              function() require("gitsigns").nav_hunk("next") end,      desc = "Next git change" },
+			{ "[h",              function() require("gitsigns").nav_hunk("prev") end,      desc = "Prev git change" },
+			{ "<leader>hd",      function() require("gitsigns").preview_hunk_inline() end, desc = "Diff git change" },
+			{ "<leader>hs",      function() require("gitsigns").stage_hunk() end,          desc = "Stage git change" },
 		},
 	},
 	{
@@ -47,7 +48,7 @@ return {
 		},
 		keys = {
 			{ "<leader>lp", "<cmd>Octo pr list author=franciscoj<cr>", desc = "List my PRs" },
-			{ "<leader>li", "<cmd>Octo issue list<cr>", desc = "List issues" },
+			{ "<leader>li", "<cmd>Octo issue list<cr>",                desc = "List issues" },
 		},
 		cmd = { "Octo" },
 		opts = {
@@ -57,9 +58,9 @@ return {
 	{
 		"sindrets/diffview.nvim",
 		keys = {
-			{ "<leader>gd", "<CMD>DiffviewOpen<CR>", desc = "Git diff" },
+			{ "<leader>gd", "<CMD>DiffviewOpen<CR>",        desc = "Git diff" },
 			{ "<leader>gD", "<CMD>DiffviewOpen HEAD~1<CR>", desc = "Git diff last commit" },
-			{ "<leader>dc", "<CMD>DiffviewClose<CR>", desc = "Close git diff" },
+			{ "<leader>dc", "<CMD>DiffviewClose<CR>",       desc = "Close git diff" },
 		},
 		cmd = {
 			"DiffviewOpen",
