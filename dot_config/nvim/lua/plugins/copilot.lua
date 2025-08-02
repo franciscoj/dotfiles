@@ -12,6 +12,13 @@ return {
 			-- for example
 			provider = "copilot",
 			auto_suggestions_provider = "copilot",
+			providers = {
+				ollama = {
+					endpoint = "http://localhost:11434",
+					model = "qwen2.5-coder:7b-instruct-q4_K_M",
+					is_env_set = function() return true end,
+				},
+			},
 			suggestion = {
 				debounce = 1800,
 			},
