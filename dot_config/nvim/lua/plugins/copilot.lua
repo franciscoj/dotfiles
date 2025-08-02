@@ -34,6 +34,14 @@ return {
 					require("mcphub.extensions.avante").mcp_tool(),
 				}
 			end,
+			input = {
+				provider = "snacks",
+				provider_opts = {
+					-- Additional snacks.input options
+					title = "Avante Input",
+					icon = " ",
+				},
+			},
 		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
