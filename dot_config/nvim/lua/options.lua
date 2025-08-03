@@ -12,7 +12,7 @@ vim.opt.fileencoding = "utf-8" -- Assume files are on UTF-8
 -- Use a menu for completions but don't automatically select one of the
 -- options.
 vim.opt.pumheight = 7
-vim.opt.completeopt = { "menu", "menuone", "noselect", "preview" }
+vim.opt.completeopt = { "menu", "menuone", "noselect", "preview", "popup" }
 vim.opt.mouse = "a" -- Enable the mouse, sometimes usefull for scrolling
 vim.opt.timeoutlen = 500 -- ms to complete a mapping
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard

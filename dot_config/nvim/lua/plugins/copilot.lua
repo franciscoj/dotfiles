@@ -1,77 +1,58 @@
 --# selene: allow(mixed_table)
 return {
 	{
-		"yetone/avante.nvim",
-		build = "make",
-		event = "VeryLazy",
-		version = false, -- Never set this value to "*"! Never!
-		---@module 'avante'
-		---@type avante.Config
-		opts = {
-			-- add any opts here
-			-- for example
-			provider = "copilot",
-			auto_suggestions_provider = "copilot",
-			providers = {
-				ollama = {
-					endpoint = "http://localhost:11434",
-					model = "qwen2.5-coder:7b-instruct-q4_K_M",
-					is_env_set = function() return true end,
-				},
-			},
-			suggestion = {
-				debounce = 1800,
-			},
-			-- system_prompt as function ensures LLM always has latest MCP server state
-			-- This is evaluated for every message, even in existing chats
-			system_prompt = function()
-				local hub = require("mcphub").get_hub_instance()
-				return hub and hub:get_active_servers_prompt() or ""
-			end,
-			-- Using function prevents requiring mcphub before it's loaded
-			custom_tools = function()
-				return {
-					require("mcphub.extensions.avante").mcp_tool(),
-				}
-			end,
-			input = {
-				provider = "snacks",
-				provider_opts = {
-					-- Additional snacks.input options
-					title = "Avante Input",
-					icon = " ",
-				},
-			},
+		"CopilotC-Nvim/CopilotChat.nvim",
+		dependencies = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "ravitemer/mcphub.nvim" },
+			{ "zbirenbaum/copilot.lua" },
 		},
+		keys = {
+			{ "<leader>C", "<cmd>CopilotChatToggle<cr>", desc = "Toggle Copilot Chat" },
+		},
+		build = "make tiktoken",
+		opts = {
+			temperature = 0.3,
+			window = {
+				layout = "float",
+				border = "rounded",
+				width = 100,
+				height = 30,
+			},
+			headers = {
+				user = "👤 You: ",
+				assistant = "🤖 Copilot: ",
+				tool = "🔧 Tool: ",
+			},
+			auto_insert_mode = true,
+			selection = function(source)
+				return require("CopilotChat.select").visual(source) or require("CopilotChat.select").line(source)
+			end,
+		},
+		init = function()
+			vim.api.nvim_create_autocmd("BufEnter", {
+				pattern = "copilot-*",
+				callback = function()
+					vim.opt_local.relativenumber = false
+					vim.opt_local.number = false
+					vim.opt_local.conceallevel = 0
+				end,
+			})
+		end,
+	},
+	{
+		"ravitemer/mcphub.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"MunifTanjim/nui.nvim",
-			"hrsh7th/nvim-cmp",   -- autocompletion for avante commands and mentions
-			"ibhagwan/fzf-lua",   -- for file_selector provider fzf
-			"stevearc/dressing.nvim", -- for input provider dressing
-			"folke/snacks.nvim",  -- for input provider snacks
-			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-			"zbirenbaum/copilot.lua", -- for providers='copilot'
-			{
-				-- Make sure to set this up properly if you have lazy=true
-				"MeanderingProgrammer/render-markdown.nvim",
-				opts = {
-					file_types = { "markdown", "Avante" },
-				},
-				ft = { "markdown", "Avante" },
-			},
-			{
-				"ravitemer/mcphub.nvim",
-				dependencies = {
-					"nvim-lua/plenary.nvim",
-				},
-				build = "npm install -g mcp-hub@latest",
-				opts = {
-					extensions = {
-						avante = {
-							make_slash_commands = true, -- make /slash commands from MCP server prompts
-						},
-					},
+		},
+		build = "npm install -g mcp-hub@latest",
+		opts = {
+			extensions = {
+				copilotchat = {
+					enabled = true,
+					convert_tools_to_functions = true, -- Convert MCP tools to CopilotChat functions
+					convert_resources_to_functions = true, -- Convert MCP resources to CopilotChat functions
+					add_mcp_prefix = false, -- Add "mcp_" prefix to function names
 				},
 			},
 		},

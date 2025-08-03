@@ -17,6 +17,7 @@ return {
 		config = function()
 			local fzf = require("fzf-lua")
 			local actions = require("fzf-lua.actions")
+			fzf.register_ui_select()
 			fzf.setup({
 				winopts = {
 					height = 0.99,
