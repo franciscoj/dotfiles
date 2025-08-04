@@ -1,4 +1,14 @@
 --# selene: allow(mixed_table)
+local width = function()
+	local cols = vim.o.columns
+
+	if cols >= 200 then
+		return 100
+	end
+
+	return 80
+end
+
 return {
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
@@ -14,8 +24,7 @@ return {
 		opts = {
 			temperature = 0.3,
 			window = {
-				width = 100,
-				height = 30,
+				width = width(),
 			},
 			headers = {
 				user = "👤 You: ",
