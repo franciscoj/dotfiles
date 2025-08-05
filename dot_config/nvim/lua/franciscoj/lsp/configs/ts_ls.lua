@@ -1,28 +1,25 @@
 local features = require("franciscoj.lsp.features")
 
-local function organize_imports()
-	local params = {
-		command = "_typescript.organizeImports",
-		arguments = { vim.api.nvim_buf_get_name(0) },
-		title = "",
-	}
-	vim.lsp.buf.execute_command(params)
-end
-
 vim.lsp.config("ts_ls", {
-	commands = {
-		OrganizeImports = {
-			organize_imports,
-			description = "Organize Imports",
-		},
-	},
-	on_attach = function(client, _bufnr)
+	on_attach = function(client, bufnr)
 		-- disable  formatting for ts_ls so that prettier handles it through
 		-- null-ls
 		client.server_capabilities.documentFormattingProvider = false
 		client.server_capabilities.documentRangeFormattingProvider = false
 
-		vim.keymap.set("n", "<LocalLeader>O", "<cmd>:OrganizeImports<CR>")
+		vim.api.nvim_buf_create_user_command(
+			0,
+			"TypeScriptOrganiseImports",
+			function()
+				client:exec_cmd({
+					command = "_typescript.organizeImports",
+					arguments = { vim.api.nvim_buf_get_name(bufnr) },
+				})
+			end,
+			{ desc = "Organise imports" }
+		)
+
+		vim.keymap.set("n", "<LocalLeader>O", "<cmd>:TypeScriptOrganiseImports<CR>")
 	end,
 })
 
