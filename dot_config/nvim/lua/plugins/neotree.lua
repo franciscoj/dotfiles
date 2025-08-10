@@ -8,17 +8,12 @@ return {
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
 		},
-		config = function()
-			require("neo-tree").setup({
-				popup_border_style = "rounded",
-				filesystem = {
-					hijack_netrw_behavior = "disabled",
-					cwd_target = {
-						sidebar = "none",
-						current = "none",
-					},
-				},
-			})
-		end,
+		lazy = false,
+		opts = {
+			popup_border_style = "rounded",
+			filesystem = {
+				hijack_netrw_behavior = "disabled",
+			},
+		},
 	},
 }

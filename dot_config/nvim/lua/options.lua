@@ -13,8 +13,8 @@ vim.opt.fileencoding = "utf-8" -- Assume files are on UTF-8
 -- options.
 vim.opt.pumheight = 7
 vim.opt.completeopt = { "menu", "menuone", "noselect", "preview", "popup" }
-vim.opt.mouse = "a" -- Enable the mouse, sometimes usefull for scrolling
-vim.opt.timeoutlen = 500 -- ms to complete a mapping
+vim.opt.mouse = "a"               -- Enable the mouse, sometimes usefull for scrolling
+vim.opt.timeoutlen = 500          -- ms to complete a mapping
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 
 -- Enable backups
@@ -43,9 +43,9 @@ vim.opt.relativenumber = true
 
 -- Keep the signcolum always on
 vim.opt.signcolumn = "yes"
-vim.opt.hlsearch = true -- Highlight search
+vim.opt.hlsearch = true   -- Highlight search
 vim.opt.ignorecase = true -- Ignore case by default
-vim.opt.smartcase = true -- But take it into account if present in the search term
+vim.opt.smartcase = true  -- But take it into account if present in the search term
 vim.opt.splitbelow = true -- Put new horizontal split below
 vim.opt.splitright = true -- Put new vertical split on right
 
@@ -68,13 +68,15 @@ vim.opt.spelllang = "en"
 vim.opt.spellfile = cfg .. "/spell/en.utf-8.add"
 
 -- These make things look prettier
-vim.opt.cmdheight = 1 -- Single line for command mode
-vim.opt.cursorline = true -- Highlights the line where the cursor is
+vim.opt.cmdheight = 1        -- Single line for command mode
+vim.opt.cursorline = true    -- Highlights the line where the cursor is
 vim.opt.termguicolors = true -- Enables 24-bit RGB color
-vim.opt.wrap = false -- Don't auto-wrap lines by default
+vim.opt.wrap = false         -- Don't auto-wrap lines by default
 
 -- On a delete and insert (e.g. `caw`) it mark where the change ends.
 vim.opt.cpoptions:append("$")
+
+vim.opt.winborder = "rounded"
 
 -- Use zsh if available
 if vim.fn.executable("/bin/zsh") then
@@ -97,4 +99,4 @@ end
 
 vim.opt.laststatus = 3
 
-vim.cmd [[set guifont=JetBrainsMono\ Nerd\ Font:h20]]
+vim.cmd([[set guifont=JetBrainsMono\ Nerd\ Font:h20]])
