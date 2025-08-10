@@ -15,7 +15,19 @@ return {
 		dependencies = {
 			{ "nvim-lua/plenary.nvim" },
 			{ "ravitemer/mcphub.nvim" },
-			{ "zbirenbaum/copilot.lua" },
+			{
+				"zbirenbaum/copilot.lua",
+				cmd = "Copilot",
+				event = "InsertEnter",
+				opts = {
+					suggestion = { enabled = false },
+					panel = { enabled = false },
+					filetypes = {
+						markdown = true,
+						help = true,
+					},
+				},
+			},
 		},
 		keys = {
 			{ "<leader>C", "<cmd>CopilotChatToggle<cr>", desc = "Toggle Copilot Chat" },

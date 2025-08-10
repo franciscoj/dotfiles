@@ -16,6 +16,7 @@ return {
 			cmd = { "LazyDev" },
 			ft = "lua",
 		},
+		"fang2hou/blink-copilot",
 	},
 	version = "1.*",
 
@@ -39,7 +40,7 @@ return {
 			preset = "luasnip",
 		},
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
+			default = { "copilot", "lsp", "path", "snippets", "buffer" },
 			per_filetype = {
 				lua = { inherit_defaults = true, "lazydev" },
 			},
@@ -49,6 +50,12 @@ return {
 					module = "lazydev.integrations.blink",
 					-- make lazydev completions top priority (see `:h blink.cmp`)
 					score_offset = 100,
+				},
+				copilot = {
+					name = "copilot",
+					module = "blink-copilot",
+					score_offset = 100,
+					async = true,
 				},
 			},
 		},
