@@ -31,6 +31,9 @@ return {
 		completion = {
 			documentation = { auto_show = true, auto_show_delay_ms = 500 },
 			ghost_text = { enabled = true },
+			accept = { auto_brackets = { enabled = false } },
+			list = { selection = { preselect = false, auto_insert = true } },
+			menu = { auto_show = false },
 		},
 		snippets = {
 			preset = "luasnip",
