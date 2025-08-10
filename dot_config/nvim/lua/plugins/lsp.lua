@@ -1,11 +1,6 @@
 --# selene: allow(mixed_table)
 return {
 	{
-		"folke/lazydev.nvim",
-		cmd = { "LazyDev" },
-		ft = "lua",
-	},
-	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"folke/neoconf.nvim",

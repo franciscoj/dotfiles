@@ -1,83 +1,54 @@
 --# selene: allow(mixed_table)
 return {
-	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-cmdline",
-			"petertriho/cmp-git",
-			-- snippets
-			{
-				"L3MON4D3/LuaSnip",
-				submodules = false,
+	"saghen/blink.cmp",
+	dependencies = {
+		{
+			"L3MON4D3/LuaSnip",
+			version = "v2.*",
+			submodules = false,
+			dependencies = {
+				"rafamadriz/friendly-snippets",
 			},
-			"saadparwaiz1/cmp_luasnip",
-			"rafamadriz/friendly-snippets",
+			init = function() require("franciscoj.snippets") end,
 		},
-		event = "InsertEnter",
-		config = function()
-			local cmp = require("cmp")
-			local luasnip = require("luasnip")
+		{
+			"folke/lazydev.nvim",
+			cmd = { "LazyDev" },
+			ft = "lua",
+		},
+	},
+	version = "1.*",
 
-			require("franciscoj.snippets")
-
-			cmp.setup({
-				snippet = {
-					expand = function(args) luasnip.lsp_expand(args.body) end,
+	---@module 'blink.cmp'
+	---@type blink.cmp.Config
+	opts = {
+		keymap = {
+			["<C-l>"] = { "snippet_forward", "fallback" },
+			["<C-h>"] = { "snippet_backward", "fallback" },
+			["<C-b>"] = { function(cmp) cmp.scroll_documentation_up(4) end, "fallback" },
+			["<C-f>"] = { function(cmp) cmp.scroll_documentation_down(4) end, "fallback" },
+		},
+		completion = {
+			documentation = { auto_show = true, auto_show_delay_ms = 500 },
+			ghost_text = { enabled = true },
+		},
+		snippets = {
+			preset = "luasnip",
+		},
+		sources = {
+			default = { "lsp", "path", "snippets", "buffer" },
+			per_filetype = {
+				lua = { inherit_defaults = true, "lazydev" },
+			},
+			providers = {
+				lazydev = {
+					name = "LazyDev",
+					module = "lazydev.integrations.blink",
+					-- make lazydev completions top priority (see `:h blink.cmp`)
+					score_offset = 100,
 				},
-				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
-				},
-				mapping = cmp.mapping.preset.insert({
-					["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-					["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-					["<C-y>"] = cmp.mapping(cmp.mapping.confirm({
-						behavior = cmp.ConfirmBehavior.Insert,
-						select = true,
-					})),
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-l>"] = cmp.mapping(function(fallback)
-						if luasnip.jumpable(1) then
-							luasnip.jump(1)
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
-					["<C-h>"] = cmp.mapping(function(fallback)
-						if luasnip.jumpable(-1) then
-							luasnip.jump(-1)
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
-				}),
-				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
-					{ name = "luasnip" },
-					{ name = "path" },
-					{ name = "buffer", keyword_length = 4 },
-					{ name = "git", keyword_length = 1 },
-				}),
-			})
-
-			cmp.setup.cmdline({ "/", "?" }, {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = {
-					{ name = "buffer", keyword_length = 6 },
-				},
-			})
-
-			cmp.setup.cmdline(":", {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = cmp.config.sources({
-					{ name = "path", keyword_length = 4 },
-					{ name = "cmdline", keyword_length = 3 },
-				}),
-			})
-		end,
+			},
+		},
+		signature = { enabled = true },
 	},
 }
