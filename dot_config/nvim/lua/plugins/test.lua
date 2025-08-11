@@ -10,6 +10,11 @@ return {
 		dependencies = {
 			"akinsho/toggleterm.nvim",
 		},
-		config = function() vim.g["test#strategy"] = "toggleterm" end,
+		init = function()
+			vim.g["test#strategy"] = "toggleterm"
+			vim.g["test#csharp#runner"] = "dotnettest"
+			-- normal verbosity
+			vim.g["test#csharp#dotnettest#options"] = "-v:n"
+		end,
 	},
 }
