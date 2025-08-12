@@ -145,8 +145,9 @@ return {
 							sources = { "nvim_diagnostic" },
 							symbols = { error = " ", warn = " ", info = " " },
 						},
+						{ "filename", path = 1 },
 						{ "branch", icon = "" },
-						"diff",
+						{ "diff", symbols = { added = "+", modified = "~", removed = "-" } },
 						center,
 						{
 							"filetype",
@@ -168,22 +169,6 @@ return {
 					lualine_x = {},
 					lualine_y = {},
 					lualine_z = {},
-				},
-				winbar = {
-					lualine_a = {},
-					lualine_b = {},
-					lualine_c = {
-						{ "filename", path = 1 },
-						{ "diff", symbols = { added = "+", modified = "~", removed = "-" } },
-					},
-				},
-				inactive_winbar = {
-					lualine_a = {},
-					lualine_b = {},
-					lualine_c = {
-						{ "filename", path = 1 },
-						{ "diff", symbols = { added = "+", modified = "~", removed = "-" } },
-					},
 				},
 			})
 		end,
