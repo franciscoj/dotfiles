@@ -3,10 +3,26 @@ return {
 	{
 		"akinsho/toggleterm.nvim",
 		keys = {
-			{ "<leader><ESC>", [[<CMD>:ToggleTerm<CR>]], desc = "Toggle terminal" },
-			{ "<leader><ESC>", [[<C-\><C-N><CMD>:ToggleTerm<CR>]], mode = "t", desc = "Toggle terminal" },
 			{ "<LocalLeader><ESC>", [[<C-\><C-N>]], mode = "t", desc = "Normal mode" },
+			{ "<leader>tf", "<cmd>TermSelect<cr>", mode = "n", desc = "Select terminal"}
 		},
-		opts = {},
+		lazy = false,
+		cmd = {
+			"ToggleTerm",
+		},
+		opts = {
+			size = function()
+				if vim.o.lines >= 40 then
+					return 20
+				end
+
+				return 40
+			end,
+			open_mapping = [[<leader><ESC>]],
+			auto_scroll = false,
+			responsiveness = {
+				horizontal_breakpoint = 100,
+			},
+		},
 	},
 }
