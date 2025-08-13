@@ -24,6 +24,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		)
 		-- Using fzf-lua
 		vim.keymap.set("n", "<leader>fo", fzf.lsp_workspace_symbols, { desc = "Find symbol (LSP)" })
+		vim.keymap.set("n", "<leader>fO", fzf.lsp_live_workspace_symbols, { desc = "Find symbol live(LSP)" })
 		vim.keymap.set("n", "gO", fzf.lsp_document_symbols, { desc = "Find symbol in document (LSP)" })
 		vim.keymap.set("n", "grr", fzf.lsp_references, { desc = "Find references (LSP)" })
 		vim.keymap.set("n", "gri", fzf.lsp_implementations, { desc = " Find implementations (LSP)" })
