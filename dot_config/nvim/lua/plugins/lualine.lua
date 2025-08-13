@@ -160,16 +160,6 @@ return {
 					lualine_y = {},
 					lualine_z = {},
 				},
-				inactive_sections = {
-					-- these are to remove the defaults, I use global winbar, so these
-					-- are always empty.
-					lualine_a = {},
-					lualine_b = {},
-					lualine_c = {},
-					lualine_x = {},
-					lualine_y = {},
-					lualine_z = {},
-				},
 			})
 		end,
 	},
