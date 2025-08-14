@@ -5,32 +5,36 @@
 -- formatting. However goimports works through null-ls while gopls works
 -- through the regular lspconfig configuration.
 
-local detect = function(file)
+local detect_file = function(file)
 	return vim.fn.getftype(file) ~= ""
 end
 
+local can_run = function(file)
+	return vim.fn.executable(file) == 1
+end
+
 local is_forced = function(name)
-	local env = os.getenv("LSP_FORCE")
-	return env and env:find(name) ~= nil or false
+	local forced = os.getenv("FRANCISCOJ_LSP_FORCED")
+	return forced and forced:find(name) ~= nil or false
 end
 
 return {
 	codespaces = os.getenv("CODESPACES"),
-	elixir = detect("mix.exs"),
-	go = detect("go.mod"),
-	lua = detect("selene.toml"),
-	rust = detect("Cargo.toml") or is_forced("rust"),
+	elixir = is_forced("elixir") or detect_file("mix.exs"),
+	go = is_forced("go") or detect_file("go.mod"),
+	lua = is_forced("lua") or detect_file("selene.toml"),
+	rust = is_forced("rust") or detect_file("Cargo.toml"),
 	-- Phoenix apps usually keep the JS stack inside the assets folder
-	typescript = detect("package.json") or detect("assets/package.json"),
-	tailwind = detect("tailwind.config.js"),
-	ansible = detect("playbook.yml"),
+	typescript = is_forced("typescript") or detect_file("package.json") or detect_file("assets/package.json"),
+	tailwind = is_forced("tailwind") or detect_file("tailwind.config.js"),
+	ansible = is_forced("ansible") or detect_file("playbook.yml"),
 
 	-- Ruby
-	ruby_ls = vim.fn.executable("ruby-lsp") == 1,
-	rubocop = vim.fn.executable("bin/rubocop") == 1,
-	ruby = detect("Gemfile"),
-	sorbet = vim.fn.executable("bin/srb") == 1,
-	roslyn = vim.fs.root(0, function(fname, _)
+	ruby_ls = is_forced("ruby_ls") or can_run("ruby-lsp"),
+	rubocop = is_forced("rubocop") or can_run("bin/rubocop"),
+	ruby = is_forced("ruby") or detect_file("Gemfile"),
+	sorbet = is_forced("sorbet") or can_run("bin/srb"),
+	roslyn = is_forced("roslyn") or vim.fs.root(0, function(fname, _)
 		return fname:match("%.sln$") ~= nil or fname:match("%.csproj$") ~= nil
 	end) ~= nil,
 }
