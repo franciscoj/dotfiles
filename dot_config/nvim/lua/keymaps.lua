@@ -37,6 +37,7 @@ vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 
 -- More comfortable <esc>
+vim.keymap.set("i", "jk", "<esc>")
 vim.keymap.set("i", "jj", "<esc>")
 
 -- Reselect after indent
