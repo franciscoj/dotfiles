@@ -12,13 +12,13 @@ return {
 		},
 		opts = {
 			size = function()
-				if vim.o.lines >= 40 then
-					return 20
+				if vim.o.lines >= 80 then
+					return 40
 				end
 
-				return 40
+				return 20
 			end,
-			open_mapping = [[<leader><ESC>]],
+			open_mapping = [[<C-ESC>]],
 			auto_scroll = false,
 			responsiveness = {
 				horizontal_breakpoint = 100,
