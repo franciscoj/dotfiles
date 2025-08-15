@@ -21,8 +21,6 @@ return {
 				red = theme_colors.red,
 				yellow = theme_colors.yellow,
 			}
-			local WIDTH_LIMIT = 90
-
 			-- component for abbreviated mode.
 			local mode = function()
 				-- auto change color according to neovims mode
@@ -73,54 +71,16 @@ return {
 				return cfg.abbr
 			end
 
-			-- centers any component that comes after it
-			-- stylua: ignore
-			local center = function()
-				return "%="
-			end
-
-			-- shows the LSP clients that are connected in the current buffer
-			local lsp = function()
-				local none = "(no LSP)"
-				local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-				local clients = vim.lsp.get_clients()
-				if next(clients) == nil then
-					return none
-				end
-
-				local names = {}
-				for i, client in ipairs(clients) do
-					local filetypes = client.config.filetypes
-					if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-						names[i] = client.name
-					end
-				end
-
-				if #names == 0 then
-					return none
-				end
-
-				return "(" .. table.concat(names, ", ") .. ")"
-			end
-
-			local conditions = {
-				buffer_not_empty = function() return vim.fn.empty(vim.fn.expand("%:t")) ~= 1 end,
-				hide_in_width = function() return vim.fn.winwidth(0) > WIDTH_LIMIT end,
-				check_git_workspace = function()
-					local filepath = vim.fn.expand("%:p:h")
-					local gitdir = vim.fn.finddir(".git", filepath .. ";")
-					return gitdir and #gitdir > 0 and #gitdir < #filepath
-				end,
-			}
-
 			line.setup({
 				extensions = {
 					"fugitive",
+					"fzf",
 					"lazy",
 					"man",
 					"mason",
 					"mundo",
 					"neo-tree",
+					"oil",
 					"overseer",
 					"quickfix",
 					"toggleterm",
@@ -140,23 +100,22 @@ return {
 					},
 					lualine_b = {},
 					lualine_c = {
+						{ "branch", icon = "" },
+						{ "diff", symbols = { added = "+", modified = "~", removed = "-" } },
 						{
 							"diagnostics",
 							sources = { "nvim_diagnostic" },
-							symbols = { error = " ", warn = " ", info = " " },
 						},
 						{ "filename", path = 1 },
-						{ "branch", icon = "" },
-						{ "diff", symbols = { added = "+", modified = "~", removed = "-" } },
-						center,
-						{
-							"filetype",
-							cond = conditions.buffer_not_empty,
-							padding = { right = 1 },
-						},
-						{ lsp, padding = { left = 0 } },
+						{ "filetype", icon_only = true },
 					},
-					lualine_x = { "enconding", "fileformat", "location", "progress" },
+					lualine_x = {
+						{ "lsp_status", ignore_lsp = { "copilot" } },
+						"encoding",
+						"fileformat",
+						"location",
+						"progress",
+					},
 					lualine_y = {},
 					lualine_z = {},
 				},
