@@ -50,43 +50,17 @@ vim.keymap.set("i", ";;", "::")
 vim.keymap.set("n", "<leader>sl", function()
 	if vim.fn.getftype("Session.vim") ~= "" then
 		vim.cmd([[source Session.vim]])
+		vim.notify("Session loaded", vim.log.levels.INFO)
 	else
 		vim.notify("No Session.vim file", vim.log.levels.WARN)
 	end
 end, { desc = "Load session" })
 
 -- Open the repo name inside quotes on the browser
-local open_cmd = function()
-	if vim.fn.executable("open") == 1 then
-		return "open"
-	end
-
-	if vim.fn.executable("xdg-open") == 1 then
-		return "xdg-open"
-	end
-
-	return false
-end
-
--- Open a URL in the browser
-local open = function(url)
-	local cmd = open_cmd()
-
-	if not cmd then
-		vim.notify("couldn't find open or xdg-open, doing nothing", vim.log.levels.WARN)
-	end
-
-	local Job = require("plenary.job")
-	Job:new({
-		command = cmd,
-		args = { url },
-		cwd = "/usr/bin",
-	}):sync() -- or start()
-end
-
 vim.keymap.set("n", "<leader>og", function()
-	vim.cmd([[normal yi"]])
-	local url = "https://github.com/" .. vim.fn.getreg("*")
+	vim.cmd([[normal "zyi"]])
+	local url = "https://github.com/" .. vim.fn.getreg("z")
 
-	open(url)
+	vim.ui.open(url)
+	vim.notify("Opened: " .. url, vim.log.levels.INFO)
 end, { desc = "Browse repo under cursor" })
