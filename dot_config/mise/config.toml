@@ -3,6 +3,9 @@ node = "lts"
 deno = "latest"
 "npm:prettier" = "latest"
 go = "latest"
+usage = "latest"
+elixir = "1.18.4-otp-28"
+erlang = "28.0.2"
 
 [settings]
 experimental = true
