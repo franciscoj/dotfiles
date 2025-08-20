@@ -7,3 +7,10 @@ selene.toml
 neovim.toml
 stylua.toml
 mise.toml
+{{- if not .arch }}
+# These are only used on my Arch linux machines
+.config/dunst
+.config/i3
+.config/kitty
+.config/rofi
+{{- end}}
