@@ -1,11 +1,12 @@
 [tools]
-node = "lts"
 deno = "latest"
 "npm:prettier" = "latest"
 go = "latest"
+{{- if .arch }}
 usage = "latest"
 elixir = "1.18.4-otp-28"
 erlang = "28.0.2"
+{{- end }}
 
 [settings]
 experimental = true
