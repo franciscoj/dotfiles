@@ -3,10 +3,31 @@
 # This file is meant to load only things which are needed on an interactive
 # shell, like customizations, special aliases, etc.
 
-export ZPLUG_HOME=$HOME/.config/zplug
 {{ if .arch }}
-source /usr/share/zsh/scripts/zplug/init.zsh
-{{ else if .darwin }}
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
+zinit load zsh-users/zsh-syntax-highlighting
+zinit load zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit snippet PZT::modules/history
+zinit snippet PZT::modules/directory
+zinit snippet OMZ::plugins/git
+
+zinit snippet "$HOME/.config/zplugins/alias/init.zsh"
+zinit snippet "$HOME/.config/zplugins/editor/init.zsh"
+zinit snippet "$HOME/.config/zplugins/starthip_init/init.zsh"
+zinit snippet "$HOME/.config/zplugins/zoxide/init.zsh"
+zinit snippet "$HOME/.config/zplugins/golang/init.zsh"
+zinit snippet "$HOME/.config/zplugins/codespaces/init.zsh"
+zinit snippet "$HOME/.config/zplugins/mise/init.zsh"
+zinit snippet "$HOME/.config/zplugins/zshrc_local/init.zsh"
+zinit snippet "$HOME/.config/zplugins/zellij/init.zsh"
+{{ else }}
+
+{{ if .darwin }}
 export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 {{ else }}
@@ -38,3 +59,4 @@ if [ -v CODESPACES ] ; then
 fi
 
 zplug load # --verbose
+{{ end }}
