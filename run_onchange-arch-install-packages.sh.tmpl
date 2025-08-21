@@ -1,0 +1,11 @@
+{{ if .arch -}}
+#!/bin/bash
+
+echo "Installing: Arch packages ********************"
+paru -S {{ range .packages.arch.ensure }}{{.}} {{end}}
+
+echo "Cleanup: Removing unnecessary Arch packages ********************"
+{{ range .packages.arch.remove -}}
+paru -R {{.}} 
+{{end -}}
+{{ end -}}

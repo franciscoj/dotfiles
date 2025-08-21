@@ -1,0 +1,17 @@
+packages:
+  arch:
+    ensure:
+      - eza
+      - fd
+      - luarocks
+      - mise
+      - neovim
+      - python-pip
+      - ripgrep
+      - starship
+      - ttf-jetbrains-mono-nerd
+      - xsel
+      - zellij
+      - zoxide
+    remove:
+      - zplug
