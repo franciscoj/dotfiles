@@ -14,3 +14,7 @@ mise.toml
 .config/kitty
 .config/rofi
 {{- end}}
+{{- if .codespaces }}
+# These are useless on a codespace
+.config/alacritty
+{{- end }}
