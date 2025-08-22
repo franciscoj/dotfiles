@@ -2,10 +2,23 @@
 #!/bin/bash
 
 echo "Installing: Arch packages ********************"
-paru -S {{ range .packages.arch.ensure }}{{.}} {{end}}
+{{ range .packages.arch.ensure -}}
+if paru -Qi {{.}} > /dev/null ; then
+  echo "Ignoring {{.}} as it was installed already"
+else
+  echo "Installing {{.}}..."
+  paru -S {{.}} 
+fi
+
+{{ end -}}
 
 echo "Cleanup: Removing unnecessary Arch packages ********************"
 {{ range .packages.arch.remove -}}
-paru -R {{.}} 
+if paru -Qi {{.}} > /dev/null ; then
+  echo "Uninstalling {{.}}..."
+  paru -R {{.}} 
+else
+  echo "Ignoring {{.}} as it wasn't installed"
+fi
 {{end -}}
 {{ end -}}
