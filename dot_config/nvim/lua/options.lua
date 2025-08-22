@@ -9,6 +9,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 vim.opt.fileencoding = "utf-8" -- Assume files are on UTF-8
 
+-- Enable exrc to have per project configs
+vim.opt.exrc = true
+
 -- Use a menu for completions but don't automatically select one of the
 -- options.
 vim.opt.pumheight = 7
