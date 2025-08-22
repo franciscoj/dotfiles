@@ -1,0 +1,3 @@
+return {
+	"franciscoj.podman-cleanup",
+}

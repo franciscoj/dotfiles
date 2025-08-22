@@ -1,17 +1,16 @@
 --# selene: allow(mixed_table)
 return {
-	name = "podman compose up",
-	desc = "Runs podman compose",
+	name = "podman compose stop",
+	desc = "Stops a running podman compose",
 	---@diagnostic disable-next-line: unused-local
 	builder = function(_params)
 		return {
 			cmd = "podman",
-			args = { "compose", "up" },
+			args = { "compose", "stop" },
 			strategy = {
 				"toggleterm",
 				open_on_start = false,
 			},
-			components = { "franciscoj.podman-cleanup", "default" },
 		}
 	end,
 	condition = {

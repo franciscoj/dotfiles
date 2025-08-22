@@ -13,6 +13,7 @@ return {
 		opts = {
 			strategy = { "toggleterm" },
 			templates = { "builtin", "franciscoj" },
+			components = { "builtin", "franciscoj" },
 		},
 	},
 }
