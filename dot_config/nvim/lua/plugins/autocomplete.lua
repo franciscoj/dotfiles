@@ -45,16 +45,22 @@ return {
 				lua = { inherit_defaults = true, "lazydev" },
 			},
 			providers = {
+				snippets = { score_offset = 120 },
+				dadbod = {
+					score_offset = 110,
+					module = "vim_dadbod_completion.blink",
+					name = "Dadbod",
+				},
 				lazydev = {
 					name = "LazyDev",
 					module = "lazydev.integrations.blink",
 					-- make lazydev completions top priority (see `:h blink.cmp`)
 					score_offset = 100,
 				},
+				lsp = { score_offset = 90 },
 				copilot = {
 					name = "copilot",
 					module = "blink-copilot",
-					score_offset = 100,
 					async = true,
 				},
 			},
