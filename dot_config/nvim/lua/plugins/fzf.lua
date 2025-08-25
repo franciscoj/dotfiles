@@ -8,6 +8,7 @@ return {
 			{ "<leader>fG", function() require("fzf-lua").grep() end,      desc = "Grep" },
 			{ "<leader>ff", function() require("fzf-lua").global() end,    desc = "Global Find" },
 			{ "<leader>fg", function() require("fzf-lua").live_grep() end, desc = "Live Grep" },
+			{ "<leader>fh", function() require("fzf-lua").help_tags() end, desc = "Find on Help" },
 			{ "<leader>fm", function() require("fzf-lua").marks() end,     desc = "Find Mark" },
 			{ "<leader>fr", function() require("fzf-lua").registers() end, desc = "Find Registers" },
 			{
