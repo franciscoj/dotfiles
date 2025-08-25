@@ -71,7 +71,6 @@ return {
 	"tpope/vim-repeat",
 	"tpope/vim-rsi",
 	"tpope/vim-vinegar",
-	"tpope/vim-dadbod",
 	{
 		"AndrewRadev/splitjoin.vim",
 		submodules = false,
