@@ -34,15 +34,24 @@ return {
 			ghost_text = { enabled = true },
 			accept = { auto_brackets = { enabled = false } },
 			list = { selection = { preselect = false, auto_insert = true } },
-			menu = { auto_show = false },
+			menu = { auto_show = true },
 		},
 		snippets = {
 			preset = "luasnip",
 		},
 		sources = {
-			default = { "copilot", "lsp", "path", "snippets", "buffer" },
+			default = {
+				"buffer",
+				"copilot",
+				"lsp",
+				"path",
+				"snippets",
+			},
 			per_filetype = {
 				lua = { inherit_defaults = true, "lazydev" },
+				sql = { inherit_defaults = true, "dadbod" },
+				mysql = { inherit_defaults = true, "dadbod" },
+				plsql = { inherit_defaults = true, "dadbod" },
 			},
 			providers = {
 				snippets = { score_offset = 120 },
@@ -57,8 +66,12 @@ return {
 					-- make lazydev completions top priority (see `:h blink.cmp`)
 					score_offset = 100,
 				},
-				lsp = { score_offset = 90 },
+				lsp = { score_offset = 100 },
 				copilot = {
+					score_offset = 90,
+					enabled = function()
+						return vim.g.franciscoj_copilot_enabled
+					end,
 					name = "copilot",
 					module = "blink-copilot",
 					async = true,

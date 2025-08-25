@@ -30,6 +30,14 @@ return {
 					Snacks.toggle.indent():map("yoi")
 					Snacks.toggle
 						.new({
+							id = "copilot",
+							name = "copilot autocomplete",
+							get = function() return vim.g.franciscoj_copilot_enabled end,
+							set = function(state) vim.g.franciscoj_copilot_enabled = state end,
+						})
+						:map("yoc")
+					Snacks.toggle
+						.new({
 							id = "image",
 							name = "image preview",
 							get = function() return require("image").is_enabled() end,
