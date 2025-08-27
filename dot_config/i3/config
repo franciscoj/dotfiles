@@ -251,16 +251,16 @@ bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: "
-set $ws2 "2: "
-set $ws3 "3: "
-set $ws4 "4: "
-set $ws5 "5: "
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1  "1: "
+set $ws2  "2:󰖟 "
+set $ws3  "3: "
+set $ws4  "4: "
+set $ws5  "5:󰭻 "
+set $ws6  "6:󰣇 "
+set $ws7  "7:󰣇 "
+set $ws8  "8:󰣇 "
+set $ws9  "9:󰣇 "
+set $ws10 "10:󰣇 "
 
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
@@ -275,14 +275,14 @@ set $ws10 "10"
 assign [class="alacritty"] $ws1
 assign [class="(?i)zen"] $ws2
 assign [class="Thunar"] $ws3
-assign [class="thunderbird"] $ws4
+assign [class="evolution"] $ws4
 assign [class="TelegramDesktop"] $ws5
 
 # automatic set focus new window if it opens on another workspace than the current:
 for_window [class=alacritty] focus
 for_window [class=(?i)zen] focus
 for_window [class=Thunar] focus
-for_window [class=Thunderbird] focus
+for_window [class=Evolution] focus
 for_window [class=TelegramDesktop] focus
 
 ##############
@@ -383,6 +383,7 @@ exec --no-startup-id /usr/bin/dunst
 #exec --no-startup-id sleep 2 && alacritty
 #exec --no-startup-id sleep 7 && zen-browser https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
 #exec --no-startup-id sleep 3 && thunar
+exec --no-startup-id 1password
 
 ###############
 # system tray #
