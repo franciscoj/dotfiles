@@ -61,16 +61,16 @@ return {
 		config = function() require("Comment").setup() end,
 	},
 	{
-		"echasnovski/mini.surround",
+		"nvim-mini/mini.surround",
 		version = "*",
 		event = { "VeryLazy" },
-		config = function() require("mini.surround").setup() end,
+		opts = {},
 	},
 	{
-		"echasnovski/mini.pairs",
+		"nvim-mini/mini.pairs",
 		version = "*",
 		event = { "VeryLazy" },
-		config = function() require("mini.pairs").setup() end,
+		opts = {},
 	},
 	-- praise tpope section
 	"tpope/vim-abolish",
@@ -122,7 +122,7 @@ return {
 		---@type oil.SetupOpts
 		opts = {},
 		-- Optional dependencies
-		dependencies = { { "echasnovski/mini.icons", opts = {} } },
+		dependencies = { { "nvim-mini/mini.icons", opts = {} } },
 	},
 	{
 		"3rd/image.nvim",
