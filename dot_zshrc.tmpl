@@ -3,7 +3,6 @@
 # This file is meant to load only things which are needed on an interactive
 # shell, like customizations, special aliases, etc.
 
-{{ if .arch }}
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -25,38 +24,3 @@ zinit snippet "$HOME/.config/zplugins/codespaces/init.zsh"
 zinit snippet "$HOME/.config/zplugins/mise/init.zsh"
 zinit snippet "$HOME/.config/zplugins/zshrc_local/init.zsh"
 zinit snippet "$HOME/.config/zplugins/zellij/init.zsh"
-{{ else }}
-
-{{ if .darwin }}
-export ZPLUG_HOME=/opt/homebrew/opt/zplug
-source $ZPLUG_HOME/init.zsh
-{{ else }}
-source $ZPLUG_HOME/init.zsh
-{{ end }}
-
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "plugins/history-substring-search", from:oh-my-zsh
-zplug "zsh-users/zsh-completions"
-zplug "plugins/git", from:oh-my-zsh
-zplug "modules/history", from:prezto
-zplug "modules/directory", from:prezto
-zplug "$HOME/.config/zplugins/alias", from:local
-zplug "$HOME/.config/zplugins/editor", from:local
-zplug "$HOME/.config/zplugins/starthip_init", from:local
-zplug "$HOME/.config/zplugins/zoxide", from:local
-zplug "$HOME/.config/zplugins/golang", from:local
-zplug "$HOME/.config/zplugins/codespaces", from:local
-zplug "$HOME/.config/zplugins/mise", from:local
-zplug "$HOME/.config/zplugins/zshrc_local", from:local
-zplug "$HOME/.config/zplugins/zellij", from:local
-
-# Only perform the zplug check during bootstrapping
-if [ -v CODESPACES ] ; then
-  if ! zplug check --verbose; then
-    zplug install
-  fi
-fi
-
-zplug load # --verbose
-{{ end }}

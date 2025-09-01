@@ -3,9 +3,7 @@
 {{if (eq .chezmoi.os "darwin") -}}
 set -e
 
-# pip3 install --user pynvim
-
-brew bundle --no-lock --file=/dev/stdin <<EOF
+brew bundle --file=/dev/stdin <<EOF
 tap "franciscoj/remote-development-manager"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
@@ -37,6 +35,7 @@ brew "ripgrep"
 brew "starship"
 brew "stylua"
 brew "tree"
+brew "jstkdng/programs/ueberzugpp"
 brew "watchman"
 brew "wget"
 brew "yarn"
@@ -46,8 +45,7 @@ brew "zplug"
 brew "zsh"
 cask "adobe-acrobat-reader"
 cask "alacritty"
-cask "docker"
-cask "firefox-developer-edition"
+cask "docker-desktop"
 cask "font-jetbrains-mono-nerd-font"
 cask "gimp"
 cask "keymapp"
@@ -57,9 +55,8 @@ cask "obsidian"
 cask "raycast"
 cask "spotify"
 cask "telegram"
-cask "todoist"
 cask "visual-studio-code"
-cask "vivaldi"
+cask "zen"
 cask "zsa-wally"
 EOF
 
