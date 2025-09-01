@@ -23,10 +23,6 @@
   type = "archive-file"
   url = "https://github.com/junegunn/fzf/releases/download/v{{ $fzfVersion }}/fzf-{{ $fzfVersion }}-linux_amd64.tar.gz"
   path = "fzf"
-
-[".config/zplug"]
-	type = "git-repo"
-	url = "https://github.com/zplug/zplug.git"
 {{ end }}
 
 {{ if .codespaces }}
