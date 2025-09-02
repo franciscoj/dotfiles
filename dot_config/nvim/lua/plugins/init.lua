@@ -1,8 +1,6 @@
 --# selene: allow(mixed_table)
 return {
 	"folke/lazy.nvim",
-	-- Dependency of some plugins, so we want it early
-	{ "Joakker/lua-json5" },
 	-- QOL plugins
 	{
 		"folke/snacks.nvim",
