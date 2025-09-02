@@ -1,4 +1,15 @@
 --# selene: allow(mixed_table)
+
+-- safely load json5 and use it to parse json in case it exists.
+local parse_json = function(str, opts)
+	local ok, json5 = pcall(require, "json5")
+	if ok then
+		return json5.parse(str, opts)
+	else
+		return vim.json.decode(str, opts)
+	end
+end
+
 local width = function()
 	local cols = vim.o.columns
 
@@ -44,9 +55,6 @@ return {
 				tool = "🔧 Tool: ",
 			},
 			auto_insert_mode = true,
-			selection = function(source)
-				return require("CopilotChat.select").visual(source) or require("CopilotChat.select").line(source)
-			end,
 		},
 		init = function()
 			vim.api.nvim_create_autocmd("BufEnter", {
@@ -63,11 +71,10 @@ return {
 		"ravitemer/mcphub.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"Joakker/lua-json5",
 		},
 		build = "npm install -g mcp-hub@latest",
 		opts = {
-			json_decode = require("json5").parse,
+			json_decode = parse_json,
 			extensions = {
 				copilotchat = {
 					enabled = true,
