@@ -63,9 +63,11 @@ return {
 		"ravitemer/mcphub.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
+			"Joakker/lua-json5",
 		},
 		build = "npm install -g mcp-hub@latest",
 		opts = {
+			json_decode = require("json5").parse,
 			extensions = {
 				copilotchat = {
 					enabled = true,
