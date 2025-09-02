@@ -18,9 +18,13 @@ zinit snippet OMZ::plugins/git
 zinit snippet "$HOME/.config/zplugins/alias/init.zsh"
 zinit snippet "$HOME/.config/zplugins/editor/init.zsh"
 zinit snippet "$HOME/.config/zplugins/starthip_init/init.zsh"
-zinit snippet "$HOME/.config/zplugins/zoxide/init.zsh"
 zinit snippet "$HOME/.config/zplugins/golang/init.zsh"
-zinit snippet "$HOME/.config/zplugins/codespaces/init.zsh"
 zinit snippet "$HOME/.config/zplugins/mise/init.zsh"
 zinit snippet "$HOME/.config/zplugins/zshrc_local/init.zsh"
 zinit snippet "$HOME/.config/zplugins/zellij/init.zsh"
+{{ if not .codespaces -}}
+zinit snippet "$HOME/.config/zplugins/zoxide/init.zsh"
+{{ end -}}
+{{ if .codespaces -}}
+zinit snippet "$HOME/.config/zplugins/codespaces/init.zsh"
+{{ end -}}
