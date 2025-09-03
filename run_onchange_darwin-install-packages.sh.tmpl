@@ -5,13 +5,13 @@ set -e
 
 brew bundle --file=/dev/stdin <<EOF
 {{- range .packages.darwin.tap }}
-tap "{{.}}"
+tap {{ . | quote }}
 {{- end }}
 {{- range .packages.darwin.ensure.brew }}
-brew "{{.}}"
+brew {{ . | quote }}
 {{- end }}
 {{- range .packages.darwin.ensure.cask }}
-cask "{{.}}"
+cask {{ . | quote }}
 {{- end }}
 EOF
 
