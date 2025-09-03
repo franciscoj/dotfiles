@@ -17,7 +17,7 @@ EOF
 
 echo "Removing..."
 {{- range .packages.darwin.remove }}
-brew uninstall {{.}}
+brew uninstall -f {{.}}
 {{- end }}
 
 {{- else }}
