@@ -1,66 +1,25 @@
 #!/bin/sh
 
-{{if (eq .chezmoi.os "darwin") -}}
+{{- if (eq .chezmoi.os "darwin") }}
 set -e
 
 brew bundle --file=/dev/stdin <<EOF
-tap "franciscoj/remote-development-manager"
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/services"
-brew "autoconf"
-brew "bash"
-brew "bat"
-brew "chezmoi"
-brew "coreutils"
-brew "elixir"
-brew "eza"
-brew "fd"
-brew "franciscoj/remote-development-manager/remote-development-manager", args: ["HEAD"]
-brew "fzf"
-brew "gh"
-brew "git-extras"
-brew "gnu-sed"
-brew "gnupg"
-brew "htop"
-brew "imagemagick"
-brew "jq"
-brew "luarocks"
-brew "mise"
-brew "neovim"
-brew "openssl@3"
-brew "python@3.11"
-brew "ripgrep"
-brew "starship"
-brew "stylua"
-brew "tree"
-brew "jstkdng/programs/ueberzugpp"
-brew "watchman"
-brew "wget"
-brew "yarn"
-brew "zellij"
-brew "zoxide"
-brew "zplug"
-brew "zsh"
-cask "adobe-acrobat-reader"
-cask "alacritty"
-cask "docker-desktop"
-cask "font-jetbrains-mono-nerd-font"
-cask "gimp"
-cask "keymapp"
-cask "microsoft-auto-update"
-cask "microsoft-teams"
-cask "obsidian"
-cask "raycast"
-cask "spotify"
-cask "telegram"
-cask "visual-studio-code"
-cask "zen"
-cask "zsa-wally"
+{{- range .packages.darwin.tap }}
+tap "{{.}}"
+{{- end }}
+{{- range .packages.darwin.ensure.brew }}
+brew "{{.}}"
+{{- end }}
+{{- range .packages.darwin.ensure.cask }}
+cask "{{.}}"
+{{- end }}
 EOF
 
-{{ else -}}
-echo "Skipping mac packages"
-{{ end -}}
+echo "Removing..."
+{{- range .packages.darwin.remove }}
+brew uninstall {{.}}
+{{- end }}
 
+{{- else }}
+echo "Not macOS, skipping Homebrew package installation."
+{{- end }}

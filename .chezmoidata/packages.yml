@@ -1,4 +1,64 @@
 packages:
+  darwin:
+    tap:
+      - franciscoj/remote-development-manager
+      - homebrew/bundle
+      - homebrew/cask-fonts
+      - homebrew/cask-versions
+      - homebrew/services
+    ensure:
+      brew:
+        - autoconf
+        - bash
+        - bat
+        - chezmoi
+        - coreutils
+        - elixir
+        - eza
+        - fd
+        - franciscoj/remote-development-manager/remote-development-manager
+        - fzf
+        - gh
+        - git-extras
+        - gnu-sed
+        - gnupg
+        - htop
+        - imagemagick
+        - jq
+        - luarocks
+        - mise
+        - neovim
+        - openssl@3
+        - python@3.11
+        - ripgrep
+        - starship
+        - stylua
+        - tree
+        - jstkdng/programs/ueberzugpp
+        - watchman
+        - wget
+        - yarn
+        - zellij
+        - zoxide
+        - zsh
+      cask:
+        - adobe-acrobat-reader
+        - alacritty
+        - docker-desktop
+        - font-jetbrains-mono-nerd-font
+        - gimp
+        - keymapp
+        - microsoft-auto-update
+        - microsoft-teams
+        - obsidian
+        - raycast
+        - spotify
+        - telegram
+        - visual-studio-code
+        - zen
+        - zsa-wally
+    remove:
+      - zplug
   arch:
     ensure:
       - eza
